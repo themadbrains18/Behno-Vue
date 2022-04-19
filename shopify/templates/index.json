@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "hero-section": {
+      "type": "home-hero-sec"
+    },
+    "two-grid": {
+      "type": "home-two-grid"
+    },
+    "three-grid": {
+      "type": "home-three-grid"
+    },
+    "featured-carousel": {
+      "type": "home-featured-carousel"
+    },
+    "grid-single": {
+      "type": "home-grid-single"
+    },
+    "grid-text-single": {
+      "type": "home-grid-text-image"
+    },
+    "gradient-carousel": {
+      "type": "home-gradient-carousel"
+    },
+    "grid-single-text": {
+      "type": "home-grid-single-text"
+    },
+    
+    "main": {
+      "type": "main-index"
+    }
+  },
+  "order": [
+    "hero-section",
+    "two-grid",
+    "three-grid",
+    "featured-carousel",
+    "grid-single",
+    "grid-text-single",
+    "gradient-carousel",
+    "grid-single-text",
+    "main"
+  ]
+}

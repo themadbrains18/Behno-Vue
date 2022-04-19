@@ -1,0 +1,134 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-family: 'Helvetica Neue',sans-serif;
+}
+
+
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.t-center{
+  text-align: center;
+}
+.link{
+  text-decoration-line: underline;
+}
+
+.line-h-0{
+  line-height: 0;
+}
+.line-h-1{
+  line-height: 1;
+}
+
+.d-flex{
+  display: flex;
+}
+.d-block{
+  display: block;
+}
+/* colors */
+.color-white{
+  color: #fff;
+}
+.bg-white{
+  background-color: #fff;
+}
+
+.cta_btn{
+  font-weight: 700;
+  padding: 8px 30px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  display: inline-block;
+}
+
+.big_container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* main_heading */
+.main_heading{
+  font-family: 'Big Caslon,sans-serif';
+  font-weight: 500;
+  font-size: 72px;
+  text-transform: capitalize;
+}
+/* card_heading */
+.card_heading{
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.body_text{
+  font-family: 'adobe-caslon-pro',sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.modify-slider .swiper-button-prev,
+.modify-slider .swiper-button-next  {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  background-image: url('//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/slider-arrow.svg?v=7926845654508591761');
+  height: 32px;
+  width: 32px;
+  z-index: 2;
+}
+
+.modify-slider .swiper-button-next{
+  left: auto;
+  right: 15px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+
+@media only screen and (max-width: 991px) {
+  .grid_info{
+    padding: 0 10px;
+  }
+}
+
+
+
+@media only screen and (max-width: 767px){
+  .main_heading{
+    font-size: 46px;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .modify-slider .swiper-button-prev,
+  .modify-slider .swiper-button-next  {
+    display: none;
+  }
+}
