@@ -1,2 +1,9 @@
-<render-home-grid-text-image>
+
+<render-home-grid-text-image :shopify-data="{
+            senseBehno: '{{ 'sense-behno.jpg' | asset_url }}',
+            shopDomain: '{{ shop.domain }}',
+            shopEmail: '{{ shop.email }}',
+            shopCurrency: '{{ shop.currency }}'
+          }"
+        >
 </render-home-grid-text-image>

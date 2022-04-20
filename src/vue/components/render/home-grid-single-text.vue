@@ -3,11 +3,8 @@
   <section class="grid_single_text big_container">
     <div class="grid_item">
       <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <img
-          class="grid_img"
-          src="{{ 'grid-single-text.jpg' | asset_url }}"
-          alt=""
-        />
+        <v-lazy-image class="grid_img" :src="getImage('heroImage')" />
+
         <div class="grid_img_text-wrap">
           <span class="grid_img_text grid_img_text-first"> BAG </span>
           <span class="grid_img_text grid_img_text-second"> OF </span>
@@ -87,5 +84,40 @@
   }
 }
 </style>
+  
+<script>
+ import VLazyImage from "v-lazy-image";
+ export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+  created: function () {
+    this.getImage();
+  },
+  methods: {
+    getImage($name) {
+      var imgObj = this.shopifyData;
+
+      var ImgSrc = "";
+      for (let item in imgObj) {
+        
+        if ($name == item) {
+          ImgSrc = imgObj[item];
+        } else {
+          continue;
+        }
+      }
+
+      return ImgSrc;
+    },
+  },
+};
+</script>
   
   

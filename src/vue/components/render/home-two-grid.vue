@@ -1,22 +1,14 @@
 <template>
   <!-- Grid Two  -->
+  {{ box }}
   <section class="grid_two big_container">
-    <div class="grid_item">
+    <div class="grid_item" v-for="(value, key) in shopifyData.box" :key="key">
       <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <img class="grid_img" src="{{ 'grid-two.jpg' | asset_url }}" alt="" />
+        <v-lazy-image class="hero_img" :src="getImage(key)" alt="Hero Image" />
       </a>
       <div class="grid_info">
-        <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-        <a href="#" class="link body_text"> Clickable link. </a>
-      </div>
-    </div>
-    <div class="grid_item">
-      <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <img class="grid_img" src="{{ 'grid-two1.jpg' | asset_url }}" alt="" />
-      </a>
-      <div class="grid_info">
-        <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-        <a href="#" class="link body_text"> Clickable link. </a>
+        <h3 class="card_heading grid_heading">{{ value.title }}</h3>
+        <a :href="getHref(key)" class="link body_text"> Clickable link. </a>
       </div>
     </div>
   </section>
@@ -49,3 +41,52 @@
   }
 }
 </style>
+
+
+<script>
+import VLazyImage from "v-lazy-image";
+
+export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+  created: function () {
+    this.getImage();
+    this.getHref();
+  },
+  methods: {
+    getImage($name) {
+      var imgObj = this.shopifyData.box;
+      var ImgSrc = "";
+
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj[data].imgUrl;
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+    getHref($name) {
+      var imgObj = this.shopifyData.box;
+      var ImgSrc = "";
+
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj[data].link;
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+  },
+};
+</script>

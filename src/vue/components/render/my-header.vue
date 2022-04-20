@@ -950,7 +950,6 @@ export default {
   methods: {
     getImage($name) {
       var imgObj = this.shopifyData;
-      console.log(imgObj);
 
       var ImgSrc = "";
       for (let item in imgObj) {
