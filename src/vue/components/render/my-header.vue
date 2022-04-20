@@ -324,7 +324,7 @@
         <!-- Header logo -->
         <div class="logo_wrap">
           <a class="logo" href="/">
-            <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/logo.svg?1123" alt="Logo" />
+            <v-lazy-image :src="getImage('logo')" alt="Logo" />
           </a>
         </div>
 
@@ -457,13 +457,11 @@
           <li class="desktop_btn_grp">
             <div class="nav_btns">
               <button class="search_btn">
-                <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/search-icon.svg?v=6784525794199371781" alt="Search Icon" />
+                <v-lazy-image :src="getImage('search')" alt="Search Icon" />
               </button>
               <button class="shopping_btn">
-                <img
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/shopping-bag-icon.svg?v=3340298164995067690"
-                alt="Shopping Icon"
-              />
+                <v-lazy-image :src="getImage('bag')" alt="Shopping Icon" />
+
                 <span class="shopping_btn_count">0</span>
               </button>
             </div>
@@ -473,13 +471,10 @@
         <div class="mobile_btn_grp">
           <div class="nav_btns">
             <button class="search_btn">
-              <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/search-icon.svg?v=6784525794199371781" alt="Search Icon" />
+              <v-lazy-image :src="getImage('search')" alt="Search Icon" />
             </button>
             <button class="shopping_btn">
-              <img
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/shopping-bag-icon.svg?v=3340298164995067690"
-                alt="Shopping Icon"
-              />
+              <v-lazy-image :src="getImage('bag')" alt="Shopping Icon" />
               <span class="shopping_btn_count">0</span>
             </button>
           </div>
@@ -632,7 +627,7 @@
   overflow-y: scroll;
   opacity: 0;
   visibility: hidden;
-  transition:  0.3s linear;
+  transition: 0.3s linear;
 }
 
 .navlink__hover::-webkit-scrollbar {
@@ -746,20 +741,43 @@
 
 
 
-<script >
-export default {
 
+<script >
+import VLazyImage from "v-lazy-image";
+
+export default {
+  components: {
+    VLazyImage,
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     },
   },
+  created: function () {
+    this.getImage();
+  },
   data() {
     window.addEventListener("load", this.onWindowLoad);
     window.addEventListener("resize", this.onWindowLoad);
   },
   methods: {
+    getImage($name) {
+      var imgObj = this.shopifyData;
+      console.log(imgObj);
+
+      var ImgSrc = "";
+      for (let item in imgObj) {
+        if ($name == item) {
+          ImgSrc = imgObj[item];
+        } else {
+          continue;
+        }
+      }
+
+      return ImgSrc;
+    },
     onWindowLoad() {
       if (window.innerWidth <= 991) {
         const header = document.querySelector(".header");

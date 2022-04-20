@@ -1,14 +1,9 @@
 <template>
   <div>
-
-      {{ shopifyData.footerWave }}
     <div class="footer_wave">
-        <!-- ../../assets/images/footer-wave.png -->
-      <img
-        class="footer_wave_img"
-        src="{{ shopifyData.footerWave }}"
-        alt=""
-      />
+      <!-- ../../assets/images/footer-wave.png -->
+
+      <v-lazy-image class="footer_wave_img" :src="getImage('footerWave')" />
     </div>
     <footer class="footer">
       <div class="big_container">
@@ -34,18 +29,12 @@
               <span class="footer_link">FOLLOW OUR JOURNEY</span>
               <div class="footer_social_link">
                 <a class="link" href="#">
-                    <!-- ../../assets/svg/fb-icon.svg  -->
-                  <img
-                    src=""
-                    alt="image-description"
-                  />
+                  <!-- ../../assets/svg/fb-icon.svg  -->
+                  <v-lazy-image :src="getImage('fbIcon')" />
                 </a>
                 <a class="link" href="#">
-                    <!-- ../../assets/svg/instagram-icon.svg -->
-                  <img
-                    src=""
-                    alt="image-description"
-                  />
+                  <!-- ../../assets/svg/instagram-icon.svg -->
+                  <v-lazy-image :src="getImage('instaIcon')" />
                 </a>
               </div>
             </li>
@@ -69,8 +58,9 @@
               <button type="submit" class="footer_form_btn">SUBSCRIBE</button>
             </form>
             <h4 class="footer_after_pay">
-                <!-- ../../assets/svg/after-icon.svg -->
-              <img src="" alt="" />
+              <!-- ../../assets/svg/after-icon.svg -->
+              <v-lazy-image :src="getImage('afterIcon')" />
+
               <span> Finance your favorite bag with only 25% up front. </span>
             </h4>
           </div>
@@ -212,11 +202,36 @@
  
 
 <script>
+import VLazyImage from "v-lazy-image";
+
 export default {
+  components: {
+    VLazyImage,
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
+    },
+  },
+  created: function () {
+    this.getImage();
+  },
+  methods: {
+    getImage($name) {
+      var imgObj = this.shopifyData;
+      console.log(imgObj);
+
+      var ImgSrc = "";
+      for (let item in imgObj) {
+        if ($name == item) {
+          ImgSrc = imgObj[item];
+        } else {
+          continue;
+        }
+      }
+
+      return ImgSrc;
     },
   },
 };
