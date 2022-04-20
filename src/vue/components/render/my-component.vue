@@ -1,7 +1,7 @@
 <template>
   <div>
     <slot />
-
+ 
     <ul>
       <li
         v-for="(value, key) in shopifyData"
