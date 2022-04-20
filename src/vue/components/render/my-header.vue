@@ -1,5 +1,3 @@
-
-
 <template>
   <header class="header">
     <!-- ======= Desktop Navigation ======= -->
@@ -324,7 +322,7 @@
         <!-- Header logo -->
         <div class="logo_wrap">
           <a class="logo" href="/">
-            <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/logo.svg?1123" alt="Logo" />
+            <img src="../../assets/svg/logo.svg" alt="Logo" />
           </a>
         </div>
 
@@ -457,27 +455,28 @@
           <li class="desktop_btn_grp">
             <div class="nav_btns">
               <button class="search_btn">
-                <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/search-icon.svg?v=6784525794199371781" alt="Search Icon" />
+                <img src="../../assets/svg/search-icon.svg" alt="Search Icon" />
               </button>
               <button class="shopping_btn">
                 <img
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/shopping-bag-icon.svg?v=3340298164995067690"
-                alt="Shopping Icon"
-              />
+                  src="../../assets/svg/shopping-bag-icon.svg"
+                  alt="Shopping Icon"
+                />
                 <span class="shopping_btn_count">0</span>
               </button>
             </div>
           </li>
         </ul>
+
         <!-- Responsive Mobile Btn Grp -->
         <div class="mobile_btn_grp">
           <div class="nav_btns">
             <button class="search_btn">
-              <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/search-icon.svg?v=6784525794199371781" alt="Search Icon" />
+              <img src="../../assets/svg/search-icon.svg" alt="Search Icon" />
             </button>
             <button class="shopping_btn">
               <img
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/shopping-bag-icon.svg?v=3340298164995067690"
+                src="../../assets/svg/shopping-bag-icon.svg"
                 alt="Shopping Icon"
               />
               <span class="shopping_btn_count">0</span>
@@ -487,12 +486,152 @@
       </nav>
     </div>
     <!-- ======= Desktop Navigation End ======= -->
+
+    <!-- ======= Mobile Navigation Start ======= -->
+    <nav class="m_navbar_list navbar-Mobile">
+      <ul class="m_navlist d-block w-100">
+        <li class="m_navitem">
+          <button
+            class="navlink nav_drpbtn w-100 t-left"
+            @click="toggleDropDown"
+          >
+            HANDBAGS & WALLETS
+          </button>
+          <div class="nav_drpbtn_content">
+            <ul class="m_drpdown_list">
+              <!--  sub nav link  -->
+              <li class="m_drpdown_item">
+                <a href="#" class="subnavlink"> SHOP ALL </a>
+              </li>
+              <!--  sub nav link  -->
+              <li class="m_drpdown_item">
+                <button
+                  class="subnavlink nav_drpbtn w-100 t-left"
+                  @click="toggleDropDown"
+                >
+                  SHOP BY CATEGORY
+                </button>
+                <div class="nav_drpbtn_content">
+                  <ul class="m_subnavlink_list">
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> CROSSBODY BAGS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> SHOULDER BAGS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> MINI BAGS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> TOP HANDLES</a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> TOTE BAGS</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!--  sub nav link  -->
+              <li class="m_drpdown_item">
+                <button
+                  class="subnavlink nav_drpbtn w-100 t-left"
+                  @click="toggleDropDown"
+                >
+                  NEWEST ICONS
+                </button>
+                <div class="nav_drpbtn_content">
+                  <ul class="m_subnavlink_list">
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> SIMONE FLAP CROSSBODIES </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> LEX ACCORDIONS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> TILDA SADDLE BAGS </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="m_navitem">
+          <button
+            class="navlink nav_drpbtn w-100 t-left"
+            @click="toggleDropDown"
+          >
+            HANDBAGS & WALLETS
+          </button>
+          <div class="nav_drpbtn_content">
+            <ul class="m_drpdown_list">
+              <!--  sub nav link  -->
+              <li class="m_drpdown_item">
+                <a href="#" class="subnavlink"> SHOP ALL </a>
+              </li>
+              <!--  sub nav link  -->
+              <li class="m_drpdown_item">
+                <button
+                  class="subnavlink nav_drpbtn w-100 t-left"
+                  @click="toggleDropDown"
+                >
+                  SHOP BY CATEGORY
+                </button>
+                <div class="nav_drpbtn_content">
+                  <ul class="m_subnavlink_list">
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> CROSSBODY BAGS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> SHOULDER BAGS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> MINI BAGS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> TOP HANDLES</a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> TOTE BAGS</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!--  sub nav link  -->
+              <li class="m_drpdown_item">
+                <button
+                  class="subnavlink nav_drpbtn w-100 t-left"
+                  @click="toggleDropDown"
+                >
+                  NEWEST ICONS
+                </button>
+                <div class="nav_drpbtn_content">
+                  <ul class="m_subnavlink_list">
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> SIMONE FLAP CROSSBODIES </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> LEX ACCORDIONS </a>
+                    </li>
+                    <li class="m_subnavlink_item">
+                      <a href="#" class="navlink"> TILDA SADDLE BAGS </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- ======= Mobile Navigation End ======= -->
   </header>
 </template>
 
 <style scoped>
 .header_toggle_wrap,
-.mobile_btn_grp {
+.mobile_btn_grp,
+.navbar-Mobile {
   display: none;
 }
 .header {
@@ -524,7 +663,6 @@
   font-size: 12px;
   letter-spacing: 0.05em;
   position: relative;
-  font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
   display: inline-block;
 }
@@ -614,7 +752,6 @@
   margin-bottom: 15px;
 }
 .nanamoto-basics-crd-txt span {
-  font-family: "Helvetica Neue", sans-serif;
   font-size: 13px;
   color: #fff;
   font-weight: 400;
@@ -632,7 +769,7 @@
   overflow-y: scroll;
   opacity: 0;
   visibility: hidden;
-  transition:  0.3s linear;
+  transition: 0.3s linear;
 }
 
 .navlink__hover::-webkit-scrollbar {
@@ -712,13 +849,19 @@
   .mobile_btn_grp {
     display: flex;
   }
-  .desktop_btn_grp {
+  .desktop_btn_grp,
+  .navlist-left,
+  .navlist-right {
     display: none;
   }
 
-  .navlist {
+  .nav_btns {
+    margin: 0 0 0 auto;
+  }
+
+  .m_navbar_list {
     position: fixed;
-    top: 60px;
+    top: 0px;
     left: -100%;
     height: 100%;
     width: min(100%, 300px);
@@ -729,31 +872,75 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    transition: 0.3s;
+    transition: 0.5s;
+    overflow: scroll;
   }
-  .active .navlist {
+  .active .m_navbar_list {
     left: 0;
   }
-  .navlist-left {
-    height: auto;
+  .m_navitem {
+    margin-top: 18px;
+  }
+  .nav_drpbtn::after,
+  .nav_drpbtn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    transition: 0.2s;
+    transform: translateY(-50%);
+    width: 8px;
+    background-color: #000;
+    transform-origin: center;
+  }
+  .nav_drpbtn::before {
+    transform: translateY(-50%) rotate(90deg);
+  }
+  .nav_drpbtn.active::before {
+    transform: translateY(-50%);
+  }
+  .m_drpdown_list {
+    padding: 15px 0 15px 10px;
   }
 
-  .nav_btns {
-    margin: 0 0 0 auto;
+  .m_drpdown_item {
+    font-size: 0;
+    margin-top: 10px;
+  }
+  .m_drpdown_item:first-child,
+  .m_subnavlink_item:first-child,
+  .m_navitem:first-child {
+    margin: 0;
+  }
+  .subnavlink {
+    font-weight: 700;
+  }
+  .nav_drpbtn_content {
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+  }
+  .m_subnavlink_list {
+    padding: 20px 0 15px 10px;
+  }
+  .m_subnavlink_item {
+    margin-top: 10px;
   }
 }
 </style>
 
 
-
 <script >
 export default {
-
   props: {
     shopifyData: {
       type: Object,
       required: true,
     },
+  },
+  data: {
+    windowScrollY: 0,
   },
   data() {
     window.addEventListener("load", this.onWindowLoad);
@@ -763,13 +950,10 @@ export default {
     onWindowLoad() {
       if (window.innerWidth <= 991) {
         const header = document.querySelector(".header");
-        const navlistLeft = document.querySelector(".navlist-left");
-        const navlistRight = document.querySelector(".navlist-right");
-        const headerHeight = header.getBoundingClientRect().height;
-        navlistLeft.setAttribute("style", `top: ${headerHeight}px;`);
-        navlistRight.setAttribute(
+        const navbarMobile = document.querySelector(".navbar-Mobile");
+        navbarMobile.setAttribute(
           "style",
-          `top:${navlistLeft.getBoundingClientRect().height + headerHeight}px;`
+          `top: ${header.getBoundingClientRect().height}px;`
         );
       }
     },
@@ -777,8 +961,36 @@ export default {
       const header = document.querySelector(".header");
       header.classList.toggle("active");
     },
+    toggleDropDown(e) {
+      if (e.currentTarget.matches(".subnavlink")) {
+        let parentElement = e.currentTarget.closest(".nav_drpbtn_content");
+        let currentElement = e.currentTarget.nextElementSibling;
+        if (e.currentTarget.matches(".active")) {
+          parentElement.setAttribute(
+            "style",
+            `height: ${
+              parentElement.offsetHeight - currentElement.scrollHeight
+            }px;`
+          );
+        } else {
+          parentElement.setAttribute(
+            "style",
+            `height: ${
+              parentElement.offsetHeight + currentElement.scrollHeight
+            }px;`
+          );
+        }
+      }
+      if (e.currentTarget.matches(".active")) {
+        e.currentTarget.nextElementSibling.removeAttribute("style");
+      } else {
+        e.currentTarget.nextElementSibling.setAttribute(
+          "style",
+          `height:${e.currentTarget.nextElementSibling.scrollHeight}px;`
+        );
+      }
+      e.currentTarget.classList.toggle("active");
+    },
   },
 };
 </script>
-
-
