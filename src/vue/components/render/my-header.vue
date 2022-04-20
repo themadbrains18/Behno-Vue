@@ -623,6 +623,7 @@
   </header>
 </template>
 
+
 <style scoped>
 .header_toggle_wrap,
 .mobile_btn_grp,
@@ -631,7 +632,20 @@
 }
 .header {
   padding: 12px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9;
+  transition: 0.5s;
 }
+
+.header.stickyup{
+    transform: translateY(-100%);
+}
+
+
 .navbar {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -946,6 +960,10 @@ export default {
   data() {
     window.addEventListener("load", this.onWindowLoad);
     window.addEventListener("resize", this.onWindowLoad);
+    window.addEventListener("scroll", this.scollHeader);
+    return {
+      lastScrollY: 0,
+    };
   },
   methods: {
     getImage($name) {
@@ -1007,6 +1025,16 @@ export default {
       }
       e.currentTarget.classList.toggle("active");
     },
+    scollHeader(e) {
+      let header = document.querySelector(".header");
+      if (window.scrollY >= this.lastScrollY) {
+          header.classList.add("stickyup");
+      } else {
+          header.classList.remove("stickyup");
+      }
+      this.lastScrollY = window.scrollY;
+    },
   },
 };
+
 </script>
