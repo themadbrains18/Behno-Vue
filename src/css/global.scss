@@ -110,6 +110,14 @@ button{
   transform: translateY(-50%) rotate(180deg);
 }
 
+.grid_img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.grid_heading {
+  margin: 7px 0 5px;
+}
 
 @media only screen and (max-width: 991px) {
   .grid_info{

@@ -3,7 +3,7 @@
   <section class="grid_three big_container">
     <div class="grid_item" v-for="(value, key) in shopifyData.box" :key="key">
       <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="hero_img" :src="getImage(key)" alt="Hero Image" />
+        <v-lazy-image class="grid_img" :src="getImage(key)" alt="Hero Image" />
       </a>
       <div class="grid_info">
         <h3 class="card_heading grid_heading">{{ value.title }}</h3>
