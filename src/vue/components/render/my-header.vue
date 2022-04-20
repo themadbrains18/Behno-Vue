@@ -623,6 +623,7 @@
   </header>
 </template>
 
+
 <style scoped>
 .header_toggle_wrap,
 .mobile_btn_grp,
@@ -631,7 +632,20 @@
 }
 .header {
   padding: 12px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9;
+  transition: 0.5s;
 }
+
+.header.stickyup{
+    transform: translateY(-100%);
+}
+
+
 .navbar {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -757,6 +771,7 @@
   position: fixed;
   top: 60px;
   height: 100%;
+  min-height: 100vh;
   background: #eae8e4;
   width: min(100%, 515px);
   padding: 40px 50px;
@@ -869,6 +884,8 @@
     align-items: flex-start;
     transition: 0.5s;
     overflow: scroll;
+    height: 100%;
+    min-height: 100vh;
   }
   .active .m_navbar_list {
     left: 0;
@@ -946,6 +963,10 @@ export default {
   data() {
     window.addEventListener("load", this.onWindowLoad);
     window.addEventListener("resize", this.onWindowLoad);
+    window.addEventListener("scroll", this.scollHeader);
+    return {
+      lastScrollY: 0,
+    };
   },
   methods: {
     getImage($name) {
@@ -1006,6 +1027,16 @@ export default {
       }
       e.currentTarget.classList.toggle("active");
     },
+    scollHeader(e) {
+      let header = document.querySelector(".header");
+      if (window.scrollY >= this.lastScrollY) {
+          header.classList.add("stickyup");
+      } else {
+          header.classList.remove("stickyup");
+      }
+      this.lastScrollY = window.scrollY;
+    },
   },
 };
+
 </script>
