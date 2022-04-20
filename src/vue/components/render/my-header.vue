@@ -771,6 +771,7 @@
   position: fixed;
   top: 60px;
   height: 100%;
+  min-height: 100vh;
   background: #eae8e4;
   width: min(100%, 515px);
   padding: 40px 50px;
@@ -883,6 +884,8 @@
     align-items: flex-start;
     transition: 0.5s;
     overflow: scroll;
+    height: 100%;
+    min-height: 100vh;
   }
   .active .m_navbar_list {
     left: 0;
