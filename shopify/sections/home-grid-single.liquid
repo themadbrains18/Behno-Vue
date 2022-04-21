@@ -4,3 +4,33 @@
           link   : '#'
           }">
 </render-home-grid-single>
+
+
+{% schema %}
+{
+    "name": "t:sections.home_single_grid.name",
+    "settings": [
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "t:sections.home_single_grid.settings.image.label"
+      },
+      {
+        "id": "title",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.title.label"
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "t:sections.home_single_grid.settings.link.label"
+      }
+    ],
+   "presets": [
+     {
+       "name": "t:sections.home_single_grid.name",
+       "category": "ADVANCED LAYOUT"
+     }
+   ]
+ }
+{% endschema %}

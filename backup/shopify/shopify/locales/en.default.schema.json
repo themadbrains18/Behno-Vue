@@ -1,0 +1,89 @@
+{
+  "settings_schema": {
+    "custom_settings": {
+      "name": "Custom settings",
+      "settings": {
+        "header": "About JSON settings",
+        "paragraph": "The settings_schema.json file controls the content of the Theme settings area of the theme editor. Settings in this file translate to global theme settings, which can be accessed through the Liquid settings object. [Learn more](https:\/\/shopify.dev\/themes\/architecture\/settings)"
+      }
+    },
+    "favicon": {
+      "name": "Favicon",
+      "settings": {
+        "label": "Image",
+        "info": "32 x 32px .png recommended"
+      }
+    }
+  },
+  "sections": {
+    "home_hero_sec": {
+      "name": "Home Hero",
+      "presets": {
+        "name": "Home Hero"
+      },
+      "settings": {
+        "heroHeading": {
+          "label": "Heading"
+        },
+        "herosubHeading": {
+          "label": "Sub Heading"
+        },
+        "heroImage": {
+          "label": "Upload Hero Images"
+        }
+      },
+      "home_two_grid": {
+        "name": "Home Two grid",
+        "blocks": {
+          "name": "Two Grid Block"
+        }
+      }
+    },
+    "home_two_grid": {
+      "name": "Two Grid Section",
+      "blocks": {
+        "name": "Add Box",
+        "settings": {
+          "image": {
+            "label": "Upload Image"
+          },
+          "title": {
+            "label": "Add title"
+          },
+          "link": {
+            "label": "Add Link"
+          }
+        }
+      }
+    },
+    "home_third_grid": {
+      "name": "Two Third Section",
+      "blocks": {
+        "name": "Add Box",
+        "settings": {
+          "image": {
+            "label": "Upload Image"
+          },
+          "title": {
+            "label": "Add title"
+          },
+          "link": {
+            "label": "Add Link"
+          }
+        }
+      }
+    },
+    "header": {
+      "name": "Header",
+      "settings": {
+        "paragraph": "Add custom settings for this section. [Learn more](https:\/\/shopify.dev\/themes\/architecture\/settings)"
+      }
+    },
+    "footer": {
+      "name": "Footer",
+      "settings": {
+        "paragraph": "Add custom settings for this section. [Learn more](https:\/\/shopify.dev\/themes\/architecture\/settings)"
+      }
+    }
+  }
+}

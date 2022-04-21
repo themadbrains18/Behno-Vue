@@ -32,12 +32,134 @@
           "label": "Upload Hero Images"
         }
       },
-    "home_two_grid" : {
-       "name": "Home Two grid",
-       "blocks" : {
-           "name" : "Two Grid Block"
-       }
-    }
+      "home_two_grid": {
+        "name": "Home Two grid",
+        "blocks": {
+          "name": "Two Grid Block"
+        }
+      }
+    },
+    "home_two_grid": {
+      "name": "Two Grid Section",
+      "blocks": {
+        "name": "Add Box",
+        "settings": {
+          "image": {
+            "label": "Upload Image"
+          },
+          "title": {
+            "label": "Add title"
+          },
+          "link": {
+            "label": "Add Link"
+          }
+        }
+      }
+    },
+    "home_third_grid": {
+      "name": "Third Grid Section",
+      "blocks": {
+        "name": "Add Box",
+        "settings": {
+          "image": {
+            "label": "Upload Image"
+          },
+          "title": {
+            "label": "Add title"
+          },
+          "link": {
+            "label": "Add Link"
+          }
+        }
+      }
+    },
+    "home_featured_slider": {
+      "name": "Home Featured Slider",
+      "blocks": {
+        "name": "Add Box",
+        "settings": {
+          "image": {
+            "label": "Upload Image"
+          }
+        }
+      }
+    },
+    "home_single_grid": {
+      "name": "Home Single Grid",
+      "settings": {
+        "image": {
+          "label": "Upload Image"
+        },
+        "title": {
+          "label": "Add title"
+        },
+        "link": {
+          "label": "Add Link"
+        }
+      }
+    },
+    "home_grid_text_image": {
+      "name": "Home Grid Text Image",
+      "settings": {
+        "title": {
+          "label": "Add title"
+        },
+        "btntext": {
+          "label": "Add Btn title"
+        },
+        "link": {
+          "label": "Add Link"
+        },
+        "image": {
+          "label": "Upload Image"
+        }
+      }
+    },
+    "home_gradient_slider": {
+      "name": "Home Gradient Slider",
+      "blocks": {
+        "name": "Add Box",
+        "settings": {
+          "image": {
+            "label": "Upload Image"
+          },
+          "title": {
+            "label": "Add title"
+          },
+          "link": {
+            "label": "Add Link"
+          }
+        }
+      }
+    },
+    "home_grid_single_text": {
+      "name": "Home Grid Single Text",
+      "settings": {
+        "title": {
+          "label": "Add title"
+        },
+        "btntext": {
+          "label": "Add Btn title"
+        },
+        "link": {
+          "label": "Add Link"
+        },
+        "image": {
+          "label": "Upload Image"
+        },
+        "toptext": {
+          "label": "Top text"
+        },
+        "middletop": {
+          "label": "Middle Top Text"
+        },
+        "middlebottom": {
+          "label": "Middle Bottom Text"
+        },
+        "bottomtext": {
+          "label": "Bottom Text"
+        }
+      }
     },
     "header": {
       "name": "Header",

@@ -1,0 +1,891 @@
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./src/css/main.css ***!
+  \**************************************************************************************************************************************/
+/**
+ * entry file for Tailwind CSS
+ * and other style files
+ */
+
+/* @import "my-file"; */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-family: 'Helvetica Neue',sans-serif;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.t-center{
+  text-align: center;
+}
+
+.link{
+  text-decoration-line: underline;
+}
+
+.line-h-0{
+  line-height: 0;
+}
+
+.line-h-1{
+  line-height: 1;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.d-block{
+  display: block;
+}
+
+/* colors */
+
+.color-white{
+  color: #fff;
+}
+
+.bg-white{
+  background-color: #fff;
+}
+
+.cta_btn{
+  font-weight: 700;
+  padding: 8px 30px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  display: inline-block;
+}
+
+.big_container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* main_heading */
+
+.main_heading{
+  font-family: 'Big Caslon,sans-serif';
+  font-weight: 500;
+  font-size: 72px;
+  text-transform: capitalize;
+}
+
+/* card_heading */
+
+.card_heading{
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.body_text{
+  font-family: 'adobe-caslon-pro',sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.modify-slider .swiper-button-prev,
+.modify-slider .swiper-button-next  {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  background-image: url('//cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/slider-arrow.svg?v=7926845654508591761');
+  height: 32px;
+  width: 32px;
+  z-index: 2;
+}
+
+.modify-slider .swiper-button-next{
+  left: auto;
+  right: 15px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.grid_img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.grid_heading {
+  margin: 7px 0 5px;
+}
+
+@media only screen and (max-width: 991px) {
+  .grid_info{
+    padding: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .main_heading{
+    font-size: 46px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .modify-slider .swiper-button-prev,
+  .modify-slider .swiper-button-next  {
+    display: none;
+  }
+} 
+
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/app-footer.vue?vue&type=style&index=0&id=04c30fe9&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Footer Css Code */
+.footer_wave {
+  line-height: 0;
+}
+.footer_wave_img {
+  line-height: 0;
+  width: 100%;
+}
+.footer {
+  padding: 70px 0 76px;
+  background-color: #e9e7e3;
+}
+.footer_content {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 530px);
+  gap: 75px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_link {
+  color: #000000;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+}
+@media (hover: hover) {
+.footer_link:hover {
+    text-decoration: underline;
+}
+span.footer_link:hover {
+    text-decoration: initial;
+}
+}
+.footer_item.follow-journey,
+.footer_social_link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.footer_item {
+  margin-bottom: 9px;
+  line-height: 0;
+}
+.footer_item:last-child {
+  margin-bottom: 0px;
+}
+.footer_social_link .link {
+  display: flex;
+  align-items: center;
+}
+/* Footer Form css Code */
+.footer_form_heading {
+  font-size: 12px;
+  line-height: 14px;
+  color: #000;
+}
+.footer_form_heading span {
+  font-weight: 400;
+}
+.email_form {
+  display: flex;
+  border-bottom: 1px solid #000000;
+  margin: 27px 0 38px;
+}
+.footer_input::placeholder,
+.footer_input {
+  color: #5c5c5c;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+.footer_input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  padding: 0 10px 4px 0;
+  outline: none;
+}
+.footer_form_btn {
+  color: #5c5c5c;
+  font-weight: 700;
+  font-size: 12px;
+}
+.footer_after_pay {
+  display: flex;
+  align-items: center;
+}
+.footer_after_pay span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+@media only screen and (max-width: 991px) {
+.footer_content {
+    grid-template-columns: 1fr 1fr;
+}
+}
+@media only screen and (max-width: 768px) {
+.footer {
+    padding: 30px 0 30px;
+}
+.footer_content {
+    grid-template-columns: 1fr;
+}
+.footer_form {
+    grid-row-start: -1;
+    max-width: 500px;
+}
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/home-grid-single-text.vue?vue&type=style&index=0&id=2aa3b887&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Single Grid Text */
+.grid_single_text[data-v-2aa3b887] {
+  padding: 40px 45px 130px;
+}
+.grid_single_text .grid_img-wrap[data-v-2aa3b887] {
+  position: relative;
+}
+.grid_single_text .grid_img[data-v-2aa3b887] {
+  min-height: 132px;
+}
+.grid_img_text[data-v-2aa3b887] {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-size: 37px;
+  color: #95c900;
+  line-height: 1;
+}
+.grid_img_text-second[data-v-2aa3b887] {
+  top: 30%;
+  left: 30%;
+}
+.grid_img_text-third[data-v-2aa3b887] {
+  top: 50%;
+  left: 70%;
+}
+.grid_img_text-fourth[data-v-2aa3b887] {
+  top: calc(100% - 35px);
+  left: 40%;
+  transform: translateY(-100%);
+}
+@media only screen and (max-width: 991px) {
+  /* Grid Text Image */
+.grid_single_text[data-v-2aa3b887] {
+    padding: 50px 0px 60px;
+}
+.grid_img_text[data-v-2aa3b887] {
+    font-size: 30px;
+}
+}
+@media only screen and (max-width: 767px) {
+  /* Grid Text Image */
+.grid_img_text[data-v-2aa3b887] {
+    font-size: 25px;
+}
+.grid_img_text-first[data-v-2aa3b887] {
+    top: 11px;
+}
+.grid_img_text-fourth[data-v-2aa3b887] {
+    top: calc(100% - 11px);
+}
+}
+@media only screen and (max-width: 480px) {
+  /* Grid Text Image */
+.grid_img_text[data-v-2aa3b887] {
+    font-size: 11px;
+}
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/home-grid-single.vue?vue&type=style&index=0&id=7df11d63&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.grid_single[data-v-7df11d63] {
+  padding: 40px 15px 20px;
+}
+.grid_single .grid_img[data-v-7df11d63] {
+  min-height: 239px;
+}
+@media only screen and (max-width: 991px) {
+.grid_single[data-v-7df11d63] {
+    padding: 0px 0px 35px;
+}
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/home-grid-text-image.vue?vue&type=style&index=0&id=14a5dad6&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Grid Text Image */
+.grid_text_image[data-v-14a5dad6] {
+  background: #000;
+  padding: 65px 15px 120px;
+  display: grid;
+  grid-template-columns: minmax(auto, 480px) minmax(auto, 720px);
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+}
+.grid_text_image_heading[data-v-14a5dad6] {
+  margin-bottom: 45px;
+}
+@media only screen and (max-width: 991px) {
+  /* Grid Text Image */
+.grid_text_image[data-v-14a5dad6] {
+    text-align: center;
+    padding: 65px 15px 110px;
+    grid-template-columns: 1fr;
+}
+.grid_item_img[data-v-14a5dad6] {
+    grid-row-start: -1;
+}
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/home-hero-sec.vue?vue&type=style&index=0&id=8bf4a90c&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* index Hero sec */
+.hero_sec[data-v-8bf4a90c] {
+  padding: 50px 0px 100px;
+}
+.hero_img[data-v-8bf4a90c] {
+  margin: 0 auto;
+}
+.heroheading_top[data-v-8bf4a90c] {
+  transform: translateY(40%);
+}
+.heroheading_bottom[data-v-8bf4a90c] {
+  transform: translateY(-45%);
+}
+@media only screen and (max-width: 767px) {
+.hero_sec[data-v-8bf4a90c] {
+    padding: 50px 0px 70px;
+}
+.heroheading_bottom[data-v-8bf4a90c] {
+    transform: translateY(-35%);
+}
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/home-three-grid.vue?vue&type=style&index=0&id=1272c511&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Three Grid */
+.grid_three[data-v-1272c511] {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px 5px;
+  padding: 45px 15px 30px;
+}
+@media only screen and (max-width: 991px) {
+.grid_three[data-v-1272c511] {
+    padding: 40px 0px 25px;
+}
+}
+@media only screen and (max-width: 767px) {
+.grid_three[data-v-1272c511] {
+    grid-template-columns: 1fr 1fr;
+}
+.grid_three .grid_item[data-v-1272c511]:first-child {
+    grid-column: 2 span;
+}
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/home-two-grid.vue?vue&type=style&index=0&id=5a2715ba&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Two Grid */
+.grid_two[data-v-5a2715ba] {
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 5px;
+}
+@media only screen and (max-width: 991px) {
+.grid_two[data-v-5a2715ba] {
+    padding: 0;
+}
+}
+@media only screen and (max-width: 767px) {
+.grid_two[data-v-5a2715ba] {
+    grid-template-columns: 1fr;
+}
+}
+
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/swiper/swiper.min.css ***!
+  \********************************************************************************************************************************************************/
+/**
+ * Swiper 8.1.1
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2022 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: April 15, 2022
+ */
+
+@font-face{font-family:swiper-icons;src:url("data:application/font-woff;charset=utf-8;base64, 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");font-weight:400;font-style:normal}
+
+:root{--swiper-theme-color:#007aff}
+
+.swiper{margin-left:auto;margin-right:auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:1}
+
+.swiper-vertical>.swiper-wrapper{flex-direction:column}
+
+.swiper-wrapper{position:relative;width:100%;height:100%;z-index:1;display:flex;transition-property:transform;box-sizing:content-box}
+
+.swiper-android .swiper-slide,.swiper-wrapper{transform:translate3d(0px,0,0)}
+
+.swiper-pointer-events{touch-action:pan-y}
+
+.swiper-pointer-events.swiper-vertical{touch-action:pan-x}
+
+.swiper-slide{flex-shrink:0;width:100%;height:100%;position:relative;transition-property:transform}
+
+.swiper-slide-invisible-blank{visibility:hidden}
+
+.swiper-autoheight,.swiper-autoheight .swiper-slide{height:auto}
+
+.swiper-autoheight .swiper-wrapper{align-items:flex-start;transition-property:transform,height}
+
+.swiper-backface-hidden .swiper-slide{transform:translateZ(0);backface-visibility:hidden}
+
+.swiper-3d,.swiper-3d.swiper-css-mode .swiper-wrapper{perspective:1200px}
+
+.swiper-3d .swiper-cube-shadow,.swiper-3d .swiper-slide,.swiper-3d .swiper-slide-shadow,.swiper-3d .swiper-slide-shadow-bottom,.swiper-3d .swiper-slide-shadow-left,.swiper-3d .swiper-slide-shadow-right,.swiper-3d .swiper-slide-shadow-top,.swiper-3d .swiper-wrapper{transform-style:preserve-3d}
+
+.swiper-3d .swiper-slide-shadow,.swiper-3d .swiper-slide-shadow-bottom,.swiper-3d .swiper-slide-shadow-left,.swiper-3d .swiper-slide-shadow-right,.swiper-3d .swiper-slide-shadow-top{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:10}
+
+.swiper-3d .swiper-slide-shadow{background:rgba(0,0,0,.15)}
+
+.swiper-3d .swiper-slide-shadow-left{background-image:linear-gradient(to left,rgba(0,0,0,.5),rgba(0,0,0,0))}
+
+.swiper-3d .swiper-slide-shadow-right{background-image:linear-gradient(to right,rgba(0,0,0,.5),rgba(0,0,0,0))}
+
+.swiper-3d .swiper-slide-shadow-top{background-image:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0))}
+
+.swiper-3d .swiper-slide-shadow-bottom{background-image:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,0))}
+
+.swiper-css-mode>.swiper-wrapper{overflow:auto;scrollbar-width:none;-ms-overflow-style:none}
+
+.swiper-css-mode>.swiper-wrapper::-webkit-scrollbar{display:none}
+
+.swiper-css-mode>.swiper-wrapper>.swiper-slide{scroll-snap-align:start start}
+
+.swiper-horizontal.swiper-css-mode>.swiper-wrapper{scroll-snap-type:x mandatory}
+
+.swiper-vertical.swiper-css-mode>.swiper-wrapper{scroll-snap-type:y mandatory}
+
+.swiper-centered>.swiper-wrapper::before{content:'';flex-shrink:0;order:9999}
+
+.swiper-centered.swiper-horizontal>.swiper-wrapper>.swiper-slide:first-child{margin-inline-start:var(--swiper-centered-offset-before)}
+
+.swiper-centered.swiper-horizontal>.swiper-wrapper::before{height:100%;min-height:1px;width:var(--swiper-centered-offset-after)}
+
+.swiper-centered.swiper-vertical>.swiper-wrapper>.swiper-slide:first-child{margin-block-start:var(--swiper-centered-offset-before)}
+
+.swiper-centered.swiper-vertical>.swiper-wrapper::before{width:100%;min-width:1px;height:var(--swiper-centered-offset-after)}
+
+.swiper-centered>.swiper-wrapper>.swiper-slide{scroll-snap-align:center center}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/my-gradient-swiper.vue?vue&type=style&index=0&id=61a4e436&lang=css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+
+
+/* Gradient Carousel Text */
+.gradient_carousel {
+  padding: 70px 0 40px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #e9e7e3 100%);
+}
+.gradient_carousel .swiper {
+  padding-left: 50px;
+}
+.gradient_carousel .swiper-slide {
+  max-width: 407px;
+}
+@media only screen and (max-width: 991px) {
+.gradient_carousel {
+    padding: 50px 0 0;
+    background: transparent;
+}
+.gradient_carousel .swiper {
+    padding-left: 20px;
+}
+}
+@media only screen and (max-width: 480px) {
+.gradient_carousel .swiper-slide {
+    max-width: 70%;
+}
+}
+
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/my-header.vue?vue&type=style&index=0&id=14d0e3c8&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.header_toggle_wrap[data-v-14d0e3c8],
+.mobile_btn_grp[data-v-14d0e3c8],
+.navbar-Mobile[data-v-14d0e3c8] {
+  display: none;
+}
+.header[data-v-14d0e3c8] {
+  padding: 12px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9;
+  transition: 0.5s;
+}
+.header.stickyup[data-v-14d0e3c8]{
+    transform: translateY(-100%);
+}
+.navbar[data-v-14d0e3c8] {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.navlist[data-v-14d0e3c8] {
+  display: grid;
+  gap: 45px;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.navlist-right[data-v-14d0e3c8] {
+  justify-content: flex-end;
+}
+.navitem[data-v-14d0e3c8] {
+  display: flex;
+}
+.navlink[data-v-14d0e3c8],
+.subnavlink[data-v-14d0e3c8] {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  position: relative;
+  font-weight: 400;
+  display: inline-block;
+}
+.nav_btns[data-v-14d0e3c8] {
+  display: grid;
+  gap: 25px;
+  grid-auto-flow: column;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.nav_btns > button[data-v-14d0e3c8] {
+  display: grid;
+  place-items: center;
+}
+.shopping_btn[data-v-14d0e3c8] {
+  position: relative;
+}
+.shopping_btn_count[data-v-14d0e3c8] {
+  position: absolute;
+  bottom: 1px;
+}
+.header_toggle[data-v-14d0e3c8] {
+  position: relative;
+  height: 10px;
+  width: 15px;
+}
+.toggle_bar[data-v-14d0e3c8] {
+  height: 1px;
+  width: 100%;
+  background: #000000;
+  display: block;
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+}
+.toggle_bar-top[data-v-14d0e3c8] {
+  top: 0;
+}
+.toggle_bar-center[data-v-14d0e3c8] {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.toggle_bar-bottom[data-v-14d0e3c8] {
+  bottom: 0;
+}
+.active .toggle_bar-top[data-v-14d0e3c8],
+.active .toggle_bar-bottom[data-v-14d0e3c8] {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: center;
+}
+.active .toggle_bar-center[data-v-14d0e3c8] {
+  opacity: 0;
+}
+.active .toggle_bar-bottom[data-v-14d0e3c8] {
+  transform: translateY(-50%) rotate(-45deg);
+}
+.subnavlink__item[data-v-14d0e3c8] {
+  margin-bottom: 10px;
+  display: flex;
+}
+.nanamoto-basics-crd[data-v-14d0e3c8] {
+  margin-top: 60px;
+  padding: 50px 30px;
+  background: #758f8f;
+  width: 100%;
+}
+.nanamoto-basics-crd img[data-v-14d0e3c8] {
+  display: block;
+}
+.nanamoto-basics-crd-txt[data-v-14d0e3c8] {
+  display: inline-block;
+  margin-top: 25px;
+}
+.nanamoto-basics-crd-txt span[data-v-14d0e3c8]:first-child {
+  margin-bottom: 15px;
+}
+.nanamoto-basics-crd-txt span[data-v-14d0e3c8] {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 400;
+  display: block;
+}
+.navlink__hover[data-v-14d0e3c8] {
+  position: fixed;
+  top: 60px;
+  height: 100%;
+  min-height: 100vh;
+  background: #eae8e4;
+  width: min(100%, 515px);
+  padding: 40px 50px;
+  z-index: 5;
+  overflow-y: scroll;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s linear;
+}
+.navlink__hover[data-v-14d0e3c8]::-webkit-scrollbar {
+  width: 3px;
+}
+.navlink__hover[data-v-14d0e3c8]::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.navlist-left .navlink__hover[data-v-14d0e3c8] {
+  left: 0;
+}
+.navlist-right .navlink__hover[data-v-14d0e3c8] {
+  right: 0;
+}
+.navlink__hover_item[data-v-14d0e3c8] {
+  position: relative;
+  margin-bottom: 60px;
+}
+.subnavlink-heading[data-v-14d0e3c8] {
+  font-weight: 700;
+}
+.first-navitem .subnavlink__list[data-v-14d0e3c8] {
+  width: calc(100% - 170px);
+}
+.hover-img .subnavlink-img[data-v-14d0e3c8] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  display: block;
+}
+.navlist-left .subnavlink-img[data-v-14d0e3c8] {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+}
+.nav_sensebehno__img[data-v-14d0e3c8] {
+  transform: translateX(50px);
+}
+@media (hover: hover) {
+.navlink[data-v-14d0e3c8]:hover {
+    padding-bottom: 40px;
+    margin-bottom: -40px;
+}
+.subnavlink[data-v-14d0e3c8]:hover {
+    color: #767676;
+}
+.navlink:hover + .navlink__hover[data-v-14d0e3c8],
+  .navlink__hover[data-v-14d0e3c8]:hover {
+    opacity: 1;
+    visibility: visible;
+}
+.subnavlink:hover + .subnavlink-img[data-v-14d0e3c8],
+  .subnavlink.hover_active + .subnavlink-img[data-v-14d0e3c8] {
+    z-index: 2;
+}
+}
+@media only screen and (max-width: 1440px) {
+.header[data-v-14d0e3c8] {
+    padding: 10px 20px;
+}
+.navlist[data-v-14d0e3c8] {
+    gap: 25px;
+}
+}
+@media only screen and (max-width: 991px) {
+.header_toggle_wrap[data-v-14d0e3c8],
+  .mobile_btn_grp[data-v-14d0e3c8] {
+    display: flex;
+}
+.desktop_btn_grp[data-v-14d0e3c8],
+  .navlist-left[data-v-14d0e3c8],
+  .navlist-right[data-v-14d0e3c8] {
+    display: none;
+}
+.nav_btns[data-v-14d0e3c8] {
+    margin: 0 0 0 auto;
+}
+.m_navbar_list[data-v-14d0e3c8] {
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    height: 100%;
+    min-height: 100vh;
+    width: min(100%, 300px);
+    background: #f3f3f3;
+    padding: 25px 20px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 0.5s;
+    overflow: scroll;
+}
+.active .m_navbar_list[data-v-14d0e3c8] {
+    left: 0;
+}
+.m_navitem[data-v-14d0e3c8] {
+    margin-top: 18px;
+}
+.nav_drpbtn[data-v-14d0e3c8]::after,
+  .nav_drpbtn[data-v-14d0e3c8]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    transition: 0.2s;
+    transform: translateY(-50%);
+    width: 8px;
+    background-color: #000;
+    transform-origin: center;
+}
+.nav_drpbtn[data-v-14d0e3c8]::before {
+    transform: translateY(-50%) rotate(90deg);
+}
+.nav_drpbtn.active[data-v-14d0e3c8]::before {
+    transform: translateY(-50%);
+}
+.m_drpdown_list[data-v-14d0e3c8] {
+    padding: 15px 0 15px 10px;
+}
+.m_drpdown_item[data-v-14d0e3c8] {
+    font-size: 0;
+    margin-top: 10px;
+}
+.m_drpdown_item[data-v-14d0e3c8]:first-child,
+  .m_subnavlink_item[data-v-14d0e3c8]:first-child,
+  .m_navitem[data-v-14d0e3c8]:first-child {
+    margin: 0;
+}
+.subnavlink[data-v-14d0e3c8] {
+    font-weight: 700;
+}
+.nav_drpbtn_content[data-v-14d0e3c8] {
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.m_subnavlink_list[data-v-14d0e3c8] {
+    padding: 20px 0 15px 10px;
+}
+.m_subnavlink_item[data-v-14d0e3c8] {
+    margin-top: 10px;
+}
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-2.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[7].use[0]!./src/vue/components/render/my-swapper.vue?vue&type=style&index=0&id=623907ab&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* featured carousel */
+.featured_carousel {
+  background: #f1f1f1;
+  padding: 20px 0 60px;
+}
+.featured_carousel_heading {
+  margin: 0px 0 20px 15px;
+}
+.featured_carousel .swiper-slide {
+  max-width: 397px;
+}
+.featured_carousel .swiper {
+  padding-left: 15px;
+}
+@media only screen and (max-width: 991px) {
+.featured_carousel .swiper {
+    padding-left: 5px;
+}
+}
+@media only screen and (max-width: 768px) {
+.featured_carousel {
+    padding: 10px 0 50px;
+}
+}
+@media only screen and (max-width: 480px) {
+.featured_carousel .swiper-slide {
+    max-width: 70%;
+}
+}
+

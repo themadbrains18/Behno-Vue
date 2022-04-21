@@ -8,3 +8,37 @@
 </render-my-gradient-swiper>
 
 
+{% schema %}
+{
+   "name": "t:sections.home_gradient_slider.name",
+   "blocks": [
+     {
+       "type": "slide",
+       "name": "t:sections.home_gradient_slider.blocks.name",
+       "settings": [
+         {
+           "id": "image",
+           "type": "image_picker",
+           "label": "t:sections.home_gradient_slider.blocks.settings.image.label"
+         },
+         {
+           "id": "title",
+           "type": "text",
+           "label": "t:sections.home_gradient_slider.blocks.settings.title.label"
+         },
+         {
+           "id": "link",
+           "type": "url",
+           "label": "t:sections.home_gradient_slider.blocks.settings.link.label"
+         }
+       ]
+     }
+   ],
+   "presets": [
+     {
+       "name": "t:sections.home_gradient_slider.name",
+       "category": "ADVANCED LAYOUT"
+     }
+   ]
+ }
+{% endschema %}

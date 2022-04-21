@@ -4,7 +4,10 @@
   <section class="grid_two big_container">
     <div class="grid_item" v-for="(value, key) in shopifyData.box" :key="key">
       <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="grid_img" :src="getImage(key)" alt="Hero Image" />
+        <v-lazy-image class="grid_img" 
+        :src="getImage(key,'src')" 
+        :src-placeholder="getImage(key,'placeholder')" 
+        alt="Hero Image" />
       </a>
       <div class="grid_info">
         <h3 class="card_heading grid_heading">{{ value.title }}</h3>
@@ -54,13 +57,12 @@ export default {
     this.getHref();
   },
   methods: {
-    getImage($name) {
+    getImage($name,type = 'src') {
       var imgObj = this.shopifyData.box;
       var ImgSrc = "";
-
       for (let data in imgObj) {
         if ($name == data) {
-          ImgSrc = imgObj[data].imgUrl;
+           ImgSrc = imgObj[data].imgUrl[type];
         } else {
           continue;
         }

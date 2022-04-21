@@ -55,25 +55,24 @@ export default {
     this.getHref();
   },
   methods: {
-    getImage($key) {
+    getImage($name,type = 'src') {
       var imgObj = this.shopifyData.box;
       var ImgSrc = "";
-
       for (let data in imgObj) {
-        if ($key == data) {
-          ImgSrc = imgObj[data].imgUrl;
+        if ($name == data) {
+           ImgSrc = imgObj[data].imgUrl[type];
         } else {
           continue;
         }
       }
       return ImgSrc;
     },
-    getHref($key) {
+    getHref($name) {
       var imgObj = this.shopifyData.box;
       var ImgSrc = "";
 
       for (let data in imgObj) {
-        if ($key == data) {
+        if ($name == data) {
           ImgSrc = imgObj[data].link;
         } else {
           continue;

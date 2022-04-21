@@ -7,3 +7,40 @@
           }"
         >
 </render-home-grid-text-image>
+
+
+{% schema %}
+{
+  "name": "t:sections.home_grid_text_image.name",
+  "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "t:sections.home_grid_text_image.settings.title.label",
+      "default": "Title"
+    },
+    {
+      "id": "btnText",
+      "type": "text",
+      "label": "t:sections.home_grid_text_image.settings.btntext.label",
+      "default": "Title"
+    },
+	{
+    "id": "link",
+    "type": "url",
+	"label": "t:sections.home_grid_text_image.settings.link.label"
+	},
+    {
+      "id": "heroImage",
+      "type": "image_picker",
+      "label": "t:sections.home_grid_text_image.settings.image.label"
+    }
+  ],
+  "presets": [
+      {
+        "name": "t:sections.home_grid_text_image.name",
+        "category": "ADVANCED LAYOUT"
+      }	
+  ]
+}
+{% endschema %}

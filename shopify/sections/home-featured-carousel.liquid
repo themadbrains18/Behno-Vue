@@ -7,6 +7,27 @@
 
 </render-my-swapper>
 
-{% stylesheet %}
-
-{% endstylesheet %}
+{% schema %}
+{
+   "name": "t:sections.home_featured_slider.name",
+   "blocks": [
+     {
+       "type": "slide",
+       "name": "t:sections.home_featured_slider.blocks.name",
+       "settings": [
+         {
+           "id": "image",
+           "type": "image_picker",
+           "label": "t:sections.home_featured_slider.blocks.settings.image.label"
+         }
+       ]
+     }
+   ],
+   "presets": [
+     {
+       "name": "t:sections.home_featured_slider.name",
+       "category": "ADVANCED LAYOUT"
+     }
+   ]
+ }
+{% endschema %}
