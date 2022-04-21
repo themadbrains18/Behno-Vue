@@ -90,6 +90,7 @@
                       <a
                         href="https://behno.com/collections/simone-series"
                         class="subnavlink"
+                        @mouseover="subnavlinkHover"
                       >
                         SIMONE FLAP CROSSBODIES
                       </a>
@@ -107,6 +108,7 @@
                       <a
                         href="https://behno.com/collections/lex-accordion"
                         class="subnavlink"
+                        @mouseover="subnavlinkHover"
                       >
                         LEX ACCORDIONS
                       </a>
@@ -124,6 +126,7 @@
                       <a
                         href="https://behno.com/collections/tilda-saddle-bag-series"
                         class="subnavlink"
+                        @mouseover="subnavlinkHover"
                       >
                         TILDA SADDLE BAGS
                       </a>
@@ -146,7 +149,11 @@
                       </span>
                     </li>
                     <li class="subnavlink__item">
-                      <a href="/collections/ina-bag-series" class="subnavlink">
+                      <a
+                        href="/collections/ina-bag-series"
+                        class="subnavlink"
+                        @mouseover="subnavlinkHover"
+                      >
                         INA &amp; TINA BUCKET BAGS
                       </a>
                       <a
@@ -163,6 +170,7 @@
                       <a
                         href="/collections/ana-ruched-series"
                         class="subnavlink"
+                        @mouseover="subnavlinkHover"
                       >
                         ANA RUCHED BAGS
                       </a>
@@ -180,6 +188,7 @@
                       <a
                         href="/collections/elizabeth-baguette-series"
                         class="subnavlink"
+                        @mouseover="subnavlinkHover"
                       >
                         ELIZABETH BAGUETTES
                       </a>
@@ -194,7 +203,11 @@
                     </li>
 
                     <li class="subnavlink__item">
-                      <a href="/collections/mary-bag-series" class="subnavlink">
+                      <a
+                        href="/collections/mary-bag-series"
+                        class="subnavlink"
+                        @mouseover="subnavlinkHover"
+                      >
                         MARY BOX BAGS
                       </a>
                       <a
@@ -208,7 +221,11 @@
                     </li>
 
                     <li class="subnavlink__item">
-                      <a href="/collections/frida" class="subnavlink">
+                      <a
+                        href="/collections/frida"
+                        class="subnavlink"
+                        @mouseover="subnavlinkHover"
+                      >
                         FRIDA FLAT TOTES
                       </a>
                       <a
@@ -641,10 +658,9 @@
   transition: 0.5s;
 }
 
-.header.stickyup{
-    transform: translateY(-100%);
+.header.stickyup {
+  transform: translateY(-100%);
 }
-
 
 .navbar {
   display: grid;
@@ -943,7 +959,6 @@
 
 
 <script >
-
 import VLazyImage from "v-lazy-image";
 
 export default {
@@ -1029,13 +1044,21 @@ export default {
     scollHeader(e) {
       let header = document.querySelector(".header");
       if (window.scrollY >= this.lastScrollY) {
-          header.classList.add("stickyup");
+        header.classList.add("stickyup");
       } else {
-          header.classList.remove("stickyup");
+        header.classList.remove("stickyup");
       }
       this.lastScrollY = window.scrollY;
     },
+    subnavlinkHover(e) {
+      let alreadyActive = e.currentTarget
+        .closest(".subnavlink__list")
+        .querySelector(".hover_active");
+      if (alreadyActive) {
+        alreadyActive.classList.remove("hover_active");
+      }
+      e.currentTarget.classList.add("hover_active");
+    },
   },
 };
-
 </script>
