@@ -1,10 +1,9 @@
-
 <template>
   <div>
     <!-- featured Carousel -->
     <section class="featured_carousel big_container modify-slider">
       <h2 class="card_heading featured_carousel_heading">
-        FEATURED IN
+         FEATURED IN 
       </h2>
       <swiper
         :modules="modules"
@@ -81,12 +80,9 @@
       </swiper>
     </section>
   </div>
-
-  
 </template>
 
 <style >
-
 /* featured carousel */
 .featured_carousel {
   background: #f1f1f1;
@@ -104,7 +100,6 @@
 }
 
 @media only screen and (max-width: 991px) {
-
   .featured_carousel .swiper {
     padding-left: 5px;
   }
@@ -115,12 +110,10 @@
   }
 }
 @media only screen and (max-width: 480px) {
- 
   .featured_carousel .swiper-slide {
     max-width: 70%;
   }
 }
-  
 </style>
 
 <script>
@@ -129,7 +122,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper";
 // Import Swiper styles
 
-  import 'swiper/css';
+import "swiper/css";
 
 export default {
   components: {

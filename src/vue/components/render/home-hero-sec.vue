@@ -1,13 +1,14 @@
 <template>
   <!-- Hero Section -->
   <section class="hero_sec t-center big_container">
-    <h1 class="main_heading heroheading_top">The World’s Finest,</h1>
-    <img
-      class="hero_img"
-      src="{{ 'hero-img.jpg' | asset_url }}"
-      alt="Hero Image"
+    <h1 class="main_heading heroheading_top">{{ shopifyData.heading }}</h1>
+    
+     <v-lazy-image class="hero_img" 
+     :src="getImage('heroImage')" 
+     alt="Hero Image"
     />
-    <h1 class="main_heading heroheading_bottom">Consciously Made Handbags.</h1>
+    <h1 class="main_heading heroheading_bottom">{{ shopifyData.subHeading }}</h1>
+    
   </section>
 </template>
 
@@ -37,3 +38,35 @@
 </style>
 
  
+<script>
+import VLazyImage from "v-lazy-image";
+
+export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+  created: function () {
+    this.getImage();
+  },
+  methods: {
+    getImage($name) {
+      var imgObj = this.shopifyData;
+      var ImgSrc = "";
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj[data];
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+  },
+};
+</script>

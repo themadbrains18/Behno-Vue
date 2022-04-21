@@ -70,16 +70,17 @@
   </div>
 </template>
 
-
 <style>
 /* Footer Css Code */
 .footer_wave {
   line-height: 0;
 }
+
 .footer_wave_img {
   line-height: 0;
   width: 100%;
 }
+
 .footer {
   padding: 70px 0 76px;
   background-color: #e9e7e3;
@@ -186,20 +187,22 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .footer {
     padding: 30px 0 30px;
   }
+
   .footer_content {
     grid-template-columns: 1fr;
   }
+
   .footer_form {
     grid-row-start: -1;
     max-width: 500px;
   }
 }
 </style>
- 
 
 <script>
 import VLazyImage from "v-lazy-image";
@@ -220,7 +223,6 @@ export default {
   methods: {
     getImage($name) {
       var imgObj = this.shopifyData;
-      console.log(imgObj);
 
       var ImgSrc = "";
       for (let item in imgObj) {

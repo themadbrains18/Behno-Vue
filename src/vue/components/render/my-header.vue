@@ -874,6 +874,7 @@
     top: 0px;
     left: -100%;
     height: 100%;
+    min-height: 100vh;
     width: min(100%, 300px);
     background: #f3f3f3;
     padding: 25px 20px;
@@ -884,8 +885,6 @@
     align-items: flex-start;
     transition: 0.5s;
     overflow: scroll;
-    height: 100%;
-    min-height: 100vh;
   }
   .active .m_navbar_list {
     left: 0;
@@ -971,7 +970,6 @@ export default {
   methods: {
     getImage($name) {
       var imgObj = this.shopifyData;
-      console.log(imgObj);
 
       var ImgSrc = "";
       for (let item in imgObj) {

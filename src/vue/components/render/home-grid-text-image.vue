@@ -1,5 +1,8 @@
 <template>
   <!-- Grid Text image -->
+
+
+
   <section class="grid_text_image big_container">
     <div class="grid_item">
       <h2 class="main_heading grid_text_image_heading color-white">
@@ -9,11 +12,7 @@
     </div>
     <div class="grid_item grid_item_img">
       <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <img
-          class="grid_img"
-          src="{{ 'sense-behno.jpg' | asset_url }}"
-          alt=""
-        />
+        <v-lazy-image class="grid_img" :src="getImage('senseBehno')" alt="Hero Image" />
       </a>
     </div>
   </section>
@@ -46,3 +45,50 @@
 }
 </style>
 
+<script>
+import VLazyImage from "v-lazy-image";
+
+export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+  created: function () {
+    this.getImage();
+    this.getHref();
+  },
+  methods: {
+    getImage($name) {
+      var imgObj = this.shopifyData;
+      var ImgSrc = "";
+
+      for (let data in imgObj) {
+        console.log(data);
+        if ($name == data) {
+          ImgSrc = imgObj.senseBehno;
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+    getHref($name) {
+      var imgObj = this.shopifyData;
+      var ImgSrc = "";
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj.link;
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+  },
+};
+</script>
