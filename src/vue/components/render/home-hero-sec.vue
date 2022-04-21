@@ -1,10 +1,12 @@
 <template>
   <!-- Hero Section -->
+  
+
   <section class="hero_sec t-center big_container">
-    <h1 class="main_heading heroheading_top">{{ shopifyData.heading }}</h1>
-    
+    <h1 class="main_heading heroheading_top">{{ shopifyData.heading }} </h1>
      <v-lazy-image class="hero_img" 
-     :src="getImage('heroImage')" 
+     :src="getImage('imgSrc')" 
+     :src-placeholder="getImage('placeHolder')"
      alt="Hero Image"
     />
     <h1 class="main_heading heroheading_bottom">{{ shopifyData.subHeading }}</h1>
@@ -56,7 +58,7 @@ export default {
   },
   methods: {
     getImage($name) {
-      var imgObj = this.shopifyData;
+      var imgObj = this.shopifyData.heroImage;
       var ImgSrc = "";
       for (let data in imgObj) {
         if ($name == data) {

@@ -68,7 +68,6 @@ export default {
       var ImgSrc = "";
 
       for (let data in imgObj) {
-        console.log(data);
         if ($name == data) {
           ImgSrc = imgObj.senseBehno;
         } else {

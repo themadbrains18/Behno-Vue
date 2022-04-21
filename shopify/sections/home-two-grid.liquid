@@ -11,3 +11,42 @@
                  }]
           }">
 </render-home-two-grid>
+
+
+
+{% schema %}
+{
+   "name": "t:sections.home_two_grid.name",
+   "max_blocks": 6,
+   "blocks": [
+     {
+       "type": "slide",
+       "name": "Slide",
+       "limit": 2,
+       "settings": [
+         {
+           "id": "image",
+           "type": "image_picker",
+           "label": "Image"
+         },
+         {
+           "id": "title",
+           "type": "text",
+           "label": "t:sections.home_two_grid.blocks.name"
+         },
+         {
+           "id": "link",
+           "type": "url",
+           "label": "zdfdfsfsdf"
+         }
+       ]
+     }
+   ],
+   "presets": [
+     {
+       "name": "t:sections.home_two_grid.name",
+       "category": "ADVANCED LAYOUT"
+     }
+   ]
+ }
+{% endschema %}
