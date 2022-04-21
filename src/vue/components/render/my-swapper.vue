@@ -16,7 +16,7 @@
             <a href="#" class="grid_img-wrap line-h-0 d-block">
               <img
                 class="grid_img"
-                src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685"
+                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
                 alt=""
               />
             </a>
@@ -27,7 +27,7 @@
             <a href="#" class="grid_img-wrap line-h-0 d-block">
               <img
                 class="grid_img"
-                src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685"
+                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
                 alt=""
               />
             </a>
@@ -38,7 +38,7 @@
             <a href="#" class="grid_img-wrap line-h-0 d-block">
               <img
                 class="grid_img"
-                src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685"
+                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
                 alt=""
               />
             </a>
@@ -49,7 +49,7 @@
             <a href="#" class="grid_img-wrap line-h-0 d-block">
               <img
                 class="grid_img"
-                src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685"
+                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
                 alt=""
               />
             </a>
@@ -60,7 +60,7 @@
             <a href="#" class="grid_img-wrap line-h-0 d-block">
               <img
                 class="grid_img"
-                src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685"
+                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
                 alt=""
               />
             </a>
@@ -71,7 +71,7 @@
             <a href="#" class="grid_img-wrap line-h-0 d-block">
               <img
                 class="grid_img"
-                src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685"
+                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
                 alt=""
               />
             </a>

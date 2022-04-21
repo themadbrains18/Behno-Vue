@@ -93,9 +93,19 @@ module.exports = {
     new CopyWebpackPlugin(
       {
         patterns: [
-          { from: './src/assets', to: './' }
+          { from: './src/assets/images/', to: './'},
+          { from: './src/assets/fonts', to: './' },
+          { from: './src/assets/svg', to: './' }
         ],
       })
 
   ]
 }
+
+// { from: './src/assets/svg', to: './'},
+//           { from: './src/assets/fonts', to: './' }
+// "./src/assets/images",
+// "./src/assets/svg",
+// "./src/assets/fonts"
+// { from: './src/assets/images', to: './' },
+// { from: './src/assets/svg', to: './' }

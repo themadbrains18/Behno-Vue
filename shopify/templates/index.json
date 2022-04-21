@@ -3,9 +3,6 @@
     "hero-section": {
       "type": "home-hero-sec"
     },
-    "example": {
-      "type": "vue-examples"
-    },
     "two-grid": {
       "type": "home-two-grid"
     },

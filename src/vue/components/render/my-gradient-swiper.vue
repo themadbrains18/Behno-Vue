@@ -1,18 +1,19 @@
 
 <template>
      <!-- Gradient Carousel -->
+
   <section class="gradient_carousel big_container modify-slider">
     <swiper
       :modules="modules"
       :slidesPerView="'auto'"
       :spaceBetween="20"
       navigation
-    >
+    > 
       <swiper-slide>
         <div class="grid_item gradient_carousel_item">
           <a href="#" class="grid_img-wrap line-h-0 d-block">
             <img
-              class="grid_img" src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685" alt="" />
+              class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
           </a>
           <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
           <a href="#" class="link body_text"> Clickable link. </a>
@@ -21,7 +22,7 @@
       <swiper-slide>
         <div class="grid_item gradient_carousel_item">
           <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685" alt="" />
+            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
           </a>
           <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
           <a href="#" class="link body_text"> Clickable link. </a>
@@ -30,7 +31,7 @@
       <swiper-slide>
         <div class="grid_item gradient_carousel_item">
           <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685" alt="" />
+            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
           </a>
           <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
           <a href="#" class="link body_text"> Clickable link. </a>
@@ -39,7 +40,7 @@
       <swiper-slide>
         <div class="grid_item gradient_carousel_item">
           <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685" alt="" />
+            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
           </a>
           <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
           <a href="#" class="link body_text"> Clickable link. </a>
@@ -48,7 +49,7 @@
       <swiper-slide>
         <div class="grid_item gradient_carousel_item">
           <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685" alt="" />
+            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
           </a>
           <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
           <a href="#" class="link body_text"> Clickable link. </a>
@@ -58,7 +59,7 @@
         <div class="grid_item gradient_carousel_item">
           <a href="#" class="grid_img-wrap line-h-0 d-block">
             <img
-              class="grid_img" src="http://cdn.shopify.com/s/files/1/0577/1178/8125/t/3/assets/grid-three.jpg?v=4448133654909769685" alt="" />
+              class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
           </a>
           <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
           <a href="#" class="link body_text"> Clickable link. </a>

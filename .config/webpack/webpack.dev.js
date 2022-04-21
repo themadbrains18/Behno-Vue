@@ -3,7 +3,6 @@ const { merge } = require('webpack-merge')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const common = require('./webpack.common.js')
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = merge(common, {
@@ -24,12 +23,5 @@ module.exports = merge(common, {
       configFile: path.resolve(__dirname, '../.stylelintrc.js')
     }),
     
-    new CopyWebpackPlugin(
-      {
-        patterns: [
-          { from: './src/assets', to: './' }
-        ],
-      })
-  
   ]
 })
