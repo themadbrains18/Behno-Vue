@@ -89,6 +89,9 @@
         "settings": {
           "image": {
             "label": "Upload Image"
+          },
+          "link": {
+            "label": "link"
           }
         }
       }

@@ -63,12 +63,15 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper";
+import VLazyImage from "v-lazy-image";
+
 import "swiper/css";
 
 export default {
   components: {
     Swiper,
     SwiperSlide,
+    VLazyImage,
   },
   setup() {
     return {
