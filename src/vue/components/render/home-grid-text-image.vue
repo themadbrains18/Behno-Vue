@@ -1,18 +1,15 @@
 <template>
   <!-- Grid Text image -->
-
-
-
   <section class="grid_text_image big_container">
     <div class="grid_item">
       <h2 class="main_heading grid_text_image_heading color-white">
-        An honest accessory.
+        {{ shopifyData.secHeading }}
       </h2>
-      <a href="#" class="cta_btn bg-white"> THE SENSE OF BEHNO </a>
+      <a  :href="getHref(link)" class="cta_btn bg-white"> {{ shopifyData.btnText }} </a>
     </div>
     <div class="grid_item grid_item_img">
-      <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="grid_img" :src="getImage('senseBehno')" alt="Hero Image" />
+      <a  :href="getHref(link)" class="grid_img-wrap line-h-0 d-block">
+        <v-lazy-image class="grid_img" :src="getImage('image')" />
       </a>
     </div>
   </section>
@@ -69,7 +66,7 @@ export default {
 
       for (let data in imgObj) {
         if ($name == data) {
-          ImgSrc = imgObj.senseBehno;
+          ImgSrc = imgObj.image;
         } else {
           continue;
         }

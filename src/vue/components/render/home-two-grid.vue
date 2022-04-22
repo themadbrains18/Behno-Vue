@@ -1,6 +1,5 @@
 <template>
   <!-- Grid Two  -->
-  {{ box }}
   <section class="grid_two big_container">
     <div class="grid_item" v-for="(value, key) in shopifyData.box" :key="key">
       <a href="#" class="grid_img-wrap line-h-0 d-block">
@@ -11,7 +10,7 @@
       </a>
       <div class="grid_info">
         <h3 class="card_heading grid_heading">{{ value.title }}</h3>
-        <a :href="getHref(key)" class="link body_text"> Clickable link. </a>
+        <a :href="getHref(key)" class="link body_text"> {{ value.linkText }} </a>
       </div>
     </div>
   </section>

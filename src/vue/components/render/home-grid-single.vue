@@ -2,12 +2,12 @@
   <!-- Grid Single  -->
   <section class="grid_single big_container">
     <div class="grid_item">
-      <a :href="getHref('link')" class="grid_img-wrap line-h-0 d-block">
+      <a :href="getHref(link)" class="grid_img-wrap line-h-0 d-block">
         <v-lazy-image class="grid_img" :src="getImage('imgUrl')" alt="Hero Image" />
       </a>
       <div class="grid_info">
         <h3 class="card_heading grid_heading">{{ shopifyData.title }}</h3>       
-        <a :href="getHref('link')" class="link body_text"> Clickable link. </a>
+        <a :href="getHref(link)"  class="link body_text"> {{ shopifyData.linktext }} </a>
       </div>
     </div>
   </section>

@@ -1,9 +1,13 @@
 <render-home-grid-single :shopify-data="{
-          imgUrl : '{{ 'grid-single.jpg' | asset_url }}',
-          title  : 'TITLE OF THE EDIT.',
-          link   : '#'
+          imgUrl : '{{ section.settings.image | img_url }}',
+          title  : '{{ section.settings.title }}',
+          linktext : '{{ section.settings.linkText }}',
+          link   : '{{ section.settings.link }}'
           }">
 </render-home-grid-single>
+
+
+
 
 
 {% schema %}
@@ -19,6 +23,11 @@
         "id": "title",
         "type": "text",
         "label": "t:sections.home_single_grid.settings.title.label"
+      },
+	  {
+        "id": "linkText",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.clickablelink.label"
       },
       {
         "id": "link",

@@ -4,11 +4,13 @@
 
   <section class="hero_sec t-center big_container">
     <h1 class="main_heading heroheading_top">{{ shopifyData.heading }} </h1>
-     <v-lazy-image class="hero_img" 
-     :src="getImage('imgSrc')" 
-     :src-placeholder="getImage('placeHolder')"
-     alt="Hero Image"
-    />
+    <a :href="getHref(link)" >
+      <v-lazy-image class="hero_img" 
+      :src="getImage('imgSrc')" 
+      :src-placeholder="getImage('placeHolder')"
+      alt="Hero Image"
+      />
+    </a>
     <h1 class="main_heading heroheading_bottom">{{ shopifyData.subHeading }}</h1>
     
   </section>
@@ -55,6 +57,7 @@ export default {
   },
   created: function () {
     this.getImage();
+    this.getHref();
   },
   methods: {
     getImage($name) {
@@ -68,6 +71,19 @@ export default {
         }
       }
       return ImgSrc;
+    },
+    getHref($key) {
+      var imgObj = this.shopifyData;
+      var link = "";
+      
+      for (let data in imgObj) {
+        if ($key == data) {
+          link = imgObj.link;
+        } else {
+          continue;
+        }
+      }
+      return link;
     },
   },
 };

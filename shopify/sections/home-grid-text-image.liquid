@@ -1,6 +1,8 @@
-
 <render-home-grid-text-image :shopify-data="{
-            senseBehno: '{{ 'sense-behno.jpg' | asset_url }}',
+            secHeading: '{{ section.settings.secHeading }}',
+            btnText: '{{ section.settings.btnText }}',
+            link: '{{ section.settings.link }}',
+            image: '{{ section.settings.image | img_url : "" }}',
             shopDomain: '{{ shop.domain }}',
             shopEmail: '{{ shop.email }}',
             shopCurrency: '{{ shop.currency }}'
@@ -31,7 +33,7 @@
 	"label": "t:sections.home_grid_text_image.settings.link.label"
 	},
     {
-      "id": "heroImage",
+      "id": "image",
       "type": "image_picker",
       "label": "t:sections.home_grid_text_image.settings.image.label"
     }

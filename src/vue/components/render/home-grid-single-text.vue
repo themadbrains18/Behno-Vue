@@ -2,19 +2,19 @@
   <!-- Grid Single Text -->
   <section class="grid_single_text big_container">
     <div class="grid_item">
-      <a href="#" class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="grid_img" :src="getImage('heroImage')" />
+      <a  :href="getHref(btnlink)"  class="grid_img-wrap line-h-0 d-block">
+        <v-lazy-image class="grid_img" :src="getImage('image')" />
 
         <div class="grid_img_text-wrap">
-          <span class="grid_img_text grid_img_text-first"> BAG </span>
-          <span class="grid_img_text grid_img_text-second"> OF </span>
-          <span class="grid_img_text grid_img_text-third"> THE </span>
-          <span class="grid_img_text grid_img_text-fourth"> MOMENT. </span>
+          <span class="grid_img_text grid_img_text-first"> {{ shopifyData.toptext }} </span>
+          <span class="grid_img_text grid_img_text-second"> {{ shopifyData.middletop }} </span>
+          <span class="grid_img_text grid_img_text-third"> {{ shopifyData.middlebottom }} </span>
+          <span class="grid_img_text grid_img_text-fourth"> {{ shopifyData.bottomtext }} </span>
         </div>
       </a>
       <div class="grid_info">
-        <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-        <a href="#" class="link body_text"> Clickable link. </a>
+        <h3 class="card_heading grid_heading">  {{ shopifyData.title }} </h3>
+        <a  :href="getHref(btnlink)" class="link body_text"> {{ shopifyData.btntext }} </a>
       </div>
     </div>
   </section>
@@ -99,6 +99,7 @@
   },
   created: function () {
     this.getImage();
+    this.getHref();
   },
   methods: {
     getImage($name) {
@@ -113,8 +114,20 @@
           continue;
         }
       }
-
       return ImgSrc;
+    },
+    getHref($key) {
+      var imgObj = this.shopifyData;
+      var link = "";
+      
+      for (let data in imgObj) {
+        if ($key == data) {
+          link = imgObj.link;
+        } else {
+          continue;
+        }
+      }
+      return link;
     },
   },
 };

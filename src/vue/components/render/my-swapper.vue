@@ -2,77 +2,21 @@
   <div>
     <!-- featured Carousel -->
     <section class="featured_carousel big_container modify-slider">
-      <h2 class="card_heading featured_carousel_heading">
-         FEATURED IN 
-      </h2>
+      <h2 class="card_heading featured_carousel_heading">FEATURED IN</h2>
       <swiper
         :modules="modules"
         :slidesPerView="'auto'"
         :spaceBetween="10"
         navigation
       >
-        <swiper-slide>
+        <swiper-slide v-for="(value, key) in shopifyData.box" :key="key">
           <div class="grid_item featured_carousel_item">
-            <a href="#" class="grid_img-wrap line-h-0 d-block">
-              <img
+            <a :href="getHref(key)" class="grid_img-wrap line-h-0 d-block">
+              <v-lazy-image
                 class="grid_img"
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
-                alt=""
-              />
-            </a>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="grid_item featured_carousel_item">
-            <a href="#" class="grid_img-wrap line-h-0 d-block">
-              <img
-                class="grid_img"
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
-                alt=""
-              />
-            </a>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="grid_item featured_carousel_item">
-            <a href="#" class="grid_img-wrap line-h-0 d-block">
-              <img
-                class="grid_img"
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
-                alt=""
-              />
-            </a>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="grid_item featured_carousel_item">
-            <a href="#" class="grid_img-wrap line-h-0 d-block">
-              <img
-                class="grid_img"
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
-                alt=""
-              />
-            </a>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="grid_item featured_carousel_item">
-            <a href="#" class="grid_img-wrap line-h-0 d-block">
-              <img
-                class="grid_img"
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
-                alt=""
-              />
-            </a>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="grid_item featured_carousel_item">
-            <a href="#" class="grid_img-wrap line-h-0 d-block">
-              <img
-                class="grid_img"
-                src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685"
-                alt=""
+                :src="getImage(key, 'src')"
+                :src-placeholder="getImage(key, 'placeholder')"
+                alt="Hero Image"
               />
             </a>
           </div>
@@ -117,11 +61,8 @@
 </style>
 
 <script>
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper";
-// Import Swiper styles
-
 import "swiper/css";
 
 export default {
@@ -138,6 +79,38 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
+    },
+  },
+  
+  created: function () {
+    this.getImage();
+    this.getHref();
+  },
+  methods: {
+    getImage($name,type = 'src') {
+      var imgObj = this.shopifyData.box;
+      var ImgSrc = "";
+      for (let data in imgObj) {
+        if ($name == data) {
+           ImgSrc = imgObj[data].imgUrl[type];
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+    getHref($name) {
+      var imgObj = this.shopifyData.box;
+      var ImgSrc = "";
+
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj[data].link;
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
     },
   },
 };

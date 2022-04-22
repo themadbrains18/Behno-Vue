@@ -1,6 +1,12 @@
 <render-home-grid-single-text :shopify-data="{
-            heroImage: '{{ 'grid-single-text.jpg' | asset_url }}',
-         
+            image: '{{ section.settings.image | img_url }}',
+  		  	title: '{{ section.settings.title }}',
+     	 	btntext: '{{ section.settings.linkText }}',
+  			btnlink: '{{ section.settings.link }}',
+			toptext: '{{ section.settings.toptext }}',
+			middletop: '{{ section.settings.middletop }}',
+			middlebottom: '{{ section.settings.middlebottom }}',
+			bottomtext: '{{ section.settings.bottomtext }}',
           }"
         >
 </render-home-grid-single-text>
@@ -20,6 +26,11 @@
         "id": "title",
         "type": "text",
         "label": "t:sections.home_grid_single_text.settings.title.label"
+      },
+ 	  {
+        "id": "linkText",
+        "type": "text",
+        "label": "t:sections.home_grid_single_text.settings.btntext.label"
       },
       {
         "id": "link",

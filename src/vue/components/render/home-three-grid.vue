@@ -7,7 +7,7 @@
       </a>
       <div class="grid_info">
         <h3 class="card_heading grid_heading">{{ value.title }}</h3>
-        <a :href="getHref(key)" class="link body_text"> Clickable link. </a>
+        <a :href="getHref(key)" class="link body_text"> {{ value.linkText }} </a>
       </div>
     </div>
   </section>

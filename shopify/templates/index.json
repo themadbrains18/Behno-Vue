@@ -1,32 +1,170 @@
 {
   "sections": {
     "hero-section": {
-      "type": "home-hero-sec"
+      "type": "home-hero-sec",
+      "settings": {
+        "heroHeading": "The World’s Finest,",
+        "herosubHeading": "Consciously Made Handbags.",
+        "heroImage": "shopify:\/\/shop_images\/hero-img.jpg"
+      }
     },
     "two-grid": {
-      "type": "home-two-grid"
+      "type": "home-two-grid",
+      "blocks": {
+        "3a830e12-b092-4329-a9e4-dbc899bdb68a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-two.jpg",
+            "title": "TITLE OF THE EDIT. dadsa",
+            "linkText": "Clickable link. adasdasd",
+            "link": "#"
+          }
+        },
+        "223545bc-72f6-4216-9449-bd8b2f93d29c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-two1.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "3a830e12-b092-4329-a9e4-dbc899bdb68a",
+        "223545bc-72f6-4216-9449-bd8b2f93d29c"
+      ],
+      "settings": {
+      }
     },
     "three-grid": {
-      "type": "home-three-grid"
+      "type": "home-three-grid",
+      "blocks": {
+        "3905778f-0852-4482-8b4b-756436a08678": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "#"
+          }
+        },
+        "6e5143f4-b9c0-4fb0-9bba-5446bf01735b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three1.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link",
+            "link": "#"
+          }
+        },
+        "b5c511cc-bd8e-4a6a-bcab-2ad9623757eb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three2.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "3905778f-0852-4482-8b4b-756436a08678",
+        "6e5143f4-b9c0-4fb0-9bba-5446bf01735b",
+        "b5c511cc-bd8e-4a6a-bcab-2ad9623757eb"
+      ],
+      "settings": {
+      }
     },
     "featured-carousel": {
-      "type": "home-featured-carousel"
+      "type": "home-featured-carousel",
+      "blocks": {
+        "0b06f130-294d-4409-ac49-a23a921f91da": {
+          "type": "slide",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "0b06f130-294d-4409-ac49-a23a921f91da"
+      ],
+      "settings": {
+      }
     },
     "grid-single": {
-      "type": "home-grid-single"
+      "type": "home-grid-single",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/grid-single.jpg",
+        "title": "TITLE OF THE EDIT",
+        "linkText": "Clickable link",
+        "link": "#"
+      }
     },
     "grid-text-single": {
-      "type": "home-grid-text-image"
+      "type": "home-grid-text-image",
+      "settings": {
+        "secHeading": "An honest accessory.",
+        "btnText": "THE SENSE OF BEHNO",
+        "link": "#",
+        "image": "shopify:\/\/shop_images\/sense-behno.jpg"
+      }
     },
     "gradient-carousel": {
-      "type": "home-gradient-carousel"
+      "type": "home-gradient-carousel",
+      "blocks": {
+        "4780890f-f9fa-43cd-970d-2ce9805bd299": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three.jpg",
+            "title": "sdfsdf",
+            "linkText": "sdfsdf",
+            "link": "#"
+          }
+        },
+        "0036d78c-c2ab-48ec-8cc5-bd1deeae49c1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three.jpg",
+            "title": "fsdf",
+            "linkText": "sdf",
+            "link": "#"
+          }
+        },
+        "4b9f34fb-5387-48b9-8ee9-3bf0e89943ad": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three.jpg",
+            "title": "asdasd",
+            "linkText": "asdasd",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "4780890f-f9fa-43cd-970d-2ce9805bd299",
+        "0036d78c-c2ab-48ec-8cc5-bd1deeae49c1",
+        "4b9f34fb-5387-48b9-8ee9-3bf0e89943ad"
+      ],
+      "settings": {
+      }
     },
     "grid-single-text": {
-      "type": "home-grid-single-text"
+      "type": "home-grid-single-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/grid-single-text.jpg",
+        "title": "TITLE OF THE EDIT.",
+        "linkText": "Clickable link.",
+        "link": "#",
+        "toptext": "BAG",
+        "middletop": "OF",
+        "middlebottom": "THE",
+        "bottomtext": "MOMENT."
+      }
     },
-    
     "main": {
-      "type": "main-index"
+      "type": "main-index",
+      "settings": {
+      }
     }
   },
   "order": [

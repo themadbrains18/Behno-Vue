@@ -9,62 +9,21 @@
       :spaceBetween="20"
       navigation
     > 
-      <swiper-slide>
+      <swiper-slide v-for="(value, key) in shopifyData.box" :key="key">
         <div class="grid_item gradient_carousel_item">
-          <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img
-              class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
+          <a :href="getHref(key)" class="grid_img-wrap line-h-0 d-block">
+            <v-lazy-image class="grid_img" 
+        :src="getImage(key,'src')" 
+        :src-placeholder="getImage(key,'placeholder')" 
+        alt="Hero Image" />
+
+            
           </a>
-          <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-          <a href="#" class="link body_text"> Clickable link. </a>
+          <h3 class="card_heading grid_heading">{{ value.title }}</h3>
+          <a :href="getHref(key)" class="link body_text"> {{ value.linkText }} </a>
         </div>
       </swiper-slide>
-      <swiper-slide>
-        <div class="grid_item gradient_carousel_item">
-          <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
-          </a>
-          <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-          <a href="#" class="link body_text"> Clickable link. </a>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="grid_item gradient_carousel_item">
-          <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
-          </a>
-          <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-          <a href="#" class="link body_text"> Clickable link. </a>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="grid_item gradient_carousel_item">
-          <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
-          </a>
-          <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-          <a href="#" class="link body_text"> Clickable link. </a>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="grid_item gradient_carousel_item">
-          <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
-          </a>
-          <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-          <a href="#" class="link body_text"> Clickable link. </a>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="grid_item gradient_carousel_item">
-          <a href="#" class="grid_img-wrap line-h-0 d-block">
-            <img
-              class="grid_img" src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/4/assets/grid-three.jpg?v=4448133654909769685" alt="" />
-          </a>
-          <h3 class="card_heading grid_heading">TITLE OF THE EDIT.</h3>
-          <a href="#" class="link body_text"> Clickable link. </a>
-        </div>
-      </swiper-slide>
+      
     </swiper>
   </section>
 
@@ -107,28 +66,58 @@
 
 </style>
 
+
 <script>
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper";
-// Import Swiper styles
-
-  import 'swiper/css';
+import VLazyImage from "v-lazy-image";
 
 export default {
   components: {
+    VLazyImage,
     Swiper,
-    SwiperSlide,
+    SwiperSlide
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
   },
   setup() {
     return {
       modules: [Navigation],
     };
   },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
+  created: function () {
+    this.getImage();
+    this.getHref();
+  },
+  methods: {
+    getImage($name,type = 'src') {
+      var imgObj = this.shopifyData.box;
+      var ImgSrc = "";
+      for (let data in imgObj) {
+        if ($name == data) {
+           ImgSrc = imgObj[data].imgUrl[type];
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+    getHref($name) {
+      var imgObj = this.shopifyData.box;
+      var ImgSrc = "";
+
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj[data].link;
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
     },
   },
 };
