@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="tmbHeader">
     <!-- ======= Desktop Navigation ======= -->
     <div class="navbar-desktop-wrap">
       <nav class="navbar navbar-desktop">
@@ -14,9 +14,9 @@
         <!-- left Navlist -->
         <ul class="navlist navlist-left">
           <li class="navitem first-navitem">
-            <a href="#" class="navlink"> HANDBAGS & WALLETS </a>
+            <a href="#" class="navlink navlink_drpdown" > HANDBAGS & WALLETS </a>
             <!--  HANDBAGS & WALLETS Start -->
-            <div class="navlink__hover">
+            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item">
                   <ul class="subnavlink__list hover-img">
@@ -258,9 +258,9 @@
             <!--  HANDBAGS & WALLETS End -->
           </li>
           <li class="navitem">
-            <a href="#" class="navlink"> NANAMOTA BASICS </a>
+            <a href="#" class="navlink navlink_drpdown"> NANAMOTA BASICS </a>
             <!--NANAMOTA  Start -->
-            <div class="navlink__hover">
+            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item">
                   <ul class="subnavlink__list hover-img">
@@ -346,9 +346,9 @@
         <!-- Rigth Navlist -->
         <ul class="navlist navlist-right">
           <li class="navitem">
-            <a href="#" class="navlink"> CLIENT SERVICES </a>
+            <a href="#" class="navlink navlink_drpdown" > CLIENT SERVICES </a>
             <!-- CLIENT SERVICES Start -->
-            <div class="navlink__hover">
+            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item">
                   <ul class="subnavlink__list">
@@ -400,9 +400,9 @@
             <!-- CLIENT SERVICES End -->
           </li>
           <li class="navitem">
-            <a href="#" class="navlink"> THE SENSE OF BEHNO </a>
+            <a href="#" class="navlink navlink_drpdown" > THE SENSE OF BEHNO </a>
             <!-- THE SENSE OF BEHNO Start -->
-            <div class="navlink__hover">
+            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <!-- ===   ON hover Class Show First row ===  -->
                 <li class="navlink__hover_item">
@@ -647,7 +647,7 @@
 .navbar-Mobile {
   display: none;
 }
-.header {
+.tmbHeader {
   padding: 12px 50px;
   position: fixed;
   top: 0;
@@ -655,10 +655,10 @@
   width: 100%;
   background: #fff;
   z-index: 9;
-  transition: 0.5s;
+  transition: transform 0.5s ;
 }
 
-.header.stickyup {
+.tmbHeader.stickyup {
   transform: translateY(-100%);
 }
 
@@ -789,7 +789,8 @@
   height: 100%;
   min-height: 100vh;
   background: #eae8e4;
-  width: min(100%, 515px);
+  max-width: 515px;
+  width: 100%;
   padding: 40px 50px;
   z-index: 5;
   overflow-y: scroll;
@@ -843,14 +844,14 @@
 }
 
 @media (hover: hover) {
-  .navlink:hover {
-    padding-bottom: 40px;
-    margin-bottom: -40px;
+  .navlink_drpdown:hover {
+    padding-bottom: 25px;
+    margin-bottom: -25px;
   }
   .subnavlink:hover {
     color: #767676;
   }
-  .navlink:hover + .navlink__hover,
+  .navlink_drpdown:hover + .navlink__hover,
   .navlink__hover:hover {
     opacity: 1;
     visibility: visible;
@@ -862,7 +863,7 @@
 }
 
 @media only screen and (max-width: 1440px) {
-  .header {
+  .tmbHeader {
     padding: 10px 20px;
   }
   .navlist {
@@ -958,7 +959,7 @@
 </style>
 
 
-<script >
+<script>
 import VLazyImage from "v-lazy-image";
 
 export default {
@@ -973,15 +974,27 @@ export default {
   },
   created: function () {
     this.getImage();
+    this.header = document.getElementsByClassName("tmbHeader");   
+     
+    
   },
   data() {
     window.addEventListener("load", this.onWindowLoad);
     window.addEventListener("resize", this.onWindowLoad);
     window.addEventListener("scroll", this.scollHeader);
+    window.addEventListener('load',()=>{
+      document.querySelector(".tmbMain").setAttribute("style",`margin-top:${document.querySelector(".tmbHeader").offsetHeight}px`);
+      const navlinkHover = document.querySelectorAll(".navlink__hover");
+      for(let i of navlinkHover){
+        i.setAttribute("style",`top:${document.querySelector(".tmbHeader").offsetHeight}px`);
+      }
+    });
+    
     return {
       lastScrollY: 0,
     };
   },
+ 
   methods: {
     getImage($name) {
       var imgObj = this.shopifyData;
@@ -999,17 +1012,15 @@ export default {
     },
     onWindowLoad() {
       if (window.innerWidth <= 991) {
-        const header = document.querySelector(".header");
         const navbarMobile = document.querySelector(".navbar-Mobile");
         navbarMobile.setAttribute(
           "style",
-          `top: ${header.getBoundingClientRect().height}px;`
+          `top: ${this.header[0].getBoundingClientRect().height}px;`
         );
       }
     },
     togleHeader() {
-      const header = document.querySelector(".header");
-      header.classList.toggle("active");
+      this.header[0].classList.toggle("active");
     },
     toggleDropDown(e) {
       if (e.currentTarget.matches(".subnavlink")) {
@@ -1042,11 +1053,10 @@ export default {
       e.currentTarget.classList.toggle("active");
     },
     scollHeader(e) {
-      let header = document.querySelector(".header");
       if (window.scrollY >= this.lastScrollY) {
-        header.classList.add("stickyup");
+        this.header[0].classList.add("stickyup");
       } else {
-        header.classList.remove("stickyup");
+        this.header[0].classList.remove("stickyup");
       }
       this.lastScrollY = window.scrollY;
     },
@@ -1058,6 +1068,23 @@ export default {
         alreadyActive.classList.remove("hover_active");
       }
       e.currentTarget.classList.add("hover_active");
+    },
+    stopScroll(){
+        const bodyWidth = document.body.offsetWidth;  
+        document.body.setAttribute("style", `overflow:hidden;padding-right:0;`);
+
+        for(let i of document.querySelectorAll(" .navlink__hover")){
+          i.setAttribute("style", `max-width: ${i.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
+        }
+        this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
+        document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
+    },
+    workScroll(){
+      for(let i of document.querySelectorAll(".navlink__hover")){
+        i.removeAttribute("style");
+      }
+      this.header[0].removeAttribute("style");
+      document.body.setAttribute("style", "position:static;");
     },
   },
 };

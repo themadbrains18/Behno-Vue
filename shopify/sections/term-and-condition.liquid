@@ -1,0 +1,49 @@
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+    {
+        Heading : "{{ block.settings.Heading }}",
+        Content : "{{ block.settings.Content }}"  
+    }{% unless forloop.last %},{% endunless %}   
+   {% endfor %}
+]   
+{% endcapture %}
+
+{{ dynamicData }}
+
+{% assign loopData  =  dynamicData %}
+<render-term-and-condition :shopify-data="{
+    box :  {{ loopData }}
+}"></render-term-and-condition>
+
+
+
+
+{% schema %}
+{
+    "name": "Term and condition",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Add Box",
+        "limit": 3,
+        "settings": [
+          {
+            "id": "Heading",
+            "type": "text",
+            "label": "Heading",
+            "default" : "heading"
+          },
+          {
+            "id": "Content",
+            "type": "html",
+            "label": "Content",
+            "default" : "Content" 
+          }
+         
+        ]
+      }
+    ]
+  }
+{% endschema %}

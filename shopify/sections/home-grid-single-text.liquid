@@ -1,5 +1,5 @@
 <render-home-grid-single-text :shopify-data="{
-            image: '{{ section.settings.image | img_url }}',
+            image: '{{ section.settings.image | img_url : ""}}',
   		  	title: '{{ section.settings.title }}',
      	 	btntext: '{{ section.settings.linkText }}',
   			btnlink: '{{ section.settings.link }}',

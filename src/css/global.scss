@@ -6,7 +6,20 @@
   font-family: 'Helvetica Neue',sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: grey; 
+}
 
 li{
   list-style: none;
@@ -71,7 +84,7 @@ button{
 
 /* main_heading */
 .main_heading{
-  font-family: 'Big Caslon,sans-serif';
+  font-family: 'Big Caslon',sans-serif;
   font-weight: 500;
   font-size: 72px;
   text-transform: capitalize;

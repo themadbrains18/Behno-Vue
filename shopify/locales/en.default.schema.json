@@ -99,6 +99,9 @@
     "home_single_grid": {
       "name": "Home Single Grid",
       "settings": {
+        "imageHeight": {
+          "label": "Image Height"
+        },
         "image": {
           "label": "Upload Image"
         },

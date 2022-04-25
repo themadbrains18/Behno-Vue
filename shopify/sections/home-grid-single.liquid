@@ -1,5 +1,7 @@
 <render-home-grid-single :shopify-data="{
-          imgUrl : '{{ section.settings.image | img_url }}',
+          
+          imgUrl : '{{ section.settings.image | img_url : ""}}',
+          imageHeight   : '{{ section.settings.imageHeight }}',
           title  : '{{ section.settings.title }}',
           linktext : '{{ section.settings.linkText }}',
           link   : '{{ section.settings.link }}'
@@ -18,6 +20,11 @@
         "id": "image",
         "type": "image_picker",
         "label": "t:sections.home_single_grid.settings.image.label"
+      },
+      {
+        "id": "imageHeight",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.imageHeight.label"
       },
       {
         "id": "title",

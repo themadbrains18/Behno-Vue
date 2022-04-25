@@ -106,13 +106,20 @@
             "image": "shopify:\/\/shop_images\/feature-img1.jpg",
             "link": "#"
           }
+        },
+        "e96f5655-04a1-499d-8af5-07a6ff7d16b8": {
+          "type": "slide",
+          "settings": {
+            "link": ""
+          }
         }
       },
       "block_order": [
         "0b06f130-294d-4409-ac49-a23a921f91da",
         "1536ee64-2d2d-4542-9de4-6f9486d65376",
         "cd3257b1-892b-4b05-b7bd-6d21464b8505",
-        "a749e867-5dff-4398-9611-9483f709974d"
+        "a749e867-5dff-4398-9611-9483f709974d",
+        "e96f5655-04a1-499d-8af5-07a6ff7d16b8"
       ],
       "settings": {
       }
@@ -121,6 +128,7 @@
       "type": "home-grid-single",
       "settings": {
         "image": "shopify:\/\/shop_images\/grid-single.jpg",
+        "imageHeight": "",
         "title": "TITLE OF THE EDIT",
         "linkText": "Clickable link",
         "link": "#"
