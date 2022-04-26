@@ -38,8 +38,8 @@
   top: 35px;
   left: 50%;
   transform: translateX(-50%);
-  font-weight: 700;
   font-size: 37px;
+  font-weight: 700;
   color: #95c900;
   line-height: 1;
 }
