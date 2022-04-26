@@ -67,7 +67,97 @@ button{
 .bg-white{
   background-color: #fff;
 }
+.bg-black{
+  background-color: #000;
+}
 
+.bg-bone{
+  background-color: #E9E7E3;
+}
+.bg-bone-gradient{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #E9E7E3 100%);
+}
+.bg-sand{
+  background-color: #DDCEC7;
+}
+.bg-sand-gradient{
+  background: linear-gradient(180deg, #DDCEC7 0%, rgba(221, 206, 199, 0) 100%);
+}
+.bg-ash{
+  background-color: #6B6B6B;
+}
+
+
+.big_container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Figma H1 */
+.main_heading{
+  font-family: 'Big Caslon',sans-serif;
+  font-weight: 500;
+  font-size: 72px;
+}
+/* Figma H2 */
+.sec_heading{
+  font-family: 'Big Caslon',sans-serif;
+  font-weight: 500;
+  font-size: 46px;
+}
+
+/* Figma H3 */
+.card_heading{
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* Figma H4 */
+.card_heading_b{
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* Figma SUBTITLE */
+.subtitle{
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Figma SUBTITLE 2 */
+.subtitle_b{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* Figma Caption  */
+.caption{
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Figma Body  */
+.body_text{
+  font-family: 'adobe-caslon-pro',sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Figma Small  */
+.samll_text{
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+/* Figma BUTTON  */
 .cta_btn{
   font-weight: 700;
   padding: 8px 30px;
@@ -76,32 +166,20 @@ button{
   display: inline-block;
 }
 
-.big_container {
-  max-width: 1470px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-/* main_heading */
-.main_heading{
-  font-family: 'Big Caslon',sans-serif;
-  font-weight: 500;
+/* Figma Quotes */
+.quotes_text{
   font-size: 72px;
-}
-/* card_heading */
-.card_heading{
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
-.body_text{
-  font-family: 'adobe-caslon-pro',sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+/* Figma Quotes small */
+.quotes_text_s{
+  font-size: 46px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
+
 
 .modify-slider .swiper-button-prev,
 .modify-slider .swiper-button-next  {
@@ -143,6 +221,7 @@ button{
   .main_heading{
     font-size: 46px;
   }
+ 
 }
 
 
