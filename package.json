@@ -22,6 +22,7 @@
     "fix:shopify": "cd shopify && shopify theme check -a"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "copy-webpack-plugin": "^10.2.4",
     "swiper": "^8.1.1",
     "v-lazy-image": "^2.1.1",
