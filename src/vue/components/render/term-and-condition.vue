@@ -3,86 +3,97 @@
     <div class="container">
       <!-- Sec Head -->
       <div class="sec_head">
-        <div class="contact_info">
+        <div class="contact_info" v-for="(value, key) in shopifyData.box" :key="key">
           <div class="contact_logo">
             <img
-              src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/text-icon-new.png?v=1650701202"
+              :src="getImage(key,'src')" 
               alt="image_description"
             />
           </div>
-          <h3 class="contact_heading">TEXT</h3>
-          <p class="contact_brief">
-            To experience behno White Glove Client Services, or if you have any
-            questions, text "HELLO" to us. We strive to text back ASAP.
+          <h3 class="contact_heading"> {{ value.boxHeading }} </h3>
+          <p class="contact_brief" v-html="renderHtml(value.boxContent)">
           </p>
           <div class="contact_number">
-            <a href="tel:+1 833 217 2636"> +1 833 217 2636</a>
-          </div>
-        </div>
-        <div class="contact_info">
-          <div class="contact_logo">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/massage-new.png?v=1650701106"
-              alt="image_description"
-            />
-          </div>
-          <h3 class="contact_heading">EMAIL</h3>
-          <p class="contact_brief brief-modifier">
-            For assistance concerning our online store or your online purchase,
-            please contact us via email. This is the easiest way to get in touch
-            with us.
-          </p>
-          <div class="contact_number">
-            <a href="mailto:clientservices@behno.com"
-              >clientservices@behno.com</a
-            >
+            <a :href="getHref(key)">{{ value.linkText }}</a>
           </div>
         </div>
       </div>
       <!-- Sec Content -->
       <div class="tnd_tabs">
         <ul class="tnd_tabs_inner">
-
-          <li v-for="(value, key) in shopifyData.box" :key="key">
-            <button class="tab_btn show">
-                {{ value.Heading }}
+          <li v-for="(value, key) in shopifyData.tabs" :key="key">
+            <button class="tab_btn show" v-if="key === 0">
+              {{ value.Heading }}
+              <img
+                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/tab-button-icon.png?v=1650705094"
+                alt="image_decription"
+              />
+            </button>
+            <button class="tab_btn" v-else>
+              {{ value.Heading }}
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/tab-button-icon.png?v=1650705094"
                 alt="image_decription"
               />
             </button>
             <div class="tab_content">
-              <div class="tab_content_inner">
-                  {{ value.Content }}
+              <div class="tab_content_inner"  v-html="renderHtml(value.Content)">
+                
               </div>
             </div>
           </li>
-          
         </ul>
       </div>
     </div>
   </section>
 </template>
 
-<style scoped>
+<style >
 .mb-35,
 .tab_content_inner p + p {
   margin-bottom: 35px;
 }
 .mb-20,
 .tab_content_inner ul,
-.tab_content_inner  p {
+.tab_content_inner p {
   margin-bottom: 20px;
 }
-.tab_content_inner li > p{
+.tab_content_inner li > p {
   margin: 0;
 }
 .tab_content_inner ul {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 .tab_content_inner ul > li {
-    list-style: disc;
+  list-style: disc;
 }
+.contact_number a,
+.tab_content_inner p {
+  font-family: "adobe-caslon-pro", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.tab_content_inner h4 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14.65px;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.tab_content > ul {
+  padding-left: 30px;
+}
+.tab_content > ul li {
+  list-style: disc !important;
+}
+</style>
+
+<style scoped>
+
 .tnd_sec {
   padding: 167px 0 71px;
 }
@@ -106,20 +117,13 @@
   color: #000000;
   margin-bottom: 8px;
 }
-.contact_brief,
-.contact_number a,
-.tab_content_inner p {
+.contact_brief {
   font-family: "adobe-caslon-pro", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.02em;
   color: #000000;
-}
-
-
-
-.contact_brief {
   max-width: 417px;
 }
 .contact_brief.brief-modifier {
@@ -173,22 +177,7 @@
   border: 1px solid #000000;
   padding: 35px 74px 45px;
 }
-.tab_content_inner h4 {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14.65px;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
-}
 
-  
-
-.tab_content > ul {
-  padding-left: 30px;
-}
-.tab_content > ul li {
-  list-style: disc !important;
-}
 .tab_btn + .tab_content {
   opacity: 0;
   visibility: hidden;
@@ -276,6 +265,9 @@
 
 
 <script>
+import { Buffer } from "buffer";
+window.Buffer = Buffer;
+
 export default {
   props: {
     shopifyData: {
@@ -283,56 +275,113 @@ export default {
       required: true,
     },
   },
-  data(){
+  
+  data() {
     window.addEventListener("load", this.onWindowLoad);
     window.addEventListener("resize", this.onWindowLoad);
   },
-  methods :{
-    onWindowLoad(){
+  created: function () {
+    this.renderHtml();
+  },
+  methods: {
+    getImage($name,type = 'src') {
+      var imgObj = this.shopifyData.box;
+
+      var ImgSrc = "";
+      for (let data in imgObj) {
+        if ($name == data) {
+           ImgSrc = imgObj[data].imgUrl[type];
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+    getHref($name) {
+      var imgObj = this.shopifyData.box;
+      var ImgSrc = "";
+
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj[data].link;
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+    renderHtml(html) {
+      if (html == null || html == "undefined") {
+        return;
+      }
+      var finalhtml = window.atob(html);
+      return finalhtml;
+    },
+    onWindowLoad() {
       try {
         const tabBtn = document.querySelectorAll(".tnd_tabs .tab_btn");
-        if(window.innerWidth >= 768){
+        if (window.innerWidth >= 768) {
           const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
-          showTabBtn.closest(".tnd_tabs_inner").setAttribute("style",`padding-bottom:${showTabBtn.nextElementSibling.offsetHeight}px`);
-          for(let i of tabBtn){
-            i.addEventListener('click',()=>{
-              const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
-              if(showTabBtn){
-                showTabBtn.classList.remove("show");  
+          showTabBtn
+            .closest(".tnd_tabs_inner")
+            .setAttribute(
+              "style",
+              `padding-bottom:${showTabBtn.nextElementSibling.offsetHeight}px`
+            );
+          for (let i of tabBtn) {
+            i.addEventListener("click", () => {
+              const showTabBtn = document.querySelector(
+                ".tnd_tabs .tab_btn.show"
+              );
+              if (showTabBtn) {
+                showTabBtn.classList.remove("show");
               }
-              if(i != showTabBtn){
+              if (i != showTabBtn) {
                 i.classList.add("show");
-                i.closest(".tnd_tabs_inner").setAttribute("style",`padding-bottom:${i.nextElementSibling.offsetHeight}px`);
-              }else{
-                i.closest(".tnd_tabs_inner").setAttribute("style",`padding-bottom:0px`);
+                i.closest(".tnd_tabs_inner").setAttribute(
+                  "style",
+                  `padding-bottom:${i.nextElementSibling.offsetHeight}px`
+                );
+              } else {
+                i.closest(".tnd_tabs_inner").setAttribute(
+                  "style",
+                  `padding-bottom:0px`
+                );
+              }
+            });
+          }
+        } else {
+          const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
+          showTabBtn.nextElementSibling.setAttribute(
+            "style",
+            `height:${showTabBtn.nextElementSibling.scrollHeight}px;`
+          );
+          for (let i of tabBtn) {
+            // showTabBtn
+            i.addEventListener("click", () => {
+              const showTabBtn = document.querySelector(
+                ".tnd_tabs .tab_btn.show"
+              );
+              if (showTabBtn) {
+                showTabBtn.classList.remove("show");
+              }
+              if (i != showTabBtn) {
+                i.classList.add("show");
+                i.nextElementSibling.setAttribute(
+                  "style",
+                  `height:${i.nextElementSibling.scrollHeight}px;`
+                );
+              } else {
+                i.nextElementSibling.setAttribute("style", `height:0px;`);
               }
             });
           }
         }
-        else{
-          const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
-          showTabBtn.nextElementSibling.setAttribute("style",`height:${showTabBtn.nextElementSibling.scrollHeight}px;`);
-         for(let i of tabBtn){
-              // showTabBtn
-            i.addEventListener('click',()=>{
-              const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
-              if(showTabBtn){
-                showTabBtn.classList.remove("show");  
-              }
-              if(i != showTabBtn){
-                i.classList.add("show");  
-                i.nextElementSibling.setAttribute("style",`height:${i.nextElementSibling.scrollHeight}px;`);
-              }else{
-                i.nextElementSibling.setAttribute("style",`height:0px;`);
-              }
-            });
-         } 
-        }
       } catch (error) {
         console.log("Error in Term and Custom js code Error");
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
