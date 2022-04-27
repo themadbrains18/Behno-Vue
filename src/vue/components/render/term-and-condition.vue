@@ -6,15 +6,16 @@
         <div class="contact_info" v-for="(value, key) in shopifyData.box" :key="key">
           <div class="contact_logo">
             <img
-              :src="getImage(key,'src')" 
-              alt="image_description"
+              :src=(value.imgUrl.src)
+              :src-placeholder=(value.imgUrl.placeHolder)
+              :alt=(value.imgUrl.alt)
             />
           </div>
           <h3 class="contact_heading"> {{ value.boxHeading }} </h3>
           <p class="contact_brief" v-html="renderHtml(value.boxContent)">
           </p>
           <div class="contact_number">
-            <a :href="getHref(key)">{{ value.linkText }}</a>
+            <a :href=(value.link)>{{ value.linkText }}</a>
           </div>
         </div>
       </div>
@@ -38,7 +39,6 @@
             </button>
             <div class="tab_content">
               <div class="tab_content_inner"  v-html="renderHtml(value.Content)">
-                
               </div>
             </div>
           </li>
@@ -284,32 +284,6 @@ export default {
     this.renderHtml();
   },
   methods: {
-    getImage($name,type = 'src') {
-      var imgObj = this.shopifyData.box;
-
-      var ImgSrc = "";
-      for (let data in imgObj) {
-        if ($name == data) {
-           ImgSrc = imgObj[data].imgUrl[type];
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($name) {
-      var imgObj = this.shopifyData.box;
-      var ImgSrc = "";
-
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj[data].link;
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
     renderHtml(html) {
       if (html == null || html == "undefined") {
         return;
@@ -380,8 +354,8 @@ export default {
       } catch (error) {
         console.log("Error in Term and Custom js code Error");
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

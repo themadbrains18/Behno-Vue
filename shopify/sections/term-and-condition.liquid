@@ -27,20 +27,19 @@
 {% capture boxDynamicData %}
 [
    {% for block in section.blocks %}
-   {% if block.type == 'block-1' %}
-    {
-      imgUrl : {
-				src : '{{ block.settings.boxImage | img_url : "" }}',
-				placeHolder : '{{ block.settings.boxImage | img_url : "50x50" }}'
-	    },
-      boxHeading : '{{ block.settings.boxHeading }}',
-      boxContent : '{{ block.settings.boxContent | base64_encode }}',
-      link : '{{ block.settings.link }}',
-      linkText : '{{ block.settings.linkText }}',
-    }{% unless forloop.last %},{% endunless %}
-
-    {% endif %}
-
+    {% if block.type == 'block-1' %}
+        {
+          imgUrl : {
+            src : '{{ block.settings.boxImage | img_url : "" }}',
+            placeHolder : '{{ block.settings.boxImage | img_url : "50x50" }}',
+            alt : '{{ block.settings.boxImage.alt }}'
+          },
+          boxHeading : '{{ block.settings.boxHeading }}',
+          boxContent : '{{ block.settings.boxContent | base64_encode }}',
+          link : '{{ block.settings.link }}',
+          linkText : '{{ block.settings.linkText }}',
+        }{% unless forloop.last %},{% endunless %}
+      {% endif %}
    {% endfor %}
 ] 
 {% endcapture %}

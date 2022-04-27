@@ -75,43 +75,12 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
-    },
+    }
   },
   setup() {
     return {
       modules: [Navigation],
     };
-  },
-  created: function () {
-    this.getImage();
-    this.getHref();
-  },
-  methods: {
-    getImage($name, type = "src") {
-      var imgObj = this.shopifyData.box;
-      var ImgSrc = "";
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj[data].imgUrl[type];
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($name) {
-      var imgObj = this.shopifyData.box;
-      var ImgSrc = "";
-
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj[data].link;
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-  },
+  }
 };
 </script>

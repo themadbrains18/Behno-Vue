@@ -94,41 +94,8 @@
     shopifyData: {
       type: Object,
       required: true,
-    },
-  },
-  created: function () {
-    this.getImage();
-    this.getHref();
-  },
-  methods: {
-    getImage($name) {
-      var imgObj = this.shopifyData;
-
-      var ImgSrc = "";
-      for (let item in imgObj) {
-        
-        if ($name == item) {
-          ImgSrc = imgObj[item];
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($key) {
-      var imgObj = this.shopifyData;
-      var link = "";
-      
-      for (let data in imgObj) {
-        if ($key == data) {
-          link = imgObj.link;
-        } else {
-          continue;
-        }
-      }
-      return link;
-    },
-  },
+    }
+  }
 };
 </script>
   

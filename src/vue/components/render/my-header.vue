@@ -339,7 +339,7 @@
         <!-- Header logo -->
         <div class="logo_wrap">
           <a class="logo" href="/">
-            <v-lazy-image :src="getImage('logo')" alt="Logo" />
+            <v-lazy-image :src=(shopifyData.logo) alt="Logo" />
           </a>
         </div>
 
@@ -472,10 +472,10 @@
           <li class="desktop_btn_grp">
             <div class="nav_btns">
               <button class="search_btn">
-                <v-lazy-image :src="getImage('search')" alt="Search Icon" />
+                <v-lazy-image :src=(shopifyData.search)  alt="Search Icon" />
               </button>
               <button class="shopping_btn">
-                <v-lazy-image :src="getImage('bag')" alt="Shopping Icon" />
+                <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
 
                 <span class="shopping_btn_count">0</span>
               </button>
@@ -487,10 +487,10 @@
         <div class="mobile_btn_grp">
           <div class="nav_btns">
             <button class="search_btn">
-              <v-lazy-image :src="getImage('search')" alt="Search Icon" />
+              <v-lazy-image :src=(shopifyData.search) alt="Search Icon" />
             </button>
             <button class="shopping_btn">
-              <v-lazy-image :src="getImage('bag')" alt="Shopping Icon" />
+              <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
               <span class="shopping_btn_count">0</span>
             </button>
           </div>
@@ -973,7 +973,6 @@ export default {
     },
   },
   created: function () {
-    this.getImage();
     this.header = document.getElementsByClassName("tmbHeader");   
   },
   data() {
@@ -994,20 +993,6 @@ export default {
   },
  
   methods: {
-    getImage($name) {
-      var imgObj = this.shopifyData;
-
-      var ImgSrc = "";
-      for (let item in imgObj) {
-        if ($name == item) {
-          ImgSrc = imgObj[item];
-        } else {
-          continue;
-        }
-      }
-
-      return ImgSrc;
-    },
     onWindowLoad() {
       if (window.innerWidth <= 991) {
         const navbarMobile = document.querySelector(".navbar-Mobile");
@@ -1083,7 +1068,7 @@ export default {
       }
       this.header[0].removeAttribute("style");
       document.body.setAttribute("style", "position:static;");
-    },
-  },
+    }
+  }
 };
 </script>
