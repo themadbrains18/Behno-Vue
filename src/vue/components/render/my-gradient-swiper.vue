@@ -10,16 +10,16 @@
     >
       <swiper-slide v-for="(value, key) in shopifyData.box" :key="key">
         <div class="grid_item gradient_carousel_item">
-          <a :href="getHref(key)" class="grid_img-wrap line-h-0 d-block">
+          <a :href=(value.link) class="grid_img-wrap line-h-0 d-block">
             <v-lazy-image
               class="grid_img"
-              :src="getImage(key, 'src')"
-              :src-placeholder="getImage(key, 'placeholder')"
-              alt="Hero Image"
+              :src=(value.imgUrl.src)
+              :src-placeholder=(value.imgUrl.placeholder)
+              :alt=(value.imgUrl.alt)
             />
           </a>
           <h3 class="card_heading grid_heading">{{ value.title }}</h3>
-          <a :href="getHref(key)" class="link body_text">
+          <a :href=(value.link) class="link body_text">
             {{ value.linkText }}
           </a>
         </div>

@@ -975,8 +975,6 @@ export default {
   created: function () {
     this.getImage();
     this.header = document.getElementsByClassName("tmbHeader");   
-     
-    
   },
   data() {
     window.addEventListener("load", this.onWindowLoad);

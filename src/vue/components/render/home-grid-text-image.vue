@@ -5,11 +5,11 @@
       <h2 class="main_heading grid_text_image_heading color-white">
         {{ shopifyData.secHeading }}
       </h2>
-      <a  :href="getHref(link)" class="cta_btn bg-white"> {{ shopifyData.btnText }} </a>
+      <a  :href=(shopifyData.link) class="cta_btn bg-white"> {{ shopifyData.btnText }} </a>
     </div>
     <div class="grid_item grid_item_img">
-      <a  :href="getHref(link)" class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="grid_img" :src="getImage('image')" />
+      <a  :href=(shopifyData.link) class="grid_img-wrap line-h-0 d-block">
+        <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
       </a>
     </div>
   </section>
@@ -44,7 +44,6 @@
 
 <script>
 import VLazyImage from "v-lazy-image";
-
 export default {
   components: {
     VLazyImage,
@@ -53,38 +52,7 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
-    },
-  },
-  created: function () {
-    this.getImage();
-    this.getHref();
-  },
-  methods: {
-    getImage($name) {
-      var imgObj = this.shopifyData;
-      var ImgSrc = "";
-
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj.image;
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($name) {
-      var imgObj = this.shopifyData;
-      var ImgSrc = "";
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj.link;
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-  },
+    }
+  }
 };
 </script>

@@ -2,15 +2,15 @@
   <!-- Grid Two  -->
   <section class="grid_two big_container">
     <div class="grid_item" v-for="(value, key) in shopifyData.box" :key="key">
-      <a href="#" class="grid_img-wrap line-h-0 d-block">
+      <a :href=(value.link) class="grid_img-wrap line-h-0 d-block">
         <v-lazy-image class="grid_img" 
-        :src="getImage(key,'src')" 
-        :src-placeholder="getImage(key,'placeholder')" 
-        alt="Hero Image" />
+        :src=(value.imgUrl.src)
+        :src-placeholder=(value.imgUrl.placeholder)
+        :alt=(value.imgUrl.alt) />
       </a>
       <div class="grid_info">
         <h3 class="card_heading grid_heading">{{ value.title }}</h3>
-        <a :href="getHref(key)" class="link body_text"> {{ value.linkText }} </a>
+        <a :href=(value.link) class="link body_text"> {{ value.linkText }} </a>
       </div>
     </div>
   </section>
@@ -49,38 +49,7 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
-    },
-  },
-  created: function () {
-    this.getImage();
-    this.getHref();
-  },
-  methods: {
-    getImage($name,type = 'src') {
-      var imgObj = this.shopifyData.box;
-      var ImgSrc = "";
-      for (let data in imgObj) {
-        if ($name == data) {
-           ImgSrc = imgObj[data].imgUrl[type];
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($name) {
-      var imgObj = this.shopifyData.box;
-      var ImgSrc = "";
-
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj[data].link;
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-  },
+    }
+  }
 };
 </script>

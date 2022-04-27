@@ -1,15 +1,18 @@
 <render-home-grid-text-image :shopify-data="{
-            secHeading: '{{ section.settings.secHeading }}',
-            btnText: '{{ section.settings.btnText }}',
-            link: '{{ section.settings.link }}',
-            image: '{{ section.settings.image | img_url : "" }}',
-            shopDomain: '{{ shop.domain }}',
-            shopEmail: '{{ shop.email }}',
-            shopCurrency: '{{ shop.currency }}'
+            secHeading: `{{ section.settings.secHeading }}`,
+            btnText: `{{ section.settings.btnText }}`,
+            link: `{{ section.settings.link }}`,
+            imgUrl : {
+              src : `{{ section.settings.image | img_url : "" }}`,
+              placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+              alt: `{{ section.settings.image.alt }}`
+            },
+            shopDomain: `{{ shop.domain }}`,
+            shopEmail: `{{ shop.email }}`,
+            shopCurrency: `{{ shop.currency }}`
           }"
         >
 </render-home-grid-text-image>
-
 
 {% schema %}
 {

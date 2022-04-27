@@ -1,18 +1,15 @@
 <template>
   <!-- Hero Section -->
-  
-
   <section class="hero_sec t-center big_container">
     <h1 class="main_heading heroheading_top">{{ shopifyData.heading }} </h1>
-    <a :href="getHref(link)" >
+    <a :href=(shopifyData.imagelink) >
       <v-lazy-image class="hero_img" 
-      :src="getImage('imgSrc')" 
-      :src-placeholder="getImage('placeHolder')"
-      alt="Hero Image"
+      :src=(shopifyData.heroImage.imgSrc) 
+      :src-placeholder=(shopifyData.heroImage.placeHolder)
+      :alt=(shopifyData.heroImage.alt)
       />
     </a>
     <h1 class="main_heading heroheading_bottom">{{ shopifyData.subHeading }}</h1>
-    
   </section>
 </template>
 
@@ -44,7 +41,6 @@
  
 <script>
 import VLazyImage from "v-lazy-image";
-
 export default {
   components: {
     VLazyImage,
@@ -53,38 +49,7 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
-    },
-  },
-  created: function () {
-    this.getImage();
-    this.getHref();
-  },
-  methods: {
-    getImage($name) {
-      var imgObj = this.shopifyData.heroImage;
-      var ImgSrc = "";
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj[data];
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($key) {
-      var imgObj = this.shopifyData;
-      var link = "";
-      
-      for (let data in imgObj) {
-        if ($key == data) {
-          link = imgObj.link;
-        } else {
-          continue;
-        }
-      }
-      return link;
-    },
-  },
+    }
+  }
 };
 </script>

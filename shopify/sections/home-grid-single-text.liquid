@@ -1,14 +1,17 @@
 <render-home-grid-single-text :shopify-data="{
-            image: '{{ section.settings.image | img_url : ""}}',
-  		  	title: '{{ section.settings.title }}',
-     	 	btntext: '{{ section.settings.linkText }}',
-  			btnlink: '{{ section.settings.link }}',
+      imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+      },
+      title: '{{ section.settings.title }}',
+      btntext: '{{ section.settings.linkText }}',
+      link: '{{ section.settings.link }}',
 			toptext: '{{ section.settings.toptext }}',
 			middletop: '{{ section.settings.middletop }}',
 			middlebottom: '{{ section.settings.middlebottom }}',
-			bottomtext: '{{ section.settings.bottomtext }}',
-          }"
-        >
+			bottomtext: '{{ section.settings.bottomtext }}'
+    }">
 </render-home-grid-single-text>
 
 

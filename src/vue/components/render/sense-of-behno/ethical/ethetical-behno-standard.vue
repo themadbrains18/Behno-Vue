@@ -4,21 +4,24 @@
     <div class="big_container">
       <h2
         class="sec_heading"
-      >“THE BEHNO STANDARD WAS BUILT BOTTOM-UP, ENSURING GARMENT WORKERS AND ARTISANS WERE AT THE CENTER OF THE CONVERSATION.”</h2>
+      >{{ shopifyData.redText }}</h2>
       <div class="sec_content">
-        <!--    Section text        -->
         <!--    Section Image        -->
         <div class="sec_img">
           <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/behno-standard-img.jpg?v=1650880971"
+            :src="getImage('imgSrc')" 
+            :src-placeholder="getImage('placeHolder')"
+            :alt="getImage('alt')"
           />
+          
         </div>
         <!-- Section Text           -->
         <div class="sec_text">
           <p
             class="sec_info"
-          >To implement “The behno Standard,” we founded a cut-and-sew factory, MSA Ethos, with a nonprofit partner and industry veteran.</p>
-          <a href="/" class="cta_btn">LEARN MORE</a>
+          >{{ shopifyData.para }}</p>
+          
+          <a :href="getHref(link)" class="cta_btn">{{ shopifyData.linkText }}</a>
         </div>
       </div>
     </div>
@@ -138,3 +141,47 @@
   }
 }
 </style>
+
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+  created: function () {
+    this.getImage();
+    this.getHref();
+  },
+  methods: {
+    getImage($name) {
+      var imgObj = this.shopifyData.img;
+      var ImgSrc = "";
+      for (let data in imgObj) {
+        if ($name == data) {
+          ImgSrc = imgObj[data];
+        } else {
+          continue;
+        }
+      }
+      return ImgSrc;
+    },
+    getHref($key) {
+      var imgObj = this.shopifyData;
+      var link = "";
+      
+      for (let data in imgObj) {
+        if ($key == data) {
+          link = imgObj.link;
+        } else {
+          continue;
+        }
+      }
+      return link;
+    },
+  },
+};
+</script>
