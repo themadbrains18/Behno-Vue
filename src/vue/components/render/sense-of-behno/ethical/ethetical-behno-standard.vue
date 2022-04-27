@@ -1,0 +1,140 @@
+<template>
+  <!-- ========== Section Behno Standard Start ========== -->
+  <section class="sec_behno_standard">
+    <div class="big_container">
+      <h2
+        class="sec_heading"
+      >“THE BEHNO STANDARD WAS BUILT BOTTOM-UP, ENSURING GARMENT WORKERS AND ARTISANS WERE AT THE CENTER OF THE CONVERSATION.”</h2>
+      <div class="sec_content">
+        <!--    Section text        -->
+        <!--    Section Image        -->
+        <div class="sec_img">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1000/3130/files/behno-standard-img.jpg?v=1650880971"
+          />
+        </div>
+        <!-- Section Text           -->
+        <div class="sec_text">
+          <p
+            class="sec_info"
+          >To implement “The behno Standard,” we founded a cut-and-sew factory, MSA Ethos, with a nonprofit partner and industry veteran.</p>
+          <a href="/" class="cta_btn">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== Section Behno Standard End ========== -->
+</template>
+
+<style scoped>
+/* ========== Section Behno  standard  Start Css Code Start ========== */
+.sec_behno_standard {
+  padding: 25px 0 104px;
+}
+.sec_behno_standard .sec_heading {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 95.9%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ef0000;
+}
+
+.sec_behno_standard .sec_content {
+  display: flex;
+  align-items: center;
+  max-width: 924px;
+  width: 100%;
+  margin: 70px auto 0;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.sec_behno_standard .sec_text {
+  max-width: 432px;
+  width: 100%;
+}
+
+.sec_behno_standard .sec_info {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.sec_behno_standard .cta_btn {
+  background: #000000;
+  width: fit-content;
+  margin-top: 25px;
+  color: #fff;
+  border: 1px solid #000000;
+}
+
+@media (hover: hover) {
+  .cta_btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+  }
+}
+/* ========== Section Behno  standard  Start Css Code End  ========== */
+
+/* Responsive Css Code */
+@media only screen and (max-width: 1200px) {
+  /* ========== Section Behno Standard Responsive Css  Start  ========== */
+  .sec_behno_standard .sec_heading {
+    font-size: 50px;
+  }
+  /* ========== Section Behno Standard Responsive Css  End ========== */
+}
+
+@media only screen and (max-width: 1024px) {
+  .sec_behno_standard .sec_heading {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .sec_behno_standard .sec_content {
+    flex-direction: column;
+    margin-top: 45px;
+  }
+
+  .sec_behno_standard .sec_heading {
+    font-size: 35px;
+  }
+  .sec_behno_standard .cta_button {
+    margin: 25px auto 0;
+    width: fit-content;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sec_behno_standard .sec_heading {
+    font-size: 27px;
+    line-height: 102%;
+  }
+  .sec_behno_standard .sec_content {
+    margin-top: 34px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .sec_behno_standard .big_container {
+    padding: 0;
+  }
+  .sec_behno_standard .sec_heading {
+    padding: 0 3px;
+  }
+
+  .sec_behno_standard .sec_text {
+    max-width: 310px;
+    margin: 0 auto;
+  }
+  .sec_behno_standard .cta_button {
+    margin-top: 35px;
+  }
+}
+</style>
