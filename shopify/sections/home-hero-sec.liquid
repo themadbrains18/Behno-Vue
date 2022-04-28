@@ -9,14 +9,15 @@
 
 
 <render-home-hero-sec :shopify-data="{
-            heroImage:{
-                         imgSrc : '{{ imgSrc }}',
-                         placeHolder : '{{ placeHolder | img_url: "50x50" }}' 
-                        },
-            heading: '{{ section.settings.heroHeading }}',
-            subHeading: '{{ section.settings.herosubHeading }}',
-          }"
-        >
+      heroImage:{
+        imgSrc : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.heroImage.alt }}`
+      },
+      heading: `{{ section.settings.heroHeading }}`,
+      subHeading: `{{ section.settings.herosubHeading }}`,
+      imagelink: `{{ section.settings.imagelink }}`
+    }">
 </render-home-hero-sec> 
 
 {% schema %}
@@ -39,11 +40,16 @@
       "id": "heroImage",
       "type": "image_picker",
       "label": "t:sections.home_hero_sec.settings.heroImage.label"
+    },
+    {
+      "id": "imagelink",
+      "type": "url",
+      "label": "t:sections.home_hero_sec.settings.link.label"
     }
   ],
   "presets": [
       {
-        "name": "t:sections.home_two_grid.name",
+        "name": "t:sections.home_hero_sec.name",
         "category": "ADVANCED LAYOUT"
       }	
   ]

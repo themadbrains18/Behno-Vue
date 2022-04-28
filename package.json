@@ -22,11 +22,12 @@
     "fix:shopify": "cd shopify && shopify theme check -a"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "copy-webpack-plugin": "^10.2.4",
-    "shopify-cli": "^1.0.11",
-    "swiper": "^8.1.1",
+    "swiper": "^8.1.4",
     "v-lazy-image": "^2.1.1",
     "vue": "^3.2.26",
+    "vue-awesome-swiper": "^5.0.1",
     "vue-router": "^4.0.14",
     "vuex": "^4.0.2"
   },

@@ -2,9 +2,8 @@
   <!-- Grid Single Text -->
   <section class="grid_single_text big_container">
     <div class="grid_item">
-      <a  :href="getHref(btnlink)"  class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="grid_img" :src="getImage('image')" />
-
+      <a  :href=(shopifyData.link)  class="grid_img-wrap line-h-0 d-block">
+        <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)  />
         <div class="grid_img_text-wrap">
           <span class="grid_img_text grid_img_text-first"> {{ shopifyData.toptext }} </span>
           <span class="grid_img_text grid_img_text-second"> {{ shopifyData.middletop }} </span>
@@ -14,7 +13,7 @@
       </a>
       <div class="grid_info">
         <h3 class="card_heading grid_heading">  {{ shopifyData.title }} </h3>
-        <a  :href="getHref(btnlink)" class="link body_text"> {{ shopifyData.btntext }} </a>
+        <a  :href=(shopifyData.link) class="link body_text"> {{ shopifyData.btntext }} </a>
       </div>
     </div>
   </section>
@@ -95,41 +94,8 @@
     shopifyData: {
       type: Object,
       required: true,
-    },
-  },
-  created: function () {
-    this.getImage();
-    this.getHref();
-  },
-  methods: {
-    getImage($name) {
-      var imgObj = this.shopifyData;
-
-      var ImgSrc = "";
-      for (let item in imgObj) {
-        
-        if ($name == item) {
-          ImgSrc = imgObj[item];
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($key) {
-      var imgObj = this.shopifyData;
-      var link = "";
-      
-      for (let data in imgObj) {
-        if ($key == data) {
-          link = imgObj.link;
-        } else {
-          continue;
-        }
-      }
-      return link;
-    },
-  },
+    }
+  }
 };
 </script>
   

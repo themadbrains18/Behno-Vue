@@ -84,6 +84,11 @@
     },
     "home_featured_slider": {
       "name": "Home Featured Slider",
+      "settings": {
+        "secHeading": {
+          "label": "Section Heading"
+        }
+      },
       "blocks": {
         "name": "Add Box",
         "settings": {

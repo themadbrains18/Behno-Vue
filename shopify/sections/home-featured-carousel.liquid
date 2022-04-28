@@ -27,10 +27,11 @@
    {% for block in section.blocks %}
     {
 	   imgUrl : {
-               src : '{{ block.settings.image | img_url : "" }}',
-               placeholder: '{{ block.settings.image | img_url : "50x50" }}'
+          src : `{{ block.settings.image | img_url : "" }}`,
+          placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+          alt: `{{ block.settings.image.alt }}`
        },
-	  link : '{{ block.settings.link }}' 
+	     link : '{{ block.settings.link }}'
     }{% unless forloop.last %},{% endunless %}
    {% endfor %}
 ]
@@ -45,6 +46,7 @@
 {% endif %}
 
 <render-my-swapper :shopify-data="{
+  secHeading : `{{ section.settings.secHeading}}`,
   box :  {{ loopData }}
 }">
 
@@ -54,6 +56,14 @@
 {% schema %}
 {
    "name": "t:sections.home_featured_slider.name",
+   "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "t:sections.home_featured_slider.settings.secHeading.label",
+      "default": "FEATURED IN"
+    }
+  ],
    "blocks": [
      {
        "type": "slide",

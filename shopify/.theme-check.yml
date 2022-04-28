@@ -1,2 +1,10 @@
 MatchingTranslations:
   enabled: false
+TemplateLength:
+  enabled: false
+  severity: suggestion
+  ignore:
+    - config/settings_data.json
+    - config/settings_schema.json
+    - config/
+    - locales/

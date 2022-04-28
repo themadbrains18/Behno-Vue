@@ -88,7 +88,6 @@ button{
   background-color: #6B6B6B;
 }
 
-
 .big_container {
   max-width: 1470px;
   margin: 0 auto;
@@ -165,6 +164,7 @@ button{
   font-size: 14px;
   letter-spacing: 0.02em;
   display: inline-block;
+  transition: 0.3s;
 }
 
 /* Figma Quotes */

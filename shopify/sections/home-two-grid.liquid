@@ -30,12 +30,13 @@
    {% for block in section.blocks %}
     {
 	   imgUrl : {
-               src : '{{ block.settings.image | img_url : "" }}',
-               placeholder: '{{ block.settings.image | img_url : "50x50" }}'
+               src : `{{ block.settings.image | img_url : "" }}`,
+               placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+               alt: `{{ block.settings.image.alt }}`
        },
-       title : '{{ block.settings.title }}',
-	   linkText : '{{ block.settings.linkText }}',
-       link : '{{ block.settings.link }}' 
+       title : `{{ block.settings.title }}`,
+	     linkText : `{{ block.settings.linkText }}`,
+       link : `{{ block.settings.link }}` 
     }{% unless forloop.last %},{% endunless %}
    {% endfor %}
 ]

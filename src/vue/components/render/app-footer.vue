@@ -3,7 +3,7 @@
     <div class="footer_wave">
       <!-- ../../assets/images/footer-wave.png -->
 
-      <v-lazy-image class="footer_wave_img" :src="getImage('footerWave')" />
+      <v-lazy-image class="footer_wave_img" :src=(shopifyData.footerWave) />
     </div>
     <footer class="footer">
       <div class="big_container">
@@ -30,11 +30,11 @@
               <div class="footer_social_link">
                 <a class="link" href="#">
                   <!-- ../../assets/svg/fb-icon.svg  -->
-                  <v-lazy-image :src="getImage('fbIcon')" />
+                  <v-lazy-image :src=(shopifyData.fbIcon)  />
                 </a>
                 <a class="link" href="#">
                   <!-- ../../assets/svg/instagram-icon.svg -->
-                  <v-lazy-image :src="getImage('instaIcon')" />
+                  <v-lazy-image :src=(shopifyData.instaIcon)  />
                 </a>
               </div>
             </li>
@@ -59,7 +59,7 @@
             </form>
             <h4 class="footer_after_pay">
               <!-- ../../assets/svg/after-icon.svg -->
-              <v-lazy-image :src="getImage('afterIcon')" />
+              <v-lazy-image :src=(shopifyData.afterIcon) />
 
               <span> Finance your favorite bag with only 25% up front. </span>
             </h4>
@@ -215,26 +215,7 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
-    },
-  },
-  created: function () {
-    this.getImage();
-  },
-  methods: {
-    getImage($name) {
-      var imgObj = this.shopifyData;
-
-      var ImgSrc = "";
-      for (let item in imgObj) {
-        if ($name == item) {
-          ImgSrc = imgObj[item];
-        } else {
-          continue;
-        }
-      }
-
-      return ImgSrc;
-    },
-  },
+    }
+  }
 };
 </script>
