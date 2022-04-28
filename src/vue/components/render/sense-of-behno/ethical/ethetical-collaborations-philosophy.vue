@@ -53,6 +53,7 @@
   text-transform: uppercase;
   color: #ef0000;
   margin-bottom: 100px;
+  font-family: 'Helvetica Neue',sans-serif;
 }
 
 .sec_collaborations_philosophy .sec_content {

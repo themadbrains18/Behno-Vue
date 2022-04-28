@@ -35,6 +35,7 @@
   padding: 25px 0 104px;
 }
 .sec_behno_standard .sec_heading {
+  font-family: 'Helvetica Neue',sans-serif;
   font-weight: 700;
   font-size: 72px;
   line-height: 95.9%;
@@ -107,7 +108,7 @@
   .sec_behno_standard .sec_heading {
     font-size: 35px;
   }
-  .sec_behno_standard .cta_button {
+  .sec_behno_standard .cta_btn {
     margin: 25px auto 0;
     width: fit-content;
     display: block;

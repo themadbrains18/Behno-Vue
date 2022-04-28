@@ -17,10 +17,10 @@
               src="https://cdn.shopify.com/s/files/1/1000/3130/files/ethical-phIlosophy-img2.jpg?v=1650867775"
             />
           </div>
-          <h2 class="sec_inner_heading big-caslon-pro-font">Our name,a community.</h2>
+          <h2 class="sec_heading">Our name,a community.</h2>
           <h4 class="our-community_inner_heading">“behno” means sisters in Hindi.</h4>
           <p
-            class="sec_info adobe-caslon-pro-font"
+            class="body_text"
           >At our partner factories, female colleagues are referred to by their first name followed by the suffix of “behn” (sister). In plurality, they become a community of sisters.</p>
         </div>
       </div>
@@ -64,9 +64,7 @@
                    text-align: center;
 }
 
-.sec_our_ethical_philosophy .sec_inner_heading {
-  font-weight: 400;
-  font-size: 46px;
+.sec_our_ethical_philosophy .sec_heading {
   line-height: 41.86px;
   color: #000000;
   margin: 27px 0 14px;
@@ -78,6 +76,9 @@
   letter-spacing: 0.02em;
   color: #000000;
   margin-bottom: 14px;
+}
+.body_text{
+  line-height: 19px;
 }
 .sec_our_ethical_philosophy .sec_info {
   font-weight: 400;
@@ -118,10 +119,17 @@
   .sec_our_ethical_philosophy .sec_content .sec_text .sec_img {
     display: none;
   }
-  .sec_our_ethical_philosophy .sec_inner_heading {
+  .sec_our_ethical_philosophy .sec_heading {
     margin-top: 0;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .sec_our_ethical_philosophy{
+    padding: 0 0 64px;
+  }
+}
+
 
 /* ========== Section OUR ETHICAL PHILOSOPHY Reponsive Css Code End ========== */
 </style>

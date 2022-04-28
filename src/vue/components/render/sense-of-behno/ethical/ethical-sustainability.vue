@@ -6,15 +6,16 @@
         <!--    Section text        -->
         <div class="sec_text">
           <h2
-            class="sec_inner_heading big-caslon-pro-font"
+            class="sec_heading"
           >We redefine sustainability and ethics in fashion.</h2>
           <h4
-            class="our-community_inner_heading"
+            class="card_heading_b"
           >We’re pioneering a new standard for manufacturing in the global garment trade, revolutionizing the way garment workers and artisans are viewed, employed, and treated.</h4>
-          <p class="sec_info adobe-caslon-pro-font">
+          <p class="body_text">
             Inspiring change not only by example at our own factory, we also partner with other international factories adhering to rigid compliances striving to improve factory conditions in developing countries.
-            <br />
-            <br />Our objects are handmade in facilities incrementally implementing “The behno Standard,” a set of six guiding principles:
+          </p>
+            <p class="body_text">
+            Our objects are handmade in facilities incrementally implementing “The behno Standard,” a set of six guiding principles:
           </p>
           <div class="sec_img">
             <img
@@ -40,12 +41,21 @@
   padding: 45px 0 75px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #e9e7e3 100%);
 }
-
+.body_text{
+  margin-bottom:20px;
+  line-height: 19px;
+}
+.body_text:last-of-type{
+  margin-bottom: 0;
+}
 .sec_sustainability_ethics .sec_text {
   max-width: 432px;
   width: 100%;
 }
-
+.card_heading_b{
+  margin:  14px 0;
+  text-transform: initial;
+}
 .sec_sustainability_ethics .sec_content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, auto));
@@ -61,13 +71,7 @@
 }
 
 .sec_sustainability_ethics .sec_heading {
-  font-weight: 700;
-  margin-bottom: 33px;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  color: #000000;
-  text-align: center;
+  line-height: 41px;
 }
 .sec_sustainability_ethics .sec_inner_heading {
   font-weight: 400;
