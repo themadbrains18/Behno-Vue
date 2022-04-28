@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^10.2.4",
+    "shopify-cli": "^1.0.11",
     "swiper": "^8.1.1",
     "v-lazy-image": "^2.1.1",
     "vue": "^3.2.26",
