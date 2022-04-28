@@ -85,6 +85,9 @@ iframe {
     .sec_ethical{
         padding: 43px 0 28px;
     }
+    iframe {
+        height: 244px;
+    }
 }
 
 </style>

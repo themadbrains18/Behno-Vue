@@ -71,6 +71,13 @@
     .body_text{
         margin-bottom:38px;
     }
-    
+    .sec_video video{
+        height: 300px;
+    }
+}
+@media screen  and  (max-width: 767px){
+    .sec_video video{
+        height: 200px;
+    }
 }
 </style>
