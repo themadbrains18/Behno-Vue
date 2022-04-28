@@ -80,14 +80,16 @@
         .card_heading{
             margin: 0 0 5px 12px;
         }
-        .card > img{
+        /* .card > img{
             width: 166px;
             height: 166px;
-        }
+        } */
         .product_cards{
-            width: 670px;
             gap:2px;
             justify-content: unset;
+        }
+        .card{
+            min-width: 166px;
         }
         .product_info{
             margin:8px 0 0 4px;
