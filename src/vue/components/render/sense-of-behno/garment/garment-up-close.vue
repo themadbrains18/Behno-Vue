@@ -2,7 +2,7 @@
 <!-- Garment Up-close Start -->
     <section class="sec_up_close">
         <div class="big_container">
-            <div class="sec_content">
+            <div class="sec_content modify-slider">
                 <h2 class="sec_heading">
                     Up close and live at Sotheby’s circa July 2016.
                 </h2>
@@ -64,18 +64,6 @@ export default {
 </script>
 
 <style >
-.sec_up_close .swiper-button-next:after, .sec_up_close .swiper-button-prev:after {
-    font-size: 17px;
-    border-radius: 50%;
-    color: #000000;
-}
-.sec_up_close .swiper-button-next:after{
-  padding: 7.5px  10.86px 7.5px   12.57px;
-}
-
-.sec_up_close .swiper-button-prev:after{
-  padding: 7.5px 12.57px 7.5px 10.86px ;
-}
 
 
 @media screen  and (max-width: 767px){
