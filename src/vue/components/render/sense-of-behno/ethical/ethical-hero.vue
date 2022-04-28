@@ -2,7 +2,7 @@
   <!-- ========== Section OUR ETHICAL PHILOSOPHY Start ========== -->
   <section class="sec_our_ethical_philosophy">
     <div class="container">
-      <h2 class="sec_heading">OUR ETHICAL PHILOSOPHY</h2>
+      <h2 class="card_heading_b">OUR ETHICAL PHILOSOPHY</h2>
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
@@ -58,14 +58,10 @@
   max-width: 289px;
   width: 100%;
 }
-.sec_our_ethical_philosophy .sec_heading {
-  font-weight: 700;
+.sec_our_ethical_philosophy .card_heading_b {
   margin-bottom: 33px;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
   color: #000000;
-  text-align: center;
+                   text-align: center;
 }
 
 .sec_our_ethical_philosophy .sec_inner_heading {
@@ -107,7 +103,7 @@
     padding: 0;
   }
 
-  .sec_our_ethical_philosophy .sec_heading {
+  .sec_our_ethical_philosophy .card_heading_b {
     display: none;
   }
   .sec_our_ethical_philosophy {
