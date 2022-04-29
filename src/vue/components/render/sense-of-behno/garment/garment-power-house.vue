@@ -98,7 +98,7 @@
 }
 @media screen  and (max-width: 767px){
 .sec_power_house{
-    padding-bottom:63px;
+    padding-bottom:0px;
 }
 .back_sense_behno{
     margin:  63px auto 43px;

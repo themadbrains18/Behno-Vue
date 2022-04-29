@@ -21,10 +21,14 @@
       "speaking-engagement" :{
         "type" : "speaking-engagement"
       }
+      ,
+      "launch-bergdorf" :{
+        "type" : "launch-bergdorf"
+      }
       
       
     },
     "order": [
-      "behno-world-hero","winner-of-fashion","willfully-chaotic","invited-buckingham","finalist-in-livia","meet-fashion-designers","speaking-engagement"
+      "behno-world-hero","winner-of-fashion","willfully-chaotic","invited-buckingham","finalist-in-livia","meet-fashion-designers","speaking-engagement","launch-bergdorf"
     ]
   }
