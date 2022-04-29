@@ -8,8 +8,15 @@
       <a  :href=(shopifyData.link) class="cta_btn bg-white"> {{ shopifyData.btnText }} </a>
     </div>
     <div class="grid_item grid_item_img">
-      <a  :href=(shopifyData.link) class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+      <a  :href=(shopifyData.link) class="grid_img-wrap line-h-0 d-block" >
+          <template v-if="shopifyData.checkImage === 'true'">
+          <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+              <source :src=(shopifyData.videolink) type="video/mp4">
+            </video>
+          </template>
+          <template v-else>
+            <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+          </template>
       </a>
     </div>
   </section>

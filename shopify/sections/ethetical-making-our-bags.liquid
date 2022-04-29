@@ -1,2 +1,76 @@
-<render-sense-of-behno-ethical-ethetical-making-our-bags>
+{% assign imgSrc = section.settings.img | img_url: "" %} 
+{% assign  placeHolder = section.settings.img | img_url: "50x50" %}
+
+{% unless section.settings.img %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+
+
+<render-sense-of-behno-ethical-ethetical-making-our-bags :shopify-data="{
+    secHeading: `{{ section.settings.secHeading }}`,
+    crdheading: `{{ section.settings.crdheading }}`,
+    crdSubHeading: `{{ section.settings.crdSubHeading }}`,
+    para: `{{ section.settings.para }}`,
+    link: `{{ section.settings.link }}`,
+    linkText: `{{ section.settings.linkText }}`,
+    imgUrl:{
+        src : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.img.alt }}`
+    }
+  }">
 </render-ethical-ethetical-making-our-bags>
+
+
+
+
+{% schema %}
+{
+  "name": "Making Our Bags",
+  "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "Big Red Text",
+      "default": "THE MAKING OF OUR BAGS"
+    },
+    {
+        "id": "crdheading",
+        "type": "text",
+        "label": "Card Heading",
+        "default": "It takes a village."
+      },
+    {
+        "id": "crdSubHeading",
+        "type": "text",
+        "label": "Card Sub Heading",
+        "default": "Our partner handbag factory."
+      },
+    {
+      "id": "para",
+      "type": "textarea",
+      "label": "Paragraph",
+      "default" : "Our bags are made in a world-class factory which works with luxury purveyors across the globe."
+    },
+    {
+        "id": "link",
+        "type": "url",
+        "label": "Link",
+        "default": "/"
+    },
+    {
+        "id": "linkText",
+        "type": "text",
+        "label": "Link Btn",
+        "default": "LEARN MORE"
+    },
+    {
+        "id": "img",
+        "type": "image_picker",
+        "label": "Image"
+    }
+  ]
+}
+{% endschema %}

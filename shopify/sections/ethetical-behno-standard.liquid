@@ -9,15 +9,15 @@
 
 
 <render-sense-of-behno-ethical-ethetical-behno-standard :shopify-data="{
-    redText: '{{ section.settings.redText }}',
-    img:{
-        imgSrc : '{{ imgSrc }}',
-        placeHolder : '{{ placeHolder | img_url: "50x50" }}',
-        alt : '{{ section.settings.img.alt }}'
+    redText: `{{ section.settings.redText }}`,
+    imgUrl:{
+        src : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.img.alt }}`
     },
-    para: '{{ section.settings.para }}',
-    link: '{{ section.settings.link }}',
-    linkText: '{{ section.settings.linkText }}',
+    para: `{{ section.settings.para }}`,
+    link: `{{ section.settings.link }}`,
+    linkText: `{{ section.settings.linkText }}`,
   }">
 </render-ethical-ethetical-behno-standard>
 
@@ -46,7 +46,8 @@
     {
         "id": "link",
         "type": "url",
-        "label": "Link"
+        "label": "Link",
+        "default": "/"
     },
     {
         "id": "linkText",

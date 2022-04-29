@@ -15,7 +15,7 @@
             <div class="sec_content">
                 <div class="sec_video">
                     <img src="https://i.shgcdn.com/b789389d-9667-4da6-82ae-edf4b5b0f868/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
-                    <video width="300" height="" autoplay="" loop="" muted="" webkit-playsinline="" playsinline="" style="" preload="none" class="shogun-image ">
+                    <video width="300" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" class="shogun-image ">
                         <source src="https://i.shgcdn.com/a9e2a160-708b-4b95-b28e-d4e901ffd4eb/gif2video/-/format/webm/-/quality/lighter/" type="video/webm">
                         <source src="https://i.shgcdn.com/a9e2a160-708b-4b95-b28e-d4e901ffd4eb/gif2video/-/format/mp4/-/quality/lighter/" type="video/mp4">
                     </video>

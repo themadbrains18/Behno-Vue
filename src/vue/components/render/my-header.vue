@@ -724,35 +724,41 @@
   width: 100%;
   background: #000000;
   display: block;
-  transition: 0.3s;
+  
   position: absolute;
   left: 0;
+  transform-origin: center;
 }
-.toggle_bar-top {
-  top: 0;
-}
+
 .toggle_bar-center {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.toggle_bar-top {
+  top: 0;
+  transition: transform 0.3s ,top 0.3s 0.3s;
+}
 .toggle_bar-bottom {
   bottom: 0;
+  transition: transform 0.3s ,bottom 0.3s 0.3s;
 }
-
-.active .toggle_bar-top,
-.active .toggle_bar-bottom {
+.active .toggle_bar-top{
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
-  transform-origin: center;
+  transition: top 0.3s,transform 0.3s 0.3s;
+}
+.active .toggle_bar-bottom {
+  bottom: 50%;
+  transition: bottom 0.3s,transform 0.3s 0.3s;
+  transform: translateY(50%) rotate(-45deg);
 }
 
 .active .toggle_bar-center {
   opacity: 0;
 }
 
-.active .toggle_bar-bottom {
-  transform: translateY(-50%) rotate(-45deg);
-}
+
 
 .subnavlink__item {
   margin-bottom: 10px;
@@ -894,7 +900,7 @@
     min-height: 100vh;
     width: min(100%, 300px);
     background: #f3f3f3;
-    padding: 25px 20px;
+    padding: 25px 20px 70px;
     z-index: 5;
     display: flex;
     flex-direction: column;
@@ -1003,6 +1009,11 @@ export default {
       }
     },
     togleHeader() {
+      if(document.body.getAttribute.style){
+        document.body.removeAttribute("style");
+      }else{
+        document.body.setAttribute("style","overflow:hidden;")
+      }
       this.header[0].classList.toggle("active");
     },
     toggleDropDown(e) {
@@ -1052,13 +1063,10 @@ export default {
       }
       e.currentTarget.classList.add("hover_active");
     },
-    stopScroll(){
+    stopScroll(e){
         const bodyWidth = document.body.offsetWidth;  
-        document.body.setAttribute("style", `overflow:hidden;padding-right:0;`);
-
-        for(let i of document.querySelectorAll(" .navlink__hover")){
-          i.setAttribute("style", `max-width: ${i.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
-        }
+        document.body.setAttribute("style", `overflow:hidden;`);
+        e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
         this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
         document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
     },
@@ -1067,7 +1075,7 @@ export default {
         i.removeAttribute("style");
       }
       this.header[0].removeAttribute("style");
-      document.body.setAttribute("style", "position:static;");
+      document.body.removeAttribute("style");
     }
   }
 };

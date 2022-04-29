@@ -5,6 +5,7 @@
     <swiper
       :modules="modules"
       :slidesPerView="'auto'"
+      :mousewheel="true"
       :spaceBetween="20"
       navigation
     >
@@ -62,7 +63,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation } from "swiper";
+import { Navigation, Mousewheel} from "swiper";
 import VLazyImage from "v-lazy-image";
 
 export default {
@@ -79,7 +80,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation],
+      modules: [Navigation,Mousewheel],
     };
   }
 };

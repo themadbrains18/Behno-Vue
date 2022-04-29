@@ -2,37 +2,38 @@
   <!-- ========== Section COLLABORATIONS PHILOSOPHY Start ========== -->
   <section class="sec_collaborations_philosophy">
     <div class="big_container">
-      <h2 class="sec_heading">“COLLABORATIONS ARE AT THE CORE OF OUR ETHICAL PHILOSOPHY.”</h2>
-      <div class="sec_content">
+      <h2 class="sec_heading">{{ shopifyData.redText }}</h2>
+      <div class="sec_content"  >
         <!--    Section Image        -->
-        <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/collaborations-img1.jpg?v=1650891936"
-          />
-          <p class="sec_info">VISIT OUR PARTNER HANDLOOM WEAVER’S COLLECTIVE.</p>
+        <template v-for="(item, index) in shopifyData.card" :key="index"> 
+          <div class="sec_img"  v-if="index <= 1">
+          <a :href=(item.link) >
+            <img
+              :src=(item.imgUrl.src)
+              :src-placeholder=(item.imgUrl.placeholder)
+              :alt=(item.imgUrl.alt)
+            />
+            <p class="sec_info">{{ item.crdHeading }}</p>
+          </a>
         </div>
-        <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/collaborations-img2.jpg?v=1650891934"
-          />
-          <p class="sec_info">SEE OUR ARTISAN HAND EMBROIDERY WORKSHOP.</p>
-        </div>
+        </template>
       </div>
-      <h3 class="sec_inner_heading">A SOCIAL ENTERPRISE ON THE FRONT END, TOO.</h3>
-      <div class="sec_content">
+      <h3 class="sec_inner_heading">{{ shopifyData.secHeading }}</h3>
+      <div class="sec_content" >
         <!--    Section Image        -->
-        <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/collaborations-img3.jpg?v=1650891934"
-          />
-          <p class="sec_info">VISIT OUR PARTNER HANDLOOM WEAVER’S COLLECTIVE.</p>
+        <template v-for="(item, index) in shopifyData.card" :key="index"> 
+          <div class="sec_img"  v-if="index >= 2">
+          <a :href=(item.link) >
+            <img
+              :src=(item.imgUrl.src)
+              :src-placeholder=(item.imgUrl.placeholder)
+              :alt=(item.imgUrl.alt)
+            />
+            <p class="sec_info">{{ item.crdHeading }}</p>
+          </a>
         </div>
-        <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/collaborations-img4.jpg?v=1650891934"
-          />
-          <p class="sec_info">SEE OUR ARTISAN HAND EMBROIDERY WORKSHOP.</p>
-        </div>
+        </template>
+        
       </div>
     </div>
   </section>
@@ -143,3 +144,15 @@
 }
 /* ========== Section COLLABORATIONS PHILOSOPHY Responsive Css Code End ========== */
 </style>
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
