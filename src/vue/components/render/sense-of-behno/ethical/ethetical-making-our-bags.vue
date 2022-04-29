@@ -2,22 +2,26 @@
   <!-- ========== Section Making Our Bags Start ========== -->
   <section class="sec_making_our_bags">
     <div class="container">
-      <h2 class="sec_heading sec-heading">THE MAKING OF OUR BAGS</h2>
+      <h2 class="sec_heading sec-heading">{{ shopifyData.secHeading }}</h2>
       <div class="sec_content">
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="text-heading big-caslon-font">It takes a village.</h2>
-          <h4 class="text-inner-heading">Our partner handbag factory.</h4>
+          <h2 class="sec_heading">{{ shopifyData.crdheading }}</h2>
+          <h4 class="card_heading_b">{{ shopifyData.crdSubHeading }}</h4>
           <p
-            class="text-info adobe-caslon-pro-font"
-          >Our bags are made in a world-class factory which works with luxury purveyors across the globe.</p>
-          <a href="/" class="cta_btn">MORE ABOUT THE PARTNERSHIP</a>
+            class="body_text"
+          >{{ shopifyData.para }}</p>
+          <a :href=(shopifyData.link) class="cta_btn">{{ shopifyData.linkText }}</a>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/making-our-bag-img.jpg?v=1650894060"
-          />
+          <a :href=(shopifyData.link)> 
+            <img
+              :src=(shopifyData.imgUrl.src)
+              :src-placeholder=(shopifyData.imgUrl.placeholder)
+              :alt=(shopifyData.imgUrl.alt)
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -45,18 +49,30 @@
   align-items: center;
   margin-top: 57px;
 }
+
+.sec_making_our_bags .sec_heading.sec-heading{
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+}
+
 .sec_making_our_bags .sec_text {
   max-width: 346px;
   width: 100%;
 }
-.sec_making_our_bags .text-inner-heading {
+.sec_making_our_bags .card_heading_b {
   margin: 14px 0;
+  text-transform: initial;
+}
+.sec_making_our_bags .body_text{
+  line-height: 19px;
 }
 .sec_making_our_bags .cta_btn {
   background: #000000;
   color: #fff;
   margin-top: 30px;
 }
+
 
 /* ========== Section Making Our Bags Css Code End ========== */
 
@@ -100,3 +116,15 @@
 }
 /* ========== Section Making Our Bags Responsive Css Code End ========== */
 </style>
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>

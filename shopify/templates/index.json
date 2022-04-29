@@ -124,7 +124,15 @@
         "e96f5655-04a1-499d-8af5-07a6ff7d16b8"
       ],
       "settings": {
-        "secHeading": "BEHNO FEATURED IN"
+        "secHeading": "BEHNO FEATURED IN",
+        "showProduct": true,
+        "product_list": [
+          "chain-bracelet",
+          "leather-anchor",
+          "bangle-bracelet-with-feathers",
+          "bangle-bracelet",
+          "boho-earrings"
+        ]
       }
     },
     "grid-single": {
@@ -143,7 +151,9 @@
         "secHeading": "An honest accessory.",
         "btnText": "THE SENSE OF BEHNO",
         "link": "shopify:\/\/pages\/ethical-philosophy",
-        "image": "shopify:\/\/shop_images\/sense-behno.jpg"
+        "checkImage": true,
+        "image": "shopify:\/\/shop_images\/sense-behno.jpg",
+        "videolink": "https:\/\/i.shgcdn.com\/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
       }
     },
     "gradient-carousel": {

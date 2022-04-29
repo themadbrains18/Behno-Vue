@@ -5,18 +5,22 @@
       <div class="sec_content">
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="sec_text_heading big-caslon-font">Forming real relationships.</h2>
-          <h4 class="sec_text_inner_heading">The Garment Worker Project.</h4>
+          <h2 class="sec_heading">{{ shopifyData.heading }}</h2>
+          <h4 class="card_heading_b">{{ shopifyData.subHeading }}</h4>
           <p
-            class="sec_info adobe-caslon-pro-font"
-          >Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.</p>
-          <a href="/" class="cta_btn">discover the project</a>
+            class="body_text"
+          >{{ shopifyData.para }}</p>
+          <a :href=(shopifyData.link) class="cta_btn">{{ shopifyData.linkText }}</a>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/forming-relationshop-img.jpg?v=1650887016"
-          />
+          <a :href=(shopifyData.link) >
+            <img
+              :src=(shopifyData.imgUrl.src)
+              :src-placeholder=(shopifyData.imgUrl.placeholder)
+              :alt=(shopifyData.imgUrl.alt)
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -31,6 +35,10 @@
   background: #000000;
 }
 
+.sec_heading{
+  color: #fff;
+  line-height: 41px;
+}
 .sec_forming_relationship .container {
   max-width: 1056px;
   padding: 0 20px;
@@ -53,20 +61,15 @@
   color: #ffffff;
 }
 
-.sec_forming_relationship .sec_text_inner_heading {
-  font-weight: 700;
-  font-size: 15px;
+.sec_forming_relationship .card_heading_b {
   line-height: 18px;
-  letter-spacing: 0.02em;
   color: #ffffff;
   margin: 14px 0;
+  text-transform: initial;
 }
 
-.sec_forming_relationship .sec_info {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.02em;
+.sec_forming_relationship .body_text {
+  line-height: 19px;
   color: #ffffff;
 }
 
@@ -130,3 +133,14 @@
 }
 /* ========== Section Forming real relationships Responsive Css Code End  ========== */
 </style>
+
+<script>
+export default {
+  props:{
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

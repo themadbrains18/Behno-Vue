@@ -5,24 +5,23 @@
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/conscious-tannery-img.jpg?v=1650946444"
-          />
+          <a :href=(shopifyData.link)>
+            <img
+              :src=(shopifyData.imgUrl.src)
+              :src-placeholder=(shopifyData.imgUrl.placeHolder)
+              :alt=(shopifyData.imgUrl.alt)
+            />
+          </a>
         </div>
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="text-heading big-caslon-font">Conscious tannery, genuine leathers.</h2>
-          <h4 class="text-inner-heading">Our leathers come from one of the world’s finest tanneries.</h4>
-          <p class="text-info adobe-caslon-pro-font">
-            Located on the outskirts of the iconic canal city of Venice, and not too far from Milan, the fashion capital of Italy, our principle tannery is a critical member of our supply chain.
-            <br />
-            <br />It is a Gold Member, the highest status awarded, of the Leather Working Group, a consortium of stakeholders that develop and maintain rigid protocols to assess the environmental compliance and performance capabilities of leather manufacturers. The Leather Working Group (LWG) works with leading technical experts and industry leaders to promote sustainability and transparency.
-            <br />
-            <br />Earning the status of a ‘Gold Member’ is rigid. It means tanneries heed much attention to their environmental and chemical management systems, ban restricted substances, minimize their energy consumption and water usage, focus on materials traceability, and ensure the safety, health, and emergency preparedness of their workers.
-            <br />
-            <br />This means our tannery was scored an 85 or above after being evaluated on all the elements that matter. It’s a feat.
+          <h2 class="sec_heading ">{{ shopifyData.crdheading }}</h2>
+          <h4 class="card_heading_b">{{ shopifyData.crdSubHeading }}</h4>
+          <!-- {{ shopifyData.para }} -->
+          <p class="body_text" v-for="(item, index) in shopifyData.para" :key="index">
+            {{ item.para }}
           </p>
-          <a href="/" class="cta_btn">MORE ABOUT THE PARTNERSHIP</a>
+          <a :href=(shopifyData.link) class="cta_btn">{{ shopifyData.linkText }}</a>
         </div>
       </div>
     </div>
@@ -40,6 +39,20 @@
 }
 .sec_making_our_bags.sec-conscious-tannery .sec_content {
   gap: 37px;
+  margin-top: 0;
+}
+.sec_heading{
+  line-height: 41px;
+}
+
+.card_heading_b{
+  text-transform: initial;
+  margin:  14px 0;
+}
+
+.body_text{
+  padding-bottom:20px;
+  line-height: 19px;
 }
 
 .cta_btn {
@@ -87,3 +100,17 @@
 }
 /* ========== Section Conscious tannery Css Code End ========== */
 </style>
+
+
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>

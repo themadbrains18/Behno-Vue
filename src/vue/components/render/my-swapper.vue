@@ -7,9 +7,22 @@
         :modules="modules"
         :slidesPerView="'auto'"
         :spaceBetween="10"
+        :mousewheel="true"
         navigation
       >
-        <swiper-slide v-for="(value, key) in shopifyData.box" :key="key">
+      <!-- product Card -->
+       <template v-if="shopifyData.showProduct === 'true'">
+         <swiper-slide v-for="(value, key) in shopifyData.product" :key="key">
+          <div class="grid_item featured_carousel_item">
+            <a :href=value.productLink>
+              <v-lazy-image :src=value.productImage alt="" />
+            </a>
+          </div>
+        </swiper-slide>
+       </template>
+       <!-- Custom card -->
+       <template v-else>
+         <swiper-slide v-for="(value, key) in shopifyData.box" :key="key">
           <div class="grid_item featured_carousel_item">
             <a :href=(value.link) class="grid_img-wrap line-h-0 d-block">
               <v-lazy-image
@@ -21,6 +34,8 @@
             </a>
           </div>
         </swiper-slide>
+       </template>
+        
       </swiper>
     </section>
   </div>

@@ -2,26 +2,30 @@
   <!-- ========== Section OUR ETHICAL PHILOSOPHY Start ========== -->
   <section class="sec_our_ethical_philosophy">
     <div class="container">
-      <h2 class="card_heading_b">OUR ETHICAL PHILOSOPHY</h2>
+      <h2 class="card_heading_b">{{ shopifyData.secHeading }} </h2>
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
           <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/ethical-phIlosophy-img1.jpg?v=1650867775"
+            :src=(shopifyData.leftImg.src)
+            :src-placeHolder=(shopifyData.leftImg.placeHolder)
+            :alt=(shopifyData.leftImg.alt)
           />
         </div>
         <!--    Section text        -->
         <div class="sec_text">
           <div class="sec_img">
-            <img
-              src="https://cdn.shopify.com/s/files/1/1000/3130/files/ethical-phIlosophy-img2.jpg?v=1650867775"
+           <img
+            :src=(shopifyData.rightImg.rightImgSrc)
+            :src-placeHolder=(shopifyData.rightImg.rightPlaceHolder)
+            :alt=(shopifyData.rightImg.alt)
             />
           </div>
-          <h2 class="sec_inner_heading big-caslon-pro-font">Our name,a community.</h2>
-          <h4 class="our-community_inner_heading">“behno” means sisters in Hindi.</h4>
+          <h2 class="sec_heading">{{ shopifyData.crdHeading }} </h2>
+          <h4 class="our-community_inner_heading">{{ shopifyData.crdSubHeading }} </h4>
           <p
-            class="sec_info adobe-caslon-pro-font"
-          >At our partner factories, female colleagues are referred to by their first name followed by the suffix of “behn” (sister). In plurality, they become a community of sisters.</p>
+            class="body_text"
+          >{{ shopifyData.para }} </p>
         </div>
       </div>
     </div>
@@ -64,9 +68,7 @@
                    text-align: center;
 }
 
-.sec_our_ethical_philosophy .sec_inner_heading {
-  font-weight: 400;
-  font-size: 46px;
+.sec_our_ethical_philosophy .sec_heading {
   line-height: 41.86px;
   color: #000000;
   margin: 27px 0 14px;
@@ -78,6 +80,9 @@
   letter-spacing: 0.02em;
   color: #000000;
   margin-bottom: 14px;
+}
+.body_text{
+  line-height: 19px;
 }
 .sec_our_ethical_philosophy .sec_info {
   font-weight: 400;
@@ -118,10 +123,28 @@
   .sec_our_ethical_philosophy .sec_content .sec_text .sec_img {
     display: none;
   }
-  .sec_our_ethical_philosophy .sec_inner_heading {
+  .sec_our_ethical_philosophy .sec_heading {
     margin-top: 0;
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .sec_our_ethical_philosophy{
+    padding: 0 0 64px;
+  }
+}
+
+
 /* ========== Section OUR ETHICAL PHILOSOPHY Reponsive Css Code End ========== */
 </style>
+
+<script>
+export default {
+  props:{
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

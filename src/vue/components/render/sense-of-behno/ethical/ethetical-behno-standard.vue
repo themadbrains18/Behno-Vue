@@ -8,20 +8,20 @@
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
-          <img
-            :src="getImage('imgSrc')" 
-            :src-placeholder="getImage('placeHolder')"
-            :alt="getImage('alt')"
-          />
-          
+          <a :href=(shopifyData.imgUrl.link)>
+            <img
+              :src=(shopifyData.imgUrl.src) 
+              :src-placeholder=(shopifyData.imgUrl.placeholder) 
+              :alt=(shopifyData.imgUrl.alt) 
+            />
+          </a>
         </div>
         <!-- Section Text           -->
         <div class="sec_text">
           <p
             class="sec_info"
           >{{ shopifyData.para }}</p>
-          
-          <a :href="getHref(link)" class="cta_btn">{{ shopifyData.linkText }}</a>
+          <a :href=(shopifyData.imgUrl.link)   class="cta_btn">{{ shopifyData.linkText }}</a>
         </div>
       </div>
     </div>
@@ -35,6 +35,7 @@
   padding: 25px 0 104px;
 }
 .sec_behno_standard .sec_heading {
+  font-family: 'Helvetica Neue',sans-serif;
   font-weight: 700;
   font-size: 72px;
   line-height: 95.9%;
@@ -107,7 +108,7 @@
   .sec_behno_standard .sec_heading {
     font-size: 35px;
   }
-  .sec_behno_standard .cta_button {
+  .sec_behno_standard .cta_btn {
     margin: 25px auto 0;
     width: fit-content;
     display: block;
@@ -150,38 +151,7 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
-    },
-  },
-  created: function () {
-    this.getImage();
-    this.getHref();
-  },
-  methods: {
-    getImage($name) {
-      var imgObj = this.shopifyData.img;
-      var ImgSrc = "";
-      for (let data in imgObj) {
-        if ($name == data) {
-          ImgSrc = imgObj[data];
-        } else {
-          continue;
-        }
-      }
-      return ImgSrc;
-    },
-    getHref($key) {
-      var imgObj = this.shopifyData;
-      var link = "";
-      
-      for (let data in imgObj) {
-        if ($key == data) {
-          link = imgObj.link;
-        } else {
-          continue;
-        }
-      }
-      return link;
-    },
-  },
+    }
+  }
 };
 </script>
