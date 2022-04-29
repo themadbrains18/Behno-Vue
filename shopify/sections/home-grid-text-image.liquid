@@ -7,9 +7,8 @@
               placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
               alt: `{{ section.settings.image.alt }}`
             },
-            shopDomain: `{{ shop.domain }}`,
-            shopEmail: `{{ shop.email }}`,
-            shopCurrency: `{{ shop.currency }}`
+            checkImage: `{{ section.settings.checkImage }}`,
+            videolink: `{{ section.settings.videolink }}`
           }"
         >
 </render-home-grid-text-image>
@@ -33,13 +32,25 @@
 	{
     "id": "link",
     "type": "url",
-	"label": "t:sections.home_grid_text_image.settings.link.label"
+	  "label": "t:sections.home_grid_text_image.settings.link.label"
 	},
-    {
-      "id": "image",
-      "type": "image_picker",
-      "label": "t:sections.home_grid_text_image.settings.image.label"
-    }
+  {
+    "id": "checkImage",
+    "type": "checkbox",
+    "label": "Show Video",
+    "default": true
+  },
+  {
+    "id": "image",
+    "type": "image_picker",
+    "label": "t:sections.home_grid_text_image.settings.image.label"
+  },
+  {
+    "id": "videolink",
+    "type": "text",
+    "label": "t:sections.home_grid_text_image.settings.video.label",
+    "default" :"https://i.shgcdn.com/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb/gif2video/-/format/mp4/-/quality/lighter/"
+  }
   ],
   "presets": [
       {

@@ -135,6 +135,9 @@
         },
         "image": {
           "label": "Upload Image"
+        },
+        "video": {
+          "label": "Mp4 Video Url"
         }
       }
     },

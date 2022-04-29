@@ -31,7 +31,7 @@
           placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
           alt: `{{ block.settings.image.alt }}`
        },
-	     link : '{{ block.settings.link }}'
+	     link : `{{ block.settings.link }}`
     }{% unless forloop.last %},{% endunless %}
    {% endfor %}
 ]
@@ -45,8 +45,21 @@
     {% assign loopData  =  defaultData %}
 {% endif %}
 
+{% capture productData %}
+[
+  {% for product in section.settings.product_list %}
+  {
+    productImage : `{{ product.images[0] | img_url: "" }}`,
+    productLink :  `{{ product.url }}`
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
 <render-my-swapper :shopify-data="{
   secHeading : `{{ section.settings.secHeading}}`,
+  showProduct : `{{ section.settings.showProduct}}`,
+  product :  {{ productData }},
   box :  {{ loopData }}
 }">
 
@@ -62,6 +75,17 @@
       "type": "text",
       "label": "t:sections.home_featured_slider.settings.secHeading.label",
       "default": "FEATURED IN"
+    },
+    {
+      "id": "showProduct",
+      "type": "checkbox",
+      "label": "Show Products",
+      "default": true
+    },
+    {
+      "id": "product_list",
+      "type": "product_list",
+      "label": "Products"
     }
   ],
    "blocks": [
