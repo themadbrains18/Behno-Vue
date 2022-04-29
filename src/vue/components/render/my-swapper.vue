@@ -7,6 +7,7 @@
         :modules="modules"
         :slidesPerView="'auto'"
         :spaceBetween="10"
+        :mousewheel="true"
         navigation
       >
         <swiper-slide v-for="(value, key) in shopifyData.box" :key="key">

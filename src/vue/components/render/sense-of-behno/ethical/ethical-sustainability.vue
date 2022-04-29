@@ -7,27 +7,31 @@
         <div class="sec_text">
           <h2
             class="sec_heading"
-          >We redefine sustainability and ethics in fashion.</h2>
+          >{{ shopifyData.heading }}</h2>
           <h4
             class="card_heading_b"
-          >We’re pioneering a new standard for manufacturing in the global garment trade, revolutionizing the way garment workers and artisans are viewed, employed, and treated.</h4>
+          >{{ shopifyData.subHeading }}</h4>
           <p class="body_text">
-            Inspiring change not only by example at our own factory, we also partner with other international factories adhering to rigid compliances striving to improve factory conditions in developing countries.
+            {{ shopifyData.para1 }}
           </p>
             <p class="body_text">
-            Our objects are handmade in facilities incrementally implementing “The behno Standard,” a set of six guiding principles:
+            {{ shopifyData.para2 }}
           </p>
           <div class="sec_img">
             <img
-              src="https://cdn.shopify.com/s/files/1/1000/3130/files/sustainability-ethics-img.png?v=1650875462"
+              :src=(shopifyData.leftImg.src)
+              :src-placeholder=(shopifyData.leftImg.placeHolder)
+              :alt=(shopifyData.leftImg.alt)
             />
           </div>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
           <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/ethical-phIlosophy-img3.jpg?v=1650867775"
-          />
+            :src=(shopifyData.rightImg.rightImgSrc)
+            :src-placeHolder=(shopifyData.rightImg.rightPlaceHolder)
+            :alt=(shopifyData.rightImg.alt)
+            />
         </div>
       </div>
     </div>
@@ -137,3 +141,14 @@
   }
 }
 </style>
+
+<script>
+export default {
+  props:{
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

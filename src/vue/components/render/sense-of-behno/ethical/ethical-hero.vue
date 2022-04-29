@@ -2,26 +2,30 @@
   <!-- ========== Section OUR ETHICAL PHILOSOPHY Start ========== -->
   <section class="sec_our_ethical_philosophy">
     <div class="container">
-      <h2 class="card_heading_b">OUR ETHICAL PHILOSOPHY</h2>
+      <h2 class="card_heading_b">{{ shopifyData.secHeading }} </h2>
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
           <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/ethical-phIlosophy-img1.jpg?v=1650867775"
+            :src=(shopifyData.leftImg.src)
+            :src-placeHolder=(shopifyData.leftImg.placeHolder)
+            :alt=(shopifyData.leftImg.alt)
           />
         </div>
         <!--    Section text        -->
         <div class="sec_text">
           <div class="sec_img">
-            <img
-              src="https://cdn.shopify.com/s/files/1/1000/3130/files/ethical-phIlosophy-img2.jpg?v=1650867775"
+           <img
+            :src=(shopifyData.rightImg.rightImgSrc)
+            :src-placeHolder=(shopifyData.rightImg.rightPlaceHolder)
+            :alt=(shopifyData.rightImg.alt)
             />
           </div>
-          <h2 class="sec_heading">Our name,a community.</h2>
-          <h4 class="our-community_inner_heading">“behno” means sisters in Hindi.</h4>
+          <h2 class="sec_heading">{{ shopifyData.crdHeading }} </h2>
+          <h4 class="our-community_inner_heading">{{ shopifyData.crdSubHeading }} </h4>
           <p
             class="body_text"
-          >At our partner factories, female colleagues are referred to by their first name followed by the suffix of “behn” (sister). In plurality, they become a community of sisters.</p>
+          >{{ shopifyData.para }} </p>
         </div>
       </div>
     </div>
@@ -133,3 +137,14 @@
 
 /* ========== Section OUR ETHICAL PHILOSOPHY Reponsive Css Code End ========== */
 </style>
+
+<script>
+export default {
+  props:{
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

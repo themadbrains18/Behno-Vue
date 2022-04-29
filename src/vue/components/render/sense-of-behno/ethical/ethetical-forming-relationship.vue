@@ -5,18 +5,22 @@
       <div class="sec_content">
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="sec_heading">Forming real relationships.</h2>
-          <h4 class="card_heading_b">The Garment Worker Project.</h4>
+          <h2 class="sec_heading">{{ shopifyData.heading }}</h2>
+          <h4 class="card_heading_b">{{ shopifyData.subHeading }}</h4>
           <p
             class="body_text"
-          >Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.</p>
-          <a href="/" class="cta_btn">discover the project</a>
+          >{{ shopifyData.para }}</p>
+          <a :href=(shopifyData.link) class="cta_btn">{{ shopifyData.linkText }}</a>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1000/3130/files/forming-relationshop-img.jpg?v=1650887016"
-          />
+          <a :href=(shopifyData.link) >
+            <img
+              :src=(shopifyData.imgUrl.src)
+              :src-placeholder=(shopifyData.imgUrl.placeholder)
+              :alt=(shopifyData.imgUrl.alt)
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -129,3 +133,14 @@
 }
 /* ========== Section Forming real relationships Responsive Css Code End  ========== */
 </style>
+
+<script>
+export default {
+  props:{
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

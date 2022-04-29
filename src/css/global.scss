@@ -183,6 +183,17 @@ button{
 }
 
 
+.modify-slider .swiper-button-prev::after,
+.modify-slider .swiper-button-next::after{
+  display: none;
+}
+.modify-slider .swiper-button-next.swiper-button-disabled, 
+.modify-slider .swiper-button-prev.swiper-button-disabled {
+  cursor: pointer;
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
 .modify-slider .swiper-button-prev,
 .modify-slider .swiper-button-next  {
   cursor: pointer;
