@@ -1070,10 +1070,8 @@ export default {
         this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
         document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
     },
-    workScroll(){
-      for(let i of document.querySelectorAll(".navlink__hover")){
-        i.removeAttribute("style");
-      }
+    workScroll(e){
+      e.currentTarget.removeAttribute("style");
       this.header[0].removeAttribute("style");
       document.body.removeAttribute("style");
     }
