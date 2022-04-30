@@ -15,11 +15,18 @@
         <!--    Section Image        -->
         <div class="sec_img">
           <a :href=(shopifyData.link) >
-            <img
-              :src=(shopifyData.imgUrl.src)
-              :src-placeholder=(shopifyData.imgUrl.placeholder)
-              :alt=(shopifyData.imgUrl.alt)
-            />
+            <template v-if="shopifyData.showVideo === 'true'">
+              <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+                <source :src=(shopifyData.videoUrl) >
+              </video>
+            </template>
+            <template v-else>
+              <img
+                :src=(shopifyData.imgUrl.src)
+                :src-placeholder=(shopifyData.imgUrl.placeholder)
+                :alt=(shopifyData.imgUrl.alt)
+                />
+            </template>
           </a>
         </div>
       </div>

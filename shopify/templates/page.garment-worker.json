@@ -1,0 +1,30 @@
+{
+    "sections": {
+        "garment-hero": {
+            "type": "garment-hero"
+        },
+        "garment-grid": {
+            "type": "garment-grid"
+        },
+        "garment-up-close": {
+            "type": "garment-up-close"
+        },
+        "garment-ethical": {
+            "type": "garment-ethical"
+        },
+        "garment-behind-scenes": {
+            "type": "garment-behind-scenes"
+        },
+        "garment-power-house": {
+            "type": "garment-power-house"
+        }
+    },
+    "order": [
+        "garment-hero",
+        "garment-grid",
+        "garment-up-close",
+        "garment-ethical",
+        "garment-behind-scenes",
+        "garment-power-house"
+    ]
+}

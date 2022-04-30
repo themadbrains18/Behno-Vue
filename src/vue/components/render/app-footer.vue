@@ -29,11 +29,9 @@
               <span class="footer_link">FOLLOW OUR JOURNEY</span>
               <div class="footer_social_link">
                 <a class="link" href="#">
-                  <!-- ../../assets/svg/fb-icon.svg  -->
                   <v-lazy-image :src=(shopifyData.fbIcon)  />
                 </a>
                 <a class="link" href="#">
-                  <!-- ../../assets/svg/instagram-icon.svg -->
                   <v-lazy-image :src=(shopifyData.instaIcon)  />
                 </a>
               </div>

@@ -40,7 +40,9 @@
         "para": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.",
         "link": "\/",
         "linkText": "discover the project",
-        "img": "shopify:\/\/shop_images\/forming_relationship.jpg"
+        "showVideo": true,
+        "img": "shopify:\/\/shop_images\/forming_relationship.jpg",
+        "videoUrl": "https:\/\/i.shgcdn.com\/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
       }
     },
     "ethetical-collaborations-philosophy": {
@@ -99,6 +101,7 @@
         "para": "Our bags are made in a world-class factory which works with luxury purveyors across the globe.",
         "link": "\/",
         "linkText": "LEARN MORE",
+        "showVideo": true,
         "img": "shopify:\/\/shop_images\/making_our_bags.jpg"
       }
     },

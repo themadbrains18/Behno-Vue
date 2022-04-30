@@ -7,7 +7,6 @@
 {% endunless %}
 
 
-
 <render-sense-of-behno-ethical-ethetical-making-our-bags :shopify-data="{
     secHeading: `{{ section.settings.secHeading }}`,
     crdheading: `{{ section.settings.crdheading }}`,
@@ -15,6 +14,8 @@
     para: `{{ section.settings.para }}`,
     link: `{{ section.settings.link }}`,
     linkText: `{{ section.settings.linkText }}`,
+    showVideo: `{{ section.settings.showVideo }}`,
+    video_url: `{{ section.settings.video_url.id }}`,
     imgUrl:{
         src : `{{ imgSrc }}`,
         placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
@@ -67,9 +68,22 @@
         "default": "LEARN MORE"
     },
     {
+      "id" : "showVideo",
+      "type" : "checkbox",
+      "label" : "Show Video",
+      "default" : true
+    },
+    {
         "id": "img",
         "type": "image_picker",
         "label": "Image"
+    },
+    {
+      "id": "video_url",
+      "type": "video_url",
+      "label": "Youtube Video URL",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=V9cOfo22-5M"
     }
   ]
 }

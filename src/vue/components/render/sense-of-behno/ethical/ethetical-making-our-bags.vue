@@ -16,11 +16,18 @@
         <!--    Section Image        -->
         <div class="sec_img">
           <a :href=(shopifyData.link)> 
-            <img
-              :src=(shopifyData.imgUrl.src)
-              :src-placeholder=(shopifyData.imgUrl.placeholder)
-              :alt=(shopifyData.imgUrl.alt)
-            />
+             <template v-if="shopifyData.showVideo === 'true'">
+              <iframe :src="'https://www.youtube.com/embed/' + shopifyData.video_url + '?start=0&end=0&autoplay=1&loop=1&mute=1&playlist=V9cOfo22-5M&version=3&rel=0'" frameborder="0"  allowfullscreen>
+              </iframe>
+            </template>
+            <template v-else>
+              <img
+                :src=(shopifyData.imgUrl.src)
+                :src-placeholder=(shopifyData.imgUrl.placeholder)
+                :alt=(shopifyData.imgUrl.alt)
+              />
+            </template>
+          
           </a>
         </div>
       </div>

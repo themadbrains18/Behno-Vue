@@ -14,6 +14,8 @@
     para: `{{ section.settings.para }}`,
     link: `{{ section.settings.link }}`,
     linkText: `{{ section.settings.linkText }}`,
+    showVideo: `{{ section.settings.showVideo }}`,
+    videoUrl: `{{ section.settings.videoUrl }}`,
     imgUrl:{
         src : `{{ imgSrc }}`,
         placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
@@ -60,11 +62,22 @@
         "default" : "discover the project"
     },
     {
+      "id": "showVideo",
+      "type": "checkbox",
+      "label": "Show Video",
+      "default" : true
+    },
+    {
       "id": "img",
       "type": "image_picker",
       "label": "Image"
+    },
+    {
+      "id": "videoUrl",
+      "type": "text",
+      "label": "video Url",
+      "default" :"https://i.shgcdn.com/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb/gif2video/-/format/mp4/-/quality/lighter/"
     }
-   
   ]
 }
 {% endschema %}

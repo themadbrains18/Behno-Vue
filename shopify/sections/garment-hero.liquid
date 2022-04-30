@@ -1,2 +1,43 @@
-<render-sense-of-behno-garment-garment-hero>
+<render-sense-of-behno-garment-garment-hero :shopify-data="{
+    secHeading : `{{ section.settings.secHeading }}`,
+    subHeading : `{{ section.settings.subHeading }}`
+
+}">
 </render-garment-garment-hero>
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Hero Sec",
+  "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "Big Red Text",
+      "default": "THE GARMENT WORKER PROJECT"
+    },
+        {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "The Garment Worker Project debuted in July 2016 at Sotheby’s in New York City."
+      }
+  ],
+  "blocks" : [{
+      "name": "Add Paragraph",
+      "type": "Paragraph",
+      "settings" : [
+        {
+            "id": "para",
+            "type": "textarea",
+            "label": "Paragraph",
+            "default" : "Created out of a collaboration between nonprofit organization Muni Seva Ashram (MSA), veterans of the garment industry, and the team behind behno, MSA Ethos is the ethical knits and wovens ready-to-wear factory that first implemented “The behno Standard.”"
+        }
+      ]
+  }]
+}
+{% endschema %}
