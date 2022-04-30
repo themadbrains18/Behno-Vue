@@ -15,7 +15,7 @@
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
-            <video width="" height="" autoplay="" loop="" muted="" webkit-playsinline="" playsinline="" style="" preload="none" class="shogun-image ">
+          <video width="340" height="604" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" class="shogun-image ">
                 <source src="https://i.shgcdn.com/dfe5ddee-faae-4df5-86a6-44c58a4de1c9/gif2video/-/format/webm/-/quality/lighter/" type="video/webm">
                 <source src="https://i.shgcdn.com/dfe5ddee-faae-4df5-86a6-44c58a4de1c9/gif2video/-/format/mp4/-/quality/lighter/" type="video/mp4">
             </video>
