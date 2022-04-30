@@ -6,13 +6,45 @@
         <div class="sec_content">
             <div class="product_cards">
                 <div class="card">
-                    <a href="#">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product1.jpg?v=1651045599" alt="error">
-                    <div class="product_info"> 
-                        <p class="subtitle">ANA MINI CROSSBODY PEBBLE</p>
-                        <p class="subtitle_b">$495</p>
-                    </div>
+                    <a href="#" class="product_link">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product1.jpg?v=1651045599" alt="error">
+                        <div class="product_info"> 
+                            <p class="subtitle">ANA MINI CROSSBODY PEBBLE</p>
+                            <p class="subtitle_b">$495</p>
+                        </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <a href="#">
@@ -22,6 +54,38 @@
                         <p class="subtitle_b">$495</p>
                     </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <a href="#">
@@ -31,6 +95,38 @@
                         <p class="subtitle_b">$495</p>
                     </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <a href="#">
@@ -40,6 +136,38 @@
                         <p class="subtitle_b">$495</p>
                     </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="product_cards tmb-md-none">
@@ -51,6 +179,38 @@
                         <p class="subtitle_b">$495</p>
                     </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <a href="#">
@@ -60,6 +220,38 @@
                         <p class="subtitle_b">$495</p>
                     </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <a href="#">
@@ -69,6 +261,38 @@
                         <p class="subtitle_b">$495</p>
                     </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card">
                     <a href="#">
@@ -78,6 +302,38 @@
                         <p class="subtitle_b">$495</p>
                     </div>
                     </a>
+                    <div class="product_varients">
+                        <div class="product_colores">
+                            <ul>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
+                                </li>
+                                <li class="color">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
+                                </li>
+                            </ul>
+                            
+                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
+                                </svg>
+                            
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cta_btn">QUICK ADD</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="cta_link t-center">
@@ -125,7 +381,70 @@
     .cta_btn {
         padding: 0;
     }
+    .product_btn .cta_btn{
+        padding: 10px 26px;
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+    .product_btn .cta_btn:hover{
+        background: #000;
+        color: #fff;
+        border: 1px solid transparent;
+    }
+    /* product colors selector Start */
+    .product_colores,
+    .product_colores > ul
+    {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+    }
+    .product_colores > ul > li{
+        line-height: 0;
+    }
+    .product_varients {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s;
+    }
+    .next_arrow,
+    .color img
+    {
+        cursor: pointer;
+    }
+    .color img{
+        border: 1px solid #E0E0E0;
+        border-radius: 50%;
+    }
+    .card > a:hover + .product_varients ,
+    .product_varients:hover
+    {
+        opacity: 1;
+        visibility: visible;
+    }
+    /* product colors selector End */
+
     /* Responsive Breakpoints */
+    @media(max-width:1350px){
+        .product_btn .cta_btn{
+            padding: 10px;
+        }
+
+    }
+    @media(max-width:1250px){
+        .product_varients{
+            gap: 10px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+   }
     @media(max-width:767px){
         .all_feature_bag_sec{
             padding: 10px 0 31px 2px;
@@ -168,6 +487,9 @@
         .product_cards.tmb-md-none.show{
             height: 0 !important;
         }
+        .product_varients{
+            display: none;
+        }
     }
 
     @media(min-width:768px){
@@ -181,22 +503,24 @@
         }
         .product_cards.tmb-md-none.show + .cta_link{
             margin-top:84px;
+            transform: rotate(180deg);
         }
         .cta_btn{
             transition: 0.4s;
         }
-        .cta_btn.rotate{
-            transform: rotate(180deg);
-        }
+
     }
 </style>
 <script>
 
 export default {
+    // data() {
+    //     window.addEventListener("load", this.onWindowLoad);
+    // },
     methods: {
         showproducts() {
             let productRow = document.querySelectorAll(".product_cards.tmb-md-none");
-            let rowBtn = document.querySelector(".cta_btn");
+            let rowBtn = document.querySelector(".sec_content .cta_btn");
             
             for(let pr of productRow){
                 let rowHeight = pr.scrollHeight;

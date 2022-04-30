@@ -24,7 +24,11 @@
         line-height: 69px;
     }
     .sec_content{   
-        padding: 110px 210px 100px;
+        padding: 110px 54px 100px;
+    }
+    .sec_content iframe{  
+        max-width: 1020px;
+        margin: 0 auto  ;
     }
     .sec_content.bg-black iframe {
         width: 100%;

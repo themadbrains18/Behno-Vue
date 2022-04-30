@@ -1,0 +1,20 @@
+{
+    "sections": {
+        "constructing-ethos-hero" :{
+          "type" : "constructing-ethos-hero"
+        },
+        "setting-standard" :{
+          "type" : "setting-standard"
+        },
+        "msa-ethos" :{
+          "type" : "msa-ethos"
+        },
+        "portraitures-powerhouse" :{
+          "type" : "portraitures-powerhouse"
+        }
+        
+    },
+    "order": [
+      "constructing-ethos-hero","setting-standard","msa-ethos","portraitures-powerhouse"
+    ]
+  }

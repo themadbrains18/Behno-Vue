@@ -12,9 +12,14 @@
         </div>
         <!-- Sec Content -->
         <div class="sec_content">
-            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sec-full-img.jpg?v=1651059368" alt="error">
-            <div class="shop_cta" >
-                <a href="#" class="subtitle">SHOP THE BAG</a>
+            <div class="sec_img">
+                <div class="product_popup">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sec-full-img.jpg?v=1651059368" alt="error">
+                    <productPopup />
+                </div>
+                <div class="shop_cta" >
+                    <a href="#" class="subtitle">SHOP THE BAG</a>
+                </div>
             </div>
         </div>
     </section>
@@ -81,3 +86,4 @@
         }
     }
 </style>
+

@@ -10,6 +10,7 @@
                 </div>
             </div>
         </div>
+        <!-- gal -->
     </section>
 </template>
 

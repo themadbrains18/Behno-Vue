@@ -1,19 +1,103 @@
 <template>
-    <section class="gallery_preview_sec bg-sand">
+    <section class="gallery_preview_sec bg-sand" id="app">
         <!-- Sec Content -->
         <div class="sec_content">
             <h1 class="main_heading">
                 Amrit Sandhu chats with the behno team.
             </h1>
             <div class="gallery_preview"> 
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview1.jpg?v=1650966802" alt="error">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview2.jpg?v=1650966802" alt="error">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview3.jpg?v=1650966802" alt="error">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/blog-banner-bg-res.jpg?v=1650965505" alt="error">
+                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview1.jpg?v=1650966802" alt="error">
+                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview2.jpg?v=1650966802" alt="error">
+                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview3.jpg?v=1650966802" alt="error">
+                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/blog-banner-bg-res.jpg?v=1650965505" alt="error">
             </div>
             <div class="gallery-cta">
-                <a href="#" class="subtitle">VIEW + SHOP GALLERY</a>
-            </div>
+                <button @click="show = !show"  class="subtitle">VIEW + SHOP GALLERY</button>
+            </div>      
+                <div class="overlay" :class="{ 'active': !show}" @click="show = !show"></div>
+                <div class="gallery_preview_popup" :class="{ 'active': !show}"> 
+                    <div class="gallery_preview_inner">
+                        <div class="popup_top_row">
+                            <h3 class="card_heading">GALLERY</h3>
+                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error" class="popup_close" @click="show = !show"> 
+                        </div>
+                    
+                        <div class="gallery_cards">
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img1.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">ELIZABETH BAGUETTE MINI METALLIC</p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img2.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">SIMONE MINI CROSSBODY SUEDE</p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img3.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">TINA BAGUETTE PEBBLE RUCHED</p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img4.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">MARY BAG MINI NAPPA</p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img5.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">LEX MINI ACCORDION NAPPA</p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img6.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">SIMONE MINI CROSSBODY SUEDE</p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img7.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">TINA BAGUETTE PEBBLE RUCHED </p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="#" class="product_link"> 
+                                <div class="card_img">
+                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img8.jpg?v=1651233038" alt="error">
+                                </div>
+                                <p class="subtitle">MARY BAG MINI NAPPA</p>
+                                <p class="subtitle_b">$495</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </section>
 </template>
@@ -34,7 +118,7 @@ html{
     max-width: 694px;
 }
 .gallery_preview{
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     margin-bottom: 17px;
@@ -47,6 +131,79 @@ html{
     width: 100px;
     height: 140px;
     object-fit: cover;
+}
+.gallery_preview_popup{
+    padding: 19px 40px 140px;
+    background: #fff;
+    max-width: 1343px;
+    margin: 0 auto;
+    z-index: 4;
+    position: fixed;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    overflow-y: scroll;
+    overscroll-behavior: none;
+    min-height: 100vh;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(180deg, #DDCEC7 0%, #FFFFFF 100%), #FFFFFF;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.gallery_preview_popup.active{
+    top: 110px;
+}
+.overlay.active,
+.gallery_preview_popup.active
+{
+    opacity: 1;
+    visibility: visible;
+}
+.gallery_cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 48px 12px;
+}
+.popup_top_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.popup_close{
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    top:9px;
+    right:10px;
+    cursor: pointer;
+}
+.card .subtitle{
+    margin-top: 7px;
+}
+.gallery_preview_popup::-webkit-scrollbar {
+    width: 5px;
+}
+.gallery_preview_popup::-webkit-scrollbar-thumb {
+    background: grey;
+}
+.gallery_preview_popup::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
 }
 
 /* Responsive Breakpoints */
@@ -67,6 +224,23 @@ html{
     .gallery-cta{
         padding-left:0px;
     }
+    .gallery_preview_popup,
+    .overlay 
+    {
+        display: none;
+    }
 }
 
 </style>
+
+<script>
+
+
+export default {
+    data: function(){
+        return{
+            show: true
+        }
+    }
+}
+</script>

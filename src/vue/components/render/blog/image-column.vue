@@ -3,18 +3,25 @@
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/shop-bag1.jpg?v=1651035680" alt="error">
+                <div class="product_popup">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/shop-bag1.jpg?v=1651035680" alt="error">
+                    <productPopup />
+                </div>
                 <div class="shop_cta">
                     <a href="#" class="subtitle">SHOP THE BAG</a>
                 </div>
             </div>
             <div class="sec_img">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/shop-bag2.jpg?v=1651035680" alt="error">
+                <div class="product_popup">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/shop-bag2.jpg?v=1651035680" alt="error">
+                    <productPopup />
+                </div>
                 <div class="shop_cta">
                     <a href="#" class="subtitle">SHOP THE BAG</a>
                 </div>
             </div>
         </div>
+        
     </section>
 </template>
 
@@ -32,8 +39,31 @@
     .sec_img img{
         width: 336px;
         height: 410px;
-        margin-bottom: 10px;
     }
+    .shop_cta{
+        margin-top: 10px;
+    }
+
+/* Popup card Css start */
+    .product_popup {
+        position: relative;
+        overflow: hidden;
+    }
+    .product_popup img{
+        display: block;
+    }
+    .product_info_card {
+        position: absolute;
+        bottom: 0;
+        left: -100%;
+        transition: 0.3s linear;
+        z-index: 99;
+    }
+    .sec_img .product_popup > img{
+        transition: 0.3s linear;
+    }
+    /* Popup card Css end */
+    
 
     /* Responsive Breakpoints */
     @media(max-width:767px){
@@ -53,3 +83,14 @@
         }
     }
 </style>
+
+<script>
+import productPopup from '../product-popup.vue'
+
+export default {
+    components:{
+        productPopup
+    }
+}
+</script>
+

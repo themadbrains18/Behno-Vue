@@ -3,7 +3,10 @@
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/image-text.jpg?v=1651037961" alt="error">
+                <div class="product_popup">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/image-text.jpg?v=1651037961" alt="error">
+                    <productPopup />
+                </div>
                 <h2 class="img_text">I AM:</h2>
                 <div class="shop_cta">
                     <a href="#" class="subtitle">SHOP THE BAG</a>
@@ -56,7 +59,6 @@
     .shop_cta{
         margin-top: 8px;
     }
-
     /* Responsive Breakpoints */
     @media(max-width:767px){
         .sec_img,
@@ -85,3 +87,13 @@
     }
 
 </style>
+
+<script>
+import productPopup from '../product-popup.vue'
+
+export default {
+    components:{
+        productPopup
+    }
+}
+</script>
