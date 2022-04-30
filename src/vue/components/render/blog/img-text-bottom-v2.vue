@@ -3,7 +3,10 @@
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/img-column-bg-v2.jpg?v=1651054521" alt="error">
+                <div class="product_popup">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/img-column-bg-v2.jpg?v=1651054521" alt="error">
+                    <productPopup />
+                </div>
                 <div class="shop_cta">
                     <a href="#" class="subtitle">SHOP THE BAG</a>
                 </div>
@@ -73,3 +76,61 @@
     }
 
 </style>
+
+
+<script>
+import productPopup from "../product-popup.vue";
+
+export default {
+  components: {
+    productPopup,
+  },
+  data() {
+    //    this.closePopup();
+    window.addEventListener("load", this.showPopup);
+    window.addEventListener("load", this.closePopup);
+    window.addEventListener("resize", this.checkscreen);
+  },
+  methods: {
+    checkscreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth >= 767) {
+        return;
+      }
+      this.showPopup();
+      // this.closePopup()
+    },
+    showPopup() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth >= 767) {
+        return;
+      }
+      let secImg = document.querySelectorAll(".sec_img");
+      for (let i of secImg) {
+        i.addEventListener("click", () => {
+          i.classList.add("active");
+        });
+      }
+    },
+    closePopup() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth >= 767) {
+        return;
+      }
+
+      let closeIcon = document.querySelectorAll(".close-icon");
+
+      for (let i of closeIcon) {
+        i.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          let secImgActive = document.querySelector(".sec_img.active");
+          if (secImgActive) {
+            secImgActive.classList.remove("active");
+          }
+        });
+      }
+    },
+  },
+};
+</script>
