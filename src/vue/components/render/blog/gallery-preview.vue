@@ -13,7 +13,7 @@
             </div>
             <div class="gallery-cta">
                 <button @click="show = !show"  class="subtitle">VIEW + SHOP GALLERY</button>
-            </div>
+            </div>      
                 <div class="overlay" :class="{ 'active': !show}" @click="show = !show"></div>
                 <div class="gallery_preview_popup" :class="{ 'active': !show}"> 
                     <div class="gallery_preview_inner">
