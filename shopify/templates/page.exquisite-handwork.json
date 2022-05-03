@@ -1,0 +1,14 @@
+{
+    "sections": {
+      "exquisite-handwork-hero": {
+        "type": "exquisite-handwork-hero"
+      },
+      "inheritance-worth": {
+        "type": "inheritance-worth"
+      }
+    },
+    "order": [
+      "exquisite-handwork-hero","inheritance-worth"
+
+    ]
+  }
