@@ -337,8 +337,8 @@
         </ul>
 
         <!-- Header logo -->
-        <div class="logo_wrap">
-          <a class="logo" href="/">
+        <div class="logo_wrap line-h-0">
+          <a class="logo d-inline-block" href="/">
             <v-lazy-image :src=(shopifyData.logo) alt="Logo" />
           </a>
         </div>
@@ -675,6 +675,7 @@
   justify-content: flex-start;
 }
 
+
 .navlist-right {
   justify-content: flex-end;
 }
@@ -883,7 +884,15 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .logo img{
+      max-width: 70px;
+  }
+}
+
 @media only screen and (max-width: 991px) {
+  
+
   .header_toggle_wrap,
   .mobile_btn_grp {
     display: flex;
