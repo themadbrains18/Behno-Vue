@@ -47,7 +47,10 @@
   width: 100%;
   margin: 0 auto;
 }
-
+iframe{
+  height: 305px;
+  width: 538px;
+}
 .sec_making_our_bags .sec_content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, auto));
@@ -108,6 +111,10 @@
   }
   .sec_making_our_bags .sec_content {
     margin-top: 33px;
+  }
+  iframe{
+    height: 221px;
+    width: 100%;
   }
 }
 

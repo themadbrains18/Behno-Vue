@@ -112,6 +112,8 @@
   .sec_forming_relationship .sec_text {
     order: 2;
     margin: 0 auto;
+    max-width: 100%;
+    padding:  0 25px;
   }
   .sec_forming_relationship .sec_img {
     text-align: center;
@@ -121,23 +123,22 @@
     width: fit-content;
     display: block;
   }
+  .cta_btn{
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .sec_forming_relationship .container {
-    padding: 0;
+    padding: 0 15px;
   }
   .sec_forming_relationship {
     padding: 22px 0 50px;
   }
 }
 
-
-@media only screen and (max-width: 575px) {
-.sec_forming_relationship .sec_text{
-	max-width:310px;
-}
-}
 /* ========== Section Forming real relationships Responsive Css Code End  ========== */
 </style>
 

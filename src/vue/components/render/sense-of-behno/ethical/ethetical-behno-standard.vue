@@ -90,12 +90,18 @@
   .sec_behno_standard .sec_heading {
     font-size: 50px;
   }
+  .sec_behno_standard{
+    padding-bottom:80px;
+  }
   /* ========== Section Behno Standard Responsive Css  End ========== */
 }
 
 @media only screen and (max-width: 1024px) {
   .sec_behno_standard .sec_heading {
     font-size: 40px;
+  }
+  .sec_behno_standard{
+    padding-bottom:40px;
   }
 }
 
@@ -113,6 +119,9 @@
     width: fit-content;
     display: block;
   }
+  .sec_behno_standard{
+    padding-bottom:25px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -122,6 +131,9 @@
   }
   .sec_behno_standard .sec_content {
     margin-top: 34px;
+  }
+  .sec_behno_standard{
+    padding-bottom:13px;
   }
 }
 

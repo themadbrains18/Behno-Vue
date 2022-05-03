@@ -8,7 +8,7 @@
       '@1.00': {
         enabled:true 
       },
-      '@1.10': {
+      '@1.40': {
         enabled:false 
       },
     }"
