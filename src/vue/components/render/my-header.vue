@@ -648,7 +648,7 @@
   display: none;
 }
 .tmbHeader {
-  padding: 12px 50px;
+  padding: 14px 50px  10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -707,6 +707,7 @@
 
 .shopping_btn {
   position: relative;
+  margin-bottom: 10px;
 }
 .shopping_btn_count {
   position: absolute;
@@ -851,11 +852,16 @@
 
 @media (hover: hover) {
   .navlink_drpdown:hover {
-    padding-bottom: 25px;
-    margin-bottom: -25px;
+    padding-bottom: 50px;
+    margin-bottom: -50px;
   }
+  
   .subnavlink:hover {
     color: #767676;
+  }
+  .subnavlink-heading:hover{
+    color: #000;
+    cursor: default;
   }
   .navlink_drpdown:hover + .navlink__hover,
   .navlink__hover:hover {
@@ -1066,12 +1072,12 @@ export default {
     stopScroll(e){
         const bodyWidth = document.body.offsetWidth;  
         document.body.setAttribute("style", `overflow:hidden;`);
-        e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
+        e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;top: ${this.header[0].getBoundingClientRect().height}px;`);  
         this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
         document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
     },
     workScroll(e){
-      e.currentTarget.removeAttribute("style");
+      e.currentTarget.setAttribute("style", `top: ${this.header[0].getBoundingClientRect().height}px;`);  
       this.header[0].removeAttribute("style");
       document.body.removeAttribute("style");
     }

@@ -2,7 +2,7 @@
   <!-- ========== Section Making Our Bags Start ========== -->
   <section class="sec_making_our_bags">
     <div class="container">
-      <h2 class="sec_heading sec-heading">{{ shopifyData.secHeading }}</h2>
+      <h2 class="card_heading_b t-center sec-heading">{{ shopifyData.secHeading }}</h2>
       <div class="sec_content">
         <!--    Section text        -->
         <div class="sec_text">
@@ -60,17 +60,13 @@ iframe{
   margin-top: 57px;
 }
 
-.sec_making_our_bags .sec_heading.sec-heading{
-  font-weight: 700;
-  font-size: 15px;
-  text-align: center;
-}
+
 
 .sec_making_our_bags .sec_text {
   max-width: 346px;
   width: 100%;
 }
-.sec_making_our_bags .card_heading_b {
+.sec_content .card_heading_b {
   margin: 14px 0;
   text-transform: initial;
 }

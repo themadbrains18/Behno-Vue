@@ -5,7 +5,10 @@
     <swiper
       :modules="modules"
       :slidesPerView="'auto'"
-      :mousewheel="true"
+      :mousewheel= "{
+          invert: false,
+          releaseOnEdges: true
+      }"
       :spaceBetween="20"
       navigation
     >

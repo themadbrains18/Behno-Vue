@@ -6,7 +6,7 @@
         "secHeading": "OUR ETHICAL PHILOSOPHY",
         "leftImg": "shopify:\/\/shop_images\/ethical-philosophyleft.jpg",
         "rightImg": "shopify:\/\/shop_images\/ethical-philosophy-right.jpg",
-        "crdHeading": "Our name,a community.",
+        "crdHeading": "Our name, a community.",
         "crdSubHeading": "“behno” means sisters in Hindi.",
         "para": "At our partner factories, female colleagues are referred to by their first name followed by the suffix of “behn” (sister). In plurality, they become a community of sisters."
       }
@@ -18,7 +18,7 @@
         "subHeading": "We’re pioneering a new standard for manufacturing in the global garment trade, revolutionizing the way garment workers and artisans are viewed, employed, and treated.",
         "para1": "Inspiring change not only by example at our own factory, we also partner with other international factories adhering to rigid compliances striving to improve factory conditions in developing countries.",
         "para2": "Our objects are handmade in facilities incrementally implementing “The behno Standard,” a set of six guiding principles:",
-        "leftImg": "shopify:\/\/shop_images\/sustainability_ethics-left.png",
+        "leftImg": "shopify:\/\/shop_images\/Six_Icons_transparent_background-02-01.png",
         "rightImg": "shopify:\/\/shop_images\/sustainability_ethics-right.jpg"
       }
     },
@@ -102,7 +102,8 @@
         "link": "\/",
         "linkText": "LEARN MORE",
         "showVideo": true,
-        "img": "shopify:\/\/shop_images\/making_our_bags.jpg"
+        "img": "shopify:\/\/shop_images\/making_our_bags.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=V9cOfo22-5M"
       }
     },
     "ethetical-conscious-tannery": {

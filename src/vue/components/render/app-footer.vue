@@ -83,6 +83,10 @@
   padding: 70px 0 76px;
   background-color: #e9e7e3;
 }
+.footer .big_container{
+  max-width: 1320px;
+  padding: 0 20px;
+}
 
 .footer_content {
   display: grid;

@@ -30,7 +30,7 @@ a{
   text-decoration: none;
 }
 
-img{
+img,video{
   max-width: 100%;
 }
 
@@ -173,6 +173,7 @@ button{
   letter-spacing: 0.02em;
   display: inline-block;
   transition: 0.3s;
+  text-transform: capitalize;
 }
 
 /* Figma Quotes */
