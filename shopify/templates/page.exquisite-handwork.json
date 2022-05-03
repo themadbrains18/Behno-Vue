@@ -5,10 +5,14 @@
       },
       "inheritance-worth": {
         "type": "inheritance-worth"
+      },
+      "working-with-artisan": {
+        "type": "working-with-artisan"
       }
+      
     },
     "order": [
-      "exquisite-handwork-hero","inheritance-worth"
+      "exquisite-handwork-hero","inheritance-worth","working-with-artisan"
 
     ]
   }

@@ -52,7 +52,7 @@
 .body_text:last-of-type{
   margin-bottom: 0;
 }
-.sec_sustainability_ethics .sec_text {
+.sec_text {
   max-width: 432px;
   width: 100%;
 }
@@ -60,31 +60,31 @@
   margin:  14px 0;
   text-transform: initial;
 }
-.sec_sustainability_ethics .sec_content {
+.sec_content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, auto));
   gap: 60px;
   justify-content: space-between;
 }
 
-.sec_sustainability_ethics .container {
+.container {
   max-width: 1056px;
   padding: 0 20px;
   width: 100%;
   margin: 0 auto;
 }
 
-.sec_sustainability_ethics .sec_heading {
+.sec_heading {
   line-height: 41px;
 }
-.sec_sustainability_ethics .sec_inner_heading {
+.sec_inner_heading {
   font-weight: 400;
   font-size: 46px;
   line-height: 41.86px;
   color: #000000;
   margin: 27px 0 14px;
 }
-.sec_sustainability_ethics .our-community_inner_heading {
+.our-community_inner_heading {
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -92,43 +92,45 @@
   color: #000000;
   margin-bottom: 14px;
 }
-.sec_sustainability_ethics .sec_info {
+.sec_info {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.02em;
   color: #000000;
 }
-.sec_sustainability_ethics .sec_text .sec_img {
+.sec_text .sec_img {
   text-align: center;
-  margin-top: 19px;
+  max-width:244px;
+  width: 100%; 
+  margin: 19px auto auto;
 }
 /* ========== Section sustainability and ethics  Start Css Code End ========== */
 
 /* ========== Section sustainability and ethics Responsive Css  Start ========== */
 @media only screen and (max-width: 991px) {
-  .sec_sustainability_ethics .container {
+  .container {
     padding: 0;
   }
   .sec_sustainability_ethics {
     padding: 0 0 70px;
   }
-  .sec_sustainability_ethics .sec_content {
+  .sec_content {
     gap: 55px;
     justify-content: initial;
     grid-template-columns: 1fr;
   }
-  .sec_sustainability_ethics .sec_text .sec_img {
+  .sec_text .sec_img {
     margin-top: 15px;
   }
-  .sec_sustainability_ethics .sec_text {
+  .sec_text {
     order: 1;
     margin: 0 auto;
   }
-  .sec_sustainability_ethics .sec_inner_heading {
+  .sec_inner_heading {
     margin-top: 0;
   }
-  .sec_sustainability_ethics .sec_img {
+  .sec_img {
     text-align: center;
   }
 
@@ -136,7 +138,7 @@
 }
 
 @media only screen and (max-width: 575px) {
-  .sec_sustainability_ethics .sec_text {
+  .sec_text {
     max-width: 289px;
   }
 }
