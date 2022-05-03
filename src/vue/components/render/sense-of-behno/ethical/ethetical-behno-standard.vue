@@ -8,7 +8,7 @@
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
-          <a :href=(shopifyData.imgUrl.link)>
+          <a :href=(shopifyData.link)>
             <img
               :src=(shopifyData.imgUrl.src) 
               :src-placeholder=(shopifyData.imgUrl.placeholder) 
@@ -21,7 +21,7 @@
           <p
             class="sec_info"
           >{{ shopifyData.para }}</p>
-          <a :href=(shopifyData.imgUrl.link)   class="cta_btn">{{ shopifyData.linkText }}</a>
+          <a :href=(shopifyData.link)   class="cta_btn">{{ shopifyData.linkText }}</a>
         </div>
       </div>
     </div>

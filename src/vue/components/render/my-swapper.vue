@@ -7,7 +7,10 @@
         :modules="modules"
         :slidesPerView="'auto'"
         :spaceBetween="10"
-        :mousewheel="true"
+        :mousewheel= "{
+          invert: false,
+          releaseOnEdges: true
+        }"
         navigation
       >
       <!-- product Card -->

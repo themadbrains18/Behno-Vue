@@ -36,7 +36,7 @@
 <style scoped>
 /* ========== Section OUR ETHICAL PHILOSOPHY Css Code Start ========== */
 .sec_our_ethical_philosophy {
-  padding: 124px 0 22px;
+  padding: 60px 0 22px;
 }
 .sec_our_ethical_philosophy .container {
   max-width: 1056px;

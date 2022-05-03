@@ -3,7 +3,7 @@
     <!-- ========== Section CANOPY x BEHNO Start ========== -->
     <section class="sec_making_our_bags sec-canopy-x-behno">
       <div class="container">
-        <h2 class="sec_heading sec-heading">{{ shopifyData.secheading }}</h2>
+        <h2 class="card_heading_b t-center sec-heading">{{ shopifyData.secheading }}</h2>
         <div class="sec_content">
           <!--    Section text  -->
           <div class="sec_text">
@@ -73,7 +73,7 @@ margin-bottom:0px;
 }
 .sec_making_our_bags.sec-canopy-x-behno .sec-heading {
   color: #fff;
-  margin-bottom: 90px;
+  margin: 0 0 90px 0;
 }
 
 .back_sense_behno {
@@ -87,7 +87,6 @@ margin-bottom:0px;
   letter-spacing: 0.02em;
   color: #000000;
 }
-
 /* ========== back_sense_behno Css Code End ========== */
 
 /* ========== Section Canopy X Behno Responsive Css Code Start ========== */
@@ -108,6 +107,9 @@ margin-bottom:0px;
     margin-bottom: 40px;
   }
 
+  .sec-canopy-x-behno .sec_img{
+    padding: 0 10px;
+  }
   /* ========== Section Canopy X Behno Css Code End ========== */
 
   /* ========== back_sense_behno Responsive  Css Code End ========== */

@@ -124,7 +124,7 @@
         "e96f5655-04a1-499d-8af5-07a6ff7d16b8"
       ],
       "settings": {
-        "secHeading": "BEHNO FEATURED IN",
+        "secHeading": "FEATURED IN",
         "showProduct": true,
         "product_list": [
           "chain-bracelet",
@@ -139,7 +139,7 @@
       "type": "home-grid-single",
       "settings": {
         "image": "shopify:\/\/shop_images\/grid-single.jpg",
-        "imageHeight": "500",
+        "imageHeight": "",
         "title": "TITLE OF THE EDIT",
         "linkText": "Clickable link",
         "link": "shopify:\/\/pages\/ethical-philosophy"
