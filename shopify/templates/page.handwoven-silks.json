@@ -2,9 +2,19 @@
     "sections": {
       "handwoven-silks-hero": {
         "type": "handwoven-silks-hero"
+      },
+      "lives-of-weavers": {
+        "type": "lives-of-weavers"
+      },
+      "sounds-varanasi": {
+        "type": "sounds-varanasi"
+      },
+      "ghat-know-about": {
+        "type": "ghat-know-about"
       }
+      
     },
     "order": [
-      "handwoven-silks-hero"
+      "handwoven-silks-hero","lives-of-weavers","sounds-varanasi","ghat-know-about"
     ]
   }
