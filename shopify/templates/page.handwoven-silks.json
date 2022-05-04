@@ -1,0 +1,10 @@
+{
+    "sections": {
+      "handwoven-silks-hero": {
+        "type": "handwoven-silks-hero"
+      }
+    },
+    "order": [
+      "handwoven-silks-hero"
+    ]
+  }

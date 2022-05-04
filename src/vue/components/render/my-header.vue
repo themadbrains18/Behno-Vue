@@ -700,6 +700,9 @@
   width: fit-content;
 }
 
+.logo{
+  line-height: 0;
+}
 .nav_btns > button {
   display: grid;
   place-items: center;
