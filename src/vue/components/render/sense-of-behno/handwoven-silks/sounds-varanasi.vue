@@ -49,7 +49,7 @@
   text-align: start;
 }
 .subtitle{
-    margin: 6px 0 0 18px;
+  margin: 6px 0 0 18px;
 }
 
 .sec_heading {

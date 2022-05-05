@@ -95,7 +95,7 @@ export default {
   position: absolute;
   top: 45px;
   left: 0;
-  height: 510px;
+  height: calc(100% - 100px);
   width: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #E9E7E3 100%);
   z-index: -1;

@@ -19,10 +19,10 @@
                 <div class="accordian_info" >
                     <img src="https://i.shgcdn.com/b0323974-51b9-42fc-acc5-d6ae7619c47d/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
                     <ul class="accordian_list">
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Provision of exemplary healthcare services including coverage and access to health clinics.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text" >
                             Access to fresh sanitized water and additional nutritional ammunition for those in need.
                         </li>
                     </ul>
@@ -38,13 +38,13 @@
                 <div class="accordian_info" >
                     <img src="https://i.shgcdn.com/acac32e8-341d-40ba-a4f1-3aeb4c90ad43/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
                     <ul class="accordian_list">
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Active acknowledgement of garment workers through fair and transparent agreements.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Equipping garment workers with specific high-end technical and creative craft trainings to further their skillset.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Fair wages.
                         </li>
                     </ul>
@@ -60,7 +60,7 @@
                 <div class="accordian_info" >
                     <img src="https://i.shgcdn.com/c72951e4-912d-4465-a4f0-4dbd4d4ad658/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
                     <ul class="accordian_list">
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Accessibility to and provision of affordable family planning education and services
                         </li>
                     </ul>
@@ -76,10 +76,10 @@
                 <div class="accordian_info" >
                     <img src="https://i.shgcdn.com/9cf42402-0044-4058-a522-b1148ac51f91/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
                     <ul class="accordian_list">
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text ">
                             Prioritization of women’s legal and physical social mobility by providing leadership opportunities to female workers.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Ensuring equal remuneration for women as their male counterparts in similar positions or roles.
                         </li>
                     </ul>
@@ -95,13 +95,13 @@
                 <div class="accordian_info" >
                     <img src="https://i.shgcdn.com/e234a0c4-9dfa-4995-87d1-9afefe6969d3/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
                     <ul class="accordian_list">
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Development of clean recreational spaces within the factory setting where garment workers feel safe and welcome to relax, socialize, and find spiritual and educational resources.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Access to schools and educational and recreational resources for garment workers’ children.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Subsidies and reimbursements for transportation to and from home when appropriate.
                         </li>
                     </ul>
@@ -117,22 +117,22 @@
                 <div class="accordian_info" >
                     <img src="https://i.shgcdn.com/70a825fb-bc7d-44ca-ae2f-6225e8cf3995/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
                     <ul class="accordian_list" >
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Utilization of state of the art machinery geared towards safety and controlled carbon footprint and environmental waste.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Installment of safe foundation infrastructure abiding to international regulations on safety standards and worker rights.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Sourcing of leather from compliant tanneries and factories using leather resulting from the existing food supply chain.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             No fur or exotic skins.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             Limiting fabric wastage.
                         </li>
-                        <li class="accordian_item">
+                        <li class="accordian_item body_text">
                             No sourcing from ancient and endangered forests and a preference for innovative alternatives in partnership with Canopy.
                         </li>
                     </ul>
@@ -201,9 +201,6 @@ export default {
 
 .accordian_item{
     list-style: initial;
-    font-size: 18px;
-    font-family: 'adobe-caslon-pro',sans-serif;
-    line-height: 19px;
 }
 .sec_accordian{
     display: grid;
@@ -239,6 +236,10 @@ export default {
 .sec_heading {
   line-height: 44px;
   text-align: center;
+}
+.accordian_item.body_text{
+    margin: 0px;
+    text-align: start; 
 }
 .body_text {
   line-height: 19px;

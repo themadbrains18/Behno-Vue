@@ -186,6 +186,7 @@ button{
   font-size: 72px;
   font-weight: 700;
   text-transform: uppercase;
+  line-height: 69px;
 }
 
 /* Figma Quotes small */
@@ -234,10 +235,18 @@ button{
 .grid_heading {
   margin: 7px 0 5px;
 }
+@media only screen and (max-width: 1024px) {
+  .quotes_text{
+    line-height: 58px;
+  }
+}
 
 @media only screen and (max-width: 991px) {
   .grid_info{
     padding: 0 10px;
+  }
+  .quotes_text{
+    line-height: 38px;
   }
 }
 
@@ -247,7 +256,9 @@ button{
   .main_heading{
     font-size: 46px;
   }
- 
+  .quotes_text{
+    line-height: 28px;
+  }
 }
 
 

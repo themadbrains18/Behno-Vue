@@ -8,7 +8,12 @@
             :navigation="true"
             :modules="modules"
             :centeredSlides="true"
+            :effect="'fade'"
             :spaceBetween="100"
+            :autoplay="{
+            delay: 1500,
+            disableOnInteraction: false,
+            }"
             :loop="true"
             class="mySwiper"
           >
@@ -57,11 +62,11 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
 import "swiper/css";
-
+import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation } from "swiper";
+import { Navigation,Autoplay,EffectFade} from "swiper";
 export default {
   components: {
     Swiper,
@@ -69,7 +74,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation]
+      modules: [Navigation,Autoplay,EffectFade]
     };
   }
 };
