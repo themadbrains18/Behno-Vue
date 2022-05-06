@@ -1,6 +1,7 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_ghat_know_about">
+    <div class="big_container">
       <div class="main_contenet">
         <h2 class="sec_heading">You’ve ghat to know about this.</h2>
         <h4 class="card_heading_b sec_inner_heading">
@@ -16,7 +17,7 @@
       <div class="sec_slider">
         <div class="sec_slider modify-slider">
           <swiper
-            :navigation="false"
+            :navigation="true"
             :modules="modules"
             :centeredSlides="true"
             :spaceBetween="100"
@@ -41,18 +42,18 @@
                 alt="Image-description"
               />
             </swiper-slide>
-        
           </swiper>
         </div>
       </div>
-      <p class="subtitle">
-          MSA ETHOS. GUJARAT, INDIA.
-      </p>
+    </div>
+      <a class="back_sense_behno samll_text" href="#">
+            Back to The Sense of behno
+      </a>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
 
-// Slider Script
+
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -79,19 +80,18 @@ export default {
 
 // Section Css COde
 <style scoped>
+.swiper{
+  padding: 0 55px;
+}
+.back_sense_behno{
+        text-decoration: underline;
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+} 
 .sec_ghat_know_about {
   padding-top: 45px;
-  position: relative;
-}
-.sec_ghat_know_about::after{
-  content: "";
-  position: absolute;
-  top: 45px;
-  left: 0;
-  height: 510px;
-  width: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #E9E7E3 100%);
-  z-index: -1;
+  
 }
 .card_heading_b {
   margin-bottom: 62px;

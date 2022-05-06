@@ -7,7 +7,12 @@
                     Up close and live at Sotheby’s circa July 2016.
                 </h2>
                 <swiper 
-                :navigation="true" 
+                :navigation="true"
+                :effect="'fade'"
+                :autoplay="{
+                  delay: 1500,
+                  disableOnInteraction: false,
+                }" 
                 :modules="modules" 
                 :centeredSlides= "true" 
                 :spaceBetween= "100"
@@ -47,9 +52,10 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 // import required modules
-import { Navigation } from "swiper";
+import { Navigation,Autoplay,EffectFade } from "swiper";
 export default {
   components: {
     Swiper,
@@ -57,7 +63,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation],      
+      modules: [Navigation,Autoplay,EffectFade],      
     };
   }
 };
