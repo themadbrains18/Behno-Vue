@@ -181,6 +181,30 @@ button{
   text-transform: uppercase;
 }
 
+.cta_btn-black{
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.cta_btn-white{
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #000;
+}
+
+@media (hover:hover) {
+  .cta_btn-black:hover{
+    background-color: #fff;
+    color: #000;
+  }
+  .cta_btn-white:hover{
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+
 /* Figma Quotes */
 .quotes_text{
   font-size: 72px;

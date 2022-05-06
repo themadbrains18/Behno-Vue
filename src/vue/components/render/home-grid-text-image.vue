@@ -5,7 +5,7 @@
       <h2 class="main_heading grid_text_image_heading color-white">
         {{ shopifyData.secHeading }}
       </h2>
-      <a  :href=(shopifyData.link) class="cta_btn bg-white"> {{ shopifyData.btnText }} </a>
+      <a  :href=(shopifyData.link) class="cta_btn cta_btn-white"> {{ shopifyData.btnText }} </a>
     </div>
     <div class="grid_item grid_item_img">
       <a  :href=(shopifyData.link) class="grid_img-wrap line-h-0 d-block" >
