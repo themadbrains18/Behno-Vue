@@ -10,7 +10,7 @@
     <div class="grid_item grid_item_img">
       <a  :href=(shopifyData.link) class="grid_img-wrap line-h-0 d-block" >
           <template v-if="shopifyData.checkImage === 'true'">
-          <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+            <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
               <source :src=(shopifyData.videolink) >
             </video>
           </template>
@@ -35,7 +35,7 @@
 }
 .grid_text_image_heading {
   margin-bottom: 45px;
-}
+} 
 @media only screen and (max-width: 991px) {
   /* Grid Text Image */
   .grid_text_image {

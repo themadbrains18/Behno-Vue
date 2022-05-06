@@ -15,7 +15,7 @@
     link: `{{ section.settings.link }}`,
     linkText: `{{ section.settings.linkText }}`,
     showVideo: `{{ section.settings.showVideo }}`,
-    video_url: `{{ section.settings.video_url.id }}`,
+    video_url: `{{ section.settings.video_url }}`,
     imgUrl:{
         src : `{{ imgSrc }}`,
         placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
@@ -80,10 +80,8 @@
     },
     {
       "id": "video_url",
-      "type": "video_url",
-      "label": "Youtube Video URL",
-      "accept": ["youtube", "vimeo"],
-      "default": "https://www.youtube.com/watch?v=V9cOfo22-5M"
+      "type": "text",
+      "label": "Video URL"
     }
   ]
 }
