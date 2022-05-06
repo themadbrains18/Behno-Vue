@@ -9,6 +9,11 @@
                 :centeredSlides= "true" 
                 :spaceBetween= "100"
                 :loop="true"
+                :effect="'fade'"
+                :autoplay="{
+                delay: 1500,
+                disableOnInteraction: false,
+                }"
                 class="mySwiper">
                 <swiper-slide>
                   <img
@@ -67,11 +72,11 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
 import "swiper/css";
-
+import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation } from "swiper";
+import { Autoplay,EffectFade ,Navigation} from "swiper";
 export default {
   components: {
     Swiper,
@@ -79,7 +84,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation],      
+      modules: [Autoplay,EffectFade,Navigation],      
     };
   }
 };
@@ -94,6 +99,11 @@ export default {
       left: -5px!important;
   }
 }
+@media screen  and (max-width: 480px){
+    .sec_working_with_artisan .modify-slider .swiper-button-prev,.sec_working_with_artisan .modify-slider .swiper-button-next{
+      display: block;
+    }
+  }
 </style>
 
 <style scoped>
@@ -178,16 +188,19 @@ export default {
       padding: 75px 40px 65px;
   }
   }
-  @media screen  and (max-width: 991px){
-  .sec_working_with_artisan{
-    padding: 60px 0 60px;
+  @media only screen and (max-width: 1024px) {
+  .quotes_text{
+    font-size: 60px;
   }
+}
+  @media screen  and (max-width: 991px){
   .sec_heading{
       margin-bottom:25px;
   }
   .sec_content_inner .big_container{ 
     grid-template-columns: 1fr;
-    padding: 0 18px 27px;
+    padding: 48px 25px 27px;
+    gap: 38px;
   }
   .sec_text{
     order: 2;
@@ -197,24 +210,24 @@ export default {
     max-width: 100%;
     margin-top: 38px;
   }
-
   .sec_header{
     margin-top: 51px;  
   }
-  .sec_img{
-      width: calc(100% + 36px);
-      margin-left: -18px;
+  .sec_content_inner .sec_img{
+      width: calc(100% + 50px);
+      margin-left: -25px;
+  }
+  .text_inner_img img{
+    max-width: calc(100% + 14px);
+    margin-left: -7px;
+  }
+  .quotes_text{
+    font-size: 40px;
   }
   
   }
 
   @media screen  and (max-width: 767px){
-  .sec_working_with_artisan{
-      padding: 47px 0 40px;
-  }
-  .sec_working_with_artisan .big_container{
-      padding: 0 18px;
-  }
   .sec_heading{
       margin-bottom:18px;
       text-align: start;
@@ -222,6 +235,8 @@ export default {
   .swiper{
       padding: 0 22px;
   }
-
+  .quotes_text{
+    font-size: 27px;
+  }
   }
 </style>

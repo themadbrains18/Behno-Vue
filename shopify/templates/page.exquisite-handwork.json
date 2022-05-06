@@ -8,11 +8,15 @@
       },
       "working-with-artisan": {
         "type": "working-with-artisan"
+      },
+      "glocalizing-our-practices": {
+        "type": "glocalizing-our-practices"
       }
+      
       
     },
     "order": [
-      "exquisite-handwork-hero","inheritance-worth","working-with-artisan"
+      "exquisite-handwork-hero","inheritance-worth","working-with-artisan","glocalizing-our-practices"
 
     ]
   }

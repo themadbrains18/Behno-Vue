@@ -51,7 +51,6 @@
     }
     .sec_text{
         display: flex;
-        align-items: flex-end;
         position: absolute;
         top: 0px;
         left: 0px;
@@ -59,6 +58,12 @@
         width: 100%;
         justify-content: space-between;
         gap: 20px;
+        height: 100%;
+    }
+    .sec_text .sec_img{
+        position: absolute;
+        bottom: 190px;
+        right: 70px;
     }
     .quotes_text{
         max-width: 510px;
@@ -80,6 +85,9 @@
       padding:  0 12px;
       align-items:center;
       margin-top:13px;
+  }
+  .sec_img{
+    position: initial!important;
   }
   .quotes_text{
       max-width: 100%;

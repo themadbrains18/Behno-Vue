@@ -1,29 +1,23 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
-  <section class="sec_Constructing_ethos_hero">
-      <h2 class="card_heading_b">BEHNO IN THE WORLD</h2>
+  <section class="sec_ghat_know_about">
+    <div class="big_container">
       <div class="main_contenet">
-        <h2 class="sec_heading">Envisioning manufacturing to be radically different.</h2>
-        <h4
-          class="card_heading_b sec_inner_heading"
-        >Our founder, Shivam Punjya, created a space where garment workers, artisans, and factories were an intimate part of a brand’s core DNA.</h4>
-        <p
-          class="body_text"
-        >Ensuring garment workers and artisans have a safe working space should be the norm. But it isn’t.</p>
-        <p
-          class="body_text"
-        >“The behno Standard” was crafted after a deep dive into academia, time spent in the field, and having worked closely with various stakeholders at the back-end of fashion’s supply chain.</p>
-        <p
-          class="body_text"
-        >To take “The behno Standard” from theory to reality, Shivam partnered with nonprofit Muni Seva Ashram (MSA) and an industry veteran, Mukesh Kothari, to build a factory called MSA Ethos.</p>
-        <p
-          class="body_text"
-        >MSA Ethos is a revolutionary, intersectional approach to manufacturing where MSA assisted in its social programming and Mr. Kothari, its Managing Director, overlooked factory operations ensuring quality control and a smooth functioning of operations.</p>
+        <h2 class="sec_heading">You’ve ghat to know about this.</h2>
+        <h4 class="card_heading_b sec_inner_heading">
+          Varanasi is a city nestled on the banks of the Ganges river in India.
+        </h4>
+        <p class="body_text">
+          While it is widely regarded a the holiest city for Hinduism and Jainism, it also holds importance for the development of Buddhism and Ravidassia. Buddha founded Buddhism in Varanasi, giving his first sermon after reaching enlightenment under a tree in Sarnath.
+        </p>
+        <p class="body_text"> 
+          With its spiritual depth, architecturally the city's planning also speaks to its beauty. The ghats of Varanasi are wide, spread out riverfront steps leading to the banks of the Ganges River where cultural events occur for various parts of a person's life. Every evening, a massively popularized tradition persists; thousands of individuals congregate for aarti, where everyone comes in on their boats for a communal prayer right on the banks of the Ganges.
+        </p>
       </div>
       <div class="sec_slider">
         <div class="sec_slider modify-slider">
           <swiper
-            :navigation="false"
+            :navigation="true"
             :modules="modules"
             :centeredSlides="true"
             :spaceBetween="100"
@@ -48,18 +42,18 @@
                 alt="Image-description"
               />
             </swiper-slide>
-        
           </swiper>
         </div>
       </div>
-      <p class="subtitle">
-          MSA ETHOS. GUJARAT, INDIA.
-      </p>
+    </div>
+      <a class="back_sense_behno samll_text" href="#">
+            Back to The Sense of behno
+      </a>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
 
-// Slider Script
+
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -86,19 +80,18 @@ export default {
 
 // Section Css COde
 <style scoped>
-.sec_Constructing_ethos_hero {
-  padding-top: 45px;
-  position: relative;
+.swiper{
+  padding: 0 55px;
 }
-.sec_Constructing_ethos_hero::after{
-  content: "";
-  position: absolute;
-  top: 45px;
-  left: 0;
-  height: calc(100% - 100px);
-  width: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #E9E7E3 100%);
-  z-index: -1;
+.back_sense_behno{
+        text-decoration: underline;
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+} 
+.sec_ghat_know_about {
+  padding-top: 45px;
+  
 }
 .card_heading_b {
   margin-bottom: 62px;
@@ -147,7 +140,7 @@ export default {
 }
 /* Responsive Css Code */
 @media screen and (max-width: 991px) {
-  .sec_Constructing_ethos_hero {
+  .sec_ghat_know_about {
     padding-top: 36px;
   }
   .main_contenet {

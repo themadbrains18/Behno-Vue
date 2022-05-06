@@ -43,10 +43,18 @@ video{
 }
 @media screen and (max-width: 991px) {
     .card_heading_b {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     .sec_content{
         padding: 0 0px;
+    }
+    iframe{
+        height: 518px;
+    }
+}
+@media screen and (max-width: 767px) {
+    iframe{
+        height: 210px;
     }
 }
 </style>
