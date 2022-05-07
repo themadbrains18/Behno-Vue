@@ -187,12 +187,35 @@
     },
     "garment-up-close": {
       "type": "garment-up-close",
+      "blocks": {
+        "a6222de1-ce5e-4934-b2d3-3255c9bfaf0b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/garment-slide-img1.jpg"
+          }
+        },
+        "9cc018aa-830d-450c-b5d0-47c2aeb11b0b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/garment-slide-img2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "a6222de1-ce5e-4934-b2d3-3255c9bfaf0b",
+        "9cc018aa-830d-450c-b5d0-47c2aeb11b0b"
+      ],
       "settings": {
+        "secHeading": "Up close and live at Sotheby’s circa July 2016."
       }
     },
     "garment-ethical": {
       "type": "garment-ethical",
       "settings": {
+        "secHeading": "An Ethical Way. The only way.",
+        "secInfo": "A documentary film by Kent Mathews.",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
       }
     },
     "garment-behind-scenes": {
