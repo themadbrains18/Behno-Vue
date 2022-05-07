@@ -7,7 +7,7 @@
           <swiper
             :navigation="true"
             :modules="modules"
-            :centeredSlides="true"
+            :centeredSlides="true" 
             :effect="'fade'"
             :spaceBetween="100"
             :autoplay="{
@@ -17,37 +17,25 @@
             :loop="true"
             class="mySwiper"
           >
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/fe386f1e-45c9-4ebc-ad6f-f361bc98d012/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
-          
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/5160f755-3c52-44fb-ada7-563ce005f2d6/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/ddb6a330-eb1a-4631-bbca-a47a40c7a601/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
+             <swiper-slide v-for="(value, key) in shopifyData.Slide" :key="key">
+                <img
+                  :src="value.imgUrl.src"
+                  :src-placeholder="value.imgUrl.placeholder"
+                  :alt="value.imgUrl.alt"
+                />
+              </swiper-slide>
           </swiper>
         </div>
         <!--    Section text        -->
         <div class="sec_text">
-          <h2
-            class="sec_heading"
-          >Winner of Fashion Group International’s Rising Star Award.</h2>
-          <h4
-            class="card_heading_b"
-          >Recently, behno won Fashion Group International’s Rising Star Award in accessories.</h4>
+          <h2 class="sec_heading">
+              {{ shopifyData.secHeading }}
+          </h2>
+          <h4 class="card_heading_b">
+              {{ shopifyData.secSubHeading }}
+            </h4>
           <p class="body_text">
-            Nomination was based on brand viability, branding, sales and distribution, and personal interviews. Previous winners of Fashion Group International’s Rising Star Award include Tory Burch, Michael Kors, Jason Wu, Phillip Lim, among others.
+              {{ shopifyData.secInfo }}
           </p>
         </div>
       </div>
@@ -76,6 +64,12 @@ export default {
     return {
       modules: [Navigation,Autoplay,EffectFade]
     };
+  },
+  props:{
+    shopifyData:{
+      type:Object,
+      required:true,
+    }
   }
 };
 </script>

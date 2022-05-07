@@ -1,2 +1,63 @@
-<render-sense-of-behno-behno-in-world-winner-of-fashion>
+{% capture SlideImage %}
+[
+   {% for block in section.blocks %}
+    {
+	   imgUrl : {
+          src : `{{ block.settings.image | img_url : "" }}`,
+          placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+          alt: `{{ block.settings.image.alt }}`
+       }
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-behno-in-world-winner-of-fashion :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secSubHeading:`{{ section.settings.secSubHeading }}`,
+    secInfo:`{{ section.settings.secInfo }}`,
+    Slide:{{ SlideImage }}
+}">
 </render-sense-of-behno-behno-in-world-winner-of-fashion>
+
+
+
+{% schema %}
+{
+    "name":"Winner of Fashion",
+    "settings":[
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":"Winner of Fashion Group International’s Rising Star Award."
+        },
+        {
+            "id":"secSubHeading",
+            "type":"text",
+            "label":"Section Sub Heading",
+            "default":"Recently, behno won Fashion Group International’s Rising Star Award in accessories."
+        },
+        {
+            "id":"secInfo",
+            "type":"text",
+            "label":"Section Info",
+            "default":"Nomination was based on brand viability, branding, sales and distribution, and personal interviews. Previous winners of Fashion Group International’s Rising Star Award include Tory Burch, Michael Kors, Jason Wu, Phillip Lim, among others."
+        }
+    ],
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Slide",
+            "settings": [
+                {
+                "id": "image",
+                "type": "image_picker",
+                "label": "Slide Image"
+                }
+            
+            ]
+        }
+    ]
+}
+{% endschema %}

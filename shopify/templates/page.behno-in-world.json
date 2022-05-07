@@ -1,34 +1,84 @@
 {
-    "sections": {
-      "behno-world-hero" :{
-        "type" : "behno-world-hero"
-      },
-      "winner-of-fashion" :{
-        "type" : "winner-of-fashion"
-      },
-      "willfully-chaotic" :{
-        "type" : "willfully-chaotic"
-      },
-      "invited-buckingham" :{
-        "type" : "invited-buckingham"
-      },
-      "finalist-in-livia" :{
-        "type" : "finalist-in-livia"
-      },
-      "meet-fashion-designers" :{
-        "type" : "meet-fashion-designers"
-      },
-      "speaking-engagement" :{
-        "type" : "speaking-engagement"
+  "sections": {
+    "behno-world-hero": {
+      "type": "behno-world-hero",
+      "settings": {
+        "SecHeading": "BEHNO IN THE WORLD",
+        "image": "shopify:\/\/shop_images\/behno-world-img.jpg"
       }
-      ,
-      "launch-bergdorf" :{
-        "type" : "launch-bergdorf"
-      }
-      
-      
     },
-    "order": [
-      "behno-world-hero","winner-of-fashion","willfully-chaotic","invited-buckingham","finalist-in-livia","meet-fashion-designers","speaking-engagement","launch-bergdorf"
-    ]
-  }
+    "winner-of-fashion": {
+      "type": "winner-of-fashion",
+      "blocks": {
+        "a3aa5155-8e51-4432-a38d-d60554e47b4c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image3.jpg"
+          }
+        },
+        "c083fd74-080a-405d-b2f7-ede87c3a31d7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image2.jpg"
+          }
+        },
+        "7916d6c3-a037-4d08-b879-563159548e80": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "a3aa5155-8e51-4432-a38d-d60554e47b4c",
+        "c083fd74-080a-405d-b2f7-ede87c3a31d7",
+        "7916d6c3-a037-4d08-b879-563159548e80"
+      ],
+      "settings": {
+        "secHeading": "Winner of Fashion Group International’s Rising Star Award.",
+        "secSubHeading": "Recently, behno won Fashion Group International’s Rising Star Award in accessories.",
+        "secInfo": "Nomination was based on brand viability, branding, sales and distribution, and personal interviews. Previous winners of Fashion Group International’s Rising Star Award include Tory Burch, Michael Kors, Jason Wu, Phillip Lim, among others."
+      }
+    },
+    "willfully-chaotic": {
+      "type": "willfully-chaotic",
+      "settings": {
+      }
+    },
+    "invited-buckingham": {
+      "type": "invited-buckingham",
+      "settings": {
+      }
+    },
+    "finalist-in-livia": {
+      "type": "finalist-in-livia",
+      "settings": {
+      }
+    },
+    "meet-fashion-designers": {
+      "type": "meet-fashion-designers",
+      "settings": {
+      }
+    },
+    "speaking-engagement": {
+      "type": "speaking-engagement",
+      "settings": {
+      }
+    },
+    "launch-bergdorf": {
+      "type": "launch-bergdorf",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "behno-world-hero",
+    "winner-of-fashion",
+    "willfully-chaotic",
+    "invited-buckingham",
+    "finalist-in-livia",
+    "meet-fashion-designers",
+    "speaking-engagement",
+    "launch-bergdorf"
+  ]
+}

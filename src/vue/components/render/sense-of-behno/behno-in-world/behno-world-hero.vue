@@ -2,16 +2,15 @@
     <!-- Section Behno In World Start -->
     <section class="sec_behno_world">
         <h2 class="card_heading_b">
-            BEHNO IN THE WORLD
+            {{ shopifyData.SecHeading }}
         </h2>
         <div class="sec_img">
-            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/behno-world-img.jpg?v=1651134441" alt="Image-Description">
+            <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)>
         </div>
     </section>
     <!-- Section Behno In World End -->
 </template>
 
-// Section Css Code
 <style scoped>
 .sec_behno_world{
     padding-top:72px;
@@ -42,3 +41,14 @@
 }
 }
 </style>
+
+<script>
+    export default {
+        props:{
+            shopifyData:{
+                type: Object,
+                required: true,
+            }
+        }            
+    }
+</script>
