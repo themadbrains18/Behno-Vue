@@ -4,10 +4,10 @@
     <section class="sec_behind_scenes">
         <div class="big_container">
             <h2 class="sec_heading">
-                Behind the scenes (and the people).
+                {{ shopifyData.secHeading }}
             </h2>
             <p class="body_text">
-                BTS with Dan Smith and Kent Mathews as they spend time at MSA Ethos.
+                {{ shopifyData.secInfo }}
             </p>
             <div class="sec_content">
                 <div class="sec_img">
@@ -24,6 +24,18 @@
     </section>
     <!-- Section Garment Behind Scenes  End -->
 </template>
+
+<script>
+export default{
+    props:{
+        shopifyData: {
+            type: Object,
+            required: true,
+        }
+    }   
+}
+</script>
+
 
 <style scoped>
 .sec_behind_scenes{

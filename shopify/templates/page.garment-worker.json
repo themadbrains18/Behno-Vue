@@ -226,6 +226,12 @@
     "garment-power-house": {
       "type": "garment-power-house",
       "settings": {
+        "secheading": "The powerhouse.",
+        "linkText": "LEARN MORE ABOUT MSA ETHOS",
+        "link": "#",
+        "image": "shopify:\/\/shop_images\/sense-card4.jpg",
+        "SecLinkText": "Back to The Sense of behno",
+        "SecLink": "#"
       }
     }
   },
