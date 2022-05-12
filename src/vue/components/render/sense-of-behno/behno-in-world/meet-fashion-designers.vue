@@ -4,34 +4,38 @@
     <div class="big_container">
         <div class="sec_header">
             <h2 class="quotes_text">
-                “MEET FASHION’S COOL NEW WAVE OF SUSTAINABLE CHIC DESIGNERS.”
+                {{ shopifyData.redHeading }}
             </h2>
             <div class="logo">
-                <img src="https://cdn.shopify.com/s/files/1/1000/3130/files/vogue-logo.svg?v=1651153240" alt="Image-Description">
-                <a href="#" class="cta_btn">
-                    EXPLORE OUR PRESS
+                <img :src=(shopifyData.imgUrl2.src) :placeholder=(shopifyData.imgUrl2.placeholder) :alt=(shopifyData.imgUrl2.alt) />  
+                <a :href=(shopifyData.ctaLink) class="cta_btn">
+                    {{ shopifyData.ctaText }}
                 </a>
             </div>
         </div>
-        <div class="sec_content">
-            <div class="sec_text">
-                <h2
-                    class="sec_heading"
-                >Top 5 Finalist for the Accessories Council of America’s Design Excellence Awards.</h2>
-                <h4
-                    class="card_heading_b"
-                >behno was a top five finalist for the Design Excellence Award for the “Handbags Under $1000” category.</h4>
+        <div class="sec_content" v-for="(value, key) in shopifyData.Slide" :key="key" >
+            <div class="sec_text invited_showcase" >
+                <h2 class="sec_heading">
+                    {{ value.secHeading }}
+                </h2>
+                <h4 class="card_heading_b">
+                    {{ value.secSubHeading }}
+                </h4>
                 <p class="body_text">
-                    behno was in exciting company; Fendi, Givenchy, Jimmy Choo, Chloe, Sperry, Frances Valentine, among others are finalists as well, all spanning across their respective categories.
+                    {{ value.secInfo }}
                 </p>
-                <p class="body_text">
+                <!-- <p class="body_text">
                     The bag behno submitted for the award truly integrates The behno Standard on various levels and speaks to both our ethical and design philosophy. The drop cloth itself is upcycled from block printers, the embroidery tells the story of the artisans we work with, and the bag itself is made in a factory that we’re so proud to call a partner. The bag itself is the smallest size from our iconic Ina series.
-                </p></div>
+                </p> -->
+            </div>
             <div class="sec_img">
-                <img src="https://i.shgcdn.com/89e538cf-f2b3-433a-a083-fd5d1bda824b/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+                <img    
+                    :src="value.imgUrl.src"
+                    :placeholder="value.imgUrl.placeholder"
+                    :alt="value.imgUrl.alt" />
             </div>
         </div>
-         <div class="sec_content invited_showcase">
+         <!-- <div class="sec_content invited_showcase">
               <div class="sec_img">
                 <img src="https://i.shgcdn.com/f7e400d5-33d6-4318-8f4d-73e47a7b649c/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
             </div>
@@ -50,8 +54,8 @@
                 </a>
             </div>
            
+        </div> -->
         </div>
-    </div>
 </section>    
 <!-- Section Meet Fashion Desingners End -->
 </template>
@@ -103,6 +107,9 @@
 }
 .body_text{
     line-height: 19px;
+}
+.big_container > .sec_content:last-child > .sec_text {
+    order: 2;
 }
 .cta_btn {
         background: #000000;
@@ -197,3 +204,14 @@
 
 
 </style>
+
+<script>
+export default{
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    }
+}
+</script>

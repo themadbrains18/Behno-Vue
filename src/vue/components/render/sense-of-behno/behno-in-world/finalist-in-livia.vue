@@ -75,6 +75,10 @@
     .sec_img{
         margin-top: 75px;
     }
+    .main-img{
+        width: 100%;
+    }
+    
     /* Responsive Css Code */
     @media screen  and (max-width: 991px){
         .sec_finalist_livia{

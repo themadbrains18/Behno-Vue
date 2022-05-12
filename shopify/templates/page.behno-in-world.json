@@ -3,7 +3,8 @@
     "behno-world-hero": {
       "type": "behno-world-hero",
       "settings": {
-        "SecHeading": "BEHNO IN THE WORLD"
+        "SecHeading": "BEHNO IN THE WORLD",
+        "image": "shopify:\/\/shop_images\/behno-world-img.jpg"
       }
     },
     "winner-of-fashion": {
@@ -12,16 +13,19 @@
         "a3aa5155-8e51-4432-a38d-d60554e47b4c": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image3.jpg"
           }
         },
         "c083fd74-080a-405d-b2f7-ede87c3a31d7": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image2.jpg"
           }
         },
         "7916d6c3-a037-4d08-b879-563159548e80": {
           "type": "slide",
           "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image1.jpg"
           }
         }
       },
@@ -40,7 +44,7 @@
       "type": "willfully-chaotic",
       "settings": {
         "secLink": "#",
-        "secBgIng": "shopify:\/\/shop_images\/download.jpg",
+        "secBgIng": "shopify:\/\/shop_images\/bg-imge.jpg",
         "sehHeading": "“WILLFULLY CHAOTIC AND CRAZILY INVENTIVE.”",
         "ctaText": "EXPLORE OUR PRESS",
         "ctaLink": "#"
@@ -62,12 +66,85 @@
     },
     "finalist-in-livia": {
       "type": "finalist-in-livia",
+      "blocks": {
+        "5d97b1e2-d553-4297-bafa-66f499e06887": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2INTHEWORLD_2.jpg"
+          }
+        },
+        "e767bd97-95b9-4582-a7fe-b690322a61aa": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2INTHEWORLD.jpg"
+          }
+        },
+        "13f1dc8d-f09d-4764-b0d5-f021b2e52124": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/24INTHEWORLD.jpg"
+          }
+        },
+        "9e7d31a0-2da4-484c-a29c-dfe326342568": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/23INTHEWORLD.jpg"
+          }
+        },
+        "12f67901-7749-4d53-b7cc-087c23b0306a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/25INTHEWORLD.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "5d97b1e2-d553-4297-bafa-66f499e06887",
+        "e767bd97-95b9-4582-a7fe-b690322a61aa",
+        "13f1dc8d-f09d-4764-b0d5-f021b2e52124",
+        "9e7d31a0-2da4-484c-a29c-dfe326342568",
+        "12f67901-7749-4d53-b7cc-087c23b0306a"
+      ],
       "settings": {
+        "secHeading": "Top 5 Finalist in Livia Firth’s Green Carpet Challenge",
+        "secSubHeading": "behno was nominated for the highest award in sustainability in the fashion industry.",
+        "secInfo": "behno was shortlisted for top 10, where behno founder, Shivam Punjya, pitched to a jury in Paris comprised of Ellie Goulding, Vogue UK editor-in-chief, Edward Enninful, CNN style correspondent, Derek Blasberg, television host and philanthropist, Petra Nemcova, investor, Carmen Busqets, Matchesfashion.com fashion director, Natalie Kingham, among others. behno was enlisted as a top five finalist and attended The Green Carpet Awards in Milan, held at the Teatro alla Scala. The Green Carpet Awards were founded by Livia Firth and have been attended by the likes of Anna Wintour, Cate Blanchett, among other movers and shakers of the fashion and media worlds.",
+        "secImg": "shopify:\/\/shop_images\/garden-carpet.png",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
       }
     },
     "meet-fashion-designers": {
       "type": "meet-fashion-designers",
+      "blocks": {
+        "16cf4206-2ba3-4e30-b23e-0800829af523": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Top 5 Finalist for the Accessories Council of America’s Design Excellence Awards.",
+            "secSubHeading": "behno was a top five finalist for the Design Excellence Award for the “Handbags Under $1000” category.",
+            "secInfo": "behno was in exciting company; Fendi, Givenchy, Jimmy Choo, Chloe, Sperry, Frances Valentine, among others are finalists as well, all spanning across their respective categories.  The bag behno submitted for the award truly integrates The behno Standard on various levels and speaks to both our ethical and design philosophy. The drop cloth itself is upcycled from block printers, the embroidery tells the story of the artisans we work with, and the bag itself is made in a factory that we’re so proud to call a partner. The bag itself is the smallest size from our iconic Ina series.",
+            "secImg": "shopify:\/\/shop_images\/download1.jpg"
+          }
+        },
+        "4ba62c44-4294-4306-a85a-54835ac1a32d": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Invited to showcase the Garment Worker Project at Sotheby’s.",
+            "secSubHeading": "In 2016, behno debuted its Garment Worker Project at Sotheby’s in a private reception co-hosted by behno founder, Shivam Punjya, and celebrity stylist Micaela Erlanger.",
+            "secInfo": "The Garment Worker Project, a first of its kind, garnered international attention and was the first time a celebrity stylist took a strong position on ethical manufacturing. The project was photographed by fashion photographer Dan Smith and filmed by Kent Mathews.",
+            "secImg": "shopify:\/\/shop_images\/download2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "16cf4206-2ba3-4e30-b23e-0800829af523",
+        "4ba62c44-4294-4306-a85a-54835ac1a32d"
+      ],
       "settings": {
+        "redHeading": "“MEET FASHION’S COOL NEW WAVE OF SUSTAINABLE CHIC DESIGNERS.”",
+        "logoImg": "shopify:\/\/shop_images\/vogue.png",
+        "ctaText": "EXPLORE OUR PRESS",
+        "ctaLink": ""
       }
     },
     "speaking-engagement": {
