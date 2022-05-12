@@ -27,13 +27,16 @@
             <div class="sec_img">
                 <img class="main-img" :src=(shopifyData.secImg.src) :placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />  
                 <div class="img_grid"> 
-                    <div v-for="(value, key) in shopifyData.Slide" :key="key" >
-                        <!-- <v-lazy-image :src=(value.imgUrl.src) :placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.alt) /> -->
-                        <img
-                            :src="value.imgUrl.src"
-                            :src-placeholder="value.imgUrl.placeholder"
-                            :alt="value.imgUrl.alt"
-                        />
+                    <div class="grid_items">
+                        <img :src=(shopifyData.gridItem1.src) :placeholder=(shopifyData.gridItem1.placeholder) :alt=(shopifyData.gridItem1.alt) />
+                        <img :src=(shopifyData.gridItem2.src) :placeholder=(shopifyData.gridItem2.placeholder) :alt=(shopifyData.gridItem2.alt) />
+                    </div>
+                    <div class="grid_items">
+                        <img :src=(shopifyData.gridItem3.src) :placeholder=(shopifyData.gridItem3.placeholder) :alt=(shopifyData.gridItem3.alt) />
+                    </div>
+                    <div class="grid_items">
+                        <img :src=(shopifyData.gridItem4.src) :placeholder=(shopifyData.gridItem4.placeholder) :alt=(shopifyData.gridItem4.alt) />
+                        <img :src=(shopifyData.gridItem5.src) :placeholder=(shopifyData.gridItem5.placeholder) :alt=(shopifyData.gridItem5.alt) />
                     </div>
                 </div>
             </div>
@@ -78,6 +81,17 @@
     .main-img{
         width: 100%;
     }
+    .img_grid{
+        display: flex;
+        align-items: center;
+        column-gap: 70px;
+        justify-content: space-between;
+    }
+    .grid_items{
+        display: flex;
+        flex-direction: column;
+        gap: 160px;
+    }
     
     /* Responsive Css Code */
     @media screen  and (max-width: 991px){
@@ -105,6 +119,12 @@
         }
         .sec_video iframe{
             height: 214px;
+        }
+        .grid_items{
+            gap: 60px;
+        }
+        .img_grid{
+            gap: 23px;
         }
     }
 </style>
