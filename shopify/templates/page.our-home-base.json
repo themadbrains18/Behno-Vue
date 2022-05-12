@@ -1,0 +1,10 @@
+{
+    "sections": {
+      "our-home-base-hero": {
+        "type": "our-home-base-hero"
+      }
+    },
+    "order": [
+      "our-home-base-hero"
+    ]
+  }

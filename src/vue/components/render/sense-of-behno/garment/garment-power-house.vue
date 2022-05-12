@@ -10,7 +10,7 @@
                     <h2 class="sec_heading">
                         The powerhouse. 
                     </h2>
-                    <a href="#" class="cta_btn">
+                    <a href="#" class="cta_btn cta_btn-black">
                         LEARN MORE ABOUT MSA ETHOS
                     </a>
                 </div>

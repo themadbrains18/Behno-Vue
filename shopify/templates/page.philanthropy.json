@@ -1,0 +1,27 @@
+{
+    "sections": {
+      "philanthropy-hero": {
+        "type": "philanthropy-hero"
+      },
+      "bit-about-ndss": {
+        "type": "bit-about-ndss"
+      },
+      "partnership-with-ndss": {
+        "type": "partnership-with-ndss"
+      },
+      "sister-brothers": {
+        "type": "sister-brothers"
+      }
+      ,
+      "walk-to-remember": {
+        "type": "walk-to-remember"
+      },
+      "shop-ndss": {
+        "type": "shop-ndss"
+      }
+      
+    },
+    "order": [
+      "philanthropy-hero","partnership-with-ndss","bit-about-ndss","sister-brothers","walk-to-remember","shop-ndss"
+    ]
+  }

@@ -45,7 +45,7 @@
                 <p class="body_text">
                     The Garment Worker Project, a first of its kind, garnered international attention and was the first time a celebrity stylist took a strong position on ethical manufacturing. The project was photographed by fashion photographer Dan Smith and filmed by Kent Mathews.
                 </p>
-                <a href="#" class="cta_btn">
+                <a href="#" class="cta_btn cta_btn-black">
                     LEARN MORE 
                 </a>
             </div>

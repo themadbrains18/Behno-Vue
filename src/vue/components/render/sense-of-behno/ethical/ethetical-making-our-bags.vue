@@ -11,7 +11,7 @@
           <p
             class="body_text"
           >{{ shopifyData.para }}</p>
-          <a :href=(shopifyData.link) class="cta_btn">{{ shopifyData.linkText }}</a>
+          <a :href=(shopifyData.link) class="cta_btn cta_btn-black ">{{ shopifyData.linkText }}</a>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
@@ -74,8 +74,6 @@ iframe{
   line-height: 19px;
 }
 .sec_making_our_bags .cta_btn {
-  background: #000000;
-  color: #fff;
   margin-top: 30px;
 }
 

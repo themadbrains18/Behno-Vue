@@ -21,7 +21,7 @@
           <p class="body_text" v-for="(item, index) in shopifyData.para" :key="index">
             {{ item.para }}
           </p>
-          <a :href=(shopifyData.link) class="cta_btn">{{ shopifyData.linkText }}</a>
+          <a :href=(shopifyData.link) class="cta_btn cta_btn-black">{{ shopifyData.linkText }}</a>
         </div>
       </div>
     </div>

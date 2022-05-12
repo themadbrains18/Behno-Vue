@@ -88,6 +88,7 @@ export default {
    .sec_winner_fashion .swiper-button-prev {
     left: -5px !important;
   }
+  
 }
 </style>
 
