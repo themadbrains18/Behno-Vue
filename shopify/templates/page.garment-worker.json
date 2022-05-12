@@ -1,30 +1,246 @@
 {
-    "sections": {
-        "garment-hero": {
-            "type": "garment-hero"
+  "sections": {
+    "garment-hero": {
+      "type": "garment-hero",
+      "blocks": {
+        "fee63830-7f9c-4be0-99b0-b67f31cd10ba": {
+          "type": "Paragraph",
+          "settings": {
+            "para": "Created out of a collaboration between nonprofit organization Muni Seva Ashram (MSA), veterans of the garment industry, and the team behind behno, MSA Ethos is the ethical knits and wovens ready-to-wear factory that first implemented “The behno Standard.”"
+          }
         },
-        "garment-grid": {
-            "type": "garment-grid"
+        "7acfd28d-35fb-4317-bbd7-d9982d853ebd": {
+          "type": "Paragraph",
+          "settings": {
+            "para": "Through the Garment Worker Project, behno’s founder, Shivam Punjya, invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos to explore the less visible side of fashion. While Smith captured the unique individuals of MSA Ethos through an emotional series of intimate portraits, Mathews documented their personal stories and the unique infrastructure of the factory through documentary film."
+          }
         },
-        "garment-up-close": {
-            "type": "garment-up-close"
-        },
-        "garment-ethical": {
-            "type": "garment-ethical"
-        },
-        "garment-behind-scenes": {
-            "type": "garment-behind-scenes"
-        },
-        "garment-power-house": {
-            "type": "garment-power-house"
+        "d3437f28-ce5b-4c00-aae9-40024342e592": {
+          "type": "Paragraph",
+          "settings": {
+            "para": "The initiative demonstrated that garment workers are not a commodity and that garment production in the multibillion-dollar fashion industry need not be based on the exploitation of labor. The portraits below are framed and available for sale. Please inquire within by emailing clientservices@behno.com."
+          }
         }
+      },
+      "block_order": [
+        "fee63830-7f9c-4be0-99b0-b67f31cd10ba",
+        "7acfd28d-35fb-4317-bbd7-d9982d853ebd",
+        "d3437f28-ce5b-4c00-aae9-40024342e592"
+      ],
+      "settings": {
+        "secheading": "THE GARMENT WORKER PROJECT",
+        "subheading": "The Garment Worker Project debuted in July 2016 at Sotheby’s in New York City."
+      }
     },
-    "order": [
-        "garment-hero",
-        "garment-grid",
-        "garment-up-close",
-        "garment-ethical",
-        "garment-behind-scenes",
-        "garment-power-house"
-    ]
+    "garment-grid": {
+      "type": "garment-grid",
+      "blocks": {
+        "92ebaf4e-057c-4ff1-9670-aa1d5658fc38": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "ANITA BARi",
+            "image": "shopify:\/\/shop_images\/garment-grid-img.jpg"
+          }
+        },
+        "6de5267f-c81e-4cda-a095-301da949915d": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "ARVIND DALWADI",
+            "image": "shopify:\/\/shop_images\/garment-grid-img1.jpg"
+          }
+        },
+        "bb3be286-a6de-44d8-a581-63627c3d1155": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "BHAVESH CHAUHAN",
+            "image": "shopify:\/\/shop_images\/garment-grid-img2.jpg"
+          }
+        },
+        "ef80cfaf-f111-484e-8e8c-5ccb6c3b54a1": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "DHARMISHTA PARMAR",
+            "image": "shopify:\/\/shop_images\/garment-grid-img3.jpg"
+          }
+        },
+        "a877589b-a7b4-418e-aa33-704cf2638dda": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "DHUMSING SOLANKI",
+            "image": "shopify:\/\/shop_images\/garment-grid-img4.jpg"
+          }
+        },
+        "bb75419f-305a-4cee-b3a1-e66455b27d96": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "JITESH MAKWANA",
+            "image": "shopify:\/\/shop_images\/garment-grid-img5.jpg"
+          }
+        },
+        "34f66caf-6053-4e7d-8199-9edd715f907f": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "KALPANA PARMAR",
+            "image": "shopify:\/\/shop_images\/garment-grid-img6.jpg"
+          }
+        },
+        "8a2b010f-463e-4da3-b52c-00e56680efa7": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "KALPANA RANA",
+            "image": "shopify:\/\/shop_images\/garment-grid-img7.jpg"
+          }
+        },
+        "f2b68aff-68ee-478c-ad1f-08d0bc3cb1a3": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "KOMAL VASAVA",
+            "image": "shopify:\/\/shop_images\/garment-grid-img8.jpg"
+          }
+        },
+        "8382bcfe-c66a-4394-80d3-024ebebaed2a": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "NEETA GADHAVI",
+            "image": "shopify:\/\/shop_images\/garment-grid-img9.jpg"
+          }
+        },
+        "4543913d-d1f1-4737-9e4d-9bff9c702ef1": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "RINKAL PARMAR",
+            "image": "shopify:\/\/shop_images\/garment-grid-img10.jpg"
+          }
+        },
+        "e9bc1ec0-f6e4-4d42-aaaf-14fbbe20c6f9": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "SANJAY VEGDA",
+            "image": "shopify:\/\/shop_images\/garment-grid-img11.jpg"
+          }
+        },
+        "db2e0d46-e915-46ff-a1c6-e823314944dd": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "SONAL RATHOD",
+            "image": "shopify:\/\/shop_images\/garment-grid-img12.jpg"
+          }
+        },
+        "0d1b9006-26e7-41bc-8081-02bce17dedff": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "TARA JAGDISHBHAI",
+            "image": "shopify:\/\/shop_images\/garment-grid-img13.jpg"
+          }
+        },
+        "854b90ed-3a96-4420-aa67-0a9580df9e24": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "TARA PARMAR",
+            "image": "shopify:\/\/shop_images\/garment-grid-img14.jpg"
+          }
+        },
+        "025e0d3b-60bd-4fa1-bdbd-e86ac7ff89b5": {
+          "type": "grid_box",
+          "settings": {
+            "link": "\/",
+            "text": "VIJAY PARMAR",
+            "image": "shopify:\/\/shop_images\/garment-grid-img15.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "92ebaf4e-057c-4ff1-9670-aa1d5658fc38",
+        "6de5267f-c81e-4cda-a095-301da949915d",
+        "bb3be286-a6de-44d8-a581-63627c3d1155",
+        "ef80cfaf-f111-484e-8e8c-5ccb6c3b54a1",
+        "a877589b-a7b4-418e-aa33-704cf2638dda",
+        "bb75419f-305a-4cee-b3a1-e66455b27d96",
+        "34f66caf-6053-4e7d-8199-9edd715f907f",
+        "8a2b010f-463e-4da3-b52c-00e56680efa7",
+        "f2b68aff-68ee-478c-ad1f-08d0bc3cb1a3",
+        "8382bcfe-c66a-4394-80d3-024ebebaed2a",
+        "4543913d-d1f1-4737-9e4d-9bff9c702ef1",
+        "e9bc1ec0-f6e4-4d42-aaaf-14fbbe20c6f9",
+        "db2e0d46-e915-46ff-a1c6-e823314944dd",
+        "0d1b9006-26e7-41bc-8081-02bce17dedff",
+        "854b90ed-3a96-4420-aa67-0a9580df9e24",
+        "025e0d3b-60bd-4fa1-bdbd-e86ac7ff89b5"
+      ],
+      "settings": {
+      }
+    },
+    "garment-up-close": {
+      "type": "garment-up-close",
+      "blocks": {
+        "a6222de1-ce5e-4934-b2d3-3255c9bfaf0b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/garment-slide-img1.jpg"
+          }
+        },
+        "9cc018aa-830d-450c-b5d0-47c2aeb11b0b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/garment-slide-img2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "a6222de1-ce5e-4934-b2d3-3255c9bfaf0b",
+        "9cc018aa-830d-450c-b5d0-47c2aeb11b0b"
+      ],
+      "settings": {
+        "secHeading": "Up close and live at Sotheby’s circa July 2016."
+      }
+    },
+    "garment-ethical": {
+      "type": "garment-ethical",
+      "settings": {
+        "secHeading": "An Ethical Way. The only way.",
+        "secInfo": "A documentary film by Kent Mathews.",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+      }
+    },
+    "garment-behind-scenes": {
+      "type": "garment-behind-scenes",
+      "settings": {
+      }
+    },
+    "garment-power-house": {
+      "type": "garment-power-house",
+      "settings": {
+        "secheading": "The powerhouse.",
+        "linkText": "LEARN MORE ABOUT MSA ETHOS",
+        "link": "#",
+        "image": "shopify:\/\/shop_images\/sense-card4.jpg",
+        "SecLinkText": "Back to The Sense of behno",
+        "SecLink": "#"
+      }
+    }
+  },
+  "order": [
+    "garment-hero",
+    "garment-grid",
+    "garment-up-close",
+    "garment-ethical",
+    "garment-behind-scenes",
+    "garment-power-house"
+  ]
 }

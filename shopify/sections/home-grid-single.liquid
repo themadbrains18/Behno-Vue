@@ -4,6 +4,11 @@
             placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
             alt: `{{ section.settings.image.alt }}`
           },
+          responsiveimgUrl : {
+            src : `{{ section.settings.respnsiveimage | img_url : "" }}`,
+            placeholder: `{{ section.settings.respnsiveimage | img_url : "50x50" }}`,
+            alt: `{{ section.settings.respnsiveimage.alt }}`
+          },
           imageHeight   : `{{ section.settings.imageHeight }}`,
           title  : `{{ section.settings.title }}`,
           linktext : `{{ section.settings.linkText }}`,
@@ -23,6 +28,11 @@
         "id": "image",
         "type": "image_picker",
         "label": "t:sections.home_single_grid.settings.image.label"
+      },
+      {
+        "id": "respnsiveimage",
+        "type": "image_picker",
+        "label": "Mobile Image"
       },
       {
         "id": "imageHeight",

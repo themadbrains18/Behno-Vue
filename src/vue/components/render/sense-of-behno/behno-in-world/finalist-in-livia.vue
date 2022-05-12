@@ -3,28 +3,44 @@
     <section class="sec_finalist_livia">
         <div class="big_container">
             <div class="sec_video">
-                <iframe class="shogun-video-embed shogun-lazyload" src="https://www.youtube.com/embed/dNwEUHHsGa4?start=0&amp;end=0&amp;autoplay=1&amp;loop=1&amp;mute=1&amp;playlist=dNwEUHHsGa4&amp;version=3&amp;rel=0" allowfullscreen></iframe>
+                <template v-if="shopifyData.checkImage === 'true'">
+                    <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+                        <source :src=(shopifyData.videolink) />
+                    </video>
+                </template>
+                <template v-else>
+                    <img class="grid_img" :src=(shopifyData.checkImage.src) :placeholder=(shopifyData.checkImage.placeholder) :alt=(shopifyData.checkImage.alt) />
+                </template>
             </div>
             <div class="main_contenet">
                 <h2 class="sec_heading">
-                    Top 5 Finalist in Livia Firth’s Green Carpet Challenge
+                    {{ shopifyData.secHeading }}
                 </h2>
                 <h4 class="card_heading_b">
-                    behno was nominated for the highest award in sustainability in the fashion industry.
+                    {{ shopifyData.secSubHeading }}
+
                 </h4>
                 <p class="body_text">
-                    behno was shortlisted for top 10, where behno founder, Shivam Punjya, pitched to a jury in Paris comprised of Ellie Goulding, Vogue UK editor-in-chief, Edward Enninful, CNN style correspondent, Derek Blasberg, television host and philanthropist, Petra Nemcova, investor, Carmen Busqets, Matchesfashion.com fashion director, Natalie Kingham, among others.
-                    behno was enlisted as a top five finalist and attended The Green Carpet Awards in Milan, held at the Teatro alla Scala. The Green Carpet Awards were founded by Livia Firth and have been attended by the likes of Anna Wintour, Cate Blanchett, among other movers and shakers of the fashion and media worlds.
+                    {{ shopifyData.secInfo }}
                 </p>
             </div>
             <div class="sec_img">
-                <img src="https://i.shgcdn.com/1138e428-8f9f-40a2-a93a-0d5e753f703a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                <img class="main-img" :src=(shopifyData.secImg.src) :placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />  
+                <div class="img_grid"> 
+                    <div v-for="(value, key) in shopifyData.Slide" :key="key" >
+                        <!-- <v-lazy-image :src=(value.imgUrl.src) :placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.alt) /> -->
+                        <img
+                            :src="value.imgUrl.src"
+                            :src-placeholder="value.imgUrl.placeholder"
+                            :alt="value.imgUrl.alt"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 <!-- Sction Finalist Livia End -->
 </template>
-// Section Css COde
 <style scoped>
     .sec_finalist_livia{
         padding-bottom:90px;
@@ -88,3 +104,14 @@
         }
     }
 </style>
+
+<script>
+export default{
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    }
+}
+</script>

@@ -1,2 +1,28 @@
-<render-sense-of-behno-garment-garment-behind-scenes>
+<render-sense-of-behno-garment-garment-behind-scenes :shopify-data="{
+    secHeading:'{{ section.settings.secHeading }}',
+    secInfo:'{{ section.settings.secInfo }}'
+
+}">
 </render-garment-garment-behind-scenes>
+
+
+
+{% schema %}
+{
+    "name":"Garment Behind The Scenes",
+    "settings":[
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":"Behind the scenes (and the people)."
+        },
+        {
+            "id":"secInfo",
+            "type":"text",
+            "label":"Section Info",
+            "default":"BTS with Dan Smith and Kent Mathews as they spend time at MSA Ethos."
+        }
+    ]
+}
+{% endschema %} }

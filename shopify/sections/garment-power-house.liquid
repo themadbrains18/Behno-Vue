@@ -1,2 +1,55 @@
-<render-sense-of-behno-garment-garment-power-house>
+<render-sense-of-behno-garment-garment-power-house :shopify-data="{
+    secheading: `{{ section.settings.secheading }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+     },
+    BtnText: `{{ section.settings.linkText }}`,
+    Btnlink: `{{ section.settings.link }}`,
+    SecLinkText: `{{ section.settings.SecLinkText }}`,
+    SecLink: `{{ section.settings.SecLink }}`
+}">
 </render-garment-garment-power-house>
+
+
+
+{% schema %}
+{
+  "name": "Garment Power House",
+  "settings": [
+    {
+        "id": "secheading",
+        "type": "text",
+        "label": "Sec Heading",
+        "default": "The powerhouse."
+    },
+    {
+        "id": "linkText",
+        "type": "text",
+        "label": "Link Text"
+    },
+    {
+        "id": "link",
+        "type": "url",
+        "label": "Link Url"
+    },
+    {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Sec Image"
+    }
+    ,
+    {
+        "id": "SecLinkText",
+        "type": "text",
+        "label": "Section Link Text"
+    },
+    {
+        "id": "SecLink",
+        "type": "url",
+        "label": "Section Link Url"
+    }
+  ]
+}
+{% endschema %}

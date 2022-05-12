@@ -3,25 +3,38 @@
         <div class="big_container">
             <div class="main_contenet">
                 <h2 class="sec_heading">
-                    We were invited to Buckingham Palace by Her Majesty, The Queen of England.
+                    {{ shopifyData.secHeading }}
                 </h2>
                 <h4 class="card_heading_b">
-                    behno was honored as the only American brand invited to be in the Commonwealth Fashion Exchange to present an ethical fashion eveningwear look to Her Royal Highness, The Duchess of Cambridge, Catherine Middleton.
+                    {{ shopifyData.secSubHeading }}
                 </h4>
                 <p class="body_text">
-                    behno incorporated elements from the Commonwealth countries of India and Tuvalu into a look that was presented to the royal family and celebrated in a reception attended by industry leaders, including Anna Wintour, Livia Firth, Edward Enninful, among others.
+                    {{ shopifyData.secInfo }}
                 </p>
             </div>
             <div class="sec_content">
                 <div class="sec_video">
-                    <img src="https://i.shgcdn.com/b789389d-9667-4da6-82ae-edf4b5b0f868/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
-                    <video width="300" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" class="shogun-image ">
-                        <source src="https://i.shgcdn.com/a9e2a160-708b-4b95-b28e-d4e901ffd4eb/gif2video/-/format/webm/-/quality/lighter/" type="video/webm">
-                        <source src="https://i.shgcdn.com/a9e2a160-708b-4b95-b28e-d4e901ffd4eb/gif2video/-/format/mp4/-/quality/lighter/" type="video/mp4">
-                    </video>
+                    <img :src=(shopifyData.imgUrl1.src) :alt=(shopifyData.imgUrl1.alt) :placeholder=(shopifyData.imgUrl1.placeholder)>
+                    <template v-if="shopifyData.checkImage === 'true'">
+                        <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+                        <source :src=(shopifyData.videolink) >
+                        </video>
+                    </template>
+                    <template v-else>
+                        <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+                    </template>
                 </div>
                 <div class="sec_img">
-                    <img src="https://i.shgcdn.com/e97180ec-fe50-4bf3-813d-11343ac0c6f1/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+                    <div class="t-start">
+                        <img class="img_item1" :src=(shopifyData.imgUrl2.src) :alt=(shopifyData.imgUrl2.alt) :placeholder=(shopifyData.imgUrl2.placeholder)>
+                    </div>
+                    <div class="t-end">
+                        <img class="img_item2" :src=(shopifyData.imgUrl3.src) :alt=(shopifyData.imgUrl3.alt) :placeholder=(shopifyData.imgUrl3.placeholder)>
+
+                    </div>
+                    <div class="t-center">
+                        <img class="img_item3" :src=(shopifyData.imgUrl4.src) :alt=(shopifyData.imgUrl4.alt) :placeholder=(shopifyData.imgUrl4.placeholder)>
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,6 +59,7 @@
         align-items: center;
         margin-top: 34px;
         gap: 30px;
+        justify-content: center;
     }
     .card_heading_b{
         margin: 14px 0;
@@ -56,6 +70,22 @@
     }
     .sec_video img{
         width: 300px;
+    }
+    .img_item1{
+        max-width: 540px;
+        width: 100%;
+        height: auto;
+    }
+    .img_item2{
+        max-width: 490px;
+        width: 100%;
+        height: auto;
+        margin: 70px 0;
+    }
+     .img_item3{
+        max-width: 330px;
+        width: 100%;
+        height: auto;
     }
     
     /* Responsive Css Code */
@@ -81,4 +111,32 @@
         margin-top: 43px;
     }
     }
+    @media screen  and (max-width: 575px){
+        .img_item1{
+            max-width: 160px;
+        }
+        .img_item2{
+            max-width: 176px;
+            margin: 25px 0 30px;
+        }
+        .img_item3{
+            max-width: 117px;
+        }
+        .sec_video video,
+        .sec_video img
+        {
+            width: 90px;
+        }
+    }
 </style>    
+
+<script>
+    export default{
+        props:{
+            shopifyData:{
+                type: Object,
+                required: true,
+            }
+        }   
+    }
+</script>

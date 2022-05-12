@@ -16,9 +16,10 @@
         <!--    Section Image        -->
         <div class="sec_img">
           <a :href=(shopifyData.link)> 
-             <template v-if="shopifyData.showVideo === 'true'">
-              <iframe :src="'https://www.youtube.com/embed/' + shopifyData.video_url + '?start=0&end=0&autoplay=1&loop=1&mute=1&playlist=V9cOfo22-5M&version=3&rel=0'" frameborder="0"  allowfullscreen>
-              </iframe>
+            <template v-if="shopifyData.showVideo === 'true'">
+              <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+              <source :src=(shopifyData.video_url) >
+              </video>
             </template>
             <template v-else>
               <img

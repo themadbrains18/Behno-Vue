@@ -4,26 +4,42 @@
         <div class="big_container">
             <div class="sec_content">
                 <div class="sec_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/power-house-img.jpg?v=1651065720" alt="Image-description">
+                    <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)  />
                 </div>
                 <div class="sec_text">
                     <h2 class="sec_heading">
-                        The powerhouse. 
+                        {{ shopifyData.secheading }} 
                     </h2>
+<<<<<<< HEAD
                     <a href="#" class="cta_btn cta_btn-black">
                         LEARN MORE ABOUT MSA ETHOS
+=======
+                    <a :href=(shopifyData.Btnlink) class="cta_btn">
+                        {{ shopifyData.BtnText }} 
+>>>>>>> 243461fde34f68841218fdc2853b0e3049431994
                     </a>
                 </div>
             </div>
         </div>
-        <a class="back_sense_behno samll_text" href="#">
-            Back to The Sense of behno
+        <a class="back_sense_behno samll_text" :href=(shopifyData.SecLink)>
+            {{ shopifyData.SecLinkText }} 
         </a>
         
     </section>
 <!-- Section Garment Ethical End -->
     
 </template>
+<script>
+    export default{
+    props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        }
+    } 
+    }
+</script>
+
 <style scoped>
 .big_container{
     padding:  0 50px 0 6px;
