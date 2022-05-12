@@ -10,13 +10,8 @@
                     <h2 class="sec_heading">
                         {{ shopifyData.secheading }} 
                     </h2>
-<<<<<<< HEAD
-                    <a href="#" class="cta_btn cta_btn-black">
-                        LEARN MORE ABOUT MSA ETHOS
-=======
-                    <a :href=(shopifyData.Btnlink) class="cta_btn">
+                    <a :href=(shopifyData.Btnlink) class="cta_btn  cta_btn-black">
                         {{ shopifyData.BtnText }} 
->>>>>>> 243461fde34f68841218fdc2853b0e3049431994
                     </a>
                 </div>
             </div>
