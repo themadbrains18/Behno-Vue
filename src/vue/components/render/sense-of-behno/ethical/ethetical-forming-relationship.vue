@@ -10,7 +10,7 @@
           <p
             class="body_text"
           >{{ shopifyData.para }}</p>
-          <a :href=(shopifyData.link) class="cta_btn">{{ shopifyData.linkText }}</a>
+          <a :href=(shopifyData.link) class="cta_btn cta_btn-white ">{{ shopifyData.linkText }}</a>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">

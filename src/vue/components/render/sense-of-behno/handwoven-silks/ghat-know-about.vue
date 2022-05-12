@@ -87,10 +87,10 @@ export default {
         text-decoration: underline;
         display: block;
         width: fit-content;
-        margin: 0 auto;
+        margin: 85px  auto 0;
 } 
 .sec_ghat_know_about {
-  padding-top: 45px;
+  padding: 45px 0 126px;
   
 }
 .card_heading_b {
@@ -141,7 +141,7 @@ export default {
 /* Responsive Css Code */
 @media screen and (max-width: 991px) {
   .sec_ghat_know_about {
-    padding-top: 36px;
+    padding: 36px 0 80px;
   }
   .main_contenet {
     padding: 0 20px;
@@ -153,17 +153,46 @@ export default {
   .card_heading_b {
     margin-bottom: 50px;
   }
+  .back_sense_behno{
+    margin-top: 65px;
+  }
 }
 
 @media screen and (max-width: 767px) {
+  .sec_ghat_know_about{
+    padding: 24px 0 56px;
+  }
   .main_contenet {
     margin-bottom: 22px;
   }
   .subtitle{
     margin: 12px 0 0 10px;
-}
+  }
+  .big_container{
+    padding: 0;
+  }
+  .swiper{
+    padding: 0 36px;
+  }
 }
 </style>
 
+<style >
+@media screen and (max-width:767px) {
+  .sec_ghat_know_about .swiper-button-prev{
+    left: 0;
+    transform: translateY(0);
+  }
+  .sec_ghat_know_about .swiper-button-next{
+    right: 0; 
+    transform: translateY(0%) rotate(180deg);
+  }
+}
 
+@media screen and (max-width:480px) {
+  .sec_ghat_know_about .swiper-button-next,.sec_ghat_know_about .swiper-button-prev{
+    display: block;
+  }
+}
+</style>
 
