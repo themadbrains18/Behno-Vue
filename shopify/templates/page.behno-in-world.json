@@ -3,8 +3,7 @@
     "behno-world-hero": {
       "type": "behno-world-hero",
       "settings": {
-        "SecHeading": "BEHNO IN THE WORLD",
-        "image": "shopify:\/\/shop_images\/behno-world-img.jpg"
+        "SecHeading": "BEHNO IN THE WORLD"
       }
     },
     "winner-of-fashion": {
@@ -13,19 +12,16 @@
         "a3aa5155-8e51-4432-a38d-d60554e47b4c": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/winner-image3.jpg"
           }
         },
         "c083fd74-080a-405d-b2f7-ede87c3a31d7": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/winner-image2.jpg"
           }
         },
         "7916d6c3-a037-4d08-b879-563159548e80": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/winner-image1.jpg"
           }
         }
       },
@@ -43,11 +39,25 @@
     "willfully-chaotic": {
       "type": "willfully-chaotic",
       "settings": {
+        "secLink": "#",
+        "secBgIng": "shopify:\/\/shop_images\/download.jpg",
+        "sehHeading": "“WILLFULLY CHAOTIC AND CRAZILY INVENTIVE.”",
+        "ctaText": "EXPLORE OUR PRESS",
+        "ctaLink": "#"
       }
     },
     "invited-buckingham": {
       "type": "invited-buckingham",
       "settings": {
+        "secHeading": "We were invited to Buckingham Palace by Her Majesty, The Queen of England.",
+        "secSubHeading": "“behno was honored as the only American brand invited to be in the Commonwealth Fashion Exchange to present an ethical fashion eveningwear look to Her Royal Highness, The Duchess of Cambridge, Catherine Middleton.",
+        "secInfo": "“behno incorporated elements from the Commonwealth countries of India and Tuvalu into a look that was presented to the royal family and celebrated in a reception attended by industry leaders, including Anna Wintour, Livia Firth, Edward Enninful, among others.",
+        "secImg1": "shopify:\/\/shop_images\/1IN_THE_WORLD.jpg",
+        "secImg3": "shopify:\/\/shop_images\/3IN_THE_WORLD.jpg",
+        "secImg4": "shopify:\/\/shop_images\/5IN_THE_WORLD.jpg",
+        "checkImage": true,
+        "SecImage2": "shopify:\/\/shop_images\/2IN_THE_WORLD.jpg",
+        "videolink": "https:\/\/i.shgcdn.com\/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
       }
     },
     "finalist-in-livia": {

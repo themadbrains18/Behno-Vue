@@ -1,2 +1,92 @@
-<render-sense-of-behno-behno-in-world-invited-buckingham>
+<render-sense-of-behno-behno-in-world-invited-buckingham :shopify-data="{
+    secHeading:`{{ section.settings.secHeading  }}`,
+    secSubHeading:`{{ section.settings.secSubHeading  }}`,
+    secInfo:`{{ section.settings.secInfo  }}`,
+    imgUrl1 : {
+        src : `{{ section.settings.secImg1 | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg1 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg1.alt }}`
+    },
+    imgUrl2 : {
+        src : `{{ section.settings.SecImage2 | img_url : "" }}`,
+        placeholder: `{{ section.settings.SecImage2 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.SecImage2.alt }}`
+    },
+    imgUrl3 : {
+        src : `{{ section.settings.secImg3 | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg3 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg3.alt }}`
+    },
+    imgUrl4 : {
+        src : `{{ section.settings.secImg4 | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg4 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg4.alt }}`
+    },
+    checkImage: `{{ section.settings.checkImage }}`,
+    videolink: `{{ section.settings.videolink }}`
+
+}">
 </render-sense-of-behno-behno-in-world-invited-buckingham>
+
+
+
+
+
+{% schema %}
+{
+    "name":"Invited Buckingham ",
+    "settings":[
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":" We were invited to Buckingham Palace by Her Majesty, The Queen of England. "
+        },
+        {
+            "id":"secSubHeading",
+            "type":"text",
+            "label":"Section Sub Heading",
+            "default":" “behno was honored as the only American brand invited to be in the Commonwealth Fashion Exchange to present an ethical fashion eveningwear look to Her Royal Highness, The Duchess of Cambridge, Catherine Middleton. "
+        },
+        {
+            "id":"secInfo",
+            "type":"text",
+            "label":"Section Info",
+            "default":" “behno incorporated elements from the Commonwealth countries of India and Tuvalu into a look that was presented to the royal family and celebrated in a reception attended by industry leaders, including Anna Wintour, Livia Firth, Edward Enninful, among others."
+        },
+        {
+            "id":"secImg1",
+            "type":"image_picker",
+            "label":"Section Image Top Left"
+        },
+        {
+            "id":"secImg3",
+            "type":"image_picker",
+            "label":"Section Image Middle Right"
+        },
+        {
+            "id":"secImg4",
+            "type":"image_picker",
+            "label":"Section Image bottom Right"
+        },
+        {
+            "id": "checkImage",
+            "type": "checkbox",
+            "label": "Show Video",
+            "default": true
+          },
+          {
+            "id": "SecImage2",
+            "type": "image_picker",
+            "label": "Section Image top Right"
+          },
+          {
+            "id": "videolink",
+            "type": "text",
+            "label": "t:sections.home_grid_text_image.settings.video.label",
+            "default" :"https://i.shgcdn.com/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb/gif2video/-/format/mp4/-/quality/lighter/"
+          }
+
+    ]
+}
+{% endschema %}
