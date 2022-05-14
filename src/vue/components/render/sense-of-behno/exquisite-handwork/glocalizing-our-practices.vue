@@ -3,29 +3,42 @@
         <div class="big_container">
             <div class="main_contenet">
                 <h2 class="sec_heading">
-                    Glocalizing our practices.
+                    {{shopifyData.secHeading}}
                 </h2>
                 <h4 class="card_heading_b">
-                    Sourcing local matters. A lot.
+                    {{shopifyData.subHeading}}
                 </h4>
-                <p class="body_text">
-                    While our bags travel thousands of miles from India to our warehouses abroad, all our embroidery thread and embellishment materials are sourced from local markets within 20 kilometers of Gulfam’s Studio.
-                </p>
-                <p class="body_text">
-                    Finding local suppliers allows us to support small businesses, build in-person relations over cups of chai, as well as reduce our carbon footprint from imports. Preserving local cultures contextualizing themselves in a global economy is powerful.
+                <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
+                    {{ value.para }}
                 </p>
             </div>
             <div class="sec_content">
                 <div class="sec_img">
-                    <img src="https://i.shgcdn.com/c53c6fde-37c3-46e6-b4c4-1aeeae0295c4/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+                    <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.src) :alt=(shopifyData.imgUrl.alt) >
                 </div>
             </div>
         </div>
-        <a class="back_sense_behno samll_text" href="#">
-            Back to The Sense of behno
-        </a>
     </section>
+    
+    <BackToTop/>
+
 </template>
+
+<script>
+import BackToTop from "../../back-to-top.vue"
+export default {
+    props: {
+        shopifyData: {
+        type: Object,
+        required: true,
+        }
+    },
+    components : {
+        BackToTop
+    }
+}
+</script>
+
 <style scoped>
     .sec_glocalizing_our_practices{
         padding: 87px 0 33px;

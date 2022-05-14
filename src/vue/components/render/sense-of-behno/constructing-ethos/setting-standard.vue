@@ -3,21 +3,21 @@
   <section class="sec_setting_standard">
       <div class="big_container">
         <div class="main_contenet">
-            <h2 class="sec_heading">Setting the standard.</h2>
+            <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
             <p class="body_text">
-                “The behno Standard,” incrementally implemented, is made up of:
+                {{ shopifyData.secinfo }}
             </p>
         </div>
         <div class="sec_accordian">
-            <div class="accordian_card">
+            <div class="accordian_card" v-for="(value, key) in shopifyData.cardData" :key="key">
                 <button class="accordian_btn" @click="(event)=>{setActive(event)}">
-                    <span class="subtitle_b">HEALTH</span>
+                    <span class="subtitle_b">{{ value.crdHeading }}</span>
                     <div class="crose_icon line-h-0">
                         <img src="../../../../../assets/svg/accordian-arrow-icon.svg" alt="">
                     </div>
                 </button>
                 <div class="accordian_info" >
-                    <img src="https://i.shgcdn.com/b0323974-51b9-42fc-acc5-d6ae7619c47d/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
+                    <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.src)>
                     <ul class="accordian_list">
                         <li class="accordian_item body_text">
                             Provision of exemplary healthcare services including coverage and access to health clinics.
@@ -28,116 +28,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="accordian_card">
-                <button class="accordian_btn" @click="(event)=>{setActive(event)}" >
-                    <span class="subtitle_b">GARMENT WORKER SOCIAL MOBILITY</span>
-                    <div class="crose_icon line-h-0">
-                        <img src="../../../../../assets/svg/accordian-arrow-icon.svg" alt="">
-                    </div>
-                </button>
-                <div class="accordian_info" >
-                    <img src="https://i.shgcdn.com/acac32e8-341d-40ba-a4f1-3aeb4c90ad43/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
-                    <ul class="accordian_list">
-                        <li class="accordian_item body_text">
-                            Active acknowledgement of garment workers through fair and transparent agreements.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Equipping garment workers with specific high-end technical and creative craft trainings to further their skillset.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Fair wages.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordian_card">
-                <button class="accordian_btn" @click="(event)=>{setActive(event)}">
-                    <span class="subtitle_b">FAMILY PLANNING</span>
-                    <div class="crose_icon line-h-0">
-                        <img src="../../../../../assets/svg/accordian-arrow-icon.svg" alt="">
-                    </div>
-                </button>
-                <div class="accordian_info" >
-                    <img src="https://i.shgcdn.com/c72951e4-912d-4465-a4f0-4dbd4d4ad658/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
-                    <ul class="accordian_list">
-                        <li class="accordian_item body_text">
-                            Accessibility to and provision of affordable family planning education and services
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordian_card">
-                <button class="accordian_btn" @click="(event)=>{setActive(event)}">
-                    <span class="subtitle_b">WOMEN’S RIGHTS</span>
-                    <div class="crose_icon line-h-0">
-                        <img src="../../../../../assets/svg/accordian-arrow-icon.svg" alt="">
-                    </div>
-                </button>
-                <div class="accordian_info" >
-                    <img src="https://i.shgcdn.com/9cf42402-0044-4058-a522-b1148ac51f91/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
-                    <ul class="accordian_list">
-                        <li class="accordian_item body_text ">
-                            Prioritization of women’s legal and physical social mobility by providing leadership opportunities to female workers.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Ensuring equal remuneration for women as their male counterparts in similar positions or roles.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordian_card">
-                <button class="accordian_btn" @click="(event)=>{setActive(event)}">
-                    <span class="subtitle_b">WORKER SATISFACTION & BENEFITS</span>
-                    <div class="crose_icon line-h-0">
-                        <img src="../../../../../assets/svg/accordian-arrow-icon.svg" alt="">
-                    </div>
-                </button>
-                <div class="accordian_info" >
-                    <img src="https://i.shgcdn.com/e234a0c4-9dfa-4995-87d1-9afefe6969d3/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
-                    <ul class="accordian_list">
-                        <li class="accordian_item body_text">
-                            Development of clean recreational spaces within the factory setting where garment workers feel safe and welcome to relax, socialize, and find spiritual and educational resources.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Access to schools and educational and recreational resources for garment workers’ children.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Subsidies and reimbursements for transportation to and from home when appropriate.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordian_card">
-                <button class="accordian_btn" @click="(event)=>{setActive(event)}">
-                    <span class="subtitle_b">ECO-CONSCIOUSNESS</span>
-                    <div class="crose_icon line-h-0">
-                        <img src="../../../../../assets/svg/accordian-arrow-icon.svg" alt="">
-                    </div>
-                </button>
-                <div class="accordian_info" >
-                    <img src="https://i.shgcdn.com/70a825fb-bc7d-44ca-ae2f-6225e8cf3995/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
-                    <ul class="accordian_list" >
-                        <li class="accordian_item body_text">
-                            Utilization of state of the art machinery geared towards safety and controlled carbon footprint and environmental waste.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Installment of safe foundation infrastructure abiding to international regulations on safety standards and worker rights.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Sourcing of leather from compliant tanneries and factories using leather resulting from the existing food supply chain.
-                        </li>
-                        <li class="accordian_item body_text">
-                            No fur or exotic skins.
-                        </li>
-                        <li class="accordian_item body_text">
-                            Limiting fabric wastage.
-                        </li>
-                        <li class="accordian_item body_text">
-                            No sourcing from ancient and endangered forests and a preference for innovative alternatives in partnership with Canopy.
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            
         </div>
       </div>
   </section>
@@ -147,6 +38,12 @@
 <!-- Accordian Script Code -->
 <script>
 export default {
+    props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        }
+    },
    data:()=>({
    }),
    methods:{
@@ -178,25 +75,8 @@ export default {
 }
 .accordian_card{
     transition: 0.5s;
+    overflow: hidden;
     position: relative;
-}
-.accordian_card::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -1px;
-    height: 0;
-    width: 100%;
-    z-index: -1;
-    border: 1px solid #000000;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s;
-}
-.accordian_card.active::after {
-    visibility: visible;
-    opacity: 1;
-    height: 100%;
 }
 
 .accordian_item{
@@ -218,10 +98,7 @@ export default {
     border: 1px solid #000000;
     transition: 0.5s;
 }
-.accordian_btn.active{ 
-    border-left-color: transparent;
-    border-right-color: transparent;
-}
+
 .accordian_btn .subtitle_b{
     text-align: start;
 }
@@ -246,12 +123,15 @@ export default {
   margin: 14px 0 43px; 
   text-align: center;
 }
+.accordian_btn.active + .accordian_info{
+    border-bottom: 1px solid #000000;
+}
 
 .accordian_info{
     transition: 0.3s;
     height: 0;
     overflow: hidden;
-
+    border-inline: 1px solid #000000;
 }
 /* Responsive Css Code */
 @media screen and (max-width: 991px) {

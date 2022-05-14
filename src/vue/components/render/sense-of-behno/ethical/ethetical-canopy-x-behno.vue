@@ -1,5 +1,4 @@
 <template>
-  <div>
     <!-- ========== Section CANOPY x BEHNO Start ========== -->
     <section class="sec_making_our_bags sec-canopy-x-behno">
       <div class="container">
@@ -28,9 +27,9 @@
       </div>
     </section>
     <!-- ========== Section CANOPY x BEHNO End ========== -->
+
     <!-- ========== Back to The Sense of behno  ========== -->
-    <a class="back_sense_behno" :href=(shopifyData.link)>{{ shopifyData.linkText }}</a>
-  </div>
+    <BackToTop/>
 </template>
 <style scoped>
 /* ========== Section Canopy X Behno Css Code Start ========== */
@@ -144,7 +143,12 @@ margin-bottom:0px;
 </style>
 
 <script>
+import BackToTop from "../../back-to-top.vue";
+
 export default {
+  components: {
+    BackToTop
+  },
   props: {
     shopifyData: {
       type: Object,

@@ -1,20 +1,150 @@
 {
-    "sections": {
-        "constructing-ethos-hero" :{
-          "type" : "constructing-ethos-hero"
+  "sections": {
+    "constructing-ethos-hero": {
+      "type": "constructing-ethos-hero",
+      "blocks": {
+        "d3e45196-28f0-4541-80d7-c39321a292de": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Ensuring garment workers and artisans have a safe working space should be the norm. But it isn’t."
+          }
         },
-        "setting-standard" :{
-          "type" : "setting-standard"
+        "c0b7c44e-02e2-4cbc-b402-f9bf0c22401a": {
+          "type": "paragraph",
+          "settings": {
+            "para": "“The behno Standard” was crafted after a deep dive into academia, time spent in the field, and having worked closely with various stakeholders at the back-end of fashion’s supply chain."
+          }
         },
-        "msa-ethos" :{
-          "type" : "msa-ethos"
+        "7b6be214-7bbb-4a80-96af-6bfb53903c01": {
+          "type": "paragraph",
+          "settings": {
+            "para": "To take “The behno Standard” from theory to reality, Shivam partnered with nonprofit Muni Seva Ashram (MSA) and an industry veteran, Mukesh Kothari, to build a factory called MSA Ethos."
+          }
         },
-        "portraitures-powerhouse" :{
-          "type" : "portraitures-powerhouse"
+        "7d91204a-e0c2-4c04-a6d9-1dc078637013": {
+          "type": "paragraph",
+          "settings": {
+            "para": "MSA Ethos is a revolutionary, intersectional approach to manufacturing where MSA assisted in its social programming and Mr. Kothari, its Managing Director, overlooked factory operations ensuring quality control and a smooth functioning of operations."
+          }
+        },
+        "68dd6623-7f7f-4151-b282-75c92acbd2cd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/constructing-ethos1.jpg"
+          }
+        },
+        "6ccf4fa8-bb22-487a-b50b-ac0157bdcb23": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/constructing-ethos-hero.jpg"
+          }
         }
-        
+      },
+      "block_order": [
+        "d3e45196-28f0-4541-80d7-c39321a292de",
+        "c0b7c44e-02e2-4cbc-b402-f9bf0c22401a",
+        "7b6be214-7bbb-4a80-96af-6bfb53903c01",
+        "7d91204a-e0c2-4c04-a6d9-1dc078637013",
+        "68dd6623-7f7f-4151-b282-75c92acbd2cd",
+        "6ccf4fa8-bb22-487a-b50b-ac0157bdcb23"
+      ],
+      "settings": {
+        "preHeading": "BEHNO IN THE WORLD",
+        "secHeading": "Envisioning manufacturing to be radically different.",
+        "subHeading": "Our founder, Shivam Punjya, created a space where garment workers, artisans, and factories were an intimate part of a brand’s core DNA.",
+        "afterImageText": "MSA ETHOS. GUJARAT, INDIA."
+      }
     },
-    "order": [
-      "constructing-ethos-hero","setting-standard","msa-ethos","portraitures-powerhouse"
-    ]
-  }
+    "setting-standard": {
+      "type": "setting-standard",
+      "blocks": {
+        "8b977555-94e0-4fbe-89cb-2db8c18a8a3f": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "HEALTH",
+            "crdImage": "shopify:\/\/shop_images\/standard-card.jpg"
+          }
+        },
+        "d9d28001-f60b-4118-9f55-acef379cee0f": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "GARMENT WORKER SOCIAL MOBILITY",
+            "crdImage": "shopify:\/\/shop_images\/standard-card1.jpg"
+          }
+        },
+        "b7fda0f4-ecfd-413c-ad7e-f9fa6a952739": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "FAMILY PLANNING",
+            "crdImage": "shopify:\/\/shop_images\/standard-card3.jpg"
+          }
+        },
+        "5aea64af-af35-4846-9ff5-34fd44ca47fc": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "WOMEN’S RIGHTS",
+            "crdImage": "shopify:\/\/shop_images\/standard-card4.jpg"
+          }
+        },
+        "21b4acaf-9c4f-41cb-b4c8-d9f6b74e4b4b": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "WORKER SATISFACTION & BENEFITS",
+            "crdImage": "shopify:\/\/shop_images\/standard-card5.jpg"
+          }
+        },
+        "9238db2a-8edf-4e7d-9f12-df0ea6a19d5a": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "ECO-CONSCIOUSNESS",
+            "crdImage": "shopify:\/\/shop_images\/standard-card6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8b977555-94e0-4fbe-89cb-2db8c18a8a3f",
+        "d9d28001-f60b-4118-9f55-acef379cee0f",
+        "b7fda0f4-ecfd-413c-ad7e-f9fa6a952739",
+        "5aea64af-af35-4846-9ff5-34fd44ca47fc",
+        "21b4acaf-9c4f-41cb-b4c8-d9f6b74e4b4b",
+        "9238db2a-8edf-4e7d-9f12-df0ea6a19d5a"
+      ],
+      "settings": {
+        "secHeading": "Setting the standard",
+        "secinfo": "“The behno Standard,” incrementally implemented, is made up of:"
+      }
+    },
+    "msa-ethos": {
+      "type": "msa-ethos",
+      "settings": {
+        "redText": "“MSA ETHOS WAS AN INTERSECTIONAL APPROACH TO MANUFACTURING.”",
+        "fHeading": "Brainchild of a brilliant brain.",
+        "fsubHeading": "Muni Seva Ashram is spearheaded by Dr. Vikram Patel, a visionary of our times.",
+        "finfo": "Dr. Patel built the nonprofit to function like a self-sustaining village. Dr. Patel flourishes in intellectually yet realistically implementing concepts and systems that may, at first, seem far-fetched for a nonprofit village nestled in a rural landscape.",
+        "fImage": "shopify:\/\/shop_images\/ethos-right.jpg",
+        "sHeading": "MSA respectfully brings modernity to a rural space through progressive and cutting-edge practices, all considering local nuances.",
+        "sinfo": "MSA is a nonprofit that's self sustaining, educative, caring, and mostly, a space for marginalized communities.",
+        "sImage": "shopify:\/\/shop_images\/ethos-left.jpg",
+        "collageImg": "shopify:\/\/shop_images\/collage.jpg"
+      }
+    },
+    "portraitures-powerhouse": {
+      "type": "portraitures-powerhouse",
+      "settings": {
+        "secHeading": "Portraitures of a powerhouse.",
+        "subHeading": "The Garment Worker Project.",
+        "secinfo": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.",
+        "ctaLink": "\/",
+        "ctatext": "discover the project",
+        "checkbox": true,
+        "videoLink": "https:\/\/i.shgcdn.com\/dfe5ddee-faae-4df5-86a6-44c58a4de1c9\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
+      }
+    }
+  },
+  "order": [
+    "constructing-ethos-hero",
+    "setting-standard",
+    "msa-ethos",
+    "portraitures-powerhouse"
+  ]
+}

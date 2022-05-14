@@ -35,27 +35,25 @@
           </p>
         </div>
       </div>
-      <a class="back_sense_behno samll_text" :href=(shopifyData.ctaLink)>
-            {{ shopifyData.CtaText }}
-        </a>
     </div>
   </section>
   <!-- Garment Up-close End -->
+  <BackToTop/>
+
 </template>
 
 <script>
+import BackToTop from "../../back-to-top.vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
 import "swiper/css";
-
 import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
 export default {
   components: {
+    BackToTop,
     Swiper,
     SwiperSlide
   },
