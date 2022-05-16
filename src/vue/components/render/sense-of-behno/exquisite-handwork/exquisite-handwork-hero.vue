@@ -1,15 +1,21 @@
 <template>
 <!-- Exquisite-Handwork-Hero Section Start -->
 <section class="sec_exquisite_handwork_hero">
-    <h2 class="card_heading_b">BEHNO IN THE WORLD</h2>
+    <h2 class="card_heading_b">{{ shopifyData.secHeading }}</h2>
     <div class="sec_content">
-        <iframe class="shogun-video-embed " src="https://www.youtube.com/embed/o-lg_1M7OiI?start=0&amp;end=0&amp;autoplay=1&amp;loop=1&amp;mute=1&amp;playlist=o-lg_1M7OiI&amp;version=3&amp;rel=0" allowfullscreen="">
-        </iframe>
+        <template v-if="shopifyData.checkbox === 'true'">
+            <video  style="max-height:720px;" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" >
+                <source :src=(shopifyData.videoLink) >
+            </video>
+        </template>
+        <template v-else>
+            <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+        </template>
     </div>
 </section>
 <!-- Exquisite-Handwork-Hero Section End -->
 </template>
-<style >
+<style > 
 .sec_exquisite_handwork_hero iframe video{
     width: 100%!important;
     left: 0;
@@ -58,3 +64,14 @@ video{
     }
 }
 </style>
+
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>

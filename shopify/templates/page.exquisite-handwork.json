@@ -1,22 +1,120 @@
 {
-    "sections": {
-      "exquisite-handwork-hero": {
-        "type": "exquisite-handwork-hero"
-      },
-      "inheritance-worth": {
-        "type": "inheritance-worth"
-      },
-      "working-with-artisan": {
-        "type": "working-with-artisan"
-      },
-      "glocalizing-our-practices": {
-        "type": "glocalizing-our-practices"
+  "sections": {
+    "exquisite-handwork-hero": {
+      "type": "exquisite-handwork-hero",
+      "settings": {
+        "secHeading": "BEHNO IN THE WORLD",
+        "checkbox": true,
+        "videoLink": "https:\/\/i.shgcdn.com\/dfe5ddee-faae-4df5-86a6-44c58a4de1c9\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
       }
-      
-      
     },
-    "order": [
-      "exquisite-handwork-hero","inheritance-worth","working-with-artisan","glocalizing-our-practices"
-
-    ]
-  }
+    "inheritance-worth": {
+      "type": "inheritance-worth",
+      "blocks": {
+        "d5115ce8-3ea6-4fda-9cfa-27804ee437f7": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Embroidery has been practiced across generations for over 4,000 years."
+          }
+        },
+        "8efe82cc-076c-4f92-a5aa-880819675467": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Gulfam’s Studio has about 40 artisans and his hand-embroidery and embellishment workshop is nestled in Malad, a bustling borough of greater Mumbai. Since beginning our partnership with Gulfam in 2016, we’ve watched and cheered him on as his business grew, enabling him to move into a larger space and impart his vast knowledge to many new artisans."
+          }
+        }
+      },
+      "block_order": [
+        "d5115ce8-3ea6-4fda-9cfa-27804ee437f7",
+        "8efe82cc-076c-4f92-a5aa-880819675467"
+      ],
+      "settings": {
+        "secHeading": "An inheritance worth thousands of years.",
+        "subHeading": "Gulfam has been an embroidery artist his entire life, where learning the craft was almost hereditary.",
+        "image": "shopify:\/\/shop_images\/exquisite-handwork.jpg",
+        "rimage": "shopify:\/\/shop_images\/exquisite-handwork1.png"
+      }
+    },
+    "working-with-artisan": {
+      "type": "working-with-artisan",
+      "blocks": {
+        "8e205c9f-8e13-491d-a34e-802088fb6796": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slideimg.jpg"
+          }
+        },
+        "aa8e3867-807d-4980-bf1b-4305cd144aa8": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slideimg1.jpg"
+          }
+        },
+        "7de832b1-0b83-46e0-a00f-0d7077173c77": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slideimg2.jpg"
+          }
+        },
+        "0ec7557d-756d-4642-b086-7249a739dcdb": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Our team spends a lot of time at Gulfam’s on our trips to India and working with the members of his collective has been an incredibly valuable experience toward the development of ideas."
+          }
+        },
+        "36e8fa58-1899-4dc9-b5c7-fdeac918278f": {
+          "type": "paragraph",
+          "settings": {
+            "para": "While immensely rewarding on a personal level, we are grateful to have the opportunity to learn, preserve and re-introduce such historically rich techniques into our work directly from the communities that have been practicing this art for centuries."
+          }
+        }
+      },
+      "block_order": [
+        "8e205c9f-8e13-491d-a34e-802088fb6796",
+        "aa8e3867-807d-4980-bf1b-4305cd144aa8",
+        "7de832b1-0b83-46e0-a00f-0d7077173c77",
+        "0ec7557d-756d-4642-b086-7249a739dcdb",
+        "36e8fa58-1899-4dc9-b5c7-fdeac918278f"
+      ],
+      "settings": {
+        "redText": "“WORKING WITH ARTISAN COMMUNITIES PRESERVES INDIGENOUS CRAFT WHILE ALSO HAVING A DIRECT POSITIVE IMPACT ON LOCAL COMMUNITIES AND POVERTY REDUCTION.”",
+        "secHeading": "Critical collaboration: an exchange of ideas.",
+        "subHeading": "Working hands on with artisans allows us to open the door for real, hands-on collaboration.",
+        "image": "shopify:\/\/shop_images\/working-artisan-left.jpg",
+        "rimage": "shopify:\/\/shop_images\/working-artisan-right.jpg"
+      }
+    },
+    "glocalizing-our-practices": {
+      "type": "glocalizing-our-practices",
+      "blocks": {
+        "0dbdc9ee-12bd-433d-b6d1-a8125f270fc8": {
+          "type": "paragraph",
+          "settings": {
+            "para": "While our bags travel thousands of miles from India to our warehouses abroad, all our embroidery thread and embellishment materials are sourced from local markets within 20 kilometers of Gulfam’s Studio."
+          }
+        },
+        "85f32cd3-9b91-4bfb-a47b-a34a377b3ef8": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Finding local suppliers allows us to support small businesses, build in-person relations over cups of chai, as well as reduce our carbon footprint from imports. Preserving local cultures contextualizing themselves in a global economy is powerful."
+          }
+        }
+      },
+      "block_order": [
+        "0dbdc9ee-12bd-433d-b6d1-a8125f270fc8",
+        "85f32cd3-9b91-4bfb-a47b-a34a377b3ef8"
+      ],
+      "settings": {
+        "secHeading": "Glocalizing our practices.",
+        "subHeading": "Sourcing local matters. A lot.",
+        "image": "shopify:\/\/shop_images\/collage.png"
+      }
+    }
+  },
+  "order": [
+    "exquisite-handwork-hero",
+    "inheritance-worth",
+    "working-with-artisan",
+    "glocalizing-our-practices"
+  ]
+}

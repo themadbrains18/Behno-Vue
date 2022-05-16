@@ -1,2 +1,46 @@
-<render-sense-of-behno-exquisite-handwork-exquisite-handwork-hero>
+<render-sense-of-behno-exquisite-handwork-exquisite-handwork-hero
+:shopify-data="{
+    secHeading   : `{{ section.settings.secHeading }}`,
+    checkbox   : `{{ section.settings.checkbox }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    videoLink : `{{ section.settings.videoLink }}`
+}">
 </render-sense-of-behno-exquisite-handwork-exquisite-handwork-hero>
+
+
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+    
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "BEHNO IN THE WORLD"
+      },
+      {
+        "id": "checkbox",
+        "type": "checkbox",
+        "label": "Show Video",
+        "default": true
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "id": "videoLink",
+        "type": "text",
+        "label": "Paste Video Url",
+        "default" : "https://i.shgcdn.com/dfe5ddee-faae-4df5-86a6-44c58a4de1c9/gif2video/-/format/mp4/-/quality/lighter/"
+      }
+    ]
+ }
+{% endschema %}

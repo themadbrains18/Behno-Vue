@@ -1,2 +1,102 @@
-<render-sense-of-behno-constructing-ethos-constructing-ethos-hero>
+
+
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+{% capture SlidedynamicData %}
+[
+   {% for block in section.blocks %}
+       
+        {% if block.type == 'slide' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+
+<render-sense-of-behno-constructing-ethos-constructing-ethos-hero
+:shopify-data="{
+        preHeading   : `{{ section.settings.preHeading }}`,
+        secHeading   : `{{ section.settings.secHeading }}`,
+        subHeading  : `{{ section.settings.subHeading }}`,
+        afterImageText  : `{{ section.settings.afterImageText }}`,
+        blockData  : {{ dynamicData }},
+        SlidedynamicData  : {{ SlidedynamicData}}
+    }">
 </render-sense-of-behno-constructing-ethos-constructing-ethos-hero>
+
+
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+     {
+        "id": "preHeading",
+        "type": "text",
+        "label": "Pre Heading",
+        "default": "BEHNO IN THE WORLD"
+      },
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "Envisioning manufacturing to be radically different."
+      },
+	  {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "Our founder, Shivam Punjya, created a space where garment workers, artisans, and factories were an intimate part of a brand’s core DNA."
+      },
+      {
+        "id": "afterImageText",
+        "type": "text",
+        "label": "After Slider Text",
+        "default": "MSA ETHOS. GUJARAT, INDIA."
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        },
+        {
+            "name": "Slide",
+            "type": "slide",
+            "settings": [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                }
+            ]
+        }
+    ]
+ }
+{% endschema %}

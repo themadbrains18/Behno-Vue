@@ -1,2 +1,86 @@
-<render-sense-of-behno-constructing-ethos-msa-ethos>
+<render-sense-of-behno-constructing-ethos-msa-ethos
+:shopify-data="{
+    redText   : `{{ section.settings.redText }}`,
+    fHeading   : `{{ section.settings.fHeading }}`,
+    fsubHeading  : `{{ section.settings.fsubHeading }}`,
+    collageImg: {
+        src : `{{ section.settings.collageImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.collageImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.collageImg }}`
+       },
+    finfo   : `{{ section.settings.finfo }}`,
+    fImage  : {
+                src : `{{ section.settings.fImage | img_url : "" }}`,
+                placeholder: `{{ section.settings.fImage | img_url : "50x50" }}`,
+                alt: `{{ section.settings.image.fImage }}`
+               },
+    sHeading   : `{{ section.settings.sHeading }}`,
+    sinfo   : `{{ section.settings.sinfo }}`,
+    sImage  : {
+                src : `{{ section.settings.sImage | img_url : "" }}`,
+                placeholder: `{{ section.settings.sImage | img_url : "50x50" }}`,
+                alt: `{{ section.settings.image.sImage }}`
+                }
+}">
 </render-sense-of-behno-constructing-ethos-msa-ethos>
+
+
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+     {
+        "id": "redText",
+        "type": "textarea",
+        "label": "Red Text",
+        "default": "“MSA ETHOS WAS AN INTERSECTIONAL APPROACH TO MANUFACTURING.”"
+      },
+      {
+        "id": "fHeading",
+        "type": "text",
+        "label": "First Grid Heading",
+        "default": "Brainchild of a brilliant brain."
+      },
+	  {
+        "id": "fsubHeading",
+        "type": "text",
+        "label": "First Grid Sub Heading",
+        "default": "Muni Seva Ashram is spearheaded by Dr. Vikram Patel, a visionary of our times."
+      },
+      {
+        "id": "finfo",
+        "type": "textarea",
+        "label": "First Grid Info",
+        "default": "Dr. Patel built the nonprofit to function like a self-sustaining village. Dr. Patel flourishes in intellectually yet realistically implementing concepts and systems that may, at first, seem far-fetched for a nonprofit village nestled in a rural landscape."
+      },
+      {
+          "id" : "fImage",
+          "type" : "image_picker",
+          "label" : "First Grid Image"
+      },
+      {
+        "id": "sHeading",
+        "type": "text",
+        "label": "Second Grid Heading",
+        "default": "MSA respectfully brings modernity to a rural space through progressive and cutting-edge practices, all considering local nuances."
+      },
+      {
+        "id": "sinfo",
+        "type": "textarea",
+        "label": "Second Grid Info",
+        "default": "MSA is a nonprofit that's self sustaining, educative, caring, and mostly, a space for marginalized communities."
+      },
+      {
+          "id" : "sImage",
+          "type" : "image_picker",
+          "label" : "Second Grid Image"
+      },
+      {
+          "id" : "collageImg",
+          "type" : "image_picker",
+          "label" : "collage Image"
+      }
+    ]
+ }
+{% endschema %}

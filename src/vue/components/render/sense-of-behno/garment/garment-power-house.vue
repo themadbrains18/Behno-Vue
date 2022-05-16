@@ -16,23 +16,26 @@
                 </div>
             </div>
         </div>
-        <a class="back_sense_behno samll_text" :href=(shopifyData.SecLink)>
-            {{ shopifyData.SecLinkText }} 
-        </a>
-        
     </section>
 <!-- Section Garment Ethical End -->
+  <BackToTop/>
     
 </template>
+
 <script>
-    export default{
+import BackToTop from "../../back-to-top.vue";
+
+export default{
+    components: {
+      BackToTop
+    },
     props: {
         shopifyData: {
             type: Object,
             required: true,
         }
     } 
-    }
+}
 </script>
 
 <style scoped>

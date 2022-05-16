@@ -24,9 +24,6 @@
                 <p class="body_text">
                     {{ value.secInfo }}
                 </p>
-                <!-- <p class="body_text">
-                    The bag behno submitted for the award truly integrates The behno Standard on various levels and speaks to both our ethical and design philosophy. The drop cloth itself is upcycled from block printers, the embroidery tells the story of the artisans we work with, and the bag itself is made in a factory that we’re so proud to call a partner. The bag itself is the smallest size from our iconic Ina series.
-                </p> -->
             </div>
             <div class="sec_img">
                 <img    
@@ -35,26 +32,6 @@
                     :alt="value.imgUrl.alt" />
             </div>
         </div>
-         <!-- <div class="sec_content invited_showcase">
-              <div class="sec_img">
-                <img src="https://i.shgcdn.com/f7e400d5-33d6-4318-8f4d-73e47a7b649c/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
-            </div>
-            <div class="sec_text">
-                <h2
-                    class="sec_heading"
-                >Invited to showcase the Garment Worker Project at Sotheby’s.</h2>
-                <h4
-                    class="card_heading_b"
-                >In 2016, behno debuted its Garment Worker Project at Sotheby’s in a private reception co-hosted by behno founder, Shivam Punjya, and celebrity stylist Micaela Erlanger.</h4>
-                <p class="body_text">
-                    The Garment Worker Project, a first of its kind, garnered international attention and was the first time a celebrity stylist took a strong position on ethical manufacturing. The project was photographed by fashion photographer Dan Smith and filmed by Kent Mathews.
-                </p>
-                <a href="#" class="cta_btn cta_btn-black">
-                    LEARN MORE 
-                </a>
-            </div>
-           
-        </div> -->
         </div>
 </section>    
 <!-- Section Meet Fashion Desingners End -->
@@ -200,6 +177,12 @@
   .sec_content.invited_showcase{
       margin-top:23px;
   }
+    .sec_header +  .sec_content .sec_img {
+        order: 1;
+    }
+    .sec_header +  .sec_content .sec_text  {
+        order: 2;
+    }
 }
 
 

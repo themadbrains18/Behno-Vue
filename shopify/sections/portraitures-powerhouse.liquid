@@ -1,2 +1,74 @@
-<render-sense-of-behno-constructing-ethos-portraitures-powerhouse>
+<render-sense-of-behno-constructing-ethos-portraitures-powerhouse
+:shopify-data="{
+    secHeading   : `{{ section.settings.secHeading }}`,
+    subHeading  : `{{ section.settings.subHeading }}`,
+    secinfo  : `{{ section.settings.secinfo }}`,
+    ctaLink  : `{{ section.settings.ctaLink }}`,
+    ctatext   : `{{ section.settings.ctatext }}`,
+    checkbox   : `{{ section.settings.checkbox }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    videoLink : `{{ section.settings.videoLink }}`
+}">
 </render-sense-of-behno-constructing-ethos-portraitures-powerhouse>
+
+
+
+{% schema %}
+{
+    "name": "Portraitures powerhouse.",
+    "settings": [
+    
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "Portraitures of a powerhouse."
+      },
+	  {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Section sub Heading",
+        "default": "The Garment Worker Project."
+      },
+      {
+        "id": "secinfo",
+        "type": "textarea",
+        "label": "Section Info",
+        "default": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos."
+      },
+      {
+        "id": "ctaLink",
+        "type": "url",
+        "label": "Cta Link",
+        "default": "/"
+      },
+      {
+        "id": "ctatext",
+        "type": "text",
+        "label": "Cta Text",
+        "default": "discover the project"
+      },
+      {
+        "id": "checkbox",
+        "type": "checkbox",
+        "label": "Show Video",
+        "default": true
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "id": "videoLink",
+        "type": "text",
+        "label": "Paste Video Url",
+        "default" : "https://i.shgcdn.com/dfe5ddee-faae-4df5-86a6-44c58a4de1c9/gif2video/-/format/mp4/-/quality/lighter/"
+      }
+    ]
+ }
+{% endschema %}

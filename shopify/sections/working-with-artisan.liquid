@@ -1,2 +1,110 @@
-<render-sense-of-behno-exquisite-handwork-working-with-artisan>
+
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+{% capture SlidedynamicData %}
+[
+    {% for block in section.blocks %}
+        {% if block.type == 'Slide' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-exquisite-handwork-working-with-artisan :shopify-data="{
+    redText   : `{{ section.settings.redText }}`,
+    secHeading   : `{{ section.settings.secHeading }}`,
+    subHeading   : `{{ section.settings.subHeading }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    rightimgUrl : {
+        src : `{{ section.settings.rimage | img_url : "" }}`,
+        placeholder: `{{ section.settings.rimage | img_url : "50x50" }}`,
+        alt: `{{ section.settings.rimage.alt }}`
+    },
+    paragraphData  : {{ dynamicData }},
+    slideData  : {{ SlidedynamicData }}
+
+}">
 </render-sense-of-behno-exquisite-handwork-working-with-artisan>
+
+{% schema %}
+{
+    "name": "Working With Artisan",
+    "settings": [
+      {
+        "id": "redText",
+        "type": "textarea",
+        "label": "Red Text",
+        "default": "“WORKING WITH ARTISAN COMMUNITIES PRESERVES INDIGENOUS CRAFT WHILE ALSO HAVING A DIRECT POSITIVE IMPACT ON LOCAL COMMUNITIES AND POVERTY REDUCTION.”"
+      },
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Sec Heading",
+        "default": "Critical collaboration: an exchange of ideas."
+      },
+      {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "Working hands on with artisans allows us to open the door for real, hands-on collaboration.."
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Left Side Image"
+      },
+      {
+        "id": "rimage",
+        "type": "image_picker",
+        "label": "right Side Image"
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Slider",
+            "type" : "Slide",
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Slider Image"
+                } 
+            ]
+        },
+        {
+            "name": "Sec Info Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        }
+    ]
+ }
+{% endschema %}

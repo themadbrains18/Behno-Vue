@@ -4,20 +4,29 @@
     <div class="big_container">
             <div class="main_contenet">
                 <h2 class="sec_heading">
-                    Speaking engagement at the United Nations, a first of its kind.
+                    {{ shopifyData.secHeading }}
                 </h2>
                 <h4 class="card_heading_b">
-                    behno founder, Shivam Punjya, was invited to the United Nations to speak on fashion as a social mobilizer.
+                    {{ shopifyData.secSubHeading }}
                 </h4>
                 <p class="body_text">
-                    behno founder spoke on fashion as an industry capable of mobilizing communities and consumers for social change and global impact and share his story and social enterprise model. The talk was attended by diplomats, figureheads, and industry veterans.
+                    {{ shopifyData.secInfo }}
                 </p>
                 <p class="body_text">
-                    For the first time, the United Nations discussed the fashion industry as a mobilizer for change by inviting six leaders in the fashion space to present their business models to discuss best practices and stimulate dialogue.
+                    {{ shopifyData.InfoBreak }}
                 </p>
             </div>
             <div class="sec_img">
-                <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                   <img :src=(shopifyData.imgUrl.src) :placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />  
+                <!-- <div class="img_grid">
+                    <div class="grid_items">
+                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                    </div>
+                    <div class="grid_items">
+                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                    </div>
+                </div> -->
             </div>
         </div>
         
@@ -62,6 +71,18 @@
     .sec_img{
         margin-top: 41px;
     }
+    .img_grid{
+        display: flex;
+        align-items: center;
+        column-gap: 70px;
+        justify-content: space-between;
+    }
+    .grid_items{
+        display: flex;
+        flex-direction: column;
+        gap: 160px;
+    }
+
     /* Responsive Css Code */
     @media screen  and (max-width: 991px){
         .sec_speaking_angagment{
@@ -88,5 +109,24 @@
         .sec_video iframe{
             height: 214px;
         }
+        .grid_items{
+            gap: 60px;
+        }
+        .img_grid{
+            gap: 23px;
+        }
     }
+    
+ 
 </style>
+
+<script>
+    export default{
+        props:{
+            shopifyData:{
+                type:Object,
+                required:true,
+            }
+        }
+    }
+</script>

@@ -12,65 +12,48 @@
             :loop="true"
             class="mySwiper"
           >
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/92d1339a-6a33-4105-91ae-ffc03d9cdcfc/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
-
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/e9b12bc6-f648-4ad7-a8fd-f7a842d504bf/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/b005e3bd-2ad6-4730-b4d3-4b5bd463181f/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/52b7e16d-10af-4f3a-b84d-86bb026a1cbd/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
+            <swiper-slide v-for="(value, key) in shopifyData.slide" :key="key">
+                <img
+                  :src="value.imgUrl.src"
+                  :placeholder="value.imgUrl.placeholder"
+                  :alt="value.imgUrl.alt"
+                />
+              </swiper-slide>
           </swiper>
         </div>
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="sec_heading">Launch at Bergdorf Goodman, a crown jewel in luxury retail.</h2>
-          <h4
-            class="card_heading_b"
-          >In Fall 2018, behno launched its first handbag collection at Bergdorf Goodman.</h4>
-          <p
-            class="body_text"
-          >behno launched at Bergdorf Goodman with a celebratory breakfast with industry insiders, reporters, and editors from the fashion world. Betty Halbreich, Bergdorf Goodman’s most coveted personal shopper, attended the launch breakfast.</p>
+          <h2 class="sec_heading">
+            {{ shopifyData.secHeading }}
+          </h2>
+          <h4 class="card_heading_b">
+            {{ shopifyData.secSubHeading }}
+            
+          </h4>
+          <p class="body_text">
+            {{ shopifyData.secInfo }}
+          </p>
         </div>
       </div>
-      <a class="back_sense_behno samll_text" href="#">
-            Back to The Sense of behno
-        </a>
     </div>
   </section>
   <!-- Garment Up-close End -->
+  <BackToTop/>
+
 </template>
 
 <script>
+import BackToTop from "../../back-to-top.vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
 import "swiper/css";
-
 import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
 export default {
   components: {
+    BackToTop,
     Swiper,
     SwiperSlide
   },
@@ -78,7 +61,13 @@ export default {
     return {
       modules: [Navigation]
     };
-  }
+  },
+  props:{
+    shopifyData:{
+        type:Object,
+        required:true,
+    }
+  } 
 };
 </script>
 

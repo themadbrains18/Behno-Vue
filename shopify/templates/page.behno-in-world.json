@@ -66,52 +66,18 @@
     },
     "finalist-in-livia": {
       "type": "finalist-in-livia",
-      "blocks": {
-        "5d97b1e2-d553-4297-bafa-66f499e06887": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/2INTHEWORLD_2.jpg"
-          }
-        },
-        "e767bd97-95b9-4582-a7fe-b690322a61aa": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/2INTHEWORLD.jpg"
-          }
-        },
-        "13f1dc8d-f09d-4764-b0d5-f021b2e52124": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/24INTHEWORLD.jpg"
-          }
-        },
-        "9e7d31a0-2da4-484c-a29c-dfe326342568": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/23INTHEWORLD.jpg"
-          }
-        },
-        "12f67901-7749-4d53-b7cc-087c23b0306a": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/25INTHEWORLD.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "5d97b1e2-d553-4297-bafa-66f499e06887",
-        "e767bd97-95b9-4582-a7fe-b690322a61aa",
-        "13f1dc8d-f09d-4764-b0d5-f021b2e52124",
-        "9e7d31a0-2da4-484c-a29c-dfe326342568",
-        "12f67901-7749-4d53-b7cc-087c23b0306a"
-      ],
       "settings": {
         "secHeading": "Top 5 Finalist in Livia Firth’s Green Carpet Challenge",
         "secSubHeading": "behno was nominated for the highest award in sustainability in the fashion industry.",
         "secInfo": "behno was shortlisted for top 10, where behno founder, Shivam Punjya, pitched to a jury in Paris comprised of Ellie Goulding, Vogue UK editor-in-chief, Edward Enninful, CNN style correspondent, Derek Blasberg, television host and philanthropist, Petra Nemcova, investor, Carmen Busqets, Matchesfashion.com fashion director, Natalie Kingham, among others. behno was enlisted as a top five finalist and attended The Green Carpet Awards in Milan, held at the Teatro alla Scala. The Green Carpet Awards were founded by Livia Firth and have been attended by the likes of Anna Wintour, Cate Blanchett, among other movers and shakers of the fashion and media worlds.",
         "secImg": "shopify:\/\/shop_images\/garden-carpet.png",
         "checkImage": true,
-        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176",
+        "gridItem1": "shopify:\/\/shop_images\/2INTHEWORLD.jpg",
+        "gridItem2": "shopify:\/\/shop_images\/24INTHEWORLD.jpg",
+        "gridItem3": "shopify:\/\/shop_images\/2INTHEWORLD_2.jpg",
+        "gridItem4": "shopify:\/\/shop_images\/23INTHEWORLD.jpg",
+        "gridItem5": "shopify:\/\/shop_images\/25INTHEWORLD.jpg"
       }
     },
     "meet-fashion-designers": {
@@ -150,11 +116,53 @@
     "speaking-engagement": {
       "type": "speaking-engagement",
       "settings": {
+        "secHeading": "Speaking engagement at the United Nations, a first of its kind.",
+        "secSubHeading": "behno founder, Shivam Punjya, was invited to the United Nations to speak on fashion as a social mobilizer.",
+        "secInfo": "behno founder spoke on fashion as an industry capable of mobilizing communities and consumers for social change and global impact and share his story and social enterprise model. The talk was attended by diplomats, figureheads, and industry veterans.",
+        "InfoBreak": "For the first time, the United Nations discussed the fashion industry as a mobilizer for change by inviting six leaders in the fashion space to present their business models to discuss best practices and stimulate dialogue.",
+        "secImg": "shopify:\/\/shop_images\/grid-image.png"
       }
     },
     "launch-bergdorf": {
       "type": "launch-bergdorf",
+      "blocks": {
+        "a8b42d69-658b-4d80-b8c5-fb51c7e387d4": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf4.jpg"
+          }
+        },
+        "425dcc54-7429-4edf-8e7a-5ce8efc9928b": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf3.jpg"
+          }
+        },
+        "846834b1-4c87-4ad5-8261-7efaf4da2051": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf1.jpg"
+          }
+        },
+        "c488611a-9369-486d-b7ee-b3467a24e97c": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "a8b42d69-658b-4d80-b8c5-fb51c7e387d4",
+        "425dcc54-7429-4edf-8e7a-5ce8efc9928b",
+        "846834b1-4c87-4ad5-8261-7efaf4da2051",
+        "c488611a-9369-486d-b7ee-b3467a24e97c"
+      ],
       "settings": {
+        "secHeading": "Launch at Bergdorf Goodman, a crown jewel in luxury retail.",
+        "secSubHeading": "In Fall 2018, behno launched its first handbag collection at Bergdorf Goodman.",
+        "secInfo": "behno launched at Bergdorf Goodman with a celebratory breakfast with industry insiders, reporters, and editors from the fashion world. Betty Halbreich, Bergdorf Goodman’s most coveted personal shopper, attended the launch breakfast.",
+        "CtaText": "Back to The Sense of behno",
+        "ctaLink": "#"
       }
     }
   },
