@@ -28,15 +28,31 @@
                 <img class="main-img" :src=(shopifyData.secImg.src) :placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />  
                 <div class="img_grid"> 
                     <div class="grid_items">
-                        <img :src=(shopifyData.gridItem1.src) :placeholder=(shopifyData.gridItem1.placeholder) :alt=(shopifyData.gridItem1.alt) />
-                        <img :src=(shopifyData.gridItem2.src) :placeholder=(shopifyData.gridItem2.placeholder) :alt=(shopifyData.gridItem2.alt) />
+                        <div>
+                            <img :src=(shopifyData.gridItem1.src) :placeholder=(shopifyData.gridItem1.placeholder) :alt=(shopifyData.gridItem1.alt) />
+                            <p class="fig_caption">Ellie Goulding (R) with the behno team</p>
+                        </div>
+                        <div>
+                            <img :src=(shopifyData.gridItem2.src) :placeholder=(shopifyData.gridItem2.placeholder) :alt=(shopifyData.gridItem2.alt) />
+                            <p class="fig_caption">Shivam (L) and Alessandra Airo (R) at the Green Carpet Awards</p>
+                        </div>
                     </div>
                     <div class="grid_items">
-                        <img :src=(shopifyData.gridItem3.src) :placeholder=(shopifyData.gridItem3.placeholder) :alt=(shopifyData.gridItem3.alt) />
+                        <div>
+                            <img :src=(shopifyData.gridItem3.src) :placeholder=(shopifyData.gridItem3.placeholder) :alt=(shopifyData.gridItem3.alt) />
+                            <p class="fig_caption">behno's look on the day of top five selection.</p>
+                        </div>
+
                     </div>
                     <div class="grid_items">
-                        <img :src=(shopifyData.gridItem4.src) :placeholder=(shopifyData.gridItem4.placeholder) :alt=(shopifyData.gridItem4.alt) />
-                        <img :src=(shopifyData.gridItem5.src) :placeholder=(shopifyData.gridItem5.placeholder) :alt=(shopifyData.gridItem5.alt) />
+                        <div>
+                            <img :src=(shopifyData.gridItem4.src) :placeholder=(shopifyData.gridItem4.placeholder) :alt=(shopifyData.gridItem4.alt) />
+                            <p class="fig_caption">Olivia palermo (L) and Shivam (R) outside the Teatro alla Scala</p>
+                        </div>
+                        <div>
+                            <img :src=(shopifyData.gridItem5.src) :placeholder=(shopifyData.gridItem5.placeholder) :alt=(shopifyData.gridItem5.alt) />
+                            <p class="fig_caption">Desiree Bollier (L) and Shivam  (R) at the Green Carpet Awards.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,6 +107,12 @@
         display: flex;
         flex-direction: column;
         gap: 160px;
+    }
+    p.fig_caption {
+        font-family: 'adobe-caslon-pro',sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
     }
     
     /* Responsive Css Code */
