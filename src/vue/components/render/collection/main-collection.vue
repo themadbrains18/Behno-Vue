@@ -658,8 +658,8 @@ export default {
                     else if (obj == 'HighToLow') {
                         return b.variants[0].price - a.variants[0].price
                     }
-                    else if(obj=='date'){
-                        return new Date(b.date) - new Date(a.date);
+                    else if(obj=='Latest'){
+                        return new Date(b.created_at) - new Date(a.created_at);
                     }
                 });
             }
@@ -796,10 +796,10 @@ export default {
 
         /* load product on scroll */
         loadMore() {
-            console.log("Adding 10 more data results");
             this.busy = true;
             window.onscroll = () => {
                 let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+                if(this.filterByColor.length == 0 && this.filterBySize.length == 0 && this.filterByCategory.length == 0 && this.filterByMaterial.length == 0)
                 if (bottomOfWindow) {
                     const append = products.slice(
                         this.productList.length,
