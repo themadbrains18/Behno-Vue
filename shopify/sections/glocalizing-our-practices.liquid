@@ -1,2 +1,65 @@
-<render-sense-of-behno-exquisite-handwork-glocalizing-our-practices>
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-exquisite-handwork-glocalizing-our-practices
+:shopify-data="{
+    secHeading   : `{{ section.settings.secHeading }}`,
+    subHeading   : `{{ section.settings.subHeading }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    paragraphData  : {{ dynamicData }}
+}">
 </render-sense-of-behno-exquisite-handwork-glocalizing-our-practices>
+
+
+
+{% schema %}
+{
+    "name": "Working With Artisan",
+    "settings": [
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Sec Heading",
+        "default": "Glocalizing our practices."
+      },
+      {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "Sourcing local matters. A lot."
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Collage Image"
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        }
+    ]
+ }
+{% endschema %}

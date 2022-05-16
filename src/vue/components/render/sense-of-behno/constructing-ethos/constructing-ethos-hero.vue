@@ -1,24 +1,13 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_Constructing_ethos_hero">
-      <h2 class="card_heading_b">BEHNO IN THE WORLD</h2>
+      <h2 class="card_heading_b">{{ shopifyData.preHeading }}</h2>
       <div class="main_contenet">
-        <h2 class="sec_heading">Envisioning manufacturing to be radically different.</h2>
-        <h4
-          class="card_heading_b sec_inner_heading"
-        >Our founder, Shivam Punjya, created a space where garment workers, artisans, and factories were an intimate part of a brand’s core DNA.</h4>
-        <p
-          class="body_text"
-        >Ensuring garment workers and artisans have a safe working space should be the norm. But it isn’t.</p>
-        <p
-          class="body_text"
-        >“The behno Standard” was crafted after a deep dive into academia, time spent in the field, and having worked closely with various stakeholders at the back-end of fashion’s supply chain.</p>
-        <p
-          class="body_text"
-        >To take “The behno Standard” from theory to reality, Shivam partnered with nonprofit Muni Seva Ashram (MSA) and an industry veteran, Mukesh Kothari, to build a factory called MSA Ethos.</p>
-        <p
-          class="body_text"
-        >MSA Ethos is a revolutionary, intersectional approach to manufacturing where MSA assisted in its social programming and Mr. Kothari, its Managing Director, overlooked factory operations ensuring quality control and a smooth functioning of operations.</p>
+        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+        <h4 class="card_heading_b sec_inner_heading">{{ shopifyData.subHeading }}</h4>
+          <p class="body_text" v-for="(value, key) in shopifyData.paraBlockData" :key="key" >
+              {{ value.para }}
+          </p>
       </div>
       <div class="sec_slider">
         <div class="sec_slider modify-slider">
@@ -35,31 +24,24 @@
             }"
             class="mySwiper"
           >
-            <swiper-slide>
+            <swiper-slide v-for="(value, key) in shopifyData.SlidedynamicData" :key="key">
               <img
-                src="https://i.shgcdn.com/0a9750dc-b99f-4175-93ce-098db2f1087a/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
+                :src=(value.imgUrl.src)
+                :src-placeholder=(value.imgUrl.placeholder)
+                :alt=(value.imgUrl.alt)
               />
             </swiper-slide>
-
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/854b8dff-0834-4e98-b579-5fa4625c9993/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
-        
           </swiper>
         </div>
       </div>
       <p class="subtitle">
-          MSA ETHOS. GUJARAT, INDIA.
+          {{ shopifyData.afterImageText}}
       </p>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
 
-// Slider Script
+
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -72,6 +54,12 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation,Autoplay,EffectFade } from "swiper";
 export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
   components: {
     Swiper,
     SwiperSlide
@@ -84,7 +72,6 @@ export default {
 };
 </script>
 
-// Section Css COde
 <style scoped>
 .sec_Constructing_ethos_hero {
   padding-top: 45px;
@@ -171,6 +158,3 @@ export default {
 }
 }
 </style>
-
-
-

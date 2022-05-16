@@ -4,27 +4,25 @@
     <div class="big_container">
         <div class="sec_content">
             <div class="sec_img">
-                <img src="https://i.shgcdn.com/89bbf304-6ac8-45f8-a242-ea53138245ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/"  alt="Image-description" >
+                <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder)  :alt=(shopifyData.imgUrl.alt) >
             </div>
             <div class="sec_text">
                 <div class="inner_text">
                     <h2
                         class="sec_heading"
-                    >An inheritance worth thousands of years.</h2>
+                    >{{ shopifyData.secHeading }}</h2>
                     <h4
                         class="card_heading_b"
-                    >Gulfam has been an embroidery artist his entire life, where learning the craft was almost hereditary.</h4>
-                    <p class="body_text">
-                        Embroidery has been practiced across generations for over 4,000 years.
+                    >{{ shopifyData.subHeading }}</h4>
+                    <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
+                        {{value.para}}
                     </p>
-                    <p class="body_text">
-                        Gulfam’s Studio has about 40 artisans and his hand-embroidery and embellishment workshop is nestled in Malad, a bustling borough of greater Mumbai. Since beginning our partnership with Gulfam in 2016, we’ve watched and cheered him on as his business grew, enabling him to move into a larger space and impart his vast knowledge to many new artisans.
-                    </p>
+                    
                 </div>
                 <div class="sec_img">
-                    <img src="https://i.shgcdn.com/9ca4954f-cdd9-4da2-a3ff-1ae08ab26dab/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
+                    <img :src=(shopifyData.rightimgUrl.src) :src-placeholder=(shopifyData.rightimgUrl.placeholder)  :alt=(shopifyData.rightimgUrl.alt) >
                 </div>
-                </div>
+            </div>
         </div>
     </div>
 </section>    
@@ -176,6 +174,14 @@
       margin-top:23px;
   }
 }
-
-
 </style>
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>

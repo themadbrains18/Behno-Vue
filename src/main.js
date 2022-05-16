@@ -3,6 +3,8 @@
  */
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
+// import infiniteScroll from 'vue-infinite-scroll'
+
 import './css/main.css'
 
 /**
@@ -71,6 +73,7 @@ const createVueApp = () => {
    * extend with additional features
    */
   app.use(store)
+  // app.use(infiniteScroll)
 
   return app
 }

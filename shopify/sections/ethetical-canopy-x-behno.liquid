@@ -23,8 +23,6 @@
     crdheading: `{{ section.settings.crdheading }}`,
     crdSubHeading: `{{ section.settings.crdSubHeading }}`,
     para: {{ blockData }},
-    link: `{{ section.settings.link }}`,
-    linkText: `{{ section.settings.linkText }}`,
     imgUrl:{
         src : `{{ imgSrc }}`,
         placeholder : `{{ placeHolder | img_url: "50x50" }}`,
@@ -63,18 +61,6 @@
         "id": "img",
         "type": "image_picker",
         "label": "Image"
-    },
-    {
-        "id": "link",
-        "type": "url",
-        "label": "Link",
-        "default": "/"
-    },
-    {
-        "id": "linkText",
-        "type": "text",
-        "label": "Link Btn",
-        "default": "Back to The Sense of behno"
     }
   ],
   "blocks" :[{

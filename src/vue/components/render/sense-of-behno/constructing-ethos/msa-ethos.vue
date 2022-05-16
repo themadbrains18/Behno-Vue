@@ -4,40 +4,35 @@
     <div class="big_container">
         <div class="sec_header">
             <h2 class="quotes_text">
-                “MSA ETHOS WAS AN INTERSECTIONAL APPROACH TO MANUFACTURING.”
-            </h2>
+                {{ shopifyData.redText }}
+            </h2> 
         </div>
         <div class="sec_content">
             <div class="sec_text">
-                <h2
-                    class="sec_heading"
-                >Brainchild of a brilliant brain.</h2>
+                <h2 class="sec_heading">{{ shopifyData.fHeading }}</h2>
                 <h4
                     class="card_heading_b"
-                >Muni Seva Ashram is spearheaded by Dr. Vikram Patel, a visionary of our times.</h4>
+                >{{ shopifyData.fsubHeading }}</h4>
                 <p class="body_text">
-                    Dr. Patel built the nonprofit to function like a self-sustaining village. Dr. Patel flourishes in intellectually yet realistically implementing concepts and systems that may, at first, seem far-fetched for a nonprofit village nestled in a rural landscape.
+                   {{ shopifyData.finfo }}
                 </p>
                 </div>
             <div class="sec_img">
-                <img src="https://i.shgcdn.com/2fc47156-ae7b-41fa-8fa4-a32115f28a53/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+                <img :src=(shopifyData.fImage.src) :src-placeholder=(shopifyData.fImage.placeholder) :alt=(shopifyData.fImage.alt)>
             </div>
         </div>
          <div class="sec_content invited_showcase">
               <div class="sec_img">
-                <img src="https://i.shgcdn.com/f7e400d5-33d6-4318-8f4d-73e47a7b649c/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+                <img :src=(shopifyData.sImage.src) :src-placeholder=(shopifyData.sImage.placeholder) :alt=(shopifyData.sImage.alt)>
             </div>
             <div class="sec_text">
-                <h2
-                    class="sec_heading"
-                >MSA respectfully brings modernity to a rural space through progressive and cutting-edge practices, all considering local nuances.</h2>
+                <h2 class="sec_heading">{{ shopifyData.sHeading }}</h2>
                 <p class="body_text">
-                    MSA is a nonprofit that's self sustaining, educative, caring, and mostly, a space for marginalized communities.
+                    {{ shopifyData.sinfo }}
                 </p>
             </div>
-           
         </div>
-        <img src="https://i.shgcdn.com/cf93b13a-6078-4f4e-ac60-81865d033861/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Image-Description">
+        <img :src=(shopifyData.collageImg.src) :src-placeholder=(shopifyData.collageImg.placeholder) :alt=(shopifyData.collageImg.alt)>
     </div>
 </section>    
 <!-- Section Meet Fashion Desingners End -->
@@ -178,6 +173,17 @@
       margin-top:23px;
   }
 }
-
-
 </style>
+
+<script>
+
+
+export default {
+    props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+}
+</script>

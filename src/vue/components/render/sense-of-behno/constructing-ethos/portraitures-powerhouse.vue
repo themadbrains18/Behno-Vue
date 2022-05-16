@@ -1,33 +1,34 @@
 <template>
   <!-- ========== Section Forming real relationships Start ========== -->
-  <div>
   <section class=" sec_portraitures_powerhouse">
     <div class="container">
       <div class="sec_content">
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="sec_heading">Portraitures of a powerhouse.</h2>
-          <h4 class="card_heading_b">The Garment Worker Project.</h4>
-          <p
-            class="body_text"
-          >Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.</p>
-          <a href="/" class="cta_btn">discover the project</a>
+          <h2 class="sec_heading"> {{ shopifyData.secHeading }}</h2>
+          <h4 class="card_heading_b">{{ shopifyData.subHeading }}</h4>
+          <p class="body_text">{{ shopifyData.secinfo }}</p>
+          <a :href=(shopifyData.ctaLink) class="cta_btn">{{ shopifyData.ctatext }}</a>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
-          <video width="340" height="604" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" class="shogun-image ">
-                <source src="https://i.shgcdn.com/dfe5ddee-faae-4df5-86a6-44c58a4de1c9/gif2video/-/format/webm/-/quality/lighter/" type="video/webm">
-                <source src="https://i.shgcdn.com/dfe5ddee-faae-4df5-86a6-44c58a4de1c9/gif2video/-/format/mp4/-/quality/lighter/" type="video/mp4">
-            </video>
+          <a  :href=(shopifyData.ctaLink) class="grid_img-wrap line-h-0 d-block" >
+            <template v-if="shopifyData.checkbox === 'true'">
+              <video width="340" height="604" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" >
+                <source :src=(shopifyData.videoLink) >
+              </video>
+            </template>
+            <template v-else>
+              <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+            </template>
+          </a>
         </div>
       </div>
     </div>
     
   </section>
-  <a class="back_sense_behno samll_text" href="#">
-            Back to The Sense of behno
-    </a>
-  </div>
+
+  <BackToTop/>
   <!-- ========== Section Forming real relationships End ========== -->
 </template>
 
@@ -154,3 +155,19 @@
 }
 /* ========== Section Forming real relationships Responsive Css Code End  ========== */
 </style>
+
+<script>
+import BackToTop from "../../back-to-top.vue";
+
+export default {
+  components: {
+    BackToTop
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

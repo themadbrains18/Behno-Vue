@@ -15,50 +15,31 @@
                 disableOnInteraction: false,
                 }"
                 class="mySwiper">
-                <swiper-slide>
-                  <img
-                    src="https://i.shgcdn.com/9408d3bc-7ca6-464c-a070-340ae41291fe/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                    alt="Image-description"
-                  />
-                </swiper-slide>
-                <swiper-slide>
-                  <img
-                    src="https://i.shgcdn.com/7880ee83-f68d-44c2-85ec-bc16855a36b2/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                    alt="Image-description"
-                  />
-                </swiper-slide>
-                <swiper-slide>
-                  <img
-                    src="https://i.shgcdn.com/c86d391e-a8e8-4281-9fb4-ccacd27b3db3/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                    alt="Image-description"
-                  />
+                <swiper-slide v-for="(value, key) in shopifyData.slideData" :key="key">
+                  <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.alt)>
                 </swiper-slide>
           </swiper>
-               
-          </div>
-          <div class="sec_header">
+        </div>
+        <div class="sec_header">
             <h2 class="quotes_text">
-                “WORKING WITH ARTISAN COMMUNITIES PRESERVES INDIGENOUS CRAFT WHILE ALSO HAVING A DIRECT POSITIVE IMPACT ON LOCAL COMMUNITIES AND POVERTY REDUCTION.”
+                {{ shopifyData.redText }}
             </h2>
         </div>
         </div>
         <div class="sec_content_inner">
           <div class="big_container">
             <div class="sec_text">
-                <h2 class="sec_heading">Critical collaboration: an exchange of ideas.</h2>
-                <h4 class="card_heading_b">Working hands on with artisans allows us to open the door for real, hands-on collaboration.</h4>
-                <p class="body_text">
-                    Our team spends a lot of time at Gulfam’s on our trips to India and working with the members of his collective has been an incredibly valuable experience toward the development of ideas.
-                </p>
-                <p class="body_text">
-                    While immensely rewarding on a personal level, we are grateful to have the opportunity to learn, preserve and re-introduce such historically rich techniques into our work directly from the communities that have been practicing this art for centuries.
+                <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+                <h4 class="card_heading_b">{{ shopifyData.subHeading }}</h4>
+                <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
+                    {{ value.para }}
                 </p>
                 <div class="text_inner_img">
-                  <img src="https://i.shgcdn.com/c4c0e58d-8757-48f6-8367-fa09f80d1093/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+                  <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)>
                 </div>
             </div>
             <div class="sec_img">
-                <img src="https://i.shgcdn.com/889fab22-a174-49e6-8e47-6e86cce0e308/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+                <img :src=(shopifyData.rightimgUrl.src) :src-placeholder=(shopifyData.rightimgUrl.placeholder) :alt=(shopifyData.rightimgUrl.alt)>
             </div>
         </div>
         </div>
@@ -78,6 +59,12 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay,EffectFade ,Navigation} from "swiper";
 export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
   components: {
     Swiper,
     SwiperSlide
