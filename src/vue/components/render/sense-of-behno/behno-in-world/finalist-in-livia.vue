@@ -30,28 +30,28 @@
                     <div class="grid_items">
                         <div>
                             <img :src=(shopifyData.gridItem1.src) :placeholder=(shopifyData.gridItem1.placeholder) :alt=(shopifyData.gridItem1.alt) />
-                            <p class="fig_caption">Ellie Goulding (R) with the behno team</p>
+                            <p class="fig_caption">{{ shopifyData.gridItem1Cption1 }}</p>
                         </div>
                         <div>
                             <img :src=(shopifyData.gridItem2.src) :placeholder=(shopifyData.gridItem2.placeholder) :alt=(shopifyData.gridItem2.alt) />
-                            <p class="fig_caption">Shivam (L) and Alessandra Airo (R) at the Green Carpet Awards</p>
+                            <p class="fig_caption">{{ shopifyData.gridItem2Cption2 }}</p>
                         </div>
                     </div>
                     <div class="grid_items">
                         <div>
                             <img :src=(shopifyData.gridItem3.src) :placeholder=(shopifyData.gridItem3.placeholder) :alt=(shopifyData.gridItem3.alt) />
-                            <p class="fig_caption">behno's look on the day of top five selection.</p>
+                            <p class="fig_caption">{{ shopifyData.gridItem3Cption3 }}</p>
                         </div>
 
                     </div>
                     <div class="grid_items">
                         <div>
                             <img :src=(shopifyData.gridItem4.src) :placeholder=(shopifyData.gridItem4.placeholder) :alt=(shopifyData.gridItem4.alt) />
-                            <p class="fig_caption">Olivia palermo (L) and Shivam (R) outside the Teatro alla Scala</p>
+                            <p class="fig_caption">{{ shopifyData.gridItem4Cption4 }}</p>
                         </div>
                         <div>
                             <img :src=(shopifyData.gridItem5.src) :placeholder=(shopifyData.gridItem5.placeholder) :alt=(shopifyData.gridItem5.alt) />
-                            <p class="fig_caption">Desiree Bollier (L) and Shivam  (R) at the Green Carpet Awards.</p>
+                            <p class="fig_caption">{{ shopifyData.gridItem5Cption5 }}</p>
                         </div>
                     </div>
                 </div>
@@ -147,6 +147,9 @@
         }
         .img_grid{
             gap: 23px;
+        }
+        .fig_caption{
+            font-size: 7px !important;
         }
     }
 </style>

@@ -198,6 +198,12 @@ button{
   border: 1px solid #fff;
   color: #000;
 }
+.fig_caption{
+  font-family: 'adobe-caslon-pro',sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+}
 
 @media (hover:hover) {
   .cta_btn-black:hover{

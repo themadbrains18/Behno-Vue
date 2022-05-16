@@ -23,7 +23,11 @@
         alt: `{{ section.settings.secImg4.alt }}`
     },
     checkImage: `{{ section.settings.checkImage }}`,
-    videolink: `{{ section.settings.videolink }}`
+    videolink: `{{ section.settings.videolink }}`,
+    figcaption1: `{{ section.settings.figcaption1 }}`,
+    figcaption2: `{{ section.settings.figcaption2 }}`,
+    figcaption3: `{{ section.settings.figcaption3 }}`,
+    figcaption4: `{{ section.settings.figcaption4 }}`
 
 }">
 </render-sense-of-behno-behno-in-world-invited-buckingham>
@@ -58,6 +62,12 @@
             "id":"secImg1",
             "type":"image_picker",
             "label":"Section Image Top Left"
+        },{
+            "id":"figcaption1",
+            "type":"text",
+            "label":"Section Image Top Left Figure Caption",
+            "default":"behno's looks for the Commonwelth Fashion Exchange."
+
         },
         {
             "id":"secImg3",
@@ -65,9 +75,23 @@
             "label":"Section Image Middle Right"
         },
         {
+            "id":"figcaption3",
+            "type":"text",
+            "label":"Section Image Middle Right Figure Caption",
+            "default":"Marama Anne Papau (L) , HRH The Duchess of Cambridge (R)."
+
+        },
+        {
             "id":"secImg4",
             "type":"image_picker",
             "label":"Section Image bottom Right"
+        },
+        {
+            "id":"figcaption4",
+            "type":"text",
+            "label":"Section Image bottom Right Figure Caption",
+            "default":"(L to R) Lisa Armstong , Shivam and Marama Anne Papau"
+
         },
         {
             "id": "checkImage",
@@ -80,6 +104,13 @@
             "type": "image_picker",
             "label": "Section Image top Right"
           },
+          {
+            "id":"figcaption2",
+            "type":"text",
+            "label":"Section Image top Right Figure Caption",
+            "default":"Hamish Bowles (L) , Anna Wintour (R)"
+
+        },
           {
             "id": "videolink",
             "type": "text",
