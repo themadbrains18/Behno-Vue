@@ -50,7 +50,6 @@
   </section>
   <!-- section lives weavers End -->
 </template>
-
 <script>
 
 // Import Swiper Vue.js components
