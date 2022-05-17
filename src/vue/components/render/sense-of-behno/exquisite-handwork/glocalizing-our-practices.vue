@@ -88,12 +88,7 @@ export default {
     .body_text:last-child{
         margin-bottom:0px;
     }
-    .back_sense_behno{
-        text-decoration: underline;
-        display: block;
-        width: fit-content;
-        margin: 0 auto;
-    } 
+   
     .sec_img{
         margin:  25px 0;
     }

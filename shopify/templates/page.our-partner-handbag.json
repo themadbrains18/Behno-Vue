@@ -1,12 +1,12 @@
 {
-    "sections": {
-      "our-partner-handbag-hero": {
-        "type": "our-partner-handbag-hero",
-        "settings": {
-        }
+  "sections": {
+    "our-partner-handbag-hero": {
+      "type": "our-partner-handbag-hero",
+      "settings": {
       }
-    },
-    "order": [
-      "our-partner-handbag-hero"
-    ]
-  }
+    }
+  },
+  "order": [
+    "our-partner-handbag-hero"
+  ]
+}

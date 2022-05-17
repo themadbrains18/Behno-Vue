@@ -1,2 +1,80 @@
-<render-sense-of-behno-handwoven-silks-handwoven-silks-hero>
+{% capture paragraphData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-handwoven-silks-handwoven-silks-hero 
+:shopify-data="{
+    preHeading   : `{{ section.settings.preHeading }}`,
+    secHeading   : `{{ section.settings.secHeading }}`,
+    subHeading  : `{{ section.settings.subHeading }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    afterImageText  : `{{ section.settings.afterImageText }}`,
+    paragraphData  : {{ paragraphData }}
+}">
 </render-sense-of-behno-handwoven-silks-handwoven-silks-hero>
+
+
+
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+     {
+        "id": "preHeading",
+        "type": "text",
+        "label": "Pre Heading",
+        "default": "HANDWOVEN SILKS"
+      },
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "A homeworker economy hard at work."
+      },
+	  {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "In 2019, our founder, Shivam Punjya, visited Loom to Luxury in Varanasi, India for the first time."
+      },
+	  {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Section Image"
+      },
+      {
+        "id": "afterImageText",
+        "type": "text",
+        "label": "After Slider Text",
+        "default": "LOOM TO LUXURY. VARANASI, INDIA."
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        }
+    ]
+ }
+{% endschema %}

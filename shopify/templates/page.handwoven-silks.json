@@ -1,20 +1,114 @@
 {
-    "sections": {
-      "handwoven-silks-hero": {
-        "type": "handwoven-silks-hero"
+  "sections": {
+    "handwoven-silks-hero": {
+      "type": "handwoven-silks-hero",
+      "blocks": {
+        "373d6d9e-9913-4371-9659-dc60ce2e8d64": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Varanasi, the spiritual capital of India, also grew to become an important epicenter for handwoven silk and fine muslin textiles. Loom to Luxury, a critical player in this world of weavers, facilitates a dialogue between a modernizing world and a heritage craft, where handweaving communities date back a millennia."
+          }
+        },
+        "f2553e80-355a-4b3f-b88b-11bb908b8d4d": {
+          "type": "paragraph",
+          "settings": {
+            "para": "In Varanasi, Shivam met with artisans and their families in their creative, technical, and meticulous spaces as they kept alive certain traditional techniques over 500-years-old. He observed a bustling homeworker economy in these villages preserving a basic necessity with their hands – to clothe ourselves."
+          }
+        },
+        "e0de820e-b71b-4e38-84a9-da147c0ce2a4": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Loom to Luxury also has a significant partnership with NEST, a nonprofit organization building a new handworker economy to increase global workforce inclusivity, improve women’s wellbeing beyond factories, and safeguard important cultural traditions."
+          }
+        }
       },
-      "lives-of-weavers": {
-        "type": "lives-of-weavers"
-      },
-      "sounds-varanasi": {
-        "type": "sounds-varanasi"
-      },
-      "ghat-know-about": {
-        "type": "ghat-know-about"
+      "block_order": [
+        "373d6d9e-9913-4371-9659-dc60ce2e8d64",
+        "f2553e80-355a-4b3f-b88b-11bb908b8d4d",
+        "e0de820e-b71b-4e38-84a9-da147c0ce2a4"
+      ],
+      "settings": {
+        "preHeading": "HANDWOVEN SILKS",
+        "secHeading": "A homeworker economy hard at work.",
+        "subHeading": "In 2019, our founder, Shivam Punjya, visited Loom to Luxury in Varanasi, India for the first time.",
+        "image": "shopify:\/\/shop_images\/handwoven-silks-hero.jpg",
+        "afterImageText": "LOOM TO LUXURY. VARANASI, INDIA."
       }
-      
     },
-    "order": [
-      "handwoven-silks-hero","lives-of-weavers","sounds-varanasi","ghat-know-about"
-    ]
-  }
+    "lives-of-weavers": {
+      "type": "lives-of-weavers",
+      "blocks": {
+        "72230e37-5404-46af-81b2-8c91737a6417": {
+          "type": "gridbox",
+          "settings": {
+            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid.jpg"
+          }
+        },
+        "095bb10f-db65-41c9-af89-e357268d0f2c": {
+          "type": "gridbox",
+          "settings": {
+            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid1.jpg"
+          }
+        },
+        "af607bef-647d-43c3-b3e3-22d70dad2bc2": {
+          "type": "gridbox",
+          "settings": {
+            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid2.jpg"
+          }
+        },
+        "0ca990ed-0365-42ca-bad7-30fb984f3abf": {
+          "type": "gridbox",
+          "settings": {
+            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid3.jpg"
+          }
+        },
+        "6e6df58d-cce8-4607-a4bd-dfafa474c891": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/handwoven-silks-slide.jpg"
+          }
+        },
+        "b3661030-3b5f-4c97-8ebd-6e3c36b1c5f4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/handwoven-silks-slide1.jpg"
+          }
+        },
+        "2cd1988f-a5bd-4ca7-a588-121da409c432": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/handwoven-silks-slide2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "72230e37-5404-46af-81b2-8c91737a6417",
+        "095bb10f-db65-41c9-af89-e357268d0f2c",
+        "af607bef-647d-43c3-b3e3-22d70dad2bc2",
+        "0ca990ed-0365-42ca-bad7-30fb984f3abf",
+        "6e6df58d-cce8-4607-a4bd-dfafa474c891",
+        "b3661030-3b5f-4c97-8ebd-6e3c36b1c5f4",
+        "2cd1988f-a5bd-4ca7-a588-121da409c432"
+      ],
+      "settings": {
+        "redText": "“IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”"
+      }
+    },
+    "sounds-varanasi": {
+      "type": "sounds-varanasi",
+      "settings": {
+      }
+    },
+    "ghat-know-about": {
+      "type": "ghat-know-about",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "handwoven-silks-hero",
+    "lives-of-weavers",
+    "sounds-varanasi",
+    "ghat-know-about"
+  ]
+}

@@ -1,10 +1,12 @@
 {
-    "sections": {
-      "our-home-base-hero": {
-        "type": "our-home-base-hero"
+  "sections": {
+    "our-partner-handbag-hero": {
+      "type": "our-partner-handbag-hero",
+      "settings": {
       }
-    },
-    "order": [
-      "our-home-base-hero"
-    ]
-  }
+    }
+  },
+  "order": [
+    "our-partner-handbag-hero"
+  ]
+}
