@@ -40,7 +40,12 @@
     },
 
     checkImage: `{{ section.settings.checkImage }}`,
-    videolink: `{{ section.settings.videolink }}`
+    videolink: `{{ section.settings.videolink }}`,
+    gridItem1Cption1: `{{ section.settings.gridItem1Cption1 }}`,
+    gridItem2Cption2: `{{ section.settings.gridItem2Cption2 }}`,
+    gridItem3Cption3: `{{ section.settings.gridItem3Cption3 }}`,
+    gridItem4Cption4: `{{ section.settings.gridItem4Cption4 }}`,
+    gridItem5Cption5: `{{ section.settings.gridItem5Cption5 }}`
 }">
 </render-sense-of-behno-behno-in-world-finalist-in-livia>
 
@@ -89,30 +94,66 @@
             "label": "t:sections.home_grid_text_image.settings.video.label",
             "default" :"https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
         },
+
         {
             "id":"gridItem1",
             "type":"image_picker",
             "label":"Grid Image 1"
         },
         {
+            "id":"gridItem1Cption1",
+            "type":"text",
+            "label":"Grid Image 1 Caption",
+            "default":"Ellie Goulding (R) with the behno team"
+        },
+
+        {
             "id":"gridItem2",
             "type":"image_picker",
             "label":"Grid Image 2"
         },
+        {
+            "id":"gridItem2Cption2",
+            "type":"text",
+            "label":"Grid Image 2 Caption",
+            "default":"Shivam (L) and Alessandra Airo (R) at the Green Carpet Awards"
+        },
+
         {
             "id":"gridItem3",
             "type":"image_picker",
             "label":"Grid Image 3"
         },
         {
+            "id":"gridItem3Cption3",
+            "type":"text",
+            "label":"Grid Image 3 Caption",
+            "default":"behno's look on the day of top five selection."
+            
+        },
+
+        {
             "id":"gridItem4",
             "type":"image_picker",
             "label":"Grid Image 4"
         },
         {
+            "id":"gridItem4Cption4",
+            "type":"text",
+            "label":"Grid Image 4 Caption",
+            "default":"Olivia palermo (L) and Shivam (R) outside the Teatro alla Scala"
+        },
+
+        {
             "id":"gridItem5",
             "type":"image_picker",
             "label":"Grid Image 5"
+        },
+        {
+            "id":"gridItem5Cption5",
+            "type":"text",
+            "label":"Grid Image 5 Caption",
+            "default":"Desiree Bollier (L) and Shivam  (R) at the Green Carpet Awards."
         }
     ]
 }

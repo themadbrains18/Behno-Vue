@@ -14,7 +14,10 @@
             </div>
             <div class="sec_content">
                 <div class="sec_video">
-                    <img :src=(shopifyData.imgUrl1.src) :alt=(shopifyData.imgUrl1.alt) :placeholder=(shopifyData.imgUrl1.placeholder)>
+                    <div class="sec-image-modifier">
+                        <img :src=(shopifyData.imgUrl1.src) :alt=(shopifyData.imgUrl1.alt) :placeholder=(shopifyData.imgUrl1.placeholder)>
+                        <p class="fig_caption">{{ shopifyData.figcaption1 }}</p>
+                    </div>
                     <template v-if="shopifyData.checkImage === 'true'">
                         <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
                         <source :src=(shopifyData.videolink) >
@@ -26,14 +29,22 @@
                 </div>
                 <div class="sec_img">
                     <div class="t-start">
-                        <img class="img_item1" :src=(shopifyData.imgUrl2.src) :alt=(shopifyData.imgUrl2.alt) :placeholder=(shopifyData.imgUrl2.placeholder)>
+                        <div>
+                            <img class="img_item1" :src=(shopifyData.imgUrl2.src) :alt=(shopifyData.imgUrl2.alt) :placeholder=(shopifyData.imgUrl2.placeholder)>
+                            <p class="fig_caption">{{ shopifyData.figcaption2 }}</p>
+                        </div>
                     </div>
                     <div class="t-end">
-                        <img class="img_item2" :src=(shopifyData.imgUrl3.src) :alt=(shopifyData.imgUrl3.alt) :placeholder=(shopifyData.imgUrl3.placeholder)>
-
+                        <div class="item1">
+                            <img class="img_item2" :src=(shopifyData.imgUrl3.src) :alt=(shopifyData.imgUrl3.alt) :placeholder=(shopifyData.imgUrl3.placeholder)>
+                            <p class="fig_caption">{{ shopifyData.figcaption3 }}</p>
+                        </div>
                     </div>
                     <div class="t-center">
-                        <img class="img_item3" :src=(shopifyData.imgUrl4.src) :alt=(shopifyData.imgUrl4.alt) :placeholder=(shopifyData.imgUrl4.placeholder)>
+                        <div>
+                            <img class="img_item3" :src=(shopifyData.imgUrl4.src) :alt=(shopifyData.imgUrl4.alt) :placeholder=(shopifyData.imgUrl4.placeholder)>
+                            <p class="fig_caption">{{ shopifyData.figcaption4 }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,12 +91,25 @@
         max-width: 490px;
         width: 100%;
         height: auto;
-        margin: 70px 0;
+    }
+    .item1{
+        margin: 70px 0 70px auto;
+        width: fit-content;
+        text-align: start;
     }
      .img_item3{
         max-width: 330px;
         width: 100%;
         height: auto;
+    }
+    .fig_caption {
+        font-family: 'adobe-caslon-pro',sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    .sec-image-modifier{
+        margin-bottom: 30px;
     }
     
     /* Responsive Css Code */

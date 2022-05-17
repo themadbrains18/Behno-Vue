@@ -28,15 +28,31 @@
                 <img class="main-img" :src=(shopifyData.secImg.src) :placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />  
                 <div class="img_grid"> 
                     <div class="grid_items">
-                        <img :src=(shopifyData.gridItem1.src) :placeholder=(shopifyData.gridItem1.placeholder) :alt=(shopifyData.gridItem1.alt) />
-                        <img :src=(shopifyData.gridItem2.src) :placeholder=(shopifyData.gridItem2.placeholder) :alt=(shopifyData.gridItem2.alt) />
+                        <div>
+                            <img :src=(shopifyData.gridItem1.src) :placeholder=(shopifyData.gridItem1.placeholder) :alt=(shopifyData.gridItem1.alt) />
+                            <p class="fig_caption">{{ shopifyData.gridItem1Cption1 }}</p>
+                        </div>
+                        <div>
+                            <img :src=(shopifyData.gridItem2.src) :placeholder=(shopifyData.gridItem2.placeholder) :alt=(shopifyData.gridItem2.alt) />
+                            <p class="fig_caption">{{ shopifyData.gridItem2Cption2 }}</p>
+                        </div>
                     </div>
                     <div class="grid_items">
-                        <img :src=(shopifyData.gridItem3.src) :placeholder=(shopifyData.gridItem3.placeholder) :alt=(shopifyData.gridItem3.alt) />
+                        <div>
+                            <img :src=(shopifyData.gridItem3.src) :placeholder=(shopifyData.gridItem3.placeholder) :alt=(shopifyData.gridItem3.alt) />
+                            <p class="fig_caption">{{ shopifyData.gridItem3Cption3 }}</p>
+                        </div>
+
                     </div>
                     <div class="grid_items">
-                        <img :src=(shopifyData.gridItem4.src) :placeholder=(shopifyData.gridItem4.placeholder) :alt=(shopifyData.gridItem4.alt) />
-                        <img :src=(shopifyData.gridItem5.src) :placeholder=(shopifyData.gridItem5.placeholder) :alt=(shopifyData.gridItem5.alt) />
+                        <div>
+                            <img :src=(shopifyData.gridItem4.src) :placeholder=(shopifyData.gridItem4.placeholder) :alt=(shopifyData.gridItem4.alt) />
+                            <p class="fig_caption">{{ shopifyData.gridItem4Cption4 }}</p>
+                        </div>
+                        <div>
+                            <img :src=(shopifyData.gridItem5.src) :placeholder=(shopifyData.gridItem5.placeholder) :alt=(shopifyData.gridItem5.alt) />
+                            <p class="fig_caption">{{ shopifyData.gridItem5Cption5 }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,6 +108,12 @@
         flex-direction: column;
         gap: 160px;
     }
+    p.fig_caption {
+        font-family: 'adobe-caslon-pro',sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+    }
     
     /* Responsive Css Code */
     @media screen  and (max-width: 991px){
@@ -125,6 +147,9 @@
         }
         .img_grid{
             gap: 23px;
+        }
+        .fig_caption{
+            font-size: 7px !important;
         }
     }
 </style>
