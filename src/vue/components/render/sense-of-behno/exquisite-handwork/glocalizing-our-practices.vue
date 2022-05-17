@@ -14,7 +14,32 @@
             </div>
             <div class="sec_content">
                 <div class="sec_img">
-                    <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.src) :alt=(shopifyData.imgUrl.alt) >
+                    <div class="sec_img_inner">
+                        <div class="images_row">
+                            <div class="figCaption1"> 
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
+                                <p class="fig_caption">Some of the many zardozi colours available for us to choose from.</p>
+                            </div>
+                            <div class="figCaption2"> 
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/2-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
+                                <p class="fig_caption">Our go-to zardozi at the Malad.</p>
+                            </div>
+                            <div class="figCaption3"> 
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/3-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
+                            </div>
+                        </div>
+                        <div class="images_row last">
+                            <div class="figCaption4"> 
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/4-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
+                                <p class="fig_caption">studio floor,embroidery threads.</p>
+                            </div>
+                            <div class="figCaption5"> 
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/5-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
+                                <p class="fig_caption">Our go-to glass bead supplier at the Malad Market.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -72,7 +97,32 @@ export default {
     .sec_img{
         margin:  25px 0;
     }
-    
+    .images_row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .figCaption1{
+        width: 345px;
+    }
+    .figCaption2{
+        width: 484px;
+    }
+    .figCaption3{
+        width: 295px;
+        align-self: flex-start;
+    }
+    .figCaption4{
+        width: 472px;
+        margin-top: -68px;
+    }
+    .figCaption5{
+        width: 571px;
+    }
+    .images_row.last{
+        justify-content: space-evenly;        
+    }
     /* Responsive Css Code */
     @media screen  and (max-width: 991px){
         .sec_glocalizing_our_practices{
@@ -90,14 +140,34 @@ export default {
         
     }
     @media screen  and (max-width: 767px){
-    .sec_glocalizing_our_practices{
-        padding: 38px 0 100px;
-    }
-    .sec_content{
-        margin-top: 43px;
-    }
-    .sec_img{
-        margin: 45px 0 98px;
-    }
+        .sec_glocalizing_our_practices{
+            padding: 38px 0 100px;
+        }
+        .sec_content{
+            margin-top: 43px;
+        }
+        .sec_img{
+            margin: 45px 0 0px;
+        }
+        .images_row[data-v-dafdbb6c] {
+            justify-content: space-evenly;
+            gap: 15px;
+        }
+        .figCaption1{
+            width: 95px;
+        }
+        .figCaption2{
+            width: 130px;
+        }
+        .figCaption3{
+            width: 80px;
+        }
+        .fig_caption{
+            font-size: 8px;
+            line-height: 1;
+        }
+        .figCaption4[data-v-dafdbb6c] {
+            margin-top: -23px;
+        }
     }
 </style>    
