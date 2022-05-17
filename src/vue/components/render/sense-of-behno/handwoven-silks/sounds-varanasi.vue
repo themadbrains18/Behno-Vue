@@ -3,23 +3,17 @@
   <section class="sec_sounds_varanasi">
         <div class="container">
           <div class="main_contenet">
-        <h2 class="sec_heading">Steep into the sounds of Varanasi.</h2>
-        <h4
-          class="card_heading_b sec_inner_heading"
-        >Sound on, immerse yourself.</h4>
-        <p class="body_text">
-            The first video captures three scenes; our founder’s first sounds and mystic fog upon waking up at his hotel on the banks of the sacred Ganges; a ritualized chanting of Buddhist texts at Sarnath; and the stunning chaos at evening aarti gatherings.
-        </p>        
-        <p class="body_text">           
-            The second video expands on an evening aarti prayer and two scenes from his daily commute by boat, embracing the beauty travel by water offers this canal city.
-        </p>        
+        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+        <h4 class="card_heading_b sec_inner_heading">{{ shopifyData.subHeading }}</h4>
+          <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
+              {{ item.para }}
+          </p>        
           </div>
       </div>
       <div class="sec_video">
-          <iframe class="shogun-video-embed shogun-lazyloaded" src="https://www.youtube.com/embed/ZRcu0Grwew4?start=0&amp;end=0&amp;autoplay=1&amp;loop=1&amp;mute=1&amp;playlist=ZRcu0Grwew4&amp;version=3&amp;rel=0" allowfullscreen="">
-          </iframe>
-          <iframe class="shogun-video-embed shogun-lazyloaded" src="https://www.youtube.com/embed/QBMVAqNYACg?start=0&amp;end=0&amp;autoplay=0&amp;loop=1&amp;playlist=QBMVAqNYACg&amp;version=3&amp;rel=0" allowfullscreen="">
-          </iframe>
+          <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" v-for="(item, index) in shopifyData.videoData" :key="index">
+            <source :src=(item.video) >
+          </video>
       </div>
   </section>
   <!-- Section Sounds Varanasi Start -->
@@ -114,3 +108,14 @@
   }
 }
 </style>
+
+<script>
+export default {
+    props: {
+      shopifyData: {
+        type: Object,
+        required: true,
+      }
+    }
+}
+</script>
