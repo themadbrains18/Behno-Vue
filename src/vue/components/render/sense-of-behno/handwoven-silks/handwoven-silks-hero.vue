@@ -1,29 +1,21 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_handwoven_hero">
-          <h2 class="card_heading_b">HANDWOVEN SILKS</h2>
+          <h2 class="card_heading_b">{{ shopifyData.preHeading }}</h2>
         <div class="container">
           <div class="main_contenet">
-        <h2 class="sec_heading">A homeworker economy hard at work.</h2>
-        <h4
-          class="card_heading_b sec_inner_heading"
-        >In 2019, our founder, Shivam Punjya, visited Loom to Luxury in Varanasi, India for the first time.</h4>
-        <p class="body_text">
-            Varanasi, the spiritual capital of India, also grew to become an important epicenter for handwoven silk and fine muslin textiles. Loom to Luxury, a critical player in this world of weavers, facilitates a dialogue between a modernizing world and a heritage craft, where handweaving communities date back a millennia.
-        </p>        
-        <p class="body_text">
-        In Varanasi, Shivam met with artisans and their families in their creative, technical, and meticulous spaces as they kept alive certain traditional techniques over 500-years-old. He observed a bustling homeworker economy in these villages preserving a basic necessity with their hands – to clothe ourselves.
-        </p>       
-        <p class="body_text">
-        Loom to Luxury also has a significant partnership with NEST, a nonprofit organization building a new handworker economy to increase global workforce inclusivity, improve women’s wellbeing beyond factories, and safeguard important cultural traditions.
-        </p>       
-          </div>
+        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+        <h4 class="card_heading_b sec_inner_heading">{{ shopifyData.subHeading }}</h4>
+          <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
+              {{ value.para }}
+          </p>
+        </div>
       </div>
       <div class="sec_img">
-          <img src="https://i.shgcdn.com/f4b6b131-9e9e-47a5-be67-9f5d4c914bf2/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+          <img class="w-100" :src=(shopifyData.imgUrl.src)  :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)>
       </div>
       <p class="subtitle">
-          LOOM TO LUXURY. VARANASI, INDIA.
+          {{ shopifyData.afterImageText }}
       </p>
   </section>
   <!-- Constructing Ethos Hero Start -->
@@ -110,5 +102,13 @@
 }
 </style>
 
-
-
+<script>
+export default {
+  props :{
+    shopifyData : {
+      type : Object,
+      required : true
+    }
+  }
+}
+</script>

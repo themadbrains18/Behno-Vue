@@ -65,11 +65,7 @@ export default{
     border: 1px solid #000;
 }
 .back_sense_behno{
-    text-decoration: underline;
-    display: block;
-    width: fit-content;
     margin:  117px auto 202px;
-
 }
 @media (hover: hover) {
   .cta_btn:hover {

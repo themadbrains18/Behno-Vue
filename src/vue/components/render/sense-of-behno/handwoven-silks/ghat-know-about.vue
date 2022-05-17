@@ -78,16 +78,12 @@ export default {
 };
 </script>
 
-// Section Css COde
 <style scoped>
 .swiper{
   padding: 0 55px;
 }
 .back_sense_behno{
-        text-decoration: underline;
-        display: block;
-        width: fit-content;
-        margin: 85px  auto 0;
+  margin: 85px  auto 0;
 } 
 .sec_ghat_know_about {
   padding: 45px 0 126px;
