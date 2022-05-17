@@ -42,109 +42,71 @@
         <div class="image_grid_inner">
           <div class="img_row">
             <div class="image_caption1">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1-MSAETHOS.jpg?v=1652704178" alt="error"/>
               <p class="fig_caption">
-                Utilizing state of art solar discs, MSA genrate it owns
-                electricity throught solar power.
+                Utilizing state of art solar discs, MSA genrate it owns electricity throught solar power.
               </p>
             </div>
             <div class="image_caption2">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/2-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/2-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">
-                MSA addresses the needs of vulnerable polutions through its
-                insite orphanage, center for mentally disabled woman, and senior
-                citizens home.
+                MSA addresses the needs of vulnerable polutions through its insite orphanage, center for mentally disabled woman, and senior citizens home.
               </p>
             </div>
             <div class="image_caption3">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/3-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/3-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">
-                Here we see the distribution of milk form MSA own Dairy farm to
-                local community members.
+                Here we see the distribution of milk form MSA own Dairy farm to local community members.
               </p>
             </div>
           </div>
           <div class="img_row middle">
             <div class="image_caption4">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/4-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/4-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">
-                Utilizing state of art solar discs, MSA genrate it owns
-                electricity throught solar power.
+                Utilizing state of art solar discs, MSA genrate it owns electricity throught solar power.
               </p>
             </div>
             <div class="image_caption5">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/5-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/5-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">
-                MSA addresses the needs of vulnerable polutions through its
-                insite orphanage, center for mentally disabled woman, and senior
-                citizens home.
+                MSA addresses the needs of vulnerable polutions through its insite orphanage, center for mentally disabled woman, and senior citizens home.
               </p>
             </div>
           </div>
           <div class="img_row">
             <div class="image_caption6">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/6-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/6-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">
-                Within all its activities , MSA employes local community member
-                to run its vast operations
+                Within all its activities , MSA employes local community member to run its vast operations
               </p>
             </div>
             <div class="image_caption7">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/7-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/7-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">
-                Sharing oranges form the farms at MSA as an afternoon snack at
-                the factory.
+                Sharing oranges form the farms at MSA as an afternoon snack at the factory.
               </p>
             </div>
             <div class="image_caption8">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/8-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/8-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">
-                making a Thousands of roties at the community kitchen for
-                students of MSA's resident primary ,secondry and vocational
-                training schools, for visitors and for residents of MSA.
+                making a Thousands of roties at the community kitchen for students of MSA's resident primary ,secondry and vocational training schools, for visitors and for residents of MSA.
               </p>
             </div>
           </div>
           <div class="img_row last">
             <div class="image_caption">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/9-MSAETHOS.jpg?v=1652704178"
-                alt="error"
-              />
+              <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/9-MSAETHOS.jpg?v=1652704178" alt="error" />
               <p class="fig_caption">The MSA Ethos and behno team at MSA.</p>
             </div>
           </div>
         </div>
       </div>
-      <!-- <img :src=(shopifyData.collageImg.src) :src-placeholder=(shopifyData.collageImg.placeholder) :alt=(shopifyData.collageImg.alt)> -->
     </div>
   </section>
   <!-- Section Meet Fashion Desingners End -->
 </template>
+
 <style scoped>
 .sec_msa_ethos {
   padding: 68px 0 78px;
@@ -245,7 +207,7 @@
   margin-top: 16px;
 }
 
-/* Responsive Css Code */
+/* ==== Responsive Css Code ==== */
 @media only screen and (max-width: 1024px) {
   .quotes_text {
     font-size: 60px;
@@ -328,7 +290,7 @@
     padding: 0 15px;
   }
   .fig_caption {
-    font-size: 5px;
+    font-size: 8px;
   }
   .img_row.last {
     max-width: 838px;
