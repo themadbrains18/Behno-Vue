@@ -62,42 +62,48 @@
           "type": "Card",
           "settings": {
             "crdHeading": "HEALTH",
-            "crdImage": "shopify:\/\/shop_images\/standard-card.jpg"
+            "crdImage": "shopify:\/\/shop_images\/standard-card.jpg",
+            "cardContent": "Provision of exemplary healthcare services including coverage and access to health clinics.\n\nAccess to fresh sanitized water and additional nutritional ammunition for those in need."
           }
         },
         "d9d28001-f60b-4118-9f55-acef379cee0f": {
           "type": "Card",
           "settings": {
             "crdHeading": "GARMENT WORKER SOCIAL MOBILITY",
-            "crdImage": "shopify:\/\/shop_images\/standard-card1.jpg"
+            "crdImage": "shopify:\/\/shop_images\/standard-card1.jpg",
+            "cardContent": ""
           }
         },
         "b7fda0f4-ecfd-413c-ad7e-f9fa6a952739": {
           "type": "Card",
           "settings": {
             "crdHeading": "FAMILY PLANNING",
-            "crdImage": "shopify:\/\/shop_images\/standard-card3.jpg"
+            "crdImage": "shopify:\/\/shop_images\/standard-card3.jpg",
+            "cardContent": ""
           }
         },
         "5aea64af-af35-4846-9ff5-34fd44ca47fc": {
           "type": "Card",
           "settings": {
             "crdHeading": "WOMEN’S RIGHTS",
-            "crdImage": "shopify:\/\/shop_images\/standard-card4.jpg"
+            "crdImage": "shopify:\/\/shop_images\/standard-card4.jpg",
+            "cardContent": ""
           }
         },
         "21b4acaf-9c4f-41cb-b4c8-d9f6b74e4b4b": {
           "type": "Card",
           "settings": {
             "crdHeading": "WORKER SATISFACTION & BENEFITS",
-            "crdImage": "shopify:\/\/shop_images\/standard-card5.jpg"
+            "crdImage": "shopify:\/\/shop_images\/standard-card5.jpg",
+            "cardContent": ""
           }
         },
         "9238db2a-8edf-4e7d-9f12-df0ea6a19d5a": {
           "type": "Card",
           "settings": {
             "crdHeading": "ECO-CONSCIOUSNESS",
-            "crdImage": "shopify:\/\/shop_images\/standard-card6.jpg"
+            "crdImage": "shopify:\/\/shop_images\/standard-card6.jpg",
+            "cardContent": ""
           }
         }
       },
