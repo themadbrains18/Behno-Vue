@@ -135,7 +135,41 @@
     },
     "ghat-know-about": {
       "type": "ghat-know-about",
+      "blocks": {
+        "63f60d39-054a-490b-8bc5-a1fcaa1be682": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "While it is widely regarded a the holiest city for Hinduism and Jainism, it also holds importance for the development of Buddhism and Ravidassia. Buddha founded Buddhism in Varanasi, giving his first sermon after reaching enlightenment under a tree in Sarnath."
+          }
+        },
+        "90e6ad5d-2f9c-4a07-9131-a0f3b2978daa": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "With its spiritual depth, architecturally the city's planning also speaks to its beauty. The ghats of Varanasi are wide, spread out riverfront steps leading to the banks of the Ganges River where cultural events occur for various parts of a person's life. Every evening, a massively popularized tradition persists; thousands of individuals congregate for aarti, where everyone comes in on their boats for a communal prayer right on the banks of the Ganges."
+          }
+        },
+        "d6fd691e-f04f-45c6-8ee2-cfae75006d66": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/constructing-ethos1.jpg"
+          }
+        },
+        "74399097-6f62-4823-b84d-6c8a560f7538": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/constructing-ethos-hero.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "63f60d39-054a-490b-8bc5-a1fcaa1be682",
+        "90e6ad5d-2f9c-4a07-9131-a0f3b2978daa",
+        "d6fd691e-f04f-45c6-8ee2-cfae75006d66",
+        "74399097-6f62-4823-b84d-6c8a560f7538"
+      ],
       "settings": {
+        "secHeading": "You’ve ghat to know about this.",
+        "secSubHeading": "Varanasi is a city nestled on the banks of the Ganges river in India."
       }
     }
   },
