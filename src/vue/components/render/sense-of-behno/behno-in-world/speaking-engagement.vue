@@ -17,16 +17,24 @@
                 </p>
             </div>
             <div class="sec_img">
-                   <img :src=(shopifyData.imgUrl.src) :placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />  
-                <!-- <div class="img_grid">
+                   <!-- <img :src=(shopifyData.imgUrl.src) :placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />   -->
+                <div class="img_grid">
                     <div class="grid_items">
-                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
-                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                        <div class="figCaption">  
+                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/slideimg1.jpg?v=1652527132" alt="">  
+                            <p class="fig_caption">The speakers included (L to R ) Shivam, Andrea Reyes,Pattrick Duffy,Amanda Carr,Ashia Dearwester and Lilian Liu.</p>
+                        </div>
+                        <div class="figCaption middle">  
+                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/slideimg2.jpg?v=1652527144" alt="">  
+                        </div>
                     </div>
                     <div class="grid_items">
-                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                        <div class="figCaption">  
+                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/working-artisan-left.jpg?v=1652526860" alt="">  
+                            <p class="fig_caption">Over 700 Indivisual gathred at the united Nations to discuss fashion as a social mobilizer.</p>
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         
@@ -81,9 +89,24 @@
         display: flex;
         flex-direction: column;
         gap: 160px;
+        align-items: center;
+    }
+    .fig_caption.middle{
+        max-width: 520px;
+        
     }
 
     /* Responsive Css Code */
+    @media screen  and (max-width: 1200px){
+        .img_grid > div{
+            width: 50%;
+        }
+        .grid_items,
+        .img_grid
+        {
+            gap: 43px;
+        }
+    }
     @media screen  and (max-width: 991px){
         .sec_speaking_angagment{
             padding-top:30px ;
@@ -100,6 +123,10 @@
         .sec_video iframe{
             height: 500px;
         }
+        .img_grid{
+            margin-top: 40px;
+            padding: 0 15px;
+        }
     }
 
     @media screen  and (max-width: 767px){
@@ -109,11 +136,17 @@
         .sec_video iframe{
             height: 214px;
         }
-        .grid_items{
-            gap: 60px;
-        }
         .img_grid{
             gap: 23px;
+        }
+        .fig_caption{
+            font-size: 8px;
+        }
+        .grid_items{
+            gap: 26px;
+        }
+        .figCaption.middle {
+            width: 80%;
         }
     }
     

@@ -1,18 +1,16 @@
 <template>
-  <!-- Section Constructing Ethos Hero Start -->
+  <!-- Section ghat Know Hero Start -->
   <section class="sec_ghat_know_about">
     <div class="big_container">
       <div class="main_contenet">
-        <h2 class="sec_heading">You’ve ghat to know about this.</h2>
+        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
         <h4 class="card_heading_b sec_inner_heading">
-          Varanasi is a city nestled on the banks of the Ganges river in India.
+          {{ shopifyData.subHeading }}
         </h4>
-        <p class="body_text">
-          While it is widely regarded a the holiest city for Hinduism and Jainism, it also holds importance for the development of Buddhism and Ravidassia. Buddha founded Buddhism in Varanasi, giving his first sermon after reaching enlightenment under a tree in Sarnath.
+        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
+          {{ item.paragraph }}
         </p>
-        <p class="body_text"> 
-          With its spiritual depth, architecturally the city's planning also speaks to its beauty. The ghats of Varanasi are wide, spread out riverfront steps leading to the banks of the Ganges River where cultural events occur for various parts of a person's life. Every evening, a massively popularized tradition persists; thousands of individuals congregate for aarti, where everyone comes in on their boats for a communal prayer right on the banks of the Ganges.
-        </p>
+       
       </div>
       <div class="sec_slider">
         <div class="sec_slider modify-slider">
@@ -23,39 +21,35 @@
             :spaceBetween="100"
             :loop="true"
             :effect="'fade'"
-            :autoplay="{
+            :autoplay="{ 
             delay: 2000,
             disableOnInteraction: false,
             }"
             class="mySwiper"
           >
-            <swiper-slide>
+            <swiper-slide v-for="(item, index) in shopifyData.sliderImg" :key="index">
               <img
-                src="https://i.shgcdn.com/0a9750dc-b99f-4175-93ce-098db2f1087a/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
-              />
-            </swiper-slide>
-
-            <swiper-slide>
-              <img
-                src="https://i.shgcdn.com/854b8dff-0834-4e98-b579-5fa4625c9993/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-                alt="Image-description"
+                :src=(item.imgUrl.src)
+                :src-placeholder=(item.imgUrl.placeholder)
+                :alt=(item.imgUrl.alt)
               />
             </swiper-slide>
           </swiper>
         </div>
       </div>
     </div>
-      <a class="back_sense_behno samll_text" href="#">
+      <!-- <a class="back_sense_behno samll_text" href="#">
             Back to The Sense of behno
-      </a>
+      </a> -->
+  <!-- Section ghat Know Hero Start -->
   </section>
-  <!-- Constructing Ethos Hero Start -->
+  <BackToTop />
 </template>
 
 
 <script>
 // Import Swiper Vue.js components
+import BackToTop from "../../back-to-top.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
@@ -68,12 +62,19 @@ import { Navigation,Autoplay,EffectFade } from "swiper";
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    BackToTop
   },
   setup() {
     return {
       modules: [Navigation,Autoplay,EffectFade]
     };
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
   }
 };
 </script>
@@ -134,6 +135,9 @@ export default {
 .sec_img {
   margin-top: 75px;
 }
+.sec_ghat_know_about + .back_sense_behno{
+    margin: 0 auto 85px;
+}
 /* Responsive Css Code */
 @media screen and (max-width: 991px) {
   .sec_ghat_know_about {
@@ -191,4 +195,3 @@ export default {
   }
 }
 </style>
-

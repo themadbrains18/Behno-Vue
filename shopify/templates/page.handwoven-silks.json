@@ -96,12 +96,80 @@
     },
     "sounds-varanasi": {
       "type": "sounds-varanasi",
+      "blocks": {
+        "53170be5-2d22-4d53-b1c0-15c1e445a6a6": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The first video captures three scenes; our founder’s first sounds and mystic fog upon waking up at his hotel on the banks of the sacred Ganges; a ritualized chanting of Buddhist texts at Sarnath; and the stunning chaos at evening aarti gatherings."
+          }
+        },
+        "ec58b6d5-e15c-4e1b-b4e6-372437d3576f": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The second video expands on an evening aarti prayer and two scenes from his daily commute by boat, embracing the beauty travel by water offers this canal city."
+          }
+        },
+        "718c0d46-e8c7-44ad-b0b3-ce36ab4219d9": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7a6520654eec40d482d0ac085abd4e35.mp4"
+          }
+        },
+        "3de622e5-0709-4095-a3ca-614f4ff43094": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/bd3956f7934b4bbca4476772edbfff22.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "53170be5-2d22-4d53-b1c0-15c1e445a6a6",
+        "ec58b6d5-e15c-4e1b-b4e6-372437d3576f",
+        "718c0d46-e8c7-44ad-b0b3-ce36ab4219d9",
+        "3de622e5-0709-4095-a3ca-614f4ff43094"
+      ],
       "settings": {
+        "secHeading": "Steep into the sounds of Varanasi.",
+        "subHeading": "Sound on, immerse yourself."
       }
     },
     "ghat-know-about": {
       "type": "ghat-know-about",
+      "blocks": {
+        "63f60d39-054a-490b-8bc5-a1fcaa1be682": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "While it is widely regarded a the holiest city for Hinduism and Jainism, it also holds importance for the development of Buddhism and Ravidassia. Buddha founded Buddhism in Varanasi, giving his first sermon after reaching enlightenment under a tree in Sarnath."
+          }
+        },
+        "90e6ad5d-2f9c-4a07-9131-a0f3b2978daa": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "With its spiritual depth, architecturally the city's planning also speaks to its beauty. The ghats of Varanasi are wide, spread out riverfront steps leading to the banks of the Ganges River where cultural events occur for various parts of a person's life. Every evening, a massively popularized tradition persists; thousands of individuals congregate for aarti, where everyone comes in on their boats for a communal prayer right on the banks of the Ganges."
+          }
+        },
+        "d6fd691e-f04f-45c6-8ee2-cfae75006d66": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/constructing-ethos1.jpg"
+          }
+        },
+        "74399097-6f62-4823-b84d-6c8a560f7538": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/constructing-ethos-hero.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "63f60d39-054a-490b-8bc5-a1fcaa1be682",
+        "90e6ad5d-2f9c-4a07-9131-a0f3b2978daa",
+        "d6fd691e-f04f-45c6-8ee2-cfae75006d66",
+        "74399097-6f62-4823-b84d-6c8a560f7538"
+      ],
       "settings": {
+        "secHeading": "You’ve ghat to know about this.",
+        "secSubHeading": "Varanasi is a city nestled on the banks of the Ganges river in India."
       }
     }
   },
