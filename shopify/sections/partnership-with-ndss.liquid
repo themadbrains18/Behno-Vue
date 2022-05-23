@@ -1,2 +1,52 @@
-<render-sense-of-behno-philanthropy-partnership-with-ndss>
+<render-sense-of-behno-philanthropy-partnership-with-ndss
+:shopify-data="{
+    redText   : `{{ section.settings.redText }}`,
+    secInfo   : `{{ section.settings.secInfo }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    checkImage: `{{ section.settings.checkImage }}`,
+    videolink: `{{ section.settings.videolink }}`   
+}">
 </render-sense-of-behno-philanthropy-partnership-with-ndss>
+
+
+
+{% schema %}
+{
+    "name": "Partnership with Ndss",
+    "settings": [
+     {
+        "id": "redText",
+        "type": "textarea",
+        "label": "Red Text",
+        "default": "“WE LAUNCHED A VERY SPECIAL PARTNERSHIP WITH NDSS TO SUPPORT AND AMPLIFY THE TREMENDOUS WORK THEY DO FOR THE COMMUNITY.”"
+      },
+      {
+        "id": "secInfo",
+        "type": "textarea",
+        "label": "Section Info",
+        "default": "This partnership is very personal to us. The Nini Bag, the jewel of this capsule collection, pays homage to behno’s founder’s darling sister, Nirali, nicknamed “Nini,” who has Down Syndrome."
+      },
+      {
+        "id": "checkImage",
+        "type": "checkbox",
+        "label": "Show Video",
+        "default": true
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "id": "videolink",
+        "type": "text",
+        "label": "Video Link",
+        "default" :"https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+      }
+    ]
+ }
+{% endschema %}

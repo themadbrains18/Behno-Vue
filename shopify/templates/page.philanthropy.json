@@ -1,27 +1,57 @@
 {
-    "sections": {
-      "philanthropy-hero": {
-        "type": "philanthropy-hero"
+  "sections": {
+    "philanthropy-hero": {
+      "type": "philanthropy-hero",
+      "blocks": {
+        "e5acffd1-6c58-49d8-974e-19c2983a030e": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The National Down Syndrome Society (NDSS) and behno collaborate to create a significant partnership to further behno’s commitment to being a wholesome social enterprise founded on championing ethical manufacturing to now supporting nonprofits working to positively impact their communities."
+          }
+        }
       },
-      "bit-about-ndss": {
-        "type": "bit-about-ndss"
-      },
-      "partnership-with-ndss": {
-        "type": "partnership-with-ndss"
-      },
-      "sister-brothers": {
-        "type": "sister-brothers"
+      "block_order": [
+        "e5acffd1-6c58-49d8-974e-19c2983a030e"
+      ],
+      "settings": {
+        "preHeading": "FRONT-END PHILANTHROPHY",
+        "secHeading": "The National Down Syndrome Society x behno.",
+        "image": "shopify:\/\/shop_images\/philanthropy-hero.jpg",
+        "afterImageText": "WITHIN THE CAPSULE COLLECTION ARE OUR SIGNATURE BAGS, ALL IN RED TO HONOR NDSS’ OFFICIAL COLOR. 20% OF ALL SALES ARE DONATED TO NDSS."
       }
-      ,
-      "walk-to-remember": {
-        "type": "walk-to-remember"
-      },
-      "shop-ndss": {
-        "type": "shop-ndss"
-      }
-      
     },
-    "order": [
-      "philanthropy-hero","partnership-with-ndss","bit-about-ndss","sister-brothers","walk-to-remember","shop-ndss"
-    ]
-  }
+    "partnership-with-ndss": {
+      "type": "partnership-with-ndss",
+      "settings": {
+      }
+    },
+    "bit-about-ndss": {
+      "type": "bit-about-ndss",
+      "settings": {
+      }
+    },
+    "sister-brothers": {
+      "type": "sister-brothers",
+      "settings": {
+      }
+    },
+    "walk-to-remember": {
+      "type": "walk-to-remember",
+      "settings": {
+      }
+    },
+    "shop-ndss": {
+      "type": "shop-ndss",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "philanthropy-hero",
+    "partnership-with-ndss",
+    "bit-about-ndss",
+    "sister-brothers",
+    "walk-to-remember",
+    "shop-ndss"
+  ]
+}
