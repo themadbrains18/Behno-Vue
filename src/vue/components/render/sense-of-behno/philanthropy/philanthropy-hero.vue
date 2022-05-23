@@ -114,7 +114,7 @@
 
 <script>
 export default {
-    props: {
+  props: {
     shopifyData: {
       type: Object,
       required: true,
