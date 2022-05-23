@@ -4,9 +4,33 @@
       "type": "our-partner-handbag-hero",
       "settings": {
       }
+    },
+    "ascension-seeker": {
+      "type": "ascension-seeker",
+      "settings": {
+      }
+    },
+    "old-world-craftsmanship": {
+      "type": "old-world-craftsmanship",
+      "settings": {
+      }
+    },
+    "Urbanism-and-development": {
+      "type": "Urbanism-and-development",
+      "settings": {
+      }
+    },
+    "sublime-saturdays": {
+      "type": "sublime-saturdays",
+      "settings": {
+      }
     }
   },
   "order": [
-    "our-partner-handbag-hero"
+    "our-partner-handbag-hero",
+    "ascension-seeker",
+    "old-world-craftsmanship",
+    "Urbanism-and-development",
+    "sublime-saturdays"
   ]
 }
