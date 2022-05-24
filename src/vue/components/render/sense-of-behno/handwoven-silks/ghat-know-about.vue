@@ -38,18 +38,12 @@
         </div>
       </div>
     </div>
-      <!-- <a class="back_sense_behno samll_text" href="#">
-            Back to The Sense of behno
-      </a> -->
-  <!-- Section ghat Know Hero Start -->
   </section>
-  <BackToTop />
 </template>
 
 
 <script>
 // Import Swiper Vue.js components
-import BackToTop from "../../back-to-top.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
@@ -62,8 +56,7 @@ import { Navigation,Autoplay,EffectFade } from "swiper";
 export default {
   components: {
     Swiper,
-    SwiperSlide,
-    BackToTop
+    SwiperSlide
   },
   setup() {
     return {

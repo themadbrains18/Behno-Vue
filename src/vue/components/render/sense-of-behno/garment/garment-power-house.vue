@@ -18,17 +18,12 @@
         </div>
     </section>
 <!-- Section Garment Ethical End -->
-  <BackToTop/>
     
 </template>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
-
 export default{
-    components: {
-      BackToTop
-    },
+   
     props: {
         shopifyData: {
             type: Object,
@@ -39,6 +34,9 @@ export default{
 </script>
 
 <style scoped>
+.sec_power_house{
+    padding: 0 0 117px 0;    
+}
 .big_container{
     padding:  0 50px 0 6px;
 }

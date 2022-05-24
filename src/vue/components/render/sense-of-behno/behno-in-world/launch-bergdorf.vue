@@ -38,12 +38,9 @@
     </div>
   </section>
   <!-- Garment Up-close End -->
-  <BackToTop/>
-
 </template>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -53,7 +50,6 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 export default {
   components: {
-    BackToTop,
     Swiper,
     SwiperSlide
   },
@@ -90,7 +86,7 @@ export default {
 
 <style scoped>
 .sec_launch_bergdoft {
-  padding-top: 136px;
+  padding: 136px 0 50px;
 }
 .sec_content {
   display: grid;

@@ -220,7 +220,55 @@
     },
     "garment-behind-scenes": {
       "type": "garment-behind-scenes",
+      "blocks": {
+        "0b16545b-713b-4e31-afbe-b97f799d2709": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1._GWP.jpg",
+            "imageInfo": ""
+          }
+        },
+        "35540ebc-7a26-4be9-8d86-c3c0a4aa6065": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-GWP.jpg",
+            "imageInfo": ""
+          }
+        },
+        "d8e5f8f9-dcdc-4efa-a338-d35492dbe1f2": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-GWP.jpg",
+            "imageInfo": "(From left to right). Kent Methews and Dan Smith At MSA Ethos."
+          }
+        },
+        "a55b5222-d80c-4166-995a-43ed39abc642": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4-GWP.jpg",
+            "imageInfo": ""
+          }
+        },
+        "66eb209d-8583-4892-a14a-ed00e2484f7b": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5._GWP.jpg",
+            "imageInfo": ""
+          }
+        }
+      },
+      "block_order": [
+        "0b16545b-713b-4e31-afbe-b97f799d2709",
+        "35540ebc-7a26-4be9-8d86-c3c0a4aa6065",
+        "d8e5f8f9-dcdc-4efa-a338-d35492dbe1f2",
+        "a55b5222-d80c-4166-995a-43ed39abc642",
+        "66eb209d-8583-4892-a14a-ed00e2484f7b"
+      ],
       "settings": {
+        "secHeading": "Behind the scenes (and the people).",
+        "secInfo": "BTS with Dan Smith and Kent Mathews as they spend time at MSA Ethos.",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c22fa8072e994b719118c9b90421c4a1.mp4"
       }
     },
     "garment-power-house": {

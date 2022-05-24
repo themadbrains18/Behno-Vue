@@ -71,13 +71,12 @@
             </div>
         </div>
     </section>
-    <BackToTop />
 </template>
 
 
 <style scoped>
 .sublime_saturdays_sec{
-    padding: 120px 0 89px;
+    padding: 120px 0 179px;
 }
 .sec_text {
     max-width: 523px;
@@ -184,7 +183,7 @@
 }
 @media screen and (max-width: 767px) {
     .sublime_saturdays_sec{
-        padding: 30px 0 45px;
+        padding: 30px 0 93px;
         position: relative;
         overflow-x: hidden;
     }
@@ -236,11 +235,7 @@
 
 <script>
 // Import Swiper Vue.js components
-import BackToTop from "../../back-to-top.vue";
 export default {
-  components: {
-    BackToTop
-  },
    props: {
     shopifyData: {
       type: Object,

@@ -13,24 +13,36 @@
                 <div class="sec_content_inner">
                     <div class="sec_img">
                         <div class="top_images">
-                            <img class="item1"  src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1._GWP.jpg?v=1652700212" alt="">
-                            <img class="item2" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/2-GWP.jpg?v=1652700212" alt="">
+                            <template v-if="shopifyData.collageData[0]"> 
+                                <img class="item1" :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
+                            </template>
+                            <template v-if="shopifyData.collageData[1]"> 
+                                <img class="item2" :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
+                            </template>
                         </div>
                         <div class="bottom_images">
-                            <div class="img_caption"> 
-                                <img class="item3" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/3-GWP.jpg?v=1652700212" alt="">
-                                <p class="fig_caption">(From left to right). Kent Methews and Dan Smith At MSA Ethos.</p>
+                            <div class="img_caption" v-if="shopifyData.collageData[2]"> 
+                                <img class="item3" :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
                             </div>
-                            <img class="item4" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/4-GWP.jpg?v=1652700212" alt="">
-                            <img class="item5" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/5._GWP.jpg?v=1652700212" alt="">
+                            <template v-if="shopifyData.collageData[3]">
+                                <img class="item4" :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
+                            </template>
+                            <template v-if="shopifyData.collageData[4]">
+                                <img class="item5" :src=(shopifyData.collageData[4].imgUrl.src) :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)  :alt=(shopifyData.collageData[4].imgUrl.alt)>
+                            </template>
                         </div>
                     </div>
                 </div>
                     <div class="sec_video">
-                        <video width="340" height="604" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" class="shogun-image ">
-                            <source src="https://i.shgcdn.com/dff50808-792e-478f-bb8f-4066cb73301e/gif2video/-/format/webm/-/quality/lighter/" type="video/webm">
-                            <source src="https://i.shgcdn.com/dff50808-792e-478f-bb8f-4066cb73301e/gif2video/-/format/mp4/-/quality/lighter/" type="video/mp4">
-                        </video>        
+                         <template v-if="shopifyData.checkImage === 'true'">
+                            <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+                                <source :src=(shopifyData.videolink) >
+                            </video>
+                        </template>
+                        <template v-else>
+                            <img  :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+                        </template>    
                     </div>
             </div>
         </div>
@@ -171,6 +183,7 @@ export default{
     } */
     .sec_content{
         justify-content: flex-end;
+        gap: 15px;
     }
     .top_images,
     .bottom_images{
@@ -197,7 +210,7 @@ export default{
         width: 70px;
     }
     .fig_caption{
-        font-size: 6px;
+        font-size: 7px;
         max-width: 80px;
     }
 }

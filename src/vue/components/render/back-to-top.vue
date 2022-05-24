@@ -1,12 +1,8 @@
 <template>
-    
-    <a class="back_sense_behno samll_text" href="#">
-      back_sense_behno
-    </a> 
+  <div></div>
     <!-- <a class="back_sense_behno samll_text" :href=(shopifyData.link)>
       {{ shopifyData.ctaText }}
     </a>  -->
-
 </template>
 
 <style scoped>

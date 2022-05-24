@@ -17,7 +17,6 @@
     </div>
   </section>
 
-  <BackToTop/>
   <!-- Section Garment Ethical End -->
 </template>
 <style scoped>
@@ -80,17 +79,13 @@ iframe {
 }
 </style>
 <script>
-import BackToTop from "../../back-to-top.vue"
 export default {
   props: {
     shopifyData: {
       type: Object,
       required: true,
     },
-  },
-  components : {
-        BackToTop
-    }
+  }
 };
 </script>
 

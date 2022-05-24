@@ -44,22 +44,15 @@
             </div>
         </div>
     </section>
-    
-    <BackToTop/>
-
 </template>
 
 <script>
-import BackToTop from "../../back-to-top.vue"
 export default {
     props: {
         shopifyData: {
         type: Object,
         required: true,
         }
-    },
-    components : {
-        BackToTop
     }
 }
 </script>
@@ -73,7 +66,7 @@ export default {
         line-height: 44px;
     }
     .main_contenet{
-        max-width: 494px;
+        max-width: 494px;   
         margin: 0 auto;
         width: 100%;
     }

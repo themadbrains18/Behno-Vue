@@ -3,9 +3,6 @@
         <div class="big_container">
             <h2 class="card_heading_b" data-v-75498a5c="">{{ shopifyData.secSubHeading }}</h2>
             <div class="sec_video">
-                <!-- <video autoplay="" loop="" webkit-playsinline="true" playsinline="true" preload="none" >
-                    <source src="https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176">
-                </video> -->
                 <template v-if="shopifyData.checkImage === 'true'">
                     <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
                         <source :src=(shopifyData.videolink) />

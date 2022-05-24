@@ -27,8 +27,6 @@
     </div>
     
   </section>
-
-  <BackToTop/>
   <!-- ========== Section Forming real relationships End ========== -->
 </template>
 
@@ -147,12 +145,8 @@
 </style>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
 
 export default {
-  components: {
-    BackToTop
-  },
   props: {
     shopifyData: {
       type: Object,
