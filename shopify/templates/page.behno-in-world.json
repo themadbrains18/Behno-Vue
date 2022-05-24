@@ -193,12 +193,51 @@
     },
     "speaking-engagement": {
       "type": "speaking-engagement",
+      "blocks": {
+        "72dd4103-4d25-4d1e-be82-5f9a899ddd95": {
+          "type": "paragraph",
+          "settings": {
+            "para": "behno founder spoke on fashion as an industry capable of mobilizing communities and consumers for social change and global impact and share his story and social enterprise model. The talk was attended by diplomats, figureheads, and industry veterans."
+          }
+        },
+        "bd6a8e00-57cf-4f3c-b25e-9adf8375e005": {
+          "type": "paragraph",
+          "settings": {
+            "para": "For the first time, the United Nations discussed the fashion industry as a mobilizer for change by inviting six leaders in the fashion space to present their business models to discuss best practices and stimulate dialogue."
+          }
+        },
+        "70dba898-3778-4460-a039-ba845959676f": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slideimg1.jpg",
+            "imageInfo": "The speakers included (L to R ) Shivam, Andrea Reyes,Pattrick Duffy,Amanda Carr,Ashia Dearwester and Lilian Liu."
+          }
+        },
+        "8e0bf4f6-d0ed-45a3-aabe-c31266c6a55c": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slideimg2.jpg",
+            "imageInfo": ""
+          }
+        },
+        "9fcfbf08-131f-40f3-bcdd-105aa53ea953": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/working-artisan-left.jpg",
+            "imageInfo": "Over 700 Indivisual gathred at the united Nations to discuss fashion as a social mobilizer."
+          }
+        }
+      },
+      "block_order": [
+        "72dd4103-4d25-4d1e-be82-5f9a899ddd95",
+        "bd6a8e00-57cf-4f3c-b25e-9adf8375e005",
+        "70dba898-3778-4460-a039-ba845959676f",
+        "8e0bf4f6-d0ed-45a3-aabe-c31266c6a55c",
+        "9fcfbf08-131f-40f3-bcdd-105aa53ea953"
+      ],
       "settings": {
         "secHeading": "Speaking engagement at the United Nations, a first of its kind.",
-        "secSubHeading": "behno founder, Shivam Punjya, was invited to the United Nations to speak on fashion as a social mobilizer.",
-        "secInfo": "behno founder spoke on fashion as an industry capable of mobilizing communities and consumers for social change and global impact and share his story and social enterprise model. The talk was attended by diplomats, figureheads, and industry veterans.",
-        "InfoBreak": "For the first time, the United Nations discussed the fashion industry as a mobilizer for change by inviting six leaders in the fashion space to present their business models to discuss best practices and stimulate dialogue.",
-        "secImg": "shopify:\/\/shop_images\/grid-image.png"
+        "secSubHeading": "behno founder, Shivam Punjya, was invited to the United Nations to speak on fashion as a social mobilizer."
       }
     },
     "launch-bergdorf": {

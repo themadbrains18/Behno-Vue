@@ -1,14 +1,37 @@
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+            {
+                para : `{{ block.settings.para }}`
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
 <render-sense-of-behno-behno-in-world-speaking-engagement :shopify-data="{
     secHeading: `{{ section.settings.secHeading }}`,
     secSubHeading: `{{ section.settings.secSubHeading }}`,
-    secInfo: `{{ section.settings.secInfo }}`,
-    InfoBreak: `{{ section.settings.InfoBreak }}`,
-    imgUrl: {
-        src : `{{ section.settings.secImg | img_url : "" }}`,
-        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
-        alt: `{{ section.settings.secImg.alt }}`
-    }
-
+    paragraph  :  {{ paraData }},
+    collageData  : {{ collageData }}
 }">
 </render-sense-of-behno-behno-in-world-speaking-engagement>
 
@@ -29,25 +52,36 @@
             "label":"Section Sub Heading",
             "default":"behno founder, Shivam Punjya, was invited to the United Nations to speak on fashion as a social mobilizer."
 
+        }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
         },
         {
-            "id":"secInfo",
-            "type":"text",
-            "label":"Section Info",
-            "default":"behno founder spoke on fashion as an industry capable of mobilizing communities and consumers for social change and global impact and share his story and social enterprise model. The talk was attended by diplomats, figureheads, and industry veterans."
-
-        },
-        {
-            "id":"InfoBreak",
-            "type":"text",
-            "label":"Section Info After Break",
-            "default":"For the first time, the United Nations discussed the fashion industry as a mobilizer for change by inviting six leaders in the fashion space to present their business models to discuss best practices and stimulate dialogue."
-
-        },
-        {
-            "id":"secImg",
-            "type":"image_picker",
-            "label":"Section Image"
+            "name": "Collage Image",
+            "type" : "collage",
+            "limit" : 3,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id":"imageInfo",
+                    "type":"text",
+                    "label":"Image Info"
+                }
+            ]
         }
     ]
 }

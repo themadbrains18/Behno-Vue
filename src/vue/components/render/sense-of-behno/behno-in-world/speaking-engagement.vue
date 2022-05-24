@@ -9,29 +9,25 @@
                 <h4 class="card_heading_b">
                     {{ shopifyData.secSubHeading }}
                 </h4>
-                <p class="body_text">
-                    {{ shopifyData.secInfo }}
-                </p>
-                <p class="body_text">
-                    {{ shopifyData.InfoBreak }}
+                <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
+                    {{ item.para }}
                 </p>
             </div>
-            <div class="sec_img">
-                   <!-- <img :src=(shopifyData.imgUrl.src) :placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />   -->
+            <div class="sec_img">                 
                 <div class="img_grid">
                     <div class="grid_items">
-                        <div class="figCaption">  
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/slideimg1.jpg?v=1652527132" alt="">  
-                            <p class="fig_caption">The speakers included (L to R ) Shivam, Andrea Reyes,Pattrick Duffy,Amanda Carr,Ashia Dearwester and Lilian Liu.</p>
+                        <div class="figCaption" v-if="shopifyData.collageData[0]">    
+                            <img :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>   
                         </div>
-                        <div class="figCaption middle">  
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/slideimg2.jpg?v=1652527144" alt="">  
+                        <div class="figCaption middle" v-if="shopifyData.collageData[1]">  
+                            <img :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>  
                         </div>
                     </div>
                     <div class="grid_items">
-                        <div class="figCaption">  
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/working-artisan-left.jpg?v=1652526860" alt="">  
-                            <p class="fig_caption">Over 700 Indivisual gathred at the united Nations to discuss fashion as a social mobilizer.</p>
+                        <div class="figCaption" v-if="shopifyData.collageData[2]">  
+                            <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
                         </div>
                     </div>
                 </div>
@@ -140,7 +136,7 @@
             gap: 23px;
         }
         .fig_caption{
-            font-size: 8px;
+            font-size: 7px;
         }
         .grid_items{
             gap: 26px;

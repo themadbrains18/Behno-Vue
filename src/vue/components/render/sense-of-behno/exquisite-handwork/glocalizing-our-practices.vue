@@ -16,26 +16,26 @@
                 <div class="sec_img">
                     <div class="sec_img_inner">
                         <div class="images_row">
-                            <div class="figCaption1"> 
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
-                                <p class="fig_caption">Some of the many zardozi colours available for us to choose from.</p>
+                            <div class="figCaption1" v-if="shopifyData.collageData[0]"> 
+                                <img :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
                             </div>
-                            <div class="figCaption2"> 
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/2-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
-                                <p class="fig_caption">Our go-to zardozi at the Malad.</p>
+                            <div class="figCaption2" v-if="shopifyData.collageData[1]"> 
+                                <img :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[1].imageInfo }}</p>
                             </div>
-                            <div class="figCaption3"> 
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/3-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
+                            <div class="figCaption3" v-if="shopifyData.collageData[2]"> 
+                                <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>                                
                             </div>
                         </div>
                         <div class="images_row last">
-                            <div class="figCaption4"> 
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/4-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
-                                <p class="fig_caption">studio floor,embroidery threads.</p>
+                            <div class="figCaption4" v-if="shopifyData.collageData[3]"> 
+                                <img :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[3].imageInfo }}</p>
                             </div>
-                            <div class="figCaption5"> 
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/5-EXQUISITEHANDWORK.jpg?v=1652763172" alt="error" />
-                                <p class="fig_caption">Our go-to glass bead supplier at the Malad Market.</p>
+                            <div class="figCaption5" v-if="shopifyData.collageData[4]"> 
+                                <img :src=(shopifyData.collageData[4].imgUrl.src) :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)  :alt=(shopifyData.collageData[4].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[4].imageInfo }}</p>
                             </div>
                         </div>
                     </div>
@@ -99,21 +99,26 @@ export default {
         gap: 20px;
     }
     .figCaption1{
-        width: 345px;
+        max-width: 345px;
+        width: 100%;
     }
     .figCaption2{
-        width: 484px;
+        max-width: 484px;
+        width: 100%;
     }
     .figCaption3{
-        width: 295px;
+        max-width: 295px;
+        width: 100%;
         align-self: flex-start;
     }
     .figCaption4{
-        width: 472px;
+        max-width: 472px;
+        width: 100%;
         margin-top: -68px;
     }
     .figCaption5{
-        width: 571px;
+        max-width: 571px;
+        width: 100%;
     }
     .images_row.last{
         justify-content: space-evenly;        
@@ -132,11 +137,14 @@ export default {
         .main_contenet{
             padding: 0 25px;
         }
+        .images_row.last{
+            margin-top: 20px;
+        }
         
     }
     @media screen  and (max-width: 767px){
         .sec_glocalizing_our_practices{
-            padding: 38px 0 100px;
+            padding: 38px 0 53px;
         }
         .sec_content{
             margin-top: 43px;
@@ -144,25 +152,28 @@ export default {
         .sec_img{
             margin: 45px 0 0px;
         }
-        .images_row[data-v-dafdbb6c] {
+        .images_row{
             justify-content: space-evenly;
             gap: 15px;
-        }
-        .figCaption1{
-            width: 95px;
-        }
-        .figCaption2{
-            width: 130px;
-        }
-        .figCaption3{
-            width: 80px;
         }
         .fig_caption{
             font-size: 8px;
             line-height: 1;
         }
-        .figCaption4[data-v-dafdbb6c] {
+        .figCaption4{
             margin-top: -23px;
         }
+   
+    }
+    @media screen  and (max-width: 480px){
+        .figCaption4{
+            max-width: 165px;
+        }
+        .figCaption1 {
+            max-width: 90px;
+        }
+        .figCaption3{
+            max-width: 95px;
+        }     
     }
 </style>    
