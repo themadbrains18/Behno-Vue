@@ -6,14 +6,15 @@
                 <div class="sec_content_inner">
                     <div class="sec_img">
                         <div class="image_grid">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/Urbanism_and_development_sec.png?v=1653041500" alt="error">
+                            <img :src=(shopifyData.SecImg.src) :placeholder=(shopifyData.SecImg.placeholder) :alt=(shopifyData.SecImg.alt) />
                         </div>
                     </div>
                     <div class="sec_text">
-                        <h2 class="sec_heading">Urbanism and development among heritage and history.</h2>
-                        <h4 class="card_heading_b">Nashik, an unspoken gem of a city.</h4>
-                        <p class="body_text">The behno team spends much time in Nashik, the city where our partner factory in India is based. Nashik is one of the oldest cities in the subcontinent, located in the western state of Maharashtra, about a four hour car journey from Mumbai. The ride crosses various terrains – dizzying cityscapes, magnificent mountains, vast farmlands, and flowing rivers – on both smooth and bumpy roads.</p>
-                        <p class="body_text">We go to the factory to personally do quality control, assuring you receive the best object we make. While we’re there, we also work with their teams to experiment with design development, build relationships, and most importantly, to get a pulse of what’s going on in the field at a grassroots level.</p>
+                        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+                        <h4 class="card_heading_b">{{ shopifyData.secSubHeading }}</h4>
+                        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
+                            {{ item.para }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -70,3 +71,14 @@
     }
 }
 </style>
+
+<script>
+export default{
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

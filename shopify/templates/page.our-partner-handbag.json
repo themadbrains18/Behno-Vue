@@ -3,6 +3,217 @@
     "our-partner-handbag-hero": {
       "type": "our-partner-handbag-hero",
       "settings": {
+        "secSubHeading": "OUR PARTNER HANDBAG FACTORY",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+      }
+    },
+    "ascension-seeker": {
+      "type": "ascension-seeker",
+      "blocks": {
+        "264f70fd-a2d6-4403-ab82-c1ffa9b4149c": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Recycling plastics, metals and leathers isn’t easy. It requires diligent time and effort implementing processes and protocol, which our partner factory is committed to. They’re also constantly working toward reducing their carbon footprint by utilizing state-of-the-art, energy saving machinery and infrastructure."
+          }
+        },
+        "b03e5db5-8958-4bc4-a167-6ebf2cb73be2": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The factory is REACH compliant, to protect its workers’ human health, and also ISO 14001 and ISO 9001 certified, assuring it has an effective environmental management system in place. Most vital to our partnership with them is their incremental implementation of “The behno Standard.“"
+          }
+        },
+        "1b898318-6b89-4ae9-8138-451885b2bdb5": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ascension-seeker-slide3.jpg"
+          }
+        },
+        "e20eed5c-2356-4c8c-bf5f-27e1b843ccc4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ascension-seeker-slide2.jpg"
+          }
+        },
+        "de8929ec-dfc4-4ad5-8855-24bc4aa4c294": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ascension-seeker-slide1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "264f70fd-a2d6-4403-ab82-c1ffa9b4149c",
+        "b03e5db5-8958-4bc4-a167-6ebf2cb73be2",
+        "1b898318-6b89-4ae9-8138-451885b2bdb5",
+        "e20eed5c-2356-4c8c-bf5f-27e1b843ccc4",
+        "de8929ec-dfc4-4ad5-8855-24bc4aa4c294"
+      ],
+      "settings": {
+        "secHeading": "Ascension Seeker.",
+        "subHeading": "Our partner factory ensures it minimizes its environmental impact by sustainably sourcing its materials and subsequently recycling any waste, and, of coursee, works with and treats its people with utmost respect and financial security.",
+        "secImg": "shopify:\/\/shop_images\/ascension-seeker.jpg"
+      }
+    },
+    "old-world-craftsmanship": {
+      "type": "old-world-craftsmanship",
+      "blocks": {
+        "29e08f0f-fe97-489b-8042-d75425061058": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The behno team interprets age-old heritage craft for the modern you. The attention to detail, the slow, meticulous construction of an object is paramount to both our factory and us."
+          }
+        },
+        "4f2d9002-06b9-4091-95d7-35cb7fef3b97": {
+          "type": "paragraph",
+          "settings": {
+            "para": "We want to create beautiful pieces that you grow into over the years to come."
+          }
+        },
+        "3a1ef8c8-f591-4341-83bc-7bb4050362ab": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img7.jpg"
+          }
+        },
+        "047b2977-32c9-4c12-8b30-183fba0400d3": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img8.jpg"
+          }
+        },
+        "3c63e580-840e-4356-b697-5b0f762ee83e": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img1.jpg"
+          }
+        },
+        "f202392c-a037-4acd-ab5d-74c96f4f6181": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img7.jpg"
+          }
+        },
+        "a319c184-ea3a-4fc7-bf66-5abf36e5fcad": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img4.jpg"
+          }
+        },
+        "895d49db-1fdd-4579-9e4a-8391358ab3bf": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img5.jpg"
+          }
+        },
+        "f18ef185-d110-4109-ab32-34f7a29b625e": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img8.jpg"
+          }
+        },
+        "d4c7dc28-2398-4070-9d74-64664ecb1ec4": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img2.jpg"
+          }
+        },
+        "b121cacd-63cb-4508-9ee6-e49c4d9d6018": {
+          "type": "gridImages",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "29e08f0f-fe97-489b-8042-d75425061058",
+        "4f2d9002-06b9-4091-95d7-35cb7fef3b97",
+        "3a1ef8c8-f591-4341-83bc-7bb4050362ab",
+        "047b2977-32c9-4c12-8b30-183fba0400d3",
+        "3c63e580-840e-4356-b697-5b0f762ee83e",
+        "f202392c-a037-4acd-ab5d-74c96f4f6181",
+        "a319c184-ea3a-4fc7-bf66-5abf36e5fcad",
+        "895d49db-1fdd-4579-9e4a-8391358ab3bf",
+        "f18ef185-d110-4109-ab32-34f7a29b625e",
+        "d4c7dc28-2398-4070-9d74-64664ecb1ec4",
+        "b121cacd-63cb-4508-9ee6-e49c4d9d6018"
+      ],
+      "settings": {
+        "secHeading": "Old-world craftsmanship,new world needs.",
+        "secSubHeading": "The hands and tools.",
+        "redText": "“NASHIK HAS BECOME HOME FOR US.”",
+        "secImg": "shopify:\/\/shop_images\/flower-hand.png"
+      }
+    },
+    "Urbanism-and-development": {
+      "type": "Urbanism-and-development",
+      "blocks": {
+        "a6ac0f8a-76f4-4a99-a1e1-42226e546b57": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The behno team spends much time in Nashik, the city where our partner factory in India is based. Nashik is one of the oldest cities in the subcontinent, located in the western state of Maharashtra, about a four hour car journey from Mumbai. The ride crosses various terrains – dizzying cityscapes, magnificent mountains, vast farmlands, and flowing rivers – on both smooth and bumpy roads."
+          }
+        },
+        "c2c40b0e-9929-470d-af1a-a39bcd8fad7e": {
+          "type": "paragraph",
+          "settings": {
+            "para": "We go to the factory to personally do quality control, assuring you receive the best object we make. While we’re there, we also work with their teams to experiment with design development, build relationships, and most importantly, to get a pulse of what’s going on in the field at a grassroots level."
+          }
+        }
+      },
+      "block_order": [
+        "a6ac0f8a-76f4-4a99-a1e1-42226e546b57",
+        "c2c40b0e-9929-470d-af1a-a39bcd8fad7e"
+      ],
+      "settings": {
+        "secHeading": "Urbanism and development among heritage and history.",
+        "subHeading": "Nashik, an unspoken gem of a city.",
+        "secImg": "shopify:\/\/shop_images\/Urbanism_and_development_sec.png"
+      }
+    },
+    "sublime-saturdays": {
+      "type": "sublime-saturdays",
+      "blocks": {
+        "076c1d47-9e4f-4c08-9ceb-cd1daed0a6ad": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The behno team takes time on Saturdays to explore and absorb Nashik and its locality – its markets, temples, local vineyards, caves, and all the serene sights making the city so special."
+          }
+        },
+        "5d5276ff-6129-4982-bb81-c7b400a72ccd": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The colors of the city, its vibrancy, its people, and its peri-urban landscape foster an intimacy with a space unique to Nashik."
+          }
+        }
+      },
+      "block_order": [
+        "076c1d47-9e4f-4c08-9ceb-cd1daed0a6ad",
+        "5d5276ff-6129-4982-bb81-c7b400a72ccd"
+      ],
+      "settings": {
+        "secHeading": "Sublime Saturdays.",
+        "subHeading": "The hands and tools.",
+        "collargeImg1": "shopify:\/\/shop_images\/3-NASHIK.jpg",
+        "imgInfo1": "Finding Inspiration in small, unexpected corners while exploring Nashik.",
+        "collargeImg2": "shopify:\/\/shop_images\/4-NASHIK.jpg",
+        "imgInfo2": "A woman holding her rain poncho in the city center.",
+        "collargeImg3": "shopify:\/\/shop_images\/2-NASHIK.jpg",
+        "imgInfo3": "Sunrise form the Pandaoleni Cavas.",
+        "collargeImg4": "shopify:\/\/shop_images\/5-NASHIK.jpg",
+        "imgInfo4": "The terrain on the outskirts of Nashik",
+        "collargeImg5": "shopify:\/\/shop_images\/6-NASHIK.jpg",
+        "imgInfo5": "Views of Rock cut Caves on early morning hikes.",
+        "collargeImg6": "shopify:\/\/shop_images\/7-NASHIK.jpg",
+        "imgInfo6": "Sunset From our Factory.",
+        "collargeImg7": "shopify:\/\/shop_images\/8-NASHIK.jpg",
+        "imgInfo7": "Sunrise form the Pandaoleni Caves , Nashik.",
+        "collargeImg8": "shopify:\/\/shop_images\/9-NASHIK.jpg",
+        "imgInfo8": "A snapshot of our morning drive From Mumbai to Nashik.",
+        "collargeImg9": "shopify:\/\/shop_images\/10-NASHIK.jpg",
+        "imgInfo9": "An evening at Sula Vineyards , Where the Behno team relaxed with cowworkers From this factory.",
+        "collargeImg10": "shopify:\/\/shop_images\/11-NASHIK.jpg",
+        "imgInfo10": "A flower vendor outside the Trimbakeshwar temple."
       }
     },
     "ascension-seeker": {

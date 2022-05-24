@@ -5,64 +5,65 @@
             <div class="sec_content">
                 <div class="sec_content_inner">
                     <div class="sec_text">
-                        <h2 class="sec_heading">Sublime Saturdays.</h2>
-                        <h4 class="card_heading_b">The hands and tools.</h4>
-                        <p class="body_text">The behno team takes time on Saturdays to explore and absorb Nashik and its locality – its markets, temples, local vineyards, caves, and all the serene sights making the city so special.</p>
-                        <p class="body_text">The colors of the city, its vibrancy, its people, and its peri-urban landscape foster an intimacy with a space unique to Nashik.</p>
+                        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+                        <h4 class="card_heading_b">{{ shopifyData.secSubHeading }}</h4>
+                        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
+                            {{ item.para }}
+                        </p>
                     </div>
                 </div>
                 <div class="image_collarge">
                     <div class="first_column">
                         <div class="image_wrapper first">
                             <div class="fig_cption_inner first">
-                                <img class="img_item_1" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/3-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">Finding Inspiration in small, unexpected corners while exploring Nashik.</p>
+                                <img class="img_item_1" :src=(shopifyData.collargeImg1.src) :placeholder=(shopifyData.collargeImg1.placeholder) :alt=(shopifyData.collargeImg1.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo1 }}</p>
                             </div>
                             <div class="fig_cption_inner second">
-                                <img  class="img_item_2" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/4-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">A woman holding her rain poncho in the city center.</p>
+                                <img  class="img_item_2" :src=(shopifyData.collargeImg2.src) :placeholder=(shopifyData.collargeImg2.placeholder) :alt=(shopifyData.collargeImg2.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo2 }}</p>
                             </div>
                         </div>
                         <div class="image_wrapper second">
                             <div class="fig_cption_inner">
-                                <img class="img_item_3" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/2-NASHIK.jpg?v=1653031574" alt="error">
-                                <p class="fig_caption">Sunrise form the Pandaoleni Cavas.</p>
+                                <img class="img_item_3" :src=(shopifyData.collargeImg3.src) :placeholder=(shopifyData.collargeImg3.placeholder) :alt=(shopifyData.collargeImg3.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo3 }}</p>
                             </div>
                             <div class="fig_cption_inner">
-                                <img class="img_item_4" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/5-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">The terrain on the outskirts of Nashik</p>
+                                <img class="img_item_4" :src=(shopifyData.collargeImg4.src) :placeholder=(shopifyData.collargeImg4.placeholder) :alt=(shopifyData.collargeImg4.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo4 }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="second_column">
                         <div class="image_wrapper third">
                             <div class="fig_cption_inner inner-first">
-                                <img class="img_item_5" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/6-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">Views of Rock cut Caves on early morning hikes.</p>
+                                <img class="img_item_5" :src=(shopifyData.collargeImg5.src) :placeholder=(shopifyData.collargeImg5.placeholder) :alt=(shopifyData.collargeImg5.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo5 }}</p>
                             </div>
                             <div class="fig_cption_inner inner-second">
-                                <img class="img_item_6" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/7-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">Sunset From our Factory.</p>
+                                <img class="img_item_6" :src=(shopifyData.collargeImg6.src) :placeholder=(shopifyData.collargeImg6.placeholder) :alt=(shopifyData.collargeImg6.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo6 }}</p>
                             </div>
                             <div class="fig_cption_inner inner-third">
-                                <img class="img_item_7" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/8-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">Sunrise form the Pandaoleni Caves , Nashik.</p>
+                                <img class="img_item_7" :src=(shopifyData.collargeImg7.src) :placeholder=(shopifyData.collargeImg7.placeholder) :alt=(shopifyData.collargeImg7.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo7 }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="third_column">
                         <div class="image_wrapper fourth">
                             <div class="fig_cption_inner inner-fourth">
-                                <img class="img_item_8" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/9-NASHIK.jpg?v=1653031574" alt="error">
-                                <p class="fig_caption">A snapshot of our morning drive From Mumbai to Nashik.</p>
+                                <img class="img_item_8" :src=(shopifyData.collargeImg8.src) :placeholder=(shopifyData.collargeImg8.placeholder) :alt=(shopifyData.collargeImg8.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo8 }}</p>
                             </div>
                             <div class="fig_cption_inner inner-fifth">
-                                <img class="img_item_9" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/10-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">An evening at Sula Vineyards , Where the Behno team relaxed with cowworkers From this factory.</p>
+                                <img class="img_item_9" :src=(shopifyData.collargeImg9.src) :placeholder=(shopifyData.collargeImg9.placeholder) :alt=(shopifyData.collargeImg9.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo9 }}</p>
                             </div>
                             <div class="fig_cption_inner inner-sixth">
-                                <img class="img_item_10" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/11-NASHIK.jpg?v=1653031573" alt="error">
-                                <p class="fig_caption">A flower vendor outside the Trimbakeshwar temple.</p>
+                                <img class="img_item_10" :src=(shopifyData.collargeImg10.src) :placeholder=(shopifyData.collargeImg10.placeholder) :alt=(shopifyData.collargeImg10.alt)>
+                                <p class="fig_caption">{{ shopifyData.imgInfo10 }}</p>
                             </div>
                         </div>
                     </div>

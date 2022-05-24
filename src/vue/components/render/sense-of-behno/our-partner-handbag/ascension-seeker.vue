@@ -12,7 +12,6 @@
                         </p>
                     </div>
                     <div class="sec_img">
-                        <!-- <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/ascension-seeker.jpg?v=1653025175" alt="error"> -->
                         <img :src=(shopifyData.SecImg.src) :placeholder=(shopifyData.SecImg.placeholder) :alt=(shopifyData.SecImg.alt)>
                     </div>
                 </div>
@@ -29,10 +28,9 @@
                         delay: 2000,
                         disableOnInteraction: false,
                         }"
-                        class="mySwiper ascension-seeker-slider"
-                    >
+                        class="mySwiper ascension-seeker-slider">
                         <swiper-slide v-for="(value, key) in shopifyData.SlidedynamicData" :key="key">
-                            <img :src=(value.sliderImg.src) :src-placeholder=(value.sliderImg.placeholder) :alt=(value.sliderImg.src)>
+                            <img :src=(value.sliderImg.src) :placeholder=(value.sliderImg.placeholder) :alt=(value.sliderImg.src)>
                         </swiper-slide>
                     </swiper>   
                 </div>

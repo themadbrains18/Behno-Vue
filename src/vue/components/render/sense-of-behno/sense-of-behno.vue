@@ -3,32 +3,31 @@
     <!-- Sec Head -->
     <div class="sec_head">
       <div class="hero-component">
-        <h1 class="main_heading item1">The <br />Sense</h1>
+        <h1 class="main_heading item1">{{ shopifyData.secTopHeading }}</h1>
         <div class="hero_img">
-          <img class="for-desktop" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/banner-flower.png?v=1651133061" alt="error"/>
-          <img class="for-mobile" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/flower-res.png?v=1651137373" alt="error"/>
+          <img :src=(shopifyData.imgUrl.src) :placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
         </div>
-        <h1 class="main_heading item2">of <br />behno</h1>
+        <h1 class="main_heading item2">{{ shopifyData.secBottomHeading }}</h1>
       </div>
       <p class="body_text t-center">
-        Welcome to our world. Get to know what encompasses our essence.
+        {{ shopifyData.secBrief }}
       </p>
       <div class="sec_btn t-center">
-        <a href="#" class="cta_btn">LEARN ABOUT OUR STORY</a>
+        <a :href=(shopifyData.SecBtnLink) class="cta_btn">{{ shopifyData.SecBtn }}</a>
       </div>
     </div>
     <!-- Sec Content -->
     <div class="sec_content">
         <div class="sense_cards">
-            <div class="card">
+            <div class="card" v-for="(value, key) in shopifyData.cardData" :key="key">
                 <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card1.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
+                    <img :src=(value.cardImg.src) :placeholder=(value.cardImg.placeholder) :alt=(value.cardImg.src) >
+                    <a :href=(value.cardCtaLink) class="cta_btn">{{ value.cardCta }}</a>
                 </div>
-                <h4 class="card_heading_b">OUR ETHICAL PHILOSOPHY</h4>
-                <p class="body_text">Learn more about our foundational value system. It's an entire system coming together.</p>
+                <h4 class="card_heading_b">{{ value.cardHeading }}</h4>
+                <p class="body_text">{{ value.cardBrief }}</p>
             </div>
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card_img">
                     <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card2.jpg?v=1651138225" alt="error">
                     <a href="#" class="cta_btn">LEARN MORE</a>
@@ -91,7 +90,7 @@
                 </div>
                 <h4 class="card_heading_b">OUR HOME BASE</h4>
                 <p class="body_text">With love from the city that grounds, stimulates, and creates us without ever sleeping.</p>
-            </div>
+            </div> -->
         </div>
     </div>
   </section>
@@ -112,14 +111,16 @@
   text-align: right;
 }
 .hero_img img {
-  width: 1020px;
-  height: 605px;
+  max-width: 1020px;
+  width: 100%;
   margin-bottom: 11px;
 }
 .main_heading {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 200px;   
+    margin: 0 auto;
 }
 .item1 {
   top: 0;
@@ -166,15 +167,20 @@
 }
 .card_img img{
     display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
 }
-@media(hover:hover){
+
+
     .card:hover .cta_btn{
         /* transform: translate(-50%,-50%); */
         top: 50%;
         opacity: 1;
         visibility: visible;
     }
-}   
+
 /* Responsive Breakpoints */
 @media(max-width:991px){
     .sense_cards {
@@ -201,6 +207,7 @@
         top: 0;
         left: 0;
         text-align: center;
+        max-width: 160px;   
     }
     .hero_img img {
         margin-bottom: 0;    
@@ -217,6 +224,12 @@
     }
     .sec_head {
         padding-bottom: 82px;
+    }
+    .card_img img{
+        height: 217px;
+    }
+    .card .cta_btn{
+        padding: 20px;
     }
 }
 @media(min-width:768px){
@@ -240,3 +253,15 @@
     }
 }
 </style>
+
+<script>
+export default{
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
+

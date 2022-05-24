@@ -5,33 +5,26 @@
             <div class="sec_content">
                 <div class="sec_content_inner">
                     <div class="sec_text">
-                        <h2 class="sec_heading">Old-world craftsmanship,new world needs.</h2>
-                        <h4 class="card_heading_b">The hands and tools.</h4>
-                        <p class="body_text">The behno team interprets age-old heritage craft for the modern you. The attention to detail, the slow, meticulous construction of an object is paramount to both our factory and us.</p>
-                        <p class="body_text">We want to create beautiful pieces that you grow into over the years to come.</p>
+                        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+                        <h4 class="card_heading_b">{{ shopifyData.secSubHeading }}</h4>
+                        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index"> {{ item.para }}</p>
                     </div>
                     <div class="sec_img">
                         <div class="image_grid">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
+                            <template v-for="(value, key) in shopifyData.gridImages" :key="key">
+                                <img :src=(value.gridImg.src) :placeholder=(value.gridImg.placeholder) :alt=(value.gridImg.alt)>
+                            </template>
                         </div>
                     </div>
                 </div>  
                 <div class="sec_content_inner bottom">
                     <div class="sec_text">
                         <h2 class="quotes_text">
-                            “NASHIK HAS BECOME HOME FOR US.”
+                            {{ shopifyData.redText }}
                         </h2>
                     </div>
                     <div class="sec_img">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/flower-hand.png?v=1653039853" alt="error">
+                        <img :src=(shopifyData.secImg.src) :placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt)>
                     </div>
                 </div>
             </div>
@@ -112,3 +105,14 @@
     }
 }
 </style>
+
+<script>
+export default {
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

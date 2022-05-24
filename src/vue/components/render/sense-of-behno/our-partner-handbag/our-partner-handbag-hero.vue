@@ -28,6 +28,8 @@
     }
     .card_heading_b{
         margin-bottom: 24px;
+        text-align:center;
+
     }
     .sec_video video{
         display: block;
