@@ -1,7 +1,9 @@
 <template>
-    <a class="back_sense_behno samll_text" href="#">
-      Back to The Sense of behno 
-    </a> 
+    back_sense_behno
+    <!-- <a class="back_sense_behno samll_text" :href=(shopifyData.link)>
+      {{ shopifyData.ctaText }}
+    </a>  -->
+
 </template>
 
 <style scoped>
@@ -30,6 +32,12 @@
 
 <script>
 export default  {
-    name : "back-to-top"
+  name : "back-to-top",
+  // props: {
+  //   shopifyData: {
+  //     type: Object,
+  //     required: true,
+  //   },
+  // },
 }
 </script>

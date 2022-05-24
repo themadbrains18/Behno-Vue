@@ -1,0 +1,27 @@
+<render-back-to-top
+:shopify-data="{
+    Link   : `{{ section.settings.link }}`,
+    ctaText  : `{{ section.settings.ctaText }}`
+}">
+</render-back-to-top>
+
+
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+    {
+        "id": "link",
+        "type": "url",
+        "label": "Link"
+      },
+	  {
+        "id": "ctaText",
+        "type": "text",
+        "label": "Cta Text",
+        "default": "MEET OUR TEAM"
+      }
+    ]
+ }
+{% endschema %}
