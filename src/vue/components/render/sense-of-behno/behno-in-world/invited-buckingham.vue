@@ -24,7 +24,7 @@
                         </video>
                     </template>
                     <template v-else>
-                        <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+                        <img class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
                     </template>
                 </div>
                 <div class="sec_img">

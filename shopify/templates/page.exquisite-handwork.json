@@ -98,11 +98,51 @@
           "settings": {
             "para": "Finding local suppliers allows us to support small businesses, build in-person relations over cups of chai, as well as reduce our carbon footprint from imports. Preserving local cultures contextualizing themselves in a global economy is powerful."
           }
+        },
+        "22c16375-f28c-44de-ad43-2768a9595715": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1-EXQUISITEHANDWORK.jpg",
+            "imageInfo": "Some of the many zardozi colours available for us to choose from."
+          }
+        },
+        "83a2f426-5642-4ec2-a84e-86ee16687a1d": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-EXQUISITEHANDWORK.jpg",
+            "imageInfo": "Our go-to zardozi at the Malad."
+          }
+        },
+        "7290d5cb-4866-4962-8063-e2a6fd73c86c": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-EXQUISITEHANDWORK.jpg",
+            "imageInfo": ""
+          }
+        },
+        "62cca1bc-a5fd-4056-93c6-8ec78ab08258": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4-EXQUISITEHANDWORK.jpg",
+            "imageInfo": "studio floor,embroidery threads."
+          }
+        },
+        "2aa5a5d9-4a6d-4768-9f79-ca5b4bff64be": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5-EXQUISITEHANDWORK.jpg",
+            "imageInfo": "Our go-to glass bead supplier at the Malad Market."
+          }
         }
       },
       "block_order": [
         "0dbdc9ee-12bd-433d-b6d1-a8125f270fc8",
-        "85f32cd3-9b91-4bfb-a47b-a34a377b3ef8"
+        "85f32cd3-9b91-4bfb-a47b-a34a377b3ef8",
+        "22c16375-f28c-44de-ad43-2768a9595715",
+        "83a2f426-5642-4ec2-a84e-86ee16687a1d",
+        "7290d5cb-4866-4962-8063-e2a6fd73c86c",
+        "62cca1bc-a5fd-4056-93c6-8ec78ab08258",
+        "2aa5a5d9-4a6d-4768-9f79-ca5b4bff64be"
       ],
       "settings": {
         "secHeading": "Glocalizing our practices.",

@@ -185,35 +185,95 @@
           "settings": {
             "para": "The colors of the city, its vibrancy, its people, and its peri-urban landscape foster an intimacy with a space unique to Nashik."
           }
+        },
+        "20a2b89e-eb47-4af8-899b-5ea11e142ec2": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-NASHIK.jpg",
+            "imageInfo": "Finding Inspiration in small, unexpected corners while exploring Nashik."
+          }
+        },
+        "151f8d88-4ee2-4172-a8fd-e986a379a2d1": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4-NASHIK.jpg",
+            "imageInfo": "A woman holding her rain poncho in the city center."
+          }
+        },
+        "5ad2c63a-0c91-4f89-81cd-66d287e64d20": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-NASHIK.jpg",
+            "imageInfo": "Sunrise form the Pandaoleni Cavas."
+          }
+        },
+        "8835e3b7-d17b-484e-8a3e-b4c2726de2ba": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5-NASHIK.jpg",
+            "imageInfo": "The terrain on the outskirts of Nashik"
+          }
+        },
+        "607755fe-9c88-406f-8096-02e9b50abe6e": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6-NASHIK.jpg",
+            "imageInfo": "The terrain on the outskirts of Nashik"
+          }
+        },
+        "97ce2230-b891-4f4c-a1b1-e3548a0d3b1d": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7-NASHIK.jpg",
+            "imageInfo": "Sunset From our Factory."
+          }
+        },
+        "8b8e5234-116a-4d25-af23-841639f06a4f": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8-NASHIK.jpg",
+            "imageInfo": "Sunrise form the Pandaoleni Caves , Nashik."
+          }
+        },
+        "f24ca4f9-c3f9-4df1-9354-f929296887e1": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/9-NASHIK.jpg",
+            "imageInfo": "A snapshot of our morning drive From Mumbai to Nashik."
+          }
+        },
+        "d97bf486-2bd4-4fdc-bd34-105786c0c5b4": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10-NASHIK.jpg",
+            "imageInfo": "An evening at Sula Vineyards , Where the Behno team relaxed with cowworkers From this factory."
+          }
+        },
+        "8a72670d-53f7-4b2a-bdcc-b53f5760fd64": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/11-NASHIK.jpg",
+            "imageInfo": "A flower vendor outside the Trimbakeshwar temple."
+          }
         }
       },
       "block_order": [
         "076c1d47-9e4f-4c08-9ceb-cd1daed0a6ad",
-        "5d5276ff-6129-4982-bb81-c7b400a72ccd"
+        "5d5276ff-6129-4982-bb81-c7b400a72ccd",
+        "20a2b89e-eb47-4af8-899b-5ea11e142ec2",
+        "151f8d88-4ee2-4172-a8fd-e986a379a2d1",
+        "5ad2c63a-0c91-4f89-81cd-66d287e64d20",
+        "8835e3b7-d17b-484e-8a3e-b4c2726de2ba",
+        "607755fe-9c88-406f-8096-02e9b50abe6e",
+        "97ce2230-b891-4f4c-a1b1-e3548a0d3b1d",
+        "8b8e5234-116a-4d25-af23-841639f06a4f",
+        "f24ca4f9-c3f9-4df1-9354-f929296887e1",
+        "d97bf486-2bd4-4fdc-bd34-105786c0c5b4",
+        "8a72670d-53f7-4b2a-bdcc-b53f5760fd64"
       ],
       "settings": {
         "secHeading": "Sublime Saturdays.",
-        "subHeading": "The hands and tools.",
-        "collargeImg1": "shopify:\/\/shop_images\/3-NASHIK.jpg",
-        "imgInfo1": "Finding Inspiration in small, unexpected corners while exploring Nashik.",
-        "collargeImg2": "shopify:\/\/shop_images\/4-NASHIK.jpg",
-        "imgInfo2": "A woman holding her rain poncho in the city center.",
-        "collargeImg3": "shopify:\/\/shop_images\/2-NASHIK.jpg",
-        "imgInfo3": "Sunrise form the Pandaoleni Cavas.",
-        "collargeImg4": "shopify:\/\/shop_images\/5-NASHIK.jpg",
-        "imgInfo4": "The terrain on the outskirts of Nashik",
-        "collargeImg5": "shopify:\/\/shop_images\/6-NASHIK.jpg",
-        "imgInfo5": "Views of Rock cut Caves on early morning hikes.",
-        "collargeImg6": "shopify:\/\/shop_images\/7-NASHIK.jpg",
-        "imgInfo6": "Sunset From our Factory.",
-        "collargeImg7": "shopify:\/\/shop_images\/8-NASHIK.jpg",
-        "imgInfo7": "Sunrise form the Pandaoleni Caves , Nashik.",
-        "collargeImg8": "shopify:\/\/shop_images\/9-NASHIK.jpg",
-        "imgInfo8": "A snapshot of our morning drive From Mumbai to Nashik.",
-        "collargeImg9": "shopify:\/\/shop_images\/10-NASHIK.jpg",
-        "imgInfo9": "An evening at Sula Vineyards , Where the Behno team relaxed with cowworkers From this factory.",
-        "collargeImg10": "shopify:\/\/shop_images\/11-NASHIK.jpg",
-        "imgInfo10": "A flower vendor outside the Trimbakeshwar temple."
+        "subHeading": "The hands and tools."
       }
     }
   },

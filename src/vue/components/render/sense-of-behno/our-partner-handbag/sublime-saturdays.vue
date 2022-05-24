@@ -15,55 +15,55 @@
                 <div class="image_collarge">
                     <div class="first_column">
                         <div class="image_wrapper first">
-                            <div class="fig_cption_inner first">
-                                <img class="img_item_1" :src=(shopifyData.collargeImg1.src) :placeholder=(shopifyData.collargeImg1.placeholder) :alt=(shopifyData.collargeImg1.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo1 }}</p>
+                            <div class="fig_cption_inner first" v-if="shopifyData.collageData[0]">
+                                <img class="img_item_1" :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
+                            <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
                             </div>
-                            <div class="fig_cption_inner second">
-                                <img  class="img_item_2" :src=(shopifyData.collargeImg2.src) :placeholder=(shopifyData.collargeImg2.placeholder) :alt=(shopifyData.collargeImg2.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo2 }}</p>
+                            <div class="fig_cption_inner second" v-if="shopifyData.collageData[1]">
+                                <img  class="img_item_2" :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[1].imageInfo }}</p>
                             </div>
                         </div>
                         <div class="image_wrapper second">
-                            <div class="fig_cption_inner">
-                                <img class="img_item_3" :src=(shopifyData.collargeImg3.src) :placeholder=(shopifyData.collargeImg3.placeholder) :alt=(shopifyData.collargeImg3.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo3 }}</p>
+                            <div class="fig_cption_inner" v-if="shopifyData.collageData[2]">
+                                <img class="img_item_3" :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
                             </div>
-                            <div class="fig_cption_inner">
-                                <img class="img_item_4" :src=(shopifyData.collargeImg4.src) :placeholder=(shopifyData.collargeImg4.placeholder) :alt=(shopifyData.collargeImg4.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo4 }}</p>
+                            <div class="fig_cption_inner" v-if="shopifyData.collageData[3]">
+                                <img class="img_item_4" :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[3].imageInfo }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="second_column">
                         <div class="image_wrapper third">
-                            <div class="fig_cption_inner inner-first">
-                                <img class="img_item_5" :src=(shopifyData.collargeImg5.src) :placeholder=(shopifyData.collargeImg5.placeholder) :alt=(shopifyData.collargeImg5.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo5 }}</p>
+                            <div class="fig_cption_inner inner-first" v-if="shopifyData.collageData[4]">
+                                <img class="img_item_5" :src=(shopifyData.collageData[4].imgUrl.src) :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)  :alt=(shopifyData.collageData[4].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[4].imageInfo }}</p>
                             </div>
-                            <div class="fig_cption_inner inner-second">
-                                <img class="img_item_6" :src=(shopifyData.collargeImg6.src) :placeholder=(shopifyData.collargeImg6.placeholder) :alt=(shopifyData.collargeImg6.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo6 }}</p>
+                            <div class="fig_cption_inner inner-second" v-if="shopifyData.collageData[5]">
+                                <img class="img_item_6" :src=(shopifyData.collageData[5].imgUrl.src) :src-placeholder=(shopifyData.collageData[5].imgUrl.placeholder)  :alt=(shopifyData.collageData[5].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[5].imageInfo }}</p>
                             </div>
-                            <div class="fig_cption_inner inner-third">
-                                <img class="img_item_7" :src=(shopifyData.collargeImg7.src) :placeholder=(shopifyData.collargeImg7.placeholder) :alt=(shopifyData.collargeImg7.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo7 }}</p>
+                            <div class="fig_cption_inner inner-third" v-if="shopifyData.collageData[6]">
+                                <img class="img_item_7" :src=(shopifyData.collageData[6].imgUrl.src) :src-placeholder=(shopifyData.collageData[6].imgUrl.placeholder)  :alt=(shopifyData.collageData[6].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[6].imageInfo }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="third_column">
                         <div class="image_wrapper fourth">
-                            <div class="fig_cption_inner inner-fourth">
-                                <img class="img_item_8" :src=(shopifyData.collargeImg8.src) :placeholder=(shopifyData.collargeImg8.placeholder) :alt=(shopifyData.collargeImg8.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo8 }}</p>
+                            <div class="fig_cption_inner inner-fourth" v-if="shopifyData.collageData[7]">
+                                <img class="img_item_8" :src=(shopifyData.collageData[7].imgUrl.src) :src-placeholder=(shopifyData.collageData[7].imgUrl.placeholder)  :alt=(shopifyData.collageData[7].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[7].imageInfo }}</p>
                             </div>
-                            <div class="fig_cption_inner inner-fifth">
-                                <img class="img_item_9" :src=(shopifyData.collargeImg9.src) :placeholder=(shopifyData.collargeImg9.placeholder) :alt=(shopifyData.collargeImg9.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo9 }}</p>
+                            <div class="fig_cption_inner inner-fifth" v-if="shopifyData.collageData[8]">
+                                <img class="img_item_9" :src=(shopifyData.collageData[8].imgUrl.src) :src-placeholder=(shopifyData.collageData[8].imgUrl.placeholder)  :alt=(shopifyData.collageData[8].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[8].imageInfo }}</p>
                             </div>
-                            <div class="fig_cption_inner inner-sixth">
-                                <img class="img_item_10" :src=(shopifyData.collargeImg10.src) :placeholder=(shopifyData.collargeImg10.placeholder) :alt=(shopifyData.collargeImg10.alt)>
-                                <p class="fig_caption">{{ shopifyData.imgInfo10 }}</p>
+                            <div class="fig_cption_inner inner-sixth" v-if="shopifyData.collageData[9]">
+                                <img class="img_item_10" :src=(shopifyData.collageData[9].imgUrl.src) :src-placeholder=(shopifyData.collageData[9].imgUrl.placeholder)  :alt=(shopifyData.collageData[9].imgUrl.alt)>
+                                <p class="fig_caption">{{ shopifyData.collageData[9].imageInfo }}</p>
                             </div>
                         </div>
                     </div>
@@ -208,7 +208,7 @@
         gap: 30px;
     }
     .fig_caption {
-        font-size: 8px;
+        font-size: 7px;
     }
     .image_collarge{
         padding: 0;
