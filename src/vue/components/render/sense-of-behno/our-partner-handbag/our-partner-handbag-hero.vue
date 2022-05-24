@@ -1,77 +1,64 @@
 <template>
-<!-- Exquisite-Handwork-Hero Section Start -->
-<section class="sec_exquisite_handwork_hero">
-    <h2 class="card_heading_b">{{ shopifyData.secHeading }}</h2>
-    <div class="sec_content">
-        <template v-if="shopifyData.checkbox === 'true'">
-            <video  style="max-height:720px;" autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true"  preload="none" >
-                <source :src=(shopifyData.videoLink) >
-            </video>
-        </template>
-        <template v-else>
-            <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
-        </template>
-    </div>
-</section>
-<!-- Exquisite-Handwork-Hero Section End -->
+    <section class="partner_handbag_hero">
+        <div class="big_container">
+            <h2 class="card_heading_b" data-v-75498a5c="">{{ shopifyData.secSubHeading }}</h2>
+            <div class="sec_video">
+                <!-- <video autoplay="" loop="" webkit-playsinline="true" playsinline="true" preload="none" >
+                    <source src="https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176">
+                </video> -->
+                <template v-if="shopifyData.checkImage === 'true'">
+                    <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+                        <source :src=(shopifyData.videolink) />
+                    </video>
+                </template>
+                <template v-else>
+                    <img class="grid_img" :src=(shopifyData.checkImage.src) :placeholder=(shopifyData.checkImage.placeholder) :alt=(shopifyData.checkImage.alt) />
+                </template>
+            </div>
+        </div>
+    </section>
 </template>
-<style > 
-.sec_exquisite_handwork_hero iframe video{
-    width: 100%!important;
-    left: 0;
-}
-video{
-    width: 100%!important;
-}
-</style>
+
 <style scoped>
-    .sec_exquisite_handwork_hero{
-        padding-top: 40px;
+    .partner_handbag_hero {
+        padding: 45px 0px;
     }
-    iframe{
-        height: 718px;
-        width: 100%;
-        border: none;
+    .sec_video {
+        padding: 0 38px;
     }
-    .sec_content{
-        padding: 0 54px;
-    }
-    .card_heading_b {
+    .card_heading_b{
         margin-bottom: 24px;
-        text-align: center;
-        text-transform: initial;
+        text-align:center;
+
     }
-    /* Responsive Css Code */
-@media screen and (max-width: 1200px) {
-    .sec_content{
-        padding: 0 20px;
+    .sec_video video{
+        display: block;
     }
-}
-@media screen and (max-width: 991px) {
-    .card_heading_b {
-        margin-bottom: 40px;
+
+    /* ===== RESPONSIVE BREAKPOINTS START ===== */
+    @media screen and (max-width: 767px) {
+        .partner_handbag_hero{
+            padding: 60px 0 0;
+        }
+        .sec_video ,
+        .big_container
+        {
+            padding: 0;
+        }        
+        .card_heading_b{
+            margin-bottom: 20px;
+        }
     }
-    .sec_content{
-        padding: 0 0px;
-    }
-    iframe{
-        height: 518px;
-    }
-}
-@media screen and (max-width: 767px) {
-    iframe{
-        height: 210px;
-    }
-}
+    /* ===== RESPONSIVE BREAKPOINTS END ===== */
 </style>
 
 <script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
+    export default{
+        props:{
+            shopifyData:{
+                type:Object,
+                required:true,
+            }
+        }
     }
-  }
-};
 </script>

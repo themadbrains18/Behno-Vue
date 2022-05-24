@@ -29,20 +29,20 @@
                 </div>
                 <div class="sec_img">
                     <div class="t-start">
-                        <div>
-                            <img class="img_item1" :src=(shopifyData.imgUrl2.src) :alt=(shopifyData.imgUrl2.alt) :placeholder=(shopifyData.imgUrl2.placeholder)>
+                        <div class="img_item1">
+                            <img  :src=(shopifyData.imgUrl2.src) :alt=(shopifyData.imgUrl2.alt) :placeholder=(shopifyData.imgUrl2.placeholder)>
                             <p class="fig_caption">{{ shopifyData.figcaption2 }}</p>
                         </div>
                     </div>
                     <div class="t-end">
-                        <div class="item1">
-                            <img class="img_item2" :src=(shopifyData.imgUrl3.src) :alt=(shopifyData.imgUrl3.alt) :placeholder=(shopifyData.imgUrl3.placeholder)>
+                        <div class="item1 img_item2">
+                            <img :src=(shopifyData.imgUrl3.src) :alt=(shopifyData.imgUrl3.alt) :placeholder=(shopifyData.imgUrl3.placeholder)>
                             <p class="fig_caption">{{ shopifyData.figcaption3 }}</p>
                         </div>
                     </div>
                     <div class="t-center">
-                        <div>
-                            <img class="img_item3" :src=(shopifyData.imgUrl4.src) :alt=(shopifyData.imgUrl4.alt) :placeholder=(shopifyData.imgUrl4.placeholder)>
+                        <div class="img_item3">
+                            <img  :src=(shopifyData.imgUrl4.src) :alt=(shopifyData.imgUrl4.alt) :placeholder=(shopifyData.imgUrl4.placeholder)>
                             <p class="fig_caption">{{ shopifyData.figcaption4 }}</p>
                         </div>
                     </div>
@@ -79,8 +79,9 @@
     .body_text{
         line-height: 19px;
     }
-    .sec_video img{
-        width: 300px;
+    .sec_video{
+        max-width: 300px;
+        width: 100%;
     }
     .img_item1{
         max-width: 540px;
@@ -103,10 +104,7 @@
         height: auto;
     }
     .fig_caption {
-        font-family: 'adobe-caslon-pro',sans-serif;
-        font-style: italic;
-        font-weight: 400;
-        font-size: 16px;
+        text-align: start;
     }
     .sec-image-modifier{
         margin-bottom: 30px;
@@ -134,13 +132,16 @@
     .sec_content{
         margin-top: 43px;
     }
+    .fig_caption{
+        font-size: 7px !important;
+    }
     }
     @media screen  and (max-width: 575px){
         .img_item1{
             max-width: 160px;
         }
         .img_item2{
-            max-width: 176px;
+            /* max-width: 176px; */
             margin: 25px 0 30px;
         }
         .img_item3{

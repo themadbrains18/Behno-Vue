@@ -1,0 +1,243 @@
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+            {
+                para : `{{ block.settings.para }}`
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-our-partner-handbag-sublime-saturdays :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secSubHeading:`{{ section.settings.subHeading }}`,
+    paragraph  :  {{ paraData }},
+    SecImg : {
+        src : `{{ section.settings.secImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg.alt }}`
+    },
+    
+    collargeImg1:{
+        src : `{{ section.settings.collargeImg1 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg1 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg1.alt }}`
+    },
+    imgInfo1:`{{ section.settings.imgInfo1 }}`,
+
+    collargeImg2:{
+        src : `{{ section.settings.collargeImg2 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg2 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg2.alt }}`
+    },
+    imgInfo2:`{{ section.settings.imgInfo2 }}`,
+
+    collargeImg3:{
+        src : `{{ section.settings.collargeImg3 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg3 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg3.alt }}`
+    },
+    imgInfo3:`{{ section.settings.imgInfo3 }}`,
+
+    collargeImg4:{
+        src : `{{ section.settings.collargeImg4 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg4 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg4.alt }}`
+    },
+    imgInfo4:`{{ section.settings.imgInfo4 }}`,
+
+    collargeImg5:{
+        src : `{{ section.settings.collargeImg5 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg5 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg5.alt }}`
+    },
+    imgInfo5:`{{ section.settings.imgInfo4 }}`,
+
+    collargeImg6:{
+        src : `{{ section.settings.collargeImg6 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg6 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg6.alt }}`
+    },
+    imgInfo6:`{{ section.settings.imgInfo6 }}`,
+    
+    collargeImg7:{
+        src : `{{ section.settings.collargeImg7 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg7 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg7.alt }}`
+    },
+    imgInfo7:`{{ section.settings.imgInfo7 }}`,
+
+    collargeImg8:{
+        src : `{{ section.settings.collargeImg8 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg8 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg8.alt }}`
+    },
+    imgInfo8:`{{ section.settings.imgInfo8 }}`,
+
+    collargeImg9:{
+        src : `{{ section.settings.collargeImg9 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg9 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg9.alt }}`
+    },
+    imgInfo9:`{{ section.settings.imgInfo9 }}`,
+
+    collargeImg10:{
+        src : `{{ section.settings.collargeImg10 | img_url : "" }}`,
+        placeholder: `{{ section.settings.collargeImg10 | img_url : "50x50" }}`,
+        alt: `{{ section.settings.collargeImg10.alt }}`
+    },
+    imgInfo10:`{{ section.settings.imgInfo10 }}`
+    
+}">
+</render-sense-of-behno-our-partner-handbag-sublime-saturdays>
+
+
+{% schema %}
+{
+    "name":"Sublime Saturdays",
+    "settings": [
+        {
+            "id": "secHeading",
+            "type": "text",
+            "label": "Section Heading",
+            "default": "Sublime Saturdays."
+        },
+        {
+            "id": "subHeading",
+            "type": "text",
+            "label": "Sub Heading",
+            "default": "The hands and tools."
+        },
+        {
+            "id": "secImg",
+            "type": "image_picker",
+            "label": "Section Image"
+        },
+        {
+            "id": "collargeImg1",
+            "type": "image_picker",
+            "label": "Collarge Image 1"
+        },
+        {
+            "id": "imgInfo1",
+            "type": "text",
+            "label": "Image info 1",
+            "default": "Finding Inspiration in small, unexpected corners while exploring Nashik."
+        },
+        {
+            "id": "collargeImg2",
+            "type": "image_picker",
+            "label": "Collarge Image 2"
+        },
+        {
+            "id": "imgInfo2",
+            "type": "text",
+            "label": "Image info 2",
+            "default": "A woman holding her rain poncho in the city center."
+        },
+        {
+            "id": "collargeImg3",
+            "type": "image_picker",
+            "label": "Collarge Image 3"
+        },
+        {
+            "id": "imgInfo3",
+            "type": "text",
+            "label": "Image info 3",
+            "default": "Sunrise form the Pandaoleni Cavas."
+        },
+        {
+            "id": "collargeImg4",
+            "type": "image_picker",
+            "label": "Collarge Image 4"
+        },
+        {
+            "id": "imgInfo4",
+            "type": "text",
+            "label": "Image info 4",
+            "default": "The terrain on the outskirts of Nashik"
+        },
+        {
+            "id": "collargeImg5",
+            "type": "image_picker",
+            "label": "Collarge Image 5"
+        },
+        {
+            "id": "imgInfo5",
+            "type": "text",
+            "label": "Image info 5",
+            "default": "Views of Rock cut Caves on early morning hikes."
+        },
+        {
+            "id": "collargeImg6",
+            "type": "image_picker",
+            "label": "Collarge Image 6"
+        },
+        {
+            "id": "imgInfo6",
+            "type": "text",
+            "label": "Image info 6",
+            "default": "Sunset From our Factory."
+        },
+        {
+            "id": "collargeImg7",
+            "type": "image_picker",
+            "label": "Collarge Image 7"
+        },
+        {
+            "id": "imgInfo7",
+            "type": "text",
+            "label": "Image info 7",
+            "default": "Sunrise form the Pandaoleni Caves , Nashik."
+        },
+        {
+            "id": "collargeImg8",
+            "type": "image_picker",
+            "label": "Collarge Image 8"
+        },
+        {
+            "id": "imgInfo8",
+            "type": "text",
+            "label": "Image info 8",
+            "default": "A snapshot of our morning drive From Mumbai to Nashik."
+        },
+        {
+            "id": "collargeImg9",
+            "type": "image_picker",
+            "label": "Collarge Image 9"
+        },
+        {
+            "id": "imgInfo9",
+            "type": "text",
+            "label": "Image info 9",
+            "default": "An evening at Sula Vineyards , Where the Behno team relaxed with cowworkers From this factory."
+        },
+        {
+            "id": "collargeImg10",
+            "type": "image_picker",
+            "label": "Collarge Image 10"
+        },
+        {
+            "id": "imgInfo10",
+            "type": "text",
+            "label": "Image info 10",
+            "default": "A flower vendor outside the Trimbakeshwar temple."
+        }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        }
+    ]
+}
+{% endschema %}
