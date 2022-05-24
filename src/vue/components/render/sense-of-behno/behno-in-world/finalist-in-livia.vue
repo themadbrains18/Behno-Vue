@@ -25,33 +25,36 @@
                 </p>
             </div>
             <div class="sec_img">
-                <img class="main-img" :src=(shopifyData.secImg.src) :placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />  
+                <div class="main_bg" v-if="shopifyData.collageData[0]"> 
+                    <img class="main-img" :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>  
+                    <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
+                </div>
                 <div class="img_grid"> 
                     <div class="grid_items">
-                        <div>
-                            <img :src=(shopifyData.gridItem1.src) :placeholder=(shopifyData.gridItem1.placeholder) :alt=(shopifyData.gridItem1.alt) />
-                            <p class="fig_caption">{{ shopifyData.gridItem1Cption1 }}</p>
+                        <div v-if="shopifyData.collageData[1]">
+                            <img :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[1].imageInfo }}</p>
                         </div>
-                        <div>
-                            <img :src=(shopifyData.gridItem2.src) :placeholder=(shopifyData.gridItem2.placeholder) :alt=(shopifyData.gridItem2.alt) />
-                            <p class="fig_caption">{{ shopifyData.gridItem2Cption2 }}</p>
+                        <div v-if="shopifyData.collageData[2]">
+                            <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
                         </div>
                     </div>
                     <div class="grid_items">
-                        <div>
-                            <img :src=(shopifyData.gridItem3.src) :placeholder=(shopifyData.gridItem3.placeholder) :alt=(shopifyData.gridItem3.alt) />
-                            <p class="fig_caption">{{ shopifyData.gridItem3Cption3 }}</p>
+                        <div v-if="shopifyData.collageData[3]">
+                            <img :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[3].imageInfo }}</p>
                         </div>
 
                     </div>
                     <div class="grid_items">
-                        <div>
-                            <img :src=(shopifyData.gridItem4.src) :placeholder=(shopifyData.gridItem4.placeholder) :alt=(shopifyData.gridItem4.alt) />
-                            <p class="fig_caption">{{ shopifyData.gridItem4Cption4 }}</p>
+                        <div v-if="shopifyData.collageData[4]">
+                            <img :src=(shopifyData.collageData[4].imgUrl.src) :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)  :alt=(shopifyData.collageData[4].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[4].imageInfo }}</p>
                         </div>
-                        <div>
-                            <img :src=(shopifyData.gridItem5.src) :placeholder=(shopifyData.gridItem5.placeholder) :alt=(shopifyData.gridItem5.alt) />
-                            <p class="fig_caption">{{ shopifyData.gridItem5Cption5 }}</p>
+                        <div v-if="shopifyData.collageData[5]">
+                            <img :src=(shopifyData.collageData[5].imgUrl.src) :src-placeholder=(shopifyData.collageData[5].imgUrl.placeholder)  :alt=(shopifyData.collageData[5].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[5].imageInfo }}</p>
                         </div>
                     </div>
                 </div>

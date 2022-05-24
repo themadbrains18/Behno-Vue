@@ -1,33 +1,28 @@
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
 <render-sense-of-behno-behno-in-world-invited-buckingham :shopify-data="{
-    secHeading:`{{ section.settings.secHeading  }}`,
-    secSubHeading:`{{ section.settings.secSubHeading  }}`,
-    secInfo:`{{ section.settings.secInfo  }}`,
-    imgUrl1 : {
-        src : `{{ section.settings.secImg1 | img_url : "" }}`,
-        placeholder: `{{ section.settings.secImg1 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.secImg1.alt }}`
-    },
-    imgUrl2 : {
-        src : `{{ section.settings.SecImage2 | img_url : "" }}`,
-        placeholder: `{{ section.settings.SecImage2 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.SecImage2.alt }}`
-    },
-    imgUrl3 : {
-        src : `{{ section.settings.secImg3 | img_url : "" }}`,
-        placeholder: `{{ section.settings.secImg3 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.secImg3.alt }}`
-    },
-    imgUrl4 : {
-        src : `{{ section.settings.secImg4 | img_url : "" }}`,
-        placeholder: `{{ section.settings.secImg4 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.secImg4.alt }}`
-    },
+    secHeading:`{{ section.settings.secHeading }}`,
+    secSubHeading:`{{ section.settings.secSubHeading }}`,
+    secInfo:`{{ section.settings.secInfo }}`,
     checkImage: `{{ section.settings.checkImage }}`,
-    videolink: `{{ section.settings.videolink }}`,
-    figcaption1: `{{ section.settings.figcaption1 }}`,
-    figcaption2: `{{ section.settings.figcaption2 }}`,
-    figcaption3: `{{ section.settings.figcaption3 }}`,
-    figcaption4: `{{ section.settings.figcaption4 }}`
+    collageData  : {{ collageData }},
+    videolink: `{{ section.settings.videolink }}`
 
 }">
 </render-sense-of-behno-behno-in-world-invited-buckingham>
@@ -58,66 +53,40 @@
             "label":"Section Info",
             "default":" “behno incorporated elements from the Commonwealth countries of India and Tuvalu into a look that was presented to the royal family and celebrated in a reception attended by industry leaders, including Anna Wintour, Livia Firth, Edward Enninful, among others."
         },
-        {
-            "id":"secImg1",
-            "type":"image_picker",
-            "label":"Section Image Top Left"
-        },{
-            "id":"figcaption1",
-            "type":"text",
-            "label":"Section Image Top Left Figure Caption",
-            "default":"behno's looks for the Commonwelth Fashion Exchange."
-
-        },
-        {
-            "id":"secImg3",
-            "type":"image_picker",
-            "label":"Section Image Middle Right"
-        },
-        {
-            "id":"figcaption3",
-            "type":"text",
-            "label":"Section Image Middle Right Figure Caption",
-            "default":"Marama Anne Papau (L) , HRH The Duchess of Cambridge (R)."
-
-        },
-        {
-            "id":"secImg4",
-            "type":"image_picker",
-            "label":"Section Image bottom Right"
-        },
-        {
-            "id":"figcaption4",
-            "type":"text",
-            "label":"Section Image bottom Right Figure Caption",
-            "default":"(L to R) Lisa Armstong , Shivam and Marama Anne Papau"
-
-        },
+        
         {
             "id": "checkImage",
             "type": "checkbox",
             "label": "Show Video",
             "default": true
-          },
-          {
-            "id": "SecImage2",
-            "type": "image_picker",
-            "label": "Section Image top Right"
-          },
-          {
-            "id":"figcaption2",
-            "type":"text",
-            "label":"Section Image top Right Figure Caption",
-            "default":"Hamish Bowles (L) , Anna Wintour (R)"
-
         },
-          {
+
+        {
             "id": "videolink",
             "type": "text",
             "label": "t:sections.home_grid_text_image.settings.video.label",
             "default" :"https://i.shgcdn.com/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb/gif2video/-/format/mp4/-/quality/lighter/"
-          }
+        }
 
+    ],
+    "blocks":[
+        {
+            "name": "Collage Image",
+            "type" : "collage",
+            "limit" : 4,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id":"imageInfo",
+                    "type":"text",
+                    "label":"Image Info"
+                }
+            ]
+        }
     ]
 }
 {% endschema %}

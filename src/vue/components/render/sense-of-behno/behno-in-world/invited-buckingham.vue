@@ -14,9 +14,9 @@
             </div>
             <div class="sec_content">
                 <div class="sec_video">
-                    <div class="sec-image-modifier">
-                        <img :src=(shopifyData.imgUrl1.src) :alt=(shopifyData.imgUrl1.alt) :placeholder=(shopifyData.imgUrl1.placeholder)>
-                        <p class="fig_caption">{{ shopifyData.figcaption1 }}</p>
+                    <div class="sec-image-modifier" v-if="shopifyData.collageData[0]">                        
+                        <img class="item1" :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
+                        <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
                     </div>
                     <template v-if="shopifyData.checkImage === 'true'">
                         <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
@@ -29,21 +29,21 @@
                 </div>
                 <div class="sec_img">
                     <div class="t-start">
-                        <div class="img_item1">
-                            <img  :src=(shopifyData.imgUrl2.src) :alt=(shopifyData.imgUrl2.alt) :placeholder=(shopifyData.imgUrl2.placeholder)>
-                            <p class="fig_caption">{{ shopifyData.figcaption2 }}</p>
+                        <div class="img_item1" v-if="shopifyData.collageData[1]">
+                            <img  :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
+                            <p class="fig_caption">{{ shopifyData.collageData[1].imageInfo }}</p>
                         </div>
                     </div>
                     <div class="t-end">
-                        <div class="item1 img_item2">
-                            <img :src=(shopifyData.imgUrl3.src) :alt=(shopifyData.imgUrl3.alt) :placeholder=(shopifyData.imgUrl3.placeholder)>
-                            <p class="fig_caption">{{ shopifyData.figcaption3 }}</p>
+                        <div class="item1 img_item2" v-if="shopifyData.collageData[2]">
+                            <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
+                            <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
                         </div>
                     </div>
                     <div class="t-center">
-                        <div class="img_item3">
-                            <img  :src=(shopifyData.imgUrl4.src) :alt=(shopifyData.imgUrl4.alt) :placeholder=(shopifyData.imgUrl4.placeholder)>
-                            <p class="fig_caption">{{ shopifyData.figcaption4 }}</p>
+                        <div class="img_item3" v-if="shopifyData.collageData[3]">
+                            <img  :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
+                            <p class="fig_caption">{{ shopifyData.collageData[3].imageInfo }}</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
         height: auto;
     }
     .item1{
-        margin: 70px 0 70px auto;
+        margin: 70px 0 0px auto;
         width: fit-content;
         text-align: start;
     }
