@@ -14,15 +14,6 @@
                             <template v-for="(value, key) in shopifyData.gridImages" :key="key">
                                 <img :src=(value.gridImg.src) :placeholder=(value.gridImg.placeholder) :alt=(value.gridImg.alt)>
                             </template>
-                            <!-- <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error"> -->
-                            <!-- <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error">
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1IN_THE_WORLD.jpg?v=1652347248" alt="error"> -->
                         </div>
                     </div>
                 </div>  

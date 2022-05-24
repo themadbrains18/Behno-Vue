@@ -5,15 +5,13 @@
     
       <div class="sec_header">
         <h2 class="quotes_text">
-          “IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”
+          {{ shopifyData.redText }}
         </h2>
       </div>
       <div class="sec_content modify-slider">
         <swiper
           :pagination="{ clickable: true }"
           :scrollbar="{ draggable: true }"
-          @swiper="onSwiper"
-          @slideChange="onSlideChange"
           :navigation="true"
           :modules="modules"
           :centeredSlides="true"
@@ -26,22 +24,11 @@
           }"
           class="mySwiper"
         >
-          <swiper-slide>
+          <swiper-slide v-for="(value, key) in shopifyData.slideData" :key="key">
             <img
-              src="https://i.shgcdn.com/416858e0-5807-4691-a113-31d6092cdc6a/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-              alt="Image-description"
-            />
-          </swiper-slide>
-          <swiper-slide>
-            <img
-              src="https://i.shgcdn.com/8309a6f2-9260-417d-ab02-3661aac56fbb/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-              alt="Image-description"
-            />
-          </swiper-slide>
-          <swiper-slide>
-            <img
-              src="https://i.shgcdn.com/44a045d2-20fc-40df-bd1b-9c3e6d0c2f65/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-              alt="Image-description"
+              :src=(value.imgUrl.src)
+              :src-plceholder=(value.imgUrl.placeholder)
+              :alt=(value.imgUrl.alt)
             />
           </swiper-slide>
         </swiper>
@@ -59,24 +46,23 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 // import required modules
-import { Autoplay, EffectFade, Navigation } from "swiper";
+import { Navigation } from "swiper";
 
 export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
   components: {
     Swiper,
     SwiperSlide,
   },
   setup() {
-    const onSwiper =  (swiper) => {
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
-      return {
-        onSwiper,
-        onSlideChange,
-        modules: [Navigation ],
-      };
+    return {
+      modules: [Navigation ],
+    };
   }
 };
 </script>

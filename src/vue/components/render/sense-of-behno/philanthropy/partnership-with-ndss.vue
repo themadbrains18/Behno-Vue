@@ -4,13 +4,19 @@
     <div class="big_container">
       <div class="sec_header">
         <h2 class="quotes_text">
-          “WE LAUNCHED A VERY SPECIAL PARTNERSHIP WITH NDSS TO SUPPORT AND
-          AMPLIFY THE TREMENDOUS WORK THEY DO FOR THE COMMUNITY.”
+          {{shopifyData.redText}}
         </h2>
-        <p class="body_text">This partnership is very personal to us. The Nini Bag, the jewel of this capsule collection, pays homage to behno’s founder’s darling sister, Nirali, nicknamed “Nini,” who has Down Syndrome.</p>
+        <p class="body_text">{{shopifyData.secInfo}}</p>
       </div>
       <div class="sec_video">
-        <video autoplay="" loop="" webkit-playsinline="true" playsinline="true" preload="none" data-v-14a5dad6=""><source src="https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176" data-v-14a5dad6=""></video>
+        <template v-if="shopifyData.checkImage === 'true'">
+            <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+              <source :src=(shopifyData.videolink) >
+            </video>
+          </template>
+          <template v-else>
+            <img  :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+          </template>
       </div>
     </div>
   </section>
@@ -91,3 +97,14 @@
   }
 }
 </style>
+
+<script>
+export default {
+    props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

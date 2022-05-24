@@ -1,2 +1,72 @@
-<render-sense-of-behno-philanthropy-philanthropy-hero>
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+
+<render-sense-of-behno-philanthropy-philanthropy-hero
+:shopify-data="{
+    preHeading   : `{{ section.settings.preHeading }}`,
+    secHeading   : `{{ section.settings.secHeading }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    afterImageText  : `{{ section.settings.afterImageText }}`,
+    paraData  : {{ paraData }}
+}">
 </render-sense-of-behno-philanthropy-philanthropy-hero>
+
+
+
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+     {
+        "id": "preHeading",
+        "type": "text",
+        "label": "Pre Heading",
+        "default": "FRONT-END PHILANTHROPHY"
+      },
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "The National Down Syndrome Society x behno."
+      },
+      {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+        },
+      {
+        "id": "afterImageText",
+        "type": "text",
+        "label": "After Slider Text",
+        "default": "WITHIN THE CAPSULE COLLECTION ARE OUR SIGNATURE BAGS, ALL IN RED TO HONOR NDSS’ OFFICIAL COLOR. 20% OF ALL SALES ARE DONATED TO NDSS."
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        }
+    ]
+ }
+{% endschema %}

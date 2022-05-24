@@ -215,6 +215,26 @@
         "collargeImg10": "shopify:\/\/shop_images\/11-NASHIK.jpg",
         "imgInfo10": "A flower vendor outside the Trimbakeshwar temple."
       }
+    },
+    "ascension-seeker": {
+      "type": "ascension-seeker",
+      "settings": {
+      }
+    },
+    "old-world-craftsmanship": {
+      "type": "old-world-craftsmanship",
+      "settings": {
+      }
+    },
+    "Urbanism-and-development": {
+      "type": "Urbanism-and-development",
+      "settings": {
+      }
+    },
+    "sublime-saturdays": {
+      "type": "sublime-saturdays",
+      "settings": {
+      }
     }
   },
   "order": [

@@ -3,77 +3,66 @@
   <section class="sec_walk_to_remember">
     <div class="big_container">
       <div class="main_contenet">
-        <h2 class="sec_heading">A walk to remember.</h2>
+        <h2 class="sec_heading">{{shopifyData.redHeading}}</h2>
         <h4 class="card_heading_b">
-          The Buddy Walk is one of the largest events hosted by NDSS to bring its community together. Taking place in New York City, Nini was a Grand Marshall for 2019.
+          {{shopifyData.secSubHeading}}
         </h4>
-        <p class="body_text">
-          The behno team came together to celebrate and support NDSS and the
-          Down syndrome community for the Buddy Walk, which started in iconic
-          Times Square with a presentation of some of their star members. Nini,
-          as the hero of the NDSS x behno capsule collection, was shy when her
-          image came onto one of the larger-than-life screens in the heart of
-          Times Square being watched by thousands of spectators.
-        </p>
-        <p class="body_text">
-          After the viewing, everyone migrated to Central Park where over 2,000
-          people came together for an afternoon of fun and the actual Buddy
-          Walk. There were games, Zumba, food, and of course, so much love being
-          shared amongst the community!
+        <p class="body_text" v-for="(value, key) in shopifyData.paraData" :key="key">
+          {{ value.para }}
         </p>
       </div>
       <div class="sec_content">
         <div class="sec_img">
-          <!-- <img
-            src="https://i.shgcdn.com/86d29134-f4be-4081-b8d4-43fb8997ebce/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-            alt=""
-          /> -->
           <div class="image_grid">
+
+
             <div class="image_row">
-              <div class="figcaption first">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/1-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption first" v-if="shopifyData.collageData[0]">
+                <img :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
               </div>
-              <div class="figcaption second">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/2-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption second" v-if="shopifyData.collageData[1]">
+                <img :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
               </div>
-              <div class="figcaption third">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/3-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption third" v-if="shopifyData.collageData[2]">
+                <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
               </div>
             </div>
             <div class="image_row second">
-              <div class="figcaption first">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/4-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption first" v-if="shopifyData.collageData[3]">
+                <img :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
               </div>
-              <div class="figcaption second">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/5-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption second" v-if="shopifyData.collageData[4]">
+                <img :src=(shopifyData.collageData[4].imgUrl.src) :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)  :alt=(shopifyData.collageData[4].imgUrl.alt)>
               </div>
-              <div class="figcaption third">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/6-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption third" v-if="shopifyData.collageData[5]">
+                <img :src=(shopifyData.collageData[5].imgUrl.src) :src-placeholder=(shopifyData.collageData[5].imgUrl.placeholder)  :alt=(shopifyData.collageData[5].imgUrl.alt)>
               </div>
-              <div class="figcaption fourth">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/7-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption fourth" v-if="shopifyData.collageData[6]">
+                <img :src=(shopifyData.collageData[6].imgUrl.src) :src-placeholder=(shopifyData.collageData[6].imgUrl.placeholder)  :alt=(shopifyData.collageData[6].imgUrl.alt)>
+                
               </div>
             </div>
+            
             <div class="image_row third">
-              <div class="figcaption first">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/8-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption first" v-if="shopifyData.collageData[7]">
+                <img :src=(shopifyData.collageData[7].imgUrl.src) :src-placeholder=(shopifyData.collageData[7].imgUrl.placeholder)  :alt=(shopifyData.collageData[7].imgUrl.alt)>
               </div>
-              <div class="figcaption second">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/9-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption second" v-if="shopifyData.collageData[8]">
+                <img :src=(shopifyData.collageData[8].imgUrl.src) :src-placeholder=(shopifyData.collageData[8].imgUrl.placeholder)  :alt=(shopifyData.collageData[8].imgUrl.alt)>
               </div>
-              <div class="figcaption third">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/10-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption third" v-if="shopifyData.collageData[9]">
+                <img :src=(shopifyData.collageData[9].imgUrl.src) :src-placeholder=(shopifyData.collageData[9].imgUrl.placeholder)  :alt=(shopifyData.collageData[9].imgUrl.alt)>
               </div>
-              <div class="figcaption fourth">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/11-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption fourth" v-if="shopifyData.collageData[10]">
+                <img :src=(shopifyData.collageData[10].imgUrl.src) :src-placeholder=(shopifyData.collageData[10].imgUrl.placeholder)  :alt=(shopifyData.collageData[10].imgUrl.alt)>
               </div>
             </div>
             <div class="image_row fourth">
-              <div class="figcaption first">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/12-NDSS.jpg?v=1652771577" alt="error">
+              <div class="figcaption first" v-if="shopifyData.collageData[11]">
+                <img :src=(shopifyData.collageData[11].imgUrl.src) :src-placeholder=(shopifyData.collageData[11].imgUrl.placeholder)  :alt=(shopifyData.collageData[11].imgUrl.alt)>
               </div>
-              <div class="figcaption second">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/13-NDSS.jpg?v=1652776700" alt="error">
+              <div class="figcaption second" v-if="shopifyData.collageData[12]">
+                <img :src=(shopifyData.collageData[12].imgUrl.src) :src-placeholder=(shopifyData.collageData[12].imgUrl.placeholder)  :alt=(shopifyData.collageData[12].imgUrl.alt)>
               </div>
             </div>
           </div>
@@ -217,3 +206,14 @@
 
 }
 </style>    
+
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

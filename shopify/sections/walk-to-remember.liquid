@@ -1,2 +1,84 @@
-<render-sense-of-behno-philanthropy-walk-to-remember>
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-philanthropy-walk-to-remember :shopify-data="{
+    redHeading   : `{{ section.settings.redHeading }}`,
+    secSubHeading   : `{{ section.settings.secSubHeading }}`,
+    paraData  : {{ paraData }},
+    collageData  : {{ collageData }}
+}">
 </render-sense-of-behno-philanthropy-walk-to-remember>
+
+
+
+{% schema %}
+{
+    "name": "Collage Section",
+    "settings": [
+     {
+        "id": "redHeading",
+        "type": "text",
+        "label": "Red Heading",
+        "default": "A walk to remember."
+      },
+      {
+        "id": "secSubHeading",
+        "type": "text",
+        "label": "Section Sub Heading",
+        "default": "The Buddy Walk is one of the largest events hosted by NDSS to bring its community together. Taking place in New York City, Nini was a Grand Marshall for 2019."
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        },
+        {
+            "name": "Collage Image",
+            "type" : "collage",
+            "limit" : 13,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                }
+            ]
+        }
+    ]
+ }
+{% endschema %}
