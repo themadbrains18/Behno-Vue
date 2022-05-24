@@ -1,0 +1,102 @@
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'slide' %}
+        {
+          imgUrl : {
+            src : `{{ block.settings.image | img_url : "" }}`,
+            placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+            alt: `{{ block.settings.image.alt }}`
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-our-home-base-new-york-state
+:shopify-data="{
+    secHeading   : `{{ section.settings.secHeading }}`,
+    subHeading   : `{{ section.settings.subHeading }}`,
+    redText   : `{{ section.settings.redText }}`,
+    gridImage : {
+      src : `{{ section.settings.gridImage | img_url : "" }}`,
+      placeholder: `{{ section.settings.gridImage | img_url : "50x50" }}`,
+      alt: `{{ section.settings.gridImage.alt }}`
+    },
+    paragraphData  : {{ dynamicData }},
+    collageData  : {{ collageData }}
+}">
+<render-sense-of-behno-our-home-base-new-york-state>
+
+
+
+{% schema %}
+{
+    "name": "New York State",
+    "settings": [
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Sec Heading",
+        "default": "A New York state of mind."
+      },
+      {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "New York City is our home."
+      },
+      {
+        "id": "redText",
+        "type": "text",
+        "label": "Red Text",
+        "default": "“WE ARE DESIGNED IN NEW YORK WHILE IMPACTING THE WORLD.”"
+      },
+      {
+        "id": "gridImage",
+        "type": "image_picker",
+        "label": "Red Text Grid image"
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        },
+        {
+            "name" : "Collage ",
+            "type" : "slide",
+            "limit" : 6,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Collage Image"
+                } 
+            ]
+        }
+    ]
+ }
+{% endschema %}
