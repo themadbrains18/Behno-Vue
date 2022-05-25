@@ -77,12 +77,17 @@ export default {
 <style >
 @media screen and (max-width: 767px) {
    .sec_winner_fashion .swiper-button-next {
-    right: -5px !important;
+    right: -3px !important;
   }
    .sec_winner_fashion .swiper-button-prev {
-    left: -5px !important;
+    left: -3px !important;
   }
   
+}
+@media screen and (max-width: 480px) {
+  .sec_winner_fashion .swiper-button-prev, .sec_winner_fashion .swiper-button-next{
+    display: block !important;
+  }
 }
 </style>
 
@@ -154,10 +159,6 @@ export default {
     padding: 0 30px;
   }
 }
-@media screen and (max-width: 480px) {
-  .modify-slider .swiper-button-prev, .modify-slider .swiper-button-next{
-    display: block !important;
-  }
-}
+
 
 </style>

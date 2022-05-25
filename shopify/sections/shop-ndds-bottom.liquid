@@ -50,31 +50,45 @@
   {% for product in section.settings.product_list %}
   {
     productImage : `{{ product.images[0] | img_url: "" }}`,
-    productLink :  `{{ product.url }}`
+    productLink :  `{{ product.url }}`,
+    productTitle :  `{{ product.title }}`,
+    productPrie :  `{{ product.price }}`
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
 {% endcapture %}
 
-<render-featured-carousel :shopify-data="{
-  secHeading : `{{ section.settings.secHeading}}`,
-  showProduct : `{{ section.settings.showProduct}}`,
-  product :  {{ productData }},
-  box :  {{ loopData }}
-}">
-
-</render-featured-carousel>
+<render-sense-of-behno-philanthropy-shop-ndds-bottom :shopify-data="{
+    secSubHeading : `{{ section.settings.secSubHeading}}`,
+    secCtaText : `{{ section.settings.secCtaText }}`,
+    secCtaLink : `{{ section.settings.secCtaLink }}`,
+    showProduct : `{{ section.settings.showProduct }}`,
+    product :  {{ productData }},
+    box :  {{ loopData }}
+}"> 
+</render-sense-of-behno-philanthropy-shop-ndds-bottom>
 
 
 {% schema %}
 {
-   "name": "t:sections.home_featured_slider.name",
+   "name": "NDDS Products",
    "settings": [
     {
-      "id": "secHeading",
+      "id": "secSubHeading",
       "type": "text",
-      "label": "t:sections.home_featured_slider.settings.secHeading.label",
-      "default": "FEATURED IN"
+      "label": "Section Sub Heading",
+      "default": "SHOP NDSS X BEHNO"
+    },
+    {
+      "id": "secCtaText",
+      "type": "text",
+      "label": "Section Cta Text",
+      "default": "SHOP THE NDSS X BEHNO CAPSULE"
+    },
+    {
+      "id": "secCtaLink",
+      "type": "url",
+      "label": "Section Cta Link"
     },
     {
       "id": "showProduct",
@@ -96,20 +110,24 @@
          {
            "id": "image",
            "type": "image_picker",
-           "label": "t:sections.home_featured_slider.blocks.settings.image.label"
+           "label": "Product Image"
          },
          {
           "id": "link",
           "type": "url",
-          "label": "t:sections.home_featured_slider.blocks.settings.link.label"
+          "label": "Product Link"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Product Title"
+        },
+        {
+          "id": "price",
+          "type": "text",
+          "label": "Product Price"
         }
        ]
-     }
-   ],
-   "presets": [
-     {
-       "name": "t:sections.home_featured_slider.name",
-       "category": "ADVANCED LAYOUT"
      }
    ]
  }

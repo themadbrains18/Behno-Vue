@@ -28,7 +28,7 @@
         "redText": "“THE BEHNO STANDARD WAS BUILT BOTTOM-UP, ENSURING GARMENT WORKERS AND ARTISANS WERE AT THE CENTER OF THE CONVERSATION.”",
         "img": "shopify:\/\/shop_images\/behno-standard.jpg",
         "para": "To implement “The behno Standard,” we founded a cut-and-sew factory, MSA Ethos, with a nonprofit partner and industry veteran.",
-        "link": "\/",
+        "link": "shopify:\/\/pages\/constructing-ethos",
         "linkText": "LEARN MORE"
       }
     },
@@ -38,7 +38,7 @@
         "heading": "Forming real relationships.",
         "subHeading": "The Garment Worker Project.",
         "para": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.",
-        "link": "\/",
+        "link": "shopify:\/\/pages\/behno-garment-worker",
         "linkText": "discover the project",
         "showVideo": true,
         "img": "shopify:\/\/shop_images\/forming_relationship.jpg",
@@ -51,7 +51,7 @@
         "82cd7d3c-e201-409a-be70-e47c6a786e41": {
           "type": "card",
           "settings": {
-            "link": "\/",
+            "link": "shopify:\/\/pages\/handwoven-silks",
             "img": "shopify:\/\/shop_images\/collaborations_philosophy1.jpg",
             "crdHeading": "VISIT OUR PARTNER HANDLOOM WEAVER’S COLLECTIVE."
           }
@@ -67,7 +67,7 @@
         "a29f571b-c22d-44c0-85b1-29b18e7ac175": {
           "type": "card",
           "settings": {
-            "link": "\/",
+            "link": "shopify:\/\/pages\/front-end-philanthropy",
             "img": "shopify:\/\/shop_images\/collaborations_philosophy3.jpg",
             "crdHeading": "EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY."
           }
@@ -95,11 +95,11 @@
     "ethetical-making-our-bags": {
       "type": "ethetical-making-our-bags",
       "settings": {
-        "secHeading": "THE MAKING OF OUR BAGS",
+        "secHeading": "",
         "crdheading": "It takes a village.",
         "crdSubHeading": "Our partner handbag factory.",
         "para": "Our bags are made in a world-class factory which works with luxury purveyors across the globe.",
-        "link": "\/",
+        "link": "shopify:\/\/pages\/our-partner-handbag",
         "linkText": "MORE ABOUT THE PARTNERSHIP",
         "showVideo": true,
         "img": "shopify:\/\/shop_images\/making_our_bags.jpg",
