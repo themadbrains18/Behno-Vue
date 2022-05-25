@@ -20,7 +20,7 @@
                     </div>
                     <template v-if="shopifyData.checkImage === 'true'">
                         <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
-                        <source :src=(shopifyData.videolink) >
+                            <source :src=(shopifyData.videolink) >
                         </video>
                     </template>
                     <template v-else>

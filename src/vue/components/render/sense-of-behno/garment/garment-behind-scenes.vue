@@ -95,7 +95,7 @@ export default{
     gap: 130px;
 }
 .bottom_images{
-    gap: 60px;
+    gap: 40px;
     margin-top: -60px;
 }
 .top_images .item1{

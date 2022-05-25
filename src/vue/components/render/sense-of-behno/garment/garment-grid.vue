@@ -88,16 +88,16 @@ export default {
 @media (hover: hover) {
   .slider_img:hover .employee_name{
       visibility: visible;
-      transform: translate(-50% ,0px);
+      bottom: 130px;
       opacity: 1;
   }
 }
 
 .employee_name{
   position: absolute;
-  bottom: 130px;
+  bottom: 100px;
   left: 50%;
-  transform: translate(-50% ,20px);
+  transform: translate(-50% ,0px);
   opacity: 0;
   color: #fff;
   font-size: 14px;
