@@ -279,6 +279,13 @@
         "secSubHeading": "In Fall 2018, behno launched its first handbag collection at Bergdorf Goodman.",
         "secInfo": "behno launched at Bergdorf Goodman with a celebratory breakfast with industry insiders, reporters, and editors from the fashion world. Betty Halbreich, Bergdorf Goodman’s most coveted personal shopper, attended the launch breakfast."
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
@@ -289,6 +296,7 @@
     "finalist-in-livia",
     "meet-fashion-designers",
     "speaking-engagement",
-    "launch-bergdorf"
+    "launch-bergdorf",
+    "back-sense-behno"
   ]
 }

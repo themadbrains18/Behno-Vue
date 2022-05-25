@@ -76,7 +76,7 @@
 
 <style scoped>
 .sublime_saturdays_sec{
-    padding: 120px 0 179px;
+    padding: 120px 0 79px;
 }
 .sec_text {
     max-width: 523px;
@@ -183,7 +183,7 @@
 }
 @media screen and (max-width: 767px) {
     .sublime_saturdays_sec{
-        padding: 30px 0 93px;
+        padding: 30px 0 40px;
         position: relative;
         overflow-x: hidden;
     }

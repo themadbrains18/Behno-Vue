@@ -86,7 +86,7 @@ export default {
 
 <style scoped>
 .sec_lives__weavers{
-    padding: 34px 0 86px;
+    padding: 34px 0 50px;
 }
 .sec_lives__weavers .big_container{
     padding:  0 17px;
@@ -149,7 +149,7 @@ export default {
     font-size: 40px;
   }
   .sec_lives__weavers{
-    padding: 12px 0 45px;
+    padding: 12px 0 0px;
   }
   .sec_header{
     margin: 35px 0 40px;

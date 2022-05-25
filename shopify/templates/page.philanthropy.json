@@ -266,6 +266,13 @@
       "settings": {
         "redText": "“IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”"
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
@@ -274,6 +281,7 @@
     "bit-about-ndss",
     "sister-brothers",
     "walk-to-remember",
-    "shop-ndss"
+    "shop-ndss",
+    "back-sense-behno"
   ]
 }

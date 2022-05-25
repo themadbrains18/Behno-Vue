@@ -227,12 +227,20 @@
         "checkbox": true,
         "videoLink": "https:\/\/i.shgcdn.com\/dfe5ddee-faae-4df5-86a6-44c58a4de1c9\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
     "constructing-ethos-hero",
     "setting-standard",
     "msa-ethos",
-    "portraitures-powerhouse"
+    "portraitures-powerhouse",
+    "back-sense-behno"
   ]
 }

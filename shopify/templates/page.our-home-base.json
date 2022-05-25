@@ -74,11 +74,19 @@
       "type": "meet-our-team",
       "settings": {
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
     "our-home-base-hero",
     "new-york-state",
-    "meet-our-team"
+    "meet-our-team",
+    "back-sense-behno"
   ]
 }

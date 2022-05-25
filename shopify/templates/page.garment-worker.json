@@ -279,6 +279,13 @@
         "link": "#",
         "image": "shopify:\/\/shop_images\/sense-card4.jpg"
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
@@ -287,6 +294,7 @@
     "garment-up-close",
     "garment-ethical",
     "garment-behind-scenes",
-    "garment-power-house"
+    "garment-power-house",
+    "back-sense-behno"
   ]
 }

@@ -149,12 +149,20 @@
         "subHeading": "Sourcing local matters. A lot.",
         "image": "shopify:\/\/shop_images\/collage.png"
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
     "exquisite-handwork-hero",
     "inheritance-worth",
     "working-with-artisan",
-    "glocalizing-our-practices"
+    "glocalizing-our-practices",
+    "back-sense-behno"
   ]
 }

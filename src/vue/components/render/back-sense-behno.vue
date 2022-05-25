@@ -1,8 +1,7 @@
 <template>
-  <div></div>
-    <!-- <a class="back_sense_behno samll_text" :href=(shopifyData.link)>
+    <a class="back_sense_behno samll_text" :href=(shopifyData.link)>
       {{ shopifyData.ctaText }}
-    </a>  -->
+    </a> 
 </template>
 
 <style scoped>
@@ -10,7 +9,7 @@
     text-decoration: underline;
     display: block;
     width: fit-content;
-    margin:  100px auto 127px;
+    margin:  100px auto 150px;
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
@@ -24,19 +23,18 @@
 }
 @media screen and (max-width: 767px) {
   .back_sense_behno{
-    margin:  45px auto 22px;
+    margin:  45px auto 43px;
   } 
 }
 </style>
 
 <script>
 export default  {
-  name : "back-to-top",
-  // props: {
-  //   shopifyData: {
-  //     type: Object,
-  //     required: true,
-  //   },
-  // },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  }
 }
 </script>

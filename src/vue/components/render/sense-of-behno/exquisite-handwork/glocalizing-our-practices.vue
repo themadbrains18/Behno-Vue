@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
     .sec_glocalizing_our_practices{
-        padding: 87px 0 33px;
+        padding: 87px 0 0px;
     }
     
     .sec_heading{

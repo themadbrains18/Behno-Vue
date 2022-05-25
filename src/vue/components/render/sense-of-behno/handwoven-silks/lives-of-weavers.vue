@@ -84,7 +84,7 @@ export default {
 
 <style scoped>
 .sec_lives__weavers{
-    padding: 34px 0 86px;
+    padding: 34px 0 50px;
 }
 .sec_lives__weavers .big_container{
     padding:  0 17px;

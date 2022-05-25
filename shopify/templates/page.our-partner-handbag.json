@@ -275,6 +275,13 @@
         "secHeading": "Sublime Saturdays.",
         "subHeading": "The hands and tools."
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
@@ -282,6 +289,7 @@
     "ascension-seeker",
     "old-world-craftsmanship",
     "Urbanism-and-development",
-    "sublime-saturdays"
+    "sublime-saturdays",
+    "back-sense-behno"
   ]
 }

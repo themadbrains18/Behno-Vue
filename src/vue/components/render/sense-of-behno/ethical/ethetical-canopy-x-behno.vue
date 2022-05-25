@@ -29,7 +29,7 @@
     <!-- ========== Section CANOPY x BEHNO End ========== -->
 
     <!-- ========== Back to The Sense of behno  ========== -->
-    <BackToTop/>
+  
 </template>
 <style scoped>
 /* ========== Section Canopy X Behno Css Code Start ========== */
@@ -135,12 +135,7 @@ margin-bottom:0px;
 </style>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
-
 export default {
-  components: {
-    BackToTop
-  },
   props: {
     shopifyData: {
       type: Object,

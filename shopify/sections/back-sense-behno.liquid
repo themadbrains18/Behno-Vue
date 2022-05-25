@@ -1,26 +1,27 @@
-<render-back-to-top
+<render-back-sense-behno
 :shopify-data="{
-    Link   : `{{ section.settings.link }}`,
-    ctaText  : `{{ section.settings.ctaText }}`
+  link   : `{{ section.settings.link }}`,
+  ctaText  : `{{ section.settings.ctaText }}`
 }">
-</render-back-to-top>
+</render-back-sense-behno>
 
 
 
 {% schema %}
 {
-    "name": "Hero Section",
+    "name": "Back Sense Behno",
     "settings": [
     {
         "id": "link",
         "type": "url",
-        "label": "Link"
+        "label": "Link",
+        "default": "/"
       },
 	  {
         "id": "ctaText",
         "type": "text",
         "label": "Cta Text",
-        "default": "MEET OUR TEAM"
+        "default": "Back to The Sense of behno"
       }
     ]
  }

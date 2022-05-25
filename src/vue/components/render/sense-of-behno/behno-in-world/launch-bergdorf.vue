@@ -86,7 +86,7 @@ export default {
 
 <style scoped>
 .sec_launch_bergdoft {
-  padding: 136px 0 50px;
+  padding: 136px 0 0px;
 }
 .sec_content {
   display: grid;
@@ -121,7 +121,7 @@ export default {
 /* Responsive Css Code */
 @media screen and (max-width: 991px) {
   .sec_launch_bergdoft {
-    padding-top: 80px ;
+    padding: 80px 0 20px;
   }
   .sec_launch_bergdoft .big_container {
     padding: 0;

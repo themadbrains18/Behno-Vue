@@ -35,7 +35,7 @@ export default{
 
 <style scoped>
 .sec_power_house{
-    padding: 0 0 117px 0;    
+    padding: 0 0 17px 0;    
 }
 .big_container{
     padding:  0 50px 0 6px;
@@ -105,12 +105,11 @@ export default{
     }
 }
 @media screen  and (max-width: 767px){
-.sec_power_house{
-    padding-bottom:0px;
+    .back_sense_behno{
+        margin:  63px auto 43px;
+    }
+    .sec_power_house{
+        padding: 0 0 17px 0;    
+    }
 }
-.back_sense_behno{
-    margin:  63px auto 43px;
-}
-}
-
 </style>
