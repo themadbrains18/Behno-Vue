@@ -154,4 +154,10 @@ export default {
     padding: 0 30px;
   }
 }
+@media screen and (max-width: 480px) {
+  .modify-slider .swiper-button-prev, .modify-slider .swiper-button-next{
+    display: block !important;
+  }
+}
+
 </style>
