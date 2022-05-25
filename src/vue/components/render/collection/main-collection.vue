@@ -235,12 +235,31 @@
             <div class="product_grid">
                 <div class="grid_inner" v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
                     <div class="centeralign addmargin" v-for="product in productList" :key="product.id">
-                        <div class="card" v-on:click="setSelectedCustomer(product.title)">
-                            <img :src="product.images[0].src"
+                        <div class="card" v-if="product.images.length>0" @mouseenter="productId=product.id" @mouseleave="productId=0">
+                            <div v-if="product.variants[0].featured_image!=null">
+                                <img :src="product.variants[0].featured_image.src" :id="product.id"
+                                 />
+                            </div>
+                            <div v-else>
+                                <img :src="product.images[0].src" :id="product.id"
                                 @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
                                 @mouseleave="mouseleave($event, product.images[0].src)" />
+                            </div>
                             <h5 class="card-title">{{ product.title }}</h5>
                             <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
+                            <div class="quickButton" v-bind:class="{ quickActive: product.id == productId }">
+                                <ul >
+                                    <li :key="color+index" class="nav-dots" v-for="color in product.options">
+                                        <span v-if="color.name.toLowerCase().includes('color')">
+                                            <label for="img-1" :key="colors" class="nav-dot" id="img-dot-1" @click="onSelectColor(colors,product)" v-for="colors in color.values"></label>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <button class="quickAdd" @click="addToCard(product)">
+                                    <span>Quick Add</span>
+                                </button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -271,12 +290,12 @@
 
 <script>
 
-import products from "@/assets/json/collectionproduct.json";
+import products from "@/assets/json/devook.json";
 
 // import axios from 'axios'
 export default {
     mounted() {
-        document.addEventListener('click', this.onClick);
+        // document.addEventListener('click', this.onClick);
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
         }
@@ -312,6 +331,7 @@ export default {
             busy: false,
             showClearAll: false,
             gridColumn:4,
+            productId:0,
             ddTestSort: [
                 {
                     id: "sort1",
@@ -343,6 +363,22 @@ export default {
         }
     },
     methods: {
+
+        onSelectColor:function(color,product){
+            console.log(product.id);
+            let img=document.getElementById(product.id);
+            console.log(img);
+            let varints= product.variants.filter(item=>{
+                return item.title.includes(color)
+            })
+            if(varints.length>0){
+                if(varints[0].featured_image!=null){
+                    console.log(varints[0].featured_image.src);
+                    img.src=varints[0].featured_image.src;
+                }
+            }
+            console.log(color);
+        },
 
         /* change images on hover */
         mouseover: function (event, imgsrc) {
@@ -590,8 +626,8 @@ export default {
         getColorDropDownList: function () {
             let array = [];
             products.map((item) => {
-                item.variants.map((col) => {
-                    array.push(col.option1);
+                item.options[0].values.map((col) => {
+                    array.push(col);
                 });
             });
             let data = [...new Set(array)];
@@ -697,7 +733,7 @@ export default {
                 // Get Color product after multi select option in dropdown
                 this.selectedColor.map((col) => {
                     let filter = products.filter((item) => {
-                        return item.variants[0].option1 == col;
+                        return item.options[0].values.includes(col);
                     });
                     if (array.length > 0) {
                         array = new Set([...array, ...filter]);
@@ -779,6 +815,11 @@ export default {
             if (this.filterByMaterial.length > 0 && type != 'material') {
                 array = this.filterArrayToUniqueRecord(array, this.filterByMaterial);
             }
+            // const append = array.slice(
+            //     array.length,
+            //     this.page_size
+            // );
+            // this.productList = array.concat(append);
             this.productList = array; ///this.array_chunk(array, 20);
             this.showClearAll = true;
             this.sortProduct();
@@ -799,15 +840,17 @@ export default {
             this.busy = true;
             window.onscroll = () => {
                 let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
-                if(this.filterByColor.length == 0 && this.filterBySize.length == 0 && this.filterByCategory.length == 0 && this.filterByMaterial.length == 0)
-                if (bottomOfWindow) {
-                    const append = products.slice(
-                        this.productList.length,
-                        this.productList.length + this.page_size
-                    );
-                    this.productList = this.productList.concat(append);
-                    this.fullproductList=this.productList;
+                if(this.filterByColor.length == 0 && this.filterBySize.length == 0 && this.filterByCategory.length == 0 && this.filterByMaterial.length == 0){
+                    if (bottomOfWindow) {
+                        const append = products.slice(
+                            this.productList.length,
+                            this.productList.length + this.page_size
+                        );
+                        this.productList = this.productList.concat(append);
+                        this.fullproductList=this.productList;
+                    }
                 }
+                
             }
             if (this.productList.length == 0) {
                 const append = products.slice(
@@ -819,6 +862,10 @@ export default {
             }
 
             this.busy = false;
+        },
+
+        addToCard:function(product){
+            console.log(product);
         }
 
         /* On click page number change page */
@@ -1356,5 +1403,82 @@ select {
 
 h4 {
     padding: 50px 0;
+}
+
+.quickAdd{
+    border: 1px solid #000;
+    padding: 8px 30px;
+    background: #FFFFFF;
+    gap: 15px;
+    flex-direction: row;
+    align-items: flex-start;
+    
+}
+.quickAdd span{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    
+}
+
+.quickActive{
+    visibility: visible !important;
+}
+
+.quickButton{
+    justify-content: space-between; 
+    display: flex;
+    visibility: hidden;
+}
+.quickButton ul{
+    text-align: left;
+    width: auto;
+}
+
+.nav-dots {
+  width: 100%;
+  bottom: 9px;
+  height: 11px;
+  display: block;
+  padding: 15px 0px;
+}
+
+.nav-dots .nav-dot {
+  top: -5px;
+  width: 11px;
+  height: 11px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background: red;
+}
+
+.nav-dots .nav-dot:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+  background: rgba(0, 0, 0, 0.8);
+}
+.red{
+    background: red;
+}
+.black{
+    background: black;
+}
+.AZURE{
+    background: #007fff;
 }
 </style>
