@@ -9,24 +9,28 @@
                 <h4 class="card_heading_b">
                     {{ shopifyData.secSubHeading }}
                 </h4>
-                <p class="body_text">
-                    {{ shopifyData.secInfo }}
-                </p>
-                <p class="body_text">
-                    {{ shopifyData.InfoBreak }}
+                <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
+                    {{ item.para }}
                 </p>
             </div>
-            <div class="sec_img">
-                   <img :src=(shopifyData.imgUrl.src) :placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />  
-                <!-- <div class="img_grid">
+            <div class="sec_img">                 
+                <div class="img_grid">
                     <div class="grid_items">
-                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
-                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                        <div class="figCaption" v-if="shopifyData.collageData[0]">    
+                            <img :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>   
+                        </div>
+                        <div class="figCaption middle" v-if="shopifyData.collageData[1]">  
+                            <img :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>  
+                        </div>
                     </div>
                     <div class="grid_items">
-                        <img src="https://i.shgcdn.com/14d47b25-6099-4efd-b7e6-1c22d146e08a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">  
+                        <div class="figCaption" v-if="shopifyData.collageData[2]">  
+                            <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>  
+                            <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         
@@ -81,9 +85,24 @@
         display: flex;
         flex-direction: column;
         gap: 160px;
+        align-items: center;
+    }
+    .fig_caption.middle{
+        max-width: 520px;
+        
     }
 
     /* Responsive Css Code */
+    @media screen  and (max-width: 1200px){
+        .img_grid > div{
+            width: 50%;
+        }
+        .grid_items,
+        .img_grid
+        {
+            gap: 43px;
+        }
+    }
     @media screen  and (max-width: 991px){
         .sec_speaking_angagment{
             padding-top:30px ;
@@ -100,6 +119,10 @@
         .sec_video iframe{
             height: 500px;
         }
+        .img_grid{
+            margin-top: 40px;
+            padding: 0 15px;
+        }
     }
 
     @media screen  and (max-width: 767px){
@@ -109,11 +132,17 @@
         .sec_video iframe{
             height: 214px;
         }
-        .grid_items{
-            gap: 60px;
-        }
         .img_grid{
             gap: 23px;
+        }
+        .fig_caption{
+            font-size: 7px;
+        }
+        .grid_items{
+            gap: 26px;
+        }
+        .figCaption.middle {
+            width: 80%;
         }
     }
     

@@ -5,7 +5,7 @@
       <div class="main_contenet">
         <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
         <h4 class="card_heading_b sec_inner_heading">{{ shopifyData.subHeading }}</h4>
-          <p class="body_text" v-for="(value, key) in shopifyData.paraBlockData" :key="key" >
+          <p class="body_text" v-for="(value, key) in shopifyData.blockData" :key="key" >
               {{ value.para }}
           </p>
       </div>

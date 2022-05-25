@@ -105,7 +105,7 @@ button{
 }
 
 .big_container {
-  max-width: 1470px;
+  max-width:100%;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -167,7 +167,7 @@ button{
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.02em;
-  
+  line-height: 19.95px;
 }
 
 /* Figma Small  */
@@ -197,6 +197,13 @@ button{
   background-color: #fff;
   border: 1px solid #fff;
   color: #000;
+}
+.fig_caption{
+  font-family: 'adobe-caslon-pro',sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
 }
 
 @media (hover:hover) {
@@ -267,6 +274,7 @@ button{
 }
 @media only screen and (max-width: 1024px) {
   .quotes_text{
+    font-size: 50px;
     line-height: 58px;
   }
 }
@@ -276,6 +284,7 @@ button{
     padding: 0 10px;
   }
   .quotes_text{
+    font-size: 40px;
     line-height: 38px;
   }
 }
@@ -287,6 +296,7 @@ button{
     font-size: 46px;
   }
   .quotes_text{
+    font-size: 27px;
     line-height: 28px;
   }
 }

@@ -178,6 +178,9 @@ export default {
   .body_text{
       margin: 12px 0 24px;
   }
+  .accordian_list{
+        padding:10px 10px 10px 26px;
+    }
   }
 </style>
 

@@ -29,7 +29,7 @@
     <!-- ========== Section CANOPY x BEHNO End ========== -->
 
     <!-- ========== Back to The Sense of behno  ========== -->
-    <BackToTop/>
+  
 </template>
 <style scoped>
 /* ========== Section Canopy X Behno Css Code Start ========== */
@@ -77,14 +77,6 @@ margin-bottom:0px;
 
 .back_sense_behno {
   margin: 57px auto 151px;
-  width: fit-content;
-  display: block;
-  text-decoration: underline;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 12px;
-  letter-spacing: 0.02em;
-  color: #000000;
 }
 /* ========== back_sense_behno Css Code End ========== */
 
@@ -143,12 +135,7 @@ margin-bottom:0px;
 </style>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
-
 export default {
-  components: {
-    BackToTop
-  },
   props: {
     shopifyData: {
       type: Object,

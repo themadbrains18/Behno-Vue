@@ -2,14 +2,13 @@
 [
    {% for block in section.blocks %}
         {% if block.type == 'paragraph' %}
-        {
-            para : `{{ block.settings.para }}`
-        }{% unless forloop.last %},{% endunless %}
+            {
+                para : `{{ block.settings.para }}`
+            }{% unless forloop.last %},{% endunless %}
         {% endif %}
    {% endfor %}
 ]
 {% endcapture %}
-
 
 {% capture collageData %}
 [
@@ -20,40 +19,40 @@
                 src : `{{ block.settings.image | img_url : "" }}`,
                 placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
                 alt: `{{ block.settings.image.alt }}`
-            }
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
         }{% unless forloop.last %},{% endunless %}
         {% endif %}
    {% endfor %}
 ]
 {% endcapture %}
 
-
-<render-sense-of-behno-philanthropy-walk-to-remember :shopify-data="{
-    redHeading   : `{{ section.settings.redHeading }}`,
-    secSubHeading   : `{{ section.settings.secSubHeading }}`,
-    paraData  : {{ paraData }},
-    collageData  : {{ collageData }}
+<render-sense-of-behno-our-partner-handbag-sublime-saturdays :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secSubHeading:`{{ section.settings.subHeading }}`,
+    paragraph  :  {{ paraData }},
+    collageData  : {{ collageData }},
+    
 }">
-</render-sense-of-behno-philanthropy-walk-to-remember>
-
+</render-sense-of-behno-our-partner-handbag-sublime-saturdays>
 
 
 {% schema %}
 {
-    "name": "Collage Section",
+    "name":"Sublime Saturdays",
     "settings": [
-     {
-        "id": "redHeading",
-        "type": "text",
-        "label": "Red Heading",
-        "default": "A walk to remember."
-      },
-      {
-        "id": "secSubHeading",
-        "type": "text",
-        "label": "Section Sub Heading",
-        "default": "The Buddy Walk is one of the largest events hosted by NDSS to bring its community together. Taking place in New York City, Nini was a Grand Marshall for 2019."
-      }
+        {
+            "id": "secHeading",
+            "type": "text",
+            "label": "Section Heading",
+            "default": "Sublime Saturdays."
+        },
+        {
+            "id": "subHeading",
+            "type": "text",
+            "label": "Sub Heading",
+            "default": "The hands and tools."
+        }
     ],
     "blocks" : [
         {
@@ -70,15 +69,20 @@
         {
             "name": "Collage Image",
             "type" : "collage",
-            "limit" : 13,
+            "limit" : 10,
             "settings" : [
                 {
                     "id": "image",
                     "type": "image_picker",
                     "label": "Image"
+                },
+                {
+                    "id":"imageInfo",
+                    "type":"text",
+                    "label":"Image Info"
                 }
             ]
         }
     ]
- }
+}
 {% endschema %}

@@ -1027,7 +1027,7 @@ export default {
       }
     },
     togleHeader() {
-      if(document.body.getAttribute.style){
+      if(document.body.getAttribute("style")){
         document.body.removeAttribute("style");
       }else{
         document.body.setAttribute("style","overflow:hidden;")

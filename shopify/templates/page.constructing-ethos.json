@@ -116,16 +116,104 @@
     },
     "msa-ethos": {
       "type": "msa-ethos",
+      "blocks": {
+        "95457ae0-6325-415a-8528-22d76510f35f": {
+          "type": "secGrid",
+          "settings": {
+            "gridImg": "shopify:\/\/shop_images\/ethos-right.jpg",
+            "gridHeading": "Brainchild of a brilliant brain.",
+            "gridSubHeading": "Muni Seva Ashram is spearheaded by Dr. Vikram Patel, a visionary of our times.",
+            "gridInfo": "Dr. Patel built the nonprofit to function like a self-sustaining village. Dr. Patel flourishes in intellectually yet realistically implementing concepts and systems that may, at first, seem far-fetched for a nonprofit village nestled in a rural landscape."
+          }
+        },
+        "e92d23d6-35b4-4960-865b-06bfd161cdd6": {
+          "type": "secGrid",
+          "settings": {
+            "gridImg": "shopify:\/\/shop_images\/ethos-left.jpg",
+            "gridHeading": "MSA respectfully brings modernity to a rural space through progressive and cutting-edge practices, all considering local nuances.",
+            "gridSubHeading": "",
+            "gridInfo": "MSA is a nonprofit that's self sustaining, educative, caring, and mostly, a space for marginalized communities."
+          }
+        },
+        "3c23d8cd-cb17-48d8-a218-51ca9bbb38c2": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1-MSAETHOS.jpg",
+            "imageInfo": "Utilizing state of art solar discs, MSA genrate it owns electricity throught solar power.."
+          }
+        },
+        "0ced010a-6c66-4d86-b5e3-48f5cc87c1ff": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-MSAETHOS.jpg",
+            "imageInfo": "MSA addresses the needs of vulnerable polutions through its insite orphanage, center for mentally disabled woman, and senior citizens home."
+          }
+        },
+        "bf56104b-890d-45b7-b358-5ff1801b0eba": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-MSAETHOS.jpg",
+            "imageInfo": "Here we see the distribution of milk form MSA own Dairy farm to local community members."
+          }
+        },
+        "d389242d-eb50-47f8-9d22-d9b4b742f636": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4-MSAETHOS.jpg",
+            "imageInfo": "MSA harvest hundreds of acres organic produce and its agricultrural practices include implementing top-notch irrigation technologies to conserve water.."
+          }
+        },
+        "98cada46-4e02-49b2-8a8e-f62ec4f6263d": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5-MSAETHOS.jpg",
+            "imageInfo": "The facde of world-class thst has a cyclotron radiation machine for its canser patients whare th cost of all medical treatment is on a saliding scale."
+          }
+        },
+        "2770a318-f3e1-49ba-9215-762264d69be6": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6-MSAETHOS.jpg",
+            "imageInfo": "Within all its activities , MSA employes local community member to run its vast operations."
+          }
+        },
+        "3a4a1c0b-605a-4293-857f-0ab132030095": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7-MSAETHOS.jpg",
+            "imageInfo": "Sharing oranges form the farms at MSA as an afternoon snack at the factory.."
+          }
+        },
+        "309f4730-e7d7-42d8-bd06-b9341400a9a2": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8-MSAETHOS.jpg",
+            "imageInfo": "making a Thousands of roties at the community kitchen for students of MSA's resident primary ,secondry and vocational training schools, for visitors and for residents of MSA."
+          }
+        },
+        "5c1ddeab-bd0e-4692-b8eb-e60a48d694cc": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/9-MSAETHOS.jpg",
+            "imageInfo": "The MSA Ethos and behno team at MSA."
+          }
+        }
+      },
+      "block_order": [
+        "95457ae0-6325-415a-8528-22d76510f35f",
+        "e92d23d6-35b4-4960-865b-06bfd161cdd6",
+        "3c23d8cd-cb17-48d8-a218-51ca9bbb38c2",
+        "0ced010a-6c66-4d86-b5e3-48f5cc87c1ff",
+        "bf56104b-890d-45b7-b358-5ff1801b0eba",
+        "d389242d-eb50-47f8-9d22-d9b4b742f636",
+        "98cada46-4e02-49b2-8a8e-f62ec4f6263d",
+        "2770a318-f3e1-49ba-9215-762264d69be6",
+        "3a4a1c0b-605a-4293-857f-0ab132030095",
+        "309f4730-e7d7-42d8-bd06-b9341400a9a2",
+        "5c1ddeab-bd0e-4692-b8eb-e60a48d694cc"
+      ],
       "settings": {
-        "redText": "“MSA ETHOS WAS AN INTERSECTIONAL APPROACH TO MANUFACTURING.”",
-        "fHeading": "Brainchild of a brilliant brain.",
-        "fsubHeading": "Muni Seva Ashram is spearheaded by Dr. Vikram Patel, a visionary of our times.",
-        "finfo": "Dr. Patel built the nonprofit to function like a self-sustaining village. Dr. Patel flourishes in intellectually yet realistically implementing concepts and systems that may, at first, seem far-fetched for a nonprofit village nestled in a rural landscape.",
-        "fImage": "shopify:\/\/shop_images\/ethos-right.jpg",
-        "sHeading": "MSA respectfully brings modernity to a rural space through progressive and cutting-edge practices, all considering local nuances.",
-        "sinfo": "MSA is a nonprofit that's self sustaining, educative, caring, and mostly, a space for marginalized communities.",
-        "sImage": "shopify:\/\/shop_images\/ethos-left.jpg",
-        "collageImg": "shopify:\/\/shop_images\/collage.jpg"
+        "redText": "“MSA ETHOS WAS AN INTERSECTIONAL APPROACH TO MANUFACTURING.”"
       }
     },
     "portraitures-powerhouse": {
@@ -139,12 +227,20 @@
         "checkbox": true,
         "videoLink": "https:\/\/i.shgcdn.com\/dfe5ddee-faae-4df5-86a6-44c58a4de1c9\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
       }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
     }
   },
   "order": [
     "constructing-ethos-hero",
     "setting-standard",
     "msa-ethos",
-    "portraitures-powerhouse"
+    "portraitures-powerhouse",
+    "back-sense-behno"
   ]
 }

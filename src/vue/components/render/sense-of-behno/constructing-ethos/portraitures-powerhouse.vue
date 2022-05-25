@@ -27,8 +27,6 @@
     </div>
     
   </section>
-
-  <BackToTop/>
   <!-- ========== Section Forming real relationships End ========== -->
 </template>
 
@@ -97,12 +95,7 @@
 .sec_portraitures_powerhouse .sec_img video{
     width: 100%;
 }
-.back_sense_behno{
-    text-decoration: underline;
-    display: block;
-    width: fit-content;
-    margin:  100px auto 127px;
-} 
+
 /* ========== Section Forming real relationships Css Code End  ========== */
 
 /* ========== Section Forming real relationships Responsive Css Code Start  ========== */
@@ -133,18 +126,13 @@
     margin-top: 30px;
   }
 
- .back_sense_behno{
-    margin:  60px auto 40px;
- }
+
 }
 
 @media only screen and (max-width: 767px) {
   .sec_portraitures_powerhouse {
     padding: 22px 0 50px;
   }
-  .back_sense_behno{
-    margin:  45px auto 22px;
-  } 
 }
 
 
@@ -157,12 +145,8 @@
 </style>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
 
 export default {
-  components: {
-    BackToTop
-  },
   props: {
     shopifyData: {
       type: Object,

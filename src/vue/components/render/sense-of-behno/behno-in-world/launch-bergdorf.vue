@@ -38,12 +38,9 @@
     </div>
   </section>
   <!-- Garment Up-close End -->
-  <BackToTop/>
-
 </template>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
@@ -53,7 +50,6 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 export default {
   components: {
-    BackToTop,
     Swiper,
     SwiperSlide
   },
@@ -90,7 +86,7 @@ export default {
 
 <style scoped>
 .sec_launch_bergdoft {
-  padding-top: 136px;
+  padding: 136px 0 0px;
 }
 .sec_content {
   display: grid;
@@ -121,17 +117,11 @@ export default {
   padding: 0 55px;
 }
 
-.back_sense_behno{
-    text-decoration: underline;
-    display: block;
-    width: fit-content;
-    margin:  100px auto 127px;
 
-}
 /* Responsive Css Code */
 @media screen and (max-width: 991px) {
   .sec_launch_bergdoft {
-    padding-top: 80px ;
+    padding: 80px 0 20px;
   }
   .sec_launch_bergdoft .big_container {
     padding: 0;
@@ -149,9 +139,7 @@ export default {
     max-width: 100%;
     padding: 0 25px;
   }
-  .back_sense_behno{
-        margin:  60px auto 40px;
-  }
+ 
 }
 
 @media screen and (max-width: 767px) {
@@ -165,9 +153,6 @@ export default {
   .swiper {
     padding: 0 30px;
   }
-  .back_sense_behno{
-    margin:  45px auto 22px;
-  } 
   .sec_launch_bergdoft .swiper-button-prev{
     display: block!important;
   }

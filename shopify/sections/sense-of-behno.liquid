@@ -1,2 +1,106 @@
-<render-sense-of-behno-sense-of-behno>
+{% capture cardData %}
+[
+    {% for block in section.blocks %}
+    {
+        cardHeading   : `{{ block.settings.cardHeading }}`,
+        cardBrief   : `{{ block.settings.cardBrief }}`,
+        cardImg : {
+            src : `{{ block.settings.cardImg | img_url : "" }}`,
+            placeholder: `{{ block.settings.cardImg | img_url : "50x50" }}`,
+            alt: `{{ block.settings.cardImg.alt }}`
+        },
+        cardCta   : `{{ block.settings.cardCta }}`,
+        cardCtaLink   : `{{ block.settings.cardCtaLink }}`
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
+{% endcapture %}
+<render-sense-of-behno-sense-of-behno :shopify-data="{
+    secTopHeading   : `{{ section.settings.secTopHeading }}`,
+    secBottomHeading   : `{{ section.settings.secBottomHeading }}`,
+    secBrief   : `{{ section.settings.secBrief }}`,
+    SecBtn   : `{{ section.settings.SecBtn }}`,
+    SecBtnLink   : `{{ section.settings.SecBtnLink }}`,
+    imgUrl : {
+        src : `{{ section.settings.SecImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.SecImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.SecImg.alt }}`
+    },
+    cardData:{{ cardData }}
+}">
 </render-sense-of-behno-sense-of-behno>
+
+{% schema %}
+{
+    "name":"Sense of Behno",
+    "settings":[
+        {
+            "id":"secTopHeading",
+            "type":"text",
+            "label":"Section Top Heading",
+            "default":"The Sense"
+        },
+        {
+            "id":"secBottomHeading",
+            "type":"text",
+            "label":"Section Bottom Heading",
+            "default":"of behno"
+        },
+        {
+            "id":"secBrief",
+            "type":"text",
+            "label":"Section Brief",
+            "default":"Welcome to our world. Get to know what encompasses our essence."
+        },
+        {
+            "id":"SecImg",
+            "type":"image_picker",
+            "label":"Section Image"
+        },
+        {
+            "id":"SecBtn",
+            "type":"text",
+            "label":"Btn text",
+            "default":"LEARN ABOUT OUR STORY"
+        },
+        {
+            "id":"SecBtnLink",
+            "type":"url",
+            "label":"Btn Link"
+        }
+    ],
+    "blocks": [
+        {
+            "name":"Sense of Behno Cards",
+            "type":"slide",
+            "settings": [
+                {
+                    "id":"cardImg",
+                    "type":"image_picker",
+                    "label":"Card Image"
+                },
+                {
+                    "id":"cardHeading",
+                    "type":"text",
+                    "label":"Card Heading"
+                },
+                {
+                    "id":"cardBrief",
+                    "type":"text",
+                    "label":"Card brief"
+                },
+                {
+                    "id":"cardCta",
+                    "type":"text",
+                    "label":"Card Cta text"
+                },
+                {
+                    "id":"cardCtaLink",
+                    "type":"url",
+                    "label":"Card Cta Link"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

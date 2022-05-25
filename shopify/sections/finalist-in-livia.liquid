@@ -1,46 +1,32 @@
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
 <render-sense-of-behno-behno-in-world-finalist-in-livia :shopify-data="{
     secHeading:`{{ section.settings.secHeading }}`,
     secSubHeading:`{{ section.settings.secSubHeading }}`,
     secInfo:`{{ section.settings.secInfo }}`,
-    secImg : {
-        src : `{{ section.settings.secImg | img_url : "" }}`,
-        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
-        alt: `{{ section.settings.secImg.alt }}`
-    },
     CheackImg : {
         src : `{{ section.settings.SecImage2 | img_url : "" }}`,
         placeholder: `{{ section.settings.SecImage2 | img_url : "50x50" }}`,
         alt: `{{ section.settings.SecImage2.alt }}`
     },
-
-    gridItem1: {
-        src : `{{ section.settings.gridItem1 | img_url : "" }}`,
-        placeholder: `{{ section.settings.gridItem1 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.gridItem1.alt }}`
-    },
-    gridItem2 : {
-        src : `{{ section.settings.gridItem2 | img_url : "" }}`,
-        placeholder: `{{ section.settings.gridItem2 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.gridItem2.alt }}`
-    },
-    gridItem3 : {
-        src : `{{ section.settings.gridItem3| img_url : "" }}`,
-        placeholder: `{{ section.settings.gridItem3 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.gridItem3.alt }}`
-    },
-    gridItem4 : {
-        src : `{{ section.settings.gridItem4 | img_url : "" }}`,
-        placeholder: `{{ section.settings.gridItem4 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.gridItem4.alt }}`
-    },
-    gridItem5 : {
-        src : `{{ section.settings.gridItem5 | img_url : "" }}`,
-        placeholder: `{{ section.settings.gridItem5 | img_url : "50x50" }}`,
-        alt: `{{ section.settings.gridItem5.alt }}`
-    },
-
     checkImage: `{{ section.settings.checkImage }}`,
-    videolink: `{{ section.settings.videolink }}`
+    videolink: `{{ section.settings.videolink }}`,
+    collageData  : {{ collageData }}
 }">
 </render-sense-of-behno-behno-in-world-finalist-in-livia>
 
@@ -68,11 +54,6 @@
             "default":"behno was shortlisted for top 10, where behno founder, Shivam Punjya, pitched to a jury in Paris comprised of Ellie Goulding, Vogue UK editor-in-chief, Edward Enninful, CNN style correspondent, Derek Blasberg, television host and philanthropist, Petra Nemcova, investor, Carmen Busqets, Matchesfashion.com fashion director, Natalie Kingham, among others. behno was enlisted as a top five finalist and attended The Green Carpet Awards in Milan, held at the Teatro alla Scala. The Green Carpet Awards were founded by Livia Firth and have been attended by the likes of Anna Wintour, Cate Blanchett, among other movers and shakers of the fashion and media worlds.            "
         },
         {
-            "id":"secImg",
-            "type":"image_picker",
-            "label":"Section Image"
-        },
-        {
             "id": "checkImage",
             "type": "checkbox",
             "label": "Show Video",
@@ -88,31 +69,25 @@
             "type": "text",
             "label": "t:sections.home_grid_text_image.settings.video.label",
             "default" :"https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
-        },
+        }
+    ],
+    "blocks" : [
         {
-            "id":"gridItem1",
-            "type":"image_picker",
-            "label":"Grid Image 1"
-        },
-        {
-            "id":"gridItem2",
-            "type":"image_picker",
-            "label":"Grid Image 2"
-        },
-        {
-            "id":"gridItem3",
-            "type":"image_picker",
-            "label":"Grid Image 3"
-        },
-        {
-            "id":"gridItem4",
-            "type":"image_picker",
-            "label":"Grid Image 4"
-        },
-        {
-            "id":"gridItem5",
-            "type":"image_picker",
-            "label":"Grid Image 5"
+            "name": "Collage Image",
+            "type" : "collage",
+            "limit" : 6,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id":"imageInfo",
+                    "type":"text",
+                    "label":"Image Info"
+                }
+            ]
         }
     ]
 }

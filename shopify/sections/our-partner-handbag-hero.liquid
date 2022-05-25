@@ -1,0 +1,42 @@
+<render-sense-of-behno-our-partner-handbag-our-partner-handbag-hero :shopify-data="{
+    secSubHeading:`{{ section.settings.secSubHeading }}`,
+    checkImage: `{{ section.settings.checkImage }}`,
+    videolink: `{{ section.settings.videolink }}`,
+    secImg : {
+        src : `{{ section.settings.secImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg.alt }}`
+    },
+}">
+</render-sense-of-behno-our-partner-handbag-our-partner-handbag-hero>
+
+{% schema %}
+{
+    "name":"Partner Handbag Hero",
+    "settings":[
+        {
+            "id":"secSubHeading",
+            "type":"text",
+            "label":"Section Sub Heading",
+            "default":"OUR PARTNER HANDBAG FACTORY"
+        },
+        {
+            "id":"secImg",
+            "type":"image_picker",
+            "label":"Section Image"
+        },
+        {
+            "id": "checkImage",
+            "type": "checkbox",
+            "label": "Show Video",
+            "default": true
+        },
+        {
+            "id": "videolink",
+            "type": "text",
+            "label": "t:sections.home_grid_text_image.settings.video.label",
+            "default" :"https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+        }
+    ]
+}
+{% endschema %}

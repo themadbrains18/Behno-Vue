@@ -18,17 +18,12 @@
         </div>
     </section>
 <!-- Section Garment Ethical End -->
-  <BackToTop/>
     
 </template>
 
 <script>
-import BackToTop from "../../back-to-top.vue";
-
 export default{
-    components: {
-      BackToTop
-    },
+   
     props: {
         shopifyData: {
             type: Object,
@@ -39,6 +34,9 @@ export default{
 </script>
 
 <style scoped>
+.sec_power_house{
+    padding: 0 0 17px 0;    
+}
 .big_container{
     padding:  0 50px 0 6px;
 }
@@ -65,11 +63,7 @@ export default{
     border: 1px solid #000;
 }
 .back_sense_behno{
-    text-decoration: underline;
-    display: block;
-    width: fit-content;
     margin:  117px auto 202px;
-
 }
 @media (hover: hover) {
   .cta_btn:hover {
@@ -111,12 +105,11 @@ export default{
     }
 }
 @media screen  and (max-width: 767px){
-.sec_power_house{
-    padding-bottom:0px;
+    .back_sense_behno{
+        margin:  63px auto 43px;
+    }
+    .sec_power_house{
+        padding: 0 0 17px 0;    
+    }
 }
-.back_sense_behno{
-    margin:  63px auto 43px;
-}
-}
-
 </style>

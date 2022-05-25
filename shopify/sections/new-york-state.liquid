@@ -10,17 +10,17 @@
 ]
 {% endcapture %}
 
+
 {% capture collageData %}
 [
    {% for block in section.blocks %}
-        {% if block.type == 'collage' %}
+        {% if block.type == 'slide' %}
         {
-            imgUrl : {
-                src : `{{ block.settings.image | img_url : "" }}`,
-                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
-                alt: `{{ block.settings.image.alt }}`
-            },
-            imageInfo: `{{ block.settings.imageInfo }}`
+          imgUrl : {
+            src : `{{ block.settings.image | img_url : "" }}`,
+            placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+            alt: `{{ block.settings.image.alt }}`
+          }
         }{% unless forloop.last %},{% endunless %}
         {% endif %}
    {% endfor %}
@@ -28,42 +28,49 @@
 {% endcapture %}
 
 
-<render-sense-of-behno-exquisite-handwork-glocalizing-our-practices
+<render-sense-of-behno-our-home-base-new-york-state
 :shopify-data="{
     secHeading   : `{{ section.settings.secHeading }}`,
     subHeading   : `{{ section.settings.subHeading }}`,
-    imgUrl : {
-        src : `{{ section.settings.image | img_url : "" }}`,
-        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
-        alt: `{{ section.settings.image.alt }}`
+    redText   : `{{ section.settings.redText }}`,
+    gridImage : {
+      src : `{{ section.settings.gridImage | img_url : "" }}`,
+      placeholder: `{{ section.settings.gridImage | img_url : "50x50" }}`,
+      alt: `{{ section.settings.gridImage.alt }}`
     },
     paragraphData  : {{ dynamicData }},
     collageData  : {{ collageData }}
 }">
-</render-sense-of-behno-exquisite-handwork-glocalizing-our-practices>
+<render-sense-of-behno-our-home-base-new-york-state>
 
 
 
 {% schema %}
 {
-    "name": "Working With Artisan",
+    "name": "New York State",
     "settings": [
       {
         "id": "secHeading",
         "type": "text",
         "label": "Sec Heading",
-        "default": "Glocalizing our practices."
+        "default": "A New York state of mind."
       },
       {
         "id": "subHeading",
         "type": "text",
         "label": "Sub Heading",
-        "default": "Sourcing local matters. A lot."
+        "default": "New York City is our home."
       },
       {
-        "id": "image",
+        "id": "redText",
+        "type": "text",
+        "label": "Red Text",
+        "default": "“WE ARE DESIGNED IN NEW YORK WHILE IMPACTING THE WORLD.”"
+      },
+      {
+        "id": "gridImage",
         "type": "image_picker",
-        "label": "Collage Image"
+        "label": "Red Text Grid image"
       }
     ],
     "blocks" : [
@@ -79,22 +86,17 @@
             ]
         },
         {
-          "name": "Collage Image",
-          "type" : "collage",
-          "limit" : 5,
-          "settings" : [
-              {
-                  "id": "image",
-                  "type": "image_picker",
-                  "label": "Image"
-              },
-              {
-                  "id":"imageInfo",
-                  "type":"text",
-                  "label":"Image Info"
-              }
-          ]
-      }
+            "name" : "Collage ",
+            "type" : "slide",
+            "limit" : 6,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Collage Image"
+                } 
+            ]
+        }
     ]
  }
 {% endschema %}

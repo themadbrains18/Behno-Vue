@@ -1,2 +1,81 @@
-<render-sense-of-behno-handwoven-silks-sounds-varanasi>
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+{% capture videoData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'video' %}
+            {
+                video : `{{ block.settings.video }}`
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-handwoven-silks-sounds-varanasi 
+:shopify-data="{
+    secHeading : `{{ section.settings.secHeading }}`,
+    subHeading : `{{ section.settings.subHeading }}`,
+    paragraph  :  {{ paraData }},
+    videoData  :  {{ videoData }}
+}">
 </render-sense-of-behno-handwoven-silks-sounds-varanasi>
+
+
+{% schema %}
+
+{
+    "name": "Sounds Varanasi",
+    "settings": [
+     
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "Steep into the sounds of Varanasi."
+      },
+	  {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "Sound on, immerse yourself."
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        },
+        {
+            "name": "Video Url",
+            "type": "video",
+            "settings": [
+                {
+                    "id": "video",
+                    "type": "text",
+                    "label": "Video Url"
+                }
+            ]
+        }
+    ]
+ }
+ {% endschema %}

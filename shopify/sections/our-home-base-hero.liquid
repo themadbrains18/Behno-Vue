@@ -1,17 +1,45 @@
-<<<<<<< HEAD
-<render-sense-of-behno-our-home-base-our-home-base-hero>
+
+<render-sense-of-behno-our-home-base-our-home-base-hero
+:shopify-data="{
+    secHeading   : `{{ section.settings.secHeading }}`,
+    checkbox   : `{{ section.settings.checkbox }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    videoLink : `{{ section.settings.videoLink }}`
+}">
 </render-sense-of-behno-our-home-base-our-home-base-hero>
-=======
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+    "name": "Hero Section",
+    "settings": [
+    
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "OUR HOME BASE"
+      },
+      {
+        "id": "checkbox",
+        "type": "checkbox",
+        "label": "Show Video",
+        "default": true
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+      },
+      {
+        "id": "videoLink",
+        "type": "text",
+        "label": "Paste Video Url",
+        "default" : "https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+      }
+    ]
+ }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
->>>>>>> 243461fde34f68841218fdc2853b0e3049431994

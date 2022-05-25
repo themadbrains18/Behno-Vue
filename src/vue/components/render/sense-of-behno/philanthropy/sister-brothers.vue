@@ -2,15 +2,17 @@
   <!-- Section Sister Brothers Start -->
   <section class="sec_sister-brothers">
     <div class="big_container">
-      <h2 class="card_heading_b">A SISTER AND HER BROTHERS</h2>
+      <h2 class="card_heading_b">{{shopifyData.Heading}}</h2>
       <div class="sec_content">
         <img
-          src="https://i.shgcdn.com/ab501f7d-2a14-4f03-be00-b0b0226fdcb0/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-          alt="Image-Description"
+          :src=(shopifyData.imgUrl.src)
+          :src-placeholder=(shopifyData.imgUrl.placeholder)
+          :alt=(shopifyData.imgUrl.alt)
         />
         <img
-          src="https://i.shgcdn.com/9a4d26f6-05f3-424f-a608-6d546e517ac0/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-          alt="Image-Description"
+          :src=(shopifyData.rightImgUrl.src)
+          :src-placeholder=(shopifyData.rightImgUrl.placeholder)
+          :alt=(shopifyData.rightImgUrl.alt)
         />
       </div>
     </div>
@@ -48,3 +50,14 @@
 }
 </style>
 <!-- Section Sister Brothers Css Code End -->
+
+<script>
+export default {
+    props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>

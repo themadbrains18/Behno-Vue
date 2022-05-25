@@ -1,26 +1,23 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_philanthropy_hero">
-    <h2 class="card_heading_b">FRONT-END PHILANTHROPHY</h2>
+    <h2 class="card_heading_b">{{ shopifyData.preHeading }}</h2>
     <div class="container">
       <div class="main_contenet">
-        <h2 class="sec_heading">The National Down Syndrome Society x behno.</h2>
-        <p class="body_text">
-          The National Down Syndrome Society (NDSS) and behno collaborate to
-          create a significant partnership to further behno’s commitment to
-          being a wholesome social enterprise founded on championing ethical
-          manufacturing to now supporting nonprofits working to positively
-          impact their communities.
+        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+        <p class="body_text" v-for="(value, key) in shopifyData.paraData" :key="key">
+          {{ value.para }}
         </p>
       </div>
     </div>
     <div class="sec_img">
       <img
-        src="https://i.shgcdn.com/fd8b2cfd-0a2a-40ac-9328-f12a9cea1c9c/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
-        alt=""
+        :src=(shopifyData.imgUrl.src)
+        :src-placeholder =(shopifyData.imgUrl.placeholder)
+        :alt=(shopifyData.imgUrl.alt)
       />
     </div>
-    <p class="subtitle">WITHIN THE CAPSULE COLLECTION ARE OUR SIGNATURE BAGS, ALL IN RED TO HONOR NDSS’ OFFICIAL COLOR. 20% OF ALL SALES ARE DONATED TO NDSS.</p>
+    <p class="subtitle">{{ shopifyData.afterImageText }}</p>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
@@ -115,5 +112,14 @@
 }
 </style>
 
-
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 

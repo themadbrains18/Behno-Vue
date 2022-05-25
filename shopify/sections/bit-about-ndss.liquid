@@ -1,2 +1,73 @@
-<render-sense-of-behno-philanthropy-bit-about-ndss>
+
+
+{% capture gridImage %}
+[
+   {% for block in section.blocks %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-philanthropy-bit-about-ndss
+:shopify-data="{
+    redText  : `{{ section.settings.redText }}`,
+    subHeading  : `{{ section.settings.subHeading }}`,
+    para  : `{{ section.settings.para }}`,
+    gridImage  : {{ gridImage}},
+    afterGridText  : `{{ section.settings.afterGridText }}`
+}">
 </render-sense-of-behno-philanthropy-bit-about-ndss>
+
+
+
+{% schema %}
+{
+    "name": "About Ndss Section",
+    "settings": [
+        {
+            "id": "redText",
+            "type": "text",
+            "label": "Red Text",
+            "default" : "A bit about NDSS."
+        }, 
+        {
+            "id": "subHeading",
+            "type": "textarea",
+            "label": "sub Heading",
+            "default" : "NDSS was founded in 1979 by Betsy Goodwin and is now the largest nonprofit in the United States dedicated to advocating for all people with Down Syndrome."
+        },
+        {
+            "id": "para",
+            "type": "textarea",
+            "label": "Paragraph",
+            "default": "NDSS is the leading human rights organization for all individuals with Down syndrome and provides state -of-the - art, comprehensive programming to all individuals with Down syndrome and their families, which include: The National Advocacy & Public Policy Center in Washington, DC, its Down Syndrome Health Resources & Promotion Program, the first of its kind #DSWORKS® Employment Program, which is showing the world that people with Down syndrome are ready, willing and able to work as well as the National Buddy Walk® Program."
+        },
+        {
+            "id": "afterGridText",
+            "type": "text",
+            "label": "After Grid Text",
+            "default": "DYANI, EMMETT, MALIK AND VICTORIA WEAR THE NDSS X BEHNO CAPSULE COLLECTION AS PART OF OUR ICONIC “I AM:” CAMPAIGN."
+        }
+    ],
+    "blocks" : [
+        {
+            "name": "Grid Image",
+            "type": "box",
+            "limit": 10,
+            "settings": [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                }
+            ]
+        }
+    ]
+ }
+{% endschema %}

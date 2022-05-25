@@ -14,26 +14,37 @@
             </div>
             <div class="sec_content">
                 <div class="sec_video">
-                    <img :src=(shopifyData.imgUrl1.src) :alt=(shopifyData.imgUrl1.alt) :placeholder=(shopifyData.imgUrl1.placeholder)>
+                    <div class="sec-image-modifier" v-if="shopifyData.collageData[0]">                        
+                        <img class="item1" :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
+                        <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
+                    </div>
                     <template v-if="shopifyData.checkImage === 'true'">
                         <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
                         <source :src=(shopifyData.videolink) >
                         </video>
                     </template>
                     <template v-else>
-                        <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+                        <img class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
                     </template>
                 </div>
                 <div class="sec_img">
                     <div class="t-start">
-                        <img class="img_item1" :src=(shopifyData.imgUrl2.src) :alt=(shopifyData.imgUrl2.alt) :placeholder=(shopifyData.imgUrl2.placeholder)>
+                        <div class="img_item1" v-if="shopifyData.collageData[1]">
+                            <img  :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
+                            <p class="fig_caption">{{ shopifyData.collageData[1].imageInfo }}</p>
+                        </div>
                     </div>
                     <div class="t-end">
-                        <img class="img_item2" :src=(shopifyData.imgUrl3.src) :alt=(shopifyData.imgUrl3.alt) :placeholder=(shopifyData.imgUrl3.placeholder)>
-
+                        <div class="item1 img_item2" v-if="shopifyData.collageData[2]">
+                            <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
+                            <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
+                        </div>
                     </div>
                     <div class="t-center">
-                        <img class="img_item3" :src=(shopifyData.imgUrl4.src) :alt=(shopifyData.imgUrl4.alt) :placeholder=(shopifyData.imgUrl4.placeholder)>
+                        <div class="img_item3" v-if="shopifyData.collageData[3]">
+                            <img  :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
+                            <p class="fig_caption">{{ shopifyData.collageData[3].imageInfo }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,8 +79,9 @@
     .body_text{
         line-height: 19px;
     }
-    .sec_video img{
-        width: 300px;
+    .sec_video{
+        max-width: 300px;
+        width: 100%;
     }
     .img_item1{
         max-width: 540px;
@@ -80,12 +92,22 @@
         max-width: 490px;
         width: 100%;
         height: auto;
-        margin: 70px 0;
+    }
+    .item1{
+        margin: 70px 0 0px auto;
+        width: fit-content;
+        text-align: start;
     }
      .img_item3{
         max-width: 330px;
         width: 100%;
         height: auto;
+    }
+    .fig_caption {
+        text-align: start;
+    }
+    .sec-image-modifier{
+        margin-bottom: 30px;
     }
     
     /* Responsive Css Code */
@@ -110,13 +132,16 @@
     .sec_content{
         margin-top: 43px;
     }
+    .fig_caption{
+        font-size: 7px !important;
+    }
     }
     @media screen  and (max-width: 575px){
         .img_item1{
             max-width: 160px;
         }
         .img_item2{
-            max-width: 176px;
+            /* max-width: 176px; */
             margin: 25px 0 30px;
         }
         .img_item3{
