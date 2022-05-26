@@ -79,12 +79,18 @@ export default {
 
 <style >
 @media screen  and (max-width: 767px){
-  .sec_working_with_artisan .swiper-button-next{
-      right: -5px!important;
+  .sec_working_with_artisan .swiper-button-next, 
+  .sec_working_with_artisan .swiper-button-prev{
+    transform: translateY(0);
+  }
+  .sec_working_with_artisan .swiper-button-next {
+    transform: translateY(0) rotate(180deg);
+      right: -11px!important;
   }
   .sec_working_with_artisan .swiper-button-prev{
-      left: -5px!important;
+      left: -11px!important;
   }
+
 }
 @media screen  and (max-width: 480px){
     .sec_working_with_artisan .modify-slider .swiper-button-prev,.sec_working_with_artisan .modify-slider .swiper-button-next{

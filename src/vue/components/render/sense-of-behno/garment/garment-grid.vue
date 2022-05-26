@@ -12,13 +12,13 @@
           }"
           :modules="modules"
           :breakpoints="{
-            '@1.00': {
-              enabled: true
-            },
-            '@1.40': {
-              enabled: false
-            }
-          }"
+              '320': {
+                enabled: true
+              },
+              '768': {
+                enabled: false
+              }
+            }"
           class="mySwiper"
         >
           <swiper-slide v-for="(item, index) in shopifyData.box" :key="index">
@@ -122,14 +122,14 @@ export default {
   padding: 7.5px 12.57px 7.5px 10.86px;
 }
 /* Responsive Css Code */
-@media screen and (min-width: 767px) {
-  .sec_garment_grid_slider .swiper-slide {
-    width: 100% !important;
-  }
+@media screen and (min-width: 768px) {
   .sec_garment_grid_slider .swiper-wrapper {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 4px;
+  }
+  .sec_garment_grid_slider .swiper-slide {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 767px) {
