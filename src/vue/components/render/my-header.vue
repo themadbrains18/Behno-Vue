@@ -654,7 +654,7 @@
   left: 0;
   width: 100%;
   background: #fff;
-  z-index: 9;
+  z-index: 5;
   transition: transform 0.5s ;
 }
 
