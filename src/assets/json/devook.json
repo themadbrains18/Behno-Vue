@@ -40,6 +40,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -72,6 +73,7 @@
             ]
           },
           "available": true,
+          "stock":4,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -104,6 +106,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -136,6 +139,7 @@
             ]
           },
           "available": true,
+          "stock":5,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -168,6 +172,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -200,6 +205,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -232,6 +238,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -264,6 +271,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -296,6 +304,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -328,6 +337,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -360,6 +370,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -392,6 +403,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -424,6 +436,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -456,6 +469,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -488,6 +502,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -520,6 +535,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -552,6 +568,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -584,6 +601,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -616,6 +634,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -648,6 +667,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -680,6 +700,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -712,6 +733,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -744,6 +766,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -776,6 +799,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -808,6 +832,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -840,6 +865,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -872,6 +898,7 @@
             ]
           },
           "available": true,
+          "stock":3,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -904,6 +931,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -936,6 +964,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -968,6 +997,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -1000,6 +1030,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -1032,6 +1063,7 @@
             ]
           },
           "available": true,
+          "stock":6,
           "price": "12.95",
           "grams": 0,
           "compare_at_price": null,
@@ -1560,6 +1592,7 @@
           "taxable": true,
           "featured_image": null,
           "available": true,
+          "stock":0,
           "price": "1200.00",
           "grams": 0,
           "compare_at_price": "1500.00",
@@ -1579,6 +1612,7 @@
           "taxable": true,
           "featured_image": null,
           "available": true,
+          "stock":4,
           "price": "1200.00",
           "grams": 0,
           "compare_at_price": "1500.00",
@@ -1598,6 +1632,7 @@
           "taxable": true,
           "featured_image": null,
           "available": true,
+          "stock":8,
           "price": "1200.00",
           "grams": 0,
           "compare_at_price": "1500.00",
@@ -1617,6 +1652,7 @@
           "taxable": true,
           "featured_image": null,
           "available": true,
+          "stock":0,
           "price": "1200.00",
           "grams": 0,
           "compare_at_price": "1500.00",
@@ -1636,6 +1672,7 @@
           "taxable": true,
           "featured_image": null,
           "available": true,
+          "stock":6,
           "price": "1200.00",
           "grams": 0,
           "compare_at_price": "1500.00",
@@ -1655,6 +1692,7 @@
           "taxable": true,
           "featured_image": null,
           "available": true,
+          "stock":3,
           "price": "1200.00",
           "grams": 0,
           "compare_at_price": "1500.00",
