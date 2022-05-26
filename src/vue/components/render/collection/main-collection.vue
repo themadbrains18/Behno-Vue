@@ -507,6 +507,7 @@ export default {
         /* end change grid column */
 
         onClick: function (event) {
+            console.log("dsadsa");
             if (event.target.classList != 'dropdown' && event.target.parentElement.classList != 'dropdown' && event.target.parentElement.classList != 'sortFilter'
                 && event.target.parentElement.parentElement.classList != 'dropdown'
                 && event.target.parentElement.parentElement.parentElement != 'dropdown'

@@ -1,0 +1,52 @@
+{% capture productMedia %}
+[
+    {% for item in product.media %}
+        {
+            img : {
+                src : `{{ item | img_url: '' }}`,
+                alt : `{{ item.alt }}`
+            }
+        }{% unless forloop.last  %},{% endunless %} 
+    {% endfor %}
+]
+{% endcapture %}
+{% capture productVariant %}
+[
+    {% for variant in product.variants %}
+        {
+            available  : `{{ variant.available }}`,
+            id  : `{{ variant.id }}`,
+            title  : `{{variant.title }}`,
+            price  : `{{ variant.price | money_with_currency }}`
+        }{% unless forloop.last  %},{% endunless %} 
+    {% endfor %}
+]
+{% endcapture %}
+
+{% capture productCurrentVariant %}
+    {
+        available  : `{{ product.selected_or_first_available_variant.available }}`,
+        id  : `{{ product.selected_or_first_available_variant.id }}`,
+        title  : `{{product.selected_or_first_available_variant.title }}`,
+        price  : `{{ product.selected_or_first_available_variant.price | money_with_currency }}`
+    }
+{% endcapture %}
+
+
+{% capture productDescription %}
+    {
+        `{{ product.description }}`
+    }
+{% endcapture %}
+
+<render-product-product-detail :shopify-data="{
+    productId : `{{ product.id }}`,
+    productTitle : `{{ product.title }}`,
+    productPrice : `{{ product.price | money_with_currency }}`,
+    productMedia : {{ productMedia }},
+    productVariant : {{ productVariant }},
+    productCurrentVariant : {{ productCurrentVariant }},
+}">
+<!-- productDescription : {{ productDescription }} -->
+</render-product-product-detail>
+
