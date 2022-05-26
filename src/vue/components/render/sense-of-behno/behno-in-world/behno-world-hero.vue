@@ -22,6 +22,9 @@
 .sec_img{
     text-align: center;
 }
+.sec_img img{
+    width: 100%;
+}
 
 /* Resposive Css Code */
 @media screen and (max-width: 991px){

@@ -95,25 +95,29 @@ export default{
     gap: 130px;
 }
 .bottom_images{
-    gap: 60px;
+    gap: 40px;
     margin-top: -60px;
 }
 .top_images .item1{
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
 }
 .top_images .item2{
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
 }
 .bottom_images .img_caption {
     max-width: 330px;
     width: 100%;
 }
 .bottom_images .item4 {
-    width: 257px;
+    max-width: 257px;
+    width: 100%;    
     margin-top: 40px;
 }
 .bottom_images .item5 {
-    width: 278px;
+    max-width: 278px;
+    width: 100%;
     align-self: end;
 }
 
@@ -142,23 +146,23 @@ export default{
     .top_images
     {
         gap: 35px;
-        margin-top: -40px;
+        margin-top: 0px;
     }
     .top_images .item1{
-        width: 148px;
+        max-width: 148px;
     }
     .top_images .item2 {
-        width: 170px;
+        max-width: 170px;
     }
     .bottom_images .img_caption{
-        width: 200px;
+        max-width: 200px;
     }
     .bottom_images .item4{
-        width: 117px;
+        max-width: 117px;
         margin-top: 30px;
     }
     .bottom_images .item5{
-        width: 188px;
+        max-width: 188px;
     }
 
 
@@ -190,28 +194,46 @@ export default{
         gap: 16px;
         margin: 0;
     }
+    .bottom_images{
+        margin-top:20px ;
+    }
     .sec_video video{
         height: 200px;
     }
-    .top_images .item1{
-        width: 84px;
+    .bottom_images .item5{
+        max-width: 95px;
     }
-    .top_images .item2 {
-        width: 88px;
-    }
-    .bottom_images .img_caption{
-        width: 81px;
-    }
+  
     .bottom_images .item4{
-        width: 65px;
         margin-top: 20px;
     }
-    .bottom_images .item5{
-        width: 70px;
-    }
+   
     .fig_caption{
         font-size: 7px;
         max-width: 80px;
+    }
+}
+@media screen  and  (max-width: 480px){
+    .top_images{
+        gap: 35px;
+    }
+    .bottom_images{
+        gap: 10px;
+    }
+    .top_images .item1{
+        max-width: 84px;
+    }
+    .top_images .item2 {
+        max-width: 88px;
+    }
+    .bottom_images .img_caption{
+        max-width: 81px;
+    } 
+    .bottom_images .item4{
+        max-width: 65px;
+    }
+    .bottom_images .item5{
+        max-width: 70px;
     }
 }
 </style>

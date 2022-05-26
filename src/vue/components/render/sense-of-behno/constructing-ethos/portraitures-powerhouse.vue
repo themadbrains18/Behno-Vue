@@ -8,7 +8,9 @@
           <h2 class="sec_heading"> {{ shopifyData.secHeading }}</h2>
           <h4 class="card_heading_b">{{ shopifyData.subHeading }}</h4>
           <p class="body_text">{{ shopifyData.secinfo }}</p>
-          <a :href=(shopifyData.ctaLink) class="cta_btn">{{ shopifyData.ctatext }}</a>
+          <div class="cta_wrapper">
+            <a :href=(shopifyData.ctaLink) class="cta_btn">{{ shopifyData.ctatext }}</a>
+          </div>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
@@ -133,6 +135,10 @@
   .sec_portraitures_powerhouse {
     padding: 22px 0 50px;
   }
+  .cta_wrapper{
+    text-align: center;
+  }
+
 }
 
 

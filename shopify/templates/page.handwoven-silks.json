@@ -151,13 +151,37 @@
         "d6fd691e-f04f-45c6-8ee2-cfae75006d66": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/constructing-ethos1.jpg"
+            "sliderImg": "shopify:\/\/shop_images\/ghat-know2.jpg"
           }
         },
         "74399097-6f62-4823-b84d-6c8a560f7538": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/constructing-ethos-hero.jpg"
+            "sliderImg": "shopify:\/\/shop_images\/ghat-know1.jpg"
+          }
+        },
+        "c557c954-4754-4494-8885-d219ca43f8c2": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/ghat-know4.jpg"
+          }
+        },
+        "35677a9e-d7fb-484e-b3a4-c8cef09f936c": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/ghat-know5.jpg"
+          }
+        },
+        "e62d9e16-c326-430b-bd1c-cce0f3e66715": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/ghat-know6.jpg"
+          }
+        },
+        "95be1039-17a7-40d4-b436-6893dd5ace31": {
+          "type": "slide",
+          "settings": {
+            "sliderImg": "shopify:\/\/shop_images\/ghat-know3.jpg"
           }
         }
       },
@@ -165,11 +189,22 @@
         "63f60d39-054a-490b-8bc5-a1fcaa1be682",
         "90e6ad5d-2f9c-4a07-9131-a0f3b2978daa",
         "d6fd691e-f04f-45c6-8ee2-cfae75006d66",
-        "74399097-6f62-4823-b84d-6c8a560f7538"
+        "74399097-6f62-4823-b84d-6c8a560f7538",
+        "c557c954-4754-4494-8885-d219ca43f8c2",
+        "35677a9e-d7fb-484e-b3a4-c8cef09f936c",
+        "e62d9e16-c326-430b-bd1c-cce0f3e66715",
+        "95be1039-17a7-40d4-b436-6893dd5ace31"
       ],
       "settings": {
         "secHeading": "You’ve ghat to know about this.",
         "secSubHeading": "Varanasi is a city nestled on the banks of the Ganges river in India."
+      }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
       }
     }
   },
@@ -177,6 +212,7 @@
     "handwoven-silks-hero",
     "lives-of-weavers",
     "sounds-varanasi",
-    "ghat-know-about"
+    "ghat-know-about",
+    "back-sense-behno"
   ]
 }

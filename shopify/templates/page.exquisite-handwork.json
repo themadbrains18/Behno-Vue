@@ -3,9 +3,9 @@
     "exquisite-handwork-hero": {
       "type": "exquisite-handwork-hero",
       "settings": {
-        "secHeading": "BEHNO IN THE WORLD",
+        "secHeading": "EXQUISITE HANDWORK",
         "checkbox": true,
-        "videoLink": "https:\/\/i.shgcdn.com\/dfe5ddee-faae-4df5-86a6-44c58a4de1c9\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
+        "videoLink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
       }
     },
     "inheritance-worth": {
@@ -41,19 +41,13 @@
         "8e205c9f-8e13-491d-a34e-802088fb6796": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slideimg.jpg"
+            "image": "shopify:\/\/shop_images\/inheritance2.jpg"
           }
         },
         "aa8e3867-807d-4980-bf1b-4305cd144aa8": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slideimg1.jpg"
-          }
-        },
-        "7de832b1-0b83-46e0-a00f-0d7077173c77": {
-          "type": "Slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slideimg2.jpg"
+            "image": "shopify:\/\/shop_images\/inheritance1.jpg"
           }
         },
         "0ec7557d-756d-4642-b086-7249a739dcdb": {
@@ -72,7 +66,6 @@
       "block_order": [
         "8e205c9f-8e13-491d-a34e-802088fb6796",
         "aa8e3867-807d-4980-bf1b-4305cd144aa8",
-        "7de832b1-0b83-46e0-a00f-0d7077173c77",
         "0ec7557d-756d-4642-b086-7249a739dcdb",
         "36e8fa58-1899-4dc9-b5c7-fdeac918278f"
       ],

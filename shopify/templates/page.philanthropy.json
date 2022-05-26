@@ -267,6 +267,21 @@
         "redText": "“IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”"
       }
     },
+    "shop-ndds-bottom": {
+      "type": "shop-ndds-bottom",
+      "settings": {
+        "secSubHeading": "SHOP NDSS X BEHNO",
+        "secCtaText": "SHOP THE NDSS X BEHNO CAPSULE",
+        "secCtaLink": "\/",
+        "showProduct": true,
+        "product_list": [
+          "choker-with-bead",
+          "choker-with-gold-pendant",
+          "choker-with-triangle",
+          "dainty-gold-neclace"
+        ]
+      }
+    },
     "back-sense-behno": {
       "type": "back-sense-behno",
       "settings": {
@@ -282,6 +297,7 @@
     "sister-brothers",
     "walk-to-remember",
     "shop-ndss",
+    "shop-ndds-bottom",
     "back-sense-behno"
   ]
 }
