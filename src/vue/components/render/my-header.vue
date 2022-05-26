@@ -1004,7 +1004,9 @@ export default {
     window.addEventListener("resize", this.onWindowLoad);
     window.addEventListener("scroll", this.scollHeader);
     window.addEventListener('load',()=>{
-      document.querySelector(".tmbMain").setAttribute("style",`margin-top:${document.querySelector(".tmbHeader").offsetHeight}px`);
+      // document.querySelector(".tmbMain").setAttribute("style",`margin-top:${document.querySelector(".tmbHeader").offsetHeight}px`);
+      document.querySelector(".tmbMain").style.marginTop = `${document.querySelector(".tmbHeader").offsetHeight}px`;
+
       const navlinkHover = document.querySelectorAll(".navlink__hover");
       for(let i of navlinkHover){
         i.setAttribute("style",`top:${document.querySelector(".tmbHeader").offsetHeight}px`);

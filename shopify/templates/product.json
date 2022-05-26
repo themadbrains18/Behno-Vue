@@ -1,10 +1,33 @@
 {
   "sections": {
     "main": {
-      "type": "main-product"
+      "type": "main-product",
+      "settings": {
+      }
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {
+      }
+    },
+    "product-slider": {
+      "type": "product-slider",
+      "settings": {
+        "secHeading": "YOU MAY ALSO LIKE",
+        "showProduct": true,
+        "product_list": [
+          "chain-bracelet",
+          "leather-anchor",
+          "bangle-bracelet-with-feathers",
+          "bangle-bracelet",
+          "boho-earrings"
+        ]
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "product-grid",
+    "product-slider"
   ]
 }
