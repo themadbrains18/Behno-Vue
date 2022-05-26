@@ -198,6 +198,13 @@ export default {
     SwiperSlide
   },
   mounted(){
+    window.addEventListener('resize',()=>{
+        if(window.innerWidth <= 991){
+            document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
+        }else{
+            document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#fff";
+        }    
+    })
 
     if(window.innerWidth <= 991){
         document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
