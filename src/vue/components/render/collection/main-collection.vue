@@ -209,25 +209,25 @@
             <div class="product_grid">
                 <div class="grid_inner" v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
                     <div class="product_item" v-for="product in productList" :key="product.id">
-                        <div class="card" v-if="product.images.length>0" @mouseenter="productId=product.id" @mouseleave="cardmouseleave(product.id)">
-                            <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5?'ONLY '+ product.variants[0].stock +' LEFT':''}}</div>
+                        <div class="card" v-if="product.images.length>0" @mouseenter="isMobile==false?productId=product.id:''" @mouseleave="cardmouseleave(product.id)">
+                            <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':''}}</div>
                             
                             <div class="product_img_wrapper" :id="'product_img_wrapper'+product.id" v-bind:class="{ out_of_stock: product.variants[0].stock == 0 }">
                                 <img v-if="product.variants[0].featured_image!=null" :src="product.variants[0].featured_image.src" :id="product.id" />
                                 <img  :src="product.images[0].src" :id="product.id"
                                 @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
                                 @mouseleave="mouseleave($event, product.images[0].src)" v-else />
-                                <div class="out_of_stock_text" :id="'out_of_stock_text'+product.id" v-bind:class="{ out_of_stock_text_active: product.variants[0].stock == 0 }">Out Of Stock</div>
+                                <!-- <div class="out_of_stock_text" :id="'out_of_stock_text'+product.id" v-bind:class="{ out_of_stock_text_active: product.variants[0].stock == 0 }">Out Of Stock</div> -->
                             </div>
                             <h5 class="card-title">{{ product.title }}</h5>
                             <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
-                            <div class="quickButton" v-bind:class="{ quickActive: product.id == productId }">
+                            <div class="quickButton quickActive" v-bind:class="{ quickActive: isMobile==false?product.id == productId:true }">
                                 <div class="color_swatches">
                                     <ul>
                                         <li :key="color+index" class="nav-dots" v-for="color in product.options">
                                             <span v-if="color.name.toLowerCase().includes('color')">
                                                 <template v-if="color.values.length <= 4 ">
-                                                    <label for="img-1" :key="colors" class="nav-dot" :style="inlineBgImage(colors)" id="img-dot-1" @click="onSelectColor(colors,product)" v-for="colors in color.values"></label>
+                                                    <label for="img-1" :key="colors" class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" v-for="colors in color.values"></label>
                                                 </template>
                                                 <template v-else>
                                                     <swiper
@@ -237,7 +237,7 @@
                                                         navigation
                                                         >
                                                             <swiper-slide :key="colors" v-for="colors in color.values">
-                                                                <label for="img-1"  class="nav-dot" :style="inlineBgImage(colors)" id="img-dot-1" @click="onSelectColor(colors,product)" ></label>
+                                                                <label for="img-1"  class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" ></label>
                                                             </swiper-slide>
                                                     </swiper>
                                                 </template>
@@ -265,12 +265,31 @@
                 </div>
             </div>
         </div>
+        <div class="big_container">
+            <div class="ethics_in_fashion">
+                <div class="ethics_content">
+                    <div class="ethics_content_inner">
+                        <h2 class="sec_heading">We are working to redefine sustainability and ethics in fashion.</h2>
+                        <p class="body_text">Each behno piece is handcrafted in facilities incrementally implementing The behno Standard, a set of six guiding principles:</p>
+                    </div>
+                    <div class="fashion_img_grid">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card1-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card3-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card4-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card5-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card6-2.png?v=1653631202" alt="error">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
 </template>
 
 <script>
 
-import products from "@/assets/json/devook.json";
+import products from "@/assets/json/collectionproduct.json";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation} from "swiper";
 // import axios from 'axios'
@@ -432,8 +451,15 @@ export default {
             return url + 'background:'+ color;
         },
 
-        onSelectColor:function(color,product){
+        onSelectColor:function(color,product,event){
             // console.log(product.id);
+            if(event.currentTarget.parentElement.children.length>1){
+                let childcolor=event.currentTarget.parentElement.children;
+                for(let item of childcolor){
+                    item.classList.remove('activecolor')        
+                }
+            }
+            event.currentTarget.classList.add('activecolor')
             let img=document.getElementById(product.id);
             let div=document.querySelector('#item_left_'+product.id);
             let product_img_div=document.querySelector('#product_img_wrapper'+product.id);
@@ -450,7 +476,9 @@ export default {
                     img.src=varints[0].featured_image.src;
                 }
                 div.textContent=varints[0].stock<=5?'ONLY '+varints[0].stock+' LEFT':'';
+
                 if(varints[0].stock == 0){
+                    div.textContent='Out Of Stock';
                     out_of_stock_text.classList.add("out_of_stock_text_active");
                     product_img_div.classList.add("out_of_stock");
                     quickAdd.classList.remove("quickAdd_active");
@@ -948,7 +976,7 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    gap: 23px;
+    gap: 0;
 }
 .nav-dots .swiper-button-next {
     position: static;
@@ -964,7 +992,17 @@ export default {
     .grid_inner .product_item:nth-child(35),
     .grid_inner .product_item:nth-child(40),
     .grid_inner .product_item:nth-child(45),
-    .grid_inner .product_item:nth-child(50)
+    .grid_inner .product_item:nth-child(50),
+    .grid_inner .product_item:nth-child(55),
+    .grid_inner .product_item:nth-child(60),
+    .grid_inner .product_item:nth-child(65),
+    .grid_inner .product_item:nth-child(70),
+    .grid_inner .product_item:nth-child(75),
+    .grid_inner .product_item:nth-child(80),
+    .grid_inner .product_item:nth-child(85),
+    .grid_inner .product_item:nth-child(90),
+    .grid_inner .product_item:nth-child(95),
+    .grid_inner .product_item:nth-child(100)
     {
         grid-column: 1 / span 2;
     }
@@ -973,42 +1011,35 @@ export default {
 </style>
 
 <style scoped>
-
-/* RSPONSIVE FILTER BTNS CSS START */
-.filter_responsive{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 4;
-    display: none;
+/* ETHICS IN FASHION CSS START */
+.ethics_in_fashion{
+    padding: 60px 0;
+    border-top: 1px solid #000;
 }
-.filter_responsive .filter_cta_wrapper{
+.ethics_content_inner .body_text,
+.ethics_content_inner .sec_heading{
+    text-align: center;
+}
+.ethics_content_inner .body_text{
+    margin-bottom: 50px;
+}
+.fashion_img_grid{
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 30px;
+    justify-content: center;
 }
-.filter_cta{
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #000000;
-    background: #E9E7E3;
-    border: 1px solid #000000;
-    width: 100%;
-    padding: 14px;
+.fashion_img_grid img {
+    width: 55px;
 }
-.filters_responsive{
-    display: none;
-}
-/* RSPONSIVE FILTER BTNS CSS END*/
-* {
+/* ETHICS IN FASHION CSS END */
+
+/* common css */
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
     margin: 0px !important;
@@ -1296,7 +1327,7 @@ select {
     margin: 115px 0 12px;
     position: sticky;
     top: 0;
-    z-index: 5;
+    z-index: 4;
 }
 
 .filters_inner,
@@ -1330,7 +1361,7 @@ select {
 }
 
 .product_grid {
-    padding: 0 15px;
+    padding: 0 15px 103px;
 }
 
 .grid_inner {
@@ -1503,17 +1534,19 @@ select {
   top: 0px;
   min-width: 13px;
   height: 13px;
-  margin: 0 4px;
+  margin: 0 6px;
   position: relative;
   border-radius: 100%;
   display: inline-block;
   background: red;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.nav-dots .nav-dot:hover {
-  cursor: pointer;
+/* .nav-dots .nav-dot:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 input#img-1:checked ~ .nav-dots label#img-dot-1,
 input#img-2:checked ~ .nav-dots label#img-dot-2,
@@ -1588,6 +1621,42 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     line-height: 0;
     cursor: pointer;
 }
+
+/* RSPONSIVE FILTER BTNS CSS START */
+.filter_responsive{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    display: none;
+}
+.filter_responsive .filter_cta_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.filter_cta{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    background: #E9E7E3;
+    border: 1px solid #000000;
+    width: 100%;
+    padding: 14px;
+}
+.filters_responsive{
+    display: none;
+}
+/* RSPONSIVE FILTER BTNS CSS END*/
+.activecolor{
+    border: 1px solid #878787 !important;   
+}
+
+
 /* RESPONSIVE BREAKPOINTS START */
 @media (max-width: 1024px) {
     .out_of_stock_text{
@@ -1605,6 +1674,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 @media (max-width: 767px) {
     .filter_row{
         margin: 18px 0 0px;
+        z-index: 5;
     }
     .product_cta_wrapper{
         display: none;
@@ -1622,6 +1692,9 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     .filter_row {
         padding: 0 2px;
     }
+    .product_grid{
+        padding-bottom:80px;
+    }
     .filter {
         width: 100%;
     }
@@ -1635,7 +1708,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     }
     .overselect{
         top: 50%;
-        line-height: 0;
+        /* line-height: 0; */
         transform: translateY(-50%);
     }
     .filters_responsive{
@@ -1742,6 +1815,9 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         height: 250px;
         overflow: visible;
     }
+    .filters_inner .clearFilter{
+        display: none;
+    }
     .multiselect{
         height: 0;
         overflow: hidden;
@@ -1788,7 +1864,25 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         padding: 14px 0 14px 9px;
         border-bottom: 1px solid #000;
     }
+    .nav-dots{
+        margin-top: 9px;
+    }
+    .ethics_in_fashion{
+        padding: 30px 0 60px;
+    }
+    .fashion_img_grid{
+        gap: 20px;
+    }
+    .fashion_img_grid img{
+        width: 38px;
+    }
+    .ethics_content_inner .body_text,
+     .ethics_content_inner .sec_heading{
+        text-align: start;
+        padding: 0 12px;
+    }
     
+
 }
 
 </style>
