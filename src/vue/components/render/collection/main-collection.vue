@@ -293,7 +293,7 @@ export default {
         this.loadMore();
         this.setScreenRangeGrid();
 
-        if(window.innerWidth<767){
+        if(window.innerWidth<=767){
             this.isMobile=true;
         }
         window.addEventListener('resize',function(){
@@ -1678,7 +1678,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         margin-top: 45px;
     }
     .filter_responsive{
-        display: block;
+        display: inline-block;
         margin-top:11px;
     }
     .row_inner{
