@@ -3,16 +3,32 @@
         <!-- Banner Content -->
         <div class="banner_content">
             <div class="banner_content">
-                <h1 class="banner_main_heading">I AM:</h1>
+                <h1 class="banner_main_heading">{{ shopifyData.heroHeading }}</h1>
+                
                 <div class="banner_img t-center">
-                    <img class="desktop_img" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/blog-banner-bg.jpg?v=1650964822" alt="error">
-                    <img class="mobile_img" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/blog-banner-bg-res.jpg?v=1650965505" alt="error">
+                    <img class="desktop_img" :src=(shopifyData.heroImgDesktop.src) :placeholder=(shopifyData.heroImgDesktop.placeholder) :alt=(shopifyData.heroImgDesktop.alt)  />
+                    <img class="mobile_img" :src=(shopifyData.heroImgMobile.src) :placeholder=(shopifyData.heroImgMobile.placeholder) :alt=(shopifyData.heroImgMobile.alt)>
                 </div>
+                <p class="body_text">qwe</p>
             </div>
         </div>
         <!-- gal -->
     </section>
 </template>
+
+
+<script>
+    export default {
+        props:{
+            shopifyData:{
+                type: Object,
+                required: true,
+            }
+        }            
+    }
+</script>
+
+
 
 <style scoped>
 

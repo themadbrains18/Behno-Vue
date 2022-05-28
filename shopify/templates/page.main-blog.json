@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "blog-hero": {
+      "type": "blog-hero",
+      "settings": {
+        "heroHeading": "I AM:",
+        "heroImgDesktop": "shopify:\/\/shop_images\/blog-banner-bg.jpg",
+        "heroImgMobile": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg"
+      }
+    }
+  },
+  "order": [
+    "blog-hero"
+  ]
+}
