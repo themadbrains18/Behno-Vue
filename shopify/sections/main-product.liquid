@@ -1,11 +1,19 @@
 {% capture productMedia %}
 [
-    {% for item in product.media %}
+    {% for media in product.media %}
         {
-            img : {
-                src : `{{ item | img_url: '' }}`,
-                alt : `{{ item.alt }}`
-            }
+            {% case media.media_type %}
+                {% when 'image' %}
+                    media : `{{ media | img_url: '' | img_tag | base64_encode }}`
+                {% when 'external_video' %}
+                    media : `{{ media | external_video_tag | base64_encode }}`
+                {% when 'video' %}
+                    media : `{{ media | video_tag :autoplay: true, loop: true, mute: true | base64_encode }}`
+                {% when 'model' %}
+                    media : `{{ media | model_viewer_tag | base64_encode }}`
+                {% else %}
+                    media : `{{ media | media_tag | base64_encode }}`
+                {% endcase %}
         }{% unless forloop.last  %},{% endunless %} 
     {% endfor %}
 ]
@@ -34,9 +42,7 @@
 
 
 {% capture productDescription %}
-    {
-        `{{ product.description }}`
-    }
+    `{{ product.description | base64_encode }}`
 {% endcapture %}
 
 <render-product-product-detail :shopify-data="{
@@ -46,7 +52,7 @@
     productMedia : {{ productMedia }},
     productVariant : {{ productVariant }},
     productCurrentVariant : {{ productCurrentVariant }},
+    productDescription : {{ productDescription  }}
 }">
-<!-- productDescription : {{ productDescription }} -->
 </render-product-product-detail>
 
