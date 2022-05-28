@@ -10,7 +10,7 @@
             <div class="filter_row">
                 <div class="row_inner">
                     <div class="apply_filter_cta_wrapper">
-                        <button class="apply_filter_cta">APPLY FILTERS</button>
+                        <button class="apply_filter_cta" disabled v-on:click="applyfilter">APPLY FILTERS</button>
                     </div>
                     <div class="filters">
                         <div class="filters_inner_row">
@@ -23,14 +23,14 @@
                             </div>
                             <div class="filter_cta_wrapper">
                                 <button class="filter_cta filter-modifier">FILTER</button>
-                                <button class="filter_cta clear-modifier" @click="clearAllFilter()">CLEAR FILTERS
+                                <button class="filter_cta clear-modifier" v-bind:class="{ activeClear: showClearAll }" @click="clearAllFilter()">CLEAR FILTERS
                                     <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-bb57343a=""><path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" data-v-bb57343a=""></path><path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" data-v-bb57343a=""></path></svg>
                                 </button>
                             </div>
                         </div>
                         <div class="filters_inner">
                             <!-- Categories filter -->
-                            <div class="filter" @mouseenter="isMobile == true?null:show = true" @mouseleave="show = false" @click="isMobile == false?null:closeDropDown(show,'show')">
+                            <div class="filter" @mouseenter="isMobile == true?null:show = true" @mouseleave="isMobile == true?null:show = false" @click="isMobile == false?null:closeDropDown(show,'show')">
                                 <!-- v-on:mouseover="show = !show" -->
                                 <div class="dropdown" @click="(event)=>{addActive(event)}">
                                     <div class="overselect">
@@ -49,8 +49,8 @@
                                         <ul>
                                             <li v-for="(option) in ddTestCategory" :key="option.id">
                                                 <input class="multiselectOption" type="checkbox" name="category"
-                                                    :id="option.id" :value="option.value" @change="onCheck($event)">
-                                                <label class="optionLabel" :for="option.id">{{ option.text }}</label>
+                                                    :id="option.id" :value="option.value" @change="onCheck($event)" >
+                                                <label class="optionLabel" :for="option.id" >{{ option.text }}</label>
                                             </li>
                                         </ul>
                                         <div class="btn_wrapper">
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <!-- color filter -->
-                            <div class="filter" @mouseenter="isMobile == true?null:showColor = true" @mouseleave="showColor = false" @click="isMobile == false?null:closeDropDown(showColor,'showColor')">
+                            <div class="filter" @mouseenter="isMobile == true?null:showColor = true" @mouseleave="isMobile == true?null:showColor = false" @click="isMobile == false?null:closeDropDown(showColor,'showColor')">
                                 <div class="dropdown" @click="(event)=>{addActive(event)}">
                                     <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -92,7 +92,7 @@
 
                             </div>
                             <!-- size filter -->
-                            <div class="filter" @mouseenter="isMobile == true?null:showSize = true" @mouseleave="showSize = false" @click="isMobile == false?null:closeDropDown(showSize,'showSize')">
+                            <div class="filter" @mouseenter="isMobile == true?null:showSize = true" @mouseleave="isMobile == true?null:showSize = false" @click="isMobile == false?null:closeDropDown(showSize,'showSize')">
                                 <div class="dropdown" @click="(event)=>{addActive(event)}">
                                     <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                             <!-- material filter -->
-                            <div class="filter filter-modifier" @mouseenter="isMobile == true?null:showMaterial = true" @mouseleave="showMaterial = false" @click="isMobile == false?null:closeDropDown(showMaterial,'showMaterial')">
+                            <div class="filter filter-modifier" @mouseenter="isMobile == true?null:showMaterial = true" @mouseleave="isMobile == true?null:showMaterial = false" @click="isMobile == false?null:closeDropDown(showMaterial,'showMaterial')">
                                 <div class="dropdown" @click="(event)=>{addActive(event)}">
                                     <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -175,9 +175,6 @@
                             </div>
                             <div class="filter_cta_wrapper">
                                 <button class="filter_cta filter-modifier">SORT</button>
-                                <!-- <button class="filter_cta clear-modifier">CLEAR FILTERS
-                                    <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-bb57343a=""><path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" data-v-bb57343a=""></path><path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" data-v-bb57343a=""></path></svg>
-                                </button> -->
                             </div>
                         </div>
                         <div class="sort_by_inner">
@@ -219,49 +216,51 @@
             <div class="product_grid">
                 <div class="grid_inner" v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
                     <div class="product_item" v-for="product in productList" :key="product.id">
+                        
                         <div class="card" v-if="product.images.length>0" @mouseenter="isMobile==false?productId=product.id:''" @mouseleave="cardmouseleave(product.id)">
-                            <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':''}}</div>
-                            
-                            <div class="product_img_wrapper" :id="'product_img_wrapper'+product.id" v-bind:class="{ out_of_stock: product.variants[0].stock == 0 }">
-                                <img v-if="product.variants[0].featured_image!=null" :src="product.variants[0].featured_image.src" :id="product.id" />
-                                <img  :src="product.images[0].src" :id="product.id"
-                                @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
-                                @mouseleave="mouseleave($event, product.images[0].src)" v-else />
-                                <!-- <div class="out_of_stock_text" :id="'out_of_stock_text'+product.id" v-bind:class="{ out_of_stock_text_active: product.variants[0].stock == 0 }">Out Of Stock</div> -->
-                            </div>
-                            <h5 class="card-title">{{ product.title }}</h5>
-                            <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
-                            <div class="quickButton" v-bind:class="{ quickActive: isMobile==false?product.id == productId:true }">
-                                <div class="color_swatches">
-                                    <ul>
-                                        <li :key="color+index" class="nav-dots" v-for="color in product.options">
-                                            <span v-if="color.name.toLowerCase().includes('color')">
-                                                <template v-if="color.values.length <= 4 ">
-                                                    <label for="img-1" :key="colors" class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" v-for="colors in color.values"></label>
-                                                </template>
-                                                <template v-else>
-                                                    <swiper
-                                                        :modules="modules"
-                                                        :slidesPerView="4"
-                                                        :slidesPerSlide="1"
-                                                        navigation
-                                                        >
-                                                            <swiper-slide :key="colors" v-for="colors in color.values">
-                                                                <label for="img-1"  class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" ></label>
-                                                            </swiper-slide>
-                                                    </swiper>
-                                                </template>
-                                            </span>
-                                        </li>
-                                    </ul>
+                            <a :href="product.handle" >
+                                <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':''}}</div>
+ 
+                                <div class="product_img_wrapper" :id="'product_img_wrapper'+product.id" v-bind:class="{ out_of_stock: product.variants[0].stock == 0 }">
+                                    <img v-if="product.variants[0].featured_image!=null" :src="product.variants[0].featured_image.src" :id="product.id" />
+                                    <img  :src="product.images[0].src" :id="product.id"
+                                    @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
+                                    @mouseleave="mouseleave($event, product.images[0].src)" v-else />
+                                    <!-- <div class="out_of_stock_text" :id="'out_of_stock_text'+product.id" v-bind:class="{ out_of_stock_text_active: product.variants[0].stock == 0 }">Out Of Stock</div> -->
                                 </div>
-                                <div class="product_cta_wrapper">
-                                    <button :id="'quickAdd'+product.id" class="quickAdd" v-bind:class="{ quickAdd_deactive: product.variants[0].stock == 0 }" @click="addToCard(product)">
-                                        <span>Quick Add</span>
-                                    </button>
+                                <h5 class="card-title">{{ product.title }}</h5>
+                                <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
+                                <div class="quickButton" v-bind:class="{ quickActive: isMobile==false?product.id == productId:true }">
+                                    <div class="color_swatches">
+                                        <ul>
+                                            <li :key="color+index" class="nav-dots" v-for="color in product.options">
+                                                <span v-if="color.name.toLowerCase().includes('color')">
+                                                    <template v-if="color.values.length <= 4 ">
+                                                        <label for="img-1" :key="colors" class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" v-for="colors in color.values"></label>
+                                                    </template>
+                                                    <template v-else>
+                                                        <swiper
+                                                            :modules="modules"
+                                                            :slidesPerView="4"
+                                                            :slidesPerSlide="1"
+                                                            navigation
+                                                            >
+                                                                <swiper-slide :key="colors" v-for="colors in color.values">
+                                                                    <label for="img-1"  class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" ></label>
+                                                                </swiper-slide>
+                                                        </swiper>
+                                                    </template>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product_cta_wrapper">
+                                        <button :id="'quickAdd'+product.id" class="quickAdd" v-bind:class="{ quickAdd_deactive: product.variants[0].stock == 0 }" @click="addToCard(product)">
+                                            <span>Quick Add</span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -399,46 +398,53 @@ export default {
         }
     },
     methods: {
+
+
         addActive:function(event){
-            const ActiveClass = document.querySelector(".dropdown.active")
-            if(ActiveClass){
-                ActiveClass.classList.remove("active");
-            }
-            if(event.currentTarget != ActiveClass){
-                event.currentTarget.classList.add("active");
-            }
+            // const ActiveClass = document.querySelector(".dropdown.active")
+            // if(ActiveClass){
+            //     ActiveClass.classList.remove("active");
+            // }
+            // if(event.currentTarget != ActiveClass){
+            //     event.currentTarget.classList.add("active");
+            // }
+                event.currentTarget.classList.toggle("active");
         },
 
         closeDropDown:function(show,type){
-           if(show == false){
-               if(type == 'show'){
-                this.show = true;
-               }
-               else if(type == 'showColor'){
-                this.showColor = true;
-               }
-               else if(type == 'showSize'){
-                this.showSize = true;
-               }
-               else if(type == 'showMaterial'){
-                this.showMaterial = true;
-               }
-           }
-           else{
-               if(type == 'show'){
-                this.show = false;
-               }
-               else if(type == 'showColor'){
-                this.showColor = false;
-               }
-               else if(type == 'showSize'){
-                this.showSize = false;
-               }
-               else if(type == 'showMaterial')
-               {
-                this.showMaterial = false;
-               }
-           }
+            if(type == 'show'){
+                if(show==true){
+                    this.show = false;
+                }
+                else{
+                    this.show = true;
+                }
+            }
+            if(type == 'showColor'){
+                if(show==true){
+                    this.showColor = false;
+                }
+                else{
+                    this.showColor = true;
+                }
+            }
+            if(type == 'showSize'){
+                if(show==true){
+                    this.showSize = false;
+                }
+                else{
+                    this.showSize = true;
+                }
+            }
+            if(type == 'showMaterial'){
+                if(show==true){
+                    this.showMaterial = false;
+                }
+                else{
+                    this.showMaterial = true;
+                }
+            }
+        
         },
         // open filter navbar
         myFilter:function(){
@@ -460,6 +466,14 @@ export default {
             activeMenu.classList.remove("show");
             var applyfilters  = document.querySelector(".apply_filter_cta_wrapper");
             applyfilters.classList.remove("show");
+        },
+
+        // apply filter and close filter
+        applyfilter:function(){
+            var applyfilters  = document.querySelector(".apply_filter_cta_wrapper.show");
+            var applyfilterShow  = document.querySelector(".filters.show");
+            applyfilters.classList.remove("show")   
+            applyfilterShow.classList.remove("show")   
         },
 
         cardmouseleave:function(id){
@@ -559,20 +573,6 @@ export default {
             }
         },
         /* end change grid column */
-
-        onClick: function (event) {
-            if (event.target.classList != 'dropdown' && event.target.parentElement.classList != 'dropdown' && event.target.parentElement.classList != 'sortFilter'
-                && event.target.parentElement.parentElement.classList != 'dropdown'
-                && event.target.parentElement.parentElement.parentElement != 'dropdown'
-                && event.target.classList != 'optionLabel' && event.target.classList != 'multiselectOption' && event.target.tagName != 'path') {
-                this.show = false;
-                this.showColor = false;
-                this.showSize = false;
-                this.showMaterial = false;
-                this.showSort = false;
-            }
-        },
-
         /* Clear all filter */
         clearAllFilter: function () {
             let arrayName = ['category', 'color', 'size', 'material'];
@@ -622,6 +622,8 @@ export default {
             } else {
                 this.showClearAll = false;
                 this.productList = this.fullproductList; //this.array_chunk(products, 20);
+                var applyCta = document.querySelector('.apply_filter_cta');
+                applyCta.setAttribute("disabled",'') ;
             }
         },
 
@@ -911,11 +913,12 @@ export default {
             if (this.filterByMaterial.length > 0 && type != 'material') {
                 array = this.filterArrayToUniqueRecord(array, this.filterByMaterial);
             }
-            // const append = array.slice(
-            //     array.length,
-            //     this.page_size
-            // );
-            // this.productList = array.concat(append);
+            var applyCta = document.querySelector('.apply_filter_cta');
+            
+            
+            if(array.length>0){
+                applyCta.removeAttribute("disabled") ;
+            }
             this.productList = array; ///this.array_chunk(array, 20);
             this.showClearAll = true;
             this.sortProduct();
@@ -1761,8 +1764,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         display: flex;
         align-items: center;
         width: 100%;
-        /* padding:13px 0 13px 9px; */
-        /* border-bottom: 1px solid #000; */
+        
         background: #E9E7E3;
     }
     .overselect svg{
@@ -1789,9 +1791,6 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         background: #E9E7E3;
         padding: 11px;
         height:calc(100% - 58px);
-        /* padding-bottom: 45px; */
-        /* min-height: calc(100% - 45px); */
-        /* display: none; */
         z-index: 9;
         transition: 0.3s;
         overflow-y: scroll;
@@ -1800,14 +1799,13 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     /* .qwe{
         height: 380px;
     } */
-    /* .sort_by{
-        display: none;
-    } */
+    .sort_by{
+        height: 100%;
+        min-height:100vh;
+        transform: translateX(110%);
+    }
     .filters{
         transform: translateX(-110%);
-    }
-    .sort_by{
-        transform: translateX(110%);
     }
     .filters.show,
     .sort_by.show
@@ -1850,6 +1848,13 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         align-items: center;
         justify-content: center;
         gap: 4px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+    .filters .filter_cta_wrapper .clear-modifier.activeClear{
+        opacity: 1;
+        visibility: visible;
     }
     .filters .filter_cta_wrapper .clear-modifier svg{
         width: 10px;
@@ -1988,11 +1993,19 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         line-height: 17px;
         color: #FFFFFF;
         padding: 13px;
+        transition: 0.3s;
+        
     }
-    
+    .multiselect ul{
+        overscroll-behavior: unset;
+    }
     .filters_inner_row{
         height: 80vh;
         margin-bottom: 45px;
+    }
+    .apply_filter_cta[disabled] {
+        opacity:0;
+        visibility: hidden;
     }
     
 
