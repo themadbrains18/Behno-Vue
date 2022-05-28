@@ -9,7 +9,11 @@
             </div>
             <div class="filter_row">
                 <div class="row_inner">
+                    <div class="apply_filter_cta_wrapper">
+                        <button class="apply_filter_cta">APPLY FILTERS</button>
+                    </div>
                     <div class="filters">
+                        <div class="filters_inner_row">
                         <div class="filters_responsive">
                             <div class="close-btn" v-on:click="closeMenu">
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,9 +29,10 @@
                             </div>
                         </div>
                         <div class="filters_inner">
+                            <!-- Categories filter -->
                             <div class="filter" @mouseenter="isMobile == true?null:show = true" @mouseleave="show = false" @click="isMobile == false?null:closeDropDown(show,'show')">
                                 <!-- v-on:mouseover="show = !show" -->
-                                <div class="dropdown" >
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
                                     <div class="overselect">
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -55,10 +60,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                            <!-- color filter -->
                             <div class="filter" @mouseenter="isMobile == true?null:showColor = true" @mouseleave="showColor = false" @click="isMobile == false?null:closeDropDown(showColor,'showColor')">
-                                <div class="dropdown" >
-                                    <div class="overselect">
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
+                                    <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
@@ -86,9 +91,10 @@
                                 </div>
 
                             </div>
+                            <!-- size filter -->
                             <div class="filter" @mouseenter="isMobile == true?null:showSize = true" @mouseleave="showSize = false" @click="isMobile == false?null:closeDropDown(showSize,'showSize')">
-                                <div class="dropdown" >
-                                    <div class="overselect">
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
+                                    <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
@@ -116,9 +122,10 @@
 
                                 </div>
                             </div>
+                            <!-- material filter -->
                             <div class="filter filter-modifier" @mouseenter="isMobile == true?null:showMaterial = true" @mouseleave="showMaterial = false" @click="isMobile == false?null:closeDropDown(showMaterial,'showMaterial')">
-                                <div class="dropdown" >
-                                    <div class="overselect">
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
+                                    <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
@@ -145,6 +152,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Clear Filter -->
                             <div class="filter">
                                 <button class="clearFilter" v-bind:class="{ activeClear: showClearAll }" @click="clearAllFilter()" >Clear filters
                                     <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
@@ -154,6 +162,7 @@
                                     </svg>
                                 </button>
                             </div>
+                        </div>
                         </div>
                     </div>
                     <div class="sort_by">
@@ -204,30 +213,31 @@
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
             <div class="product_grid">
                 <div class="grid_inner" v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
                     <div class="product_item" v-for="product in productList" :key="product.id">
-                        <div class="card" v-if="product.images.length>0" @mouseenter="productId=product.id" @mouseleave="cardmouseleave(product.id)">
-                            <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5?'ONLY '+ product.variants[0].stock +' LEFT':''}}</div>
+                        <div class="card" v-if="product.images.length>0" @mouseenter="isMobile==false?productId=product.id:''" @mouseleave="cardmouseleave(product.id)">
+                            <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':''}}</div>
                             
                             <div class="product_img_wrapper" :id="'product_img_wrapper'+product.id" v-bind:class="{ out_of_stock: product.variants[0].stock == 0 }">
                                 <img v-if="product.variants[0].featured_image!=null" :src="product.variants[0].featured_image.src" :id="product.id" />
                                 <img  :src="product.images[0].src" :id="product.id"
                                 @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
                                 @mouseleave="mouseleave($event, product.images[0].src)" v-else />
-                                <div class="out_of_stock_text" :id="'out_of_stock_text'+product.id" v-bind:class="{ out_of_stock_text_active: product.variants[0].stock == 0 }">Out Of Stock</div>
+                                <!-- <div class="out_of_stock_text" :id="'out_of_stock_text'+product.id" v-bind:class="{ out_of_stock_text_active: product.variants[0].stock == 0 }">Out Of Stock</div> -->
                             </div>
                             <h5 class="card-title">{{ product.title }}</h5>
                             <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
-                            <div class="quickButton" v-bind:class="{ quickActive: product.id == productId }">
+                            <div class="quickButton" v-bind:class="{ quickActive: isMobile==false?product.id == productId:true }">
                                 <div class="color_swatches">
                                     <ul>
                                         <li :key="color+index" class="nav-dots" v-for="color in product.options">
                                             <span v-if="color.name.toLowerCase().includes('color')">
                                                 <template v-if="color.values.length <= 4 ">
-                                                    <label for="img-1" :key="colors" class="nav-dot" :style="inlineBgImage(colors)" id="img-dot-1" @click="onSelectColor(colors,product)" v-for="colors in color.values"></label>
+                                                    <label for="img-1" :key="colors" class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" v-for="colors in color.values"></label>
                                                 </template>
                                                 <template v-else>
                                                     <swiper
@@ -237,7 +247,7 @@
                                                         navigation
                                                         >
                                                             <swiper-slide :key="colors" v-for="colors in color.values">
-                                                                <label for="img-1"  class="nav-dot" :style="inlineBgImage(colors)" id="img-dot-1" @click="onSelectColor(colors,product)" ></label>
+                                                                <label for="img-1"  class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" ></label>
                                                             </swiper-slide>
                                                     </swiper>
                                                 </template>
@@ -265,14 +275,34 @@
                 </div>
             </div>
         </div>
+        <div class="big_container">
+            <div class="ethics_in_fashion">
+                <div class="ethics_content">
+                    <div class="ethics_content_inner">
+                        <h2 class="sec_heading">We are working to redefine sustainability and ethics in fashion.</h2>
+                        <p class="body_text">Each behno piece is handcrafted in facilities incrementally implementing The behno Standard, a set of six guiding principles:</p>
+                    </div>
+                    <div class="fashion_img_grid">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card1-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card3-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card4-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card5-2.png?v=1653631202" alt="error">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card6-2.png?v=1653631202" alt="error">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
 </template>
 
 <script>
 
-import products from "@/assets/json/devook.json";
+import products from "@/assets/json/collectionproduct.json";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation} from "swiper";
+import { constants } from 'buffer';
 // import axios from 'axios'
 export default {
     components: {
@@ -293,11 +323,11 @@ export default {
         this.loadMore();
         this.setScreenRangeGrid();
 
-        if(window.innerWidth<767){
+        if(window.innerWidth<=767){
             this.isMobile=true;
         }
         window.addEventListener('resize',function(){
-            if(window.innerWidth<767){
+            if(window.innerWidth<=767){
                 this.isMobile=true;
             }
             else{
@@ -308,6 +338,7 @@ export default {
     },
     data() {
         return {
+            isActive: false,
             isMobile:false,
             gridMax: false,
             gridMin: false,
@@ -368,6 +399,15 @@ export default {
         }
     },
     methods: {
+        addActive:function(event){
+            const ActiveClass = document.querySelector(".dropdown.active")
+            if(ActiveClass){
+                ActiveClass.classList.remove("active");
+            }
+            if(event.currentTarget != ActiveClass){
+                event.currentTarget.classList.add("active");
+            }
+        },
 
         closeDropDown:function(show,type){
            if(show == false){
@@ -403,6 +443,8 @@ export default {
         // open filter navbar
         myFilter:function(){
             var filters  = document.querySelector(".filters");
+            var applyfilters  = document.querySelector(".apply_filter_cta_wrapper");
+            applyfilters.classList.add("show");
             filters.classList.toggle("show");
         },
 
@@ -416,6 +458,8 @@ export default {
         closeMenu:function(e){
             var activeMenu = e.currentTarget.closest(".show");
             activeMenu.classList.remove("show");
+            var applyfilters  = document.querySelector(".apply_filter_cta_wrapper");
+            applyfilters.classList.remove("show");
         },
 
         cardmouseleave:function(id){
@@ -424,6 +468,7 @@ export default {
             quickAdd.classList.remove("quickAdd_active");
         },
         
+       
         inlineBgImage:function(colors){
             let color=colors.toLowerCase().replace(/[^A-Z0-9]+/ig, "-");
             let bgImage = "//cdn.shopify.com/s/files/1/0899/2182/files/" + color + ".png?v=5251390435792914590";
@@ -432,8 +477,15 @@ export default {
             return url + 'background:'+ color;
         },
 
-        onSelectColor:function(color,product){
+        onSelectColor:function(color,product,event){
             // console.log(product.id);
+            if(event.currentTarget.parentElement.children.length>1){
+                let childcolor=event.currentTarget.parentElement.children;
+                for(let item of childcolor){
+                    item.classList.remove('activecolor')        
+                }
+            }
+            event.currentTarget.classList.add('activecolor')
             let img=document.getElementById(product.id);
             let div=document.querySelector('#item_left_'+product.id);
             let product_img_div=document.querySelector('#product_img_wrapper'+product.id);
@@ -450,7 +502,9 @@ export default {
                     img.src=varints[0].featured_image.src;
                 }
                 div.textContent=varints[0].stock<=5?'ONLY '+varints[0].stock+' LEFT':'';
+
                 if(varints[0].stock == 0){
+                    div.textContent='Out Of Stock';
                     out_of_stock_text.classList.add("out_of_stock_text_active");
                     product_img_div.classList.add("out_of_stock");
                     quickAdd.classList.remove("quickAdd_active");
@@ -507,7 +561,6 @@ export default {
         /* end change grid column */
 
         onClick: function (event) {
-            console.log("dsadsa");
             if (event.target.classList != 'dropdown' && event.target.parentElement.classList != 'dropdown' && event.target.parentElement.classList != 'sortFilter'
                 && event.target.parentElement.parentElement.classList != 'dropdown'
                 && event.target.parentElement.parentElement.parentElement != 'dropdown'
@@ -937,8 +990,13 @@ export default {
 </script>
 
 <style>
-.nav-dots .swiper-button-prev
+/* .nav-dots .swiper-button-prev{
+    position: static;
+} */
+.nav-dots .swiper-button-prev::after
 {
+    /* content: url(https://cdn.shopify.com/s/files/1/0577/1178/8125/files/color-swatches-arrow.svg?v=1653549630);
+    position: static; */
     display: none !important;
 }
 .nav-dots .swiper-button-next::after{
@@ -948,7 +1006,7 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    gap: 23px;
+    gap: 0;
 }
 .nav-dots .swiper-button-next {
     position: static;
@@ -964,51 +1022,58 @@ export default {
     .grid_inner .product_item:nth-child(35),
     .grid_inner .product_item:nth-child(40),
     .grid_inner .product_item:nth-child(45),
-    .grid_inner .product_item:nth-child(50)
+    .grid_inner .product_item:nth-child(50),
+    .grid_inner .product_item:nth-child(55),
+    .grid_inner .product_item:nth-child(60),
+    .grid_inner .product_item:nth-child(65),
+    .grid_inner .product_item:nth-child(70),
+    .grid_inner .product_item:nth-child(75),
+    .grid_inner .product_item:nth-child(80),
+    .grid_inner .product_item:nth-child(85),
+    .grid_inner .product_item:nth-child(90),
+    .grid_inner .product_item:nth-child(95),
+    .grid_inner .product_item:nth-child(100)
     {
         grid-column: 1 / span 2;
     }
+
 }
 
 </style>
 
 <style scoped>
-
-/* RSPONSIVE FILTER BTNS CSS START */
-.filter_responsive{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 4;
-    display: none;
+/* ETHICS IN FASHION CSS START */
+.ethics_in_fashion{
+    padding: 60px 0;
+    border-top: 1px solid #000;
 }
-.filter_responsive .filter_cta_wrapper{
+.ethics_content_inner .body_text,
+.ethics_content_inner .sec_heading{
+    text-align: center;
+}
+.ethics_content_inner .body_text{
+    margin-bottom: 50px;
+}
+.fashion_img_grid{
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 30px;
+    justify-content: center;
 }
-.filter_cta{
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #000000;
-    background: #E9E7E3;
-    border: 1px solid #000000;
-    width: 100%;
-    padding: 14px;
+.fashion_img_grid img {
+    width: 55px;
 }
-.filters_responsive{
+.apply_filter_cta_wrapper{
     display: none;
 }
-/* RSPONSIVE FILTER BTNS CSS END*/
-* {
+/* ETHICS IN FASHION CSS END */
+
+/* common css */
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
     margin: 0px !important;
@@ -1296,7 +1361,7 @@ select {
     margin: 115px 0 12px;
     position: sticky;
     top: 0;
-    z-index: 5;
+    z-index: 4;
 }
 
 .filters_inner,
@@ -1330,7 +1395,7 @@ select {
 }
 
 .product_grid {
-    padding: 0 15px;
+    padding: 0 15px 103px;
 }
 
 .grid_inner {
@@ -1503,17 +1568,19 @@ select {
   top: 0px;
   min-width: 13px;
   height: 13px;
-  margin: 0 4px;
+  margin: 0 6px;
   position: relative;
   border-radius: 100%;
   display: inline-block;
   background: red;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.nav-dots .nav-dot:hover {
-  cursor: pointer;
+/* .nav-dots .nav-dot:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 input#img-1:checked ~ .nav-dots label#img-dot-1,
 input#img-2:checked ~ .nav-dots label#img-dot-2,
@@ -1588,7 +1655,63 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     line-height: 0;
     cursor: pointer;
 }
+
+/* RSPONSIVE FILTER BTNS CSS START */
+.filter_responsive{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    display: none;
+}
+.filter_responsive .filter_cta_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.filter_cta{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    background: #E9E7E3;
+    border: 1px solid #000000;
+    width: 100%;
+    padding: 14px;
+}
+.filters_responsive{
+    display: none;
+}
+/* RSPONSIVE FILTER BTNS CSS END*/
+.activecolor{
+    border: 1px solid #878787 !important;   
+}
+.product_img_wrapper img {
+    height: 466px;
+    max-width: 466px;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* RESPONSIVE BREAKPOINTS START */
+@media (max-width: 1440px) {
+    .product_img_wrapper img {
+        height: 348px;
+        max-width: 348px;
+    }
+}
+@media (max-width: 1200px) {
+    .product_img_wrapper img{
+        height: auto;
+        max-width: 348px;
+    }
+    .quickAdd[data-v-bb57343a] {
+        padding: 8px 20px;
+    }
+}
 @media (max-width: 1024px) {
     .out_of_stock_text{
         font-size: 14px;
@@ -1603,8 +1726,14 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     }
 }
 @media (max-width: 767px) {
+    .product_img_wrapper img{
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+    }
     .filter_row{
         margin: 18px 0 0px;
+        z-index: 5;
     }
     .product_cta_wrapper{
         display: none;
@@ -1622,6 +1751,9 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     .filter_row {
         padding: 0 2px;
     }
+    .product_grid{
+        padding-bottom:80px;
+    }
     .filter {
         width: 100%;
     }
@@ -1629,14 +1761,19 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         display: flex;
         align-items: center;
         width: 100%;
-        padding:13px 0 13px 9px;
-        border-bottom: 1px solid #000;
+        /* padding:13px 0 13px 9px; */
+        /* border-bottom: 1px solid #000; */
         background: #E9E7E3;
     }
-    .overselect{
+    .overselect svg{
+        position: absolute;
         top: 50%;
-        line-height: 0;
+        right: 0;
+        transition: 0.3s;
         transform: translateY(-50%);
+    }
+    .dropdown.active .overselect svg{
+        transform: translateY(-50%) rotate(180deg);
     }
     .filters_responsive{
         display: block;
@@ -1651,13 +1788,18 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         width: 100%;
         background: #E9E7E3;
         padding: 11px;
-        height: 100%;
-        min-height: 100vh;
+        height:calc(100% - 58px);
+        /* padding-bottom: 45px; */
+        /* min-height: calc(100% - 45px); */
         /* display: none; */
         z-index: 9;
         transition: 0.3s;
+        overflow-y: scroll;
 
     }
+    /* .qwe{
+        height: 380px;
+    } */
     /* .sort_by{
         display: none;
     } */
@@ -1678,7 +1820,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         margin-top: 45px;
     }
     .filter_responsive{
-        display: block;
+        display: inline-block;
         margin-top:11px;
     }
     .row_inner{
@@ -1738,9 +1880,15 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     .filter .optionLabel {
         padding-left: 30px;
     }
+    .filter .multiselect .tmb_header_dopdown{
+        padding: 10px 14px 0;
+    }
     .filter .multiselect.active .tmb_header_dopdown{
-        height: 250px;
-        overflow: visible;
+        min-height: 250px;
+        /* overflow: visible; */
+    }
+    .filters_inner .clearFilter{
+        display: none;
     }
     .multiselect{
         height: 0;
@@ -1788,7 +1936,67 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         padding: 14px 0 14px 9px;
         border-bottom: 1px solid #000;
     }
+    .nav-dots{
+        margin-top: 9px;
+    }
+    .ethics_in_fashion{
+        padding: 30px 0 60px;
+    }
+    .fashion_img_grid{
+        gap: 20px;
+    }
+    .fashion_img_grid img{
+        width: 38px;
+    }
+    .ethics_content_inner .body_text,
+     .ethics_content_inner .sec_heading{
+        text-align: start;
+        padding: 0 12px;
+    }
+    .filters_inner .filter{
+        border-bottom: 1px solid #000;
+        padding: 13px 0 13px 9px;
+        position: relative;
+        overflow: hidden;
+    }
+    .filters_inner .filter:last-child{
+        border-bottom: none;
+    }
+    .apply_filter_cta_wrapper{
+        display: block;
+        background: #E9E7E3;
+        padding: 11px;
+        position: fixed;
+        left: 0;
+        bottom: 0px;
+        transform: translateX(-110%);
+        z-index: 99;
+        transition: 0.3s;
+        width: 100%;
+        text-align: center;
+    }
+    .apply_filter_cta_wrapper.show{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .apply_filter_cta{
+        background: #000000;
+        border: 1px solid #000000;  
+        width:100%;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        padding: 13px;
+    }
     
+    .filters_inner_row{
+        height: 80vh;
+        margin-bottom: 45px;
+    }
+    
+
 }
+
 
 </style>
