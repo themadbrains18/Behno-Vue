@@ -1,22 +1,26 @@
 <template>
     <section :data-id=(shopifyData.productId) class="product_sec">
         <div class="product_grid">
-            <div class="product_grid_image">
+            <div class="product_grid_image modify-slider">
                 <swiper
-                    :navigation="false"
+                    :direction="'vertical'"
+                    :navigation="true"
                     :modules="modules"
                     :autoHeight="true"
                     :loop="true"
                     :pagination="{
-                        el: '.swiper-pagination',
                         type: 'fraction',
+                    }"
+                    :mousewheel= "{
+                        invert: false,
+                        releaseOnEdges: true
                     }"
                     :autoplay="{
                         delay: 1000000,
                     }"
+                    class="product-media-slider" id="productMediaslider"
                 >
-                    <swiper-slide v-for="(value, key) in shopifyData.productMedia" :key="key" class="product_slide">
-                        <img :src=(value.img.src) :alt=(value.img.alt) />
+                    <swiper-slide v-for="(value, key) in shopifyData.productMedia" :key="key" class="product_slide" v-html="encodeData(value.media)">
                     </swiper-slide>
                 </swiper>
             </div>
@@ -68,11 +72,49 @@
                     </button>
                 </div>
 
+                <div class="product_description"  v-html="encodeData(shopifyData.productDescription)">
+                </div>
+
             </form>
         </div>
     </section>
 </template>
 
+<style>
+    .product-media-slider .swiper-pagination-fraction {
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        z-index: 2;
+    }
+    .product-media-slider .swiper-pagination-fraction,
+    .product-media-slider .swiper-pagination-fraction span {
+        color: #777777;
+        font-size: 12px;
+        letter-spacing: 0.01em;
+    }
+    .product-media-slider .swiper-button-prev{
+        right: 15px;
+        left: auto;
+        transform: translateY(-100%) rotate(90deg);
+    }
+    .product-media-slider .swiper-button-next{
+        transform: translateY(100%) rotate(-90deg);
+    }
+    .product_description .Ehic-Content li{
+        display: flex;
+        gap: 15px;
+    }
+    .product_description .Ehic-Content img{
+        height: 42px;
+        width: 42px;
+    }
+    .product_slide > *{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
 <style scoped>
     .product_sec {
         padding-top: 30px;
@@ -83,12 +125,12 @@
         gap: 80px;
         overflow: hidden;
     }
-    
-    .product_slide img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+
+    .product-media-slider{
+        height: 805px;
     }
+
+    
     .product_title {
         line-height: 18px;
     }
@@ -140,25 +182,38 @@
         padding-block: 15px;
     }
 
+    @media only screen and (max-width:1600px){
+        .product-media-slider{
+            height: 650px;
+        }
+    }
     @media only screen and (max-width:1440px){
         .product_grid{
-            gap: 50px;
+            gap: 60px;
         }
     }
     @media only screen and (max-width:1200px){
-        .product_grid{
-            gap: 25px;
+        .product-media-slider{
+            height: 600px;
         }
     }
+    
     @media only screen and (max-width:991px){
+        .product_sec {
+            padding-top: 0;
+        }
         .product_grid{
             grid-template-columns : 100%;
             gap: 25px;
         }
         .product_grid_content{
-            max-width: 575px;
+            max-width: 600px;
+            padding: 0 15px;
             width: 100%;
             margin: 0 auto;
+        }
+        .product-media-slider{
+            height: 500px;
         }
         .add_cart_btn_wrap{
             padding: 0 15px;
@@ -167,6 +222,12 @@
             left: 0;
             right: 0;
             z-index: 3;
+        }
+    }
+
+    @media only screen and (max-width:575px){
+        .product-media-slider{
+            height: 400px;
         }
     }
 </style>
@@ -180,12 +241,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation,Autoplay,Pagination } from "swiper";
+import { Navigation,Autoplay,Pagination,Mousewheel } from "swiper";
 export default {
   data() {
-       return (
-           console.log(this.shopifyData)
-       )
+      console.log(this.shopifyData)
   },
   props: {
     shopifyData: {
@@ -197,22 +256,32 @@ export default {
     Swiper,
     SwiperSlide
   },
+  methods : {
+      encodeData(data){
+          return (
+            atob(data)
+          )
+      }
+  },
   mounted(){
     window.addEventListener('resize',()=>{
         if(window.innerWidth <= 991){
+            document.querySelector(".footer_content").style.paddingBottom = `${document.querySelector(".add_cart_btn_wrap").offsetHeight}px`;
             document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
         }else{
-            document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#fff";
+            document.querySelector(".footer_content").style.paddingBottom = `0`;
+            document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "transparent";
         }    
     })
 
     if(window.innerWidth <= 991){
+        document.querySelector(".footer_content").style.paddingBottom = `${document.querySelector(".add_cart_btn_wrap").offsetHeight}px`;
         document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
     }
   },
   setup() {
     return {
-      modules: [Navigation,Autoplay,Pagination]
+      modules: [Navigation,Autoplay,Pagination,Mousewheel]
     };
   }
 };
