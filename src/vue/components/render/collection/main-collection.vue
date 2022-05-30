@@ -50,7 +50,7 @@
                                             <li v-for="(option) in ddTestCategory" :key="option.id">
                                                 <input class="multiselectOption" type="checkbox" name="category"
                                                     :id="option.id" :value="option.value" @change="onCheck($event)" >
-                                                <label class="optionLabel" :for="option.id" >{{ option.text }}</label>
+                                                <label class="optionLabel" :for="option.id" >{{ option.text.toLowerCase() }}</label>
                                             </li>
                                         </ul>
                                         <div class="btn_wrapper">
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <!-- color filter -->
-                            <div class="filter" @mouseenter="isMobile == true?null:showColor = true" @mouseleave="isMobile == true?null:showColor = false" @click="isMobile == false?null:closeDropDown(showColor,'showColor')">
+                            <div class="filter color-filter" @mouseenter="isMobile == true?null:showColor = true" @mouseleave="isMobile == true?null:showColor = false" @click="isMobile == false?null:closeDropDown(showColor,'showColor')">
                                 <div class="dropdown" @click="(event)=>{addActive(event)}">
                                     <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -80,7 +80,7 @@
                                             <li v-for="(option) in ddTestColor" :key="option.id">
                                                 <input class="multiselectOption" type="checkbox" name="color"
                                                     :id="option.id" :value="option.value" @change="onCheckColor($event)">
-                                                <label class="optionLabel" :for="option.id">{{ option.text }}</label>
+                                                <label class="optionLabel" :for="option.id">{{ option.text.toLowerCase()  }}</label>
                                             </li>
                                         </ul>
                                         <div class="btn_wrapper">
@@ -92,7 +92,7 @@
 
                             </div>
                             <!-- size filter -->
-                            <div class="filter" @mouseenter="isMobile == true?null:showSize = true" @mouseleave="isMobile == true?null:showSize = false" @click="isMobile == false?null:closeDropDown(showSize,'showSize')">
+                            <div class="filter size-filter" @mouseenter="isMobile == true?null:showSize = true" @mouseleave="isMobile == true?null:showSize = false" @click="isMobile == false?null:closeDropDown(showSize,'showSize')">
                                 <div class="dropdown" @click="(event)=>{addActive(event)}">
                                     <div class="overselect" >
                                         <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -111,7 +111,7 @@
                                             <li v-for="(option) in ddTestSize" :key="option.id">
                                                 <input class="multiselectOption" type="checkbox" name="size" :id="option.id"
                                                     :value="option.value" @change="onCheckSize($event)">
-                                                <label class="optionLabel" :for="option.id">{{ option.text }}</label>
+                                                <label class="optionLabel" :for="option.id">{{ option.text.toLowerCase() }}</label>
                                             </li>
                                         </ul>
                                         <div class="btn_wrapper">
@@ -142,7 +142,7 @@
                                             <li v-for="(option) in ddTestMaterial" :key="option.id">
                                                 <input class="multiselectOption" type="checkbox" name="material"
                                                     :id="option.id" :value="option.value" @change="onCheckMaterial($event)">
-                                                <label class="optionLabel" :for="option.id">{{ option.text }}</label>
+                                                <label class="optionLabel" :for="option.id">{{ option.text.toLowerCase() }}</label>
                                             </li>
                                         </ul>
                                         <div class="btn_wrapper">
@@ -1687,6 +1687,18 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     object-fit: cover;
 }
 
+@media (min-width: 768px) {
+    .filter .overselect svg,
+    .sortFilter svg
+    {
+        transition: 0.3s;
+    }
+    .filter:hover .overselect svg,
+    .sortFilter:hover svg
+    {
+        transform: rotate(180deg);
+    }
+}
 /* RESPONSIVE BREAKPOINTS START */
 @media (max-width: 1440px) {
     .product_img_wrapper img {
@@ -1995,7 +2007,12 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         opacity:0;
         visibility: hidden;
     }
-    
+    .color-filter ul 
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
 
 }
 
