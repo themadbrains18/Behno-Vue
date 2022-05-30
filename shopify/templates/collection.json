@@ -1,7 +1,62 @@
 {
   "sections": {
     "main": {
-      "type": "main-collection"
+      "type": "main-collection",
+      "blocks": {
+        "b36f8b19-30f6-4b61-b355-fa3fd1749e6d": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/standard-card-2.png"
+          }
+        },
+        "b120bded-fbe6-438e-9613-443089106a30": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/standard-card1-2.png"
+          }
+        },
+        "e4df80ff-9621-43e3-a598-9baf85d6f62e": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/standard-card3-2.png"
+          }
+        },
+        "1d92187e-69a6-45d9-9a77-9f2a3f0f17ac": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/standard-card4-2.png"
+          }
+        },
+        "2087e00b-e8ac-4b9f-a6f3-e2a83f024165": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/standard-card5-2.png"
+          }
+        },
+        "ae443fa1-bd65-4e7c-957f-43318f680a60": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/standard-card6-2.png"
+          }
+        }
+      },
+      "block_order": [
+        "b36f8b19-30f6-4b61-b355-fa3fd1749e6d",
+        "b120bded-fbe6-438e-9613-443089106a30",
+        "e4df80ff-9621-43e3-a598-9baf85d6f62e",
+        "1d92187e-69a6-45d9-9a77-9f2a3f0f17ac",
+        "2087e00b-e8ac-4b9f-a6f3-e2a83f024165",
+        "ae443fa1-bd65-4e7c-957f-43318f680a60"
+      ],
+      "settings": {
+        "secBottomheading": "We are working to redefine sustainability and ethics in fashion.",
+        "secBottomBrief": "Each behno piece is handcrafted in facilities incrementally implementing The behno Standard, a set of six guiding principles:",
+        "categoriesDropdownText": "Categories",
+        "colorDropdownText": "Color",
+        "sizeDropdownText": "Size",
+        "materialDropdownText": "Material",
+        "sortByDropdownText": "Sort By"
+      }
     }
   },
   "order": [

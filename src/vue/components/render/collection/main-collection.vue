@@ -3,14 +3,14 @@
         <div class="home">
             <div class="filter_responsive">
                 <div class="filter_cta_wrapper">
-                    <button class="filter_cta" id="filterCta" v-on:click="myFilter">FILTER</button>
-                    <button class="filter_cta" id="sortCta" v-on:click="sortBy">SORT</button>
+                    <button class="filter_cta" id="filterCta" v-on:click="myFilter">{{ shopifyData.filterDropdownTextResponsive  }}</button>
+                    <button class="filter_cta" id="sortCta" v-on:click="sortBy">{{ shopifyData.sortByDropdownTextResponsive  }}</button>
                 </div>
             </div>
             <div class="filter_row">
                 <div class="row_inner">
                     <div class="apply_filter_cta_wrapper">
-                        <button class="apply_filter_cta" disabled v-on:click="applyfilter">APPLY FILTERS</button>
+                        <button class="apply_filter_cta" disabled v-on:click="applyfilter">{{ shopifyData.applyFilterCta }}</button>
                     </div>
                     <div class="filters">
                         <div class="filters_inner_row">
@@ -22,7 +22,7 @@
                                 </svg>
                             </div>
                             <div class="filter_cta_wrapper">
-                                <button class="filter_cta filter-modifier">FILTER</button>
+                                <button class="filter_cta filter-modifier">{{   shopifyData.filterinnerResponsive }}</button>
                                 <button class="filter_cta clear-modifier" v-bind:class="{ activeClear: showClearAll }" @click="clearAllFilter()">CLEAR FILTERS
                                     <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-bb57343a=""><path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" data-v-bb57343a=""></path><path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" data-v-bb57343a=""></path></svg>
                                 </button>
@@ -174,7 +174,7 @@
                                 </svg>
                             </div>
                             <div class="filter_cta_wrapper">
-                                <button class="filter_cta filter-modifier">SORT</button>
+                                <button class="filter_cta filter-modifier">{{   shopifyData.sortinnerResponsive }}</button>
                             </div>
                         </div>
                         <div class="sort_by_inner">
@@ -230,6 +230,7 @@
                                 </div>
                                 <h5 class="card-title">{{ product.title }}</h5>
                                 <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
+                            </a>
                                 <div class="quickButton" v-bind:class="{ quickActive: isMobile==false?product.id == productId:true }">
                                     <div class="color_swatches">
                                         <ul>
@@ -260,7 +261,7 @@
                                         </button>
                                     </div>
                                 </div>
-                            </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -278,16 +279,13 @@
             <div class="ethics_in_fashion">
                 <div class="ethics_content">
                     <div class="ethics_content_inner">
-                        <h2 class="sec_heading">We are working to redefine sustainability and ethics in fashion.</h2>
-                        <p class="body_text">Each behno piece is handcrafted in facilities incrementally implementing The behno Standard, a set of six guiding principles:</p>
+                        <h2 class="sec_heading">{{ shopifyData.secBottomheading }}</h2>
+                        <p class="body_text">{{ shopifyData.secBottomInfo }}</p>
                     </div>
                     <div class="fashion_img_grid">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card-2.png?v=1653631202" alt="error">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card1-2.png?v=1653631202" alt="error">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card3-2.png?v=1653631202" alt="error">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card4-2.png?v=1653631202" alt="error">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card5-2.png?v=1653631202" alt="error">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/standard-card6-2.png?v=1653631202" alt="error">
+                        <template  v-for="(item, index) in shopifyData.fashionImg" :key="index">
+                            <img :src=(item.imgUrl.src) :aria-placeholder=(item.imgUrl.placeholder) :alt=(item.imgUrl.alt) />
+                        </template>
                     </div>
                 </div>
             </div>
@@ -987,6 +985,12 @@ export default {
         //     return chunked_arr;
         // },
     },
+    props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        },
+    }
     
 }
 
@@ -1016,26 +1020,7 @@ export default {
 }
 
 @media(max-width:767px) {
-    .grid_inner .product_item:nth-child(5),
-    .grid_inner .product_item:nth-child(10),
-    .grid_inner .product_item:nth-child(15),
-    .grid_inner .product_item:nth-child(20),
-    .grid_inner .product_item:nth-child(25),
-    .grid_inner .product_item:nth-child(30),
-    .grid_inner .product_item:nth-child(35),
-    .grid_inner .product_item:nth-child(40),
-    .grid_inner .product_item:nth-child(45),
-    .grid_inner .product_item:nth-child(50),
-    .grid_inner .product_item:nth-child(55),
-    .grid_inner .product_item:nth-child(60),
-    .grid_inner .product_item:nth-child(65),
-    .grid_inner .product_item:nth-child(70),
-    .grid_inner .product_item:nth-child(75),
-    .grid_inner .product_item:nth-child(80),
-    .grid_inner .product_item:nth-child(85),
-    .grid_inner .product_item:nth-child(90),
-    .grid_inner .product_item:nth-child(95),
-    .grid_inner .product_item:nth-child(100)
+    .grid_inner .product_item:nth-child(5n) 
     {
         grid-column: 1 / span 2;
     }
