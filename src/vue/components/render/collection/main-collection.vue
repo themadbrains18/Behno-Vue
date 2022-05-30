@@ -200,9 +200,9 @@
                                     <div class="tmb_header_dopdown">
                                         <ul>
                                             <li v-for="(option) in ddTestSort" :key="option.id">
-                                                <input class="multiselectOption" type="checkbox" name="sort"
+                                                <input class="multiselectOption" type="checkbox" name="sort" :checked="option.id == 'sort1'?true:false"
                                                     :id="option.id" :value="option.value" @change="onCheckSort($event)">
-                                                <label class="optionLabel" :for="option.id">{{ option.text }}</label>
+                                                <label class="optionLabel" :for="option.id" @click="(event)=>{closeSortMenu(event)}">{{ option.text }}</label>
                                             </li>
                                         </ul>
                                     </div>
@@ -322,6 +322,9 @@ export default {
 
         if(window.innerWidth<=767){
             this.isMobile=true;
+
+
+            
         }
         window.addEventListener('resize',function(){
             if(window.innerWidth<=767){
@@ -345,7 +348,7 @@ export default {
             showSize: false,
             showMaterial: false,
             selected: [],
-            selectedSort: [],
+            selectedSort: ['Recommended'],
             selectedColor: [],
             selectedSize: [],
             selectedMaterial: [],
@@ -396,17 +399,13 @@ export default {
         }
     },
     methods: {
-
+        closeSortMenu:function(event){
+            // console.log(event);
+            event.target.closest(".show").classList.remove("show");
+        },
 
         addActive:function(event){
-            // const ActiveClass = document.querySelector(".dropdown.active")
-            // if(ActiveClass){
-            //     ActiveClass.classList.remove("active");
-            // }
-            // if(event.currentTarget != ActiveClass){
-            //     event.currentTarget.classList.add("active");
-            // }
-                event.currentTarget.classList.toggle("active");
+            event.currentTarget.classList.toggle("active");
         },
 
         closeDropDown:function(show,type){
@@ -676,6 +675,7 @@ export default {
         /* set selected sort checkbox value */
         onCheckSort: function (event) {
             var markedCheckbox = document.getElementsByName('sort');
+            
             for (var checkbox of markedCheckbox) {
                 this.selectedSort = []
                 if (checkbox.id == event.target.id){
@@ -696,6 +696,9 @@ export default {
                     checkbox.checked=false;
                 }   
             }
+
+            // to close responsive menu in mobile
+            
         },
 
         /* Fill category dropdown from products data */
