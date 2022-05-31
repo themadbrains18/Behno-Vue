@@ -3,13 +3,11 @@
         <!-- Sec Content -->
         <div class="sec_content">
             <h1 class="main_heading">
-                Amrit Sandhu chats with the behno team.
+                {{shopifyData.GalleryPreviewHeading }}
             </h1>
-            <div class="gallery_preview"> 
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview1.jpg?v=1650966802" alt="error">
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview2.jpg?v=1650966802" alt="error">
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/galler-preview3.jpg?v=1650966802" alt="error">
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/blog-banner-bg-res.jpg?v=1650965505" alt="error">
+
+            <div class="gallery_preview" v-for="(item,index) in shopifyData.previewimage" :key="index"> 
+                <img  :src=(item.previewimage.src) :placeholder=(item.previewimage.placeholder) :alt=(item.previewimage.alt)  />
             </div>
             <div class="gallery-cta">
                 <button @click="show = !show"  class="subtitle">VIEW + SHOP GALLERY</button>
@@ -21,7 +19,6 @@
                             <h3 class="card_heading">GALLERY</h3>
                             <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error" class="popup_close" @click="show = !show"> 
                         </div>
-                    
                         <div class="gallery_cards">
                             <div class="card">
                                 <a href="#" class="product_link"> 
@@ -102,9 +99,25 @@
     </section>
 </template>
 
-
+<script>
+    export default {
+    
+    data: function(){
+        return{
+            show: true
+        }
+    },
+    props:{
+        shopifyData:{
+            type: Object,
+            required: true,
+        }
+    }            
+    }
+</script>
 
 <style scoped>
+
 /* common css */
 html{
     scroll-behavior: smooth;
@@ -232,15 +245,3 @@ html{
 }
 
 </style>
-
-<script>
-
-
-export default {
-    data: function(){
-        return{
-            show: true
-        }
-    }
-}
-</script>
