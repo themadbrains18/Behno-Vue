@@ -3,100 +3,99 @@
         <!-- Sec Content -->
         <div class="sec_content">
             <h1 class="main_heading">
-                What is The Sense of behno?
+                {{ shopifyData.secHeading }}
             </h1>
-            <div class="gallery_preview"> 
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/landscape1.png?v=1651052805" alt="error">
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/landscape2.png?v=1651052805" alt="error">
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/landscape3.png?v=1651052805" alt="error">
-                <img @click="show = !show" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/landscape4.png?v=1651052805" alt="error">
+            <div class="gallery_preview" > 
+                <template v-for="(item, key) in shopifyData.gridImage" :key="key">
+                    <img @click="show = !show" :src=(item.imgUrl.src) :src-placeholder=(item.imgUrl.placeholder) :alt=(item.imgUrl.alt) />
+                </template>
             </div>
             <div class="gallery-cta">
-                <button @click="show = !show"  class="subtitle">VIEW + SHOP GALLERY</button>
+                <button @click="show = !show"  class="subtitle">{{ shopifyData.secCta }}</button>
             </div>
             <div class="overlay" :class="{ 'active': !show}" @click="show = !show"></div>
             <div class="gallery_preview_popup" :class="{ 'active': !show}"> 
-                    <div class="gallery_preview_inner">
-                        <div class="popup_top_row">
-                            <h3 class="card_heading">GALLERY</h3>
-                            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error" class="popup_close" @click="show = !show"> 
+                <div class="gallery_preview_inner">
+                    <div class="popup_top_row">
+                        <h3 class="card_heading">{{ shopifyData.popupHeading }}</h3>
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error" class="popup_close" @click="show = !show"> 
+                    </div>
+                
+                    <div class="gallery_cards">
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img1.jpg?v=1651233038" alt="error">
+                            </div>
+                            <p class="subtitle">ELIZABETH BAGUETTE MINI METALLIC</p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
                         </div>
-                    
-                        <div class="gallery_cards">
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img1.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">ELIZABETH BAGUETTE MINI METALLIC</p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img2.jpg?v=1651233038" alt="error">
                             </div>
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img2.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">SIMONE MINI CROSSBODY SUEDE</p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
+                            <p class="subtitle">SIMONE MINI CROSSBODY SUEDE</p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img3.jpg?v=1651233038" alt="error">
                             </div>
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img3.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">TINA BAGUETTE PEBBLE RUCHED</p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
+                            <p class="subtitle">TINA BAGUETTE PEBBLE RUCHED</p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img4.jpg?v=1651233038" alt="error">
                             </div>
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img4.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">MARY BAG MINI NAPPA</p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
+                            <p class="subtitle">MARY BAG MINI NAPPA</p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img5.jpg?v=1651233038" alt="error">
                             </div>
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img5.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">LEX MINI ACCORDION NAPPA</p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
+                            <p class="subtitle">LEX MINI ACCORDION NAPPA</p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img6.jpg?v=1651233038" alt="error">
                             </div>
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img6.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">SIMONE MINI CROSSBODY SUEDE</p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
+                            <p class="subtitle">SIMONE MINI CROSSBODY SUEDE</p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img7.jpg?v=1651233038" alt="error">
                             </div>
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img7.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">TINA BAGUETTE PEBBLE RUCHED </p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
+                            <p class="subtitle">TINA BAGUETTE PEBBLE RUCHED </p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a href="#" class="product_link"> 
+                            <div class="card_img">
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img8.jpg?v=1651233038" alt="error">
                             </div>
-                            <div class="card">
-                                <a href="#" class="product_link"> 
-                                <div class="card_img">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/gallery-img8.jpg?v=1651233038" alt="error">
-                                </div>
-                                <p class="subtitle">MARY BAG MINI NAPPA</p>
-                                <p class="subtitle_b">$495</p>
-                                </a>
-                            </div>
+                            <p class="subtitle">MARY BAG MINI NAPPA</p>
+                            <p class="subtitle_b">$495</p>
+                            </a>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -123,6 +122,9 @@ html{
     gap: 5px;
     margin-bottom: 11px;
     padding-left:4px;
+}
+.gallery_preview img{
+    cursor: pointer;
 }
 .gallery-cta{
     padding-left:4px;
@@ -241,6 +243,12 @@ export default {
         return{
             show: true
         }
-    }
+    },
+     props:{
+        shopifyData:{
+            type: Object,
+            required: true,
+        }
+    }   
 }
 </script>

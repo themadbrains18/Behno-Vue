@@ -90,6 +90,12 @@
 .tab_content > ul li {
   list-style: disc !important;
 }
+.tab_content_inner ul a{
+    font-family: adobe-caslon-pro,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .02em;
+}
 </style>
 
 <style scoped>
@@ -209,6 +215,7 @@
 .tab_btn.show img {
   transform: rotate(45deg);
 }
+
 @media (max-width: 1024px) {
   .tnd_tabs .tab_content_inner {
     padding: 35px 30px 45px;
