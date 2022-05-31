@@ -1,0 +1,63 @@
+<!-- For Shop Gallery Images -->
+{% capture gridImage %}
+[
+   {% for block in section.blocks %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.galleryImg | img_url : "" }}`,
+                placeholder: `{{ block.settings.galleryImg | img_url : "50x50" }}`,
+                alt: `{{ block.settings.galleryImg.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-blog-blog-hero-v2 :shopify-data="{
+    secHeading :`{{ section.settings.secHeading }}`,
+    popupHeading :`{{ section.settings.popupHeading }}`,
+    secCta :`{{ section.settings.secCta }}`,
+    gridImage : {{ gridImage }}
+
+}">
+
+</render-blog-blog-hero-v2>
+
+{% schema %}
+{
+    "name":"Blog Hero v2",
+    "settings":[
+        {
+            "id":"secHeading",
+            "label":"Section Main Heading",
+            "type":"text",
+            "default":"What is The Sense of behno?"
+        },
+        {
+            "id":"secCta",
+            "label":"Section Cta Text",
+            "type":"text",
+            "default":"VIEW + SHOP GALLERY"
+        },
+        {
+            "id":"popupHeading",
+            "label":"Section Popup Heading",
+            "type":"text",
+            "default":"GALLERY"
+        }
+    ],
+    "blocks":[
+        {
+            "name":"Shop Gallery Image ",
+            "type":"galleryImge",
+            "settings":[
+                {
+                    "id":"galleryImg",
+                    "label":"Shop Gallery Image",
+                    "type":"image_picker"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
