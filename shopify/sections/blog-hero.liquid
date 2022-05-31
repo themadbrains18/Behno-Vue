@@ -1,18 +1,6 @@
-{%- capture paragraphs -%}
-[
-        {% for block in section.blocks %}
-            {
-                {% if blocks.type = "bodyText" %}
-                    heroInfo:`{{ block.settings.heroInfo }}`,
-                {% endif %}
-            }{% unless forloop.last %},{% endunless %}
-         {% endfor %}
-    ]
-{%- endcapture -%}
 
 <render-blog-blog-hero :shopify-data="{
     heroHeading:`{{ section.settings.heroHeading }}`,
-    paragraphs: {{ paragraphs }},
     heroImgDesktop : {
         src : `{{ section.settings.heroImgDesktop | img_url : "" }}`,
         placeholder: `{{ section.settings.heroImgDesktop | img_url : "50x50" }}`,
@@ -25,7 +13,6 @@
     }
 }">
 </render-blog-blog-hero>
-
 {% schema %}
     {
         "name":"Blog Hero",
@@ -46,22 +33,6 @@
                 "label":"Hero Img For Mobile",
                 "type":"image_picker"
             }
-        ],
-        "blocks" : [
-            {
-                "name":"Body Text",
-                "type":"bodyText",
-                "settings":[
-                    {
-                        {
-                            "id":"heroInfo",
-                            "label":"Hero Info ",
-                            "type":"textare"
-                        }
-                    }
-                ]
-            }
         ]
-        
     }
 {% endschema %}
