@@ -5,8 +5,8 @@
             <div class="banner_content">
                 <h1 class="banner_main_heading">{{ shopifyData.heroHeading }}</h1>
                 <div class="banner_img t-center">
-                    <img class="desktop_img" :src=(shopifyData.heroImgDesktop.src) :placeholder=(shopifyData.heroImgDesktop.placeholder) :alt=(shopifyData.heroImgDesktop.alt)  />
-                    <img class="mobile_img" :src=(shopifyData.heroImgMobile.src) :placeholder=(shopifyData.heroImgMobile.placeholder) :alt=(shopifyData.heroImgMobile.alt)>
+                    <img class="desktop_img" :src=(shopifyData.heroImgDesktop.src) :src-placeholder=(shopifyData.heroImgDesktop.placeholder) :alt=(shopifyData.heroImgDesktop.alt)  />
+                    <img class="mobile_img" :src=(shopifyData.heroImgMobile.src) :src-placeholder=(shopifyData.heroImgMobile.placeholder) :alt=(shopifyData.heroImgMobile.alt)>
                 </div>
             </div>
         </div>
