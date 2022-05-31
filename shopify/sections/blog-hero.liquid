@@ -1,0 +1,38 @@
+
+<render-blog-blog-hero :shopify-data="{
+    heroHeading:`{{ section.settings.heroHeading }}`,
+    heroImgDesktop : {
+        src : `{{ section.settings.heroImgDesktop | img_url : "" }}`,
+        placeholder: `{{ section.settings.heroImgDesktop | img_url : "50x50" }}`,
+        alt: `{{ section.settings.heroImgDesktop.alt }}`
+    },
+    heroImgMobile : {
+        src : `{{ section.settings.heroImgMobile | img_url : "" }}`,
+        placeholder: `{{ section.settings.heroImgMobile | img_url : "50x50" }}`,
+        alt: `{{ section.settings.heroImgMobile.alt }}`
+    }
+}">
+</render-blog-blog-hero>
+{% schema %}
+    {
+        "name":"Blog Hero",
+        "settings":[
+            {
+                "id":"heroHeading",
+                "label":"Hero Heading",
+                "type":"text",
+                "default":"I AM:"
+            },
+            {
+                "id":"heroImgDesktop",
+                "label":"Hero Img For Desktop",
+                "type":"image_picker"
+            },
+            {
+                "id":"heroImgMobile",
+                "label":"Hero Img For Mobile",
+                "type":"image_picker"
+            }
+        ]
+    }
+{% endschema %}

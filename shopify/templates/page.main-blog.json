@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "blog-hero": {
+      "type": "blog-hero",
+      "settings": {
+        "heroHeading": "I AM:",
+        "heroImgDesktop": "shopify:\/\/shop_images\/blog-banner-bg.jpg",
+        "heroImgMobile": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg"
+      }
+    },
+    "gallery-preview": {
+      "type": "gallery-preview",
+      "blocks": {
+        "58bd37dc-9062-4449-a3ff-e7ddebe50929": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gallery-img1.jpg"
+          }
+        },
+        "7a1f671c-54a8-4bae-bd9e-1c974594f61f": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/galler-preview2.jpg"
+          }
+        },
+        "d05eaf7b-3aa0-4fc3-8997-531ea64bcd78": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gallery-img3.jpg"
+          }
+        },
+        "8d840e97-4f9d-43ef-8e75-6ec0a2334801": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gallery-img4.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "58bd37dc-9062-4449-a3ff-e7ddebe50929",
+        "7a1f671c-54a8-4bae-bd9e-1c974594f61f",
+        "d05eaf7b-3aa0-4fc3-8997-531ea64bcd78",
+        "8d840e97-4f9d-43ef-8e75-6ec0a2334801"
+      ],
+      "settings": {
+        "GalleryPreviewHeading": "Amrit Sandhu chats with the behno team."
+      }
+    }
+  },
+  "order": [
+    "blog-hero",
+    "gallery-preview"
+  ]
+}

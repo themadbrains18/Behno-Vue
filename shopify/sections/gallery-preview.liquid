@@ -1,0 +1,61 @@
+{% capture previewimage %}
+[
+{% for block in section.blocks %}
+    {
+        previewimage:{
+            src : `{{ block.settings.previewImage | img_url : "" }}`,
+            placeholder: `{{ block.settings.previewImage | img_url : "50x50" }}`,
+            alt: `{{ block.settings.previewImage.alt }}`
+        }
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+{% endcapture %}
+<render-blog-gallery-preview :shopify-data="{
+    GalleryPreviewHeading:`{{ section.settings.GalleryPreviewHeading}}`,
+    previewimage: {{ previewimage }}
+    
+     
+}">
+</render-blog-gallery-preview>
+{% schema %}
+    {
+        "name":"Gallery Preview",
+        "settings":[
+            {
+                "id":"GalleryPreviewHeading",
+                "label":"gallery heading",
+                "type":"text",
+                "default":"Amrit Sandhu chats with the behno team."
+            },
+            {
+                "id":"previewImage",
+                "label":"preview image",
+                "type":"image_picker"
+            }
+        ],
+        "blocks":[{
+            "name":"Add Image",
+            "type":"Image",
+            "settings":[
+                {
+                    "id":"previewImage",
+                    "type":"image_picker",
+                    "label":"Preview Image"
+                }
+            ]
+        },{
+        "name":"Add Grid Image",
+        "type":"gridImage",
+        "settings":[
+
+           {
+            "id":"gridImage",
+            "type":"image_picker",
+            "label":"grid Image"
+        } 
+        ]
+        }
+        ]
+    }
+{% endschema %} 
