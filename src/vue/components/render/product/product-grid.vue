@@ -65,6 +65,7 @@
             text-align: center;
         }
         .product_page_grid_item-first{
+            order: 2;
             margin-top: 0;
         }
         .product_page_grid_content{

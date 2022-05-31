@@ -41,9 +41,19 @@
 {% endcapture %}
 
 
+{% assign descriptionData = product.description | split: '<!-- split -->'  %}
+
+
 {% capture productDescription %}
-    `{{ product.description | base64_encode }}`
+[
+    {% for description in descriptionData %}
+        {
+            description : `{{ description  | base64_encode}}`,
+        }{% unless forloop.last  %},{% endunless %} 
+    {% endfor %}
+]
 {% endcapture %}
+
 
 <render-product-product-detail :shopify-data="{
     productId : `{{ product.id }}`,
@@ -52,7 +62,7 @@
     productMedia : {{ productMedia }},
     productVariant : {{ productVariant }},
     productCurrentVariant : {{ productCurrentVariant }},
+    productQuantity : `{{ product.selected_or_first_available_variant.inventory_quantity }}`,
     productDescription : {{ productDescription  }}
 }">
 </render-product-product-detail>
-
