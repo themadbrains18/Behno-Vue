@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "blog-hero-v2": {
+      "type": "blog-hero-v2",
+      "blocks": {
+        "13fce7d9-8b9d-475d-aa88-770a5e6fd9da": {
+          "type": "galleryImge",
+          "settings": {
+            "galleryImg": "shopify:\/\/shop_images\/landscape1_de26a667-b601-4792-9900-be62eb35a1ce.png"
+          }
+        },
+        "71243148-0518-41c8-9a50-200b761032f4": {
+          "type": "galleryImge",
+          "settings": {
+            "galleryImg": "shopify:\/\/shop_images\/landscape2_530fe052-be25-4a1d-9271-dbce45813315.png"
+          }
+        },
+        "a48469ae-4a99-4565-bcd0-2abda84f293f": {
+          "type": "galleryImge",
+          "settings": {
+            "galleryImg": "shopify:\/\/shop_images\/landscape3.png"
+          }
+        },
+        "c034af62-7e6e-4226-be22-7b94e9fc684b": {
+          "type": "galleryImge",
+          "settings": {
+            "galleryImg": "shopify:\/\/shop_images\/landscape4.png"
+          }
+        }
+      },
+      "block_order": [
+        "13fce7d9-8b9d-475d-aa88-770a5e6fd9da",
+        "71243148-0518-41c8-9a50-200b761032f4",
+        "a48469ae-4a99-4565-bcd0-2abda84f293f",
+        "c034af62-7e6e-4226-be22-7b94e9fc684b"
+      ],
+      "settings": {
+        "secHeading": "What is The Sense of behno?",
+        "secCta": "VIEW + SHOP GALLERY"
+      }
+    }
+  },
+  "order": [
+    "blog-hero-v2"
+  ]
+}
