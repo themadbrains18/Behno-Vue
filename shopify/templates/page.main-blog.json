@@ -14,25 +14,29 @@
         "58bd37dc-9062-4449-a3ff-e7ddebe50929": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gallery-img1.jpg"
+            "previewImage": "shopify:\/\/shop_images\/gallery-img1.jpg",
+            "product": "alex-shoulder-bag-glossy-croc-balsamic"
           }
         },
         "7a1f671c-54a8-4bae-bd9e-1c974594f61f": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/galler-preview2.jpg"
+            "previewImage": "shopify:\/\/shop_images\/galler-preview2.jpg",
+            "product": "ana-flat-tote-large-pebble-ruched-apricot"
           }
         },
         "d05eaf7b-3aa0-4fc3-8997-531ea64bcd78": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gallery-img3.jpg"
+            "previewImage": "shopify:\/\/shop_images\/gallery-img3.jpg",
+            "product": "ari-split-base-crossbody-nappa-olive"
           }
         },
         "8d840e97-4f9d-43ef-8e75-6ec0a2334801": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gallery-img4.jpg"
+            "previewImage": "shopify:\/\/shop_images\/gallery-img4.jpg",
+            "product": "devon-wallet-black"
           }
         }
       },
@@ -43,7 +47,8 @@
         "8d840e97-4f9d-43ef-8e75-6ec0a2334801"
       ],
       "settings": {
-        "GalleryPreviewHeading": "Amrit Sandhu chats with the behno team."
+        "GalleryPreviewHeading": "Amrit Sandhu chats with the behno team.",
+        "showProduct": true
       }
     }
   },
