@@ -23,8 +23,9 @@
 <render-blog-gallery-preview :shopify-data="{
     GalleryPreviewHeading:`{{ section.settings.GalleryPreviewHeading }}`,
     showProduct : `{{ section.settings.showProduct }}`,
-    productData: {{ productData }} 
-  
+    productData: {{ productData }} ,
+    PopupHeading : `{{ section.settings.PopupHeading }}`,
+    GalleryCta:`{{section.settings.GalleryCta}}`
 }">
 </render-blog-gallery-preview>
 {% schema %}
@@ -47,6 +48,16 @@
                 "type": "checkbox",
                 "label": "Show Products",
                 "default": true
+            },
+            {
+                "id": "PopupHeading",
+                "type": "text",
+                "label": "Popup Heading"
+            },
+            {
+                "id": "GalleryCta",
+                "type": "text",
+                "label": "Gallery Button"
             }
         ],
         "blocks":[
