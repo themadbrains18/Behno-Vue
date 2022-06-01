@@ -106,6 +106,7 @@
                             <div class="product_accordian_panel" v-html="encodeData(shopifyData.productDescription[1].description)">
                             </div>
                         </li>
+                        <!-- SPECIFICTION -->
                         <li class="product_accordian" v-if="shopifyData.productDescription[2].description">
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,6 +117,7 @@
                             <div class="product_accordian_panel" v-html="encodeData(shopifyData.productDescription[2].description)">
                             </div>
                         </li>
+                        <!-- SHIPPING -->
                         <li class="product_accordian" v-if="shopifyData.productDescription[3].description">
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,6 +131,7 @@
                             <div class="product_accordian_panel" v-html="encodeData(shopifyData.productDescription[3].description)">
                             </div>
                         </li>
+                        <!-- ETHICAL PHILOSOPHY -->
                         <li class="product_accordian" v-if="shopifyData.productDescription[4].description">
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,14 +144,30 @@
                         </li>
                     </ul>
                 </div>
-
+            </div>
+            <!-- Product Zoom Slider  -->
+            <div class="product_zoom modify-slider" id="productZoom">
+                <swiper
+                    :modules="modules"
+                    :autoHeight="true"
+                    :loop="true"
+                    :navigation="true"
+                    :autoplay="{
+                        delay: 1000000,
+                    }">
+                    <swiper-slide v-for="(value, key) in shopifyData.productMedia" :key="key" class="t-center">
+                        <div class="product_media" v-html="encodeData(value.media)" @click="productZoomInOut">
+                        </div>
+                    </swiper-slide>
+                </swiper>
             </div>
         </div>
     </section>
 </template>
 
 <style>
-    .product_slide{
+    .product_slide,
+    .product_zoom{
         background : #F1F1F1; 
     }
     .product_media {
@@ -160,7 +179,8 @@
         height: 100%;
         object-fit: cover;
     }
-    .product-media-slider.product_zoom {
+    /* Product Zoom css Start */
+    .product_zoom{
         position: fixed;
         top: 0;
         left: 0;
@@ -168,13 +188,29 @@
         height: 100%;
         width: 100%;
         min-height: 100vh;
-        overflow: scroll;
-        z-index: 6;
+        overflow-y: scroll;
+        z-index: -2;
+        opacity: 0;
+        visibility: hidden;
     }
-
-    .product-media-slider.product_zoom .product_media{
+    .product_zoom.active{
+        z-index: 6;
+        opacity: 1;
+        visibility: visible;
+    }
+    .product_zoom .swiper-button-prev{
+        left: 80px;
+    }
+    .product_zoom .swiper-button-next{
+        right: 80px;
+    }
+    .product_zoom .product_media{
+        line-height: 0;
+        max-width: 1200px;
+        margin: 0 auto;
         cursor: url(https://cdn.shopify.com/s/files/1/1000/3130/files/x.svg?v=1633016418) 16 16,auto;
     }
+    /* Product Zoom css End */
 
     .product-media-slider .swiper-pagination-fraction {
         position: absolute;
@@ -184,6 +220,7 @@
         right: 20px;
         z-index: 2;
     }
+
     .product-media-slider .swiper-pagination-fraction,
     .product-media-slider .swiper-pagination-fraction span {
         color: #777777;
@@ -262,7 +299,7 @@
         gap: 80px;
         padding: 0 15px;
         overflow: hidden;
-    }
+    } 
 
     .product-media-slider{
         height: calc(100vh - 110px);
@@ -364,19 +401,13 @@
         padding-left: 18px;
     }
 
-    @media only screen and (max-width:1600px){
-        .product-media-slider{
-            height: 650px;
-        }
-    }
+    
     @media only screen and (max-width:1440px){
+        .product-media-slider{
+            height: calc(100vh - 106px);
+        }
         .product_grid{
             gap: 60px;
-        }
-    }
-    @media only screen and (max-width:1200px){
-        .product-media-slider{
-            height: 600px;
         }
     }
     
@@ -445,12 +476,14 @@ export default {
   },
   methods : {
     productZoomInOut(){
-        console.log("product Zoomed")
-        let productMediaslider = document.querySelector("#productMediaslider");
-        console.log(productMediaslider);
-        productMediaslider.classList.toggle("product_zoom");
-        
-
+        let productZoom = document.querySelector("#productZoom");
+        if(productZoom.matches('.active')){
+            document.body.removeAttribute("style");
+        }
+        else {
+            document.body.style.overflow = "hidden";
+        }
+        productZoom.classList.toggle("active");
     },
     encodeData(data){
         data =  atob(data);
