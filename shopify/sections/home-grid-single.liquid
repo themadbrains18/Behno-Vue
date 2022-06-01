@@ -10,6 +10,7 @@
             alt: `{{ section.settings.respnsiveimage.alt }}`
           },
           imageHeight   : `{{ section.settings.imageHeight }}`,
+          MobileimageHeight   : `{{ section.settings.MobileimageHeight }}`,
           title  : `{{ section.settings.title }}`,
           linktext : `{{ section.settings.linkText }}`,
           link   : `{{ section.settings.link }}`
@@ -37,8 +38,15 @@
       {
         "id": "imageHeight",
         "type": "text",
-        "label": "t:sections.home_single_grid.settings.imageHeight.label"
+        "label": "t:sections.home_single_grid.settings.imageHeight.label",
+        "default": "500"
       },
+      {
+        "id": "MobileimageHeight",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.MobileimageHeight.label"
+      },
+      
       {
         "id": "title",
         "type": "text",

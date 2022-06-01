@@ -127,11 +127,12 @@
         "secHeading": "FEATURED IN",
         "showProduct": true,
         "product_list": [
-          "chain-bracelet",
-          "leather-anchor",
-          "bangle-bracelet-with-feathers",
-          "bangle-bracelet",
-          "boho-earrings"
+          "alex-shoulder-bag-glossy-croc-balsamic",
+          "ana-flat-tote-crossbody-nappa-ruched-olive",
+          "ana-flat-tote-crossbody-pebble-ruched-apricot",
+          "ana-flat-tote-crossbody-pebble-ruched-bordeaux",
+          "ana-flat-tote-crossbody-pebble-ruched-red",
+          "ana-flat-tote-large-pebble-ruched-apricot"
         ]
       }
     },
@@ -139,7 +140,9 @@
       "type": "home-grid-single",
       "settings": {
         "image": "shopify:\/\/shop_images\/grid-single.jpg",
+        "respnsiveimage": "shopify:\/\/shop_images\/mobile-single-grid.jpg",
         "imageHeight": "",
+        "MobileimageHeight": "",
         "title": "TITLE OF THE EDIT",
         "linkText": "Clickable link",
         "link": "shopify:\/\/pages\/ethical-philosophy"

@@ -23,6 +23,9 @@
 </template>
 
 <style scoped>
+.main_heading{
+  line-height: 62px;
+}
 /* Grid Text Image */
 .grid_text_image {
   background: #000;
@@ -47,6 +50,13 @@
     grid-row-start: -1;
   }
 }
+@media only screen and (max-width: 767px){
+  .main_heading{
+    font-size: 72px;
+  }
+
+}
+
 </style>
 
 <script>

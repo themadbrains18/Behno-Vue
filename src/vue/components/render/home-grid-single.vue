@@ -4,8 +4,8 @@
     <div class="grid_item">
       <a :href=(shopifyData.link) class="grid_img-wrap single line-h-0 d-block">
         <picture>
-          <source media="(max-width:767px)" class="grid_img single"  :srcset=(shopifyData.responsiveimgUrl.src) :src-placeholder=(shopifyData.responsiveimgUrl.placeholder) :alt=(shopifyData.responsiveimgUrl.alt) >
-          <v-lazy-image class="grid_img single"  :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) :style="{ height: shopifyData.imageHeight + 'px'}" />
+          <source media="(max-width:767px)"  :srcset=(shopifyData.responsiveimgUrl.src) :src-placeholder=(shopifyData.responsiveimgUrl.placeholder) :alt=(shopifyData.responsiveimgUrl.alt) >
+          <v-lazy-image class="grid_img single"  :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) :style="{ height: this.imageHeight + 'px'}" />
         </picture>
       </a>
       <div class="grid_info">
@@ -41,6 +41,25 @@ import VLazyImage from "v-lazy-image";
 export default {
   components: {
     VLazyImage,
+  },
+  data() {
+    window.addEventListener("resize",this.setImageHeight);
+    return {
+      imageHeight : 'auto'
+    }
+  },
+  methods:{
+    setImageHeight(){
+      if(window.innerWidth >= 768 ){
+        this.imageHeight = this.shopifyData.imageHeight;
+      }
+      else{
+        this.imageHeight = this.shopifyData.MobileimageHeight;
+      }
+    }
+  },
+  mounted() {
+    this.setImageHeight()
   },
   props: {
     shopifyData: {
