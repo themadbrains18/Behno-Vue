@@ -1,20 +1,20 @@
 <template>
-    <section class="image_and_text_sec bg-sand">
+    <section class="image_and_text_sec bg-sand" v-if="shopifyData.checkSection == 'true'" >
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">
                 <div class="product_popup">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/image-text.jpg?v=1651037961" alt="error">
-                    <productPopup />
+                    <img :src=(shopifyData.secImg.src) :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />
+                    <productPopup :productData=(shopifyData.productData)  />
                 </div>
-                <h2 class="img_text">I AM:</h2>
+                <h2 class="img_text">{{ shopifyData.imgHeading }}</h2>
                 <div class="shop_cta">
-                    <a href="#" class="subtitle">SHOP THE BAG</a>
+                    <a :href=(shopifyData.secCtaLink) class="subtitle">{{ shopifyData.secCta }}</a>
                 </div>
             </div>
             <div class="sec_text">
-                <p class="body_text">
-                    The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”
+                <p class="body_text" v-for="(item, key) in shopifyData.paragraph" :key="key">
+                    {{ item.para }}
                 </p>
             </div>
         </div>
@@ -94,6 +94,12 @@ import productPopup from '../product-popup.vue'
 export default {
     components:{
         productPopup
+    },
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
     }
 }
 </script>

@@ -5,28 +5,36 @@
       <h1 class="main_heading">
         {{ shopifyData.GalleryPreviewHeading }}
       </h1>
-      <div class="gallery_preview"
-        v-for="(item, index) in shopifyData.productData" :key="index">
-        <img  @click="show = !show" :src="item.previewimage.src"
+      <!-- Preview Images -->
+      <div
+        class="gallery_preview"
+        v-for="(item, index) in shopifyData.productData"
+        :key="index"
+      >
+        <img
+          @click="show = !show"
+          :src="item.previewimage.src"
           :src-placeholder="item.previewimage.placeholder"
           :alt="item.previewimage.alt"
+          v-if="index <= 3"
         />
       </div>
       <div class="gallery-cta">
         <button @click="show = !show" class="subtitle">
-          VIEW + SHOP GALLERY
+          {{ shopifyData.GalleryCta }}
         </button>
       </div>
-      <divs 
+      <!-- Overlay -->
+      <divs
         class="overlay"
         :class="{ active: !show }"
         @click="show = !show"
       ></divs>
-
-      <div class="gallery_preview_popup" :class="{ active: !show }">
+      <!-- Preview Images Popup -->
+      <!-- <div class="gallery_preview_popup" :class="{ active: !show }">
         <div class="gallery_preview_inner">
           <div class="popup_top_row">
-            <h3 class="card_heading">GALLERY</h3>
+            <h3 class="card_heading">{{shopifyData.PopupHeading}}</h3>
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909"
               alt="error"
@@ -37,11 +45,12 @@
           <div class="gallery_cards">   
             <div class="card" v-for="(value, key) in shopifyData.productData" :key="key">
               <a :href=(value.product.productUrl)  :product-id=(value.product.productid) class="product_link">
-                <div class="card_preview_img" >
-                    <img :src="value.previewimage.src"  />
-                </div>  
+                  
                 <div class="card_img">
                     <img :src="value.product.productidImage"  />
+                    <div class="card_preview_img" >
+                        <img :src="value.previewimage.src"  />
+                    </div>
                 </div>
                 <p class="subtitle">{{value.product.productTitle}}</p>
                 <p class="subtitle_b">{{value.product.productidPrice }}</p>
@@ -50,18 +59,76 @@
           
           </div>
         </div>
+      </div> -->
+
+      <!-- Responsive Slider -->
+      <div class="gallery_preview_popup responsive_slider" :class="{ active: !show }">
+        <div class="gallery_preview_inner">
+          <div class="popup_top_row">
+            <h3 class="card_heading">{{ shopifyData.PopupHeading }}</h3>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909"
+              alt="error"
+              class="popup_close"
+              @click="show = !show"
+            />
+          </div>
+          <swiper
+            :modules="modules"
+            :slidesPerView="'auto'"
+            :spaceBetween="10"
+            :mousewheel="{
+              invert: false,
+              releaseOnEdges: true,
+            }"
+            navigation
+          >
+            <swiper-slide
+              v-for="(value, key) in shopifyData.productData"
+              :key="key"
+            >
+              <div class="card">
+                <a
+                  :href="value.product.productUrl"
+                  :product-id="value.product.productid"
+                  class="product_link"
+                >
+                <div class="card_preview_img">
+                      <img :src="value.previewimage.src" />
+                    </div>
+                  <div class="card_img">
+                    <img :src="value.product.productidImage" />
+                    
+                  </div>
+                  <p class="subtitle">{{ value.product.productTitle }}</p>
+                  <p class="subtitle_b">{{ value.product.productidPrice }}</p>
+                </a>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
       </div>
     </div>
   </section>
 </template>
-
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Mousewheel } from "swiper";
+import "swiper/css";
+
 export default {
-  data: function () {
-      console.log(this.shopifyData);
-      console.log(this.shopifyData.productData);
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
     return {
-        show: true,
+      modules: [Navigation, Mousewheel],
+    };
+  },
+  data: function () {
+    return {
+      show: true,
     };
   },
   props: {
@@ -69,7 +136,7 @@ export default {
       type: Object,
       required: true,
     },
-  }
+  },
 };
 </script>
 
@@ -152,6 +219,25 @@ html {
   justify-content: space-between;
   margin-bottom: 20px;
 }
+.card_preview_img img {
+  width: 100%;
+  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  object-fit: cover;
+}
+.card:hover .card_preview_img img {
+  opacity: 0;
+}
+.gallery_preview img {
+  cursor: pointer;
+}
+.card_img {
+  position: relative;
+}
 .popup_close {
   width: 33px;
   height: 33px;
@@ -173,8 +259,16 @@ html {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
+.gallery_preview_popup.responsive_slider{
+        display: none;
+}
 
 /* Responsive Breakpoints */
+@media screen and (max-width: 575px) {
+    .gallery_preview_popup.responsive_slider{
+        display: block;
+    }
+}
 @media screen and (max-width: 767px) {
   .gallery_preview_sec {
     padding: 0 0px 28px 13px;
