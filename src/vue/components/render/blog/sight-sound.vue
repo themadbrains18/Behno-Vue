@@ -1,30 +1,40 @@
 <template>
-    <section class="sight_sound">
+    <section class="sight_sound qwe" v-if="shopifyData.checkSection == 'true'" >
         <!-- Sec head -->
         <div class="sec_head">
             <h1 class="sec_heading">
-                <span>Sight</span>
-                <span>Sound</span>
-                <span>Touch</span>
-                <span>Smell</span>
-                <span>Taste</span>
+                <template v-for="(item, key) in shopifyData.slide" :key="key">
+                    <span >{{ item.secHeading }}</span>
+                </template>
             </h1>
         </div>
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">
                 <div class="product_popup">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sec-full-img.jpg?v=1651059368" alt="error">
-                    <productPopup />
+                    <img :src=(shopifyData.secImg.src)  :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt)>
+                    <template v-if="shopifyData.productData">
+                        <productPopup :productData=(shopifyData.productData) />
+                    </template>
                 </div>
                 <div class="shop_cta" >
-                    <a href="#" class="subtitle">SHOP THE BAG</a>
+                    <a :href=(shopifyData.secCtaLink) class="subtitle">{{ shopifyData.secCta }}</a>
                 </div>
             </div>
         </div>
     </section>
 </template>
 
+<script>
+export default {
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    }
+}
+</script>
 
 <style scoped>
     .sight_sound{

@@ -1,16 +1,16 @@
 <template>
-    <section class="img_column_full_bleed_sec">
+    <section class="img_column_full_bleed_sec" v-if="shopifyData.checkSection == 'true'">
         <div class="sec_sontent">
-            <div class="sec_img">
+            <div class="sec_img" v-for="(item, key) in shopifyData.productData" :key="key">
                 <div class="product_popup">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/bleed1.jpg?v=1651040773" alt="error">
-                    <productPopup />
+                    <img :src=(item.previewImg.src)  :src-placeholder=(item.previewImg.placeholder) :alt=(item.previewImg.alt) />
+                    <productPopup  :productData=(item.productDetail)   />
                 </div>
                 <div class="shop_cta">
-                    <a href="#" class="subtitle">SHOP THE BAG</a>
+                    <a :href=(item.productDetail.productUrl) class="subtitle">{{ item.productDetail.secCtaText }}</a>
                 </div>
             </div>
-            <div class="sec_img">
+            <!-- <div class="sec_img">
                 <div class="product_popup">
                     <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/bleed2.jpg?v=1651040959" alt="error">
                     <productPopup />
@@ -18,7 +18,7 @@
                 <div class="shop_cta">
                     <a href="#" class="subtitle">SHOP THE BAG</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
@@ -79,14 +79,24 @@
     }
 </style>
 
-
-
 <script>
-import productPopup from '../product-popup.vue'
+import productPopup from '../product-popup.vue';
 
 export default {
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    },
     components:{
         productPopup
+    },
+    data() {
+        return(
+            console.log(this.shopifyData)
+        )
     }
+
 }
 </script>

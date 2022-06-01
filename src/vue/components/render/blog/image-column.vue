@@ -1,27 +1,19 @@
 <template>
-    <section class="image_column_sec bg-sand">
+    <section class="image_column_sec bg-sand" v-if="shopifyData.checkSection == 'true'" >
         <!-- Sec Content -->
         <div class="sec_content">
-            <div class="sec_img">
+            <div class="sec_img"  v-for="(item, key) in shopifyData.productData" :key="key">
                 <div class="product_popup">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/shop-bag1.jpg?v=1651035680" alt="error">
-                    <productPopup />
+                    <img :src=(item.previewImg.src)  :src-placeholder=(item.previewImg.placeholder) :alt=(item.previewImg.alt) />
+                    
+                    <productPopup :productData=(item.productDetail)  />
+                    
                 </div>
                 <div class="shop_cta">
-                    <a href="#" class="subtitle">SHOP THE BAG</a>
-                </div>
-            </div>
-            <div class="sec_img">
-                <div class="product_popup">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/shop-bag2.jpg?v=1651035680" alt="error">
-                    <productPopup />
-                </div>
-                <div class="shop_cta">
-                    <a href="#" class="subtitle">SHOP THE BAG</a>
+                    <a :href=(item.productDetail.productUrl) class="subtitle">{{ item.productDetail.secCtaText }}</a>
                 </div>
             </div>
         </div>
-        
     </section>
 </template>
 
@@ -51,13 +43,6 @@
     }
     .product_popup img{
         display: block;
-    }
-    .product_info_card {
-        position: absolute;
-        bottom: 0;
-        left: -100%;
-        transition: 0.3s linear;
-        z-index: 99;
     }
     .sec_img .product_popup > img{
         transition: 0.3s linear;
@@ -90,6 +75,12 @@ import productPopup from '../product-popup.vue'
 export default {
     components:{
         productPopup
+    },
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
     }
 }
 </script>

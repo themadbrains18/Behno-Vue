@@ -5,8 +5,7 @@
       <h1 class="main_heading">
         {{ shopifyData.GalleryPreviewHeading }}
       </h1>
-      <div class="gallery_preview"
-        v-for="(item, index) in shopifyData.productData" :key="index">
+      <div class="gallery_preview"  v-for="(item, index) in shopifyData.productData" :key="index">
         <img  @click="show = !show" :src="item.previewimage.src"
           :src-placeholder="item.previewimage.placeholder"
           :alt="item.previewimage.alt"
@@ -58,8 +57,8 @@
 <script>
 export default {
   data: function () {
-      console.log(this.shopifyData);
-      console.log(this.shopifyData.productData);
+      // console.log(this.shopifyData);
+      // console.log(this.shopifyData.productData);
     return {
         show: true,
     };
