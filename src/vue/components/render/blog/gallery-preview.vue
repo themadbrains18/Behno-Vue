@@ -295,10 +295,9 @@ html {
     display: block;
     top: 0;
     z-index: 9;
+    padding:0;
   }
-  .gallery_preview_popup.responsive_slider{
-    display: block;  
-  }
+  
 
   .gallery_preview_popup{
     display: none;
@@ -309,7 +308,6 @@ html {
   opacity: 1;
   width: initial;
   transform: translate(0, 0);
-  width: 100%;
   height: 100%;
 }
 .responsive_slider .card_img img{
@@ -337,9 +335,9 @@ html {
   text-align: center;
   margin-bottom: 13px;
 }
-.gallery_preview_popup.responsive_slider{
-  padding:0;
-}
+
+  
+
 
 .gallery_preview_popup .card_preview_img{
   line-height: 0;
@@ -362,12 +360,11 @@ html {
   justify-content: space-between;
 }
 
-.card_img{
-  text-align: end;
-}
+
 .card_img{
   width: 100%;
   height: 100%;
+  text-align: end;
 }
 }
 @media screen and (max-width: 767px) {
