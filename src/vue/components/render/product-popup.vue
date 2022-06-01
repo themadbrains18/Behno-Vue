@@ -2,14 +2,18 @@
   <section class="product_info_card">
       <div class="product_img">
         <img class="close-icon" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error">
-        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product-card.jpg?v=1651147294" alt="error">
+        <img :src=(productData.productidImage) >
       </div>
-      <p class="subtitle">TINA BAGUETTE NAPPA RUCHED</p>
-      <p class="subtitle_b">$495</p>
+      <p class="subtitle">{{ productData.productTitle }}</p>
+      <p class="subtitle_b">{{ productData.productidPrice }}</p>
       <div class="product_cta">
-        <a href="#" class="cta_btn">VIEW</a>
-        <a href="#" class="cta_btn cta-modifier">QUICK ADD</a>
-        <a href="#" class="cta_btn sold-out">SOLD OUT</a>
+        <template v-if="productData.productQuantity > 0">
+          <a :href=(productData.productUrl) class="cta_btn">VIEW</a>
+          <button type="button" class="cta_btn cta-modifier">QUICK ADD</button>  
+        </template>
+        <template v-else>
+          <button type="button" class="cta_btn sold-out">SOLD OUT</button>
+        </template>
       </div>
   </section>
 </template>
@@ -24,6 +28,9 @@
   }
   .subtitle_b{
     margin-bottom: 23px;
+  }
+  .subtitle {
+    margin: 6px 0 5px;
   }
   .product_cta{
     display: flex;
@@ -49,7 +56,7 @@
   }
   .cta_btn.sold-out{
       width: 100%;
-      display: none;
+      /* display: none; */
   }
   .close-icon {
       position: absolute;
@@ -71,6 +78,16 @@
 <script>
 export default {
   name:"productPopup",
+  props:{
+    productData:{
+      type:Object,
+    }
+  },
+  data() {
+        return(
+            console.log("productData",this.productData)
+        )
+    }
 }
 
 </script>

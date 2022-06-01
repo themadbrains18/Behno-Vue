@@ -1,0 +1,76 @@
+
+{% capture productData %}
+[
+    {% for block in section.blocks %}
+        {% if block.type == 'slide' %}
+            {
+                previewImg : {
+                    src : `{{ block.settings.previewImg | img_url : "" }}`,
+                    placeholder: `{{ block.settings.previewImg | img_url : "50x50" }}`,
+                    alt: `{{ block.settings.previewImg.alt }}`
+                },
+                productDetail : {
+                    productid : `{{ block.settings.product.id }}`,
+                    productUrl : `{{ block.settings.product.url }}`,
+                    productidImage : `{{ block.settings.product.media[0] | img_url : "" }}`,
+                    productidPrice : `{{ block.settings.product.price | money_with_currency }}`,
+                    productTitle : `{{ block.settings.product.title }}`,
+                    productQuantity : `{{ block.inventory_quantity }}`,
+                    secCtaText: `{{ block.settings.secCtaText }}`
+                }
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+    {% endfor %}
+]
+{% endcapture %}
+
+
+<render-blog-image-column :shopify-data="{
+    checkSection: `{{ section.settings.checkSection }}`,
+    productData: {{ productData }}
+}">
+
+</render-blog-image-column>
+
+{% schema %}
+{
+    "name":"Image Column Section",
+    "settings":[
+        {
+            "id": "checkSection",
+            "type": "checkbox",
+            "label": "Show Section",
+            "default": true
+        },
+        {
+            "id": "showProduct",
+            "type": "checkbox",
+            "label": "Show Products",
+            "default": true
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Section Heading",
+            "type": "slide",
+            "settings":[
+                {
+                    "id": "product",
+                    "type": "product",
+                    "label": "Select Products"
+                },
+                {
+                    "id": "secCtaText",
+                    "type": "text",
+                    "label": "Section Cta Text"
+                },
+                {
+                    "id": "previewImg",
+                    "type": "image_picker",
+                    "label": "Product Preview Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
