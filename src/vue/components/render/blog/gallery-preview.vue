@@ -8,16 +8,17 @@
       <!-- Preview Images -->
       <div
         class="gallery_preview"
-        v-for="(item, index) in shopifyData.productData"
-        :key="index"
+        
       >
-        <img
+      <div v-for="(item, index) in shopifyData.productData" :key="index">
+        <img 
           @click="show = !show"
           :src="item.previewimage.src"
           :src-placeholder="item.previewimage.placeholder"
           :alt="item.previewimage.alt"
           v-if="index <= 3"
         />
+        </div>
       </div>
       <div class="gallery-cta">
         <button @click="show = !show" class="subtitle">
@@ -25,11 +26,11 @@
         </button>
       </div>
       <!-- Overlay -->
-      <divs
+      <div
         class="overlay"
         :class="{ active: !show }"
         @click="show = !show"
-      ></divs>
+      ></div>
       <!-- Preview Images Popup -->
       <div class="gallery_preview_popup" :class="{ active: !show }">
         <div class="gallery_preview_inner">
@@ -100,16 +101,16 @@
                       <p class="subtitle_b color-white">
                         {{ value.product.productidPrice }}
                       </p>
-                      <a  :href="value.product.productUrl"
-                          :product-id="value.product.productid" 
+                      <div   
                           class="slider_product_btn">
-                          <div class="slider_tmb_btn">
+                          <a :href="value.product.productUrl"
+                          :product-id="value.product.productid" class="slider_tmb_btn">
                             <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761" alt="">
-                          </div>
+                          </a>
                         <span  class="color-white">
                           slider_product_btn
                         </span>
-                      </a>
+                      </div>
                     </div>
                     <div class="card_img">
                       <img :src="value.product.productidImage" />
@@ -140,6 +141,15 @@ export default {
     };
   },
   data: function () {
+  
+  window.addEventListener("load", this.onWindowLoad);    
+  window.addEventListener('load',()=>{
+      let GellaryImg=document.querySelectorAll(".responsive_slider .card_preview_img img");
+      for(let i of GellaryImg){
+        let GellaryBottomBtn=document.querySelector(".responsive_slider .slider_image.bg-black").clientHeight;
+        i.style.setProperty('min-height', `calc(100vh - ${GellaryBottomBtn}px)`);
+      }
+  })
     return {
       show: true,
     };
@@ -155,17 +165,13 @@ export default {
 
 <style scoped>
 
-
-
-
-
 /* common css */
 html {
   scroll-behavior: smooth;
 }
 
 .gallery_preview_sec {
-  padding: 0 56px 45px 56px;
+  padding: 52px 56px 45px 56px;
 }
 .main_heading {
   margin-bottom: 50px;
@@ -181,7 +187,7 @@ html {
 .gallery-cta {
   padding-left: 4px;
 }
-.gallery_preview > img {
+.gallery_preview > div> img {
   width: 100px;
   height: 140px;
   object-fit: cover;
@@ -241,6 +247,7 @@ html {
   width: 100%;
   transition: 0.3s;
   position: absolute;
+  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -288,6 +295,35 @@ html {
   display: none;
 }
 
+@media screen and (max-width: 991px) {
+  .gallery_cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .gallery_cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 12px;
+  }
+  .gallery_preview_sec {
+    padding: 36px 0px 28px 13px;
+  }
+  .gallery_preview {
+    overflow-x: scroll;
+    margin-bottom: 10px;
+  }
+  .main_heading {
+    margin-bottom: 15px;
+    max-width: 264px;
+    line-height: 41px;
+  }
+  .gallery-cta {
+    padding-left: 0px;
+  }
+}
+
 /* Responsive Breakpoints */
 
 @media screen and (max-width: 575px) {
@@ -296,8 +332,8 @@ html {
     top: 0;
     z-index: 9;
     padding:0;
+    overflow-y: hidden;
   }
-  
 
   .gallery_preview_popup{
     display: none;
@@ -306,12 +342,15 @@ html {
 .responsive_slider .card_preview_img img {
   position: static;
   opacity: 1;
-  width: initial;
+  width: 100%;
   transform: translate(0, 0);
   height: 100%;
+  min-height: calc(100vh - 132px);
+  object-fit: cover;
 }
 .responsive_slider .card_img img{
   height: 105px;
+  object-fit: cover;
   width: 105px;
 }
 
@@ -326,6 +365,7 @@ html {
   display: grid;
   justify-content: end;
   margin-right: 45px;
+  gap: 13px;
 }
 .slider_product_btn img{
   transform: rotate(90deg);
@@ -333,10 +373,9 @@ html {
 
 .slider_tmb_btn{
   text-align: center;
-  margin-bottom: 13px;
-}
+  margin: 0 auto;
 
-  
+}
 
 
 .gallery_preview_popup .card_preview_img{
@@ -360,35 +399,11 @@ html {
   justify-content: space-between;
 }
 
-
 .card_img{
   width: 100%;
   height: 100%;
   text-align: end;
 }
-}
-@media screen and (max-width: 767px) {
-  .gallery_preview_sec {
-    padding: 0 0px 28px 13px;
-  }
-  .gallery_preview {
-    overflow-x: scroll;
-    padding-left: 0;
-    margin-bottom: 10px;
-  }
-  .main_heading {
-    margin-bottom: 15px;
-    max-width: 264px;
-    line-height: 41px;
-  }
-  .gallery-cta {
-    padding-left: 0px;
-  }
-  .gallery_preview_popup,
-  .overlay {
-    display: none;
-    
-  }
 }
 </style>
 <style>
@@ -402,6 +417,12 @@ html {
 .responsive_slider .swiper-scrollbar-drag{
   background: #fff;
   border-radius:0;
+}
+.responsive_slider .card_preview_img{
+  height: 100%;  
+}
+.responsive_slider .swiper-slide{
+  height: 100vh;
 }
 @media screen and (max-width: 480px) {
  .responsive_slider .modify-slider .swiper-button-prev,.responsive_slider .modify-slider .swiper-button-next{

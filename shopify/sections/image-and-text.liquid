@@ -32,7 +32,6 @@
     },
     showProduct : `{{ section.settings.showProduct }}`,
     secCta : `{{ section.settings.secCta }}`,
-    secCtaLink : `{{ section.settings.secCtaLink }}`,
     imgHeading : `{{ section.settings.imgHeading }}`,
     checkImgHeading: `{{ section.settings.checkImgHeading }}`
 
@@ -51,22 +50,6 @@
             "default": true
         },
         {
-            "id":"secImg",
-            "label":"Section Image",
-            "type":"image_picker"
-        },
-        {
-            "id":"secCta",
-            "label":"Section Cta",
-            "type":"text",
-            "default":"SHOP THE BAG"
-        },
-        {
-            "id":"secCtaLink",
-            "label":"Section Cta Link",
-            "type":"url"
-        },
-        {
             "id": "checkImgHeading",
             "type": "checkbox",
             "label": "Show Image Heading",
@@ -78,12 +61,16 @@
             "type":"text",
             "default":"I AM:"
         },
-        
         {
-            "id": "showProduct",
-            "type": "checkbox",
-            "label": "Show Products",
-            "default": true
+            "id":"secImg",
+            "label":"Section Image",
+            "type":"image_picker"
+        },
+        {
+            "id":"secCta",
+            "label":"Section Cta",
+            "type":"text",
+            "default":"SHOP THE BAG"
         },
         {
             "id": "product",

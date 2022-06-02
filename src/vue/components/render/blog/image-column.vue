@@ -19,6 +19,9 @@
 
 
 <style scoped>
+    .image_column_sec .sec_img{
+        cursor: pointer;
+    }
     .image_column_sec{
         padding:0 30px 56px;
     }

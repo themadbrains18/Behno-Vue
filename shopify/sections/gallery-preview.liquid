@@ -19,7 +19,6 @@
 ]
 {% endcapture %}
 
-
 <render-blog-gallery-preview :shopify-data="{
     GalleryPreviewHeading:`{{ section.settings.GalleryPreviewHeading }}`,
     showProduct : `{{ section.settings.showProduct }}`,
@@ -33,22 +32,18 @@
         "name":"Gallery Preview",
         "settings":[
             {
-                "id":"GalleryPreviewHeading",
-                "label":"gallery heading",
-                "type":"text",
-                "default":"Amrit Sandhu chats with the behno team."
-            },
-            {
-                "id":"previewImage",
-                "label":"preview image",
-                "type":"image_picker"
-            },
-            {
                 "id": "showProduct",
                 "type": "checkbox",
                 "label": "Show Products",
                 "default": true
             },
+            {
+                "id":"GalleryPreviewHeading",
+                "label":"gallery heading",
+                "type":"text",
+                "default":"Amrit Sandhu chats with the behno team."
+            },
+            
             {
                 "id": "PopupHeading",
                 "type": "text",
@@ -62,7 +57,7 @@
             {
                 "id":"ProductBtn",
                 "type":"text",
-                "label": "Slider Product Button"
+                "label": "Responsive Slider Product Button"
             }
 
         ],

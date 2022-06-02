@@ -15,8 +15,12 @@
 </template>
 
 <style scoped>
+    .img_column_full_bleed_sec .sec_img{
+        cursor: pointer;
+    }
     .img_column_full_bleed_sec{
         padding:49px 0 67px;
+        background: #DDCEC7;
     }
     .sec_sontent{
         display: flex;

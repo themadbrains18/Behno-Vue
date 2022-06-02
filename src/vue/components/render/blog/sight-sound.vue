@@ -37,10 +37,14 @@ export default {
 </script>
 
 <style scoped>
+    .sight_sound .sec_img{
+        cursor: pointer;
+    }
     .sight_sound{
         padding:90px 0 43px;
         position: relative;
     }
+
     .sec_heading{
         margin-bottom: 121px;
     }
