@@ -6,18 +6,18 @@
   font-family: 'Helvetica Neue',sans-serif;
 }
 
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 5px;
 }
 
 /* Track */
-*::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
   border-radius: 10px;
 }
  
 /* Handle */
-*::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background: grey; 
 }
 
@@ -121,7 +121,6 @@ button{
   font-family: 'Big Caslon',sans-serif;
   font-weight: 500;
   font-size: 46px;
-  
 }
 
 
@@ -233,6 +232,9 @@ button{
   text-transform: uppercase;
 }
 
+.modify-slider .swiper-pagination{
+  z-index: 2;
+}
 
 .modify-slider .swiper-button-prev::after,
 .modify-slider .swiper-button-next::after{
@@ -257,7 +259,6 @@ button{
   width: 32px;
   z-index: 2;
   border-radius: 50%;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .modify-slider .swiper-button-next{

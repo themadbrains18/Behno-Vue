@@ -105,7 +105,10 @@
       "name": "Home Single Grid",
       "settings": {
         "imageHeight": {
-          "label": "Image Height"
+          "label": "Desktop Image Height"
+        },
+        "MobileimageHeight": {
+          "label": "Mobile Image Height"
         },
         "image": {
           "label": "Upload Image"

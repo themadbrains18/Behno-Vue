@@ -31,7 +31,7 @@
         @click="show = !show"
       ></divs>
       <!-- Preview Images Popup -->
-      <!-- <div class="gallery_preview_popup" :class="{ active: !show }">
+      <div class="gallery_preview_popup" :class="{ active: !show }">
         <div class="gallery_preview_inner">
           <div class="popup_top_row">
             <h3 class="card_heading">{{shopifyData.PopupHeading}}</h3>
@@ -59,13 +59,15 @@
           
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- Responsive Slider -->
-      <div class="gallery_preview_popup responsive_slider" :class="{ active: !show }">
-        <div class="gallery_preview_inner">
+      <div
+        class="gallery_preview_popup responsive_slider"
+        :class="{ active: !show }"
+      >
+        <div class="gallery_preview_inner modify-slider">
           <div class="popup_top_row">
-            <h3 class="card_heading">{{ shopifyData.PopupHeading }}</h3>
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909"
               alt="error"
@@ -74,6 +76,7 @@
             />
           </div>
           <swiper
+            :scrollbar="{hide: true,}"
             :modules="modules"
             :slidesPerView="'auto'"
             :spaceBetween="10"
@@ -88,21 +91,30 @@
               :key="key"
             >
               <div class="card">
-                <a
-                  :href="value.product.productUrl"
-                  :product-id="value.product.productid"
-                  class="product_link"
-                >
-                <div class="card_preview_img">
-                      <img :src="value.previewimage.src" />
-                    </div>
-                  <div class="card_img">
-                    <img :src="value.product.productidImage" />
-                    
+                  <div class="card_preview_img">
+                    <img :src="value.previewimage.src" />
                   </div>
-                  <p class="subtitle">{{ value.product.productTitle }}</p>
-                  <p class="subtitle_b">{{ value.product.productidPrice }}</p>
-                </a>
+                  <div class="slider_image bg-black">
+                    <div>
+                      <p class="subtitle color-white">{{ value.product.productTitle }}</p>
+                      <p class="subtitle_b color-white">
+                        {{ value.product.productidPrice }}
+                      </p>
+                      <a  :href="value.product.productUrl"
+                          :product-id="value.product.productid" 
+                          class="slider_product_btn">
+                          <div class="slider_tmb_btn">
+                            <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761" alt="">
+                          </div>
+                        <span  class="color-white">
+                          slider_product_btn
+                        </span>
+                      </a>
+                    </div>
+                    <div class="card_img">
+                      <img :src="value.product.productidImage" />
+                    </div>
+                  </div>
               </div>
             </swiper-slide>
           </swiper>
@@ -113,8 +125,9 @@
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, Mousewheel } from "swiper";
+import { Navigation,Scrollbar } from "swiper";
 import "swiper/css";
+import "swiper/css/scrollbar";
 
 export default {
   components: {
@@ -123,7 +136,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation, Mousewheel],
+      modules: [Navigation,Scrollbar],
     };
   },
   data: function () {
@@ -141,6 +154,11 @@ export default {
 </script>
 
 <style scoped>
+
+
+
+
+
 /* common css */
 html {
   scroll-behavior: smooth;
@@ -228,10 +246,15 @@ html {
   transform: translate(-50%, -50%);
   height: 100%;
   object-fit: cover;
+
 }
-.card:hover .card_preview_img img {
-  opacity: 0;
+
+@media (hover: hover) { 
+  .card:hover .card_preview_img img {
+    opacity: 0;
+  }
 }
+
 .gallery_preview img {
   cursor: pointer;
 }
@@ -259,15 +282,90 @@ html {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
+
+/* Responsive Slider Css Code */
 .gallery_preview_popup.responsive_slider{
-        display: none;
+  display: none;
 }
 
 /* Responsive Breakpoints */
+
 @media screen and (max-width: 575px) {
-    .gallery_preview_popup.responsive_slider{
-        display: block;
-    }
+  .gallery_preview_popup.responsive_slider {
+    display: block;
+    top: 0;
+    z-index: 9;
+    padding:0;
+  }
+  
+
+  .gallery_preview_popup{
+    display: none;
+  } 
+  /* Responsive Slider Cdd Code */
+.responsive_slider .card_preview_img img {
+  position: static;
+  opacity: 1;
+  width: initial;
+  transform: translate(0, 0);
+  height: 100%;
+}
+.responsive_slider .card_img img{
+  height: 105px;
+  width: 105px;
+}
+
+.responsive_slider .subtitle_b{
+  margin-bottom: 11px;
+}
+.responsive_slider .card .subtitle{
+  margin: 0px 0 10px;
+  
+}
+.slider_product_btn{
+  display: grid;
+  justify-content: end;
+  margin-right: 45px;
+}
+.slider_product_btn img{
+  transform: rotate(90deg);
+}
+
+.slider_tmb_btn{
+  text-align: center;
+  margin-bottom: 13px;
+}
+
+  
+
+
+.gallery_preview_popup .card_preview_img{
+  line-height: 0;
+}
+
+.responsive_slider .popup_top_row img{
+  left: 15px;
+  top: 15px;
+  right: auto;
+  z-index: 9;
+}
+.responsive_slider .popup_top_row{
+  margin-bottom: 0;
+}
+.slider_image{
+  display: grid;
+  padding: 8px;
+  grid-template-columns: 77% 22%;
+  gap: 4px;
+  justify-content: space-between;
+}
+
+
+.card_img{
+  width: 100%;
+  height: 100%;
+  text-align: end;
+}
 }
 @media screen and (max-width: 767px) {
   .gallery_preview_sec {
@@ -289,6 +387,26 @@ html {
   .gallery_preview_popup,
   .overlay {
     display: none;
+    
   }
 }
 </style>
+<style>
+/* Resposnive Slider Css Code */
+.responsive_slider .swiper-scrollbar{
+  bottom: auto;
+  top: 8px;
+  background: rgba(0, 0, 0, 0.14);
+  height: 3px;
+}
+.responsive_slider .swiper-scrollbar-drag{
+  background: #fff;
+  border-radius:0;
+}
+@media screen and (max-width: 480px) {
+ .responsive_slider .modify-slider .swiper-button-prev,.responsive_slider .modify-slider .swiper-button-next{
+   display: block;
+}
+}
+</style>
+

@@ -1,32 +1,30 @@
 <template>
     <section :data-id=(shopifyData.productId) class="product_sec">
         <div class="product_grid">
-            
-                       <!-- :pagination= "true"
-                    :navigation="false" -->
             <div class="product_grid_image modify-slider">
                 <swiper
-                    :direction="'vertical'"
+                    :slidesPerView="1"
+                    :direction="'horizontal'"
                     :modules="modules"
                     :autoHeight="true"
                     :loop="true"
                     :navigation="true"
+                    :mousewheel = "{invert: false, releaseOnEdges: true}"
                     :pagination= "{
                         type: 'bullets',
                     }"
-                    :mousewheel= "{
-                        invert: false,
-                        releaseOnEdges: true
-                    }"
+                    
                     :autoplay="{
                         delay: 1000000,
                     }"
                     :breakpoints="{
-                        '320': {
-                            navigation:false
+                        '768': {
+                            slidesPerView: '2' 
                         },
-                        '991': {
-                            pagination : { type: 'fraction'}
+                        '992': {
+                            pagination : { type: 'fraction'},
+                            direction: this.swiperDirection,
+                            slidesPerView: '1',
                         }
                     }"
                     class="product-media-slider " id="productMediaslider">
@@ -173,7 +171,7 @@
     .product_media {
         height: 100%;
         display: inline-block;
-        cursor: url(https://cdn.shopify.com/s/files/1/1000/3130/files/18dddcc9cf53b547eaf0f76c308502f6.svg?v=1633015103) 16 16,auto;
+        cursor: url("https://cdn.shopify.com/s/files/1/1000/3130/files/18dddcc9cf53b547eaf0f76c308502f6.svg?v=1633015103") 16 16,auto;
     }
     .product_media > *{
         height: 100%;
@@ -192,6 +190,9 @@
         z-index: -2;
         opacity: 0;
         visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .product_zoom.active{
         z-index: 6;
@@ -208,7 +209,7 @@
         line-height: 0;
         max-width: 1200px;
         margin: 0 auto;
-        cursor: url(https://cdn.shopify.com/s/files/1/1000/3130/files/x.svg?v=1633016418) 16 16,auto;
+        cursor: url("https://cdn.shopify.com/s/files/1/1000/3130/files/x.svg?v=1633016418") 16 16,auto;
     }
     /* Product Zoom css End */
 
@@ -256,7 +257,16 @@
         letter-spacing: 0.02em;
     }
 
+    @media only screen and (max-width:1440px){
+        .product_zoom .swiper-button-prev{
+            left: 18px;
+        }
+        .product_zoom .swiper-button-next{
+            right: 18px;
+        }
+    }
     @media only screen and (max-width:991px){
+       
         .product_grid_image.modify-slider{
             position: relative;
         }
@@ -264,28 +274,32 @@
             position: static;
             
         }
+
         .product-media-slider .swiper-button-prev,
         .product-media-slider .swiper-button-next{
             display: none;
         }
         .product-media-slider .swiper-pagination{
-            display: flex;
             top: calc(100% + 12px);
-            transform: translateX(50%);
-            right: 50%;
         }
-        .product-media-slider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, 
-        .product-media-slider .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{
+        
+        .product-media-slider .swiper-pagination-bullet{
             margin: 0 2px;
             height: 6px;
             width: 6px;
             background: #9D9D9D;
             opacity: 1;
         }
-        .product-media-slider .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+        .product-media-slider  .swiper-pagination-bullet.swiper-pagination-bullet-active{
             background: #3D3D3D;
         }
 
+    }
+    @media only screen and (max-width:480px){
+        .product_zoom .swiper-button-prev, 
+        .product_zoom .swiper-button-next{
+            display: block;
+        }
     }
     
 </style>
@@ -410,6 +424,11 @@
             gap: 60px;
         }
     }
+    @media only screen and (max-width:1440px){
+        .product_grid{
+            gap: 40px;
+        }   
+    }
     
     @media only screen and (max-width:991px){
         .product_sec {
@@ -427,7 +446,21 @@
             margin: 0 auto;
         }
         .product-media-slider{
-            height: 500px;
+            height: auto;
+        }
+        .product_grid_image{
+            position: relative;
+        }
+        .product_grid_image::after{
+            content: "";
+            background: url("https://cdn.shopify.com/s/files/1/0577/1178/8125/files/Magnifying_glass.svg?v=1654078628") no-repeat;
+            background-size: 18px;
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+            height: 18px;
+            width: 18px;
+            z-index: 2;
         }
         .add_cart_btn_wrap{
             padding: 0 15px;
@@ -439,11 +472,7 @@
         }
     }
 
-    @media only screen and (max-width:575px){
-        .product-media-slider{
-            height: 400px;
-        }
-    }
+ 
 </style>
 
 <script>
@@ -457,11 +486,10 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation,Autoplay,Pagination,Mousewheel } from "swiper";
 export default {
-  
     data() {
       console.log(this.shopifyData)
       return {
-        swiperDirection : true
+        swiperDirection : 'vertical',
       }
   },
   props: {
@@ -476,6 +504,9 @@ export default {
   },
   methods : {
     productZoomInOut(){
+        // console.log(this.swiperDirection)
+        // this.swiperDirection = 'horizontal'
+        // console.log(this.swiperDirection)
         let productZoom = document.querySelector("#productZoom");
         if(productZoom.matches('.active')){
             document.body.removeAttribute("style");
