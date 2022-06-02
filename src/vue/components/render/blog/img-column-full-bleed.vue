@@ -10,15 +10,6 @@
                     <a :href=(item.productDetail.productUrl) class="subtitle">{{ item.productDetail.secCtaText }}</a>
                 </div>
             </div>
-            <!-- <div class="sec_img">
-                <div class="product_popup">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/bleed2.jpg?v=1651040959" alt="error">
-                    <productPopup />
-                </div>
-                <div class="shop_cta">
-                    <a href="#" class="subtitle">SHOP THE BAG</a>
-                </div>
-            </div> -->
         </div>
     </section>
 </template>

@@ -150,6 +150,9 @@
         "showProduct": true
       }
     },
+    "image-and-text2": {
+      "type": "image-and-text"
+    },
     "sight-sound": {
       "type": "sight-sound",
       "blocks": {
@@ -208,6 +211,7 @@
     "image-column",
     "image-and-text",
     "img-column-full-bleed",
+    "image-and-text2",
     "sight-sound"
   ]
 }

@@ -7,7 +7,7 @@
                     <img :src=(shopifyData.secImg.src) :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />
                     <productPopup :productData=(shopifyData.productData)  />
                 </div>
-                <h2 class="img_text">{{ shopifyData.imgHeading }}</h2>
+                <h2 class="img_text" v-if="shopifyData.checkImgHeading == 'true'" >{{ shopifyData.imgHeading }}</h2>
                 <div class="shop_cta">
                     <a :href=(shopifyData.secCtaLink) class="subtitle">{{ shopifyData.secCta }}</a>
                 </div>
