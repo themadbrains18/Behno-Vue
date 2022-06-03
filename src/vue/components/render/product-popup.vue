@@ -82,12 +82,7 @@ export default {
     productData:{
       type:Object,
     }
-  },
-  data() {
-        return(
-            console.log("productData",this.productData)
-        )
-    }
+  }
 }
 
 </script>

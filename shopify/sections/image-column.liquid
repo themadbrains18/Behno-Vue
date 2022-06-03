@@ -41,12 +41,6 @@
             "type": "checkbox",
             "label": "Show Section",
             "default": true
-        },
-        {
-            "id": "showProduct",
-            "type": "checkbox",
-            "label": "Show Products",
-            "default": true
         }
     ],
     "blocks":[
@@ -55,19 +49,20 @@
             "type": "slide",
             "settings":[
                 {
-                    "id": "product",
-                    "type": "product",
-                    "label": "Select Products"
+                    "id": "previewImg",
+                    "type": "image_picker",
+                    "label": "Product Preview Image"
                 },
                 {
                     "id": "secCtaText",
                     "type": "text",
-                    "label": "Section Cta Text"
+                    "label": "Section Cta Text",
+                    "default":"SHOP THE BAG"
                 },
                 {
-                    "id": "previewImg",
-                    "type": "image_picker",
-                    "label": "Product Preview Image"
+                    "id": "product",
+                    "type": "product",
+                    "label": "Select Products"
                 }
             ]
         }

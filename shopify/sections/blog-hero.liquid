@@ -1,5 +1,6 @@
 
 <render-blog-blog-hero :shopify-data="{
+    checkSection: `{{ section.settings.checkSection }}`,
     heroHeading:`{{ section.settings.heroHeading }}`,
     heroImgDesktop : {
         src : `{{ section.settings.heroImgDesktop | img_url : "" }}`,
@@ -17,6 +18,12 @@
     {
         "name":"Blog Hero",
         "settings":[
+            {
+                "id": "checkSection",
+                "type": "checkbox",
+                "label": "Show Section",
+                "default": true
+            },
             {
                 "id":"heroHeading",
                 "label":"Hero Heading",

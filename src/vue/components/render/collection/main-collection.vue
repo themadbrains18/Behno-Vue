@@ -1681,8 +1681,6 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     border: 1px solid #878787 !important;   
 }
 .product_img_wrapper img {
-    height: 466px;
-    max-width: 466px;
     width: 100%;
     object-fit: cover;
 }

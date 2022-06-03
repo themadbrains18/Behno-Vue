@@ -7,9 +7,9 @@
                     <img :src=(shopifyData.secImg.src) :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />
                     <productPopup :productData=(shopifyData.productData)  />
                 </div>
-                <h2 class="img_text">{{ shopifyData.imgHeading }}</h2>
-                <div class="shop_cta">
-                    <a :href=(shopifyData.secCtaLink) class="subtitle">{{ shopifyData.secCta }}</a>
+                <h2 class="img_text" v-if="shopifyData.checkImgHeading == 'true'" >{{ shopifyData.imgHeading }}</h2>
+                <div class="shop_cta subtitle">
+                     {{ shopifyData.secCta }}
                 </div>
             </div>
             <div class="sec_text">
@@ -20,11 +20,15 @@
         </div>
     </section>
 </template>
-
-
 <style scoped>
+    .image_and_text_sec .sec_img{
+        cursor: pointer;        
+    }
     .image_and_text_sec{
-        padding: 0 30px 43px;           
+        padding: 56px 30px 0;           
+    }
+    .image_and_text_sec .product_popup img{
+        width: 100%;
     }
     .sec_content{
         display: flex;

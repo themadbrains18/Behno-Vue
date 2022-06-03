@@ -1,21 +1,31 @@
 <template>
-    <section class="video_sec">
+    <section class="video_sec"  v-if="shopifyData.checkSection=='true'">
         <!-- Sec Head -->
-        <div class="sec_head bg-sand">
-            <h1 class="main_heading">“I WAS ALWAYS FEARLESS.”</h1>
+        <div class="sec_head bg-sand" v-if="shopifyData.SectionShow=='true'" >
+            <h1 class="main_heading">{{ shopifyData.SecHeading }}</h1>
         </div>
         <!-- Sec Content -->
-        <div class="sec_content bg-black t-center">
-            <!-- <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/dummy-video.jpg?v=1651039976" alt="error"> -->
-            <iframe src="https://www.youtube.com/embed/fCUnpreQAoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="sec_content bg-black t-center" v-if="shopifyData.VideoShow === 'true'">
+            <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+                <source :src=(shopifyData.videolink) />
+            </video>
         </div>
     </section>
 </template>
-
+<script>
+export default({
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    }
+})
+</script>
 
 <style scoped>
     .sec_head{
-        padding: 0 40px 15px;
+        padding: 43px 40px 15px;
     }
     .main_heading{
         color: #EF0000;        

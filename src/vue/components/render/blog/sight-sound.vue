@@ -37,10 +37,14 @@ export default {
 </script>
 
 <style scoped>
+    .sight_sound .sec_img{
+        cursor: pointer;
+    }
     .sight_sound{
         padding:90px 0 43px;
         position: relative;
     }
+
     .sec_heading{
         margin-bottom: 121px;
     }
@@ -63,8 +67,9 @@ export default {
     }
     .sec_content{
         padding:0 54px;
-        max-width: 1440px;
-        margin: 0 auto;
+    }
+    .product_popup > img{ 
+        width: 100%;
     }
     .sight_sound:after{
         content: '';

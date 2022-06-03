@@ -82,12 +82,193 @@
         "GalleryPreviewHeading": "Amrit Sandhu chats with the behno team.",
         "showProduct": true,
         "PopupHeading": "GALLERY",
-        "GalleryCta": "VIEW + SHOP GALLERY"
+        "GalleryCta": "VIEW + SHOP GALLERY",
+        "ProductBtn": ""
+      }
+    },
+    "text-box": {
+      "type": "text-box",
+      "blocks": {
+        "d5904b66-35c7-40c4-b402-2a69e70ec6d4": {
+          "type": "info",
+          "settings": {
+            "secInfo": "The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”"
+          }
+        }
+      },
+      "block_order": [
+        "d5904b66-35c7-40c4-b402-2a69e70ec6d4"
+      ],
+      "settings": {
+        "checkSection": true,
+        "secSubHeading": "MARCH 22, 2022"
+      }
+    },
+    "image-column": {
+      "type": "image-column",
+      "blocks": {
+        "7275eeac-9125-4025-8627-4f2ab282c526": {
+          "type": "slide",
+          "settings": {
+            "product": "the-softest-tee-mens-fitted-long-sleeve-black",
+            "secCtaText": "SHOP THE BAG",
+            "previewImg": "shopify:\/\/shop_images\/ghat-know5.jpg"
+          }
+        },
+        "f108701b-6fef-4e99-ace5-22d0fbb5a2c1": {
+          "type": "slide",
+          "settings": {
+            "product": "alex-shoulder-bag-glossy-croc-balsamic",
+            "secCtaText": "SHOP THE BAG",
+            "previewImg": "shopify:\/\/shop_images\/inheritance1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "7275eeac-9125-4025-8627-4f2ab282c526",
+        "f108701b-6fef-4e99-ace5-22d0fbb5a2c1"
+      ],
+      "settings": {
+        "checkSection": true,
+        "showProduct": true
+      }
+    },
+    "image-and-text": {
+      "type": "image-and-text",
+      "blocks": {
+        "74004655-6e43-42fc-a589-b215ea01237d": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”"
+          }
+        }
+      },
+      "block_order": [
+        "74004655-6e43-42fc-a589-b215ea01237d"
+      ],
+      "settings": {
+        "checkSection": true,
+        "secImg": "shopify:\/\/shop_images\/gallery-img3.jpg",
+        "secCta": "SHOP THE BAG",
+        "secCtaLink": "",
+        "checkImgHeading": true,
+        "imgHeading": "I AM:",
+        "showProduct": true,
+        "product": "alex-shoulder-bag-glossy-croc-balsamic"
+      }
+    },
+    "img-column-full-bleed": {
+      "type": "img-column-full-bleed",
+      "blocks": {
+        "36e08fb4-0db6-4c64-9d25-93773030959b": {
+          "type": "slide",
+          "settings": {
+            "product": "ana-flat-tote-crossbody-pebble-ruched-red",
+            "secCtaText": "SHOP THE BAG",
+            "previewImg": "shopify:\/\/shop_images\/ghat-know3.jpg"
+          }
+        },
+        "54fb3c7c-9948-4d0c-b5d8-98e1f8b9895c": {
+          "type": "slide",
+          "settings": {
+            "product": "devon-wallet-nappa-cacao",
+            "secCtaText": "SHOP THE BAG",
+            "previewImg": "shopify:\/\/shop_images\/inheritance1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "36e08fb4-0db6-4c64-9d25-93773030959b",
+        "54fb3c7c-9948-4d0c-b5d8-98e1f8b9895c"
+      ],
+      "settings": {
+        "checkSection": true,
+        "showProduct": true
+      }
+    },
+    "image-and-text2": {
+      "type": "image-and-text",
+      "blocks": {
+        "b274c4e0-e60e-4de4-8f58-f24dfadf556e": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”"
+          }
+        }
+      },
+      "block_order": [
+        "b274c4e0-e60e-4de4-8f58-f24dfadf556e"
+      ],
+      "settings": {
+        "checkSection": true,
+        "secImg": "shopify:\/\/shop_images\/ghat-know5.jpg",
+        "secCta": "SHOP THE BAG",
+        "secCtaLink": "",
+        "checkImgHeading": false,
+        "imgHeading": "I AM:",
+        "showProduct": true,
+        "product": "ana-flat-tote-crossbody-nappa-ruched-olive"
+      }
+    },
+    "sight-sound": {
+      "type": "sight-sound",
+      "blocks": {
+        "4f4ae9ec-03a0-40cb-bda1-d5672c651515": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Sight"
+          }
+        },
+        "862b8467-fbab-496c-9529-4dcb59d816cf": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Sound"
+          }
+        },
+        "084ed431-05b1-492e-8037-c39bd6cf91a2": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Touch"
+          }
+        },
+        "487c0d49-0e0d-4885-9451-183bb691a46c": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Smell"
+          }
+        },
+        "844d07f2-9508-47a4-8883-0295ab17adad": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Taste"
+          }
+        }
+      },
+      "block_order": [
+        "4f4ae9ec-03a0-40cb-bda1-d5672c651515",
+        "862b8467-fbab-496c-9529-4dcb59d816cf",
+        "084ed431-05b1-492e-8037-c39bd6cf91a2",
+        "487c0d49-0e0d-4885-9451-183bb691a46c",
+        "844d07f2-9508-47a4-8883-0295ab17adad"
+      ],
+      "settings": {
+        "checkSection": true,
+        "secImg": "shopify:\/\/shop_images\/sec-full-img.jpg",
+        "secCta": "SHOP THE BAG",
+        "secCtaLink": "#",
+        "showProduct": true,
+        "product": "elizabeth-baguette-mini-suede-acid-green"
       }
     }
   },
   "order": [
     "blog-hero",
-    "gallery-preview"
+    "gallery-preview",
+    "text-box",
+    "image-column",
+    "image-and-text",
+    "img-column-full-bleed",
+    "image-and-text2",
+    "sight-sound"
   ]
 }
