@@ -129,9 +129,7 @@
           "name": "Color",
           "position": 1,
           "values": [
-            "AZURE",
-            "red",
-            "black"
+            "AZURE"
           ]
         },
         {

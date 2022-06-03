@@ -3,9 +3,11 @@
         <div class="product_grid">
             <div class="product_grid_image modify-slider">
                 <swiper
+                    :modules="modules"
+                    watchSlidesProgress
+                    @swiper="setThumbsSwiper"
                     :slidesPerView="1"
                     :direction="'horizontal'"
-                    :modules="modules"
                     :autoHeight="true"
                     :loop="true"
                     :navigation="true"
@@ -13,7 +15,6 @@
                     :pagination= "{
                         type: 'bullets',
                     }"
-                    
                     :autoplay="{
                         delay: 1000000,
                     }"
@@ -23,8 +24,8 @@
                         },
                         '992': {
                             pagination : { type: 'fraction'},
-                            direction: this.swiperDirection,
-                            slidesPerView: '1',
+                            direction: 'vertical',
+                            slidesPerView: '1'
                         }
                     }"
                     class="product-media-slider " id="productMediaslider">
@@ -36,12 +37,25 @@
             </div>
             <div class="product_grid_content">
                 <h1 class="product_title card_heading">{{shopifyData.productTitle}}</h1>
-                <h2 class="product_price">{{shopifyData.productPrice}}</h2>
-                <form>
+                <h2 class="product_price">
+                    <!-- <del v-if="shopifyData.productComparePrice">
+                        {{ shopifyData.productComparePrice }}
+                    </del> -->
+                    {{shopifyData.productPrice}}
+                </h2>
+                <form  method="post">
                     <p class="after_pay">or 4 interest-free installments of $97.50 by<img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/afterpay.png?v=1653477636"></p>
                     <ul class="product_variant">
-                        <!-- <template  v-for="(value, key) in shopifyData.productVariant" :key="key"> -->
-                                <!-- {{value.title}} -->
+                        
+                        <!-- <li class="color_variant_wrap" v-for="(value, key) in shopifyData.productVariant" :key="key">
+                             {{value.option1}}
+                            {{ shopifyData.productCurrentVariant.option1 }}
+                            <input type="radio" :name="value.option1"  class="color_variant" checked>
+                            <label class="color_variant_label" for="black"> 
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="">
+                            </label> 
+                        </li> -->
+
                             <li class="color_variant_wrap">
                                 <input type="radio" name="colorVariant" id="black" class="color_variant" checked>
                                 <label class="color_variant_label" for="black"> 
@@ -72,7 +86,6 @@
                                     <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="">
                                 </label> 
                             </li>
-                        <!-- </template> -->
                     </ul>
 
                     <p class="product_left subtitle_b" v-if="shopifyData.productQuantity == 0">
@@ -83,7 +96,7 @@
                     </p>
 
                     <div class="add_cart_btn_wrap">
-                        <button type="submit" class="add_cart_btn cta_btn cta_btn-black">
+                        <button type="submit" class="add_cart_btn cta_btn cta_btn-black" name="addCart" id="addCart">
                             ADD TO BAG
                         </button>
                     </div>
@@ -143,10 +156,12 @@
                     </ul>
                 </div>
             </div>
+            
             <!-- Product Zoom Slider  -->
             <div class="product_zoom modify-slider" id="productZoom">
                 <swiper
                     :modules="modules"
+                    :thumbs="{ swiper: thumbsSwiper }"
                     :autoHeight="true"
                     :loop="true"
                     :navigation="true"
@@ -190,9 +205,6 @@
         z-index: -2;
         opacity: 0;
         visibility: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .product_zoom.active{
         z-index: 6;
@@ -255,24 +267,34 @@
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 0.02em;
+        color: #000!important;
+    }
+    
+    .product_accordian_panel > ul{
+        padding-bottom: 15px;
+        border-bottom: 0.5px solid #252525;
     }
 
     @media only screen and (max-width:1440px){
+        /* product zoom Start */
         .product_zoom .swiper-button-prev{
             left: 18px;
         }
         .product_zoom .swiper-button-next{
             right: 18px;
         }
+        /* product zoom End */
     }
     @media only screen and (max-width:991px){
-       
         .product_grid_image.modify-slider{
             position: relative;
         }
+        .product_media,
+        .product_media>*{
+            height: auto;
+        }
         .product-media-slider{
             position: static;
-            
         }
 
         .product-media-slider .swiper-button-prev,
@@ -293,13 +315,15 @@
         .product-media-slider  .swiper-pagination-bullet.swiper-pagination-bullet-active{
             background: #3D3D3D;
         }
-
+       
     }
     @media only screen and (max-width:480px){
+        /* product zoom Start */
         .product_zoom .swiper-button-prev, 
         .product_zoom .swiper-button-next{
             display: block;
         }
+        /* product zoom End */
     }
     
 </style>
@@ -330,6 +354,10 @@
         margin: 9px 0;
         line-height: 18px;
     }
+    .product_price del {
+        color: #878787;
+    }
+    
     .after_pay{
         font-size: 11px;
         letter-spacing: 0.015em;
@@ -462,8 +490,24 @@
             width: 18px;
             z-index: 2;
         }
+         /* product zoom Start */
+        .product_zoom .product_media{
+            position: relative;
+        }
+        .product_zoom .product_media::after {
+            content: "";
+            position: absolute;
+            background: url("https://cdn.shopify.com/s/files/1/0577/1178/8125/files/EXIT_X.svg?v=1654157423") no-repeat;
+            top: 0;
+            left: 0;
+            height: 48px;
+            width: 48px;
+            
+        }
+        /* product zoom End */
+        
         .add_cart_btn_wrap{
-            padding: 0 15px;
+            padding: 0 15px 10px;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -476,21 +520,22 @@
 </style>
 
 <script>
+ import { ref } from 'vue';
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/thumbs"
+
 
 // import required modules
-import { Navigation,Autoplay,Pagination,Mousewheel } from "swiper";
+import { Navigation,Autoplay,Pagination,Mousewheel,Thumbs} from "swiper";
 export default {
-    data() {
+  data() {
       console.log(this.shopifyData)
-      return {
-        swiperDirection : 'vertical',
-      }
+    
   },
   props: {
     shopifyData: {
@@ -504,9 +549,6 @@ export default {
   },
   methods : {
     productZoomInOut(){
-        // console.log(this.swiperDirection)
-        // this.swiperDirection = 'horizontal'
-        // console.log(this.swiperDirection)
         let productZoom = document.querySelector("#productZoom");
         if(productZoom.matches('.active')){
             document.body.removeAttribute("style");
@@ -552,8 +594,14 @@ export default {
     }
   },
   setup() {
+    let thumbsSwiper = ref(null);
+    const setThumbsSwiper = (swiper) => {
+      thumbsSwiper.value = swiper;
+    };
     return {
-      modules: [Navigation,Autoplay,Pagination,Mousewheel]
+      thumbsSwiper,
+      setThumbsSwiper,
+      modules: [Navigation,Autoplay,Pagination,Mousewheel,Thumbs]
     };
   }
 };
