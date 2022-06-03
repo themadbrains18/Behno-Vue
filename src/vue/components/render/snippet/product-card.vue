@@ -8,7 +8,7 @@
                     <img  :src="product.images[0].src" :id="product.id"
                     @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
                     @mouseleave="mouseleave($event, product.images[0].src)" v-else />
-                </div>
+                </div>  
                 <h5 class="card-title">{{ product.title }}</h5>
                 <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
             </a>
