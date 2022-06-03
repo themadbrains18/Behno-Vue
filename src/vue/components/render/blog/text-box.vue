@@ -11,10 +11,13 @@
 </template>
 
 <style scoped>
+    .text_box{
+        padding-top: 45px;
+    }
     .sec_content{
         max-width: 564px;
         margin: 0 auto;
-        padding: 0 11px 30px 13px;
+        padding: 0 11px 0 13px;
     }
     .subtitle_b{
         margin-bottom: 15px;           
@@ -24,6 +27,11 @@
     }
     .body_text:last-child{
         margin-bottom: 0px;
+    }
+    @media screen and (max-width: 767px) {
+        .text_box{
+            padding-top: 28px;
+        }
     }
 </style>
 <script>

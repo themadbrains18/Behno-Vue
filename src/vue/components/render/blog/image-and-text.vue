@@ -20,13 +20,12 @@
         </div>
     </section>
 </template>
-
 <style scoped>
     .image_and_text_sec .sec_img{
         cursor: pointer;        
     }
     .image_and_text_sec{
-        padding: 0 30px 43px;           
+        padding: 56px 30px 0;           
     }
     .image_and_text_sec .product_popup img{
         width: 100%;

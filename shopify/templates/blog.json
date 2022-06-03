@@ -123,6 +123,16 @@
         "product": "ana-flat-tote-large-pebble-ruched-red"
       }
     },
+    "vide-sec": {
+      "type": "vide-sec",
+      "settings": {
+        "checkSection": true,
+        "SectionShow": true,
+        "SecHeading": "“I WAS ALWAYS FEARLESS.”",
+        "VideoShow": true,
+        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab4ac139b6114d1589dafb7c2df0b0b6.mov"
+      }
+    },
     "img-column-full-bleed": {
       "type": "img-column-full-bleed",
       "blocks": {
@@ -153,11 +163,22 @@
     },
     "image-and-text2": {
       "type": "image-and-text",
+      "blocks": {
+        "430cd5cc-76e6-4ad9-845a-37ff66bcfdcb": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”"
+          }
+        }
+      },
+      "block_order": [
+        "430cd5cc-76e6-4ad9-845a-37ff66bcfdcb"
+      ],
       "settings": {
         "checkSection": true,
-        "checkImgHeading": true,
+        "checkImgHeading": false,
         "imgHeading": "I AM:",
-        "secImg": "shopify:\/\/shop_images\/gallery-img3.jpg",
+        "secImg": "shopify:\/\/shop_images\/img-text-2.jpg",
         "secCta": "SHOP THE BAG",
         "product": "the-softest-tee-mens-fitted-short-sleeve-black"
       }
@@ -207,9 +228,13 @@
         "checkSection": true,
         "secImg": "shopify:\/\/shop_images\/sec-full-img.jpg",
         "secCta": "SHOP THE BAG",
-        "secCtaLink": "#",
         "showProduct": true,
         "product": "elizabeth-baguette-mini-suede-acid-green"
+      }
+    },
+    "shop-all-bags": {
+      "type": "shop-all-bags",
+      "settings": {
       }
     }
   },
@@ -219,8 +244,10 @@
     "text-box",
     "image-column",
     "image-and-text",
+    "vide-sec",
     "img-column-full-bleed",
     "image-and-text2",
-    "sight-sound"
+    "sight-sound",
+    "shop-all-bags"
   ]
 }

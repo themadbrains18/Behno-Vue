@@ -1,5 +1,5 @@
 <template>
-  <section class="gallery_preview_sec bg-sand" id="app">
+  <section class="gallery_preview_sec bg-sand" id="app" v-if="shopifyData.showProduct == 'true'">
     <!-- Sec Content -->
     <div class="sec_content">
       <h1 class="main_heading">
@@ -171,7 +171,7 @@ html {
 }
 
 .gallery_preview_sec {
-  padding: 52px 56px 45px 56px;
+  padding: 52px 56px 0 ;
 }
 .main_heading {
   margin-bottom: 50px;
@@ -308,7 +308,7 @@ html {
       gap: 30px 12px;
   }
   .gallery_preview_sec {
-    padding: 36px 0px 28px 13px;
+    padding: 36px 0px 0 13px;
   }
   .gallery_preview {
     overflow-x: scroll;

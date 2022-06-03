@@ -1,20 +1,43 @@
 <render-blog-vide-sec :shopify-data="{
-    SectionHeading:`{{section.settings.SectionHeading}}`
-}"
->
+    checkSection: `{{ section.settings.checkSection }}`,
+    SectionShow: `{{ section.settings.SectionShow }}`,
+    SecHeading: `{{ section.settings.SecHeading }}`,
+    VideoShow: `{{ section.settings.VideoShow }}`,
+    videolink: `{{ section.settings.videolink }}`
+}">
 </render-blog-vide-sec>
-
 {% schema %}
     {
-        "name":"always fearless",
+        "name":"Video",
         "settings":[
             {
-                "id":"SectionHeading",
+                "id": "checkSection",
+                "type": "checkbox",
+                "label": "Show Section",
+                "default": true
+            },
+            {
+                "id": "SectionShow",
+                "type": "checkbox",
+                "label": "Show Red Heading",
+                "default": true
+            },
+            {
+                "id":"SecHeading",
                 "type":"text",
-                "label":" Add Section Heading"
+                "label":"Section Heading"
+            },
+            {
+                "id": "VideoShow",
+                "type": "checkbox",
+                "label": "Show Video",
+                "default": true
+            },
+            {
+                "id": "videolink",
+                "type": "url",
+                "label": "Add Video URL"
             }
-            
         ]
-        
     }
 {% endschema %}

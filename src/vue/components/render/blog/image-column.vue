@@ -23,7 +23,7 @@
         cursor: pointer;
     }
     .image_column_sec{
-        padding:0 30px 56px;
+        padding:30px 30px  0;
     }
     .sec_content{
         display: flex;

@@ -13,7 +13,6 @@
         </div>
     </section>
 </template>
-
 <style scoped>
     .img_column_full_bleed_sec .sec_img{
         cursor: pointer;
@@ -86,12 +85,6 @@ export default {
     },
     components:{
         productPopup
-    },
-    data() {
-        return(
-            console.log(this.shopifyData)
-        )
     }
-
 }
 </script>
