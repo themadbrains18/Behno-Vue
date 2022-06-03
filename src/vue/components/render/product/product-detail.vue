@@ -181,7 +181,7 @@
 <style>
     .product_slide,
     .product_zoom{
-        background : #F1F1F1; 
+        background : #fff; 
     }
     .product_media {
         height: 100%;
