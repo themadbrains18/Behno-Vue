@@ -25,7 +25,11 @@
             available  : `{{ variant.available }}`,
             id  : `{{ variant.id }}`,
             title  : `{{variant.title }}`,
-            price  : `{{ variant.price | money_with_currency }}`
+            color  : `{{variant.color }}`,
+            price  : `{{ variant.price | money_with_currency }}`,
+            option1 : `{{ variant.option1 }}`,
+            option2 : `{{ variant.option2 }}`,
+            option3 : `{{ variant.option3 }}`
         }{% unless forloop.last  %},{% endunless %} 
     {% endfor %}
 ]
@@ -36,7 +40,10 @@
         available  : `{{ product.selected_or_first_available_variant.available }}`,
         id  : `{{ product.selected_or_first_available_variant.id }}`,
         title  : `{{product.selected_or_first_available_variant.title }}`,
-        price  : `{{ product.selected_or_first_available_variant.price | money_with_currency }}`
+        price  : `{{ product.selected_or_first_available_variant.price | money_with_currency }}`,
+        option1 : `{{ product.selected_or_first_available_variant.option1 }}`,
+        option2 : `{{ product.selected_or_first_available_variant.option2 }}`,
+        option3 : `{{ product.selected_or_first_available_variant.option3 }}`
     }
 {% endcapture %}
 
@@ -55,10 +62,12 @@
 {% endcapture %}
 
 
+
 <render-product-product-detail :shopify-data="{
     productId : `{{ product.id }}`,
     productTitle : `{{ product.title }}`,
     productPrice : `{{ product.price | money_with_currency }}`,
+    productComparePrice : `{{ product.compare_at_price | money_with_currency }}`,
     productMedia : {{ productMedia }},
     productVariant : {{ productVariant }},
     productCurrentVariant : {{ productCurrentVariant }},

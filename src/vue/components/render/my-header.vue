@@ -1014,7 +1014,7 @@ export default {
     });
     
     return {
-      lastScrollY: 0,
+      lastScrollY: 100,
     };
   },
  
@@ -1066,14 +1066,19 @@ export default {
       }
       e.currentTarget.classList.toggle("active");
     },
+    
     scollHeader(e) {
       if (window.scrollY >= this.lastScrollY) {
         this.header[0].classList.add("stickyup");
       } else {
         this.header[0].classList.remove("stickyup");
       }
-      this.lastScrollY = window.scrollY;
+
+      if(window.scrollY >= 100){
+        this.lastScrollY = window.scrollY;
+      }
     },
+
     subnavlinkHover(e) {
       let alreadyActive = e.currentTarget
         .closest(".subnavlink__list")

@@ -218,7 +218,7 @@
                     <div class="product_item" v-for="product in productList" :key="product.id">
                         
                         <div class="card" v-if="product.images.length>0" @mouseenter="isMobile==false?productId=product.id:''" @mouseleave="cardmouseleave(product.id)">
-                            <a :href="product.handle" >
+                            <a :href="'/products/'+product.handle" >
                                 <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':''}}</div>
  
                                 <div class="product_img_wrapper" :id="'product_img_wrapper'+product.id" v-bind:class="{ out_of_stock: product.variants[0].stock == 0 }">
