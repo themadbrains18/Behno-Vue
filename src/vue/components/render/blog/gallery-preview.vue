@@ -6,10 +6,7 @@
         {{ shopifyData.GalleryPreviewHeading }}
       </h1>
       <!-- Preview Images -->
-      <div
-        class="gallery_preview"
-        
-      >
+      <div class="gallery_preview">
       <div v-for="(item, index) in shopifyData.productData" :key="index">
         <img 
           @click="show = !show"
@@ -169,7 +166,11 @@ export default {
 html {
   scroll-behavior: smooth;
 }
-
+.card_img img{
+  height: 428px;
+  width: 100%;
+  object-fit: cover;
+}
 .gallery_preview_sec {
   padding: 52px 56px 0 ;
 }
@@ -427,6 +428,13 @@ html {
 @media screen and (max-width: 480px) {
  .responsive_slider .modify-slider .swiper-button-prev,.responsive_slider .modify-slider .swiper-button-next{
    display: block;
+}
+.gallery_preview{
+  display: flex!important;
+}
+.gallery_preview>div img{
+  min-width: 200px;
+  width: 100%;
 }
 }
 </style>

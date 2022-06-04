@@ -1,6 +1,6 @@
 {% capture productData %}
 [
-{% for product in section.settings.product_list %}
+{% for product in section.settings.ProductList %}
     {
         product:  {
             productid : `{{ product.ProductList.id }}`,
@@ -13,16 +13,12 @@
 {% endfor %}
 ]
 {% endcapture %}
-
-
 <render-blog-shop-all-bags :shopify-data="{
     showProduct : `{{ section.settings.showProduct }}`,
     sectionHeading: `{{ section.settings.sectionHeading }}`,
     productData:  {{ productData }}
 }">
 </render-blog-shop-all-bags>
-
-
 {% schema %}
     {
         "name":"Shop All Bags",
@@ -37,7 +33,7 @@
                 "id":"sectionHeading",
                 "type":"text",
                 "label":"Section Heading",
-                "default" : "Section Heading"
+                "default" : "SHOP ALL FEATURED BAGS"
             },
             {
                 "id":"ProductList",

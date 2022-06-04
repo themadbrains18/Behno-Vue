@@ -5,9 +5,7 @@
             <div class="sec_img"  v-for="(item, key) in shopifyData.productData" :key="key">
                 <div class="product_popup">
                     <img :src=(item.previewImg.src)  :src-placeholder=(item.previewImg.placeholder) :alt=(item.previewImg.alt) />
-                    
                     <productPopup :productData=(item.productDetail)  />
-                    
                 </div>
                 <div class="shop_cta">
                     <a :href=(item.productDetail.productUrl) class="subtitle">{{ item.productDetail.secCtaText }}</a>
@@ -16,7 +14,6 @@
         </div>
     </section>
 </template>
-
 
 <style scoped>
     .image_column_sec .sec_img{
