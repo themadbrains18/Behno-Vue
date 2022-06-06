@@ -102,6 +102,7 @@
         max-width: 330px;
         width: 100%;
         height: auto;
+        margin: 100px auto 0;
     }
     .fig_caption {
         text-align: start;
@@ -133,7 +134,7 @@
         margin-top: 43px;
     }
     .fig_caption{
-        font-size: 7px !important;
+        font-size: 10px !important;
     }
     }
     @media screen  and (max-width: 575px){
@@ -141,11 +142,12 @@
             max-width: 160px;
         }
         .img_item2{
-            /* max-width: 176px; */
-            margin: 25px 0 30px;
+            max-width: 176px;
+            margin: 25px 0 30px auto;
         }
         .img_item3{
             max-width: 117px;
+            margin: 0 0 0 35px;
         }
         .sec_video video,
         .sec_video img

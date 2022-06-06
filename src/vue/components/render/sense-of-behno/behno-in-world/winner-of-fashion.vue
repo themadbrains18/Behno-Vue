@@ -89,6 +89,13 @@ export default {
     display: block !important;
   }
 }
+.sec_winner_fashion .modify-slider .swiper-button-next
+{
+  transform: rotate(180deg);
+}
+.sec_winner_fashion .modify-slider .swiper-button-prev{
+  transform: rotate(0);
+}
 </style>
 
 

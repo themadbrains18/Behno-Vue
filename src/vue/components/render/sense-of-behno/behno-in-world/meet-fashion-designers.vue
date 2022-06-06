@@ -24,6 +24,9 @@
                 <p class="body_text">
                     {{ value.secInfo }}
                 </p>
+                <div class="cta_wrapper">
+                    <a :href=(value.secCtaLink) class="cta_btn" > {{ value.secCtaText }}</a>
+                </div>
             </div>
             <div class="sec_img">
                 <img    
@@ -188,6 +191,11 @@
 
 </style>
 
+<style>
+.sec_meet_fashion_designers  .sec_header+.sec_content .cta_btn{
+    display: none ;
+}
+</style>
 <script>
 export default{
     props:{
