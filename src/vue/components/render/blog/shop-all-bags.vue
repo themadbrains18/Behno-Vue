@@ -4,296 +4,9 @@
         <h3 class="card_heading">{{shopifyData.sectionHeading}}</h3>
         <!-- Sec Content -->
         <div class="sec_content">
-            <div class="product_cards" >
-                <div class="card">
-                    <a href="#" class="product_link">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product1.jpg?v=1651045599" alt="error">
-                        <div class="product_info"> 
-                            <p class="subtitle">ANA MINI CROSSBODY PEBBLE</p>
-                            <p class="subtitle_b">$495</p>
-                        </div>
-                    </a>
-                    <div class="product_varients">
-                        <div class="product_colores">
-                            <ul>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
-                                </li>
-                            </ul>
-                            
-                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
-                                </svg>
-                            
-                        </div>
-                        <div class="product_btn">
-                            <a href="#" class="cta_btn">QUICK ADD</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="#" class="product_link">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product1.jpg?v=1651045599" alt="error">
-                        <div class="product_info"> 
-                            <p class="subtitle">ANA MINI CROSSBODY PEBBLE</p>
-                            <p class="subtitle_b">$495</p>
-                        </div>
-                    </a>
-                    <div class="product_varients">
-                        <div class="product_colores">
-                            <ul>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
-                                </li>
-                            </ul>
-                            
-                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
-                                </svg>
-                            
-                        </div>
-                        <div class="product_btn">
-                            <a href="#" class="cta_btn">QUICK ADD</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="#" class="product_link">
-                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product1.jpg?v=1651045599" alt="error">
-                        <div class="product_info"> 
-                            <p class="subtitle">ANA MINI CROSSBODY PEBBLE</p>
-                            <p class="subtitle_b">$495</p>
-                        </div>
-                    </a>
-                    <div class="product_varients">
-                        <div class="product_colores">
-                            <ul>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
-                                </li>
-                            </ul>
-                            
-                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
-                                </svg>
-                            
-                        </div>
-                        <div class="product_btn">
-                            <a href="#" class="cta_btn">QUICK ADD</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <productCard :productList="this.productList"/>
             <div class="product_cards tmb-md-none">
-                <div class="card">
-                    <a href="#">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product1.jpg?v=1651045599" alt="error">
-                    <div class="product_info"> 
-                        <p class="subtitle">ANA MINI CROSSBODY PEBBLE</p>
-                        <p class="subtitle_b">$495</p>
-                    </div>
-                    </a>
-                    <div class="product_varients">
-                        <div class="product_colores">
-                            <ul>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
-                                </li>
-                            </ul>
-                            
-                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
-                                </svg>
-                            
-                        </div>
-                        <div class="product_btn">
-                            <a href="#" class="cta_btn">QUICK ADD</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="#">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product2.jpg?v=1651045599" alt="error">
-                    <div class="product_info"> 
-                        <p class="subtitle">ELIZABETH BAGUETTE MINI METALLIC</p>
-                        <p class="subtitle_b">$495</p>
-                    </div>
-                    </a>
-                    <div class="product_varients">
-                        <div class="product_colores">
-                            <ul>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
-                                </li>
-                            </ul>
-                            
-                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
-                                </svg>
-                            
-                        </div>
-                        <div class="product_btn">
-                            <a href="#" class="cta_btn">QUICK ADD</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="#">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product3.jpg?v=1651045599" alt="error">
-                    <div class="product_info"> 
-                        <p class="subtitle">FRIDA FLAT TOTE NAPPA</p>
-                        <p class="subtitle_b">$495</p>
-                    </div>
-                    </a>
-                    <div class="product_varients">
-                        <div class="product_colores">
-                            <ul>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
-                                </li>
-                            </ul>
-                            
-                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
-                                </svg>
-                            
-                        </div>
-                        <div class="product_btn">
-                            <a href="#" class="cta_btn">QUICK ADD</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <a href="#">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product4.jpg?v=1651045599" alt="error">
-                    <div class="product_info"> 
-                        <p class="subtitle">INA BAG LARGE PEBBLE</p>
-                        <p class="subtitle_b">$495</p>
-                    </div>
-                    </a>
-                    <div class="product_varients">
-                        <div class="product_colores">
-                            <ul>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/golden.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/white.png?v=1651228173" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/skyblue.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="error">
-                                </li>
-                                <li class="color">
-                                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/red_purple.png?v=1651228172" alt="error">
-                                </li>
-                            </ul>
-                            
-                                <svg class="next_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.588135 10.0294L4.9999 5.61765L0.588135 1.20589" stroke="#6B6B6B" stroke-linejoin="round"/>
-                                </svg>
-                            
-                        </div>
-                        <div class="product_btn">
-                            <a href="#" class="cta_btn">QUICK ADD</a>
-                        </div>
-                    </div>
-                </div>
+                <productCard :productList="this.productList2"/>
             </div>
             <div class="cta_link t-center">
                 <button class="cta_btn" v-on:click = "showproducts">
@@ -306,8 +19,6 @@
         </div>
     </section>
 </template>
-
-
 <style scoped>
     .all_feature_bag_sec{
         padding: 32px 15px 84px;
@@ -386,6 +97,10 @@
         opacity: 1;
         visibility: visible;
     }
+
+    .product_cards.tmb-md-none{
+        display: block;
+    }
     /* product colors selector End */
 
     /* Responsive Breakpoints */
@@ -404,6 +119,9 @@
             margin-top: 10px;
         }
    }
+
+    
+   
     @media(max-width:767px){
         .all_feature_bag_sec{
             padding: 10px 0 31px 2px;
@@ -425,6 +143,7 @@
             overflow-x:scroll;
             display: flex;
             gap: 2px;
+            
         }
         .subtitle,
         .subtitle_b{
@@ -433,6 +152,7 @@
         }
         .card > a {
             max-width: 166px;
+            width: 100%;
         }
         .subtitle{
             margin-bottom: 7px;
@@ -449,10 +169,8 @@
         .product_varients{
             display: none;
         }
-    }
-
-    @media(min-width:768px){
-        .product_cards.tmb-md-none{
+         .product_cards.tmb-md-none{
+             display: none;
             opacity: 0;
             visibility: hidden;
             height: 0;
@@ -467,20 +185,56 @@
         .cta_btn{
             transition: 0.4s;
         }
-
+        .all_feature_bag_sec .grid_inner{
+            display: flex;
+        }
     }
 </style>
-<script>
+<style>
+@media(max-width:1024px){
+        .all_feature_bag_sec .grid_inner{
+            display: flex;
+        }
+        .all_feature_bag_sec .product_item .card{
+            min-width: 250px;
+            width: 100%;
+            display: block;
+        }
+        .all_feature_bag_sec .sec_content{
+            overflow-x: scroll;
+        }
+    }
+@media(max-width:767px){
+    .all_feature_bag_sec .product_item .card-title{
+        font-size: 10px;
+    }
+    .all_feature_bag_sec .product_item .card{
+        min-width: 200px;
+    }
     
-// import productCard from "../snippet/product-card.vue"
-
+}
+@media(max-width:575px){
+    .all_feature_bag_sec .product_item .card{
+        min-width: 166px;
+    }
+}
+</style>
+<script>
+import products from "@/assets/json/collectionproduct.json";
+import productCard from "../snippet/product-card.vue"
 export default {
-    // data() {
-    //     window.addEventListener("load", this.onWindowLoad);
-    // },
-    // components :{
-    //     productCard
-    // },
+    mounted() {
+            window.addEventListener("load", this.onWindowLoad);
+    },
+    data() {
+        return{
+            productList: products.slice(0, 4),
+            productList2: products.slice(5, 9)
+        }
+    },
+    components :{
+        productCard
+    },
     props:{
         shopifyData:{
             type:Object,

@@ -15,29 +15,57 @@
         "eef26de5-e9bb-4122-8e87-19ca9996db8b": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/galler-preview1.jpg",
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img1.jpg",
             "product": "the-softest-tee-mens-fitted-long-sleeve-black"
           }
         },
         "31ed3ef1-0b8b-4178-ba5d-25c7d00cc084": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/bleed1.jpg",
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
             "product": "ana-flat-tote-large-pebble-ruched-apricot"
           }
         },
         "02c8897c-98d1-4142-a54f-8eaca909bd7e": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gallery-img3.jpg",
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
             "product": "ari-split-base-crossbody-nappa-olive"
           }
         },
         "b60d0b1d-0dc8-47e5-a19f-ab870a717d3b": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/shop-bag1.jpg",
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img1.jpg",
             "product": "devon-wallet-black"
+          }
+        },
+        "053f1a3e-2ffd-4408-8562-403daef29d4b": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "product": "the-softest-tee-mens-fitted-short-sleeve-black"
+          }
+        },
+        "f02cbbbd-e72b-4a5f-8a44-38fef385da8e": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "product": "copy-of-the-softest-tee-womens-fitted-long-sleeve-white"
+          }
+        },
+        "81c351ff-73b4-4f69-ab8a-b1ceffe359ee": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "product": "ana-flat-tote-crossbody-pebble-ruched-red"
+          }
+        },
+        "c190422a-0938-45a3-b263-9bce36a9ad21": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "product": "ana-flat-tote-large-pebble-ruched-apricot"
           }
         }
       },
@@ -45,7 +73,11 @@
         "eef26de5-e9bb-4122-8e87-19ca9996db8b",
         "31ed3ef1-0b8b-4178-ba5d-25c7d00cc084",
         "02c8897c-98d1-4142-a54f-8eaca909bd7e",
-        "b60d0b1d-0dc8-47e5-a19f-ab870a717d3b"
+        "b60d0b1d-0dc8-47e5-a19f-ab870a717d3b",
+        "053f1a3e-2ffd-4408-8562-403daef29d4b",
+        "f02cbbbd-e72b-4a5f-8a44-38fef385da8e",
+        "81c351ff-73b4-4f69-ab8a-b1ceffe359ee",
+        "c190422a-0938-45a3-b263-9bce36a9ad21"
       ],
       "settings": {
         "showProduct": true,
@@ -235,6 +267,24 @@
     "shop-all-bags": {
       "type": "shop-all-bags",
       "settings": {
+        "showProduct": true,
+        "sectionHeading": "SHOP ALL FEATURED BAGS",
+        "ProductList": [
+          "the-softest-tee-mens-fitted-long-sleeve-black",
+          "the-softest-tee-mens-fitted-long-sleeve-white",
+          "the-softest-tee-mens-fitted-short-sleeve-black",
+          "copy-of-the-softest-tee-mens-fitted-short-sleeve-white",
+          "the-softest-tee-womens-fitted-long-sleeve-black",
+          "copy-of-the-softest-tee-womens-fitted-long-sleeve-white",
+          "the-softest-tee-womens-fitted-short-sleeve-black",
+          "the-softest-tee-womens-fitted-short-sleeve-white",
+          "alex-shoulder-bag-glossy-croc-balsamic",
+          "ana-flat-tote-crossbody-nappa-ruched-olive",
+          "ana-flat-tote-crossbody-pebble-ruched-apricot",
+          "ana-flat-tote-crossbody-pebble-ruched-bordeaux",
+          "ana-flat-tote-crossbody-pebble-ruched-red",
+          "ana-flat-tote-large-pebble-ruched-apricot"
+        ]
       }
     }
   },

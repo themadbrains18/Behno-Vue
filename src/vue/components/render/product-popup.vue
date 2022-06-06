@@ -2,7 +2,8 @@
   <section class="product_info_card">
       <div class="product_img">
         <img class="close-icon" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error">
-        <img :src=(productData.productidImage) >
+        
+        <a :href=(productData.productUrl)><img :src=(productData.productidImage) ></a>
       </div>
       <p class="subtitle">{{ productData.productTitle }}</p>
       <p class="subtitle_b">{{ productData.productidPrice }}</p>
@@ -17,8 +18,6 @@
       </div>
   </section>
 </template>
-
-
 <style scoped>
   .product_info_card{
       padding: 10px 12px;
@@ -49,6 +48,7 @@
     border: 1px solid #000;
     transition: 0.3s ease;
   }
+  
   .product_cta .cta_btn:hover{
     background: #000;
     color: #fff;

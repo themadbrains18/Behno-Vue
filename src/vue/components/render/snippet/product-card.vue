@@ -1,8 +1,9 @@
 <template>
-        <div class="card" v-if="product.images.length>0" @mouseenter="isMobile==false?productId=product.id:''" @mouseleave="cardmouseleave(product.id)">
+<div class="grid_inner" v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
+    <div class="product_item" v-for="product in productList" :key="product.id">
+        <div class="card"  v-if="product.images.length>0" @mouseenter="isMobile==false?productId=product.id:''" @mouseleave="cardmouseleave(product.id)"  >
             <a :href="product.handle" >
                 <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':''}}</div>
-
                 <div class="product_img_wrapper" :id="'product_img_wrapper'+product.id" v-bind:class="{ out_of_stock: product.variants[0].stock == 0 }">
                     <img v-if="product.variants[0].featured_image!=null" :src="product.variants[0].featured_image.src" :id="product.id" />
                     <img  :src="product.images[0].src" :id="product.id"
@@ -43,19 +44,19 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>    
 </template>
-
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-
 export default {
     components: {
         Swiper,
         SwiperSlide,
     },   
     props: {
-        product: {
-            type: Object
+        productList: {
+            type: Array
         },
         isMobile:{
             type: Boolean
@@ -120,7 +121,6 @@ export default {
                     product_img_div.classList.add("out_of_stock");
                     quickAdd.classList.remove("quickAdd_active");
                     quickAdd.classList.add("quickAdd_deactive");
-                    
                 }
                 else{
                     out_of_stock_text.classList.remove("out_of_stock_text_active");
@@ -128,7 +128,6 @@ export default {
                     quickAdd.classList.remove("quickAdd_deactive");
                     quickAdd.classList.add("quickAdd_active");
                 }
-                
             }
         },
         addToCard:function(product){
@@ -188,15 +187,11 @@ export default {
     color: #000000;
     margin-top: 6px;
 }
-.grid_inner .card {
-    border: none;
-}
 
 .card>img {
     width: 100%;
     height: 100%;
 }
-
 
 .card-title.bold {
     font-weight: 700;
@@ -221,10 +216,144 @@ export default {
     visibility: visible !important;
 }
 
+.grid_inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 6px;
+    row-gap: 28px;
+}
+
+.grid_inner_max {
+    grid-template-columns: repeat(6, 1fr) !important;
+    transition: 0.3s;
+}
+
+.grid_inner_min {
+    grid-template-columns: repeat(2, 1fr) !important;
+    transition: 0.3s;
+}
+
+.grid_inner .card {
+    border: none;
+}
+
+.quickButton .product_cta_wrapper{
+    width: 50%;
+    text-align: end;
+}
+
+
+.quickAdd{
+    border: 1px solid #000;
+    padding: 8px 30px;
+    background: #FFFFFF;
+    gap: 15px;
+    flex-direction: row;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+.quickButton .quickAdd:hover{
+    background: #000;
+}
+.quickButton .quickAdd:hover span{
+    color: #fff;
+}
+.quickAdd_deactive{
+    visibility: hidden;
+}
+.quickAdd_active{
+    visibility: visible;
+}
+.quickAdd span{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    
+}
+
+
+.quickButton{
+    justify-content: space-between; 
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    align-items: center;
+    transition: 0.3s;
+}
+.quickActive{
+    opacity: 1;
+    visibility: visible;
+}
+
+.quickButton ul{
+    text-align: left;
+    width: 50%;
+}
+
+.color_swatches {
+    position: relative;
+}
+
+.nav-dots span {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    width: 100px;
+}
+.nav-dots span::-webkit-scrollbar{
+    display: none;
+}
+
+.nav-dots .nav-dot {
+  top: 0px;
+  min-width: 13px;
+  height: 13px;
+  margin: 0 6px;
+  position: relative;
+  border-radius: 100%;
+  display: inline-block;
+  background: red;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+@media (max-width: 1024px) {
+    .quickAdd[data-v-bb57343a] {
+        padding: 8px 20px;
+    }
+}
+@media (max-width: 1024px) {
+    .grid_inner {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 767px) {
 .card-title {
         font-size: 12px;
         margin: 10px 0 0;
     }
+    .grid_inner .product_item:nth-child(5n) 
+    {
+        grid-column: 1 / span 2;
+    }
+    .grid_inner {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2px;
+        row-gap: 11px;
+    }
+    .product_cta_wrapper{
+        display: none;
+    }
 }
+
+
 </style>
