@@ -104,8 +104,8 @@
                           :product-id="value.product.productid" class="slider_tmb_btn">
                             <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761" alt="">
                           </a>
-                        <span  class="color-white">
-                          slider_product_btn
+                        <span  class="color-white subtitle">
+                          {{shopifyData.ProductBtn}}
                         </span>
                       </div>
                     </div>
@@ -132,6 +132,7 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  
   setup() {
     return {
       modules: [Navigation,Scrollbar],
@@ -139,10 +140,13 @@ export default {
   },
   data: function () {
   
+  
   window.addEventListener("load", this.onWindowLoad);    
   window.addEventListener('load',()=>{
       let GellaryImg=document.querySelectorAll(".responsive_slider .card_preview_img img");
+      
       for(let i of GellaryImg){
+        
         let GellaryBottomBtn=document.querySelector(".responsive_slider .slider_image.bg-black").clientHeight;
         i.style.setProperty('min-height', `calc(100vh - ${GellaryBottomBtn}px)`);
       }
@@ -159,9 +163,7 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-
 /* common css */
 html {
   scroll-behavior: smooth;
@@ -339,6 +341,9 @@ html {
   .gallery_preview_popup{
     display: none;
   } 
+  .slider_product_btn span{
+    margin-bottom: 0!important;
+  }
   /* Responsive Slider Cdd Code */
 .responsive_slider .card_preview_img img {
   position: static;
@@ -350,9 +355,8 @@ html {
   object-fit: cover;
 }
 .responsive_slider .card_img img{
-  height: 105px;
-  object-fit: cover;
-  width: 105px;
+  height: initial;
+  width: initial;
 }
 
 .responsive_slider .subtitle_b{

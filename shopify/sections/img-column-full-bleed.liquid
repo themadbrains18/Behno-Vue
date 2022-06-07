@@ -22,12 +22,12 @@
     {% endfor %}
 ]
 {% endcapture %}
-<render-blog-img-column-full-bleed :shopify-data="{
+<renderless-blog-img-column-full-bleed v-slot="{ visible, toggle }" :shopify-data="{
     checkSection: `{{ section.settings.checkSection }}`,
     productData: {{ productData }}
 }">
 
-</render-blog-img-column-full-bleed>
+</renderless-blog-img-column-full-bleed>
 
 {% schema %}
 {

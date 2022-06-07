@@ -14,7 +14,9 @@ const getters = {}
  * mutations
  */
 const mutations = {
+
   TOGGLE (state) {
+    console.log('============here',state) 
     state.visible = !state.visible
   },
 
@@ -31,7 +33,7 @@ const mutations = {
  * actions
  */
 const actions = {
-  toggle ({ commit }) {
+  toggle (context,{ commit }) {
     commit('TOGGLE')
   },
 

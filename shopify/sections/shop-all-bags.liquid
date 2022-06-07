@@ -3,11 +3,11 @@
 {% for product in section.settings.ProductList %}
     {
         product:  {
-            productid : `{{ product.ProductList.id }}`,
-            productUrl : `{{ product.ProductList.url }}`,
-            productidImage : `{{ product.ProductList.media[0] | img_url : "" }}`,
-            productidPrice : `{{ product.ProductList.price | money_with_currency }}`,
-            productTitle : `{{ product.ProductList.title }}`
+            productid : `{{ product.id }}`,
+            productUrl : `{{ product.url }}`,
+            productidImage : `{{ product.media[0] | img_url : "" }}`,
+            productidPrice : `{{ product.price | money_with_currency }}`,
+            productTitle : `{{ product.title }}`
         }
     }{% unless forloop.last %},{% endunless %}
 {% endfor %}
@@ -16,7 +16,9 @@
 <render-blog-shop-all-bags :shopify-data="{
     showProduct : `{{ section.settings.showProduct }}`,
     sectionHeading: `{{ section.settings.sectionHeading }}`,
-    productData:  {{ productData }}
+    productData: {{ productData }},
+    addfeatureBagBtn: `{{ section.settings.addfeatureBagBtn }}` 
+    
 }">
 </render-blog-shop-all-bags>
 {% schema %}
@@ -39,6 +41,13 @@
                 "id":"ProductList",
                 "type":"product_list",
                 "label": "Select Products"
+            }
+            ,
+            {
+                "id":"addfeatureBagBtn",
+                "type":"text",
+                "label": "Quick Add Bag Button",
+                "default":"QUICK ADD"
             }
         ]
        

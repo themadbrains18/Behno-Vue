@@ -352,17 +352,30 @@ button{
   
 
   @media(min-width:768px){
-    .sec_img:hover .product_info_card{
+    .sec_img .product_popup:hover .product_info_card{
       transform: translateX(0);  
     }
-    .sec_img:hover .product_popup > img{
+    .sec_img .product_popup:hover .product_popup > img{
       transform: scale(1.15);
     }
   }
+
+  
+.sec_img .product_info_card.active .product_popup > img{
+  transform: scale(1.15);
+}
+.sec_img .product_info_card.active{
+  transform: translateX(0);  
+  
+}
 /* Popup card Css end */
 
 
+
+
+
 /* Responsive Breakpoints */
+
 @media(max-width:767px){
   .product_info_card  img {
       display: block;
@@ -394,10 +407,22 @@ button{
   }
 }
 @media(min-width:768px){
-  .sec_img:hover .product_popup > img{
+  .sec_img .product_popup:hover .product_popup > img{
       transform: scale(1.15);
   }
-  .sec_img:hover .product_info_card{
+  .sec_img .product_popup:hover .product_info_card{
       left: 0;
   }
 }
+@media(max-width:575px){
+  .sec_img .product_info_card{
+    max-width: 100%!important;
+  }
+}
+.sec_img .product_popup.active .product_popup > img{
+  transform: scale(1.15);
+}
+.sec_img .product_popup.active .product_info_card{
+  left: 0;
+}
+
