@@ -1,0 +1,32 @@
+<render-error-hero-error :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secCta:`{{ section.settings.secCta }}`,
+    secCtaLink:`{{ section.settings.secCtaLink }}`,
+}">
+
+</render-error-hero-error>
+
+{% schema %}
+{
+    "name":"Hero Section",
+    "settings":[
+        {
+            "id": "secHeading",
+            "type": "text",
+            "label": "Section Heading",
+            "default": "THIS PAGE DOES NOT EXIST"
+        },
+        {
+            "id": "secCta",
+            "type": "text",
+            "label": "Section Cta Text",
+            "default": "BACK TO HOMEPAGE"
+        },
+        {
+            "id": "secCtaLink",
+            "type": "url",
+            "label": "Section Cta Url"
+        }
+    ]
+}
+{% endschema %}

@@ -11,7 +11,7 @@
           </div>
       </div>
       <div class="sec_video">
-          <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" v-for="(item, index) in shopifyData.videoData" :key="index">
+          <video  autoplay="true" loop="true" muted="true" controls webkit-playsinline="true" playsinline="true" preload="none" v-for="(item, index) in shopifyData.videoData" :key="index">
             <source :src=(item.video) >
           </video>
       </div>
