@@ -8,8 +8,14 @@
             :navigation="true"
             :modules="modules"
             :centeredSlides="true"
+            :effect="'fade'"
             :spaceBetween="100"
+            :autoplay="{
+              delay: 1500,
+              disableOnInteraction: false,
+            }"
             :loop="true"
+
             class="mySwiper"
           >
             <swiper-slide v-for="(value, key) in shopifyData.slide" :key="key">
@@ -47,7 +53,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation } from "swiper";
+import { Navigation,Autoplay } from "swiper";
 export default {
   components: {
     Swiper,
@@ -55,7 +61,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation]
+      modules: [Navigation,Autoplay]
     };
   },
   props:{
@@ -71,9 +77,11 @@ export default {
 @media screen and (max-width: 767px) {
   .sec_launch_bergdoft .swiper-button-next {
     right: -5px !important;
+    transform: rotate(180deg);
   }
   .sec_launch_bergdoft .swiper-button-prev {
     left: -5px !important;
+    transform:none;
   }
 }
 @media screen and (max-width: 480px) {

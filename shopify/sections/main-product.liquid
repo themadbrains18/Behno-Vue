@@ -1,66 +1,77 @@
-{%- if product.metafields.my_fields.variants_products and product.metafields.my_fields.variants_swtach -%}
-            
-            <div class="available-colors ">
-              {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
-              {% assign links = product.metafields.my_fields.variants_products | split:" " %}
-              
-			        {% capture Obj %}
-                {%- for image in images -%}
-                {% assign image_forloop = forloop.index  %}
-                  {%- for link in links -%}
-                    {%- if forloop.index == image_forloop -%}
-                      {% assign handle = link | replace : '/products/', ''  %}
-                      {% assign productData = all_products[handle] %}
-                      {{ productData | json }}{% if forloop.last %}{% else %},{% endif %}
-                    {%- endif -%}
-                  {%- endfor -%}
-                {%- endfor -%}
-              {% endcapture %}
-
-              {% capture pVariant %}
-                {%- for image in images -%}
-                {% assign image_forloop = forloop.index  %}
-                  {%- for link in links -%}
-                  {%- if forloop.index == image_forloop -%}
-                  {% assign color_name = image | split:'.png' %}
-                  {% assign handle = link | replace : '/products/', ''  %}
-                  {% assign productData = all_products[handle] %}
-              	  {
-              		  "name" : "{{ color_name }}",
-                    "img"  : "{{image | file_img_url:'240x240', crop:'center'}}",
-                    "link" : "{{ link }}",
-                    "qty" : "{{ productData.variants.first.inventory_quantity }}"
-              	  }{% if forloop.last %}{% else %},{% endif %}
-                  {%- endif -%}
-                  {%- endfor -%}
-                {%- endfor -%}
-              {% endcapture %}
-              
-            </div>
-
-
-{%- endif -%}
-
-<!-- make products variant object -->
-
-
-{% capture productObj %}
-	[{{ Obj }}]
+{% capture productMedia %}
+[
+    {% for media in product.media %}
+        {
+            {% case media.media_type %}
+                {% when 'image' %}
+                    media : `{{ media | img_url: '' | img_tag | base64_encode }}`
+                {% when 'external_video' %}
+                    media : `{{ media | external_video_tag | base64_encode }}`
+                {% when 'video' %}
+                    media : `{{ media | video_tag :autoplay: true, loop: true, mute: true | base64_encode }}`
+                {% when 'model' %}
+                    media : `{{ media | model_viewer_tag | base64_encode }}`
+                {% else %}
+                    media : `{{ media | media_tag | base64_encode }}`
+                {% endcase %}
+        }{% unless forloop.last  %},{% endunless %} 
+    {% endfor %}
+]
+{% endcapture %}
+{% capture productVariant %}
+[
+    {% for variant in product.variants %}
+        {
+            available  : `{{ variant.available }}`,
+            id  : `{{ variant.id }}`,
+            title  : `{{variant.title }}`,
+            color  : `{{variant.color }}`,
+            price  : `{{ variant.price | money_with_currency }}`,
+            option1 : `{{ variant.option1 }}`,
+            option2 : `{{ variant.option2 }}`,
+            option3 : `{{ variant.option3 }}`
+        }{% unless forloop.last  %},{% endunless %} 
+    {% endfor %}
+]
 {% endcapture %}
 
-
-{% capture variantObj %}
-	[{{ pVariant }}]
-{% endcapture %}
-
-{% capture products %}
-	{
-		product :  `{{ productObj | base64_encode  }}`,
-		variant : `{{ variantObj | base64_encode  }}`
+{% capture productCurrentVariant %}
+    {
+        available  : `{{ product.selected_or_first_available_variant.available }}`,
+        id  : `{{ product.selected_or_first_available_variant.id }}`,
+        title  : `{{product.selected_or_first_available_variant.title }}`,
+        price  : `{{ product.selected_or_first_available_variant.price | money_with_currency }}`,
+        option1 : `{{ product.selected_or_first_available_variant.option1 }}`,
+        option2 : `{{ product.selected_or_first_available_variant.option2 }}`,
+        option3 : `{{ product.selected_or_first_available_variant.option3 }}`
     }
 {% endcapture %}
 
+
+{% assign descriptionData = product.description | split: '<!-- split -->'  %}
+
+
+{% capture productDescription %}
+[
+    {% for description in descriptionData %}
+        {
+            description : `{{ description  | base64_encode}}`,
+        }{% unless forloop.last  %},{% endunless %} 
+    {% endfor %}
+]
+{% endcapture %}
+
+
+
 <render-product-product-detail :shopify-data="{
-    productData : {{ products }}
+    productId : `{{ product.id }}`,
+    productTitle : `{{ product.title }}`,
+    productPrice : `{{ product.price | money_with_currency }}`,
+    productComparePrice : `{{ product.compare_at_price | money_with_currency }}`,
+    productMedia : {{ productMedia }},
+    productVariant : {{ productVariant }},
+    productCurrentVariant : {{ productCurrentVariant }},
+    productQuantity : `{{ product.selected_or_first_available_variant.inventory_quantity }}`,
+    productDescription : {{ productDescription  }}
 }">
 </render-product-product-detail>

@@ -75,11 +75,15 @@
 
 
 <style scoped>
+.big_container{
+    max-width: 1440px;
+}
 .sublime_saturdays_sec{
     padding: 120px 0 79px;
 }
 .sec_text {
     max-width: 523px;
+    margin: 0 0 0 97px;
 }
 .body_text{
     margin-bottom: 20px;
@@ -87,6 +91,7 @@
 .body_text:last-child{
     margin-bottom: 0;
 }
+
 .image_collarge img{
     width: 100%;
 }
@@ -179,9 +184,10 @@
     }
     .sec_text{
         max-width: 390px;
+        margin: 0;
     }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {  
     .sublime_saturdays_sec{
         padding: 30px 0 40px;
         position: relative;
@@ -207,7 +213,7 @@
         gap: 30px;
     }
     .fig_caption {
-        font-size: 7px;
+        font-size: 10px;
     }
     .image_collarge{
         padding: 0;

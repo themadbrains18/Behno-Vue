@@ -213,21 +213,21 @@
         "70dba898-3778-4460-a039-ba845959676f": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slideimg1.jpg",
-            "imageInfo": "The speakers included (L to R ) Shivam, Andrea Reyes,Pattrick Duffy,Amanda Carr,Ashia Dearwester and Lilian Liu."
+            "image": "shopify:\/\/shop_images\/gallery1.png",
+            "imageInfo": "The speakers included (L to R ) Shivam, Andrea Reyes, Pattrick Duffy, Amanda Carr, Ashia Dearwester and Lilian Liu."
           }
         },
         "8e0bf4f6-d0ed-45a3-aabe-c31266c6a55c": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slideimg2.jpg",
+            "image": "shopify:\/\/shop_images\/gallery2.png",
             "imageInfo": ""
           }
         },
         "9fcfbf08-131f-40f3-bcdd-105aa53ea953": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/working-artisan-left.jpg",
+            "image": "shopify:\/\/shop_images\/gallery3.png",
             "imageInfo": "Over 700 Indivisual gathred at the united Nations to discuss fashion as a social mobilizer."
           }
         }

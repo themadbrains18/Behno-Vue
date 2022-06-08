@@ -18,7 +18,7 @@
 
 <style scoped>
     .partner_handbag_hero {
-        padding: 45px 0px;
+        padding: 65px 0px;
     }
     .sec_video {
         padding: 0 38px;

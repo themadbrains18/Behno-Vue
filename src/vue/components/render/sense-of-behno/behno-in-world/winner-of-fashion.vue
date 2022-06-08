@@ -11,8 +11,8 @@
             :effect="'fade'"
             :spaceBetween="100"
             :autoplay="{
-            delay: 1500,
-            disableOnInteraction: false,
+              delay: 1500,
+              disableOnInteraction: false,
             }"
             :loop="true"
             class="mySwiper"

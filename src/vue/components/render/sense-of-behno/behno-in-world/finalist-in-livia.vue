@@ -152,7 +152,11 @@
             gap: 23px;
         }
         .fig_caption{
-            font-size: 7px !important;
+            font-size: 10px !important;
+        }
+        .sec_video {
+            width: calc(100% + 16px);
+            margin-left: -8px;
         }
     }
 </style>

@@ -136,7 +136,7 @@
             gap: 23px;
         }
         .fig_caption{
-            font-size: 7px;
+            font-size: 10px;
         }
         .grid_items{
             gap: 26px;

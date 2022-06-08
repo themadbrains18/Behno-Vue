@@ -18,14 +18,7 @@
                 </button>
                 <div class="accordian_info" >
                     <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.src)>
-                    <ul class="accordian_list">
-                        <li class="accordian_item body_text">
-                            Provision of exemplary healthcare services including coverage and access to health clinics.
-                        </li>
-                        <li class="accordian_item body_text" >
-                            Access to fresh sanitized water and additional nutritional ammunition for those in need.
-                        </li>
-                    </ul>
+                    <p class="body_text">{{ value.cardInfo }}</p>
                 </div>
             </div>
             
@@ -45,7 +38,9 @@ export default {
         }
     },
    data:()=>({
+
    }),
+  
    methods:{
     setActive(e){
         let accordianBtn = e.currentTarget;
@@ -56,9 +51,18 @@ export default {
                 accordianBtn.nextElementSibling.removeAttribute("style");
             }else{
                 accordianBtn.nextElementSibling.setAttribute("style",`height: ${ScrollHeight}px;`);
+            }    
+            
+            
+            let accordianInfo = document.querySelectorAll(".accordian_info p");
+            for(let i of accordianInfo ){
+                // Get card info
+                let finalValue =  i.innerHTML.split("-");   
             }
-    }
+            
+        }
    }
+    
 }
 </script>
 
