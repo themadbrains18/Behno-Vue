@@ -18,7 +18,7 @@
                 </button>
                 <div class="accordian_info" >
                     <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.src)>
-                    <p class="body_text">{{ value.cardInfo }}</p>
+                    <div class="body_text_wrapper">{{ value.cardInfo }}</div>
                 </div>
             </div>
             
@@ -37,13 +37,35 @@ export default {
             required: true,
         }
     },
-   data:()=>({
+   
 
-   }),
+     data: function () {
   
+  
+  
+  
+         window.addEventListener("load", this.onWindowLoad);    
+        window.addEventListener('load',()=>{
+
+            let finalValue = document.querySelectorAll(".accordian_info .body_text_wrapper");
+            for(let i of finalValue){
+                let spliVal =  i.innerHTML.split("-");
+                var html  = '';
+                html  += `<ul>`;
+                spliVal.forEach((elem) => {
+                    if(elem == '') 
+                      return;
+                   /// collect li list here !
+                      html += `<li class="body_text">${elem}</li>`; 
+                })
+                html  += '</ul>';
+                i.innerHTML  = html;
+            }
+  })
+  },
    methods:{
     setActive(e){
-        let accordianBtn = e.currentTarget;
+            let accordianBtn = e.currentTarget;
             accordianBtn.classList.toggle("active");
             let ScrollHeight= accordianBtn.nextElementSibling.scrollHeight;
             accordianBtn.parentElement.classList.toggle("active");
@@ -51,22 +73,24 @@ export default {
                 accordianBtn.nextElementSibling.removeAttribute("style");
             }else{
                 accordianBtn.nextElementSibling.setAttribute("style",`height: ${ScrollHeight}px;`);
-            }    
-            
-            
-            let accordianInfo = document.querySelectorAll(".accordian_info p");
-            for(let i of accordianInfo ){
-                // Get card info
-                let finalValue =  i.innerHTML.split("-");   
-            }
-            
+            }       
         }
+       
    }
     
 }
 </script>
 
 <!-- Section Css COde -->
+<style>
+.sec_accordian .body_text_wrapper ul{
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+.sec_accordian .body_text_wrapper li {
+    list-style: disc;
+}
+</style>
 <style scoped>
 .sec_setting_standard {
   padding-top: 38px;
@@ -137,6 +161,7 @@ export default {
     overflow: hidden;
     border-inline: 1px solid #000000;
 }
+
 /* Responsive Css Code */
 @media screen and (max-width: 991px) {
   .sec_setting_standard{
