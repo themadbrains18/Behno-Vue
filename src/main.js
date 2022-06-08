@@ -12,7 +12,10 @@ import './css/main.css'
  * auto-import all modules and prepare shared store
  */
 const vuexModules = require.context('./vue/store/', true, /\.js$/)
-const modules = {}
+
+
+const modules = {
+}
 
 vuexModules.keys().forEach(key => {
   const name = key.replace(/\.(\/|js)/g, '').replace(/\s/g, '-')

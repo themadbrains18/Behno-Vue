@@ -3,14 +3,14 @@
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">
-                <div class="product_popup">
+                <div class="product_popup" >
                     <img :src=(shopifyData.secImg.src) :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />
-                    <productPopup :productData=(shopifyData.productData)  />
+                    <productPopup :productData=(shopifyData.productData)  :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
                 </div>
                 <h2 class="img_text" v-if="shopifyData.checkImgHeading == 'true'" >{{ shopifyData.imgHeading }}</h2>
-                <div class="shop_cta subtitle">
+                <button class="shop_cta subtitle" @click="toggle_selection_for(key)">
                      {{ shopifyData.secCta }}
-                </div>
+                </button>
             </div>
             <div class="sec_text">
                 <p class="body_text" v-for="(item, key) in shopifyData.paragraph" :key="key">
@@ -21,11 +21,8 @@
     </section>
 </template>
 <style scoped>
-    .image_and_text_sec .sec_img{
-        cursor: pointer;        
-    }
     .image_and_text_sec{
-        padding: 56px 30px 0;           
+        padding: 56px 30px 40px;           
     }
     .image_and_text_sec .product_popup img{
         width: 100%;
@@ -99,6 +96,22 @@ export default {
     components:{
         productPopup
     },
+      methods: {
+    toggle_selection_for(key) {
+      if (this.isactive.includes(key)) {
+        this.isactive = this.isactive.filter(
+          (item) => item !== key
+        );
+      } else {
+        this.isactive.push(key);
+      }
+    },
+  },
+   data() {
+    return {
+      isactive: [],
+    };
+  },
     props:{
         shopifyData:{
             type:Object,

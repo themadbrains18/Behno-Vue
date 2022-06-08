@@ -400,7 +400,7 @@ export default {
     },
     methods: {
         closeSortMenu:function(event){
-            // console.log(event);
+            console.log(event);
             event.target.closest(".show").classList.remove("show");
         },
 
@@ -489,7 +489,7 @@ export default {
         },
 
         onSelectColor:function(color,product,event){
-            // console.log(product.id);
+            console.log(product.id);
             if(event.currentTarget.parentElement.children.length>1){
                 let childcolor=event.currentTarget.parentElement.children;
                 for(let item of childcolor){
@@ -509,7 +509,7 @@ export default {
             })
             if(varints.length>0){
                 if(varints[0].featured_image!=null){
-                    // console.log(varints[0].featured_image.src);
+                    console.log(varints[0].featured_image.src);
                     img.src=varints[0].featured_image.src;
                 }
                 div.textContent=varints[0].stock<=5?'ONLY '+varints[0].stock+' LEFT':'';

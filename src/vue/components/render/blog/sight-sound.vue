@@ -14,11 +14,11 @@
                 <div class="product_popup">
                     <img :src=(shopifyData.secImg.src)  :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt)>
                     <template v-if="shopifyData.productData">
-                        <productPopup :productData=(shopifyData.productData) />
+                        <productPopup :productData=(shopifyData.productData)  :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
                     </template>
                 </div>
                 <div class="shop_cta" >
-                    <a :href=(shopifyData.secCtaLink) class="subtitle">{{ shopifyData.secCta }}</a>
+                    <button class="subtitle" @click="toggle_selection_for(key)">{{ shopifyData.secCta }}  </button>
                 </div>
             </div>
         </div>
@@ -32,7 +32,23 @@ export default {
             type:Object,
             required:true,
         }
-    }
+    },
+      methods: {
+    toggle_selection_for(key) {
+      if (this.isactive.includes(key)) {
+        this.isactive = this.isactive.filter(
+          (item) => item !== key
+        );
+      } else {
+        this.isactive.push(key);
+      }
+    },
+  },
+   data() {
+    return {
+      isactive: []
+    };
+  },
 }
 </script>
 

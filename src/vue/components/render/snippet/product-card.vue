@@ -90,7 +90,7 @@ export default {
             return url + 'background:'+ color;
         },
          onSelectColor:function(color,product,event){
-            // console.log(product.id);
+            
             if(event.currentTarget.parentElement.children.length>1){
                 let childcolor=event.currentTarget.parentElement.children;
                 for(let item of childcolor){
@@ -104,13 +104,13 @@ export default {
             let out_of_stock_text=document.querySelector('#out_of_stock_text'+product.id);
             let quickAdd=document.querySelector('#quickAdd'+product.id);
              
-            // console.log(img);
+            
             let varints= product.variants.filter(item=>{
                 return item.title.includes(color)
             })
             if(varints.length>0){
                 if(varints[0].featured_image!=null){
-                    // console.log(varints[0].featured_image.src);
+                    
                     img.src=varints[0].featured_image.src;
                 }
                 div.textContent=varints[0].stock<=5?'ONLY '+varints[0].stock+' LEFT':'';
@@ -131,7 +131,7 @@ export default {
             }
         },
         addToCard:function(product){
-            // console.log(product);
+            
         }
     }
 }

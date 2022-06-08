@@ -25,7 +25,7 @@
 {% endcapture %}
 
 
-<render-blog-image-column :shopify-data="{
+<render-blog-image-column v-slot="{ visible, toggle }" :shopify-data="{
     checkSection: `{{ section.settings.checkSection }}`,
     productData: {{ productData }}
 }">
