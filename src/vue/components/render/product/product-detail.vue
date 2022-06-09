@@ -22,7 +22,7 @@
     
     <section :data-id=(selectedProduct.id) class="product_sec">
         <div class="product_grid">
-            <div class="product_grid_image modify-slider">
+            <div class="product_grid_image line-h-0 modify-slider">
                 <swiper
                     :modules="modules"
                     watchSlidesProgress
@@ -60,10 +60,10 @@
             <div class="product_grid_content">
                 <h1 class="product_title card_heading">{{selectedProduct.title}}</h1>
                 <h2 class="product_price">
-                    <!-- <del v-if="shopifyData.productComparePrice">
-                        {{ shopifyData.productComparePrice }}
-                    </del> -->
-                    ${{selectedProduct.price / 100}}
+                    <del v-if="selectedProduct.compare_at_price > selectedProduct.price">
+                        ${{ selectedProduct.compare_at_price / 100 }}
+                    </del>
+                    ${{ selectedProduct.price / 100 }}
                 </h2>
                 <form  method="post">
                     <p class="after_pay">or 4 interest-free installments of $97.50 by<img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/afterpay.png?v=1653477636"></p>
@@ -79,11 +79,11 @@
                         </li> "https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172"-->
 
                         <li class="color_variant_wrap" v-for="(value, key) in this.variant" :key="key" @click="changePath(value.link)">
-                            <input type="radio" name="colorVariant" :id="value.name" class="color_variant"
+                            <input type="radio" :name="value.name" :id="value.name" class="color_variant"
                                 :checked="currentUrl == value.link">
-                            <label class="color_variant_label" for="black">
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172"
-                                    alt="">
+                            <label class="color_variant_label" :for="value.name">
+                                <div class="tooltip">  {{ value.name.replace('_',' ')  }}</div>
+                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172" alt="">
                             </label>
                         </li>
                         
@@ -166,9 +166,8 @@
                     </ul>
                 </div>
             </div>
-            
             <!-- Product Zoom Slider  -->
-            <div class="product_zoom modify-slider" id="productZoom">
+            <div class="product_zoom modify-slider line-h-0" id="productZoom">
                 <swiper
                     :modules="modules"
                     :thumbs="{ swiper: thumbsSwiper }"
@@ -620,7 +619,6 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "swiper/css/thumbs"
 
 
 // import required modules
@@ -635,7 +633,7 @@ export default {
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
-        
+        console.log(filterProduct);
         return {
             selectedSize:"",
             variant,

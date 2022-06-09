@@ -33,7 +33,7 @@
 
     <div {% unless request.page_type == 'captcha' %}id="app"{% endunless %}>
       {% section 'header' %}
-      <main id="main" role="main" class="tmbMain" style="margin-top: 80px;">
+      <main id="main" role="main" class="tmbMain">
         {{ content_for_layout }}
       </main>
       {% section 'footer' %}
