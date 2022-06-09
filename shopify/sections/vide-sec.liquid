@@ -3,7 +3,8 @@
     SectionShow: `{{ section.settings.SectionShow }}`,
     SecHeading: `{{ section.settings.SecHeading }}`,
     VideoShow: `{{ section.settings.VideoShow }}`,
-    videolink: `{{ section.settings.videolink }}`
+    videolink: `{{ section.settings.videolink }}`,
+    secCta : `{{ section.settings.secCta }}`
 }">
 </render-blog-vide-sec>
 {% schema %}
@@ -37,6 +38,12 @@
                 "id": "videolink",
                 "type": "url",
                 "label": "Add Video URL"
+            },
+            {
+                "id":"secCta",
+                "label":"Section Cta",
+                "type":"text",
+                "default":"SHOP THE BAG"
             }
         ]
     }

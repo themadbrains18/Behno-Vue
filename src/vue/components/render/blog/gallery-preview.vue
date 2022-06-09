@@ -155,41 +155,18 @@ export default {
     };
   },
   data: function () {
-    // window.addEventListener("resize", this.onWindowLoad);
     if(window.innerWidth<575){
-      function functionSlider() {
-      let GellaryImg = document.querySelector(".responsive_slider .swiper-slide.swiper-slide-active .card_preview_img img");
-      let GellaryBottomBtn = document.querySelector(".responsive_slider .swiper-slide.swiper-slide-active .slider_image.bg-black").clientHeight;
-
-      GellaryImg.style.setProperty("min-height",`calc(100vh - ${GellaryBottomBtn}px)`);
+      window.addEventListener("load", () => {
+        let GellaryImg = document.querySelectorAll(".responsive_slider .swiper-slide");
+        for(let i of GellaryImg){
+          let GellaryImg = i.querySelector(".card_preview_img img");
+          let GellaryBottomBtn = i.querySelector(".slider_image").clientHeight;
+          GellaryImg.style.setProperty("min-height",`calc(100vh - ${GellaryBottomBtn}px)`);
+        }
+      })
     }
-    
-    window.addEventListener("load", () => {
-      functionSlider();
-      let moveslider = document.querySelector(".gallery_preview_inner.modify-slider");
-      let NextBtn = document.querySelector(".responsive_slider .swiper-button-next");
-      let PrevBtn = document.querySelector(".responsive_slider .swiper-button-prev");
-      
-      NextBtn.addEventListener("click", () => {
-        functionSlider();
-      });
-
-      PrevBtn.addEventListener("click", () => {
-        functionSlider();
-      });
-
-      moveslider.addEventListener("touchmove", () => {
-        functionSlider();
-      });
-    })
-    window.addEventListener("resize", () => {
-      functionSlider();
-    });
-    }
-    
     return {
       show: true,
-      
     };
   },
   props: {
