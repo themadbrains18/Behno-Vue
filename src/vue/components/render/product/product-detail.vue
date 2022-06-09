@@ -113,8 +113,10 @@
                 </form>
 
                 <div class="product_description_data">
+                    <!-- Product Description -->
                     <div class="product_description"  v-html="replaceString(selectedProductDescription[0])"></div>
                     <ul class="product_accordians">
+                        <!-- Product Details -->
                         <li class="product_accordian" v-if="selectedProductDescription[1]">
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,6 +127,7 @@
                             <div class="product_accordian_panel" v-html="replaceString(selectedProductDescription[1])">
                             </div>
                         </li>
+                        <!-- Product Specification -->
                         <li class="product_accordian" v-if="selectedProductDescription[2]">
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,6 +138,7 @@
                             <div class="product_accordian_panel" v-html="replaceString(selectedProductDescription[2])">
                             </div>
                         </li>
+                        <!-- Product Shipping -->
                         <li class="product_accordian" v-if="selectedProductDescription[3]">
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,6 +152,7 @@
                             <div class="product_accordian_panel" v-html="replaceString(selectedProductDescription[3])">
                             </div>
                         </li>
+                        <!-- Product ETHICAL PHILOSOPHY  -->
                         <li class="product_accordian" v-if="selectedProductDescription[4]">
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
