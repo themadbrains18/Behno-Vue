@@ -66,6 +66,11 @@
     width: 100%;
     margin-left:15px;
 }
+.sec_text{
+    max-width: 565px;
+    width: 100%;
+    margin: 0 0 0 auto;
+}
 
 /* ===== RESPONSIVE BREAKPOINTS START ===== */
 @media screen and (max-width: 1290px) {
@@ -78,6 +83,9 @@
     }
     .image_grid{
         justify-content: center;
+    }
+    .sec_text{
+        margin: 0 auto;
     }
 }
 

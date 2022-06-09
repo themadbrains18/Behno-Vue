@@ -9,9 +9,14 @@
         </div>
         <h1 class="main_heading item2">{{ shopifyData.secBottomHeading }}</h1>
       </div>
+      <div class="brief_wrapper"> 
       <p class="body_text t-center">
         {{ shopifyData.secBrief }}
       </p>
+      <p class="body_text t-center">
+        {{ shopifyData.secBrief2 }}
+      </p>
+      </div>
       <div class="sec_btn t-center">
         <a :href=(shopifyData.SecBtnLink) class="cta_btn">{{ shopifyData.SecBtn }}</a>
       </div>
@@ -27,70 +32,6 @@
                 <h4 class="card_heading_b">{{ value.cardHeading }}</h4>
                 <p class="body_text">{{ value.cardBrief }}</p>
             </div>
-            <!-- <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card2.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">THE GARMENT WORKER PROJECT</h4>
-                <p class="body_text">Crediting the humans behind the pieces we love and humanizing the back-end of fashion.</p>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card3.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">BEHNO IN THE WORLD</h4>
-                <p class="body_text">You've seen us in the media, at Buckingham Palace, awards ceremony and in other spaces. And here's some more.</p>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card4.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">CONSTRUCTING MSA ETHOS</h4>
-                <p class="body_text">One and one make eleven. There is strength in unity. How (and why) we built our partner factory.</p>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card5.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">EXQUISITE HANDWORK</h4>
-                <p class="body_text">How tricks of the hand create magic for the eye. Visit our artisanal hand-embroidery workshop.</p>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card6.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">HANDWOVEN SILKS</h4>
-                <p class="body_text">How we bring to you the world's finest handwoven textiles from the historic city of Varanasi. Immerse yourself.</p>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card7.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">FRONT END PHILANTHROPY</h4>
-                <p class="body_text">How we share our resources with and support nonprofits like the National Down Syndrome Society and the Boys & Girls Clubs of America.</p>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card8.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">OUR PARTNER HANDBAG FACTORY </h4>
-                <p class="body_text">A home away from home, where we spend so much time developing and producing our luxury handbags.</p>
-            </div>
-            <div class="card">
-                <div class="card_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/sense-card9.jpg?v=1651138225" alt="error">
-                    <a href="#" class="cta_btn">LEARN MORE</a>
-                </div>
-                <h4 class="card_heading_b">OUR HOME BASE</h4>
-                <p class="body_text">With love from the city that grounds, stimulates, and creates us without ever sleeping.</p>
-            </div> -->
         </div>
     </div>
   </section>
@@ -121,6 +62,8 @@
     transform: translateX(-50%);
     max-width: 200px;   
     margin: 0 auto;
+    text-align: center;
+    line-height: 64px;
 }
 .item1 {
   top: 0;
@@ -171,15 +114,24 @@
     height: 350px;
     object-fit: cover;
     object-position: top;
+    transition: 0.3s;
+}
+.card:hover img {
+    filter: brightness(30%);
 }
 
-
-    .card:hover .cta_btn{
-        /* transform: translate(-50%,-50%); */
-        top: 50%;
-        opacity: 1;
-        visibility: visible;
-    }
+.card:hover .cta_btn{
+    /* transform: translate(-50%,-50%); */
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+}
+.brief_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+}
 
 /* Responsive Breakpoints */
 @media(max-width:991px){
@@ -218,7 +170,7 @@
     .item2 {
         margin-top: -65px;
     }
-    .sec_head .body_text {
+    .sec_head .brief_wrapper {
         margin: 66px 0 50px;
         margin-bottom: 0;
     }
@@ -230,6 +182,9 @@
     }
     .card .cta_btn{
         padding: 20px;
+    }
+    .brief_wrapper {
+        flex-direction: column;
     }
 }
 @media(min-width:768px){
@@ -248,9 +203,7 @@
     .card_heading_b{
         margin: 11px 0 9px;
     }
-    .sec_head .body_text {
-        padding: 0 60px;
-    }
+
 }
 </style>
 

@@ -73,55 +73,55 @@
         "3a1ef8c8-f591-4341-83bc-7bb4050362ab": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img7.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item1.png"
           }
         },
         "047b2977-32c9-4c12-8b30-183fba0400d3": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img8.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item2.png"
           }
         },
         "3c63e580-840e-4356-b697-5b0f762ee83e": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img1.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item3.png"
           }
         },
         "f202392c-a037-4acd-ab5d-74c96f4f6181": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img7.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item4.png"
           }
         },
         "a319c184-ea3a-4fc7-bf66-5abf36e5fcad": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img4.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item5.png"
           }
         },
         "895d49db-1fdd-4579-9e4a-8391358ab3bf": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img5.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item6.png"
           }
         },
         "f18ef185-d110-4109-ab32-34f7a29b625e": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img8.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item7.png"
           }
         },
         "d4c7dc28-2398-4070-9d74-64664ecb1ec4": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img2.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item8.png"
           }
         },
         "b121cacd-63cb-4508-9ee6-e49c4d9d6018": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img.jpg"
+            "image": "shopify:\/\/shop_images\/grid-item9.png"
           }
         }
       },
@@ -218,21 +218,21 @@
           "type": "collage",
           "settings": {
             "image": "shopify:\/\/shop_images\/6-NASHIK.jpg",
-            "imageInfo": "The terrain on the outskirts of Nashik"
+            "imageInfo": "Views of rock cut caves on early morning hike."
           }
         },
         "97ce2230-b891-4f4c-a1b1-e3548a0d3b1d": {
           "type": "collage",
           "settings": {
             "image": "shopify:\/\/shop_images\/7-NASHIK.jpg",
-            "imageInfo": "Sunset From our Factory."
+            "imageInfo": "Sunset From our factory."
           }
         },
         "8b8e5234-116a-4d25-af23-841639f06a4f": {
           "type": "collage",
           "settings": {
             "image": "shopify:\/\/shop_images\/8-NASHIK.jpg",
-            "imageInfo": "Sunrise form the Pandaoleni Caves , Nashik."
+            "imageInfo": "Sunrise form the Pandaoleni Caves, Nashik."
           }
         },
         "f24ca4f9-c3f9-4df1-9354-f929296887e1": {
@@ -273,7 +273,7 @@
       ],
       "settings": {
         "secHeading": "Sublime Saturdays.",
-        "subHeading": "The hands and tools."
+        "subHeading": "On Saturdays, the factory shuts off for its weekly break. We, too, take a break out of the factory and take in the beautiful city we’re visiting."
       }
     },
     "back-sense-behno": {

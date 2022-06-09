@@ -75,7 +75,10 @@
 <style scoped>
 .sec_walk_to_remember {
     padding-top: 79px;
-  }
+}
+.big_container{
+  max-width: 1440px;
+}
 .sec_heading {
   line-height: 44px;
   color: #FB0000;

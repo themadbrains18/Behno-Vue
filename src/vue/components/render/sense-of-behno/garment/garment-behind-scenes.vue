@@ -3,12 +3,14 @@
     <!-- Section Garment Behind Scenes  Start -->
     <section class="sec_behind_scenes">
         <div class="big_container">
-            <h2 class="sec_heading">
-                {{ shopifyData.secHeading }}
-            </h2>
-            <p class="body_text">
-                {{ shopifyData.secInfo }}
-            </p>
+            <div class="sec_head">          
+                <h2 class="sec_heading">
+                    {{ shopifyData.secHeading }}
+                </h2>
+                <p class="body_text">
+                    {{ shopifyData.secInfo }}
+                </p>
+            </div>
             <div class="sec_content">
                 <div class="sec_content_inner">
                     <div class="sec_img">
@@ -23,7 +25,6 @@
                         <div class="bottom_images">
                             <div class="img_caption" v-if="shopifyData.collageData[2]"> 
                                 <img class="item3" :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
-                                <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
                             </div>
                             <template v-if="shopifyData.collageData[3]">
                                 <img class="item4" :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
@@ -45,6 +46,9 @@
                         </template>    
                     </div>
             </div>
+            <p class="body_text body-modifier">
+               {{ shopifyData.mobileCaption }}
+            </p>
         </div>
     </section>
     <!-- Section Garment Behind Scenes  End -->
@@ -66,8 +70,9 @@ export default{
 .sec_behind_scenes{
     padding:  74px 0 117px;
 }
-.sec_heading,.body_text{
-    text-align: center;
+.sec_head {
+    max-width: fit-content;
+    margin: 0 auto;
 }
 .sec_content{
     display: grid;
@@ -120,8 +125,17 @@ export default{
     width: 100%;
     align-self: end;
 }
+.body_text.body-modifier{
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin-bottom: 0;
+}
 
 /* Responsive Css Code */
+
 @media screen  and  (max-width: 1200px){
     .top_images{
         gap: 50px;
@@ -234,6 +248,11 @@ export default{
     }
     .bottom_images .item5{
         max-width: 70px;
+    }
+}
+@media screen and (min-width:768px) {
+    .body_text.body-modifier{
+        display: none;
     }
 }
 </style>

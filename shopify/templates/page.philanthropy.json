@@ -236,49 +236,31 @@
         "secSubHeading": "The Buddy Walk is one of the largest events hosted by NDSS to bring its community together. Taking place in New York City, Nini was a Grand Marshall for 2019."
       }
     },
-    "shop-ndss": {
-      "type": "shop-ndss",
+    "shop-ndds-bottom": {
+      "type": "shop-ndds-bottom",
       "blocks": {
-        "2b51f434-e48c-48e6-b51e-f9ea66c6ed79": {
+        "c451c7af-636c-44b1-9c21-a3732f24faba": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slide-img.jpg"
-          }
-        },
-        "686e6dd1-eae4-4fbd-8447-8d84d5799688": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slide-img1.jpg"
-          }
-        },
-        "77f00d4e-2bd6-4b2c-b8d0-2ee6ef2088f7": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slide-img2.jpg"
+            "link": "",
+            "title": "",
+            "price": ""
           }
         }
       },
       "block_order": [
-        "2b51f434-e48c-48e6-b51e-f9ea66c6ed79",
-        "686e6dd1-eae4-4fbd-8447-8d84d5799688",
-        "77f00d4e-2bd6-4b2c-b8d0-2ee6ef2088f7"
+        "c451c7af-636c-44b1-9c21-a3732f24faba"
       ],
-      "settings": {
-        "redText": "“IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”"
-      }
-    },
-    "shop-ndds-bottom": {
-      "type": "shop-ndds-bottom",
       "settings": {
         "secSubHeading": "SHOP NDSS X BEHNO",
         "secCtaText": "SHOP THE NDSS X BEHNO CAPSULE",
         "secCtaLink": "\/",
         "showProduct": true,
         "product_list": [
-          "choker-with-bead",
-          "choker-with-gold-pendant",
-          "choker-with-triangle",
-          "dainty-gold-neclace"
+          "alex-shoulder-bag-glossy-croc-balsamic",
+          "ana-flat-tote-crossbody-nappa-ruched-olive",
+          "ana-flat-tote-crossbody-pebble-ruched-apricot",
+          "ana-flat-tote-crossbody-pebble-ruched-bordeaux"
         ]
       }
     },
@@ -296,7 +278,6 @@
     "bit-about-ndss",
     "sister-brothers",
     "walk-to-remember",
-    "shop-ndss",
     "shop-ndds-bottom",
     "back-sense-behno"
   ]

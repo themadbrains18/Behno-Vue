@@ -7,8 +7,8 @@
           :navigation="true"
           :effect="'fade'"
           :autoplay="{
-          delay: 1500,
-          disableOnInteraction: false
+            delay: 1500,
+            disableOnInteraction: false
           }"
           :modules="modules"
           :breakpoints="{

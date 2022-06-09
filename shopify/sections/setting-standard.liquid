@@ -3,6 +3,7 @@
     {% for block in section.blocks %}
     {
         crdHeading   : `{{ block.settings.crdHeading }}`,
+        cardInfo   : `{{ block.settings.cardInfo }}`,
         imgUrl : {
             src : `{{ block.settings.crdImage | img_url : "" }}`,
             placeholder: `{{ block.settings.crdImage | img_url : "50x50" }}`,
@@ -49,6 +50,11 @@
                     "id": "crdHeading",
                     "type": "text",
                     "label": "Card Heading"
+                },
+                {
+                    "id": "cardInfo",
+                    "type": "textarea",
+                    "label": "Card Info (Use `-` to Start Line )"
                 },
                 {
                     "id": "crdImage",

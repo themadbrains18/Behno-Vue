@@ -108,7 +108,8 @@
       "settings": {
         "secTopHeading": "The Sense",
         "secBottomHeading": "of behno",
-        "secBrief": "Welcome to our world. Get to know what encompasses our essence.",
+        "secBrief": "Welcome to our world.",
+        "secBrief2": "Get to know what encompasses our essence.",
         "SecImg": "shopify:\/\/shop_images\/flower-hand.png",
         "SecBtn": "LEARN ABOUT OUR STORY",
         "SecBtnLink": "#"

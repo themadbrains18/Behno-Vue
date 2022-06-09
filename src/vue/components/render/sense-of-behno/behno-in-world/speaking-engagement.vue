@@ -91,7 +91,9 @@
         max-width: 520px;
         
     }
-
+    .figCaption img{
+        width: 100%;
+    }
     /* Responsive Css Code */
     @media screen  and (max-width: 1200px){
         .img_grid > div{
@@ -136,7 +138,7 @@
             gap: 23px;
         }
         .fig_caption{
-            font-size: 7px;
+            font-size: 10px;
         }
         .grid_items{
             gap: 26px;

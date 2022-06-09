@@ -11,8 +11,8 @@
             :effect="'fade'"
             :spaceBetween="100"
             :autoplay="{
-            delay: 1500,
-            disableOnInteraction: false,
+              delay: 1500,
+              disableOnInteraction: false,
             }"
             :loop="true"
             class="mySwiper"
@@ -88,6 +88,13 @@ export default {
   .sec_winner_fashion .swiper-button-prev, .sec_winner_fashion .swiper-button-next{
     display: block !important;
   }
+}
+.sec_winner_fashion .modify-slider .swiper-button-next
+{
+  transform: rotate(180deg);
+}
+.sec_winner_fashion .modify-slider .swiper-button-prev{
+  transform: rotate(0);
 }
 </style>
 

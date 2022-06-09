@@ -257,7 +257,7 @@
     padding: 0 15px;
   }
   .fig_caption {
-    font-size: 7px;
+    font-size: 10px;
   }
   .img_row.last {
     max-width: 838px;

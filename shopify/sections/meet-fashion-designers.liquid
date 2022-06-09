@@ -6,6 +6,8 @@
         secHeading: `{{ block.settings.secHeading }}`,
         secSubHeading: `{{ block.settings.secSubHeading }}`,
         secInfo: `{{ block.settings.secInfo }}`,
+        secCtaText: `{{ block.settings.secCtaText }}`,
+        secCtaLink: `{{ block.settings.secCtaLink }}`,
         imgUrl : {
             src : `{{ block.settings.secImg | img_url : "" }}`,
             placeholder: `{{ block.settings.secImg | img_url : "50x50" }}`,
@@ -82,6 +84,16 @@
                         "id":"secInfo",
                         "type":"text",
                         "label":"Section Info"
+                    },
+                    {
+                        "id":"secCtaText",
+                        "type":"text",
+                        "label":"Section Cta Text"
+                    },
+                    {
+                        "id":"secCtaLink",
+                        "type":"url",
+                        "label":"Section Cta Link"
                     },
                     {
                         "id":"secImg",
