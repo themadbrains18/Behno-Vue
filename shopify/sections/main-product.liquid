@@ -27,7 +27,7 @@
                 {% assign productData = all_products[handle] %}
                   {
                     "name" : "{{ color_name  }}",
-                    "img"  : "{{ image }}",
+                    "img"  : "{{ image | asset_url }}",
                     "link" : "{{ link }}",
                     "qty" : "{{ productData.variants.first.inventory_quantity }}"
                   }{% if forloop.last %}{% else %},{% endif %}
