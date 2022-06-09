@@ -5,14 +5,14 @@
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="product_cards">
-                <div class="card" v-for="(item, index) in shopifyData.productData" :key="index">
-                        <a :href=(item.product.productUrl)  :product-id=(item.product.productid) class="product_link">
-                            <img :src="item.product.productidImage" />
-                            <div class="product_info"> 
-                                <p class="subtitle">{{item.product.productTitle}}</p>
-                                <p class="subtitle_b">{{item.product.productidPrice}}</p>
-                            </div>
-                        </a>
+                <div class="card" v-for="(item, index) in shopifyData.productData.slice(0,4)" :key="index" >
+                    <a :href=(item.product.productUrl) :product-id=(item.product.productid) class="product_link">
+                        <img :src="item.product.productidImage" />
+                        <div class="product_info"> 
+                            <p class="subtitle">{{item.product.productTitle}}</p>
+                            <p class="subtitle_b">{{item.product.productidPrice}}</p>
+                        </div>
+                    </a>
                     <div class="product_varients">
                         <div class="product_colores">
                             <ul>
@@ -48,9 +48,9 @@
                 </div>
             </div>
             <div class="product_cards tmb-md-none">
-                <div class="card" v-for="(item, index) in shopifyData.productData" :key="index">
-                        <a :href=(item.product.productUrl)  :product-id=(item.product.productid) class="product_link">
-                            <img :src="item.product.productidImage" />
+                <div class="card" v-for="(item, index) in shopifyData.productData.slice(4,8)" :key="index">
+                        <a :href=(item.product.productUrl)  :product-id=(item.product.productid) class="product_link" >
+                            <img :src="item.product.productidImage"  />
                             <div class="product_info"> 
                                 <p class="subtitle">{{item.product.productTitle}}</p>
                                 <p class="subtitle_b">{{item.product.productidPrice}}</p>
@@ -181,6 +181,10 @@
         opacity: 1;
         visibility: visible;
     }
+    
+    .sec_content::-webkit-scrollbar {
+        display: none;
+    }
     /* product colors selector End */
 
     /* Responsive Breakpoints */
@@ -188,7 +192,7 @@
         .product_btn .cta_btn{
             padding: 10px;
         }
-
+        
     }
     @media(max-width:1250px){
         .product_varients{
@@ -204,15 +208,17 @@
             padding: 10px 0 31px 2px;
         }
         .card_heading{
-            margin: 0 0 5px 12px;
+            margin: 0 0 6px 12px;
         }
         .product_cards{
             gap:2px;
             justify-content: unset;
+            display: flex;
         }
         .card{
             min-width: 166px;
         }
+        
         .product_info{
             margin:8px 0 0 4px;
         }
@@ -244,6 +250,7 @@
         .product_varients{
             display: none;
         }
+        
     }
 
     @media(min-width:768px){

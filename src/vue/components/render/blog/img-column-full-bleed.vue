@@ -18,9 +18,12 @@
           <productPopup :productData="item.productDetail" :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)" />
         </div>
         <div class="shop_cta">
-          <button class="subtitle" @click="toggle_selection_for(key)">
-            {{ item.productDetail.secCtaText }}
-          </button>
+            <button  class="subtitle" v-if="windowWidth>768">
+                {{ item.productDetail.secCtaText }}
+            </button>
+            <button class="subtitle"   @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+                {{ item.productDetail.secCtaText }}
+            </button>
         </div>
       </div>
     </div>
@@ -107,6 +110,7 @@ export default {
   },
    data() {
     return {
+      windowWidth: window.innerWidth,
       isactive: []
     };
   },

@@ -19,9 +19,12 @@
           <productPopup :productData="item.productDetail" :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
         </div>
         <div class="shop_cta">   
-          <button  @click="toggle_selection_for(key)" class="subtitle">
-            {{ item.productDetail.secCtaText }}   
+          <button class="subtitle" v-if="windowWidth>768">
+              {{ item.productDetail.secCtaText }}
           </button>
+            <button class="subtitle"  @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+                {{ item.productDetail.secCtaText }}
+            </button>
         </div>
       </div>
     </div>
@@ -65,7 +68,7 @@
     gap: 42px;
   }
   .image_column_sec {
-    padding: 0 0px 66px;
+    padding: 30px 0px 66px;
   }
   .sec_img img {
     width: 390px;
@@ -97,6 +100,7 @@ export default {
   },
    data() {
     return {
+      windowWidth: window.innerWidth,
       isactive: []
     };
   },

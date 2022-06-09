@@ -18,7 +18,12 @@
                     </template>
                 </div>
                 <div class="shop_cta" >
-                    <button class="subtitle" @click="toggle_selection_for(key)">{{ shopifyData.secCta }}  </button>
+                    <button class="subtitle" v-if="windowWidth>768">
+                        {{ shopifyData.secCta }}
+                    </button>
+                    <button class="subtitle"  @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+                        {{ shopifyData.secCta }}
+                    </button>
                 </div>
             </div>
         </div>
@@ -46,6 +51,7 @@ export default {
   },
    data() {
     return {
+      windowWidth: window.innerWidth,
       isactive: []
     };
   },
