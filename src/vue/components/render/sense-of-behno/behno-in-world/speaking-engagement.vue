@@ -80,6 +80,8 @@
         align-items: center;
         column-gap: 70px;
         justify-content: space-between;
+        max-width: 1920px;
+        margin: 0 auto;
     }
     .grid_items{
         display: flex;

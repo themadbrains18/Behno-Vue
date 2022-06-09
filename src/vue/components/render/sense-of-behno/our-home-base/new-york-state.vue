@@ -91,7 +91,7 @@ export default {
   padding: 84px 0;
 }
 .sec_content {
-  margin: 0 0 131px 0;
+  margin: 0 auto 131px auto;
   padding-left: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -99,6 +99,7 @@ export default {
   width: 100%;
   position: relative;
   gap: 55px;
+  max-width: 1920px;
 }
 .icon {
   position: absolute;

@@ -39,8 +39,8 @@
 
 <style scoped>
 .sens_of_behno_sec {
-    padding: 67px 0 317px;
-    margin-bottom: -200px;
+    padding: 67px 0 117px;
+    /* margin-bottom: -200px; */
 }
 .sec_head {
     padding-bottom: 117px;

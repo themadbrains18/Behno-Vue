@@ -78,6 +78,8 @@ export default{
     display: grid;
     grid-template-columns:70% 30%;
     align-items: center;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 .sec_video{
     text-align: center;

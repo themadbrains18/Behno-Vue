@@ -68,9 +68,10 @@
         display: grid;
         grid-template-columns: 28% 64%;
         align-items: center;
-        margin-top: 34px;
+        margin: 34px auto 0;
         gap: 30px;
         justify-content: center;
+        max-width: 1920px;
     }
     .card_heading_b{
         margin: 14px 0;
