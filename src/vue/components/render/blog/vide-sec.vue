@@ -27,6 +27,11 @@ export default({
     .sec_head{
         padding: 43px 40px 15px;
     }
+    video{
+        height: 570px;
+        object-fit: cover;
+        max-width: 1020px;
+    }
     .main_heading{
         color: #EF0000;        
         font-family: 'Helvetica Neue',sans-serif;
@@ -58,6 +63,15 @@ export default({
         }
         .sec_content.bg-black iframe {
             height: 155px;
+        }
+        video{
+            height: 400px;
+        }
+    }
+
+    @media(max-width:767px){
+        video{
+            height: 203px;
         }
     }
 </style>

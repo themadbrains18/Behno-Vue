@@ -28,6 +28,9 @@
   </head>
 
   <body class="{{ template.name }}">
+
+    {% comment %} {% section 'mini-cart' %} {% endcomment %}
+
     <div {% unless request.page_type == 'captcha' %}id="app"{% endunless %}>
       {% section 'header' %}
       <main id="main" role="main" class="tmbMain" style="margin-top: 80px;">

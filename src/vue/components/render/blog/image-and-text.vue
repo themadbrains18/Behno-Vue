@@ -8,8 +8,12 @@
                     <productPopup :productData=(shopifyData.productData)  :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
                 </div>
                 <h2 class="img_text" v-if="shopifyData.checkImgHeading == 'true'" >{{ shopifyData.imgHeading }}</h2>
-                <button class="shop_cta subtitle" @click="toggle_selection_for(key)">
-                     {{ shopifyData.secCta }}
+                
+                <button class="shop_cta subtitle" v-if="windowWidth>768">
+                    {{ shopifyData.secCta }}
+                </button>
+                <button class="shop_cta subtitle"  @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+                    {{ shopifyData.secCta }}
                 </button>
             </div>
             <div class="sec_text">
@@ -96,7 +100,8 @@ export default {
     components:{
         productPopup
     },
-      methods: {
+    methods: {
+    
     toggle_selection_for(key) {
       if (this.isactive.includes(key)) {
         this.isactive = this.isactive.filter(
@@ -107,10 +112,11 @@ export default {
       }
     },
   },
-   data() {
-    return {
-      isactive: [],
-    };
+    data:()=>{
+        return {
+            isactive: [],
+            windowWidth: window.innerWidth
+    }
   },
     props:{
         shopifyData:{
