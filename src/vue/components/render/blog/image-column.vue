@@ -84,9 +84,9 @@
 import productPopup from "../product-popup.vue";
 
 export default {
-  components: {
-    productPopup,
-  },
+    components: {
+      productPopup,
+    },
   methods: {
     toggle_selection_for(key) {
       if (this.isactive.includes(key)) {

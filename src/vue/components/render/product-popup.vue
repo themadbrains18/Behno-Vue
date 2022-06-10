@@ -2,7 +2,9 @@
   <section class="product_info_card">
       <div class="product_img">
         <img  @click="$emit('close')"  class="close-icon" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error">
-        <a :href=(productData.productUrl)><img :src=(productData.productidImage) ></a>
+        <a :href=(productData.productUrl)>
+          <img :src=(productData.productidImage) >
+        </a>
       </div>
       <p class="subtitle">{{ productData.productTitle }}</p>
       <p class="subtitle_b">{{ productData.productidPrice }}</p>
@@ -82,9 +84,7 @@
 }
 
 @media(max-width:575px){
-  .product_info_card{
-    height: 100%;
-  }
+  
   .product_info_card a img{
     height: 400px;
     object-fit: cover;
@@ -93,6 +93,9 @@
 }
 @media(max-width:480px){
   .product_info_card a img{
+    height: 100%;
+  }
+  .product_info_card{
     height: 100%;
   }
 }
@@ -110,17 +113,13 @@ export default {
   },
  
   methods:{
-
     toggle_selection_for(e){
         var popupParent =  e.target;
         // console.log(popupParent.parentNode);
-
           this.$store.dispatch('my-module/toggle');
-
           console.log(this.$store.state['my-module'].visible)
       //  $store.dispatch('my-module/toggle');
       console.log('woo ')
-
     }
   }
   
