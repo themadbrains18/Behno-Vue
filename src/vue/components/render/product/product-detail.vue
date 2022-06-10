@@ -80,11 +80,11 @@
                 <div class="product_description_data">
                     <!-- Product Description -->
                     <div class="product_description"  v-html="replaceString(selectedProductDescription[0])"></div>
-                    <div>
-                        SEEN IN
-                        <img :src=(seenIn.src) :alt=(seenIn.alt) v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
-
-                        <!-- {{ this.productSeenIn}} -->
+                        <p> As seen in: </p>
+                    <div class="see_in">
+                        <div v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
+                            <img :src="(seenIn.src)" :alt="(seenIn.alt)" >
+                        </div>
                     </div>
                     <ul class="product_accordians">
                         <!-- Product Details -->
@@ -456,9 +456,18 @@
 .product_description_data {
     margin-top: 30px;
 }
+.product_description_data p{
+    margin:18px 0;
+}
+.see_in{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:center;
+}
 
 .product_accordians {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .product_accordian {
