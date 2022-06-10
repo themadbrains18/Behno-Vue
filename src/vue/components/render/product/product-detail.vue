@@ -387,10 +387,9 @@
     border-radius: 50%;
     display: block;
     box-shadow: 0 0 0 1px #E0E0E0;
+    position:relative;
+    
 }
-
-
-
 
 .color_variant:checked+.color_variant_label {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px #6B6B6B;
@@ -400,6 +399,40 @@
     height: 24px;
     width: 24px;
     border-radius: 50%;
+}
+
+ .tooltip::after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid rgba(51,51,51,0.9) 10px;
+    bottom: -10px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    position: absolute;
+    width: 0;
+    transform:translateX(-50%);
+}
+
+.tooltip{
+    position:absolute;
+    visibility: hidden;
+    background-color: rgba(51,51,51,0.9);
+    color: #fff;
+    text-align: center;
+      font-size:12px;
+
+    line-height:1;
+    padding: 5px 10px;
+    width:120px;
+    bottom:calc(100% + 15px);
+    left:50%;
+    transform:translateX(-50%);
+     transition:all .25s linear;
+    
+}
+.color_variant_label:hover .tooltip{
+     visibility: visible;  
 }
 
 .product_left {
