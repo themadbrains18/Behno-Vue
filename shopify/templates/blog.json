@@ -157,12 +157,47 @@
     },
     "vide-sec": {
       "type": "vide-sec",
+      "blocks": {
+        "f9be777b-83d1-4f4d-94d0-691af5cf3dcd": {
+          "type": "Image",
+          "settings": {
+            "SliderImage": "shopify:\/\/shop_images\/grid-item5.png"
+          }
+        },
+        "f10a3adb-db05-4eb2-bb19-4f9afd531293": {
+          "type": "Image",
+          "settings": {
+            "SliderImage": "shopify:\/\/shop_images\/grid-item9.png"
+          }
+        },
+        "a5c6e8b0-6cfb-4d86-95cb-1d17cb96ff02": {
+          "type": "Image",
+          "settings": {
+            "SliderImage": "shopify:\/\/shop_images\/grid-item6.png"
+          }
+        }
+      },
+      "block_order": [
+        "f9be777b-83d1-4f4d-94d0-691af5cf3dcd",
+        "f10a3adb-db05-4eb2-bb19-4f9afd531293",
+        "a5c6e8b0-6cfb-4d86-95cb-1d17cb96ff02"
+      ],
       "settings": {
         "checkSection": true,
         "SectionShow": true,
         "SecHeading": "“I WAS ALWAYS FEARLESS.”",
+        "CheckVideoImage": true,
         "VideoShow": true,
-        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab4ac139b6114d1589dafb7c2df0b0b6.mov"
+        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab4ac139b6114d1589dafb7c2df0b0b6.mov",
+        "product": [
+          "the-softest-tee-mens-fitted-long-sleeve-black",
+          "the-softest-tee-mens-fitted-long-sleeve-white",
+          "the-softest-tee-mens-fitted-short-sleeve-black",
+          "copy-of-the-softest-tee-mens-fitted-short-sleeve-white",
+          "the-softest-tee-womens-fitted-long-sleeve-black"
+        ],
+        "checkShopBtn": true,
+        "secCta": "SHOP THE BAG"
       }
     },
     "img-column-full-bleed": {

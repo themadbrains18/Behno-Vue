@@ -641,6 +641,17 @@
 </template>
 
 
+<style >
+.tmbMain{
+  margin-top: 80px;
+}
+@media only screen and (max-width:991px){
+  .tmbMain{
+    margin-top: 63px;
+  }   
+}
+</style>
+
 <style scoped>
 .header_toggle_wrap,
 .mobile_btn_grp,
@@ -796,7 +807,7 @@
 
 .navlink__hover {
   position: fixed;
-  top: 60px;
+  top: 80px;
   height: 100%;
   min-height: 100vh;
   background: #eae8e4;
@@ -807,7 +818,7 @@
   overflow-y: scroll;
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s linear;
+  transition: all 0.3s linear,max-width 0s;
 }
 
 .navlink__hover::-webkit-scrollbar {
@@ -894,8 +905,6 @@
 }
 
 @media only screen and (max-width: 991px) {
-  
-
   .header_toggle_wrap,
   .mobile_btn_grp {
     display: flex;
@@ -912,7 +921,7 @@
 
   .m_navbar_list {
     position: fixed;
-    top: 0px;
+    top: 63px;
     left: -100%;
     height: 100%;
     min-height: 100vh;
@@ -1000,34 +1009,13 @@ export default {
     this.header = document.getElementsByClassName("tmbHeader");   
   },
   data() {
-    window.addEventListener("load", this.onWindowLoad);
-    window.addEventListener("resize", this.onWindowLoad);
     window.addEventListener("scroll", this.scollHeader);
-    window.addEventListener('load',()=>{
-      // document.querySelector(".tmbMain").setAttribute("style",`margin-top:${document.querySelector(".tmbHeader").offsetHeight}px`);
-      document.querySelector(".tmbMain").style.marginTop = `${document.querySelector(".tmbHeader").offsetHeight}px`;
-
-      const navlinkHover = document.querySelectorAll(".navlink__hover");
-      for(let i of navlinkHover){
-        i.setAttribute("style",`top:${document.querySelector(".tmbHeader").offsetHeight}px`);
-      }
-    });
-    
     return {
       lastScrollY: 100,
     };
   },
  
   methods: {
-    onWindowLoad() {
-      if (window.innerWidth <= 991) {
-        const navbarMobile = document.querySelector(".navbar-Mobile");
-        navbarMobile.setAttribute(
-          "style",
-          `top: ${this.header[0].getBoundingClientRect().height}px;`
-        );
-      }
-    },
     togleHeader() {
       if(document.body.getAttribute("style")){
         document.body.removeAttribute("style");
@@ -1036,6 +1024,7 @@ export default {
       }
       this.header[0].classList.toggle("active");
     },
+
     toggleDropDown(e) {
       if (e.currentTarget.matches(".subnavlink")) {
         let parentElement = e.currentTarget.closest(".nav_drpbtn_content");
@@ -1088,15 +1077,20 @@ export default {
       }
       e.currentTarget.classList.add("hover_active");
     },
+
     stopScroll(e){
         const bodyWidth = document.body.offsetWidth;  
         document.body.setAttribute("style", `overflow:hidden;`);
-        e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;top: ${this.header[0].getBoundingClientRect().height}px;`);  
+        if(e.currentTarget.closest(".navlist-right")){
+          e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
+        }
         this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
         document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
     },
     workScroll(e){
-      e.currentTarget.setAttribute("style", `top: ${this.header[0].getBoundingClientRect().height}px;`);  
+       if(e.currentTarget.closest(".navlist-right")){
+        e.currentTarget.removeAttribute("style");  
+      }
       this.header[0].removeAttribute("style");
       document.body.removeAttribute("style");
     }

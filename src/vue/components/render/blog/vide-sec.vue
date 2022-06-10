@@ -9,33 +9,107 @@
       class="sec_content bg-black t-center"
       v-if="shopifyData.VideoShow === 'true'"
     >
-      <video
-        autoplay="true"
-        loop="true"
-        muted="true"
-        webkit-playsinline="true"
-        playsinline="true"
-        preload="none"
-      >
-        <source :src="shopifyData.videolink" />
-      </video>
-      <!-- <productPopup :productData="item.productDetail" :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/> -->
-        <!-- <div class="shop_cta">   
-            <button class="subtitle" v-if="windowWidth>768">
-              {{ item.productDetail.secCtaText }}
-            </button>
-            <button class="subtitle"  @click="toggle_selection_for(key)" v-if="windowWidth<=768">
-                {{ item.productDetail.secCtaText }}
-            </button>
-        </div> -->
+      <div class="sec_video modify-slider">
+          <div class="tmb_blog_slider_image">
+            <div v-if="shopifyData.CheckVideoImage == 'true'">
+            <video
+                class="subtitle"
+                @click="toggle_selection_for(key)"
+                autoplay="true"
+                loop="true"
+                muted="true"
+                webkit-playsinline="true"
+                playsinline="true"
+                preload="none"
+            >
+                <source :src="shopifyData.videolink" />
+            </video>
+            </div>
+            <div class="sec_image_slider" v-if="shopifyData.CheckVideoImage == 'false'">
+                <div class="sec_content modify-slider">
+                    <swiper :navigation="true" :effect="'fade'" :autoplay="{ delay: 1500, disableOnInteraction: false, }"
+                    :modules="modules"
+                    :centeredSlides="true"
+                    :spaceBetween="100"
+                    :loop="true"
+                    class="mySwiper">
+                    <swiper-slide v-for="(value, key) in shopifyData.SliderImagesData" :key="key" >
+                        <img :src="value.SliderImage.src" :src-placeholder="value.SliderImage.placeholder" :alt="value.SliderImage.alt" />
+                    </swiper-slide>
+                    </swiper>
+                </div>
+            </div>
+            <swiper
+            :class="{ active: isactive.includes(key) }"
+            class="product_info_card"
+            :modules="modules"
+            :slidesPerView="'1'"
+            :mousewheel="{ invert: false, releaseOnEdges: true }"
+            navigation
+            >
+            <swiper-slide
+                v-for="(product, index) in shopifyData.productData"
+                :key="index"
+            >
+                <productPopup
+                :productData="product"
+                :class="{ active: isactive.includes(key) }"
+                @close="toggle_selection_for(key)"
+                />
+            </swiper-slide>
+            </swiper>
+          </div>
+        <div class="shop_cta" v-if="shopifyData.checkShopBtn == 'true'">
+          <button class="subtitle" v-if="windowWidth > 768">
+            {{ shopifyData.secCta }}
+          </button>
+          <button
+            class="subtitle"
+            @click="toggle_selection_for(key)"
+            v-if="windowWidth <= 768"
+          >
+            {{ shopifyData.secCta }}
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 <script>
-// import productPopup from "../product-popup.vue";
+// Producct Popup Component Import
+import productPopup from "../product-popup.vue";
+
+// Slider Import
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Autoplay, EffectFade } from "swiper";
+import "swiper/css";
 export default {
   components: {
-    // productPopup,
+    productPopup,
+    Swiper,
+    SwiperSlide,
+  },
+
+  setup() {
+    return {
+      modules: [Navigation, Autoplay, EffectFade],
+    };
+  },
+  methods: {
+    toggle_selection_for(key) {
+      if (this.isactive.includes(key)) {
+        this.isactive = this.isactive.filter((item) => item !== key);
+      } else {
+        this.isactive.push(key);
+      }
+    },
+  },
+  data() {
+    console.log(this.shopifyData);
+    return {
+      windowWidth: window.innerWidth,
+      isactive: [],
+    };
   },
   props: {
     shopifyData: {
@@ -43,32 +117,57 @@ export default {
       required: true,
     },
   },
-//     data:()=>{
-//     return {
-//         isactive: [],
-//         windowWidth: window.innerWidth
-//     }
-//   },
-//   methods: {
-//     toggle_selection_for(key) {
-//       if (this.isactive.includes(key)) {
-//         this.isactive = this.isactive.filter((item) => item !== key);
-//       } else {
-//         this.isactive.push(key);
-//       }
-//     },
-//   },
 };
 </script>
 
+
 <style scoped>
+.product_info_card {
+  position: absolute !important;
+  width: 240px;
+  height: 340px;
+}
+/* .swiper.product_info_card {
+  bottom: 37px;
+} */
+
+/* Hover Show Product Cart Css */
+.sec_video.modify-slider > .product_info_card {
+  transform: translateX(-100%);
+}
+.sec_video.modify-slider {
+  overflow: hidden;
+}
+.sec_video.modify-slider .swiper-button-next,
+.sec_video.modify-slider .swiper-button-prev {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (hover: hover) {
+  .sec_video.modify-slider .tmb_blog_slider_image:hover > .product_info_card {
+    transform: translateX(0%);
+  }
+}
+.swiper.active.product_info_card {
+  transform: translateX(0%);
+}
+
 .sec_head {
   padding: 43px 40px 15px;
 }
-video {
-  height: 570px;
-  object-fit: cover;
+.sec_video {
   max-width: 1020px;
+  margin: 0 auto;
+}
+.tmb_blog_slider_image{
+    position: relative;
+}
+.shop_cta {
+  text-align: start;
+  margin-top: 12px;
+}
+.subtitle {
+  color: #ffffff;
 }
 .main_heading {
   color: #ef0000;
@@ -76,7 +175,7 @@ video {
   font-weight: 700;
   line-height: 69px;
 }
-.sec_content {
+.sec_content.bg-black.t-center{
   padding: 110px 54px 100px;
 }
 .sec_content iframe {
@@ -87,29 +186,49 @@ video {
   width: 100%;
   height: 570px;
 }
+
+.sec_image_slider img{
+    width: 100%;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 767px) {
-  .sec_content {
-    padding: 67px 57px 159px;
+  .sec_content.bg-black.t-center{
+    padding: 67px 14px 125px;
   }
   .sec_head {
     padding: 0 13px 60px;
   }
   .main_heading {
-    font-size: 27px;
-    line-height: 27px;
+    font-size: 46px;
+    line-height: 44px;
   }
   .sec_content.bg-black iframe {
     height: 155px;
   }
   video {
-    height: 400px;
+    height: auto;
+  }
+  .subtitle{
+      margin-top:0;
   }
 }
+</style>
 
-@media (max-width: 767px) {
-  video {
-    height: 203px;
+<style>
+@media (max-width: 480px) {
+  .swiper.product_info_card {
+    height: 100%;
+    width: 100%;
+  }
+  .video_sec .product_info_card {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+  }
+  .video_sec .swiper-button-next,
+  .video_sec .swiper-button-prev {
+    display: block !important;
   }
 }
 </style>

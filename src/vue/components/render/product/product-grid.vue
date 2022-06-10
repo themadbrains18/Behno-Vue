@@ -2,24 +2,24 @@
     <section class="product_page_grid_wrap">
         <div class="product_page_grid">
             <div class="product_page_grid_item product_page_grid_item-first">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product-grid.jpg?v=1653551871" alt="">
+                <img v-if=(shopifyData.metaFieldsData.img.src) :src=(shopifyData.metaFieldsData.img.src) :src-placeholder=(shopifyData.metaFieldsData.img.placeholder) :alt=(shopifyData.metaFieldsData.img.alt)>
                 <div class="product_page_grid_content">
-                    <h3 class="product_grid_heading subtitle_b">
-                        WHAT FITS INSIDE YOUR LEX MINI ACCORDION?
+                    <h3 class="product_grid_heading subtitle_b" v-if=(shopifyData.metaFieldsData.gridLeftHeading)>
+                        {{  shopifyData.metaFieldsData.gridLeftHeading }}
                     </h3>
-                    <p class="caption">
-                        The soft yet structured exterior of the Lex Bag opens to reveal a spacious interior. This bag is an effortlessly way to carry your essentials like your phone, classic pouch, lip balm, sunscreen stick, silk scarf and sunglasses for bright and beautiful days ahead.
+                    <p class="caption" v-if=(shopifyData.metaFieldsData.gridLeftPara)>
+                        {{  shopifyData.metaFieldsData.gridLeftPara }}
                     </p>
                 </div>
             </div>
             <div class="product_page_grid_item product_page_grid_item-second">
-                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/product-grid1.jpg?v=1653551886" alt="">
+                <img :src=(shopifyData.RightGridImage.src) :src-placeholder=(shopifyData.RightGridImage.placeholder) :alt=(shopifyData.RightGridImage.alt)>
                 <div class="product_page_grid_content">
                     <h3 class="product_grid_heading subtitle_b">
-                        AN HONEST ACCESSORY.
+                        {{  shopifyData.RightGridHeading }}
                     </h3>
                     <p class="caption">
-                        Your bag is handcrafted in Nashik, Maharashtra, in a facility that incrementally implements The behno Standard, a set of six guiding principles.
+                        {{  shopifyData.RightGridpara }}
                     </p>
                 </div>
             </div>
@@ -80,3 +80,16 @@
         }
     }
 </style>
+<script>
+export default {
+    // data() {
+    //     console.log(this.shopifyData);
+    // },
+    props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        }
+    }
+}
+</script>
