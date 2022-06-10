@@ -12,16 +12,14 @@
         <div class="sec_content">
             <div class="sec_img">
                 <div class="product_popup">
-                    <img :src=(shopifyData.secImg.src)  :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt)>
+                    <img @click="toggle_selection_for(key)" :src=(shopifyData.secImg.src)  :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt)>
                     <template v-if="shopifyData.productData">
                         <productPopup :productData=(shopifyData.productData)  :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
                     </template>
                 </div>
                 <div class="shop_cta" >
-                    <button class="subtitle" v-if="windowWidth>768">
-                        {{ shopifyData.secCta }}
-                    </button>
-                    <button class="subtitle"  @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+                    
+                    <button class="subtitle"  @click="toggle_selection_for(key)" >
                         {{ shopifyData.secCta }}
                     </button>
                 </div>
@@ -40,12 +38,14 @@ export default {
     },
       methods: {
     toggle_selection_for(key) {
-      if (this.isactive.includes(key)) {
-        this.isactive = this.isactive.filter(
-          (item) => item !== key
-        );
-      } else {
-        this.isactive.push(key);
+      if(window.innerWidth <= 768){
+        if (this.isactive.includes(key)) {
+          this.isactive = this.isactive.filter(
+            (item) => item !== key
+          );
+        } else {
+          this.isactive.push(key);
+        }
       }
     },
   },

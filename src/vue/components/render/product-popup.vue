@@ -1,5 +1,5 @@
 <template>
-  <section class="product_info_card">
+  <div class="product_info_card">
       <div class="product_img">
         <img  @click="$emit('close')"  class="close-icon" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error">
         <a :href=(productData.productUrl)>
@@ -17,7 +17,7 @@
           <button type="button" class="cta_btn sold-out">SOLD OUT</button>
         </template>
       </div>
-  </section>
+  </div>
 </template>
 <style scoped>
   .product_info_card{
@@ -86,7 +86,7 @@
 @media(max-width:575px){
   
   .product_info_card a img{
-    height: 400px;
+    /* height: 400px; */
     object-fit: cover;
   }
   
