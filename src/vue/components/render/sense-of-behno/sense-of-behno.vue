@@ -42,6 +42,9 @@
     padding: 67px 0 117px;
     /* margin-bottom: -200px; */
 }
+.page\.sense-of-behno {
+    background: #ddcec7;
+}
 .sec_head {
     padding-bottom: 117px;
 }
@@ -102,7 +105,7 @@
     position: absolute;
     top: 60%;
     left: 50%;
-    z-index: 9;
+    z-index: 1;
     transform: translate(-50%,-50%);
     opacity: 0;
     visibility: hidden;

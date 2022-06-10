@@ -1,3 +1,60 @@
-<render-cart-main-cart>
+{% capture sectionCta %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'SectionCta' %}
+        {
+            secCta: `{{ block.settings.secCta }}`,
+            secCtaLink: `{{ block.settings.secCtaLink }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-cart-main-cart :shopify-data="{
+    defaultSecHeading: `{{ section.settings.defaultSecHeading }}` ,
+    defaultSecInfo: `{{ section.settings.defaultSecInfo }}` ,
+    sectionCta: {{ sectionCta }}
+}">
 
 </render-cart-main-cart>
+
+{% schema %}
+{
+    "name":"Main Cart",
+    "settings":[
+        {
+            "id":"defaultSecHeading",
+            "type":"text",
+            "label":"Default Section Heading ",
+            "default":"YOUR BAG"
+        },
+        {
+            "id":"defaultSecInfo",
+            "type":"text",
+            "label":"Default Section Info",
+            "default":"Your bag is empty."
+        }
+    ],
+    "blocks" : [
+        {
+            "name": "Section Cta",
+            "type" : "SectionCta",
+            
+            "settings" : [
+                {
+                    "id": "secCta",
+                    "type": "text",
+                    "label": "Section Cta"
+                }, 
+                {
+                    "id": "secCtaLink",
+                    "type": "url",
+                    "label": "Section Cta Link"
+                } 
+            ]
+        }
+    ]
+}
+{% endschema %}
