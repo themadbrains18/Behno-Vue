@@ -4,11 +4,7 @@
     v-if="shopifyData.checkSection == 'true'"
   >
     <div class="sec_sontent">
-      <div
-        class="sec_img"
-        v-for="(item, key) in shopifyData.productData"
-        :key="key"
-      >
+      <div class="sec_img" v-for="(item, key) in shopifyData.productData" :key="key">
         <div class="product_popup" >
           <img
             :src="item.previewImg.src"
