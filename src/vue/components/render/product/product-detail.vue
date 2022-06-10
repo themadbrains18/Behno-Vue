@@ -29,7 +29,7 @@
                         }
                     }"
                     class="product-media-slider " id="productMediaslider">
-                    <swiper-slide v-for="(value, key) in selectedProduct.media.seenin" :key="key" class="product_slide" >
+                    <swiper-slide v-for="(value, key) in selectedProduct.media" :key="key" class="product_slide" >
                         <div class="product_media" @click="productZoomInOut">
                             <img :src="value.src" />
                         </div>
@@ -634,7 +634,6 @@ import { Navigation, Autoplay, Pagination, Mousewheel, Thumbs } from "swiper";
 export default {
     data() {
         let variant = atob(this.shopifyData.productData.variant);
-        console.log(this.shopifyData.productData.productSeenIn)
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
         product = JSON.parse(product);
