@@ -416,6 +416,7 @@
 
 .tooltip{
     position:absolute;
+    opacity:0;
     visibility: hidden;
     background-color: rgba(51,51,51,0.9);
     color: #fff;
@@ -428,11 +429,12 @@
     bottom:calc(100% + 15px);
     left:50%;
     transform:translateX(-50%);
-     transition:all .25s linear;
+     transition:all .25s ease-out;
     
 }
 .color_variant_label:hover .tooltip{
-     visibility: visible;  
+    opacity:1;
+    visibility: visible;
 }
 
 .product_left {
