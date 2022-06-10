@@ -29,7 +29,7 @@
                         }
                     }"
                     class="product-media-slider " id="productMediaslider">
-                    <swiper-slide v-for="(value, key) in selectedProduct.media" :key="key" class="product_slide" >
+                    <swiper-slide v-for="(value, key) in selectedProduct.media.seenin" :key="key" class="product_slide" >
                         <div class="product_media" @click="productZoomInOut">
                             <img :src="value.src" />
                         </div>
@@ -52,7 +52,6 @@
                                 :checked="currentUrl == value.link">
                             <label class="color_variant_label" :for="value.name">
                                 <div class="tooltip">  {{ value.name.replace('_',' ') }} </div>
-                                <!-- <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172" alt=""> -->
                                 <img :src="(value.img)" alt="">
                             </label>
                         </li>
@@ -81,6 +80,12 @@
                 <div class="product_description_data">
                     <!-- Product Description -->
                     <div class="product_description"  v-html="replaceString(selectedProductDescription[0])"></div>
+                    <div>
+                        SEEN IN
+                        <img :src=(seenIn.src) :alt=(seenIn.alt) v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
+
+                        <!-- {{ this.productSeenIn}} -->
+                    </div>
                     <ul class="product_accordians">
                         <!-- Product Details -->
                         <li class="product_accordian" v-if="selectedProductDescription[1]">
@@ -629,6 +634,7 @@ import { Navigation, Autoplay, Pagination, Mousewheel, Thumbs } from "swiper";
 export default {
     data() {
         let variant = atob(this.shopifyData.productData.variant);
+        console.log(this.shopifyData.productData.productSeenIn)
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
         product = JSON.parse(product);
@@ -636,7 +642,7 @@ export default {
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
-        console.log(filterProduct);
+        
         return {
             selectedSize:"",
             variant,
@@ -658,7 +664,6 @@ export default {
         SwiperSlide
     },
     methods: {
-
         sizeSelect(size,type){
             let label= document.querySelector("#selectSize");
             label.innerHTML=size;
@@ -671,7 +676,6 @@ export default {
                 }
             }
         },
-
         changePath(link){
             let path = link.split('/products/')[1];
             let filterVariant = this.variant.filter(item => item.link == link)[0]; // filter variant by current path
@@ -681,7 +685,6 @@ export default {
             this.currentVariantQty = parseInt(filterVariant.qty)
             window.history.pushState("","", link);
         },
-
         productZoomInOut() {
             let productZoom = document.querySelector("#productZoom");
             if (productZoom.matches('.active')) {
@@ -692,11 +695,7 @@ export default {
             }
             productZoom.classList.toggle("active");
         },
-        encodeData(data) {
-            data = atob(data);
-            data = data.replace(/Â/g, "");
-            return data;
-        },
+     
         replaceString(data){
             data = data.replace(/Â/g, "");
             return data;

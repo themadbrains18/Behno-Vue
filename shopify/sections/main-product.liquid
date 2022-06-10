@@ -1,6 +1,4 @@
 {%- if product.metafields.my_fields.variants_products and product.metafields.my_fields.variants_swtach -%}
-            
-    <div class="available-colors ">
       {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
       {% assign links = product.metafields.my_fields.variants_products | split:" " %}
       
@@ -35,12 +33,24 @@
             {%- endfor -%}
           {%- endfor -%}
         {% endcapture %}
-      
-    </div>
-
-
 {%- endif -%}
 
+
+{% if product.metafields.my_fields.seen_in %} 
+  {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
+  {% capture productSeenIn %}
+  [
+      {%- for seenin in seenin -%}
+      {
+        src :`{{ seenin | asset_url   }}`,
+        alt :`{{ seenin | | replace: '.svg', '' }}`
+      }
+         {% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+  ]
+  {% endcapture %}
+
+{%- endif -%}
 <!-- make products variant object -->
 
 
@@ -55,8 +65,9 @@
 
 {% capture products %}
 {
-product :  `{{ productObj | base64_encode  }}`,
-variant : `{{ variantObj | base64_encode  }}`
+  productSeenIn :  {{ productSeenIn  }},
+  product :  `{{ productObj | base64_encode  }}`,
+  variant : `{{ variantObj | base64_encode  }}`
 }
 {% endcapture %}
 
