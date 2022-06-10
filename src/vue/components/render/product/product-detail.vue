@@ -1,25 +1,4 @@
 <template>
-    <!-- <section class="product_sec">
-        <div class="product_grid">
-            <div class="product_grid_content">
-                <h1 class="product_title card_heading">{{ this.selectedProduct.title }}</h1>
-                <form method="post">
-                    <ul class="product_variant">
-                        <li class="color_variant_wrap" v-for="(value, key) in this.variant" :key="key" @click="changePath(value.link)">
-                            {{ currentUrl == value.link }}
-                            <input type="radio" name="colorVariant" :id="value.name" class="color_variant"
-                                :checked="currentUrl == value.link">
-                            <label class="color_variant_label" for="black">
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172"
-                                    alt="">
-                            </label>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </div>
-    </section> -->
-    
     <section :data-id=(selectedProduct.id) class="product_sec">
         <div class="product_grid">
             <div class="product_grid_image line-h-0 modify-slider">
@@ -68,25 +47,15 @@
                 <form  method="post">
                     <p class="after_pay">or 4 interest-free installments of $97.50 by<img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/afterpay.png?v=1653477636"></p>
                     <ul class="product_variant">
-                        
-                        <!-- <li class="color_variant_wrap" v-for="(value, key) in shopifyData.productVariant" :key="key">
-                             {{value.option1}}
-                            {{ shopifyData.productCurrentVariant.option1 }}
-                            <input type="radio" :name="value.option1"  class="color_variant" checked>
-                            <label class="color_variant_label" for="black"> 
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/black.png?v=1651228172" alt="">
-                            </label> 
-                        </li> "https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172"-->
-
                         <li class="color_variant_wrap" v-for="(value, key) in this.variant" :key="key" @click="changePath(value.link)">
                             <input type="radio" :name="value.name" :id="value.name" class="color_variant"
                                 :checked="currentUrl == value.link">
                             <label class="color_variant_label" :for="value.name">
-                                <div class="tooltip">  {{ value.name.replace('_',' ')  }}</div>
-                                <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172" alt="">
+                                <div class="tooltip">  {{ value.name.replace('_',' ') }} </div>
+                                <!-- <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172" alt=""> -->
+                                <img :src="(value.img)" alt="">
                             </label>
                         </li>
-                        
                     </ul>
                     <div class="select" v-if="this.selectedProduct.variants.length > 1">
                         <label id="selectSize">Select Size</label>
@@ -96,15 +65,12 @@
                             </li>
                         </ul>
                     </div>
-                    
-
                     <p class="product_left subtitle_b" v-if="this.currentVariantQty == 0">
                         Out of Stoke
                     </p>
                     <p class="product_left subtitle_b" v-else-if="this.currentVariantQty <= 5">
                         ONLY {{ this.currentVariantQty }} LEFT
                     </p>
-
                     <div class="add_cart_btn_wrap">
                         <button type="submit" class="add_cart_btn cta_btn cta_btn-black" name="addCart" id="addCart">
                             ADD TO BAG
@@ -365,7 +331,6 @@
 .product_sec {
     padding-top: 30px;
 }
-
 .product_grid {
     display: grid;
     grid-template-columns: 55% 370px;
@@ -422,6 +387,8 @@
     border-radius: 50%;
     display: block;
     box-shadow: 0 0 0 1px #E0E0E0;
+    position:relative;
+    
 }
 
 .color_variant:checked+.color_variant_label {
@@ -432,6 +399,40 @@
     height: 24px;
     width: 24px;
     border-radius: 50%;
+}
+
+ .tooltip::after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid rgba(51,51,51,0.9) 10px;
+    bottom: -10px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    position: absolute;
+    width: 0;
+    transform:translateX(-50%);
+}
+
+.tooltip{
+    position:absolute;
+    visibility: hidden;
+    background-color: rgba(51,51,51,0.9);
+    color: #fff;
+    text-align: center;
+      font-size:12px;
+
+    line-height:1;
+    padding: 5px 10px;
+    width:120px;
+    bottom:calc(100% + 15px);
+    left:50%;
+    transform:translateX(-50%);
+     transition:all .25s linear;
+    
+}
+.color_variant_label:hover .tooltip{
+     visibility: visible;  
 }
 
 .product_left {
