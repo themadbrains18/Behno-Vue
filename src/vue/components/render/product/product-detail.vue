@@ -83,7 +83,7 @@
                         <p> As seen in: </p>
                     <div class="see_in">
                         <div v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
-                            <img :src="(seenIn.src)" :alt="(seenIn.alt)" >
+                            <img :src="(seenIn.src)" :alt="(seenIn.alt)">
                         </div>
                     </div>
                     <ul class="product_accordians">
@@ -649,8 +649,6 @@ export default {
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
         product = JSON.parse(product);
-        let productSeenIn=this.shopifyData.productData.productSeenIn;
-        console.log('=======product seen', productSeenIn);
         var currentUrl = window.location.pathname;
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path

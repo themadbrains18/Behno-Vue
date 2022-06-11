@@ -33,9 +33,6 @@
             {%- endfor -%}
           {%- endfor -%}
         {% endcapture %}
-    </div>
-
-
 {%- endif -%}
 
 
@@ -75,6 +72,6 @@
 {% endcapture %}
 
 <render-product-product-detail :shopify-data="{
-productData : {{ products }}
+  productData : {{ products }}
 }">
 </render-product-product-detail>
