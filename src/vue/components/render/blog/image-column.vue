@@ -1,6 +1,6 @@
 <template>
   <section
-    class="image_column_sec bg-sand"
+    class="image_column_sec"
     v-if="shopifyData.checkSection == 'true'"
   >
     <!-- Sec Content -->

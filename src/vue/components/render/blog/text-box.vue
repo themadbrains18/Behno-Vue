@@ -1,5 +1,5 @@
 <template>
-    <section class="text_box bg-sand" v-if="shopifyData.checkSection == 'true'">
+    <section class="text_box" v-if="shopifyData.checkSection == 'true'">
         <!-- Sec Content -->
         <div class="sec_content">
            <h4 class="subtitle_b">{{ shopifyData.secSubHeading }}</h4> 

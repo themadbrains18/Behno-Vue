@@ -1,6 +1,6 @@
 <template>
   <section
-    class="gallery_preview_sec bg-sand"
+    class="gallery_preview_sec "
     id="app"
     v-if="shopifyData.showProduct == 'true'">
     <!-- Sec Content -->
