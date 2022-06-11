@@ -2,7 +2,7 @@
       {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
       {% assign links = product.metafields.my_fields.variants_products | split:" " %}
       
-            {% capture Obj %}
+      {% capture Obj %}
         {%- for image in images -%}
         {% assign image_forloop = forloop.index  %}
           {%- for link in links -%}
@@ -32,7 +32,6 @@
               {%- endif -%}
             {%- endfor -%}
           {%- endfor -%}
-        {%- endfor -%}
       {% endcapture %}
       
     </div>
