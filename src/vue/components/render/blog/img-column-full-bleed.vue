@@ -50,7 +50,7 @@
   bottom: 0;
   /* left: -100%; */
   transition: 0.3s linear;
-  z-index: 99;
+  z-index: 1;
 }
 .sec_img .product_popup > img {
   transition: 0.3s linear;

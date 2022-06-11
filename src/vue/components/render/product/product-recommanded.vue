@@ -81,7 +81,6 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation,Mousewheel } from "swiper";
-import VLazyImage from "v-lazy-image";
 
 import "swiper/css";
 

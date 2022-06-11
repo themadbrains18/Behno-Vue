@@ -35,10 +35,8 @@
             {%- endfor -%}
           {%- endfor -%}
         {% endcapture %}
-    </div>
-
-
 {%- endif -%}
+
 
 
 {% if product.metafields.my_fields.seen_in %} 
@@ -55,6 +53,7 @@
   ]
   {% endcapture %}
 {%- endif -%}
+
 <!-- make products variant object -->
 
 
@@ -76,6 +75,6 @@ variant : `{{ variantObj | base64_encode  }}`
 {% endcapture %}
 
 <render-product-product-detail :shopify-data="{
-productData : {{ products }}
+  productData : {{ products }}
 }">
 </render-product-product-detail>  

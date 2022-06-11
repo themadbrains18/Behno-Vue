@@ -56,14 +56,14 @@
 ]
 {% endcapture %}
 
-<render-product-product-slider :shopify-data="{
+<render-product-product-recommanded :shopify-data="{
   secHeading : `{{ section.settings.secHeading}}`,
   showProduct : `{{ section.settings.showProduct}}`,
   product :  {{ productData }},
   box :  {{ loopData }}
 }">
 
-</render-product-product-slider>
+</render-product-product-recommanded>
 
 
 {% schema %}
