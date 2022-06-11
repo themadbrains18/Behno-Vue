@@ -35,11 +35,9 @@
             {%- endfor -%}
           {%- endfor -%}
         {% endcapture %}
-    </div>
-
-
 {%- endif -%}
 
+<<<<<<< HEAD
 
 {% if product.metafields.my_fields.seen_in %} 
   {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
@@ -55,6 +53,8 @@
   ]
   {% endcapture %}
 {%- endif -%}
+=======
+>>>>>>> f5250fe0075e1aa0f6a12617468cec58dac2ff77
 <!-- make products variant object -->
 
 
@@ -76,6 +76,6 @@ variant : `{{ variantObj | base64_encode  }}`
 {% endcapture %}
 
 <render-product-product-detail :shopify-data="{
-productData : {{ products }}
+  productData : {{ products }}
 }">
 </render-product-product-detail>
