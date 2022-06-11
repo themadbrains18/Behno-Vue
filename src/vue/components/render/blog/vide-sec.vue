@@ -200,10 +200,14 @@ export default {
   width: 100%;
   height: 570px;
 }
+.sec_image_slider {
+    height: 100%;
+}
 
 .sec_image_slider img{
     width: 100%;
 }
+
 /* Responsive Breakpoints */
 @media (max-width: 767px) {
   .sec_content.bg-black{
@@ -247,7 +251,9 @@ export default {
     height: 266px;
     object-fit: cover;
   }
-  
-  
+
+  .video_sec .swiper-slide img{
+    min-height: 520px;
+  }
 }
 </style>

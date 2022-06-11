@@ -83,7 +83,7 @@
             />
           </div>
           <swiper
-            :scrollbar="{ hide: true }"
+            :scrollbar="{ hide: false }"
             :modules="modules"
             :slidesPerView="'auto'"
             :spaceBetween="10"
@@ -139,7 +139,7 @@
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, Scrollbar } from "swiper";
+import { Navigation, Scrollbar} from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
 
@@ -155,13 +155,13 @@ export default {
     };
   },
   data: function () {
-    if(window.innerWidth<575){
+    if(window.innerWidth<=575){
       window.addEventListener("load", () => {
         let GellaryImg = document.querySelectorAll(".responsive_slider .swiper-slide");
         for(let i of GellaryImg){
           let GellaryImg = i.querySelector(".card_preview_img img");
           let GellaryBottomBtn = i.querySelector(".slider_image").clientHeight;
-          GellaryImg.style.setProperty("min-height",`calc(100vh - ${GellaryBottomBtn}px)`);
+          GellaryImg.style.setProperty("height",`calc(100vh - ${GellaryBottomBtn}px)`);
         }
       })
     }
@@ -205,7 +205,7 @@ html {
   padding-left: 4px;
 }
 .gallery_preview > div > img {
-  width: 100px;
+  min-width: 100px;
   height: 140px;
   object-fit: cover;
 }
@@ -358,13 +358,16 @@ html {
     margin-bottom: 0 !important;
   }
   /* Responsive Slider Cdd Code */
+  .card_preview_img{
+    text-align: center;
+  }
   .responsive_slider .card_preview_img img {
     position: static;
     opacity: 1;
     width: 100%;
     transform: translate(0, 0);
     height: 100%;
-    min-height: calc(100vh - 132px);
+    min-height: auto;
     object-fit: cover;
   }
   .responsive_slider .card_img img {
@@ -381,9 +384,12 @@ html {
   .slider_product_btn {
     display: grid;
     justify-content: end;
-    margin-right: 45px;
+    margin-right: 0;
     gap: 13px;
-    padding-bottom: 8px;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .slider_product_btn img {
     transform: rotate(90deg);
@@ -409,10 +415,11 @@ html {
   }
   .slider_image {
     display: grid;
-    padding: 8px 8px 0 8px;
-    grid-template-columns: 77% 22%;
-    gap: 4px;
+    padding: 8px ;
+    grid-template-columns: 1fr 105px;
+    gap: 8px;
     justify-content: space-between;
+    position: relative;
   }
 
   .card_img {
@@ -455,10 +462,7 @@ html {
   .gallery_preview {
     display: flex !important;
   }
-  .gallery_preview > div img {
-    min-width: 200px;
-    width: 100%;
-  }
+ 
 }
 
 

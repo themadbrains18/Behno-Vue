@@ -649,11 +649,12 @@ export default {
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
         product = JSON.parse(product);
+        let productSeenIn=this.shopifyData.productData.productSeenIn;
+        console.log('=======product seen', productSeenIn);
         var currentUrl = window.location.pathname;
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
-        
         return {
             selectedSize:"",
             variant,

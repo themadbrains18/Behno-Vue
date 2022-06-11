@@ -4,7 +4,11 @@
       {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
       {% assign links = product.metafields.my_fields.variants_products | split:" " %}
       
+<<<<<<< HEAD
             {% capture Obj %}
+=======
+      {% capture Obj %}
+>>>>>>> 221a69a2a64d194e068d04a3b2d33c565c60acdc
         {%- for image in images -%}
         {% assign image_forloop = forloop.index  %}
           {%- for link in links -%}
@@ -17,23 +21,23 @@
         {%- endfor -%}
       {% endcapture %}
 
-      {% capture pVariant %}
-        {%- for image in images -%}
-        {% assign image_forloop = forloop.index  %}
-          {%- for link in links -%}
-          {%- if forloop.index == image_forloop -%}
-          {% assign color_name = image | split:'.png' %}
-          {% assign handle = link | replace : '/products/', ''  %}
-          {% assign productData = all_products[handle] %}
-            {
-                "name" : "{{ color_name }}",
-            "img"  : "{{image | file_img_url:'240x240', crop:'center'}}",
-            "link" : "{{ link }}",
-            "qty" : "{{ productData.variants.first.inventory_quantity }}"
-            }{% if forloop.last %}{% else %},{% endif %}
-          {%- endif -%}
+        {% capture pVariant %}
+          {%- for image in images -%}
+          {% assign image_forloop = forloop.index  %}
+            {%- for link in links -%}
+              {%- if forloop.index == image_forloop -%}
+                {% assign color_name = image | split:'.png' %}
+                {% assign handle = link | replace : '/products/', ''  %}
+                {% assign productData = all_products[handle] %}
+                  {
+                    "name" : "{{ color_name }}",
+                    "img"  : "{{ image | asset_url }}",
+                    "link" : "{{ link }}",
+                    "qty" : "{{ productData.variants.first.inventory_quantity }}"
+                  }{% if forloop.last %}{% else %},{% endif %}
+              {%- endif -%}
+            {%- endfor -%}
           {%- endfor -%}
-        {%- endfor -%}
       {% endcapture %}
       
     </div>
@@ -41,12 +45,31 @@
 
 {%- endif -%}
 
+<<<<<<< HEAD
+=======
+
+{% if product.metafields.my_fields.seen_in %} 
+  {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
+  {% capture productSeenIn %}
+  [
+      {%- for seenin in seenin -%}
+        {
+          src :`{{ seenin | asset_url   }}`,
+          alt :`{{ seenin | replace: '.svg', '' }}`
+        }
+        {% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+  ]
+  {% endcapture %}
+{%- endif -%}
+>>>>>>> 221a69a2a64d194e068d04a3b2d33c565c60acdc
 <!-- make products variant object -->
 
 
 {% capture productObj %}
 [{{ Obj }}]
 {% endcapture %}
+
 
 
 {% capture variantObj %}
