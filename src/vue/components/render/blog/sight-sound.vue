@@ -1,5 +1,5 @@
 <template>
-    <section class="sight_sound qwe" v-if="shopifyData.checkSection == 'true'" >
+    <section class="sight_sound " v-if="shopifyData.checkSection == 'true'" >
         <!-- Sec head -->
         <div class="sec_head">
             <h1 class="sec_heading">

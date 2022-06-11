@@ -1,5 +1,5 @@
 <template>
-    <section class="image_and_text_sec bg-sand " v-if="shopifyData.checkSection == 'true'" >
+    <section class="image_and_text_sec " v-if="shopifyData.checkSection == 'true'" >
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">

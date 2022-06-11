@@ -1,8 +1,14 @@
 {%- if product.metafields.my_fields.variants_products and product.metafields.my_fields.variants_swtach -%}
+            
+    <div class="available-colors ">
       {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
       {% assign links = product.metafields.my_fields.variants_products | split:" " %}
       
+<<<<<<< HEAD
+            {% capture Obj %}
+=======
       {% capture Obj %}
+>>>>>>> 221a69a2a64d194e068d04a3b2d33c565c60acdc
         {%- for image in images -%}
           {% assign image_forloop = forloop.index  %}
           {%- for link in links -%}
@@ -35,6 +41,8 @@
         {% endcapture %}
 {%- endif -%}
 
+<<<<<<< HEAD
+=======
 
 {% if product.metafields.my_fields.seen_in %} 
   {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
@@ -50,6 +58,7 @@
   ]
   {% endcapture %}
 {%- endif -%}
+>>>>>>> 221a69a2a64d194e068d04a3b2d33c565c60acdc
 <!-- make products variant object -->
 
 
@@ -65,9 +74,8 @@
 
 {% capture products %}
 {
-  productSeenIn :  {{ productSeenIn  }},
-  product :  `{{ productObj | base64_encode  }}`,
-  variant : `{{ variantObj | base64_encode  }}`
+product :  `{{ productObj | base64_encode  }}`,
+variant : `{{ variantObj | base64_encode  }}`
 }
 {% endcapture %}
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="img_column_full_bleed_sec"
+  <section class="img_column_full_bleed_sec "
     v-if="shopifyData.checkSection == 'true'">
     <div class="sec_sontent">
       <div class="sec_img" v-for="(item, key) in shopifyData.productData" :key="key">
@@ -24,7 +24,6 @@
 <style scoped>
 .img_column_full_bleed_sec {
   padding: 49px 0 67px;
-  background: #ddcec7;
 }
 .sec_sontent {
   display: flex;

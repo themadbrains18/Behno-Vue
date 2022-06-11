@@ -1,7 +1,7 @@
 <template>
   <section class="video_sec" v-if="shopifyData.checkSection == 'true'">
     <!-- Sec Head -->
-    <div class="sec_head bg-sand" v-if="shopifyData.SectionShow == 'true'">
+    <div class="sec_head" v-if="shopifyData.SectionShow == 'true'">
       <h1 class="main_heading">{{ shopifyData.SecHeading }}</h1>
     </div>
     <!-- Sec Content -->
@@ -113,7 +113,7 @@ export default {
       else{
         VideoSection.classList.remove("active")
       }
-    })
+    });
     return {
       windowWidth: window.innerWidth,
       isactive: [],
@@ -189,8 +189,8 @@ export default {
 }
 .sec_content.bg-black{
   padding: 110px 54px 100px;
-  background: #DDCEC7;
   transition: 0.5s;
+  background-color: transparent;
 }
 .sec_content iframe {
   max-width: 1020px;
@@ -200,10 +200,14 @@ export default {
   width: 100%;
   height: 570px;
 }
+.sec_image_slider {
+    height: 100%;
+}
 
 .sec_image_slider img{
     width: 100%;
 }
+
 /* Responsive Breakpoints */
 @media (max-width: 767px) {
   .sec_content.bg-black{
@@ -247,7 +251,9 @@ export default {
     height: 266px;
     object-fit: cover;
   }
-  
-  
+
+  .video_sec .swiper-slide img{
+    min-height: 520px;
+  }
 }
 </style>
