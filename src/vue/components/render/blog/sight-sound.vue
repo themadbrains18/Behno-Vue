@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    props:{
+    props:{ 
         shopifyData:{
             type:Object,
             required:true,
@@ -45,11 +45,13 @@ export default {
           );
         } else {
           this.isactive.push(key);
-        }
+        } 
       }
     },
   },
+
    data() {
+    
     return {
       windowWidth: window.innerWidth,
       isactive: []
