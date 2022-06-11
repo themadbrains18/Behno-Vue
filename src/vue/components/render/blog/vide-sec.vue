@@ -251,9 +251,5 @@ export default {
     height: 266px;
     object-fit: cover;
   }
-
-  .video_sec .swiper-slide img{
-    min-height: 520px;
-  }
 }
 </style>
