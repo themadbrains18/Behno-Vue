@@ -83,7 +83,8 @@ export default {
     }
    
     .sec_img{
-        margin:  25px 0;
+        margin: 25px auto;
+        max-width: 1920px;
     }
     .images_row{
         display: flex;

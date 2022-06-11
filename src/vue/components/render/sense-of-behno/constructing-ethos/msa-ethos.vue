@@ -93,6 +93,10 @@
 .sec_heading {
   line-height: 41px;
 }
+.image_grid{
+  max-width: 1920px;
+  margin: 0 auto;
+}
 
 .sec_content_inner {
   display: grid;

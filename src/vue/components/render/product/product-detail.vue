@@ -241,6 +241,7 @@
     transform: translateY(100%) rotate(-90deg);
 }
 
+
 .product_description_data .Ehic-Content li {
     display: flex;
     gap: 15px;
@@ -266,9 +267,9 @@
 }
 
 .product_accordian_panel>ul {
-    padding-bottom: 15px;
+    padding: 15px 0;
     border-bottom: 0.5px solid #252525;
-}
+    }
 
 @media only screen and (max-width:1440px) {
 
@@ -505,7 +506,9 @@
     height: 0;
     overflow: hidden;
     transition: 0.3s;
-    padding-left: 18px;
+    padding-left: 5px;
+  
+
 }
 
 .swatchs_warraper{
