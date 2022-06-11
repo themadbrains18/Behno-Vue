@@ -52,7 +52,6 @@
                                 :checked="currentUrl == value.link">
                             <label class="color_variant_label" :for="value.name">
                                 <div class="tooltip">  {{ value.name.replace('_',' ') }} </div>
-                                <!-- <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/yellow.png?v=1651228172" alt=""> -->
                                 <img :src="(value.img)" alt="">
                             </label>
                         </li>
@@ -81,6 +80,12 @@
                 <div class="product_description_data">
                     <!-- Product Description -->
                     <div class="product_description"  v-html="replaceString(selectedProductDescription[0])"></div>
+                        <p> As seen in: </p>
+                    <div class="see_in">
+                        <div v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
+                            <img :src="(seenIn.src)" :alt="(seenIn.alt)" >
+                        </div>
+                    </div>
                     <ul class="product_accordians">
                         <!-- Product Details -->
                         <li class="product_accordian" v-if="selectedProductDescription[1]">
@@ -387,10 +392,9 @@
     border-radius: 50%;
     display: block;
     box-shadow: 0 0 0 1px #E0E0E0;
+    position:relative;
+    
 }
-
-
-
 
 .color_variant:checked+.color_variant_label {
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px #6B6B6B;
@@ -400,6 +404,42 @@
     height: 24px;
     width: 24px;
     border-radius: 50%;
+}
+
+ .tooltip::after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid rgba(51,51,51,0.9) 10px;
+    bottom: -10px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    position: absolute;
+    width: 0;
+    transform:translateX(-50%);
+}
+
+.tooltip{
+    position:absolute;
+    opacity:0;
+    visibility: hidden;
+    background-color: rgba(51,51,51,0.9);
+    color: #fff;
+    text-align: center;
+      font-size:12px;
+
+    line-height:1;
+    padding: 5px 10px;
+    width:120px;
+    bottom:calc(100% + 15px);
+    left:50%;
+    transform:translateX(-50%);
+     transition:all .25s ease-out;
+    
+}
+.color_variant_label:hover .tooltip{
+    opacity:1;
+    visibility: visible;
 }
 
 .product_left {
@@ -416,9 +456,18 @@
 .product_description_data {
     margin-top: 30px;
 }
+.product_description_data p{
+    margin:18px 0;
+}
+.see_in{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:center;
+}
 
 .product_accordians {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .product_accordian {
@@ -601,7 +650,7 @@ export default {
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
-        console.log(filterProduct);
+        
         return {
             selectedSize:"",
             variant,
@@ -623,7 +672,6 @@ export default {
         SwiperSlide
     },
     methods: {
-
         sizeSelect(size,type){
             let label= document.querySelector("#selectSize");
             label.innerHTML=size;
@@ -636,7 +684,6 @@ export default {
                 }
             }
         },
-
         changePath(link){
             let path = link.split('/products/')[1];
             let filterVariant = this.variant.filter(item => item.link == link)[0]; // filter variant by current path
@@ -646,7 +693,6 @@ export default {
             this.currentVariantQty = parseInt(filterVariant.qty)
             window.history.pushState("","", link);
         },
-
         productZoomInOut() {
             let productZoom = document.querySelector("#productZoom");
             if (productZoom.matches('.active')) {
@@ -657,11 +703,7 @@ export default {
             }
             productZoom.classList.toggle("active");
         },
-        encodeData(data) {
-            data = atob(data);
-            data = data.replace(/Â/g, "");
-            return data;
-        },
+     
         replaceString(data){
             data = data.replace(/Â/g, "");
             return data;
