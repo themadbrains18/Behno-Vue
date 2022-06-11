@@ -4,11 +4,7 @@
       {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
       {% assign links = product.metafields.my_fields.variants_products | split:" " %}
       
-<<<<<<< HEAD
-            {% capture Obj %}
-=======
       {% capture Obj %}
->>>>>>> 221a69a2a64d194e068d04a3b2d33c565c60acdc
         {%- for image in images -%}
           {% assign image_forloop = forloop.index  %}
           {%- for link in links -%}
@@ -41,24 +37,6 @@
         {% endcapture %}
 {%- endif -%}
 
-<<<<<<< HEAD
-=======
-
-{% if product.metafields.my_fields.seen_in %} 
-  {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
-  {% capture productSeenIn %}
-  [
-      {%- for seenin in seenin -%}
-        {
-          src :`{{ seenin | asset_url   }}`,
-          alt :`{{ seenin | replace: '.svg', '' }}`
-        }
-        {% unless forloop.last %},{% endunless %}
-      {%- endfor -%}
-  ]
-  {% endcapture %}
-{%- endif -%}
->>>>>>> 221a69a2a64d194e068d04a3b2d33c565c60acdc
 <!-- make products variant object -->
 
 
