@@ -1,18 +1,14 @@
 <template>
-    <section class="image_and_text_sec bg-sand" v-if="shopifyData.checkSection == 'true'" >
+    <section class="image_and_text_sec bg-sand " v-if="shopifyData.checkSection == 'true'" >
         <!-- Sec Content -->
         <div class="sec_content">
             <div class="sec_img">
                 <div class="product_popup" >
-                    <img :src=(shopifyData.secImg.src) :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) />
+                    <img :src=(shopifyData.secImg.src) :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) @click="toggle_selection_for(key)"/>
                     <productPopup :productData=(shopifyData.productData)  :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
                 </div>
                 <h2 class="img_text" v-if="shopifyData.checkImgHeading == 'true'" >{{ shopifyData.imgHeading }}</h2>
-                
-                <button class="shop_cta subtitle" v-if="windowWidth>768">
-                    {{ shopifyData.secCta }}
-                </button>
-                <button class="shop_cta subtitle"  @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+                <button class="shop_cta subtitle"  @click="toggle_selection_for(key)">
                     {{ shopifyData.secCta }}
                 </button>
             </div>
@@ -101,23 +97,26 @@ export default {
         productPopup
     },
     methods: {
-    
     toggle_selection_for(key) {
-      if (this.isactive.includes(key)) {
-        this.isactive = this.isactive.filter(
-          (item) => item !== key
-        );
-      } else {
-        this.isactive.push(key);
+      if(window.innerWidth <= 768){
+        if (this.isactive.includes(key)) {
+          this.isactive = this.isactive.filter(
+            (item) => item !== key
+          );
+        } else {
+          this.isactive.push(key);
+        }
       }
     },
   },
     data:()=>{
+        
         return {
             isactive: [],
             windowWidth: window.innerWidth
     }
   },
+  
     props:{
         shopifyData:{
             type:Object,

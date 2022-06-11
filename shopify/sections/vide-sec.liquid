@@ -33,8 +33,8 @@
     SectionShow: `{{ section.settings.SectionShow }}`,
     SecHeading: `{{ section.settings.SecHeading }}`,
     SliderImagesData:{{SliderImagesData}},
-    CheckVideoImage: `{{ section.settings.CheckVideoImage }}`,
     VideoShow: `{{ section.settings.VideoShow }}`,
+    CheckVideoImage: `{{ section.settings.CheckVideoImage }}`,
     videolink: `{{ section.settings.videolink }}`,
     productData: {{ productData }} ,
     checkShopBtn: `{{ section.settings.checkShopBtn }}` ,
@@ -64,18 +64,20 @@
             },
 
             {
+                "id": "VideoShow",
+                "type": "checkbox",
+                "label": "Show Video Section",
+                "default": true
+            },
+
+            {
                 "id": "CheckVideoImage",
                 "type": "checkbox",
                 "label": "Show Product Image Slider",
                 "default": true
             },
 
-            {
-                "id": "VideoShow",
-                "type": "checkbox",
-                "label": "Show Video Section",
-                "default": true
-            },
+            
             {
                 "id": "videolink",
                 "type": "url",
