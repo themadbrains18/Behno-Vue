@@ -23,7 +23,7 @@
 {% capture productData %}
 [
 {% for block in section.blocks %}
-    {% if block.type == 'Image' %}
+    {% if block.type == 'box' %}
         {
             previewimage:{
                 src : `{{ block.settings.previewImage | img_url : "" }}`,
@@ -31,7 +31,11 @@
                 alt: `{{ block.settings.previewImage.alt }}`
             },
             storyBtn:`{{ block.settings.storyBtn }}`,
-            storyBtnLink:`{{ block.settings.storyBtnLink }}`
+            storyBtnLink:`{{ block.settings.storyBtnLink }}`,
+            storyHeading:`{{ block.settings.storyHeading }}`,
+            storyBrief:`{{ block.settings.storyBrief }}`,
+            storyText:`{{ block.settings.storyText }}`,
+            bottomTextColor:`{{ block.settings.bottomTextColor }}`
         }{% unless forloop.last %},{% endunless %}
     {% endif %}
 {% endfor %}
@@ -121,7 +125,7 @@
                     "type":"text",
                     "label":"Card brief"
                 },
-                {
+                                {
                     "id":"cardCta",
                     "type":"text",
                     "label":"Card Cta text"
@@ -136,7 +140,7 @@
         },
         {
             "name":"Add Image",
-            "type":"Image",
+            "type":"box",
             "settings":[
                 {
                     "id":"previewImage",
@@ -152,6 +156,30 @@
                     "id":"storyBtnLink",
                     "type":"url",
                     "label":"Story Cta Link"
+                },
+                {
+                    "id":"storyHeading",
+                    "type":"text",
+                    "label":"Story Heading"
+                },
+                {
+                    "id":"storyBrief",
+                    "type":"text",
+                    "label":"Story brief"
+                },
+                {
+                    "type": "range",
+                    "id": "storyText",
+                    "min": 0,
+                    "max": 100,
+                    "step": 10,
+                    "label": "Story Text Placement From Top",
+                    "default": 40       
+                },
+                {
+                    "type":"color",
+                    "id":"bottomTextColor",
+                    "label":"Bottom Text Color"
                 }
             ]
         }
