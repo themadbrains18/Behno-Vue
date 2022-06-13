@@ -104,18 +104,18 @@ export default {
     },
   },
   data() {
-    window.addEventListener("scroll",()=>{
-      let VideoSection=document.querySelector(".video_sec");
-      VideoSection.getBoundingClientRect();
-      if(VideoSection.getBoundingClientRect().top<0){
-        VideoSection.classList.add("active");
-        document.body.classList.add("active-Bg");
-      }
-      else{
-        VideoSection.classList.remove("active");
-        document.body.classList.remove("active-Bg");
-      }
-    });
+    // window.addEventListener("scroll",()=>{
+    //   let VideoSection=document.querySelector(".video_sec");
+    //   VideoSection.getBoundingClientRect();
+    //   if(VideoSection.getBoundingClientRect().top<0){
+    //     VideoSection.classList.add("active");
+    //     document.body.classList.add("active-Bg");
+    //   }
+    //   else{
+    //     VideoSection.classList.remove("active");
+    //     document.body.classList.remove("active-Bg");
+    //   }
+    // });
     return {
       windowWidth: window.innerWidth,
       isactive: [],

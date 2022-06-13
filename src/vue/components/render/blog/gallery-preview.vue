@@ -310,7 +310,10 @@ html {
 .gallery_preview_popup.responsive_slider {
   display: none;
 }
-
+.card {
+    position: relative;
+    overflow: hidden !important;
+}
 @media screen and (max-width: 991px) {
   .gallery_cards {
     display: grid;
@@ -337,6 +340,9 @@ html {
   }
   .gallery-cta {
     padding-left: 0px;
+  }
+  .subtitle{
+    margin:0;
   }
 }
 
