@@ -43,10 +43,10 @@
             :class="{ active: isactive.includes(key) }"
             class="product_info_card"
             :modules="modules"
+            
             :slidesPerView="'1'"
             :mousewheel="{ invert: false, releaseOnEdges: true }"
-            navigation-
-            >
+            :navigation="true">
             <swiper-slide
                 v-for="(product, index) in shopifyData.productData"
                 :key="index"
@@ -235,6 +235,22 @@ export default {
 </style>
 
 <style>
+
+/* Slider Css Code */
+.sec_video.modify-slider .swiper-button-prev, .modify-slider .swiper-button-next{
+  background-color:#fff;
+}
+.sec_video.modify-slider .swiper-button-prev{
+  left: 5px;
+  
+}
+.modify-slider .swiper-button-next{
+  right: 5px;
+  
+
+
+}
+
 @media (max-width: 480px) {
   .swiper.product_info_card {
     height: 100%;

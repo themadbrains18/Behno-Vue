@@ -110,7 +110,6 @@ export default {
     },
   },
     data:()=>{
-        
     window.addEventListener("scroll",()=>{
       let VideoSection=document.querySelectorAll(".image_and_text_sec")[1];
             VideoSection.getBoundingClientRect();
@@ -118,14 +117,12 @@ export default {
                 
                 document.body.classList.remove("active-Bg");
             }
-      
     });    
         return {
             isactive: [],
             windowWidth: window.innerWidth
     }
   },
-  
     props:{
         shopifyData:{
             type:Object,
