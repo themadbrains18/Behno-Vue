@@ -92,6 +92,22 @@
             "cardCta": "LEARN MORE",
             "cardCtaLink": "shopify:\/\/pages\/our-home-base"
           }
+        },
+        "f72a1584-e7d8-4379-9a08-f1b9bb4bb7fa": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/ethical-philosophy-story.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "1b3f29f6-01f7-4dea-9723-c0b6e8159358": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/learn-about-storie.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/behno-garment-worker"
+          }
         }
       },
       "block_order": [
@@ -103,7 +119,9 @@
         "f1c2a89d-4ffa-46eb-896d-faec99941f90",
         "e782b559-435c-4911-a96c-30a72ca1e882",
         "cbb00ec0-62ed-420c-a5bd-1191cfb88196",
-        "264ffa26-5dc3-40df-917f-623b857abdc9"
+        "264ffa26-5dc3-40df-917f-623b857abdc9",
+        "f72a1584-e7d8-4379-9a08-f1b9bb4bb7fa",
+        "1b3f29f6-01f7-4dea-9723-c0b6e8159358"
       ],
       "settings": {
         "secTopHeading": "The Sense",

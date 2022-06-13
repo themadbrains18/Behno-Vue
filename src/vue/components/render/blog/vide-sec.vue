@@ -27,7 +27,7 @@
             </div>  
             <div class="sec_image_slider" v-if="shopifyData.CheckVideoImage == 'true'">
                 <div class="sec_content modify-slider " @click="toggle_selection_for(key)">
-                    <swiper  :effect="'fade'" :autoplay="{ delay: 1500, disableOnInteraction: false, }"
+                    <swiper  :effect="'fade'" 
                     :modules="modules"
                     :centeredSlides="true"
                     :spaceBetween="100"
@@ -43,18 +43,14 @@
             :class="{ active: isactive.includes(key) }"
             class="product_info_card"
             :modules="modules"
+            :loop="true"
             :slidesPerView="'1'"
             :mousewheel="{ invert: false, releaseOnEdges: true }"
-            navigation-
-            >
-            <swiper-slide
-                v-for="(product, index) in shopifyData.productData"
-                :key="index"
-                
-            >
+            :navigation="true">
+            <swiper-slide v-for="(product, index) in shopifyData.productData" :key="index">
                 <productPopup
                 :productData="product"
-                :class="{ active: isactive.includes(key) }"
+                
                 @close="toggle_selection_for(key)"
                 />
             </swiper-slide>
@@ -138,9 +134,10 @@ export default {
   height: 340px;
 }
 
-.video_sec.active .sec_content.bg-black{
+
+/* .video_sec.active .sec_content.bg-black{
   background: #000;
-}
+} */
 
 /* Hover Show Product Cart Css */
 .sec_video.modify-slider > .product_info_card {
@@ -232,9 +229,52 @@ export default {
       margin-top:0;
   }
 }
+
+@media (max-width: 575px) {
+  .tmb_blog_slider_image .swiper-slide img{
+    min-height: 520px;
+    object-fit: cover;
+    height: 100%;
+  }
+  .sec_content.bg-black {
+    padding: 67px 0 125px;
+  }
+}
 </style>
 
 <style>
+
+/* Slider Css Code */
+
+.sec_video.modify-slider .swiper-slide img{
+  display: block;
+  height: 100%;  
+}
+
+.sec_video.modify-slider .swiper-slide{
+  height: initial;  
+}
+.sec_video.modify-slider .swiper-button-prev, .modify-slider .swiper-button-next{
+  background-color:#fff;
+}
+.sec_video.modify-slider .swiper-button-prev{
+  left: 5px;
+  
+}
+.sec_video.modify-slider .swiper-button-next{
+  right: 5px;
+}
+
+.sec_video .swiper-slide.swiper-slide .product_info_card{
+    transform: translateX(0);
+}
+
+@media (max-width: 575px) {
+  .shop_cta{
+    margin-left:13px;
+  }
+}
+
 @media (max-width: 480px) {
   .swiper.product_info_card {
     height: 100%;
