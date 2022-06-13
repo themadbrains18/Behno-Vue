@@ -21,11 +21,36 @@ body::-webkit-scrollbar-thumb {
   background: grey;
 }
 
-body.active-Bg .tmbMain{
-  background: #000!important;
-
+body .tmbMain{
+  transition: 0.5s linear;
+}
+main#main > div {
+  position: relative;
+  z-index: 1;
+}
+body .tmbMain::after{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0;
+  transition: 0.5s;
+  
+}
+body.active-Bg .tmbMain::after{
+  opacity: 1;
 }
 
+body.active-Bg .img_column_full_bleed_sec .subtitle{
+  color: #fff;
+}
+
+.cta_btn.sold-out{
+  cursor:auto;
+}
 
 li {
   list-style: none;

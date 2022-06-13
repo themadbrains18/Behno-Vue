@@ -90,6 +90,9 @@
     object-fit: cover;
   }
   
+  .product_info_card{
+    padding: 17px;
+  }
 }
 @media(max-width:480px){
   .product_info_card a img{
