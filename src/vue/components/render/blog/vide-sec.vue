@@ -205,6 +205,9 @@ export default {
 
 .sec_image_slider img{
     width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 /* Responsive Breakpoints */
@@ -246,10 +249,10 @@ export default {
 
 /* Slider Css Code */
 
-.sec_video.modify-slider .swiper-slide img{
+/* .sec_video.modify-slider .swiper-slide img{
   display: block;
   height: 100%;  
-}
+} */
 
 .sec_video.modify-slider .swiper-slide{
   height: initial;  
