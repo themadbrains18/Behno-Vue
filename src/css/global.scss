@@ -21,10 +21,7 @@ body::-webkit-scrollbar-thumb {
   background: grey;
 }
 
-body .tmbMain{
-  transition: 0.5s linear;
-}
-main#main > div {
+body.active-Bg main#main > div {
   position: relative;
   z-index: 1;
 }
@@ -37,11 +34,14 @@ body .tmbMain::after{
   width: 100%;
   background-color: #000;
   opacity: 0;
-  transition: 0.5s;
-  
+  transition: 0.3s linear;
+  z-index: 0;
+  visibility: hidden;
 }
 body.active-Bg .tmbMain::after{
   opacity: 1;
+  height: 100%;
+  visibility: visible;
 }
 
 body.active-Bg .img_column_full_bleed_sec .subtitle{
