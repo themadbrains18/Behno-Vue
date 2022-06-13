@@ -1,7 +1,7 @@
 {
   "sections": {
-    "main-404": {
-      "type": "main-404",
+    "hero-404": {
+      "type": "hero-404",
       "settings": {
         "secHeading": "THIS PAGE DOES NOT EXIST.",
         "secCta": "BACK TO HOMEPAGE",
@@ -10,6 +10,6 @@
     }
   },
   "order": [
-    "main-404"
+    "hero-404"
   ]
 }

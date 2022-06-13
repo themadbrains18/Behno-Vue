@@ -23,7 +23,7 @@
 {% capture productData %}
 [
 {% for block in section.blocks %}
-    {% if block.type == 'Image' %}
+    {% if block.type == 'box' %}
         {
             previewimage:{
                 src : `{{ block.settings.previewImage | img_url : "" }}`,
@@ -140,7 +140,7 @@
         },
         {
             "name":"Add Image",
-            "type":"Image",
+            "type":"box",
             "settings":[
                 {
                     "id":"previewImage",

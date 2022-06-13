@@ -18,7 +18,7 @@
       </p>
       </div>
       <div class="sec_btn t-center">
-        <button class="cta_btn" @click="show = !show">{{ shopifyData.SecBtn }}</button>
+        <button class="cta_btn" @click="show = !show , addActiveBody()">{{ shopifyData.SecBtn }}</button>
       </div>
 
     <div class="mobile_stories_wrapper" :class="{ active: !show }">
@@ -44,7 +44,7 @@
                     </a>
                     <span class="color-white subtitle" :style="{ 'color': value.bottomTextColor}">{{ value.storyBtn }}</span>
                 </div>
-                <div class="close_icon" @click="show = !show">
+                <div class="close_icon" @click="show = !show , addActiveBody()">
                     <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/x-storie.svg?v=1655114346" alt="error" class="popup_close">
                 </div>
                 <div class="sec_text" :style="{'top': value.storyText +'%'}">
@@ -72,6 +72,7 @@
 </template>
 
 <style scoped>
+
 .sens_of_behno_sec {
     padding: 67px 0 117px;
     /* margin-bottom: -200px; */
@@ -176,6 +177,7 @@
     transition: 0.3s;
     height: 100%;
     min-height: 100vh;
+    background-color:#fff;
 }
 .mobile_stories_wrapper.active{
     visibility: visible;
@@ -317,6 +319,9 @@
 .page.page\.sense-of-behno{
     background:#DDCEC7 ;
 }
+body.show .tmbHeader{
+    z-index: -1;
+}
 .mobile_stories_wrapper .swiper-scrollbar {
     background: rgba(0, 0, 0, 0.14);
     height: 3px ;
@@ -356,11 +361,16 @@ components: {
     SwiperSlide,
 },
 data: function () {
-    console.log(this.shopifyData);
+
     return {
         show: true,
     };
     
+},
+methods : {
+    addActiveBody:function(){
+        document.querySelector("body").classList.toggle("show");
+    }
 },
 setup() {
     return {

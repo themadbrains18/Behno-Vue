@@ -94,7 +94,7 @@
           }
         },
         "f72a1584-e7d8-4379-9a08-f1b9bb4bb7fa": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/ethical-philosophy-story.png",
             "storyBtn": "See more",
@@ -106,7 +106,7 @@
           }
         },
         "1b3f29f6-01f7-4dea-9723-c0b6e8159358": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/learn-about-storie.png",
             "storyBtn": "See more",
@@ -118,7 +118,7 @@
           }
         },
         "e88d84f6-a6b5-4e5a-89db-52700e595d96": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/behno-in-world-story.png",
             "storyBtn": "See more",
@@ -130,7 +130,7 @@
           }
         },
         "27f2e34a-14e0-4999-9e64-a79b813706b1": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/constructing-ethos-story.png",
             "storyBtn": "See more",
@@ -142,7 +142,7 @@
           }
         },
         "baecb6c9-a25b-43ff-b4fc-25a63fc98e8f": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/EXQUISITE-HANDWORK-STORY.png",
             "storyBtn": "See more",
@@ -154,7 +154,7 @@
           }
         },
         "94fa59f8-62cc-45c3-a7bd-401f58d70340": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/handwoven-silk-story_162d2b48-2e9d-4086-b1f2-f4fefd7479b6.jpg",
             "storyBtn": "See more",
@@ -166,7 +166,7 @@
           }
         },
         "e1ed984d-a431-4d3d-b94c-1377965cb185": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/frontend-story.png",
             "storyBtn": "See more",
@@ -178,7 +178,7 @@
           }
         },
         "654ab037-4c52-4c6d-8de9-c06ee8f887d5": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/partner-handbag-story.png",
             "storyBtn": "See more",
@@ -190,7 +190,7 @@
           }
         },
         "43378e12-2284-42bf-9f78-7ad742e7394a": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/our-home-base-story.png",
             "storyBtn": "See more",
