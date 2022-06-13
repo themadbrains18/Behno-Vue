@@ -83,7 +83,7 @@
                         <p> As seen in: </p>
                     <div class="see_in">
                         <div v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
-                            <img :src="(seenIn.src)" :alt="(seenIn.alt)" >
+                            <img :src="(seenIn.src)" :alt="(seenIn.alt)">
                         </div>
                     </div>
                     <ul class="product_accordians">
@@ -653,7 +653,6 @@ export default {
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
-        
         return {
             selectedSize:"",
             variant,

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="image_column_sec bg-sand"
+    class="image_column_sec"
     v-if="shopifyData.checkSection == 'true'"
   >
     <!-- Sec Content -->
@@ -12,6 +12,7 @@
       >
         <div class="product_popup"  >
           <img
+          @click="toggle_selection_for(key)"
             :src="item.previewImg.src"
             :src-placeholder="item.previewImg.placeholder"
             :alt="item.previewImg.alt"
@@ -19,10 +20,8 @@
           <productPopup :productData="item.productDetail" :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
         </div>
         <div class="shop_cta">   
-          <button class="subtitle" v-if="windowWidth>768">
-              {{ item.productDetail.secCtaText }}
-          </button>
-            <button class="subtitle"  @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+          
+            <button class="subtitle"  @click="toggle_selection_for(key)" >
                 {{ item.productDetail.secCtaText }}
             </button>
         </div>
@@ -89,12 +88,14 @@ export default {
     },
   methods: {
     toggle_selection_for(key) {
-      if (this.isactive.includes(key)) {
-        this.isactive = this.isactive.filter(
-          (item) => item !== key
-        );
-      } else {
-        this.isactive.push(key);
+      if(window.innerWidth <= 768){
+        if (this.isactive.includes(key)) {
+          this.isactive = this.isactive.filter(
+            (item) => item !== key
+          );
+        } else {
+          this.isactive.push(key);
+        }
       }
     },
   },

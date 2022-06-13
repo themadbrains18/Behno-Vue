@@ -1,12 +1,11 @@
 <template>
-  <section
-    class="img_column_full_bleed_sec"
-    v-if="shopifyData.checkSection == 'true'"
-  >
+  <section class="img_column_full_bleed_sec "
+    v-if="shopifyData.checkSection == 'true'">
     <div class="sec_sontent">
       <div class="sec_img" v-for="(item, key) in shopifyData.productData" :key="key">
         <div class="product_popup" >
           <img
+          @click="toggle_selection_for(key)"
             :src="item.previewImg.src"
             :src-placeholder="item.previewImg.placeholder"
             :alt="item.previewImg.alt"
@@ -14,10 +13,7 @@
           <productPopup :productData="item.productDetail" :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)" />
         </div>
         <div class="shop_cta">
-            <button  class="subtitle" v-if="windowWidth>768">
-                {{ item.productDetail.secCtaText }}
-            </button>
-            <button class="subtitle"   @click="toggle_selection_for(key)" v-if="windowWidth<=768">
+            <button class="subtitle"   @click="toggle_selection_for(key)" >
                 {{ item.productDetail.secCtaText }}
             </button>
         </div>
@@ -28,7 +24,6 @@
 <style scoped>
 .img_column_full_bleed_sec {
   padding: 49px 0 67px;
-  background: #ddcec7;
 }
 .sec_sontent {
   display: flex;
@@ -53,9 +48,9 @@
 .product_info_card {
   position: absolute;
   bottom: 0;
-  left: -100%;
+  /* left: -100%; */
   transition: 0.3s linear;
-  z-index: 99;
+  z-index: 1;
 }
 .sec_img .product_popup > img {
   transition: 0.3s linear;
@@ -95,12 +90,14 @@ export default {
   },
  methods: {
     toggle_selection_for(key) {
-      if (this.isactive.includes(key)) {
-        this.isactive = this.isactive.filter(
-          (item) => item !== key
-        );
-      } else {
-        this.isactive.push(key);
+      if(window.innerWidth <= 768){
+        if (this.isactive.includes(key)) {
+          this.isactive = this.isactive.filter(
+            (item) => item !== key
+          );
+        } else {
+          this.isactive.push(key);
+        }
       }
     },
   },

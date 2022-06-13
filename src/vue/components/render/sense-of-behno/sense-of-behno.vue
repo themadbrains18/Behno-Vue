@@ -136,6 +136,7 @@
     gap: 1px;
 }
 
+
 /* Responsive Breakpoints */
 @media(max-width:991px){
     .sense_cards {
@@ -209,7 +210,11 @@
 
 }
 </style>
-
+<style>
+.page.page\.sense-of-behno{
+    background:#DDCEC7 ;
+}
+</style>
 <script>
 export default{
   props: {

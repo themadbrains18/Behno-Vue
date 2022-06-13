@@ -1,5 +1,5 @@
 <template>
-    <section class="banner_sec bg-sand" v-if="shopifyData.checkSection=='true'">
+    <section class="banner_sec" v-if="shopifyData.checkSection=='true'">
         <!-- Banner Content -->
         <div class="banner_content">
             <div class="banner_content">
@@ -23,6 +23,11 @@
         }            
     }
 </script>
+<style>
+    body.blog .tmbMain{
+       background: linear-gradient(180deg, #DDCEC7 0%, #FFFFFF 100%); 
+    }
+</style>
 <style scoped>
 .banner_main_heading{
     transform: translateY(35%);

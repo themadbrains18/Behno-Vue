@@ -82,9 +82,6 @@
 </style>
 <script>
 export default {
-    // data() {
-    //     console.log(this.shopifyData);
-    // },
     props: {
         shopifyData: {
             type: Object,

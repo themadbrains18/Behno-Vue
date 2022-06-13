@@ -1,5 +1,5 @@
 <template>
-    <section class="all_feature_bag_sec">
+    <section class="all_feature_bag_sec ">
         <div class="container">
         <h3 class="card_heading">{{shopifyData.sectionHeading}}</h3>
         <!-- Sec Content -->

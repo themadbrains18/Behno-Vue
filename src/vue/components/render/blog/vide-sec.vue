@@ -1,17 +1,17 @@
 <template>
   <section class="video_sec" v-if="shopifyData.checkSection == 'true'">
     <!-- Sec Head -->
-    <div class="sec_head bg-sand" v-if="shopifyData.SectionShow == 'true'">
+    <div class="sec_head" v-if="shopifyData.SectionShow == 'true'">
       <h1 class="main_heading">{{ shopifyData.SecHeading }}</h1>
     </div>
     <!-- Sec Content -->
     <div
-      class="sec_content bg-black t-center"
+      class="sec_content bg-black"
       v-if="shopifyData.VideoShow === 'true'"
     >
       <div class="sec_video modify-slider">
           <div class="tmb_blog_slider_image">
-            <div v-if="shopifyData.CheckVideoImage == 'true'">
+            <div v-if="shopifyData.CheckVideoImage == 'false'">
             <video
                 class="subtitle"
                 @click="toggle_selection_for(key)"
@@ -24,17 +24,17 @@
             >
                 <source :src="shopifyData.videolink" />
             </video>
-            </div>
-            <div class="sec_image_slider" v-if="shopifyData.CheckVideoImage == 'false'">
-                <div class="sec_content modify-slider">
-                    <swiper :navigation="true" :effect="'fade'" :autoplay="{ delay: 1500, disableOnInteraction: false, }"
+            </div>  
+            <div class="sec_image_slider" v-if="shopifyData.CheckVideoImage == 'true'">
+                <div class="sec_content modify-slider " @click="toggle_selection_for(key)">
+                    <swiper  :effect="'fade'" :autoplay="{ delay: 1500, disableOnInteraction: false, }"
                     :modules="modules"
                     :centeredSlides="true"
                     :spaceBetween="100"
                     :loop="true"
                     class="mySwiper">
                     <swiper-slide v-for="(value, key) in shopifyData.SliderImagesData" :key="key" >
-                        <img :src="value.SliderImage.src" :src-placeholder="value.SliderImage.placeholder" :alt="value.SliderImage.alt" />
+                        <img :src="value.SliderImage.src" :src-placeholder="value.SliderImage.placeholder" :alt="value.SliderImage.alt"  />
                     </swiper-slide>
                     </swiper>
                 </div>
@@ -45,11 +45,12 @@
             :modules="modules"
             :slidesPerView="'1'"
             :mousewheel="{ invert: false, releaseOnEdges: true }"
-            navigation
+            navigation-
             >
             <swiper-slide
                 v-for="(product, index) in shopifyData.productData"
                 :key="index"
+                
             >
                 <productPopup
                 :productData="product"
@@ -60,14 +61,7 @@
             </swiper>
           </div>
         <div class="shop_cta" v-if="shopifyData.checkShopBtn == 'true'">
-          <button class="subtitle" v-if="windowWidth > 768">
-            {{ shopifyData.secCta }}
-          </button>
-          <button
-            class="subtitle"
-            @click="toggle_selection_for(key)"
-            v-if="windowWidth <= 768"
-          >
+          <button class="subtitle" @click="toggle_selection_for(key)">
             {{ shopifyData.secCta }}
           </button>
         </div>
@@ -96,16 +90,32 @@ export default {
     };
   },
   methods: {
+    
     toggle_selection_for(key) {
-      if (this.isactive.includes(key)) {
-        this.isactive = this.isactive.filter((item) => item !== key);
-      } else {
-        this.isactive.push(key);
+      if(window.innerWidth <= 768){
+        if (this.isactive.includes(key)) {
+          this.isactive = this.isactive.filter(
+            (item) => item !== key
+          );
+        } else {
+          this.isactive.push(key);
+        }
       }
     },
   },
   data() {
-    console.log(this.shopifyData);
+    window.addEventListener("scroll",()=>{
+      let VideoSection=document.querySelector(".video_sec");
+      VideoSection.getBoundingClientRect();
+      if(VideoSection.getBoundingClientRect().top<0){
+        VideoSection.classList.add("active");
+        document.body.classList.add("active-Bg");
+      }
+      else{
+        VideoSection.classList.remove("active");
+        document.body.classList.remove("active-Bg");
+      }
+    });
     return {
       windowWidth: window.innerWidth,
       isactive: [],
@@ -127,9 +137,10 @@ export default {
   width: 240px;
   height: 340px;
 }
-/* .swiper.product_info_card {
-  bottom: 37px;
-} */
+
+.video_sec.active .sec_content.bg-black{
+  background: #000;
+}
 
 /* Hover Show Product Cart Css */
 .sec_video.modify-slider > .product_info_card {
@@ -137,15 +148,18 @@ export default {
 }
 .sec_video.modify-slider {
   overflow: hidden;
+  cursor: pointer;
 }
 .sec_video.modify-slider .swiper-button-next,
 .sec_video.modify-slider .swiper-button-prev {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
+
 @media (hover: hover) {
-  .sec_video.modify-slider .tmb_blog_slider_image:hover > .product_info_card {
+  .sec_video.modify-slider:hover .tmb_blog_slider_image> .product_info_card {
     transform: translateX(0%);
+    cursor: pointer;
   }
 }
 .swiper.active.product_info_card {
@@ -175,8 +189,10 @@ export default {
   font-weight: 700;
   line-height: 69px;
 }
-.sec_content.bg-black.t-center{
+.sec_content.bg-black{
   padding: 110px 54px 100px;
+  transition: 0.5s;
+  background-color: transparent;
 }
 .sec_content iframe {
   max-width: 1020px;
@@ -186,6 +202,9 @@ export default {
   width: 100%;
   height: 570px;
 }
+.sec_image_slider {
+    height: 100%;
+}
 
 .sec_image_slider img{
     width: 100%;
@@ -193,7 +212,7 @@ export default {
 
 /* Responsive Breakpoints */
 @media (max-width: 767px) {
-  .sec_content.bg-black.t-center{
+  .sec_content.bg-black{
     padding: 67px 14px 125px;
   }
   .sec_head {
@@ -229,6 +248,10 @@ export default {
   .video_sec .swiper-button-next,
   .video_sec .swiper-button-prev {
     display: block !important;
+  }
+  .product_info_card .product_info_card a img{
+    height: 266px;
+    object-fit: cover;
   }
 }
 </style>
