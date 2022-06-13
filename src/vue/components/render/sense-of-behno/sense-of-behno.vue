@@ -20,6 +20,35 @@
       <div class="sec_btn t-center">
         <a :href=(shopifyData.SecBtnLink) class="cta_btn">{{ shopifyData.SecBtn }}</a>
       </div>
+
+    <div class="mobile_stories_wrapper">
+        <swiper
+            :scrollbar="{ hide: false }"
+            :modules="modules"
+            :slidesPerView="'auto'"
+            :spaceBetween="10"
+            :mousewheel="{
+              invert: false,
+              releaseOnEdges: true,
+            }"
+            navigation
+          >
+            <swiper-slide
+              v-for="(value, key) in shopifyData.productData"
+              :key="key"
+            >
+                <div class="card_preview_img">
+                    <img :src="value.previewimage.src" />
+                </div>
+                <div class="slider_product_btn">
+                    <a :href=(value.previewimage.storyBtnLink) class="slider_tmb_btn" >
+                        <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761" alt="error">
+                    </a>
+                    <span class="color-white subtitle">{{ shopifyData.cardCta }}</span>
+                </div>
+            </swiper-slide>
+            </swiper>
+      </div>
     </div>
     <!-- Sec Content -->
     <div class="sec_content">
@@ -103,14 +132,16 @@
     margin: 0;
     padding: 30px 40px;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     z-index: 1;
     transform: translate(-50%,-50%);
-    opacity: 0;
     visibility: hidden;
-    transition: 0.5s;
+    opacity: 0;
+    transition: 0.4s;
 }
+
+
 .card_img img{
     display: block;
     width: 100%;
@@ -119,25 +150,33 @@
     object-position: top;
     transition: 0.3s;
 }
-.card:hover img {
-    filter: brightness(30%);
-}
 
-.card:hover .cta_btn{
-    /* transform: translate(-50%,-50%); */
-    top: 50%;
-    opacity: 1;
-    visibility: visible;
-}
+
+
 .brief_wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1px;
 }
-
-
 /* Responsive Breakpoints */
+@media(min-width:576px) {
+    .card:hover .cta_btn{
+        visibility: visible;
+        opacity: 1;
+    }    
+    .card:hover img {
+        filter: brightness(30%);
+    }
+    .mobile_stories_wrapper{
+        display: none;
+    }
+}
+@media(min-width:768px){
+    .sec_btn{
+        display: none;
+}
+}
 @media(max-width:991px){
     .sense_cards {
         grid-template-columns: repeat(2,1fr);
@@ -181,19 +220,12 @@
     .sec_head {
         padding-bottom: 82px;
     }
-    .card_img img{
-        height: 217px;
-    }
+
     .card .cta_btn{
-        padding: 20px;
+        padding: 18px;
     }
     .brief_wrapper {
         flex-direction: column;
-    }
-}
-@media(min-width:768px){
-    .sec_btn{
-        display: none;
     }
 }
 @media(max-width:575px){
@@ -207,8 +239,13 @@
     .card_heading_b{
         margin: 11px 0 9px;
     }
-
 }
+@media(max-width:480px){
+    .card_img img{
+        height: 217px;
+    }
+}
+    
 </style>
 <style>
 .page.page\.sense-of-behno{
@@ -216,8 +253,23 @@
 }
 </style>
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Scrollbar} from "swiper";
+import "swiper/css";
+import "swiper/css/scrollbar";
+
 export default{
-  props: {
+components: {
+    Swiper,
+    SwiperSlide,
+},
+
+setup() {
+    return {
+      modules: [Navigation, Scrollbar],
+    };
+},
+props: {
     shopifyData: {
       type: Object,
       required: true,

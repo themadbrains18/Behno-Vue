@@ -1,20 +1,44 @@
 {% capture cardData %}
 [
     {% for block in section.blocks %}
-    {
-        cardHeading   : `{{ block.settings.cardHeading }}`,
-        cardBrief   : `{{ block.settings.cardBrief }}`,
-        cardImg : {
-            src : `{{ block.settings.cardImg | img_url : "" }}`,
-            placeholder: `{{ block.settings.cardImg | img_url : "50x50" }}`,
-            alt: `{{ block.settings.cardImg.alt }}`
-        },
-        cardCta   : `{{ block.settings.cardCta }}`,
-        cardCtaLink   : `{{ block.settings.cardCtaLink }}`
-    }{% unless forloop.last %},{% endunless %}
+        {% if block.type == 'slide' %}
+        {
+            cardHeading   : `{{ block.settings.cardHeading }}`,
+            cardBrief   : `{{ block.settings.cardBrief }}`,
+            cardImg : {
+                src : `{{ block.settings.cardImg | img_url : "" }}`,
+                placeholder: `{{ block.settings.cardImg | img_url : "50x50" }}`,
+                alt: `{{ block.settings.cardImg.alt }}`
+            },
+            cardCta   : `{{ block.settings.cardCta }}`,
+            cardCtaLink   : `{{ block.settings.cardCtaLink }}`
+        }{% unless forloop.last %},{% endunless %}
+    {% endif %}
     {% endfor %}
 ]
 {% endcapture %}
+
+
+
+{% capture productData %}
+[
+{% for block in section.blocks %}
+    {% if block.type == 'Image' %}
+        {
+            previewimage:{
+                src : `{{ block.settings.previewImage | img_url : "" }}`,
+                placeholder: `{{ block.settings.previewImage | img_url : "50x50" }}`,
+                alt: `{{ block.settings.previewImage.alt }}`
+            },
+            storyBtn:`{{ block.settings.storyBtn }}`,
+            storyBtnLink:`{{ block.settings.storyBtnLink }}`
+        }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+{% endfor %}
+]
+{% endcapture %}
+
+
 <render-sense-of-behno-sense-of-behno :shopify-data="{
     secTopHeading   : `{{ section.settings.secTopHeading }}`,
     secBottomHeading   : `{{ section.settings.secBottomHeading }}`,
@@ -27,7 +51,8 @@
         placeholder: `{{ section.settings.SecImg | img_url : "50x50" }}`,
         alt: `{{ section.settings.SecImg.alt }}`
     },
-    cardData:{{ cardData }}
+    cardData:{{ cardData }},
+    productData: {{ productData }}
 }">
 </render-sense-of-behno-sense-of-behno>
 
@@ -106,8 +131,31 @@
                     "type":"url",
                     "label":"Card Cta Link"
                 }
+
+            ]
+        },
+        {
+            "name":"Add Image",
+            "type":"Image",
+            "settings":[
+                {
+                    "id":"previewImage",
+                    "type":"image_picker",
+                    "label":"Preview Image"
+                },
+                {
+                    "id":"storyBtn",
+                    "type":"text",
+                    "label":"Story Cta Text"
+                },
+                {
+                    "id":"storyBtnLink",
+                    "type":"url",
+                    "label":"Story Cta Link"
+                }
             ]
         }
+        
     ]
 }
 {% endschema %}
