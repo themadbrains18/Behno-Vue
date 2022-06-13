@@ -264,10 +264,8 @@ html {
   width: 100%;
   transition: 0.3s;
   position: absolute;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   height: 100%;
   object-fit: cover;
 }
@@ -349,6 +347,10 @@ html {
 /* Responsive Breakpoints */
 
 @media screen and (max-width: 575px) {
+  
+  .main_heading {
+    margin-bottom: 10px;
+  }
   .gallery_preview_popup.responsive_slider {
     display: block;
     top: 0;

@@ -27,7 +27,7 @@
             </div>  
             <div class="sec_image_slider" v-if="shopifyData.CheckVideoImage == 'true'">
                 <div class="sec_content modify-slider " @click="toggle_selection_for(key)">
-                    <swiper  :effect="'fade'" :autoplay="{ delay: 1500, disableOnInteraction: false, }"
+                    <swiper  :effect="'fade'" 
                     :modules="modules"
                     :centeredSlides="true"
                     :spaceBetween="100"
@@ -43,18 +43,14 @@
             :class="{ active: isactive.includes(key) }"
             class="product_info_card"
             :modules="modules"
-            
+            :loop="true"
             :slidesPerView="'1'"
             :mousewheel="{ invert: false, releaseOnEdges: true }"
             :navigation="true">
-            <swiper-slide
-                v-for="(product, index) in shopifyData.productData"
-                :key="index"
-                
-            >
+            <swiper-slide v-for="(product, index) in shopifyData.productData" :key="index">
                 <productPopup
                 :productData="product"
-                :class="{ active: isactive.includes(key) }"
+                
                 @close="toggle_selection_for(key)"
                 />
             </swiper-slide>
@@ -104,18 +100,18 @@ export default {
     },
   },
   data() {
-    // window.addEventListener("scroll",()=>{
-    //   let VideoSection=document.querySelector(".video_sec");
-    //   VideoSection.getBoundingClientRect();
-    //   if(VideoSection.getBoundingClientRect().top<0){
-    //     VideoSection.classList.add("active");
-    //     document.body.classList.add("active-Bg");
-    //   }
-    //   else{
-    //     VideoSection.classList.remove("active");
-    //     document.body.classList.remove("active-Bg");
-    //   }
-    // });
+    window.addEventListener("scroll",()=>{
+      let VideoSection=document.querySelector(".video_sec");
+      VideoSection.getBoundingClientRect();
+      if(VideoSection.getBoundingClientRect().top<0){
+        VideoSection.classList.add("active");
+        document.body.classList.add("active-Bg");
+      }
+      else{
+        VideoSection.classList.remove("active");
+        document.body.classList.remove("active-Bg");
+      }
+    });
     return {
       windowWidth: window.innerWidth,
       isactive: [],
@@ -138,9 +134,10 @@ export default {
   height: 340px;
 }
 
-.video_sec.active .sec_content.bg-black{
+
+/* .video_sec.active .sec_content.bg-black{
   background: #000;
-}
+} */
 
 /* Hover Show Product Cart Css */
 .sec_video.modify-slider > .product_info_card {
@@ -232,11 +229,31 @@ export default {
       margin-top:0;
   }
 }
+
+@media (max-width: 575px) {
+  .tmb_blog_slider_image .swiper-slide img{
+    min-height: 520px;
+    object-fit: cover;
+    height: 100%;
+  }
+  .sec_content.bg-black {
+    padding: 67px 0 125px;
+  }
+}
 </style>
 
 <style>
 
 /* Slider Css Code */
+
+.sec_video.modify-slider .swiper-slide img{
+  display: block;
+  height: 100%;  
+}
+
+.sec_video.modify-slider .swiper-slide{
+  height: initial;  
+}
 .sec_video.modify-slider .swiper-button-prev, .modify-slider .swiper-button-next{
   background-color:#fff;
 }
@@ -244,11 +261,18 @@ export default {
   left: 5px;
   
 }
-.modify-slider .swiper-button-next{
+.sec_video.modify-slider .swiper-button-next{
   right: 5px;
-  
+}
 
+.sec_video .swiper-slide.swiper-slide .product_info_card{
+    transform: translateX(0);
+}
 
+@media (max-width: 575px) {
+  .shop_cta{
+    margin-left:13px;
+  }
 }
 
 @media (max-width: 480px) {

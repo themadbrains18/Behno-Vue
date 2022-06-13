@@ -21,11 +21,19 @@ body::-webkit-scrollbar-thumb {
   background: grey;
 }
 
+body .tmbMain{
+  transition: 0.5s linear;
+}
 body.active-Bg .tmbMain{
   background: #000!important;
-
+}
+body.active-Bg .img_column_full_bleed_sec .subtitle{
+  color: #fff;
 }
 
+.cta_btn.sold-out{
+  cursor:auto;
+}
 
 li {
   list-style: none;

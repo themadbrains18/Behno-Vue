@@ -21,6 +21,11 @@
     </section>
 </template>
 <style scoped>
+
+    .image_and_text_sec.active .body_text,.image_and_text_sec.active .shop_cta.subtitle{
+        color: #FFFFFF;
+    }
+    
     .image_and_text_sec{
         padding: 56px 30px 40px;           
     }
@@ -114,9 +119,13 @@ export default {
       let VideoSection=document.querySelectorAll(".image_and_text_sec")[1];
             VideoSection.getBoundingClientRect();
             if(VideoSection.getBoundingClientRect().top<0){
-                
                 document.body.classList.remove("active-Bg");
+                VideoSection.classList.remove("active")
             }
+            else{
+                VideoSection.classList.add("active")
+            }
+
     });    
         return {
             isactive: [],

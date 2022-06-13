@@ -77,6 +77,13 @@
     margin-left: 13px;
   }
 }
+
+@media (max-width: 575px) {
+  .shop_cta .subtitle{
+    margin-top: 0;
+  } 
+}
+
 </style>
 
 <script>
