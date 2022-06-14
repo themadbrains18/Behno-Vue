@@ -1,0 +1,84 @@
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-garment-garment-behind-scenes :shopify-data="{
+    secHeading:'{{ section.settings.secHeading }}',
+    secInfo:'{{ section.settings.secInfo }}',
+    collageData  : {{ collageData }},
+    checkImage: `{{ section.settings.checkImage }}`,
+    videolink: `{{ section.settings.videolink }}`   
+
+}">
+</render-garment-garment-behind-scenes>
+
+
+
+{% schema %}
+{
+    "name":"Garment Behind The Scenes",
+    "settings":[
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":"Behind the scenes (and the people)."
+        },
+        {
+            "id":"secInfo",
+            "type":"text",
+            "label":"Section Info",
+            "default":"BTS with Dan Smith and Kent Mathews as they spend time at MSA Ethos."
+        },
+        {
+            "id": "checkImage",
+            "type": "checkbox",
+            "label": "Show Video",
+            "default": true
+        },
+        {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "videolink",
+            "type": "text",
+            "label": "Video Link",
+            "default" :"https://cdn.shopify.com/videos/c/o/v/c22fa8072e994b719118c9b90421c4a1.mp4"
+        }
+    ],
+    "blocks" : [
+        {
+            "name": "Collage Image",
+            "type" : "collage",
+            "limit" : 6,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id":"imageInfo",
+                    "type":"text",
+                    "label":"Image Info"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %} }

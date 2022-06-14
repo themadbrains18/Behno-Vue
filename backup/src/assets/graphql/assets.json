@@ -1,0 +1,1954 @@
+{
+    "assets": [
+        {
+            "key": "assets/accordian-arrow-icon.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/accordian-arrow-icon.svg?v=1652790158",
+            "created_at": "2022-05-17T17:52:38+05:30",
+            "updated_at": "2022-05-17T17:52:38+05:30",
+            "content_type": "image/svg+xml",
+            "size": 239,
+            "checksum": "366cca7c83dc351096b10bded754914d",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Acid_Green_Suede.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Acid_Green_Suede.png?v=1654943111",
+            "created_at": "2022-06-11T15:55:11+05:30",
+            "updated_at": "2022-06-11T15:55:11+05:30",
+            "content_type": "image/png",
+            "size": 153,
+            "checksum": "9dac6acec1f5c874c2c003c18748c625",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/after.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/after.svg?v=1652790158",
+            "created_at": "2022-05-17T17:52:38+05:30",
+            "updated_at": "2022-05-17T17:52:38+05:30",
+            "content_type": "image/svg+xml",
+            "size": 40129,
+            "checksum": "83678f7713d44461b7cb0f60181cbc1b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Almond_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Almond_Nappa.png?v=1654943112",
+            "created_at": "2022-06-11T15:55:12+05:30",
+            "updated_at": "2022-06-11T15:55:12+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "4ef7e284b781ea10011a84a25453cd90",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Almond_Nappa_Azure_Edge.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Almond_Nappa_Azure_Edge.png?v=1654943113",
+            "created_at": "2022-06-11T15:55:13+05:30",
+            "updated_at": "2022-06-11T15:55:13+05:30",
+            "content_type": "image/png",
+            "size": 172,
+            "checksum": "4928e576e647afabf38fa5fd952861ed",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Apricot_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Apricot_Pebble.png?v=1654943113",
+            "created_at": "2022-06-11T15:55:13+05:30",
+            "updated_at": "2022-06-11T15:55:13+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "7eb9a4f2983535ba9d6805c6a65e90a7",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Avocado_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Avocado_Pebble.png?v=1654943114",
+            "created_at": "2022-06-11T15:55:14+05:30",
+            "updated_at": "2022-06-11T15:55:14+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "d0d50b4a08f621ed5264e3c85181e636",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Azure_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Azure_Nappa.png?v=1654943114",
+            "created_at": "2022-06-11T15:55:14+05:30",
+            "updated_at": "2022-06-11T15:55:14+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "e1761034de9efdde94e217b598bd9f52",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Balsamic_Croc.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Balsamic_Croc.png?v=1654943115",
+            "created_at": "2022-06-11T15:55:15+05:30",
+            "updated_at": "2022-06-11T15:55:15+05:30",
+            "content_type": "image/png",
+            "size": 2483,
+            "checksum": "bee5c8f3eee0338c3f30513e13b681d9",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/BigCaslon-Medium.woff",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/BigCaslon-Medium.woff?v=1652790159",
+            "created_at": "2022-05-17T17:52:39+05:30",
+            "updated_at": "2022-05-17T17:52:39+05:30",
+            "content_type": "font/woff",
+            "size": 82208,
+            "checksum": "2739a19b2dc7022f2ba682fd5ff4404e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/BigCaslon-Medium.woff2",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/BigCaslon-Medium.woff2?v=1652790160",
+            "created_at": "2022-05-17T17:52:40+05:30",
+            "updated_at": "2022-05-17T17:52:40+05:30",
+            "content_type": "font/woff2",
+            "size": 54320,
+            "checksum": "28ecb4c6557f8b661e9be2a0b55ea4e7",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Black_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Black_Nappa.png?v=1654943115",
+            "created_at": "2022-06-11T15:55:15+05:30",
+            "updated_at": "2022-06-11T15:55:15+05:30",
+            "content_type": "image/png",
+            "size": 150,
+            "checksum": "b24d1e5edad22e73d5a918517bfd0baa",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Black_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Black_Pebble.png?v=1654943116",
+            "created_at": "2022-06-11T15:55:16+05:30",
+            "updated_at": "2022-06-11T15:55:16+05:30",
+            "content_type": "image/png",
+            "size": 150,
+            "checksum": "b24d1e5edad22e73d5a918517bfd0baa",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Bone_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Bone_Nappa.png?v=1654943117",
+            "created_at": "2022-06-11T15:55:17+05:30",
+            "updated_at": "2022-06-11T15:55:17+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "302e12f59f36142f57ab5f7d464f9d43",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Bone_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Bone_Pebble.png?v=1654943118",
+            "created_at": "2022-06-11T15:55:18+05:30",
+            "updated_at": "2022-06-11T15:55:18+05:30",
+            "content_type": "image/png",
+            "size": 153,
+            "checksum": "976e6bab5e458a0721a02a7b94498a5e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Bordeaux_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Bordeaux_Pebble.png?v=1654943118",
+            "created_at": "2022-06-11T15:55:18+05:30",
+            "updated_at": "2022-06-11T15:55:18+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "707b0df88e08a87982c3773bd0a831c2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Brown_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Brown_Pebble.png?v=1654943120",
+            "created_at": "2022-06-11T15:55:20+05:30",
+            "updated_at": "2022-06-11T15:55:20+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "7d2387f4f61b34543f0b005ade9014ca",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/bundle.css",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/bundle.css?v=1655122509",
+            "created_at": "2022-05-17T17:52:40+05:30",
+            "updated_at": "2022-06-13T17:45:09+05:30",
+            "content_type": "text/css",
+            "size": 195641,
+            "checksum": "f23995e1676050462e98dd6ce23306b2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/bundle.js",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/bundle.js?v=1655122513",
+            "created_at": "2022-05-17T17:52:41+05:30",
+            "updated_at": "2022-06-13T17:45:13+05:30",
+            "content_type": "application/javascript",
+            "size": 1192688,
+            "checksum": "2dc6f3de3e9d91613f28817839818ff5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Buttercream_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Buttercream_Pebble.png?v=1654943120",
+            "created_at": "2022-06-11T15:55:20+05:30",
+            "updated_at": "2022-06-11T15:55:20+05:30",
+            "content_type": "image/png",
+            "size": 153,
+            "checksum": "cba408e7a3b696cfc42dd1b8f21d7c43",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Cacao_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Cacao_Nappa.png?v=1654943121",
+            "created_at": "2022-06-11T15:55:21+05:30",
+            "updated_at": "2022-06-11T15:55:21+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "f2c3d7fb6303c49ffdbddbab167f51f5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Cobalt_Blue_Suede_Combo.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Cobalt_Blue_Suede_Combo.png?v=1654943121",
+            "created_at": "2022-06-11T15:55:21+05:30",
+            "updated_at": "2022-06-11T15:55:21+05:30",
+            "content_type": "image/png",
+            "size": 161,
+            "checksum": "2412ba55d87032f04ff783bb948b4704",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Cognac_Pebble_Combo.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Cognac_Pebble_Combo.png?v=1654943122",
+            "created_at": "2022-06-11T15:55:22+05:30",
+            "updated_at": "2022-06-11T15:55:22+05:30",
+            "content_type": "image/png",
+            "size": 162,
+            "checksum": "4a104df5b59bdc41ab461cc2d48f7290",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Deep_Red_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Deep_Red_Nappa.png?v=1654943123",
+            "created_at": "2022-06-11T15:55:23+05:30",
+            "updated_at": "2022-06-11T15:55:23+05:30",
+            "content_type": "image/png",
+            "size": 152,
+            "checksum": "d05219b0dfe1fd2e6f4246bc72189149",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/fblogo.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/fblogo.svg?v=1652790162",
+            "created_at": "2022-05-17T17:52:42+05:30",
+            "updated_at": "2022-05-17T17:52:42+05:30",
+            "content_type": "image/svg+xml",
+            "size": 7804,
+            "checksum": "9a4ea2c3925ff39cfabf667891d787d3",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/font.css",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/font.css?v=1653463040",
+            "created_at": "2022-05-17T17:52:43+05:30",
+            "updated_at": "2022-05-25T12:47:20+05:30",
+            "content_type": "text/css",
+            "size": 3206,
+            "checksum": "e86e9565b5d1a4bd937535c51a005df7",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/footer-wave.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/footer-wave.png?v=1652790164",
+            "created_at": "2022-05-17T17:52:44+05:30",
+            "updated_at": "2022-05-17T17:52:44+05:30",
+            "content_type": "image/png",
+            "size": 4402,
+            "checksum": "0b00c17f2ea81cbc1695cdfd1cd309e9",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/forbes.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/forbes.svg?v=1654943138",
+            "created_at": "2022-06-11T15:55:38+05:30",
+            "updated_at": "2022-06-11T15:55:38+05:30",
+            "content_type": "image/svg+xml",
+            "size": 32148,
+            "checksum": "cf6f360b566b0c8c5d5c87e2ce8039ac",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Frost_Nappa _ Acid_Green_Edge.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Frost_Nappa%20_%20Acid_Green_Edge.png?v=1654943124",
+            "created_at": "2022-06-11T15:55:24+05:30",
+            "updated_at": "2022-06-11T15:55:24+05:30",
+            "content_type": "image/png",
+            "size": 171,
+            "checksum": "f2dfab35fa1fee6d6d9bb4c953da2b05",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Frost_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Frost_Nappa.png?v=1654943124",
+            "created_at": "2022-06-11T15:55:24+05:30",
+            "updated_at": "2022-06-11T15:55:24+05:30",
+            "content_type": "image/png",
+            "size": 153,
+            "checksum": "402aaa18c9f46f24622016e53cb7ee4b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/glamour.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/glamour.svg?v=1654943140",
+            "created_at": "2022-06-11T15:55:40+05:30",
+            "updated_at": "2022-06-11T15:55:40+05:30",
+            "content_type": "image/svg+xml",
+            "size": 13129,
+            "checksum": "21e131b898e6aa9aad4ce99951b0e3c4",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Gum_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Gum_Nappa.png?v=1654943125",
+            "created_at": "2022-06-11T15:55:25+05:30",
+            "updated_at": "2022-06-11T15:55:25+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "5056c24948b52366d657ac1a28752770",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/HelveticaNeue.woff",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/HelveticaNeue.woff?v=1652790169",
+            "created_at": "2022-05-17T17:52:49+05:30",
+            "updated_at": "2022-05-17T17:52:49+05:30",
+            "content_type": "font/woff",
+            "size": 46532,
+            "checksum": "2d1c965b9f28eca0d3286fa43d1a5f95",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/HelveticaNeue.woff2",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/HelveticaNeue.woff2?v=1652790170",
+            "created_at": "2022-05-17T17:52:50+05:30",
+            "updated_at": "2022-05-17T17:52:50+05:30",
+            "content_type": "font/woff2",
+            "size": 32720,
+            "checksum": "aa01b0b61afce203afdd1cc1b90937a2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/HelveticaNeueBold.woff",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/HelveticaNeueBold.woff?v=1652790170",
+            "created_at": "2022-05-17T17:52:50+05:30",
+            "updated_at": "2022-05-17T17:52:50+05:30",
+            "content_type": "font/woff",
+            "size": 18028,
+            "checksum": "02183900bb0957e0e50fcbf3b713dcd9",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/HelveticaNeueBold.woff2",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/HelveticaNeueBold.woff2?v=1652790171",
+            "created_at": "2022-05-17T17:52:51+05:30",
+            "updated_at": "2022-05-17T17:52:51+05:30",
+            "content_type": "font/woff2",
+            "size": 13704,
+            "checksum": "d93d7e7559a448de5d4483c62647a846",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/HelveticaNeueItalic.woff",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/HelveticaNeueItalic.woff?v=1652790171",
+            "created_at": "2022-05-17T17:52:51+05:30",
+            "updated_at": "2022-05-17T17:52:51+05:30",
+            "content_type": "font/woff",
+            "size": 22204,
+            "checksum": "012fd253216baec97af8df696cbc5430",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/HelveticaNeueItalic.woff2",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/HelveticaNeueItalic.woff2?v=1652790172",
+            "created_at": "2022-05-17T17:52:52+05:30",
+            "updated_at": "2022-05-17T17:52:52+05:30",
+            "content_type": "font/woff2",
+            "size": 17196,
+            "checksum": "71a74e259dfa6b6b1c50478ca422fa8c",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/instagramfooter.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/instagramfooter.svg?v=1652790173",
+            "created_at": "2022-05-17T17:52:53+05:30",
+            "updated_at": "2022-05-17T17:52:53+05:30",
+            "content_type": "image/svg+xml",
+            "size": 31614,
+            "checksum": "4735afb34bc5fa3c7c93de90e9fdece9",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Lilac_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Lilac_Pebble.png?v=1654943126",
+            "created_at": "2022-06-11T15:55:26+05:30",
+            "updated_at": "2022-06-11T15:55:26+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "fb16bd92d0961a99eb4dbc08dfc6a740",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/logo.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/logo.svg?v=1652790173",
+            "created_at": "2022-05-17T17:52:53+05:30",
+            "updated_at": "2022-05-17T17:52:53+05:30",
+            "content_type": "image/svg+xml",
+            "size": 4320,
+            "checksum": "3f11cb1c2a42f2e36a6ba7bebcaf1d85",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Mango_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Mango_Pebble.png?v=1654943126",
+            "created_at": "2022-06-11T15:55:26+05:30",
+            "updated_at": "2022-06-11T15:55:26+05:30",
+            "content_type": "image/png",
+            "size": 152,
+            "checksum": "30e959a37539458263ac9b592c8c009a",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Metallic_Green_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Metallic_Green_Pebble.png?v=1654943127",
+            "created_at": "2022-06-11T15:55:27+05:30",
+            "updated_at": "2022-06-11T15:55:27+05:30",
+            "content_type": "image/png",
+            "size": 2676,
+            "checksum": "50dfd5b35d477549e9f4c0065cfb2712",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Natural_Canvas_Combo.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Natural_Canvas_Combo.png?v=1654943127",
+            "created_at": "2022-06-11T15:55:27+05:30",
+            "updated_at": "2022-06-11T15:55:27+05:30",
+            "content_type": "image/png",
+            "size": 159,
+            "checksum": "5ba2dc1bff245c866ae0b8f61246f195",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Navy_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Navy_Nappa.png?v=1654943128",
+            "created_at": "2022-06-11T15:55:28+05:30",
+            "updated_at": "2022-06-11T15:55:28+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "e7453dc935e84b48aa7fe59b987357ac",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Navy_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Navy_Pebble.png?v=1654943129",
+            "created_at": "2022-06-11T15:55:29+05:30",
+            "updated_at": "2022-06-11T15:55:29+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "bfddc295c5afe65c451f652c16232852",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Navy_Pebble_Combo.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Navy_Pebble_Combo.png?v=1654943130",
+            "created_at": "2022-06-11T15:55:30+05:30",
+            "updated_at": "2022-06-11T15:55:30+05:30",
+            "content_type": "image/png",
+            "size": 163,
+            "checksum": "ea4cd9d9659a847a0f0deb946c31e39f",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/new-hork-logo.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/new-hork-logo.svg?v=1652790174",
+            "created_at": "2022-05-17T17:52:54+05:30",
+            "updated_at": "2022-05-17T17:52:54+05:30",
+            "content_type": "image/svg+xml",
+            "size": 46558,
+            "checksum": "5244a5aa0e980d3fddf06ebef1c9bb55",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Ochre_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Ochre_Nappa.png?v=1654943130",
+            "created_at": "2022-06-11T15:55:30+05:30",
+            "updated_at": "2022-06-11T15:55:30+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "17a825848efa7b4c3f95d445091e0174",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Olive_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Olive_Nappa.png?v=1654943131",
+            "created_at": "2022-06-11T15:55:31+05:30",
+            "updated_at": "2022-06-11T15:55:31+05:30",
+            "content_type": "image/png",
+            "size": 154,
+            "checksum": "74dea8206ad98195be50936a2032b817",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Orchid_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Orchid_Nappa.png?v=1654943131",
+            "created_at": "2022-06-11T15:55:31+05:30",
+            "updated_at": "2022-06-11T15:55:31+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "362f12fa6059a78d7daabc634bfd59bc",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Red_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Red_Pebble.png?v=1654943132",
+            "created_at": "2022-06-11T15:55:32+05:30",
+            "updated_at": "2022-06-11T15:55:32+05:30",
+            "content_type": "image/png",
+            "size": 152,
+            "checksum": "22c920c0047d04ea2abb1b3efce795f7",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/remove-icon-mini-.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/remove-icon-mini-.svg?v=1655122511",
+            "created_at": "2022-06-13T17:45:11+05:30",
+            "updated_at": "2022-06-13T17:45:11+05:30",
+            "content_type": "image/svg+xml",
+            "size": 269,
+            "checksum": "afc2ab76eb9e53704e2db4ca2c7e24d0",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/search-icon.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/search-icon.svg?v=1655107864",
+            "created_at": "2022-05-17T17:52:54+05:30",
+            "updated_at": "2022-06-13T13:41:04+05:30",
+            "content_type": "image/svg+xml",
+            "size": 548,
+            "checksum": "1621aeb861f93a4856c045623e4e20cf",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/shopping-bag-icon.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/shopping-bag-icon.svg?v=1655107865",
+            "created_at": "2022-05-17T17:52:55+05:30",
+            "updated_at": "2022-06-13T13:41:05+05:30",
+            "content_type": "image/svg+xml",
+            "size": 390,
+            "checksum": "2b621389d5715f7e932ce75cac17ce20",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Silver_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Silver_Pebble.png?v=1654943132",
+            "created_at": "2022-06-11T15:55:32+05:30",
+            "updated_at": "2022-06-11T15:55:32+05:30",
+            "content_type": "image/png",
+            "size": 2476,
+            "checksum": "b56d6f2c08e2dc2673627bf3cf57103e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/slider-arrow-icon.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/slider-arrow-icon.svg?v=1652790176",
+            "created_at": "2022-05-17T17:52:56+05:30",
+            "updated_at": "2022-05-17T17:52:56+05:30",
+            "content_type": "image/svg+xml",
+            "size": 229,
+            "checksum": "cb133880bbef676b119488ae1553cc63",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/slider-arrow.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/slider-arrow.svg?v=1655107866",
+            "created_at": "2022-05-17T17:52:56+05:30",
+            "updated_at": "2022-06-13T13:41:06+05:30",
+            "content_type": "image/svg+xml",
+            "size": 287,
+            "checksum": "1995a70a3b976bd21dc66db9ddb3736f",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Taupe_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Taupe_Pebble.png?v=1654943134",
+            "created_at": "2022-06-11T15:55:34+05:30",
+            "updated_at": "2022-06-11T15:55:34+05:30",
+            "content_type": "image/png",
+            "size": 153,
+            "checksum": "dde5571d031b86bdb87aed65e1d5d2b2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Tomato_Nappa.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Tomato_Nappa.png?v=1654943133",
+            "created_at": "2022-06-11T15:55:33+05:30",
+            "updated_at": "2022-06-11T15:55:33+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "f2bcff70b79cdabaad2b4d1f38f3ddbd",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Tomato_Nappa_Orchid_Edge.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Tomato_Nappa_Orchid_Edge.png?v=1654943135",
+            "created_at": "2022-06-11T15:55:35+05:30",
+            "updated_at": "2022-06-11T15:55:35+05:30",
+            "content_type": "image/png",
+            "size": 173,
+            "checksum": "662a1a46811a151d0d242b99de131788",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/vogue-logo.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/vogue-logo.svg?v=1652790177",
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "image/svg+xml",
+            "size": 40330,
+            "checksum": "bfec7c63b745b0f75f193a4b4fa043ae",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/vogue.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/vogue.svg?v=1654943142",
+            "created_at": "2022-06-11T15:55:42+05:30",
+            "updated_at": "2022-06-11T15:55:42+05:30",
+            "content_type": "image/svg+xml",
+            "size": 40322,
+            "checksum": "daa25cd70fa53a1d658da552e1ca4c41",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/who_what_wear.svg",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/who_what_wear.svg?v=1654943141",
+            "created_at": "2022-06-11T15:55:41+05:30",
+            "updated_at": "2022-06-11T15:55:41+05:30",
+            "content_type": "image/svg+xml",
+            "size": 36400,
+            "checksum": "a8b570c89f7aad0dfb6cb61ffe0fe1b8",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "assets/Wine_Pebble.png",
+            "public_url": "https://cdn.shopify.com/s/files/1/0577/1178/8125/t/21/assets/Wine_Pebble.png?v=1654943135",
+            "created_at": "2022-06-11T15:55:35+05:30",
+            "updated_at": "2022-06-11T15:55:35+05:30",
+            "content_type": "image/png",
+            "size": 155,
+            "checksum": "a57dc65dca43c25589b9812fa39ab5e1",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "config/settings_data.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:04+05:30",
+            "updated_at": "2022-05-17T17:53:04+05:30",
+            "content_type": "application/json",
+            "size": 14,
+            "checksum": "60b4a6340ba704cf1246057c0173a22f",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "config/settings_schema.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:04+05:30",
+            "updated_at": "2022-05-17T17:53:04+05:30",
+            "content_type": "application/json",
+            "size": 638,
+            "checksum": "f3e984ad2be6893d999cda2b35d38b5b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "layout/theme.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-06-13T13:40:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1514,
+            "checksum": "9a19c183a5857072306d7d753c311c43",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "locales/en.default.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/json",
+            "size": 191,
+            "checksum": "ec7f4b0f1e7c51e8ace240da17e29c63",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "locales/en.default.schema.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-06-01T20:46:50+05:30",
+            "content_type": "application/json",
+            "size": 2871,
+            "checksum": "a42d4af0e16382f2b833790db771a475",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ascension-seeker.liquid",
+            "public_url": null,
+            "created_at": "2022-05-23T13:52:44+05:30",
+            "updated_at": "2022-05-24T14:49:31+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2650,
+            "checksum": "044f9f67e21e2b935871e585d0a3bb69",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/back-sense-behno.liquid",
+            "public_url": null,
+            "created_at": "2022-05-24T18:17:02+05:30",
+            "updated_at": "2022-05-25T11:45:42+05:30",
+            "content_type": "application/x-liquid",
+            "size": 500,
+            "checksum": "6f7c749d8c6f11a5eb41d2da9a26569f",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/behno-world-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 744,
+            "checksum": "48a7bb4743314cdbf9b947193d30a3da",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/bit-about-ndss.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-24T10:52:10+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2568,
+            "checksum": "c0dff0b99181729e2fe5049e5eee5b88",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/blog-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-31T16:39:39+05:30",
+            "updated_at": "2022-06-09T21:17:54+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1404,
+            "checksum": "15c110e55043ea0527d048b4a4d8b0a5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/constructing-ethos-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-24T10:52:10+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2641,
+            "checksum": "97b10b88ab2e817dbbf36a0c2ac60f82",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethetical-behno-standard.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1748,
+            "checksum": "a064c5f305bac7dc51f4383f5b94a7f1",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethetical-canopy-x-behno.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2073,
+            "checksum": "5ad8b64de7edb6ff290e56674eea4dc3",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethetical-collaborations-philosophy.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 3695,
+            "checksum": "18b300973c8c6fc25fe605914d087c9e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethetical-conscious-tannery.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2132,
+            "checksum": "7dfcaf714a2bebb910b0d798b99f4994",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethetical-forming-relationship.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2368,
+            "checksum": "c71c38dc5c2a8b99e5de1ad703d289e4",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethetical-making-our-bags.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2345,
+            "checksum": "24913a7c5afa7f3c627456467a425338",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethical-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:57+05:30",
+            "updated_at": "2022-05-17T17:52:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2535,
+            "checksum": "70aa4b6e62152b7eae318efcbe41d79b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ethical-sustainability.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2827,
+            "checksum": "2490d1922e0ba758525a510400534214",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/exquisite-handwork-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1204,
+            "checksum": "8e17cc864f69d87b065b8f93b7abb810",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/finalist-in-livia.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-24T12:34:18+05:30",
+            "content_type": "application/x-liquid",
+            "size": 3541,
+            "checksum": "a9312ac06d541ccbef3d0acac3dfdba5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/footer.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 469,
+            "checksum": "7bbb7079dbbafec40fa4742353de127f",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/gallery-preview.liquid",
+            "public_url": null,
+            "created_at": "2022-05-31T16:39:40+05:30",
+            "updated_at": "2022-06-09T21:17:54+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2659,
+            "checksum": "8153af3b49f253aff4242fc16d08494e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/garment-behind-scenes.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-06-09T21:17:55+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2582,
+            "checksum": "638504f2083e7f5873d184ce00a66ab8",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/garment-ethical.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1151,
+            "checksum": "8edb69c895f2ee15a691ce99ae542514",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/garment-grid.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 998,
+            "checksum": "81285ddbee6acb4d4ab25707c35d70fe",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/garment-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-31T16:39:40+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1078,
+            "checksum": "97e8565d004cd27c148d8b30189adff8",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/garment-power-house.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 956,
+            "checksum": "3354980005bcd0dd1f145153c4db0711",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/garment-up-close.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1044,
+            "checksum": "b9f3bbad3b873182bb3591549f3b8fb4",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/ghat-know-about.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-18T14:48:40+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2106,
+            "checksum": "4485d90f8b795f256f74aa853684be35",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/glocalizing-our-practices.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-24T17:30:52+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2579,
+            "checksum": "2e09851d250efced0fa7819a1c4223c4",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/handwoven-silks-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-18T12:39:46+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2073,
+            "checksum": "3e6d59ea248f23ac0749c5f7250e7f1c",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/header.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 387,
+            "checksum": "b1dade2a6714ff56058ce93f226461c8",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/hero-404.liquid",
+            "public_url": null,
+            "created_at": "2022-06-13T17:50:42+05:30",
+            "updated_at": "2022-06-13T17:50:42+05:30",
+            "content_type": "application/x-liquid",
+            "size": 754,
+            "checksum": "87348f2da8bfbcfb5cf8910414fa4141",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-featured-carousel.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-25T18:57:15+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2960,
+            "checksum": "cd093d46a664577dbfebef9be60ea6d5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-gradient-carousel.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:58+05:30",
+            "updated_at": "2022-05-17T17:52:58+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2766,
+            "checksum": "0855c3dc7fc6d26d99f413edbc76e266",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-grid-single-text.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2005,
+            "checksum": "c6a88568ef413e4917d8f832dd75cca0",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-grid-single.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-06-02T13:45:15+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1995,
+            "checksum": "0ffc26d5571f922b51aa5810c47ec62c",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-grid-text-image.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1744,
+            "checksum": "7814112ae4bc6f3cb1c955cfcdaea680",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-hero-sec.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1644,
+            "checksum": "8d178f6a9ac8cdfe004185d45b98bf26",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-three-grid.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2894,
+            "checksum": "eac19ea20aea56ec3c57f148dd45c7c0",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/home-two-grid.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2754,
+            "checksum": "f7c858c85bf60665a3ecad2bb910a1e0",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/image-and-text.liquid",
+            "public_url": null,
+            "created_at": "2022-06-02T13:45:16+05:30",
+            "updated_at": "2022-06-09T21:17:55+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2595,
+            "checksum": "ea6499c482e7a2baf6616abe3b5a56d2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/image-column.liquid",
+            "public_url": null,
+            "created_at": "2022-06-02T13:45:16+05:30",
+            "updated_at": "2022-06-09T21:17:55+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2227,
+            "checksum": "06ff9732691bef0b7d400863f54ce9ea",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/img-column-full-bleed.liquid",
+            "public_url": null,
+            "created_at": "2022-06-02T13:45:16+05:30",
+            "updated_at": "2022-06-11T15:55:07+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2194,
+            "checksum": "b8bc45efac3ed63ad6cc7b8aaf603fd1",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/inheritance-worth.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1995,
+            "checksum": "1a784757b98eef95fabe1f5880085ece",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/invited-buckingham.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-25T12:05:53+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2883,
+            "checksum": "cef76056aa70e339ccf25f43efdb2852",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/launch-bergdorf.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1841,
+            "checksum": "30d89fa1098593b91b728ef05e43b2e3",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/lives-of-weavers.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-18T12:39:46+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2098,
+            "checksum": "217fd9c1185bfe22bfb079f8deae2268",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-404.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-06-13T17:50:43+05:30",
+            "content_type": "application/x-liquid",
+            "size": 58,
+            "checksum": "1f2cfa0fb877feaa35cf071c16c86b45",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-article.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-blog.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-cart.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-06-11T15:55:08+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1465,
+            "checksum": "280ab328dc2400b5142c0c9565467851",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-collection.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-31T16:39:41+05:30",
+            "content_type": "application/x-liquid",
+            "size": 4028,
+            "checksum": "bf0df1781be76bfd89ebb403d00410e1",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-index.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-list-collections.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-page-contact.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:52:59+05:30",
+            "updated_at": "2022-05-17T17:52:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-page.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-17T17:53:00+05:30",
+            "content_type": "application/x-liquid",
+            "size": 55,
+            "checksum": "d5615f1cf0533abfab78ae8989d83cd9",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-password.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-17T17:53:00+05:30",
+            "content_type": "application/x-liquid",
+            "size": 280,
+            "checksum": "a61c45d4e7106ca62902a77da218267b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-product.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-06-13T13:41:00+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2531,
+            "checksum": "8d798586a143ce0ede8ba7f8c66cfbf7",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/main-search.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-17T17:53:00+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/meet-fashion-designers.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-06-09T21:17:57+05:30",
+            "content_type": "application/x-liquid",
+            "size": 3117,
+            "checksum": "64ced5e39ef32438b3e852772e3382ad",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/meet-our-team.liquid",
+            "public_url": null,
+            "created_at": "2022-05-24T18:17:02+05:30",
+            "updated_at": "2022-05-24T18:55:46+05:30",
+            "content_type": "application/x-liquid",
+            "size": 783,
+            "checksum": "74201ada7cde2f3e24b57e173f6eff81",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/msa-ethos.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-24T16:04:32+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2714,
+            "checksum": "9e320229301e945a66f05641b4d630b6",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/new-york-state.liquid",
+            "public_url": null,
+            "created_at": "2022-05-24T18:17:03+05:30",
+            "updated_at": "2022-05-24T18:17:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2587,
+            "checksum": "0739830eb11deb6faa63443b3393bba2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/old-world-craftsmanship.liquid",
+            "public_url": null,
+            "created_at": "2022-05-23T13:52:45+05:30",
+            "updated_at": "2022-05-24T14:49:32+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2699,
+            "checksum": "253a053c6fec224d8d13cd1d9a759033",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/our-home-base-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-24T18:17:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1176,
+            "checksum": "361a1fc47d129bdd461911eb388b0f55",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/our-partner-handbag-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-23T13:52:45+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1342,
+            "checksum": "3790c30e31ecdf25a9df209e108568b2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/partnership-with-ndss.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-24T10:52:11+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1642,
+            "checksum": "5468ec510887fd7ab4efff41a2dcd5f3",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/philanthropy-hero.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-24T10:52:12+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1837,
+            "checksum": "1ef9fb1b1a701849902c719a90e420b9",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/portraitures-powerhouse.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-17T17:53:00+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2157,
+            "checksum": "ee73a1e401df4e4c7acb24be0cef73aa",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/product-grid.liquid",
+            "public_url": null,
+            "created_at": "2022-05-26T19:05:06+05:30",
+            "updated_at": "2022-06-11T15:55:09+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1763,
+            "checksum": "437581241a9e0bc232e6a2d44ee89940",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/product-recommanded.liquid",
+            "public_url": null,
+            "created_at": "2022-06-11T15:59:49+05:30",
+            "updated_at": "2022-06-11T15:59:49+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2679,
+            "checksum": "12ff3b8795f0f81cf30619652df3b5b9",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/sense-of-behno.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-06-13T18:10:38+05:30",
+            "content_type": "application/x-liquid",
+            "size": 5702,
+            "checksum": "35c9086388bf6eb24ca3887400372d32",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/setting-standard.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-06-09T21:17:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1842,
+            "checksum": "e22ae3ab239724891669916ff3f07ce4",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/shop-all-bags.liquid",
+            "public_url": null,
+            "created_at": "2022-06-09T21:17:59+05:30",
+            "updated_at": "2022-06-09T21:17:59+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1605,
+            "checksum": "d6d848af0a05ab880f848a7e169e2e7f",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/shop-ndds-bottom.liquid",
+            "public_url": null,
+            "created_at": "2022-05-25T18:57:15+05:30",
+            "updated_at": "2022-06-13T18:05:06+05:30",
+            "content_type": "application/x-liquid",
+            "size": 3434,
+            "checksum": "e44c0deb15a941f93593e2cd207553ba",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/shop-ndss.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-25T18:07:16+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1169,
+            "checksum": "ac85e23ed9ec65e736eea77ddd68b0b2",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/sight-sound.liquid",
+            "public_url": null,
+            "created_at": "2022-06-02T13:45:17+05:30",
+            "updated_at": "2022-06-09T21:18:00+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2338,
+            "checksum": "aaec74cf9b8d31e90ca8f17cb7617e3b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/sister-brothers.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-24T10:52:12+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1036,
+            "checksum": "019fe01131bf9bf4503032affcb3c896",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/sounds-varanasi.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-06-09T21:18:00+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1839,
+            "checksum": "138630bb658ac89f88eb7f65e7d642ef",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/speaking-engagement.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:00+05:30",
+            "updated_at": "2022-05-24T15:04:13+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2441,
+            "checksum": "53a733a485f40478fe4c36b3201277aa",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/sublime-saturdays.liquid",
+            "public_url": null,
+            "created_at": "2022-05-23T13:52:46+05:30",
+            "updated_at": "2022-05-24T17:48:48+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2313,
+            "checksum": "06cd2ea83020dc324fad7a38fee06bef",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/term-and-condition.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:01+05:30",
+            "updated_at": "2022-05-17T17:53:01+05:30",
+            "content_type": "application/x-liquid",
+            "size": 4694,
+            "checksum": "84a4142358923bd902f86b99c776ec4b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/text-box.liquid",
+            "public_url": null,
+            "created_at": "2022-06-02T13:45:18+05:30",
+            "updated_at": "2022-06-09T21:18:01+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1132,
+            "checksum": "49d931c6c53025951a64cf65d067178c",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/tmb-blog-v2.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:01+05:30",
+            "updated_at": "2022-06-02T13:45:19+05:30",
+            "content_type": "application/x-liquid",
+            "size": 758,
+            "checksum": "19d68455e21f8e661312f4cff41118d4",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/tmb-blog.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:01+05:30",
+            "updated_at": "2022-05-31T16:39:41+05:30",
+            "content_type": "application/x-liquid",
+            "size": 823,
+            "checksum": "1e9a9246778407e4ad90324ea13013cb",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/Urbanism-and-development.liquid",
+            "public_url": null,
+            "created_at": "2022-05-23T13:52:44+05:30",
+            "updated_at": "2022-05-24T14:49:31+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1692,
+            "checksum": "b71a36ebb0a7335f33e01d7103fe6e0a",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/vide-sec.liquid",
+            "public_url": null,
+            "created_at": "2022-06-09T21:18:01+05:30",
+            "updated_at": "2022-06-11T15:55:09+05:30",
+            "content_type": "application/x-liquid",
+            "size": 3560,
+            "checksum": "4d280e16a0e3f9c7869aa1a68ab369c4",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/vue-examples.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:01+05:30",
+            "updated_at": "2022-05-17T17:53:01+05:30",
+            "content_type": "application/x-liquid",
+            "size": 4095,
+            "checksum": "49e2db33fcec0e93ec738b883c280aad",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/walk-to-remember.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:01+05:30",
+            "updated_at": "2022-05-24T10:52:13+05:30",
+            "content_type": "application/x-liquid",
+            "size": 2187,
+            "checksum": "ce71f07b82acf094c3d16f82d6331d04",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/willfully-chaotic.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:02+05:30",
+            "updated_at": "2022-05-17T17:53:02+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1318,
+            "checksum": "40260258188af68ecc06aaa3f00b242c",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/winner-of-fashion.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:02+05:30",
+            "updated_at": "2022-05-17T17:53:02+05:30",
+            "content_type": "application/x-liquid",
+            "size": 1875,
+            "checksum": "aa1658be34e0b934bddbae57899c5423",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "sections/working-with-artisan.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:02+05:30",
+            "updated_at": "2022-05-17T17:53:02+05:30",
+            "content_type": "application/x-liquid",
+            "size": 3103,
+            "checksum": "ab16f6f78ff9aae5093db97740fbecb5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "snippets/icon-fb.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:02+05:30",
+            "updated_at": "2022-05-17T17:53:02+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "snippets/layout-menu.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:02+05:30",
+            "updated_at": "2022-05-17T17:53:02+05:30",
+            "content_type": "application/x-liquid",
+            "size": 488,
+            "checksum": "810b50361cab5cbec538a7ff64944d14",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/article.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:05+05:30",
+            "updated_at": "2022-05-17T17:53:05+05:30",
+            "content_type": "application/json",
+            "size": 76,
+            "checksum": "ad666c671b57f7ddd96f57b9b9703a19",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/blog.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:05+05:30",
+            "updated_at": "2022-06-13T13:41:02+05:30",
+            "content_type": "application/json",
+            "size": 10093,
+            "checksum": "e7ad8f7e6aa476550f43b343a05ebb6c",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/cart.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:05+05:30",
+            "updated_at": "2022-06-11T15:55:09+05:30",
+            "content_type": "application/json",
+            "size": 477,
+            "checksum": "f0abfc02ea5e945dc7630746a5377354",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/collection.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:05+05:30",
+            "updated_at": "2022-05-31T16:39:43+05:30",
+            "content_type": "application/json",
+            "size": 1482,
+            "checksum": "7dc6bbda6dcb31d95b92e54a37e62d24",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/customers/account.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:03+05:30",
+            "updated_at": "2022-05-17T17:53:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/customers/activate_account.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:03+05:30",
+            "updated_at": "2022-05-17T17:53:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/customers/addresses.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:03+05:30",
+            "updated_at": "2022-05-17T17:53:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/customers/login.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:03+05:30",
+            "updated_at": "2022-05-17T17:53:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/customers/order.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:03+05:30",
+            "updated_at": "2022-05-17T17:53:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/customers/register.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:03+05:30",
+            "updated_at": "2022-05-17T17:53:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/customers/reset_password.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:03+05:30",
+            "updated_at": "2022-05-17T17:53:03+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/gift_card.liquid",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:04+05:30",
+            "updated_at": "2022-05-17T17:53:04+05:30",
+            "content_type": "application/x-liquid",
+            "size": 0,
+            "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/index.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:05+05:30",
+            "updated_at": "2022-06-01T20:48:37+05:30",
+            "content_type": "application/json",
+            "size": 5765,
+            "checksum": "2d638dbed010048ce72e9922eeddeb48",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/list-collections.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:05+05:30",
+            "updated_at": "2022-05-17T17:53:05+05:30",
+            "content_type": "application/json",
+            "size": 85,
+            "checksum": "c2bcb59a50ebc391f0c62a9185edc08e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.404.json",
+            "public_url": null,
+            "created_at": "2022-06-13T17:50:44+05:30",
+            "updated_at": "2022-06-13T17:50:44+05:30",
+            "content_type": "application/json",
+            "size": 166,
+            "checksum": "aef9cf8f0e5271ae2f580e7ddc27353b",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.behno-in-world.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:05+05:30",
+            "updated_at": "2022-06-09T21:18:03+05:30",
+            "content_type": "application/json",
+            "size": 10774,
+            "checksum": "ef3a51df1e3a59bc336183fb0318d1bf",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.blog-v2.json",
+            "public_url": null,
+            "created_at": "2022-05-31T16:39:42+05:30",
+            "updated_at": "2022-06-09T21:18:03+05:30",
+            "content_type": "application/json",
+            "size": 6008,
+            "checksum": "e797c07f8e3422a7d09d9a17796e96bf",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.cart.json",
+            "public_url": null,
+            "created_at": "2022-06-11T15:55:10+05:30",
+            "updated_at": "2022-06-11T15:55:10+05:30",
+            "content_type": "application/json",
+            "size": 73,
+            "checksum": "303baefb39480ffae3db47be11554431",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.constructing-ethos.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-06-09T21:18:04+05:30",
+            "content_type": "application/json",
+            "size": 9735,
+            "checksum": "c8e31ae92b243945d7fe15f55fd1ec14",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.contact.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-05-17T17:53:06+05:30",
+            "content_type": "application/json",
+            "size": 81,
+            "checksum": "456119f57290b9c2295efcdbf4aa5daf",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.ethical-philosophy.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-05-25T16:45:58+05:30",
+            "content_type": "application/json",
+            "size": 8901,
+            "checksum": "2f52b029f7682e310a9bcebad5dac53d",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.exquisite-handwork.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-05-25T15:22:41+05:30",
+            "content_type": "application/json",
+            "size": 5145,
+            "checksum": "3df33263b17c8447727ddf65a92c47f6",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.garment-worker.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-05-25T16:50:27+05:30",
+            "content_type": "application/json",
+            "size": 7461,
+            "checksum": "3db4db3bad4e42a585c017af3e6996e8",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.handwoven-silks.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-05-25T13:30:46+05:30",
+            "content_type": "application/json",
+            "size": 6675,
+            "checksum": "343f69a1fbb4fe0269c8573523584472",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-05-17T17:53:06+05:30",
+            "content_type": "application/json",
+            "size": 73,
+            "checksum": "d8085538dc93d34f2457f8df79e37e50",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.main-blog.json",
+            "public_url": null,
+            "created_at": "2022-05-31T16:39:42+05:30",
+            "updated_at": "2022-06-09T21:18:04+05:30",
+            "content_type": "application/json",
+            "size": 8300,
+            "checksum": "79e8221c4909ad27e486afd38ea20ccd",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.our-home-base.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-05-25T11:45:44+05:30",
+            "content_type": "application/json",
+            "size": 2251,
+            "checksum": "06dd7dc2cd3a4dad6760b90575c39d4e",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.our-partner-handbag.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:06+05:30",
+            "updated_at": "2022-06-09T21:18:05+05:30",
+            "content_type": "application/json",
+            "size": 8911,
+            "checksum": "e175cef43828180f1ea61c28f3edf3d0",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.philanthropy.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:07+05:30",
+            "updated_at": "2022-06-09T21:18:05+05:30",
+            "content_type": "application/json",
+            "size": 8133,
+            "checksum": "f3c468361a5473604cc9d5fb3c8f10b5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.sense-of-behno.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:07+05:30",
+            "updated_at": "2022-06-13T18:10:38+05:30",
+            "content_type": "application/json",
+            "size": 7974,
+            "checksum": "4dafc7eb021bb8f59054874236ff0992",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/page.termandcondtion.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:07+05:30",
+            "updated_at": "2022-05-31T16:39:43+05:30",
+            "content_type": "application/json",
+            "size": 38087,
+            "checksum": "6937cf67d0de4c458e05f96add1cc644",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/password.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:07+05:30",
+            "updated_at": "2022-05-17T17:53:07+05:30",
+            "content_type": "application/json",
+            "size": 77,
+            "checksum": "035669da9beb69c1de87c26913ae8fec",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/product.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:07+05:30",
+            "updated_at": "2022-06-11T15:59:51+05:30",
+            "content_type": "application/json",
+            "size": 880,
+            "checksum": "13e273a2d39fba992c4be04d0cb57cb5",
+            "theme_id": 124418359389
+        },
+        {
+            "key": "templates/search.json",
+            "public_url": null,
+            "created_at": "2022-05-17T17:53:07+05:30",
+            "updated_at": "2022-05-17T17:53:07+05:30",
+            "content_type": "application/json",
+            "size": 75,
+            "checksum": "442da8cb11eaff2e7b57908088739d00",
+            "theme_id": 124418359389
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+  "sections": {
+    "sense-of-behno": {
+      "type": "sense-of-behno",
+      "blocks": {
+        "3a11c519-2b1c-46c1-a892-24ac663f9113": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/sense-card1.jpg",
+            "cardHeading": "OUR ETHICAL PHILOSOPHY",
+            "cardBrief": "Learn more about our foundational value system. It's an entire system coming together.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "1585455e-2e9f-40e4-8af1-b486f3448910": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/sense-card2.jpg",
+            "cardHeading": "THE GARMENT WORKER PROJECT",
+            "cardBrief": "Crediting the humans behind the pieces we love and humanizing the back-end of fashion.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/behno-garment-worker"
+          }
+        },
+        "36a1e0c2-dc92-46c7-8c06-afbb05835baa": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/sense-card3.jpg",
+            "cardHeading": "BEHNO IN THE WORLD",
+            "cardBrief": "You've seen us in the media, at Buckingham Palace, awards ceremony and in other spaces. And here's some more.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/behno-in-world"
+          }
+        },
+        "62e288e8-cf0f-49eb-b24b-19cf4f962796": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/constructing-ethos1.jpg",
+            "cardHeading": "CONSTRUCTING MSA ETHOS",
+            "cardBrief": "One and one make eleven. There is strength in unity. How (and why) we built our partner factory.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/constructing-ethos"
+          }
+        },
+        "4fb2a25a-1d34-4267-b57e-7fd38ff77712": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/sense-card5.jpg",
+            "cardHeading": "EXQUISITE HANDWORK",
+            "cardBrief": "How tricks of the hand create magic for the eye. Visit our artisanal hand-embroidery workshop.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/exquisite-handwork"
+          }
+        },
+        "f1c2a89d-4ffa-46eb-896d-faec99941f90": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/handwoven-silks-grid1.jpg",
+            "cardHeading": "HANDWOVEN SILKS",
+            "cardBrief": "How we bring to you the world's finest handwoven textiles from the historic city of Varanasi. Immerse yourself.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/handwoven-silks"
+          }
+        },
+        "e782b559-435c-4911-a96c-30a72ca1e882": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/philanthropy-hero.jpg",
+            "cardHeading": "FRONT END PHILANTHROPY",
+            "cardBrief": "How we share our resources with and support nonprofits like the National Down Syndrome Society and the Boys & Girls Clubs of America.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/front-end-philanthropy"
+          }
+        },
+        "cbb00ec0-62ed-420c-a5bd-1191cfb88196": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/sense-card8.jpg",
+            "cardHeading": "OUR PARTNER HANDBAG FACTORY",
+            "cardBrief": "A home away from home, where we spend so much time developing and producing our luxury handbags.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/our-partner-handbag"
+          }
+        },
+        "264ffa26-5dc3-40df-917f-623b857abdc9": {
+          "type": "slide",
+          "settings": {
+            "cardImg": "shopify:\/\/shop_images\/sense-card9.jpg",
+            "cardHeading": "OUR HOME BASE",
+            "cardBrief": "With love from the city that grounds, stimulates, and creates us without ever sleeping.",
+            "cardCta": "LEARN MORE",
+            "cardCtaLink": "shopify:\/\/pages\/our-home-base"
+          }
+        }
+      },
+      "block_order": [
+        "3a11c519-2b1c-46c1-a892-24ac663f9113",
+        "1585455e-2e9f-40e4-8af1-b486f3448910",
+        "36a1e0c2-dc92-46c7-8c06-afbb05835baa",
+        "62e288e8-cf0f-49eb-b24b-19cf4f962796",
+        "4fb2a25a-1d34-4267-b57e-7fd38ff77712",
+        "f1c2a89d-4ffa-46eb-896d-faec99941f90",
+        "e782b559-435c-4911-a96c-30a72ca1e882",
+        "cbb00ec0-62ed-420c-a5bd-1191cfb88196",
+        "264ffa26-5dc3-40df-917f-623b857abdc9"
+      ],
+      "settings": {
+        "secTopHeading": "The Sense",
+        "secBottomHeading": "of behno",
+        "secBrief": "Welcome to our world. Get to know what encompasses our essence.",
+        "SecImg": "shopify:\/\/shop_images\/flower-hand.png",
+        "SecBtn": "LEARN ABOUT OUR STORY",
+        "SecBtnLink": "#"
+      }
+    }
+  },
+  "order": [
+    "sense-of-behno"
+  ]
+}

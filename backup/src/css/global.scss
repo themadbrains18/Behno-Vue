@@ -1,0 +1,421 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-family: 'Helvetica Neue',sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: grey; 
+}
+
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img,video{
+  max-width: 100%;
+}
+
+button{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.t-center{
+  text-align: center;
+}
+.t-start{
+  text-align: start;
+}
+.t-end{
+  text-align: end;
+}
+.t-left{
+  text-align: left;
+}
+
+.w-100{
+  width: 100%;
+} 
+.link{
+  text-decoration-line: underline;
+}
+
+.line-h-0{
+  line-height: 0;
+}
+.line-h-1{
+  line-height: 1;
+}
+
+.d-flex{
+  display: flex;
+}
+.d-block{
+  display: block;
+}
+.d-inline-block{
+  display: inline-block;
+}
+/* colors */
+.color-white{
+  color: #fff;
+}
+.bg-white{
+  background-color: #fff;
+}
+.bg-black{
+  background-color: #000;
+}
+
+.bg-bone{
+  background-color: #E9E7E3;
+}
+.bg-bone-gradient{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #E9E7E3 100%);
+}
+.bg-sand{
+  background-color: #DDCEC7;
+}
+.bg-sand-gradient{
+  background: linear-gradient(180deg, #DDCEC7 0%, rgba(221, 206, 199, 0) 100%);
+}
+.bg-ash{
+  background-color: #6B6B6B;
+}
+
+.big_container {
+  max-width:100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Figma H1 */
+.main_heading{
+  font-family: 'Big Caslon',sans-serif;
+  font-weight: 500;
+  font-size: 72px;
+}
+/* Figma H2 */
+.sec_heading{
+  font-family: 'Big Caslon',sans-serif;
+  font-weight: 500;
+  font-size: 46px;
+}
+
+
+/* Figma H3 */
+.card_heading{
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* Figma H4 */
+.card_heading_b{
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* Figma SUBTITLE */
+.subtitle{
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Figma SUBTITLE 2 */
+.subtitle_b{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* Figma Caption  */
+.caption{
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Figma Body  */
+.body_text{
+  font-family: 'adobe-caslon-pro',sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 19.95px;
+}
+
+/* Figma Small  */
+.samll_text{
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+/* Figma BUTTON  */
+.cta_btn{
+  font-weight: 700;
+  padding: 8px 30px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.cta_btn-black{
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.cta_btn-white{
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #000;
+}
+.fig_caption{
+  font-family: 'adobe-caslon-pro',sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (hover:hover) {
+  .cta_btn-black:hover{
+    background-color: #fff;
+    color: #000;
+  }
+  .cta_btn-white:hover{
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+
+/* Figma Quotes */
+.quotes_text{
+  font-size: 72px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 69px;
+}
+
+/* Figma Quotes small */
+.quotes_text_s{
+  font-size: 46px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modify-slider .swiper-pagination{
+  z-index: 2;
+}
+
+.modify-slider .swiper-button-prev::after,
+.modify-slider .swiper-button-next::after{
+  display: none;
+}
+.modify-slider .swiper-button-next.swiper-button-disabled, 
+.modify-slider .swiper-button-prev.swiper-button-disabled {
+  cursor: pointer;
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
+.modify-slider .swiper-button-prev,
+.modify-slider .swiper-button-next  {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  background-image: url('//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761');
+  height: 32px;
+  width: 32px;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.modify-slider .swiper-button-next{
+  left: auto;
+  right: 15px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.grid_img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.grid_heading {
+  margin: 7px 0 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .quotes_text{
+    font-size: 50px;
+    line-height: 58px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .grid_info{
+    padding: 0 10px;
+  }
+  .quotes_text{
+    font-size: 40px;
+    line-height: 38px;
+  }
+}
+
+
+
+@media only screen and (max-width: 767px){
+  .main_heading{
+    font-size: 46px;
+  }
+  .quotes_text{
+    font-size: 27px;
+    line-height: 28px;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .modify-slider .swiper-button-prev,
+  .modify-slider .swiper-button-next  {
+    display: none;
+  }
+}
+
+
+
+    /* Popup card Css start */
+  .product_popup{
+      position: relative  !important;
+      overflow: hidden  !important;
+  }
+  .image_and_text_sec .product_popup,
+  .img_column_full_bleed_sec  .product_popup,
+  .sight_sound .product_popup
+  {
+      position: relative;
+      overflow: hidden;
+  }
+
+   .product_popup img{
+      display: block;
+  }
+  .product_info_card {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s linear;
+      z-index: 4;
+      transform: translateX(-100%);
+  }
+  .sec_img .product_popup > img{
+      transition: 0.3s linear;
+  }
+
+  .sec_img.active .product_popup > img{
+    transform: scale(1.15);
+  }
+
+  .sec_img.active .product_info_card{
+    transform: translateX(0);
+  }
+  
+
+  @media(min-width:768px){
+    .sec_img:hover .product_info_card{
+      transform: translateX(0);  
+    }
+    .sec_img:hover .product_popup > img{
+      transform: scale(1.15);
+    }
+  }
+/* Popup card Css end */
+
+
+/* Responsive Breakpoints */
+@media(max-width:767px){
+  .product_info_card  img {
+      display: block;
+      width: 100%;
+  }
+  .sec_img.active .product_info_card,
+  .sec_img .product_info_card
+  {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+  .subtitle {
+      margin-top: 11px;
+  }
+  .subtitle_b{
+    margin-bottom: 35px;
+  }
+  .product_popup > img{
+    min-height: 520px;
+    object-fit: cover;
+  }
+  .product_cta {
+      position: absolute;
+      left: 50%;
+      width: calc(100% - 24px);
+      transform: translateX(-50%);
+      bottom: 10px;
+  }
+}
+@media(min-width:768px){
+  .sec_img:hover .product_popup > img{
+      transform: scale(1.15);
+  }
+  .sec_img:hover .product_info_card{
+      left: 0;
+  }
+}
+
+
+.product-containers .imgSvgLoader {
+  width: 136px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  height: 74px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.product-containers > div{
+  min-height: 400px;
+  position: relative;
+}

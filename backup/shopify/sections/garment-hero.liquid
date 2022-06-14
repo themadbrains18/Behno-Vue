@@ -1,0 +1,50 @@
+{% capture blockData %}
+[
+   {% for block in section.blocks %}
+    {
+        para : `{{ block.settings.para }}`
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-garment-garment-hero :shopify-data="{
+    secheading : `{{ section.settings.secheading }}`,
+    subheading : `{{ section.settings.subheading }}`,
+    para : {{ blockData }}
+}">
+</render-garment-garment-hero>
+
+
+
+{% schema %}
+{
+  "name": "Hero Sec",
+  "settings": [
+    {
+      "id": "secheading",
+      "type": "text",
+      "label": "Big Red Text",
+      "default": "THE GARMENT WORKER PROJECT"
+    },
+    {
+      "id": "subheading",
+      "type": "text",
+      "label": "Sub Heading",
+      "default": "The Garment Worker Project debuted in July 2016 at Sotheby’s in New York City."
+    }
+  ],
+  "blocks" : [{
+      "name": "Add Paragraph",
+      "type": "Paragraph",
+      "settings" : [
+        {
+          "id": "para",
+          "type": "textarea",
+          "label": "Paragraph",
+          "default" : "Paragraph"
+        }
+      ]
+  }]
+}
+{% endschema %}

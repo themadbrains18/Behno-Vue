@@ -1,0 +1,62 @@
+{% capture cardData %}
+[
+    {% for block in section.blocks %}
+    {
+        crdHeading   : `{{ block.settings.crdHeading }}`,
+        imgUrl : {
+            src : `{{ block.settings.crdImage | img_url : "" }}`,
+            placeholder: `{{ block.settings.crdImage | img_url : "50x50" }}`,
+            alt: `{{ block.settings.crdImage.alt }}`
+        }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-constructing-ethos-setting-standard
+:shopify-data="{
+    secHeading   : `{{ section.settings.secHeading }}`,
+    secinfo   : `{{ section.settings.secinfo }}`,
+    cardData  : {{ cardData }},
+}">
+</render-sense-of-behno-constructing-ethos-setting-standard>
+
+
+
+{% schema %}
+{
+    "name": "Setting the standard",
+    "settings": [
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "Setting the standard"
+      },
+      {
+        "id": "secinfo",
+        "type": "textarea",
+        "label": "Paragraph",
+        "default": "“The behno Standard,” incrementally implemented, is made up of:"
+       }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Card",
+            "type" : "Card",
+            "settings" : [
+                {
+                    "id": "crdHeading",
+                    "type": "text",
+                    "label": "Card Heading"
+                },
+                {
+                    "id": "crdImage",
+                    "type": "image_picker",
+                    "label": "Card Image"
+                }
+            ]
+        }
+    ]
+ }
+{% endschema %}

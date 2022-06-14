@@ -1,0 +1,302 @@
+{
+  "sections": {
+    "behno-world-hero": {
+      "type": "behno-world-hero",
+      "settings": {
+        "SecHeading": "BEHNO IN THE WORLD",
+        "image": "shopify:\/\/shop_images\/behno-world-img.jpg"
+      }
+    },
+    "winner-of-fashion": {
+      "type": "winner-of-fashion",
+      "blocks": {
+        "a3aa5155-8e51-4432-a38d-d60554e47b4c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image3.jpg"
+          }
+        },
+        "c083fd74-080a-405d-b2f7-ede87c3a31d7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image2.jpg"
+          }
+        },
+        "7916d6c3-a037-4d08-b879-563159548e80": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/winner-image1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "a3aa5155-8e51-4432-a38d-d60554e47b4c",
+        "c083fd74-080a-405d-b2f7-ede87c3a31d7",
+        "7916d6c3-a037-4d08-b879-563159548e80"
+      ],
+      "settings": {
+        "secHeading": "Winner of Fashion Group International’s Rising Star Award.",
+        "secSubHeading": "Recently, behno won Fashion Group International’s Rising Star Award in accessories.",
+        "secInfo": "Nomination was based on brand viability, branding, sales and distribution, and personal interviews. Previous winners of Fashion Group International’s Rising Star Award include Tory Burch, Michael Kors, Jason Wu, Phillip Lim, among others."
+      }
+    },
+    "willfully-chaotic": {
+      "type": "willfully-chaotic",
+      "settings": {
+        "secLink": "#",
+        "secBgIng": "shopify:\/\/shop_images\/bg-imge.jpg",
+        "sehHeading": "“WILLFULLY CHAOTIC AND CRAZILY INVENTIVE.”",
+        "ctaText": "EXPLORE OUR PRESS",
+        "ctaLink": "#"
+      }
+    },
+    "invited-buckingham": {
+      "type": "invited-buckingham",
+      "blocks": {
+        "af5ebe14-c858-49d4-ac83-6ff9ad50d2b4": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1IN_THE_WORLD.jpg",
+            "imageInfo": "behno's looks for the Commonwelth Fashion Exchange."
+          }
+        },
+        "a39ac6a4-b4e4-4324-9495-ea01bc13f647": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2IN_THE_WORLD.jpg",
+            "imageInfo": "Hamish Bowles (L) , Anna Wintour (R)"
+          }
+        },
+        "d7f5afc1-164b-47fd-825c-bf0fbc0fb003": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3IN_THE_WORLD.jpg",
+            "imageInfo": "Marama Anne Papau (L) , HRH The Duchess of Cambridge (R)."
+          }
+        },
+        "f52d30e4-437f-49dc-a94c-bb7f7754f1da": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5IN_THE_WORLD.jpg",
+            "imageInfo": "(L to R) Lisa Armstong , Shivam and Marama Anne Papau"
+          }
+        }
+      },
+      "block_order": [
+        "af5ebe14-c858-49d4-ac83-6ff9ad50d2b4",
+        "a39ac6a4-b4e4-4324-9495-ea01bc13f647",
+        "d7f5afc1-164b-47fd-825c-bf0fbc0fb003",
+        "f52d30e4-437f-49dc-a94c-bb7f7754f1da"
+      ],
+      "settings": {
+        "secHeading": "We were invited to Buckingham Palace by Her Majesty, The Queen of England.",
+        "secSubHeading": "“behno was honored as the only American brand invited to be in the Commonwealth Fashion Exchange to present an ethical fashion eveningwear look to Her Royal Highness, The Duchess of Cambridge, Catherine Middleton.",
+        "secInfo": "“behno incorporated elements from the Commonwealth countries of India and Tuvalu into a look that was presented to the royal family and celebrated in a reception attended by industry leaders, including Anna Wintour, Livia Firth, Edward Enninful, among others.",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a83bd23c8844485da612bc2c17f1d831.mp4"
+      }
+    },
+    "finalist-in-livia": {
+      "type": "finalist-in-livia",
+      "blocks": {
+        "20fd3fe1-d71c-4f82-8b1a-81871701960a": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/garden-carpet.png",
+            "imageInfo": ""
+          }
+        },
+        "3a603b57-19e9-4ef9-a2d9-864d3c00d260": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2INTHEWORLD.jpg",
+            "imageInfo": "Ellie Goulding (R) with the behno team"
+          }
+        },
+        "5f3eec8e-6e36-4449-83da-fb3f4be0c1f2": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/24INTHEWORLD.jpg",
+            "imageInfo": "Shivam (L) and Alessandra Airo (R) at the Green Carpet Awards"
+          }
+        },
+        "9cdfd926-b1d6-4339-9597-b2a4e6949c98": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2INTHEWORLD_2.jpg",
+            "imageInfo": "behno's look on the day of top five selection."
+          }
+        },
+        "48dbbc4f-6f2e-4b75-8f97-ebe41c0befe3": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/23INTHEWORLD.jpg",
+            "imageInfo": "Olivia palermo (L) and Shivam (R) outside the Teatro alla Scala."
+          }
+        },
+        "577e4314-8bc4-49a3-9b4e-18aee539e57b": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/25INTHEWORLD.jpg",
+            "imageInfo": "Desiree Bollier (L) and Shivam  (R) at the Green Carpet Awards."
+          }
+        }
+      },
+      "block_order": [
+        "20fd3fe1-d71c-4f82-8b1a-81871701960a",
+        "3a603b57-19e9-4ef9-a2d9-864d3c00d260",
+        "5f3eec8e-6e36-4449-83da-fb3f4be0c1f2",
+        "9cdfd926-b1d6-4339-9597-b2a4e6949c98",
+        "48dbbc4f-6f2e-4b75-8f97-ebe41c0befe3",
+        "577e4314-8bc4-49a3-9b4e-18aee539e57b"
+      ],
+      "settings": {
+        "secHeading": "Top 5 Finalist in Livia Firth’s Green Carpet Challenge",
+        "secSubHeading": "behno was nominated for the highest award in sustainability in the fashion industry.",
+        "secInfo": "behno was shortlisted for top 10, where behno founder, Shivam Punjya, pitched to a jury in Paris comprised of Ellie Goulding, Vogue UK editor-in-chief, Edward Enninful, CNN style correspondent, Derek Blasberg, television host and philanthropist, Petra Nemcova, investor, Carmen Busqets, Matchesfashion.com fashion director, Natalie Kingham, among others. behno was enlisted as a top five finalist and attended The Green Carpet Awards in Milan, held at the Teatro alla Scala. The Green Carpet Awards were founded by Livia Firth and have been attended by the likes of Anna Wintour, Cate Blanchett, among other movers and shakers of the fashion and media worlds.",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/90f295dbf79641eaa02e7463198075df.mp4"
+      }
+    },
+    "meet-fashion-designers": {
+      "type": "meet-fashion-designers",
+      "blocks": {
+        "16cf4206-2ba3-4e30-b23e-0800829af523": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Top 5 Finalist for the Accessories Council of America’s Design Excellence Awards.",
+            "secSubHeading": "behno was a top five finalist for the Design Excellence Award for the “Handbags Under $1000” category.",
+            "secInfo": "behno was in exciting company; Fendi, Givenchy, Jimmy Choo, Chloe, Sperry, Frances Valentine, among others are finalists as well, all spanning across their respective categories.  The bag behno submitted for the award truly integrates The behno Standard on various levels and speaks to both our ethical and design philosophy. The drop cloth itself is upcycled from block printers, the embroidery tells the story of the artisans we work with, and the bag itself is made in a factory that we’re so proud to call a partner. The bag itself is the smallest size from our iconic Ina series.",
+            "secImg": "shopify:\/\/shop_images\/download1.jpg"
+          }
+        },
+        "4ba62c44-4294-4306-a85a-54835ac1a32d": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Invited to showcase the Garment Worker Project at Sotheby’s.",
+            "secSubHeading": "In 2016, behno debuted its Garment Worker Project at Sotheby’s in a private reception co-hosted by behno founder, Shivam Punjya, and celebrity stylist Micaela Erlanger.",
+            "secInfo": "The Garment Worker Project, a first of its kind, garnered international attention and was the first time a celebrity stylist took a strong position on ethical manufacturing. The project was photographed by fashion photographer Dan Smith and filmed by Kent Mathews.",
+            "secImg": "shopify:\/\/shop_images\/download2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "16cf4206-2ba3-4e30-b23e-0800829af523",
+        "4ba62c44-4294-4306-a85a-54835ac1a32d"
+      ],
+      "settings": {
+        "redHeading": "“MEET FASHION’S COOL NEW WAVE OF SUSTAINABLE CHIC DESIGNERS.”",
+        "logoImg": "shopify:\/\/shop_images\/vogue.png",
+        "ctaText": "EXPLORE OUR PRESS",
+        "ctaLink": ""
+      }
+    },
+    "speaking-engagement": {
+      "type": "speaking-engagement",
+      "blocks": {
+        "72dd4103-4d25-4d1e-be82-5f9a899ddd95": {
+          "type": "paragraph",
+          "settings": {
+            "para": "behno founder spoke on fashion as an industry capable of mobilizing communities and consumers for social change and global impact and share his story and social enterprise model. The talk was attended by diplomats, figureheads, and industry veterans."
+          }
+        },
+        "bd6a8e00-57cf-4f3c-b25e-9adf8375e005": {
+          "type": "paragraph",
+          "settings": {
+            "para": "For the first time, the United Nations discussed the fashion industry as a mobilizer for change by inviting six leaders in the fashion space to present their business models to discuss best practices and stimulate dialogue."
+          }
+        },
+        "70dba898-3778-4460-a039-ba845959676f": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slideimg1.jpg",
+            "imageInfo": "The speakers included (L to R ) Shivam, Andrea Reyes,Pattrick Duffy,Amanda Carr,Ashia Dearwester and Lilian Liu."
+          }
+        },
+        "8e0bf4f6-d0ed-45a3-aabe-c31266c6a55c": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slideimg2.jpg",
+            "imageInfo": ""
+          }
+        },
+        "9fcfbf08-131f-40f3-bcdd-105aa53ea953": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/working-artisan-left.jpg",
+            "imageInfo": "Over 700 Indivisual gathred at the united Nations to discuss fashion as a social mobilizer."
+          }
+        }
+      },
+      "block_order": [
+        "72dd4103-4d25-4d1e-be82-5f9a899ddd95",
+        "bd6a8e00-57cf-4f3c-b25e-9adf8375e005",
+        "70dba898-3778-4460-a039-ba845959676f",
+        "8e0bf4f6-d0ed-45a3-aabe-c31266c6a55c",
+        "9fcfbf08-131f-40f3-bcdd-105aa53ea953"
+      ],
+      "settings": {
+        "secHeading": "Speaking engagement at the United Nations, a first of its kind.",
+        "secSubHeading": "behno founder, Shivam Punjya, was invited to the United Nations to speak on fashion as a social mobilizer."
+      }
+    },
+    "launch-bergdorf": {
+      "type": "launch-bergdorf",
+      "blocks": {
+        "a8b42d69-658b-4d80-b8c5-fb51c7e387d4": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf4.jpg"
+          }
+        },
+        "425dcc54-7429-4edf-8e7a-5ce8efc9928b": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf3.jpg"
+          }
+        },
+        "846834b1-4c87-4ad5-8261-7efaf4da2051": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf1.jpg"
+          }
+        },
+        "c488611a-9369-486d-b7ee-b3467a24e97c": {
+          "type": "slide",
+          "settings": {
+            "secImg": "shopify:\/\/shop_images\/Bergdorf2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "a8b42d69-658b-4d80-b8c5-fb51c7e387d4",
+        "425dcc54-7429-4edf-8e7a-5ce8efc9928b",
+        "846834b1-4c87-4ad5-8261-7efaf4da2051",
+        "c488611a-9369-486d-b7ee-b3467a24e97c"
+      ],
+      "settings": {
+        "secHeading": "Launch at Bergdorf Goodman, a crown jewel in luxury retail.",
+        "secSubHeading": "In Fall 2018, behno launched its first handbag collection at Bergdorf Goodman.",
+        "secInfo": "behno launched at Bergdorf Goodman with a celebratory breakfast with industry insiders, reporters, and editors from the fashion world. Betty Halbreich, Bergdorf Goodman’s most coveted personal shopper, attended the launch breakfast."
+      }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
+    }
+  },
+  "order": [
+    "behno-world-hero",
+    "winner-of-fashion",
+    "willfully-chaotic",
+    "invited-buckingham",
+    "finalist-in-livia",
+    "meet-fashion-designers",
+    "speaking-engagement",
+    "launch-bergdorf",
+    "back-sense-behno"
+  ]
+}

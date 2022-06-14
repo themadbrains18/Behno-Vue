@@ -1,0 +1,303 @@
+{
+  "sections": {
+    "blog-hero": {
+      "type": "blog-hero",
+      "settings": {
+        "checkSection": true,
+        "heroHeading": "I AM:",
+        "heroImgDesktop": "shopify:\/\/shop_images\/blog-banner-bg.jpg",
+        "heroImgMobile": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg"
+      }
+    },
+    "gallery-preview": {
+      "type": "gallery-preview",
+      "blocks": {
+        "eef26de5-e9bb-4122-8e87-19ca9996db8b": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img1.jpg",
+            "product": "the-softest-tee-mens-fitted-long-sleeve-black"
+          }
+        },
+        "31ed3ef1-0b8b-4178-ba5d-25c7d00cc084": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "product": "ana-flat-tote-large-pebble-ruched-apricot"
+          }
+        },
+        "02c8897c-98d1-4142-a54f-8eaca909bd7e": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "product": "ari-split-base-crossbody-nappa-olive"
+          }
+        },
+        "b60d0b1d-0dc8-47e5-a19f-ab870a717d3b": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img1.jpg",
+            "product": "devon-wallet-black"
+          }
+        },
+        "053f1a3e-2ffd-4408-8562-403daef29d4b": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "product": "the-softest-tee-mens-fitted-short-sleeve-black"
+          }
+        },
+        "f02cbbbd-e72b-4a5f-8a44-38fef385da8e": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "product": "copy-of-the-softest-tee-womens-fitted-long-sleeve-white"
+          }
+        },
+        "81c351ff-73b4-4f69-ab8a-b1ceffe359ee": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "product": "ana-flat-tote-crossbody-pebble-ruched-red"
+          }
+        },
+        "c190422a-0938-45a3-b263-9bce36a9ad21": {
+          "type": "Image",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "product": "ana-flat-tote-large-pebble-ruched-apricot"
+          }
+        }
+      },
+      "block_order": [
+        "eef26de5-e9bb-4122-8e87-19ca9996db8b",
+        "31ed3ef1-0b8b-4178-ba5d-25c7d00cc084",
+        "02c8897c-98d1-4142-a54f-8eaca909bd7e",
+        "b60d0b1d-0dc8-47e5-a19f-ab870a717d3b",
+        "053f1a3e-2ffd-4408-8562-403daef29d4b",
+        "f02cbbbd-e72b-4a5f-8a44-38fef385da8e",
+        "81c351ff-73b4-4f69-ab8a-b1ceffe359ee",
+        "c190422a-0938-45a3-b263-9bce36a9ad21"
+      ],
+      "settings": {
+        "showProduct": true,
+        "GalleryPreviewHeading": "Amrit Sandhu chats with the behno team.",
+        "PopupHeading": "GALLERY",
+        "GalleryCta": "VIEW + SHOP GALLERY",
+        "ProductBtn": "Go to product"
+      }
+    },
+    "text-box": {
+      "type": "text-box",
+      "blocks": {
+        "05ae0fa7-b41e-4dc6-8337-b348b12d2138": {
+          "type": "info",
+          "settings": {
+            "secInfo": "The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”"
+          }
+        }
+      },
+      "block_order": [
+        "05ae0fa7-b41e-4dc6-8337-b348b12d2138"
+      ],
+      "settings": {
+        "checkSection": true,
+        "secSubHeading": "MARCH 22, 2022"
+      }
+    },
+    "image-column": {
+      "type": "image-column",
+      "blocks": {
+        "d353feb1-4050-42e1-b293-0fa18433b7c5": {
+          "type": "slide",
+          "settings": {
+            "previewImg": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg",
+            "secCtaText": "SHOP THE BAG",
+            "product": "elizabeth-baguette-pebble-avocado"
+          }
+        },
+        "f0401990-7813-4007-910e-1262978cf512": {
+          "type": "slide",
+          "settings": {
+            "previewImg": "shopify:\/\/shop_images\/shop-bag2_f4aefbae-c315-4681-b839-22f939a48ee9.jpg",
+            "secCtaText": "SHOP THE BAG",
+            "product": "frida-flat-tote-nappa-orchid"
+          }
+        }
+      },
+      "block_order": [
+        "d353feb1-4050-42e1-b293-0fa18433b7c5",
+        "f0401990-7813-4007-910e-1262978cf512"
+      ],
+      "settings": {
+        "checkSection": true
+      }
+    },
+    "image-and-text": {
+      "type": "image-and-text",
+      "blocks": {
+        "a263586e-1059-4e93-9001-7a3733d884ed": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”"
+          }
+        }
+      },
+      "block_order": [
+        "a263586e-1059-4e93-9001-7a3733d884ed"
+      ],
+      "settings": {
+        "checkSection": true,
+        "checkImgHeading": true,
+        "imgHeading": "I AM:",
+        "secImg": "shopify:\/\/shop_images\/image-text.jpg",
+        "secCta": "SHOP THE BAG",
+        "product": "ana-flat-tote-large-pebble-ruched-red"
+      }
+    },
+    "vide-sec": {
+      "type": "vide-sec",
+      "settings": {
+        "checkSection": true,
+        "SectionShow": true,
+        "SecHeading": "“I WAS ALWAYS FEARLESS.”",
+        "VideoShow": true,
+        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab4ac139b6114d1589dafb7c2df0b0b6.mov"
+      }
+    },
+    "img-column-full-bleed": {
+      "type": "img-column-full-bleed",
+      "blocks": {
+        "201b4185-c18b-48cb-b086-5f70fbcc3e4b": {
+          "type": "slide",
+          "settings": {
+            "product": "devon-wallet-pebble-chain-cognac-orange",
+            "secCtaText": "SHOP THE BAG",
+            "previewImg": "shopify:\/\/shop_images\/bleed1.jpg"
+          }
+        },
+        "c27f6abe-f6dc-403d-b0d3-8700b5ecab52": {
+          "type": "slide",
+          "settings": {
+            "product": "elizabeth-baguette-mini-pebble-mango",
+            "secCtaText": "SHOP THE BAG",
+            "previewImg": "shopify:\/\/shop_images\/bleed2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "201b4185-c18b-48cb-b086-5f70fbcc3e4b",
+        "c27f6abe-f6dc-403d-b0d3-8700b5ecab52"
+      ],
+      "settings": {
+        "checkSection": true
+      }
+    },
+    "image-and-text2": {
+      "type": "image-and-text",
+      "blocks": {
+        "430cd5cc-76e6-4ad9-845a-37ff66bcfdcb": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The actress Jessie Buckley is a natural brunette, but her hair is currently chopped into a ragged black bob and her nails are painted the same emerald green that the writer Christopher Isherwood gave Sally Bowles, the glamorously in-denial singer, in his 1937 novella of the same name. “Different hair for every job,” says Buckley, characteristically wry over a video call from London. “People think you’re very transformative.” Later, she’ll go onstage in “Cabaret,” the musical adaptation of Isherwood’s story of Weimar-era doom, at the Playhouse Theatre’s Kit Kat Club, alongside Eddie Redmayne. And in a few weeks, she’ll fly to Los Angeles for the 94th Academy Awards: Her performance in “The Lost Daughter” garnered her a nomination for best actress in a supporting role. Her brother had delivered the news to her over text the day before. “I thought he was joking,” she says. “It’s just something that doesn’t happen in life.”"
+          }
+        }
+      },
+      "block_order": [
+        "430cd5cc-76e6-4ad9-845a-37ff66bcfdcb"
+      ],
+      "settings": {
+        "checkSection": true,
+        "checkImgHeading": false,
+        "imgHeading": "I AM:",
+        "secImg": "shopify:\/\/shop_images\/img-text-2.jpg",
+        "secCta": "SHOP THE BAG",
+        "product": "the-softest-tee-mens-fitted-short-sleeve-black"
+      }
+    },
+    "sight-sound": {
+      "type": "sight-sound",
+      "blocks": {
+        "4f4ae9ec-03a0-40cb-bda1-d5672c651515": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Sight"
+          }
+        },
+        "862b8467-fbab-496c-9529-4dcb59d816cf": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Sound"
+          }
+        },
+        "084ed431-05b1-492e-8037-c39bd6cf91a2": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Touch"
+          }
+        },
+        "487c0d49-0e0d-4885-9451-183bb691a46c": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Smell"
+          }
+        },
+        "844d07f2-9508-47a4-8883-0295ab17adad": {
+          "type": "slide",
+          "settings": {
+            "secHeading": "Taste"
+          }
+        }
+      },
+      "block_order": [
+        "4f4ae9ec-03a0-40cb-bda1-d5672c651515",
+        "862b8467-fbab-496c-9529-4dcb59d816cf",
+        "084ed431-05b1-492e-8037-c39bd6cf91a2",
+        "487c0d49-0e0d-4885-9451-183bb691a46c",
+        "844d07f2-9508-47a4-8883-0295ab17adad"
+      ],
+      "settings": {
+        "checkSection": true,
+        "secImg": "shopify:\/\/shop_images\/sec-full-img.jpg",
+        "secCta": "SHOP THE BAG",
+        "showProduct": true,
+        "product": "elizabeth-baguette-mini-suede-acid-green"
+      }
+    },
+    "shop-all-bags": {
+      "type": "shop-all-bags",
+      "settings": {
+        "showProduct": true,
+        "sectionHeading": "SHOP ALL FEATURED BAGS",
+        "ProductList": [
+          "the-softest-tee-mens-fitted-long-sleeve-black",
+          "the-softest-tee-mens-fitted-long-sleeve-white",
+          "the-softest-tee-mens-fitted-short-sleeve-black",
+          "copy-of-the-softest-tee-mens-fitted-short-sleeve-white",
+          "the-softest-tee-womens-fitted-long-sleeve-black",
+          "copy-of-the-softest-tee-womens-fitted-long-sleeve-white",
+          "the-softest-tee-womens-fitted-short-sleeve-black",
+          "the-softest-tee-womens-fitted-short-sleeve-white",
+          "alex-shoulder-bag-glossy-croc-balsamic",
+          "ana-flat-tote-crossbody-nappa-ruched-olive",
+          "ana-flat-tote-crossbody-pebble-ruched-apricot",
+          "ana-flat-tote-crossbody-pebble-ruched-bordeaux",
+          "ana-flat-tote-crossbody-pebble-ruched-red",
+          "ana-flat-tote-large-pebble-ruched-apricot"
+        ]
+      }
+    }
+  },
+  "order": [
+    "blog-hero",
+    "gallery-preview",
+    "text-box",
+    "image-column",
+    "image-and-text",
+    "vide-sec",
+    "img-column-full-bleed",
+    "image-and-text2",
+    "sight-sound",
+    "shop-all-bags"
+  ]
+}

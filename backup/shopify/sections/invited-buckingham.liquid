@@ -1,0 +1,92 @@
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-behno-in-world-invited-buckingham :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secSubHeading:`{{ section.settings.secSubHeading }}`,
+    secInfo:`{{ section.settings.secInfo }}`,
+    checkImage: `{{ section.settings.checkImage }}`,
+    collageData  : {{ collageData }},
+    videolink: `{{ section.settings.videolink }}`
+
+}">
+</render-sense-of-behno-behno-in-world-invited-buckingham>
+
+
+
+
+
+{% schema %}
+{
+    "name":"Invited Buckingham ",
+    "settings":[
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":" We were invited to Buckingham Palace by Her Majesty, The Queen of England. "
+        },
+        {
+            "id":"secSubHeading",
+            "type":"text",
+            "label":"Section Sub Heading",
+            "default":" “behno was honored as the only American brand invited to be in the Commonwealth Fashion Exchange to present an ethical fashion eveningwear look to Her Royal Highness, The Duchess of Cambridge, Catherine Middleton. "
+        },
+        {
+            "id":"secInfo",
+            "type":"text",
+            "label":"Section Info",
+            "default":" “behno incorporated elements from the Commonwealth countries of India and Tuvalu into a look that was presented to the royal family and celebrated in a reception attended by industry leaders, including Anna Wintour, Livia Firth, Edward Enninful, among others."
+        },
+        
+        {
+            "id": "checkImage",
+            "type": "checkbox",
+            "label": "Show Video",
+            "default": true
+        },
+
+        {
+            "id": "videolink",
+            "type": "text",
+            "label": "Section Video",
+            "default" :"https://cdn.shopify.com/videos/c/o/v/a83bd23c8844485da612bc2c17f1d831.mp4"
+        }
+
+    ],
+    "blocks":[
+        {
+            "name": "Collage Image",
+            "type" : "collage",
+            "limit" : 4,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id":"imageInfo",
+                    "type":"text",
+                    "label":"Image Info"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,246 @@
+{
+  "sections": {
+    "constructing-ethos-hero": {
+      "type": "constructing-ethos-hero",
+      "blocks": {
+        "d3e45196-28f0-4541-80d7-c39321a292de": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Ensuring garment workers and artisans have a safe working space should be the norm. But it isn’t."
+          }
+        },
+        "c0b7c44e-02e2-4cbc-b402-f9bf0c22401a": {
+          "type": "paragraph",
+          "settings": {
+            "para": "“The behno Standard” was crafted after a deep dive into academia, time spent in the field, and having worked closely with various stakeholders at the back-end of fashion’s supply chain."
+          }
+        },
+        "7b6be214-7bbb-4a80-96af-6bfb53903c01": {
+          "type": "paragraph",
+          "settings": {
+            "para": "To take “The behno Standard” from theory to reality, Shivam partnered with nonprofit Muni Seva Ashram (MSA) and an industry veteran, Mukesh Kothari, to build a factory called MSA Ethos."
+          }
+        },
+        "7d91204a-e0c2-4c04-a6d9-1dc078637013": {
+          "type": "paragraph",
+          "settings": {
+            "para": "MSA Ethos is a revolutionary, intersectional approach to manufacturing where MSA assisted in its social programming and Mr. Kothari, its Managing Director, overlooked factory operations ensuring quality control and a smooth functioning of operations."
+          }
+        },
+        "68dd6623-7f7f-4151-b282-75c92acbd2cd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/constructing-ethos1.jpg"
+          }
+        },
+        "6ccf4fa8-bb22-487a-b50b-ac0157bdcb23": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/constructing-ethos-hero.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "d3e45196-28f0-4541-80d7-c39321a292de",
+        "c0b7c44e-02e2-4cbc-b402-f9bf0c22401a",
+        "7b6be214-7bbb-4a80-96af-6bfb53903c01",
+        "7d91204a-e0c2-4c04-a6d9-1dc078637013",
+        "68dd6623-7f7f-4151-b282-75c92acbd2cd",
+        "6ccf4fa8-bb22-487a-b50b-ac0157bdcb23"
+      ],
+      "settings": {
+        "preHeading": "BEHNO IN THE WORLD",
+        "secHeading": "Envisioning manufacturing to be radically different.",
+        "subHeading": "Our founder, Shivam Punjya, created a space where garment workers, artisans, and factories were an intimate part of a brand’s core DNA.",
+        "afterImageText": "MSA ETHOS. GUJARAT, INDIA."
+      }
+    },
+    "setting-standard": {
+      "type": "setting-standard",
+      "blocks": {
+        "8b977555-94e0-4fbe-89cb-2db8c18a8a3f": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "HEALTH",
+            "crdImage": "shopify:\/\/shop_images\/standard-card.jpg"
+          }
+        },
+        "d9d28001-f60b-4118-9f55-acef379cee0f": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "GARMENT WORKER SOCIAL MOBILITY",
+            "crdImage": "shopify:\/\/shop_images\/standard-card1.jpg"
+          }
+        },
+        "b7fda0f4-ecfd-413c-ad7e-f9fa6a952739": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "FAMILY PLANNING",
+            "crdImage": "shopify:\/\/shop_images\/standard-card3.jpg"
+          }
+        },
+        "5aea64af-af35-4846-9ff5-34fd44ca47fc": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "WOMEN’S RIGHTS",
+            "crdImage": "shopify:\/\/shop_images\/standard-card4.jpg"
+          }
+        },
+        "21b4acaf-9c4f-41cb-b4c8-d9f6b74e4b4b": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "WORKER SATISFACTION & BENEFITS",
+            "crdImage": "shopify:\/\/shop_images\/standard-card5.jpg"
+          }
+        },
+        "9238db2a-8edf-4e7d-9f12-df0ea6a19d5a": {
+          "type": "Card",
+          "settings": {
+            "crdHeading": "ECO-CONSCIOUSNESS",
+            "crdImage": "shopify:\/\/shop_images\/standard-card6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "8b977555-94e0-4fbe-89cb-2db8c18a8a3f",
+        "d9d28001-f60b-4118-9f55-acef379cee0f",
+        "b7fda0f4-ecfd-413c-ad7e-f9fa6a952739",
+        "5aea64af-af35-4846-9ff5-34fd44ca47fc",
+        "21b4acaf-9c4f-41cb-b4c8-d9f6b74e4b4b",
+        "9238db2a-8edf-4e7d-9f12-df0ea6a19d5a"
+      ],
+      "settings": {
+        "secHeading": "Setting the standard",
+        "secinfo": "“The behno Standard,” incrementally implemented, is made up of:"
+      }
+    },
+    "msa-ethos": {
+      "type": "msa-ethos",
+      "blocks": {
+        "95457ae0-6325-415a-8528-22d76510f35f": {
+          "type": "secGrid",
+          "settings": {
+            "gridImg": "shopify:\/\/shop_images\/ethos-right.jpg",
+            "gridHeading": "Brainchild of a brilliant brain.",
+            "gridSubHeading": "Muni Seva Ashram is spearheaded by Dr. Vikram Patel, a visionary of our times.",
+            "gridInfo": "Dr. Patel built the nonprofit to function like a self-sustaining village. Dr. Patel flourishes in intellectually yet realistically implementing concepts and systems that may, at first, seem far-fetched for a nonprofit village nestled in a rural landscape."
+          }
+        },
+        "e92d23d6-35b4-4960-865b-06bfd161cdd6": {
+          "type": "secGrid",
+          "settings": {
+            "gridImg": "shopify:\/\/shop_images\/ethos-left.jpg",
+            "gridHeading": "MSA respectfully brings modernity to a rural space through progressive and cutting-edge practices, all considering local nuances.",
+            "gridSubHeading": "",
+            "gridInfo": "MSA is a nonprofit that's self sustaining, educative, caring, and mostly, a space for marginalized communities."
+          }
+        },
+        "3c23d8cd-cb17-48d8-a218-51ca9bbb38c2": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1-MSAETHOS.jpg",
+            "imageInfo": "Utilizing state of art solar discs, MSA genrate it owns electricity throught solar power.."
+          }
+        },
+        "0ced010a-6c66-4d86-b5e3-48f5cc87c1ff": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-MSAETHOS.jpg",
+            "imageInfo": "MSA addresses the needs of vulnerable polutions through its insite orphanage, center for mentally disabled woman, and senior citizens home."
+          }
+        },
+        "bf56104b-890d-45b7-b358-5ff1801b0eba": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-MSAETHOS.jpg",
+            "imageInfo": "Here we see the distribution of milk form MSA own Dairy farm to local community members."
+          }
+        },
+        "d389242d-eb50-47f8-9d22-d9b4b742f636": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4-MSAETHOS.jpg",
+            "imageInfo": "MSA harvest hundreds of acres organic produce and its agricultrural practices include implementing top-notch irrigation technologies to conserve water.."
+          }
+        },
+        "98cada46-4e02-49b2-8a8e-f62ec4f6263d": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5-MSAETHOS.jpg",
+            "imageInfo": "The facde of world-class thst has a cyclotron radiation machine for its canser patients whare th cost of all medical treatment is on a saliding scale."
+          }
+        },
+        "2770a318-f3e1-49ba-9215-762264d69be6": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6-MSAETHOS.jpg",
+            "imageInfo": "Within all its activities , MSA employes local community member to run its vast operations."
+          }
+        },
+        "3a4a1c0b-605a-4293-857f-0ab132030095": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7-MSAETHOS.jpg",
+            "imageInfo": "Sharing oranges form the farms at MSA as an afternoon snack at the factory.."
+          }
+        },
+        "309f4730-e7d7-42d8-bd06-b9341400a9a2": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8-MSAETHOS.jpg",
+            "imageInfo": "making a Thousands of roties at the community kitchen for students of MSA's resident primary ,secondry and vocational training schools, for visitors and for residents of MSA."
+          }
+        },
+        "5c1ddeab-bd0e-4692-b8eb-e60a48d694cc": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/9-MSAETHOS.jpg",
+            "imageInfo": "The MSA Ethos and behno team at MSA."
+          }
+        }
+      },
+      "block_order": [
+        "95457ae0-6325-415a-8528-22d76510f35f",
+        "e92d23d6-35b4-4960-865b-06bfd161cdd6",
+        "3c23d8cd-cb17-48d8-a218-51ca9bbb38c2",
+        "0ced010a-6c66-4d86-b5e3-48f5cc87c1ff",
+        "bf56104b-890d-45b7-b358-5ff1801b0eba",
+        "d389242d-eb50-47f8-9d22-d9b4b742f636",
+        "98cada46-4e02-49b2-8a8e-f62ec4f6263d",
+        "2770a318-f3e1-49ba-9215-762264d69be6",
+        "3a4a1c0b-605a-4293-857f-0ab132030095",
+        "309f4730-e7d7-42d8-bd06-b9341400a9a2",
+        "5c1ddeab-bd0e-4692-b8eb-e60a48d694cc"
+      ],
+      "settings": {
+        "redText": "“MSA ETHOS WAS AN INTERSECTIONAL APPROACH TO MANUFACTURING.”"
+      }
+    },
+    "portraitures-powerhouse": {
+      "type": "portraitures-powerhouse",
+      "settings": {
+        "secHeading": "Portraitures of a powerhouse.",
+        "subHeading": "The Garment Worker Project.",
+        "secinfo": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.",
+        "ctaLink": "shopify:\/\/pages\/behno-garment-worker",
+        "ctatext": "discover the project",
+        "checkbox": true,
+        "videoLink": "https:\/\/i.shgcdn.com\/dfe5ddee-faae-4df5-86a6-44c58a4de1c9\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
+      }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
+    }
+  },
+  "order": [
+    "constructing-ethos-hero",
+    "setting-standard",
+    "msa-ethos",
+    "portraitures-powerhouse",
+    "back-sense-behno"
+  ]
+}

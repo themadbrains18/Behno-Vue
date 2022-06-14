@@ -1,0 +1,83 @@
+{% capture productData %}
+[
+{% for block in section.blocks %}
+    {
+        previewimage:{
+            src : `{{ block.settings.previewImage | img_url : "" }}`,
+            placeholder: `{{ block.settings.previewImage | img_url : "50x50" }}`,
+            alt: `{{ block.settings.previewImage.alt }}`
+        },
+        product:  {
+            productid : `{{ block.settings.product.id }}`,
+            productUrl : `{{ block.settings.product.url }}`,
+            productidImage : `{{ block.settings.product.media[0] | img_url : "" }}`,
+            productidPrice : `{{ block.settings.product.price | money_with_currency }}`,
+            productTitle : `{{ block.settings.product.title }}`
+        }
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+{% endcapture %}
+
+<render-blog-gallery-preview :shopify-data="{
+    GalleryPreviewHeading:`{{ section.settings.GalleryPreviewHeading }}`,
+    showProduct : `{{ section.settings.showProduct }}`,
+    productData: {{ productData }} ,
+    PopupHeading : `{{ section.settings.PopupHeading }}`,
+    GalleryCta:`{{ section.settings.GalleryCta }}`
+}">
+</render-blog-gallery-preview>
+{% schema %}
+    {
+        "name":"Gallery Preview",
+        "settings":[
+            {
+                "id": "showProduct",
+                "type": "checkbox",
+                "label": "Show Products",
+                "default": true
+            },
+            {
+                "id":"GalleryPreviewHeading",
+                "label":"gallery heading",
+                "type":"text",
+                "default":"Amrit Sandhu chats with the behno team."
+            },
+            
+            {
+                "id": "PopupHeading",
+                "type": "text",
+                "label": "Popup Heading"
+            },
+            {
+                "id": "GalleryCta",
+                "type": "text",
+                "label": "Gallery Button"
+            },
+            {
+                "id":"ProductBtn",
+                "type":"text",
+                "label": "Responsive Slider Product Button"
+            }
+
+        ],
+        "blocks":[
+            {
+            "name":"Add Image",
+            "type":"Image",
+            "settings":[
+                    {
+                        "id":"previewImage",
+                        "type":"image_picker",
+                        "label":"Preview Image"
+                    },
+                    {
+                        "id": "product",
+                        "type": "product",
+                        "label": "Select Products"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %} 

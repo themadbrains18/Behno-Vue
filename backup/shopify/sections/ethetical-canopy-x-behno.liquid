@@ -1,0 +1,79 @@
+{% assign imgSrc = section.settings.img | img_url: "" %} 
+{% assign  placeHolder = section.settings.img | img_url: "50x50" %}
+
+{% unless section.settings.img %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+
+{% capture blockData %}
+[
+   {% for block in section.blocks %}
+    {
+        para : `{{ block.settings.para }}`
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-ethical-ethetical-canopy-x-behno :shopify-data="{
+    secheading: `{{ section.settings.secheading }}`,
+    crdheading: `{{ section.settings.crdheading }}`,
+    crdSubHeading: `{{ section.settings.crdSubHeading }}`,
+    para: {{ blockData }},
+    imgUrl:{
+        src : `{{ imgSrc }}`,
+        placeholder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.img.alt }}`
+    }
+  }">
+</render-sense-of-behno-ethical-ethetical-canopy-x-behno>
+
+
+
+
+{% schema %}
+{
+  "name": "Canopy x Behno",
+  "settings": [
+    
+     {
+        "id": "secheading",
+        "type": "text",
+        "label": "Card Heading",
+        "default": "CANOPY x BEHNO"
+      },
+     {
+        "id": "crdheading",
+        "type": "text",
+        "label": "Card Heading",
+        "default": "Protecting forests, climate, and biodiversity."
+      },
+     {
+        "id": "crdSubHeading",
+        "type": "text",
+        "label": "Card Sub Heading",
+        "default": "We are partnered with the independent environmental not-for-profit Canopy to support two initiatives: CanopyStyle and Pack4Good."
+      },
+    {
+        "id": "img",
+        "type": "image_picker",
+        "label": "Image"
+    }
+  ],
+  "blocks" :[{
+    "name": "Add Paragraph",
+    "type": "paragraph",
+    "settings": [
+     {
+        "id": "para",
+        "type": "textarea",
+        "label": "Paragraph",
+        "default" : "Paragraph"
+      }
+    ]
+    }]
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+
+{% capture SlideImage %}
+[
+   {% for block in section.blocks %}
+    {
+	   imgUrl : {
+          src : `{{ block.settings.image | img_url : "" }}`,
+          placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+          alt: `{{ block.settings.image.alt }}`
+       }
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+
+<render-sense-of-behno-garment-garment-up-close :shopify-data="{
+    secHeading : `{{ section.settings.secHeading }}`,
+    Slide :  {{ SlideImage }}
+  }">
+</render-garment-garment-up-close>
+
+
+
+
+{% schema %}
+{
+   "name": "Garment Up Close",
+   "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "Section Heading",
+      "default": "Up close and live at Sotheby’s circa July 2016."
+    }
+  ],
+   "blocks": [
+     {
+       "type": "slide",
+       "name": "Slide",
+       "settings": [
+         {
+           "id": "image",
+           "type": "image_picker",
+           "label": "Slide Image"
+         }
+        
+       ]
+     }
+   ]
+  
+ }
+{% endschema %}

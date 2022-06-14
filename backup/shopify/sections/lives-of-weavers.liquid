@@ -1,0 +1,81 @@
+{% capture gridImage %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'gridbox' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.gridImage | img_url : "" }}`,
+                placeholder: `{{ block.settings.gridImage | img_url : "50x50" }}`,
+                alt: `{{ block.settings.gridImage.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+{% capture SlidedynamicData %}
+[
+   {% for block in section.blocks %}
+       
+        {% if block.type == 'slide' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-handwoven-silks-lives-of-weavers
+:shopify-data="{
+    redText  : `{{ section.settings.redText }}`,
+    gridImage  : {{ gridImage }},
+    SlidedynamicData  : {{ SlidedynamicData}}
+}">
+</render-sense-of-behno-handwoven-silks-lives-of-weavers>
+
+
+{% schema %}
+{
+    "name": "Hero Section",
+    "settings": [
+     {
+        "id": "redText",
+        "type": "text",
+        "label": "Red text",
+        "default": "“IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”"
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Grid Image",
+            "type" : "gridbox",
+            "limit": 4,
+            "settings" : [
+                {
+                    "id": "gridImage",
+                    "type": "image_picker",
+                    "label": "Grid Image"
+                } 
+            ]
+        },
+        {
+            "name": "Slide",
+            "type": "slide",
+            "settings": [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Slide Image"
+                }
+            ]
+        }
+    ]
+ }
+{% endschema %}

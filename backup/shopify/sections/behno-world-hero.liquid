@@ -1,0 +1,28 @@
+<render-sense-of-behno-behno-in-world-behno-world-hero :shopify-data="{
+    SecHeading:`{{ section.settings.SecHeading }}`,
+    imgUrl:{
+        src:`{{ section.settings.image | img_url : "" }}`,
+        placeholder:`{{ section.settings.image | img_url : "50*50" }}`,
+        alt:`{{ section.settings.image.alt }}`
+    }
+}">
+</render-sense-of-behno-behno-in-world-behno-world-hero>
+
+{% schema %}
+{
+    "name":"Behno World Hero",
+    "settings":[
+        {
+            "id":"SecHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":"BEHNO IN THE WORLD"
+        },
+        {
+            "id":"image",
+            "type":"image_picker",
+            "label":"Hero Image"
+        }
+    ]
+}
+{% endschema %}

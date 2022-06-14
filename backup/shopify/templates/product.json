@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+      }
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {
+      }
+    },
+    "product-slider": {
+      "type": "product-slider",
+      "settings": {
+        "secHeading": "YOU MAY ALSO LIKE",
+        "showProduct": true,
+        "product_list": [
+          "alex-shoulder-bag-glossy-croc-balsamic",
+          "ana-flat-tote-crossbody-nappa-ruched-olive",
+          "ana-flat-tote-crossbody-pebble-ruched-apricot",
+          "ana-flat-tote-crossbody-pebble-ruched-bordeaux",
+          "ana-flat-tote-crossbody-pebble-ruched-red",
+          "ana-flat-tote-large-pebble-ruched-apricot",
+          "ana-flat-tote-large-pebble-ruched-black"
+        ]
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-grid",
+    "product-slider"
+  ]
+}

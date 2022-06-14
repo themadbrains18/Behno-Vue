@@ -1,0 +1,303 @@
+{
+  "sections": {
+    "philanthropy-hero": {
+      "type": "philanthropy-hero",
+      "blocks": {
+        "e5acffd1-6c58-49d8-974e-19c2983a030e": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The National Down Syndrome Society (NDSS) and behno collaborate to create a significant partnership to further behno’s commitment to being a wholesome social enterprise founded on championing ethical manufacturing to now supporting nonprofits working to positively impact their communities."
+          }
+        }
+      },
+      "block_order": [
+        "e5acffd1-6c58-49d8-974e-19c2983a030e"
+      ],
+      "settings": {
+        "preHeading": "FRONT-END PHILANTHROPHY",
+        "secHeading": "The National Down Syndrome Society x behno.",
+        "image": "shopify:\/\/shop_images\/philanthropy-hero.jpg",
+        "afterImageText": "WITHIN THE CAPSULE COLLECTION ARE OUR SIGNATURE BAGS, ALL IN RED TO HONOR NDSS’ OFFICIAL COLOR. 20% OF ALL SALES ARE DONATED TO NDSS."
+      }
+    },
+    "partnership-with-ndss": {
+      "type": "partnership-with-ndss",
+      "settings": {
+        "redText": "“WE LAUNCHED A VERY SPECIAL PARTNERSHIP WITH NDSS TO SUPPORT AND AMPLIFY THE TREMENDOUS WORK THEY DO FOR THE COMMUNITY.”",
+        "secInfo": "This partnership is very personal to us. The Nini Bag, the jewel of this capsule collection, pays homage to behno’s founder’s darling sister, Nirali, nicknamed “Nini,” who has Down Syndrome.",
+        "checkImage": true,
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+      }
+    },
+    "bit-about-ndss": {
+      "type": "bit-about-ndss",
+      "blocks": {
+        "e7538a83-3f0a-4653-8064-014285468c97": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img.jpg"
+          }
+        },
+        "2c68e72b-3311-4d86-9bd5-de0a69c45f06": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img1.jpg"
+          }
+        },
+        "897da7b8-c864-4e75-8eec-ea6c2134e034": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img2.jpg"
+          }
+        },
+        "faec36d2-2ded-4f9a-98e9-f882863e4548": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img3.jpg"
+          }
+        },
+        "2418c11f-24cf-4ab2-a2f9-20131973c293": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img4.jpg"
+          }
+        },
+        "2742680e-593d-4db4-a5bf-eba1665236c1": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img5.jpg"
+          }
+        },
+        "25455c48-41e0-44e9-bcd4-10317f45ad43": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img6.jpg"
+          }
+        },
+        "2861a3f9-5b8c-489b-a6c6-808ae4abf17e": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img7.jpg"
+          }
+        },
+        "69718aca-9202-490e-b45c-fc5926b6b8da": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img9.jpg"
+          }
+        },
+        "8d26e252-7c46-4fda-978a-c6dcd9d145d1": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndss-img8.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "e7538a83-3f0a-4653-8064-014285468c97",
+        "2c68e72b-3311-4d86-9bd5-de0a69c45f06",
+        "897da7b8-c864-4e75-8eec-ea6c2134e034",
+        "faec36d2-2ded-4f9a-98e9-f882863e4548",
+        "2418c11f-24cf-4ab2-a2f9-20131973c293",
+        "2742680e-593d-4db4-a5bf-eba1665236c1",
+        "25455c48-41e0-44e9-bcd4-10317f45ad43",
+        "2861a3f9-5b8c-489b-a6c6-808ae4abf17e",
+        "69718aca-9202-490e-b45c-fc5926b6b8da",
+        "8d26e252-7c46-4fda-978a-c6dcd9d145d1"
+      ],
+      "settings": {
+        "redText": "A bit about NDSS.",
+        "subHeading": "NDSS was founded in 1979 by Betsy Goodwin and is now the largest nonprofit in the United States dedicated to advocating for all people with Down Syndrome.",
+        "para": "NDSS is the leading human rights organization for all individuals with Down syndrome and provides state -of-the - art, comprehensive programming to all individuals with Down syndrome and their families, which include: The National Advocacy & Public Policy Center in Washington, DC, its Down Syndrome Health Resources & Promotion Program, the first of its kind #DSWORKS® Employment Program, which is showing the world that people with Down syndrome are ready, willing and able to work as well as the National Buddy Walk® Program.",
+        "afterGridText": "DYANI, EMMETT, MALIK AND VICTORIA WEAR THE NDSS X BEHNO CAPSULE COLLECTION AS PART OF OUR ICONIC “I AM:” CAMPAIGN."
+      }
+    },
+    "sister-brothers": {
+      "type": "sister-brothers",
+      "settings": {
+        "heading": "A SISTER AND HER BROTHERS",
+        "image": "shopify:\/\/shop_images\/sister-brother-left-img.jpg",
+        "rimage": "shopify:\/\/shop_images\/sister-brother-right-img.jpg"
+      }
+    },
+    "walk-to-remember": {
+      "type": "walk-to-remember",
+      "blocks": {
+        "94956653-baa7-4f16-8cbb-02c9762dfe82": {
+          "type": "paragraph",
+          "settings": {
+            "para": "The behno team came together to celebrate and support NDSS and the Down syndrome community for the Buddy Walk, which started in iconic Times Square with a presentation of some of their star members. Nini, as the hero of the NDSS x behno capsule collection, was shy when her image came onto one of the larger-than-life screens in the heart of Times Square being watched by thousands of spectators."
+          }
+        },
+        "ce4ca635-b284-4db4-b73a-7932612238ee": {
+          "type": "paragraph",
+          "settings": {
+            "para": "After the viewing, everyone migrated to Central Park where over 2,000 people came together for an afternoon of fun and the actual Buddy Walk. There were games, Zumba, food, and of course, so much love being shared amongst the community!"
+          }
+        },
+        "209e58fc-d404-41bf-9ea1-c945174768a6": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1-NDSS.jpg"
+          }
+        },
+        "404e8b7f-f7b2-49ec-ac08-772740d3b0ad": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-NDSS.jpg"
+          }
+        },
+        "929eb9a6-a199-411a-833b-5dffb6c8617a": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-NDSS.jpg"
+          }
+        },
+        "46081392-fa75-415e-8744-1fcf61d19a30": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4-NDSS.jpg"
+          }
+        },
+        "b0eec19b-6fad-4386-a310-0234eb2df89b": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5-NDSS.jpg"
+          }
+        },
+        "1ba6e927-c790-4432-a35b-42ac3347a555": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6-NDSS.jpg"
+          }
+        },
+        "5e62c816-d549-40d8-8dfa-b5b4c4bc506e": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7-NDSS.jpg"
+          }
+        },
+        "cd65a7f7-2904-460a-8616-c1e949119ada": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8-NDSS.jpg"
+          }
+        },
+        "ec918460-d348-4993-b2ad-df340d17d7cf": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/9-NDSS.jpg"
+          }
+        },
+        "abb77e1e-1e4b-4776-a807-7eb7fc2d35ab": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1-NDSS.jpg"
+          }
+        },
+        "9f0189f9-d329-4207-af9b-996c35b43881": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/11-NDSS.jpg"
+          }
+        },
+        "23d98789-2cd7-4e03-bfb4-99827cd6f6e7": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/12-NDSS.jpg"
+          }
+        },
+        "7cdd2d0c-3ac7-462f-87c9-5fc7e8fa5cd7": {
+          "type": "collage",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/13-NDSS.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "94956653-baa7-4f16-8cbb-02c9762dfe82",
+        "ce4ca635-b284-4db4-b73a-7932612238ee",
+        "209e58fc-d404-41bf-9ea1-c945174768a6",
+        "404e8b7f-f7b2-49ec-ac08-772740d3b0ad",
+        "929eb9a6-a199-411a-833b-5dffb6c8617a",
+        "46081392-fa75-415e-8744-1fcf61d19a30",
+        "b0eec19b-6fad-4386-a310-0234eb2df89b",
+        "1ba6e927-c790-4432-a35b-42ac3347a555",
+        "5e62c816-d549-40d8-8dfa-b5b4c4bc506e",
+        "cd65a7f7-2904-460a-8616-c1e949119ada",
+        "ec918460-d348-4993-b2ad-df340d17d7cf",
+        "abb77e1e-1e4b-4776-a807-7eb7fc2d35ab",
+        "9f0189f9-d329-4207-af9b-996c35b43881",
+        "23d98789-2cd7-4e03-bfb4-99827cd6f6e7",
+        "7cdd2d0c-3ac7-462f-87c9-5fc7e8fa5cd7"
+      ],
+      "settings": {
+        "redHeading": "A walk to remember.",
+        "secSubHeading": "The Buddy Walk is one of the largest events hosted by NDSS to bring its community together. Taking place in New York City, Nini was a Grand Marshall for 2019."
+      }
+    },
+    "shop-ndss": {
+      "type": "shop-ndss",
+      "blocks": {
+        "2b51f434-e48c-48e6-b51e-f9ea66c6ed79": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img.jpg"
+          }
+        },
+        "686e6dd1-eae4-4fbd-8447-8d84d5799688": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img1.jpg"
+          }
+        },
+        "77f00d4e-2bd6-4b2c-b8d0-2ee6ef2088f7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "2b51f434-e48c-48e6-b51e-f9ea66c6ed79",
+        "686e6dd1-eae4-4fbd-8447-8d84d5799688",
+        "77f00d4e-2bd6-4b2c-b8d0-2ee6ef2088f7"
+      ],
+      "settings": {
+        "redText": "“IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”"
+      }
+    },
+    "shop-ndds-bottom": {
+      "type": "shop-ndds-bottom",
+      "settings": {
+        "secSubHeading": "SHOP NDSS X BEHNO",
+        "secCtaText": "SHOP THE NDSS X BEHNO CAPSULE",
+        "secCtaLink": "\/",
+        "showProduct": true,
+        "product_list": [
+          "choker-with-bead",
+          "choker-with-gold-pendant",
+          "choker-with-triangle",
+          "dainty-gold-neclace"
+        ]
+      }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
+    }
+  },
+  "order": [
+    "philanthropy-hero",
+    "partnership-with-ndss",
+    "bit-about-ndss",
+    "sister-brothers",
+    "walk-to-remember",
+    "shop-ndss",
+    "shop-ndds-bottom",
+    "back-sense-behno"
+  ]
+}

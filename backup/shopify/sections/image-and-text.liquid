@@ -1,0 +1,95 @@
+{% capture paragraph %}
+[
+   {% for block in section.blocks %}
+   {% if block.type == 'paragraph' %}
+    {
+        para : `{{ block.settings.para }}`,
+    }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% capture productData %}
+{
+    productid : `{{ section.settings.product.id }}`,
+    productUrl : `{{ section.settings.product.url }}`,
+    productidImage : `{{ section.settings.product.media[0] | img_url : "" }}`,
+    productidPrice : `{{ section.settings.product.price | money_with_currency }}`,
+    productTitle : `{{ section.settings.product.title }}`,
+    productQuantity : `{{ section.selected_or_first_available_variant.inventory_quantity }}`
+}
+{% endcapture %}
+
+<render-blog-image-and-text :shopify-data="{
+    checkSection: `{{ section.settings.checkSection }}`,
+    productData: {{ productData }} ,
+    paragraph: {{ paragraph }} ,
+    secImg : {
+        src : `{{ section.settings.secImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg.alt }}`
+    },
+    showProduct : `{{ section.settings.showProduct }}`,
+    secCta : `{{ section.settings.secCta }}`,
+    imgHeading : `{{ section.settings.imgHeading }}`,
+    checkImgHeading: `{{ section.settings.checkImgHeading }}`
+
+}">
+
+</render-blog-image-and-text>
+
+{% schema %}
+{
+    "name":"Image And Text Section",
+    "settings":[
+        {
+            "id": "checkSection",
+            "type": "checkbox",
+            "label": "Show Section",
+            "default": true
+        },
+        {
+            "id": "checkImgHeading",
+            "type": "checkbox",
+            "label": "Show Image Heading",
+            "default": true
+        },
+        {
+            "id":"imgHeading",
+            "label":"Section Image Heading",
+            "type":"text",
+            "default":"I AM:"
+        },
+        {
+            "id":"secImg",
+            "label":"Section Image",
+            "type":"image_picker"
+        },
+        {
+            "id":"secCta",
+            "label":"Section Cta",
+            "type":"text",
+            "default":"SHOP THE BAG"
+        },
+        {
+            "id": "product",
+            "type": "product",
+            "label": "Select Products"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Section Info",
+            "type": "paragraph",
+            "settings":[
+                {
+                    "id":"para",
+                    "type":"text",
+                    "label":"Section Info"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+{% capture productData %}
+[
+{% for product in section.settings.ProductList %}
+    {
+        product:  {
+            productid : `{{ product.ProductList.id }}`,
+            productUrl : `{{ product.ProductList.url }}`,
+            productidImage : `{{ product.ProductList.media[0] | img_url : "" }}`,
+            productidPrice : `{{ product.ProductList.price | money_with_currency }}`,
+            productTitle : `{{ product.ProductList.title }}`
+        }
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+{% endcapture %}
+<render-blog-shop-all-bags :shopify-data="{
+    showProduct : `{{ section.settings.showProduct }}`,
+    sectionHeading: `{{ section.settings.sectionHeading }}`,
+    productData:  {{ productData }}
+}">
+</render-blog-shop-all-bags>
+{% schema %}
+    {
+        "name":"Shop All Bags",
+        "settings":[
+            {
+                "id": "showProduct",
+                "type": "checkbox",
+                "label": "Show Products",
+                "default": true
+            },
+            {
+                "id":"sectionHeading",
+                "type":"text",
+                "label":"Section Heading",
+                "default" : "SHOP ALL FEATURED BAGS"
+            },
+            {
+                "id":"ProductList",
+                "type":"product_list",
+                "label": "Select Products"
+            }
+        ]
+       
+    }
+{% endschema %}

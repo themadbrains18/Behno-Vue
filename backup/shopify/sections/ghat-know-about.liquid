@@ -1,0 +1,80 @@
+{% capture paragraph %}
+[
+   {% for block in section.blocks %}
+    {% if block.type == "paragraph" %}
+            {
+                paragraph : `{{ block.settings.paragraph }}`
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+{% capture sliderImg %}
+[
+   {% for block in section.blocks %}
+   {% if block.type == "slide" %}
+    {
+	   imgUrl : {
+          src : `{{ block.settings.sliderImg | img_url : "" }}`,
+          placeholder: `{{ block.settings.sliderImg | img_url : "50x50" }}`,
+          alt: `{{ block.settings.sliderImg.alt }}`
+       }
+    }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+<render-sense-of-behno-handwoven-silks-ghat-know-about :shopify-data="{
+    secHeading : `{{ section.settings.secHeading }}`,
+    subHeading : `{{ section.settings.secSubHeading }}`,
+    paragraph  :  {{ paragraph }} ,
+    sliderImg  :  {{ sliderImg }}
+}">
+</render-sense-of-behno-handwoven-silks-ghat-know-about>
+
+{% schema %}
+{
+    "name":"Ghat Know About",
+    "settings":[
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":"You’ve ghat to know about this."
+        },
+        {
+            "id":"secSubHeading",
+            "type":"text",
+            "label":"Section Sub Heading",
+            "default":"Varanasi is a city nestled on the banks of the Ganges river in India."
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "paragraph",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        },
+        {
+            "name": "Add Slider images",
+            "type": "slide",
+            "settings": [
+                {
+                    "id": "sliderImg",
+                    "type": "image_picker",
+                    "label": "Slide Images"
+                }
+            ]
+        }
+    ]
+
+}
+{% endschema %}

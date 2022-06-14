@@ -1,0 +1,51 @@
+<render-sense-of-behno-behno-in-world-willfully-chaotic :shopify-data="{
+    secLink:`{{ section.settings.secLink  }}`,
+    imgUrl : {
+        src : `{{ section.settings.secBgIng | img_url : "" }}`,
+        placeholder: `{{ section.settings.secBgIng | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    sehHeading:`{{ section.settings.sehHeading  }}`,
+    ctaText:`{{ section.settings.ctaText  }}`,
+    ctaLink:`{{ section.settings.ctaLink  }}`
+}"
+>
+</render-sense-of-behno-behno-in-world-willfully-chaotic>
+
+
+
+{% schema %}
+{
+    "name":"Willfully Chaotic",
+    
+    "settings":[
+        {
+            "id":"secLink",
+            "type":"url",
+            "label":"Section Link"
+        },
+        {
+            "id":"secBgIng",
+            "type":"image_picker",
+            "label":"Section Background Image"
+        },
+        {
+            "id":"sehHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":" “WILLFULLY CHAOTIC AND CRAZILY INVENTIVE.” "
+        },
+        {
+            "id":"ctaText",
+            "type":"text",
+            "label":"Cta Text",
+            "default":"EXPLORE OUR PRESS"
+        },
+        {
+            "id":"ctaLink",
+            "type":"url",
+            "label":"Cta Link"
+        }
+    ]
+}
+{% endschema %}

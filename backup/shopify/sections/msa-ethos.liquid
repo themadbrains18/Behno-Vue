@@ -1,0 +1,105 @@
+{% capture secGrid %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'secGrid' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.gridImg | img_url : "" }}`,
+                placeholder: `{{ block.settings.gridImg | img_url : "50x50" }}`,
+                alt: `{{ block.settings.gridImg.alt }}`
+            },
+            gridHeading: `{{ block.settings.gridHeading }}`,
+            gridSubHeading: `{{ block.settings.gridSubHeading }}`,
+            gridInfo: `{{ block.settings.gridInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-constructing-ethos-msa-ethos
+:shopify-data="{
+    redText   : `{{ section.settings.redText }}`,
+    secGrid   : {{ secGrid }} ,
+    collageData  : {{ collageData }}
+}">
+</render-sense-of-behno-constructing-ethos-msa-ethos>
+
+
+
+{% schema %}
+{
+    "name": "MSA Ethos",
+    "settings": [
+      {
+          "id": "redText",
+          "type": "textarea",
+          "label": "Red Text",
+          "default": "“MSA ETHOS WAS AN INTERSECTIONAL APPROACH TO MANUFACTURING.”"
+      }
+     
+    ],
+    "blocks":[
+      {
+        "name":"Sec Grid",
+        "type":"secGrid",
+        "settings":[
+          {
+            "id":"gridImg",
+            "type":"image_picker",
+            "label":"Grid Image"
+          },
+          {
+            "id":"gridHeading",
+            "type":"text",
+            "label":"Grid Heading"
+          },
+          {
+            "id":"gridSubHeading",
+            "type":"text",
+            "label":"Grid Sub Heading"
+          },
+          {
+            "id":"gridInfo",
+            "type":"text",
+            "label":"Grid Info"
+          }
+        ]
+      },
+      {
+          "name": "Collage Image",
+          "type" : "collage",
+          "limit" : 9,  
+          "settings" : [
+              {
+                  "id": "image",
+                  "type": "image_picker",
+                  "label": "Image"
+              },
+              {
+                  "id":"imageInfo",
+                  "type":"text",
+                  "label":"Image Info"
+              }
+          ]
+      }
+    ]
+ }
+{% endschema %}
