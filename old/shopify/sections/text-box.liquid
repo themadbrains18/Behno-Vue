@@ -1,0 +1,51 @@
+{% capture secInfo %}
+[
+   {% for block in section.blocks %}
+    {
+        secInfo : `{{ block.settings.secInfo }}`
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-blog-text-box :shopify-data="{
+    checkSection: `{{ section.settings.checkSection }}`,
+    secSubHeading: `{{ section.settings.secSubHeading }}`,
+    secInfo: {{ secInfo }}
+}">
+
+</render-blog-text-box>
+
+{% schema %}
+{
+    "name":"Text Box",
+    "settings":[
+        {
+            "id": "checkSection",
+            "type": "checkbox",
+            "label": "Show Section",
+            "default": true
+        },
+        {
+            "id":"secSubHeading",
+            "label":"Section Sub Heading",
+            "type":"text",
+            "default":"MARCH 22, 2022"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Section info",
+            "type": "info",
+                "settings":[
+                    {
+                        "id":"secInfo",
+                        "type":"textarea",
+                        "label":"Section Info"
+                    }
+            ]
+        }
+    
+    ]
+}
+{% endschema %}

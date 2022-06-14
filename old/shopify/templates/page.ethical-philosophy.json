@@ -1,0 +1,218 @@
+{
+  "sections": {
+    "ethical-hero": {
+      "type": "ethical-hero",
+      "settings": {
+        "secHeading": "OUR ETHICAL PHILOSOPHY",
+        "leftImg": "shopify:\/\/shop_images\/ethical-philosophyleft.jpg",
+        "rightImg": "shopify:\/\/shop_images\/ethical-philosophy-right.jpg",
+        "crdHeading": "Our name, a community.",
+        "crdSubHeading": "“behno” means sisters in Hindi.",
+        "para": "At our partner factories, female colleagues are referred to by their first name followed by the suffix of “behn” (sister). In plurality, they become a community of sisters."
+      }
+    },
+    "ethical-sustainability": {
+      "type": "ethical-sustainability",
+      "settings": {
+        "heading": "We redefine sustainability and ethics in fashion.",
+        "subHeading": "We’re pioneering a new standard for manufacturing in the global garment trade, revolutionizing the way garment workers and artisans are viewed, employed, and treated.",
+        "para1": "Inspiring change not only by example at our own factory, we also partner with other international factories adhering to rigid compliances striving to improve factory conditions in developing countries.",
+        "para2": "Our objects are handmade in facilities incrementally implementing “The behno Standard,” a set of six guiding principles:",
+        "leftImg": "shopify:\/\/shop_images\/Six_Icons_transparent_background-02-01.png",
+        "rightImg": "shopify:\/\/shop_images\/sustainability_ethics-right.jpg"
+      }
+    },
+    "ethetical-behno-standard": {
+      "type": "ethetical-behno-standard",
+      "settings": {
+        "redText": "“THE BEHNO STANDARD WAS BUILT BOTTOM-UP, ENSURING GARMENT WORKERS AND ARTISANS WERE AT THE CENTER OF THE CONVERSATION.”",
+        "img": "shopify:\/\/shop_images\/behno-standard.jpg",
+        "para": "To implement “The behno Standard,” we founded a cut-and-sew factory, MSA Ethos, with a nonprofit partner and industry veteran.",
+        "link": "shopify:\/\/pages\/constructing-ethos",
+        "linkText": "LEARN MORE"
+      }
+    },
+    "ethetical-forming-relationship": {
+      "type": "ethetical-forming-relationship",
+      "settings": {
+        "heading": "Forming real relationships.",
+        "subHeading": "The Garment Worker Project.",
+        "para": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.",
+        "link": "shopify:\/\/pages\/behno-garment-worker",
+        "linkText": "discover the project",
+        "showVideo": true,
+        "img": "shopify:\/\/shop_images\/forming_relationship.jpg",
+        "videoUrl": "https:\/\/i.shgcdn.com\/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
+      }
+    },
+    "ethetical-collaborations-philosophy": {
+      "type": "ethetical-collaborations-philosophy",
+      "blocks": {
+        "82cd7d3c-e201-409a-be70-e47c6a786e41": {
+          "type": "card",
+          "settings": {
+            "link": "shopify:\/\/pages\/handwoven-silks",
+            "img": "shopify:\/\/shop_images\/collaborations_philosophy1.jpg",
+            "crdHeading": "VISIT OUR PARTNER HANDLOOM WEAVER’S COLLECTIVE."
+          }
+        },
+        "4ab99812-ac2a-4d92-9634-ac5b338daf1e": {
+          "type": "card",
+          "settings": {
+            "link": "\/",
+            "img": "shopify:\/\/shop_images\/collaborations_philosophy2.jpg",
+            "crdHeading": "SEE OUR ARTISAN HAND EMBROIDERY WORKSHOP."
+          }
+        },
+        "a29f571b-c22d-44c0-85b1-29b18e7ac175": {
+          "type": "card",
+          "settings": {
+            "link": "shopify:\/\/pages\/front-end-philanthropy",
+            "img": "shopify:\/\/shop_images\/collaborations_philosophy3.jpg",
+            "crdHeading": "EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY."
+          }
+        },
+        "01032d34-a898-4a4d-9d90-e5f36023f373": {
+          "type": "card",
+          "settings": {
+            "link": "\/",
+            "img": "shopify:\/\/shop_images\/collaborations_philosophy4.jpg",
+            "crdHeading": "EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY."
+          }
+        }
+      },
+      "block_order": [
+        "82cd7d3c-e201-409a-be70-e47c6a786e41",
+        "4ab99812-ac2a-4d92-9634-ac5b338daf1e",
+        "a29f571b-c22d-44c0-85b1-29b18e7ac175",
+        "01032d34-a898-4a4d-9d90-e5f36023f373"
+      ],
+      "settings": {
+        "redText": "“COLLABORATIONS ARE AT THE CORE OF OUR ETHICAL PHILOSOPHY.”",
+        "secHeading": "A SOCIAL ENTERPRISE ON THE FRONT END, TOO."
+      }
+    },
+    "ethetical-making-our-bags": {
+      "type": "ethetical-making-our-bags",
+      "settings": {
+        "secHeading": "",
+        "crdheading": "It takes a village.",
+        "crdSubHeading": "Our partner handbag factory.",
+        "para": "Our bags are made in a world-class factory which works with luxury purveyors across the globe.",
+        "link": "shopify:\/\/pages\/our-partner-handbag",
+        "linkText": "MORE ABOUT THE PARTNERSHIP",
+        "showVideo": true,
+        "img": "shopify:\/\/shop_images\/making_our_bags.jpg",
+        "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+      }
+    },
+    "ethetical-conscious-tannery": {
+      "type": "ethetical-conscious-tannery",
+      "blocks": {
+        "b8c3d0ef-b3e6-442b-86d9-c3820b4f6159": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Located on the outskirts of the iconic canal city of Venice, and not too far from Milan, the fashion capital of Italy, our principle tannery is a critical member of our supply chain."
+          }
+        },
+        "1883cfdc-1838-45d1-9451-15c74b424626": {
+          "type": "paragraph",
+          "settings": {
+            "para": "It is a Gold Member, the highest status awarded, of the Leather Working Group, a consortium of stakeholders that develop and maintain rigid protocols to assess the environmental compliance and performance capabilities of leather manufacturers. The Leather Working Group (LWG) works with leading technical experts and industry leaders to promote sustainability and transparency."
+          }
+        },
+        "3c191e90-773c-4261-bd42-785a3739b6d9": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Earning the status of a ‘Gold Member’ is rigid. It means tanneries heed much attention to their environmental and chemical management systems, ban restricted substances, minimize their energy consumption and water usage, focus on materials traceability, and ensure the safety, health, and emergency preparedness of their workers."
+          }
+        },
+        "486cb7d3-e044-4d12-99eb-da90e2afd421": {
+          "type": "paragraph",
+          "settings": {
+            "para": "This means our tannery was scored an 85 or above after being evaluated on all the elements that matter. It’s a feat."
+          }
+        }
+      },
+      "block_order": [
+        "b8c3d0ef-b3e6-442b-86d9-c3820b4f6159",
+        "1883cfdc-1838-45d1-9451-15c74b424626",
+        "3c191e90-773c-4261-bd42-785a3739b6d9",
+        "486cb7d3-e044-4d12-99eb-da90e2afd421"
+      ],
+      "settings": {
+        "img": "shopify:\/\/shop_images\/conscious-tannery.jpg",
+        "crdheading": "Conscious tannery, genuine leathers.",
+        "crdSubHeading": "Our leathers come from one of the world’s finest tanneries.",
+        "link": "\/",
+        "linkText": "LEARN MORE"
+      }
+    },
+    "ethetical-canopy-x-behno": {
+      "type": "ethetical-canopy-x-behno",
+      "blocks": {
+        "97fafa9f-fb3b-4e67-a09b-e0b9496d239c": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Some fabrics and, of course paper and packaging, come from forests. We are taking action to change that and collaborating to build a future where our world’s ancient and endangered forests as well as the carbon they store and the wildlife and forest-based communities that call them home are supported and protected."
+          }
+        },
+        "a82b7dd7-471f-4bcd-a413-05e3b9cb70d9": {
+          "type": "paragraph",
+          "settings": {
+            "para": "All of our tree-based fabric (modal) comes from a single producer (Lenzing) which has achieved the highest level “a dark green shirt” ranking in Canopy’s Hot Button Report. This annual report assesses producers on their level of risk of sourcing from Ancient and Endangered Forests, their leadership on advocating for conservation legacies, sourcing of FSC fibre and their work to advance the commercial-scale production of innovative lower impact materials."
+          }
+        },
+        "7498568c-5574-4ab4-a530-04a316ca6d14": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Beyond our textile sourcing, we are partnering with Canopy to do a deep dive into our packaging to ensure they are made of recycled post-consumer content. If any trees are used, we will work with Canopy to ensure they are not coming from ancient and endangered forests and are FSC certified and that the Free, Prior and Informed Consent of local communities was given prior to logging."
+          }
+        },
+        "0a3dd78e-39c0-4399-bf33-7eb41d68a597": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Our work with Canopy to meet these commitments will include supporting lasting conservation in the world’s forests and will continue to 2022."
+          }
+        },
+        "30108f25-4caf-4118-a3d7-13bde8a4aa22": {
+          "type": "paragraph",
+          "settings": {
+            "para": "Learn more about Canopy at www.canopyplanet.org."
+          }
+        }
+      },
+      "block_order": [
+        "97fafa9f-fb3b-4e67-a09b-e0b9496d239c",
+        "a82b7dd7-471f-4bcd-a413-05e3b9cb70d9",
+        "7498568c-5574-4ab4-a530-04a316ca6d14",
+        "0a3dd78e-39c0-4399-bf33-7eb41d68a597",
+        "30108f25-4caf-4118-a3d7-13bde8a4aa22"
+      ],
+      "settings": {
+        "secheading": "CANOPY x BEHNO",
+        "crdheading": "Protecting forests, climate, and biodiversity.",
+        "crdSubHeading": "We are partnered with the independent environmental not-for-profit Canopy to support two initiatives: CanopyStyle and Pack4Good.",
+        "img": "shopify:\/\/shop_images\/canopy-x-behno.jpg"
+      }
+    },
+    "back-sense-behno": {
+      "type": "back-sense-behno",
+      "settings": {
+        "link": "shopify:\/\/pages\/sense-of-behno",
+        "ctaText": "Back to The Sense of behno"
+      }
+    }
+  },
+  "order": [
+    "ethical-hero",
+    "ethical-sustainability",
+    "ethetical-behno-standard",
+    "ethetical-forming-relationship",
+    "ethetical-collaborations-philosophy",
+    "ethetical-making-our-bags",
+    "ethetical-conscious-tannery",
+    "ethetical-canopy-x-behno",
+    "back-sense-behno"
+  ]
+}

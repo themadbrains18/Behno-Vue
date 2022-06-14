@@ -1,0 +1,50 @@
+{% capture blockData %}
+[
+   {% for block in section.blocks %}
+    {
+        link : `{{ block.settings.link }}`,
+        text : `{{ block.settings.text }}`,
+        image : `{{ block.settings.image | img_url : ""}}`,
+        imagealt : `{{ block.settings.image.alt }}`
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-garment-garment-grid
+:shopify-data="{
+    box : {{ blockData }}
+}"
+>
+</render-garment-garment-grid>
+
+
+
+{% schema %}
+{
+  "name": "Garment Grid",
+  "blocks" : [{
+      "name": "Add Grid Box",
+      "type": "grid_box",
+      "settings" : [
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link",
+          "default" : "/"
+        },
+        {
+          "id": "text",
+          "type": "text",
+          "label": "Text",
+          "default" : "Name"
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        }
+      ]
+  }]
+}
+{% endschema %}

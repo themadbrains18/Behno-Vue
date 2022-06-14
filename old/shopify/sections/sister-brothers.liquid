@@ -1,0 +1,41 @@
+<render-sense-of-behno-philanthropy-sister-brothers
+:shopify-data="{
+    Heading   : `{{ section.settings.heading }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    rightImgUrl : {
+        src : `{{ section.settings.rimage | img_url : "" }}`,
+        placeholder: `{{ section.settings.rimage | img_url : "50x50" }}`,
+        alt: `{{ section.settings.rimage.alt }}`
+    }
+}">
+</render-sense-of-behno-philanthropy-sister-brothers>
+
+
+
+{% schema %}
+{
+    "name": "Sister with Brother",
+    "settings": [
+     {
+        "id": "heading",
+        "type": "text",
+        "label": "Pre Heading",
+        "default": "A SISTER AND HER BROTHERS"
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Left Image"
+      },
+      {
+        "id": "rimage",
+        "type": "image_picker",
+        "label": "Right Image"
+      }
+    ]
+ }
+{% endschema %}

@@ -1,0 +1,73 @@
+<render-home-grid-single :shopify-data="{
+    imgUrl : {
+      src : `{{ section.settings.image | img_url : "" }}`,
+      placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+      alt: `{{ section.settings.image.alt }}`
+    },
+    responsiveimgUrl : {
+      src : `{{ section.settings.respnsiveimage | img_url : "" }}`,
+      placeholder: `{{ section.settings.respnsiveimage | img_url : "50x50" }}`,
+      alt: `{{ section.settings.respnsiveimage.alt }}`
+    },
+    imageHeight   : `{{ section.settings.imageHeight }}`,
+    MobileimageHeight   : `{{ section.settings.MobileimageHeight }}`,
+    title  : `{{ section.settings.title }}`,
+    linktext : `{{ section.settings.linkText }}`,
+    link   : `{{ section.settings.link }}`
+  }">
+</render-home-grid-single>
+
+
+
+
+
+{% schema %}
+{
+    "name": "t:sections.home_single_grid.name",
+    "settings": [
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "t:sections.home_single_grid.settings.image.label"
+      },
+      {
+        "id": "respnsiveimage",
+        "type": "image_picker",
+        "label": "Mobile Image"
+      },
+      {
+        "id": "imageHeight",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.imageHeight.label",
+        "default": "500"
+      },
+      {
+        "id": "MobileimageHeight",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.MobileimageHeight.label"
+      },
+      
+      {
+        "id": "title",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.title.label"
+      },
+	  {
+        "id": "linkText",
+        "type": "text",
+        "label": "t:sections.home_single_grid.settings.clickablelink.label"
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "t:sections.home_single_grid.settings.link.label"
+      }
+    ],
+   "presets": [
+     {
+       "name": "t:sections.home_single_grid.name",
+       "category": "ADVANCED LAYOUT"
+     }
+   ]
+ }
+{% endschema %}

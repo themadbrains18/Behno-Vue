@@ -1,0 +1,57 @@
+{% assign imgSrc = section.settings.heroImage | img_url: "" %} 
+{% assign  placeHolder = section.settings.heroImage | img_url: "50x50" %}
+
+{% unless section.settings.heroImage %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+
+
+<render-home-hero-sec :shopify-data="{
+      heroImage:{
+        imgSrc : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.heroImage.alt }}`
+      },
+      heading: `{{ section.settings.heroHeading }}`,
+      subHeading: `{{ section.settings.herosubHeading }}`,
+      imagelink: `{{ section.settings.imagelink }}`
+    }">
+</render-home-hero-sec> 
+
+{% schema %}
+{
+  "name": "t:sections.home_hero_sec.name",
+  "settings": [
+    {
+      "id": "heroHeading",
+      "type": "text",
+      "label": "t:sections.home_hero_sec.settings.heroHeading.label",
+      "default": "Title"
+    },
+    {
+      "id": "herosubHeading",
+      "type": "text",
+      "label": "t:sections.home_hero_sec.settings.herosubHeading.label",
+      "default": "Title"
+    },
+    {
+      "id": "heroImage",
+      "type": "image_picker",
+      "label": "t:sections.home_hero_sec.settings.heroImage.label"
+    },
+    {
+      "id": "imagelink",
+      "type": "url",
+      "label": "t:sections.home_hero_sec.settings.link.label"
+    }
+  ],
+  "presets": [
+      {
+        "name": "t:sections.home_hero_sec.name",
+        "category": "ADVANCED LAYOUT"
+      }	
+  ]
+}
+{% endschema %}

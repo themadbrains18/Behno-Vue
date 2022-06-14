@@ -1,0 +1,80 @@
+{%- if product.metafields.my_fields.variants_products and product.metafields.my_fields.variants_swtach -%}
+            
+    <div class="available-colors ">
+      {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
+      {% assign links = product.metafields.my_fields.variants_products | split:" " %}
+      
+      {% capture Obj %}
+        {%- for image in images -%}
+          {% assign image_forloop = forloop.index  %}
+          {%- for link in links -%}
+            {%- if forloop.index == image_forloop -%}
+              {% assign handle = link | replace : '/products/', ''  %}
+              {% assign productData = all_products[handle] %}
+              {{ productData | json }}{% if forloop.last %}{% else %},{% endif %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      {% endcapture %}
+
+        {% capture pVariant %}
+          {%- for image in images -%}
+          {% assign image_forloop = forloop.index  %}
+            {%- for link in links -%}
+              {%- if forloop.index == image_forloop -%}
+                {% assign color_name = image | split:'.png' %}
+                {% assign handle = link | replace : '/products/', ''  %}
+                {% assign productData = all_products[handle] %}
+                  {
+                    "name" : "{{ color_name }}",
+                    "img"  : "{{ image | asset_url }}",
+                    "link" : "{{ link }}",
+                    "qty" : "{{ productData.variants.first.inventory_quantity }}"
+                  }{% if forloop.last %}{% else %},{% endif %}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        {% endcapture %}
+{%- endif -%}
+
+
+
+{% if product.metafields.my_fields.seen_in %} 
+  {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
+  {% capture productSeenIn %}
+  [
+      {%- for seenin in seenin -%}
+        {
+          src :`{{ seenin | asset_url   }}`,
+          alt :`{{ seenin | replace: '.svg', '' }}`
+        }
+        {% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+  ]
+  {% endcapture %}
+{%- endif -%}
+
+<!-- make products variant object -->
+
+
+{% capture productObj %}
+[{{ Obj }}]
+{% endcapture %}
+
+
+
+{% capture variantObj %}
+[{{ pVariant }}]
+{% endcapture %}
+
+{% capture products %}
+{
+product :  `{{ productObj | base64_encode  }}`,
+variant : `{{ variantObj | base64_encode  }}`
+}
+{% endcapture %}
+
+<render-product-product-detail :shopify-data="{
+  productData : {{ products }}
+}">
+</render-product-product-detail>  

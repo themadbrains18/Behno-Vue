@@ -1,0 +1,20 @@
+<render-app-footer :shopify-data="{
+            footerWave: '{{ 'footer-wave.png' | asset_url }}',
+            fbIcon: '{{ 'fblogo.svg' | asset_url }}',
+            instaIcon: '{{ 'instagramfooter.svg' | asset_url }}',
+            afterIcon: '{{ 'after.svg' | asset_url }}' 
+          }">
+</render-app-footer>
+
+
+{% schema %}
+{
+"name": "t:sections.footer.name",
+"settings": [
+{
+"type": "paragraph",
+"content": "t:sections.footer.settings.paragraph"
+}
+]
+}
+{% endschema %}

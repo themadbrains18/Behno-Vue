@@ -1,0 +1,74 @@
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+        {
+            para : `{{ block.settings.para }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-exquisite-handwork-inheritance-worth :shopify-data="{
+    secHeading   : `{{ section.settings.secHeading }}`,
+    subHeading   : `{{ section.settings.subHeading }}`,
+    imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+    },
+    rightimgUrl : {
+        src : `{{ section.settings.rimage | img_url : "" }}`,
+        placeholder: `{{ section.settings.rimage | img_url : "50x50" }}`,
+        alt: `{{ section.settings.rimage.alt }}`
+    },
+    paragraphData  : {{ dynamicData }},
+
+}">
+</render-sense-of-behno-exquisite-handwork-inheritance-worth>
+
+
+{% schema %}
+{
+    "name": "Inheritance Worth",
+    "settings": [
+    
+      {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Section Heading",
+        "default": "An inheritance worth thousands of years."
+      },
+      {
+        "id": "subHeading",
+        "type": "text",
+        "label": "Sub Heading",
+        "default": "Gulfam has been an embroidery artist his entire life, where learning the craft was almost hereditary."
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Left Side Image"
+      },
+      {
+        "id": "rimage",
+        "type": "image_picker",
+        "label": "right Side Image"
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        }
+    ]
+ }
+{% endschema %}
