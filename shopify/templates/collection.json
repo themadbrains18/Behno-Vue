@@ -1,7 +1,7 @@
 {
   "sections": {
-    "main": {
-      "type": "main-collection",
+    "main": { 
+      "type": "main-collection-page",
       "blocks": {
         "b36f8b19-30f6-4b61-b355-fa3fd1749e6d": {
           "type": "slide",

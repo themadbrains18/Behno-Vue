@@ -401,3 +401,21 @@ button{
       left: 0;
   }
 }
+
+
+.product-containers .imgSvgLoader {
+  width: 136px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  height: 74px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.product-containers > div{
+  min-height: 400px;
+  position: relative;
+}
