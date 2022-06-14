@@ -116,7 +116,8 @@ export default {
   },
     data:()=>{
     window.addEventListener("scroll",()=>{
-      let VideoSection=document.querySelectorAll(".image_and_text_sec")[1];
+        if(document.querySelectorAll(".image_and_text_sec")[1]){
+            let VideoSection=document.querySelectorAll(".image_and_text_sec")[1];
             VideoSection.getBoundingClientRect();
             if(VideoSection.getBoundingClientRect().top<0){
                 document.body.classList.remove("active-Bg");
@@ -125,7 +126,7 @@ export default {
             else{
                 VideoSection.classList.add("active")
             }
-
+        }
     });    
         return {
             isactive: [],
