@@ -474,11 +474,11 @@
               <button class="search_btn">
                 <v-lazy-image :src=(shopifyData.search)  alt="Search Icon" />
               </button>
-              <a href="/cart" class="shopping_btn">
+              <button  class="shopping_btn" @click="show = !show" >
                 <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
 
                 <span class="shopping_btn_count">0</span>
-              </a>
+              </button>
             </div>
           </li>
         </ul>
@@ -717,7 +717,7 @@
                   </div>
               </div>
               <div class="mini_shopping_cart">
-                  <a href="#" class="shp_cart">View shopping cart</a>
+                  <a href="/cart" class="shp_cart">View shopping cart</a>
               </div> 
           </div>
       </div>
@@ -1028,7 +1028,7 @@
     border:1px solid black;
     transition: 0.3s;
     transform: translateX(110%);
-    padding:30px 45px 0;
+    padding:30px 45px 80px;
     overscroll-behavior: none;
 }
 .mini-add-card{
@@ -1131,7 +1131,7 @@
 }
 
 .mini_shopping_cart {
-    margin:20px 0 80px;
+    margin:20px 0 0px;
 }
 
 .shp_cart{
@@ -1205,6 +1205,9 @@
   .desktop_btn_grp,
   .navlist-left,
   .navlist-right {
+    display: none;
+  }
+  .mini_shopping_cart{
     display: none;
   }
 

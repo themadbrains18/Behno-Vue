@@ -19,6 +19,10 @@
     checkoutCtaText: `{{ section.settings.checkoutCtaText }}` ,
     continuCtaText: `{{ section.settings.continuCtaText }}` ,
     continuCtaLink: `{{ section.settings.continuCtaLink }}` ,
+    thanksSecHeading: `{{ section.settings.thanksSecHeading }}`,
+    thanksSecInfo: `{{ section.settings.thanksSecInfo }}`,
+    ThanksSecCtaText: `{{ section.settings.ThanksSecCtaText }}`,
+    ThanksSecCtaLink: `{{ section.settings.ThanksSecCtaLink }}`,
     taxInfo: `{{ section.settings.taxInfo }}` ,
     sectionCta: {{ sectionCta }}
 }">
@@ -69,6 +73,30 @@
             "id":"continuCtaLink",
             "type":"url",
             "label":"Continue Cta Link"
+        },
+        {
+            "id":"thanksSecHeading",
+            "type":"text",
+            "label":"Thanks Section Heading",
+            "default":"THANK YOU FOR YOUR PURCHASE."
+        },
+        {
+            "id":"thanksSecInfo",
+            "type":"text",
+            "label":"Thanks Section Info",
+            "default":"Check your inbox for order details."
+        },
+        {
+            "id":"ThanksSecCtaText",
+            "type":"text",
+            "label":"Thanks Sec Cta Text",
+            "default":"BACK TO HOMEPAGE"
+        },
+        {
+            "id":"ThanksSecCtaLink",
+            "type":"url",
+            "label":"Thanks Sec Cta Link",
+            "default":"/"
         }
 
 
