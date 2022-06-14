@@ -155,6 +155,8 @@ export default {
     };
   },
   data: function () {
+    // let body =document.body;
+      
     if(window.innerWidth<=575){
       window.addEventListener("load", () => {
         let GellaryImg = document.querySelectorAll(".responsive_slider .swiper-slide");

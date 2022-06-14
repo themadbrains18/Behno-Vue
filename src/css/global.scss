@@ -4,6 +4,7 @@
   box-sizing: border-box;
   color: #000;
   font-family: 'Helvetica Neue', sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body::-webkit-scrollbar {
@@ -21,13 +22,30 @@ body::-webkit-scrollbar-thumb {
   background: grey;
 }
 
-body .tmbMain{
-  transition: 0.5s linear;
+body.active-Bg main#main > div {
+  position: relative;
+  z-index: 1;
 }
-body.active-Bg .tmbMain{
-  background: #000!important;
+body .tmbMain::after{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0;
+  transition: 0.3s linear;
+  z-index: 0;
+  visibility: hidden;
 }
-body.active-Bg .img_column_full_bleed_sec .subtitle{
+body.active-Bg .tmbMain::after{
+  opacity: 1;
+  height: 100%;
+  visibility: visible;
+}
+
+body.active-Bg .img_column_full_bleed_sec .shop_cta .subtitle{
   color: #fff;
 }
 

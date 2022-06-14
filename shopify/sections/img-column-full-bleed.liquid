@@ -12,7 +12,7 @@
                     productid : `{{ block.settings.product.id }}`,
                     productUrl : `{{ block.settings.product.url }}`,
                     productidImage : `{{ block.settings.product.media[0] | img_url : "" }}`,
-                    productidPrice : `{{ block.settings.product.price | money_with_currency }}`,
+                    productidPrice : `{{ block.settings.product.price | money_without_trailing_zeros }}`,
                     productTitle : `{{ block.settings.product.title }}`,
                     productQuantity : `{{ block.inventory_quantity }}`,
                     secCtaText: `{{ block.settings.secCtaText }}`

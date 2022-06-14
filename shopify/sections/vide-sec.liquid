@@ -20,7 +20,7 @@
             productid : `{{ product.id }}`,
             productUrl : `{{ product.url }}`,
             productidImage : `{{ product.media[0] | img_url : "" }}`,
-            productidPrice : `{{ product.price | money_with_currency }}`,
+            productidPrice : `{{ product.price | money_without_trailing_zeros }}`,
             productTitle : `{{ product.title }}`,
             productQuantity : `{{ product.selected_or_first_available_variant.inventory_quantity }}`
         }{% unless forloop.last %},{% endunless %}

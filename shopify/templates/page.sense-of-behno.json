@@ -94,19 +94,111 @@
           }
         },
         "f72a1584-e7d8-4379-9a08-f1b9bb4bb7fa": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/ethical-philosophy-story.png",
             "storyBtn": "See more",
-            "storyBtnLink": "shopify:\/\/pages\/ethical-philosophy"
+            "storyBtnLink": "shopify:\/\/pages\/ethical-philosophy",
+            "storyHeading": "OUR ETHICAL PHILOSOPHY.",
+            "storyBrief": "Learn more about our foundational value system. It’s an entire system coming together.",
+            "storyText": 30,
+            "bottomTextColor": "#ffffff"
           }
         },
         "1b3f29f6-01f7-4dea-9723-c0b6e8159358": {
-          "type": "Image",
+          "type": "box",
           "settings": {
             "previewImage": "shopify:\/\/shop_images\/learn-about-storie.png",
             "storyBtn": "See more",
-            "storyBtnLink": "shopify:\/\/pages\/behno-garment-worker"
+            "storyBtnLink": "shopify:\/\/pages\/behno-garment-worker",
+            "storyHeading": "THE GARMENT WORKER PROJECT.",
+            "storyBrief": "Crediting the humans behind the pieces we love and humanizing the back-end of fashion.",
+            "storyText": 70,
+            "bottomTextColor": "#ffffff"
+          }
+        },
+        "e88d84f6-a6b5-4e5a-89db-52700e595d96": {
+          "type": "box",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/behno-in-world-story.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/behno-in-world",
+            "storyHeading": "BEHNO IN THE WORLD.",
+            "storyBrief": "You’ve seen us in the media, at Buckingham Palace, awards ceremony and in other spaces. And here’s some more.",
+            "storyText": 70,
+            "bottomTextColor": "#ffffff"
+          }
+        },
+        "27f2e34a-14e0-4999-9e64-a79b813706b1": {
+          "type": "box",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/constructing-ethos-story.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/constructing-ethos",
+            "storyHeading": "CONSTRUCTING MSA ETHOS.",
+            "storyBrief": "One and one make eleven. There is strength in unity. How (and why) we built our partner factory.",
+            "storyText": 70,
+            "bottomTextColor": "#ffffff"
+          }
+        },
+        "baecb6c9-a25b-43ff-b4fc-25a63fc98e8f": {
+          "type": "box",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/EXQUISITE-HANDWORK-STORY.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/exquisite-handwork",
+            "storyHeading": "EXQUISITE HANDWORK.",
+            "storyBrief": "How tricks of the hand create magic for the eye. Visit our artisinal hand-embroidery workshop.",
+            "storyText": 60,
+            "bottomTextColor": "#ffffff"
+          }
+        },
+        "94fa59f8-62cc-45c3-a7bd-401f58d70340": {
+          "type": "box",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/handwoven-silk-story_162d2b48-2e9d-4086-b1f2-f4fefd7479b6.jpg",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/handwoven-silks",
+            "storyHeading": "HANDWOVEN SILKS.",
+            "storyBrief": "How we bring to you the world’s finest handwoven textiles from the historic city of Varanasi. Immerse yourself.",
+            "storyText": 70,
+            "bottomTextColor": "#000000"
+          }
+        },
+        "e1ed984d-a431-4d3d-b94c-1377965cb185": {
+          "type": "box",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/frontend-story.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/front-end-philanthropy",
+            "storyHeading": "FRONT END PHILANTHROPY.",
+            "storyBrief": "How we share our resources with and support nonprofits like the National Down Syndrome Society and the Boys & Girls Clubs of America.",
+            "storyText": 60,
+            "bottomTextColor": "#000000"
+          }
+        },
+        "654ab037-4c52-4c6d-8de9-c06ee8f887d5": {
+          "type": "box",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/partner-handbag-story.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/our-partner-handbag",
+            "storyHeading": "OUR PARTNER HANDBAG FACTORY.",
+            "storyBrief": "A home away from home, where we spend so much time developing and producing our luxury handbags.",
+            "storyText": 20,
+            "bottomTextColor": "#ffffff"
+          }
+        },
+        "43378e12-2284-42bf-9f78-7ad742e7394a": {
+          "type": "box",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/our-home-base-story.png",
+            "storyBtn": "See more",
+            "storyBtnLink": "shopify:\/\/pages\/our-home-base",
+            "storyHeading": "OUR HOME BASE.",
+            "storyBrief": "With love from the city that grounds, stimulates, and creates us without ever sleeping.",
+            "storyText": 70,
+            "bottomTextColor": "#ffffff"
           }
         }
       },
@@ -121,7 +213,14 @@
         "cbb00ec0-62ed-420c-a5bd-1191cfb88196",
         "264ffa26-5dc3-40df-917f-623b857abdc9",
         "f72a1584-e7d8-4379-9a08-f1b9bb4bb7fa",
-        "1b3f29f6-01f7-4dea-9723-c0b6e8159358"
+        "1b3f29f6-01f7-4dea-9723-c0b6e8159358",
+        "e88d84f6-a6b5-4e5a-89db-52700e595d96",
+        "27f2e34a-14e0-4999-9e64-a79b813706b1",
+        "baecb6c9-a25b-43ff-b4fc-25a63fc98e8f",
+        "94fa59f8-62cc-45c3-a7bd-401f58d70340",
+        "e1ed984d-a431-4d3d-b94c-1377965cb185",
+        "654ab037-4c52-4c6d-8de9-c06ee8f887d5",
+        "43378e12-2284-42bf-9f78-7ad742e7394a"
       ],
       "settings": {
         "secTopHeading": "The Sense",

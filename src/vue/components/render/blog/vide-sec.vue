@@ -101,15 +101,17 @@ export default {
   },
   data() {
     window.addEventListener("scroll",()=>{
-      let VideoSection=document.querySelector(".video_sec");
-      VideoSection.getBoundingClientRect();
-      if(VideoSection.getBoundingClientRect().top<0){
-        VideoSection.classList.add("active");
-        document.body.classList.add("active-Bg");
-      }
-      else{
-        VideoSection.classList.remove("active");
-        document.body.classList.remove("active-Bg");
+      if(document.querySelector(".video_sec")){
+        let VideoSection=document.querySelector(".video_sec");
+        VideoSection.getBoundingClientRect();
+        if(VideoSection.getBoundingClientRect().top<0){
+          VideoSection.classList.add("active");
+          document.body.classList.add("active-Bg");
+        }
+        else{
+          VideoSection.classList.remove("active");
+          document.body.classList.remove("active-Bg");
+        }
       }
     });
     return {
@@ -205,6 +207,9 @@ export default {
 
 .sec_image_slider img{
     width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 /* Responsive Breakpoints */
@@ -246,10 +251,10 @@ export default {
 
 /* Slider Css Code */
 
-.sec_video.modify-slider .swiper-slide img{
+/* .sec_video.modify-slider .swiper-slide img{
   display: block;
   height: 100%;  
-}
+} */
 
 .sec_video.modify-slider .swiper-slide{
   height: initial;  
