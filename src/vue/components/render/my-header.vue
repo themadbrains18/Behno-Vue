@@ -474,7 +474,7 @@
               <button class="search_btn">
                 <v-lazy-image :src=(shopifyData.search)  alt="Search Icon" />
               </button>
-              <button class="shopping_btn">
+              <button class="shopping_btn" @click="show = !show" >
                 <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
 
                 <span class="shopping_btn_count">0</span>
@@ -489,7 +489,7 @@
             <button class="search_btn">
               <v-lazy-image :src=(shopifyData.search) alt="Search Icon" />
             </button>
-            <button class="shopping_btn">
+            <button class="shopping_btn" @click="show = !show" >
               <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
               <span class="shopping_btn_count">0</span>
             </button>
@@ -638,6 +638,72 @@
     </nav>
     <!-- ======= Mobile Navigation End ======= -->
   </header>
+
+  <!-- ====== Shoping Mini Cart ====== -->
+  <section class="mini_cart">
+      <div class="mini_cart_container" :class="{ active: !show }">
+          <div class="mini_cart-header">
+              <h3>YOUR BAG</h3>
+              <button id="remove-btn" @click="show = !show">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 48 48" fill="none">
+                      <path d="M11.8861 11.8865L35.6587 35.6591" stroke="#656565" stroke-width="1.5"/>
+                      <path d="M11.8861 35.6587L35.6587 11.8861" stroke="#656565" stroke-width="1.5"/>
+                  </svg>
+              </button>
+          </div>
+          <div>
+            <span class="brk_line"></span>
+          <div class="card">
+              <a href="#">
+                  <div class="product_img_wrapper" id="product_img_wrapper6678699180129">
+                      <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129">
+                      <button class="body_text remove">Remove</button>
+                  </div>
+                  <h5 class="subtitle">ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
+                  <h5 class="subtitle_b">$285</h5>
+              </a>
+          </div>
+          <div class="mini_cart-products">
+              <button>
+                  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 10.4998L21 10.4998" stroke="#656565" stroke-width="1.5"/>
+                  </svg>
+              </button>
+              <span>1</span>
+              <button>
+                  <svg width="21" height="21" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.7723 0.96283L17.7723 34.5824" stroke="#656565" stroke-width="1.5"/>
+                      <path d="M0.962891 17.7723L34.5824 17.7723" stroke="#656565" stroke-width="1.5"/>
+                  </svg>
+              </button> 
+          </div>
+          </div>
+          <span class="brk_line"></span>
+          <div class="mini_cart-payment">
+              <div class="sec_right">
+                  <div class="sec_right_inner">
+                      <h4 class="subtotal_heading">SUBTOTAL</h4>
+                      <p class="subtotal_price body_text">$1,080</p>      
+                      <p class="body_text">Excluding tax & shipping</p>
+                      <p class="body_text text-mdifier">or 4 interest payments of $270 with </p>
+                      <div class="logo_wrapper">
+                          <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076" alt="error">
+                          <p class="body_text">ⓘ</p>
+                      </div>      
+                  </div>
+              </div>
+              <div class="mini_shopping_cart">
+                  <a href="#" class="shp_cart">View shopping cart</a>
+              </div> 
+          </div>
+      </div>
+      <div class="mini-add-card"  :class="{ active: !show }">   
+          <a href="#" class="add-card-chk" >CHECKOUT</a>
+      </div> 
+  
+      
+  </section>
+
 </template>
 
 
@@ -889,6 +955,158 @@
   }
 }
 
+
+/*------- Mini Cart Css -------*/
+.mini_cart{
+  position: relative;
+  overflow: hidden;
+}
+.mini_cart_container
+{
+    max-width:377px;
+    background-color:white;
+    width:100%;
+    min-height:100vh;
+    height:100%;
+    overflow-y:scroll;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:5;
+    border:1px solid black;
+    transition: 0.3s;
+    transform: translateX(110%);
+    padding:30px 45px 0;
+}
+.mini-add-card{
+  max-width:377px;
+  width: 100%;
+  position:fixed;
+  right: 0;  
+  top: auto;
+  bottom: 0;
+  z-index:5;
+  transition: 0.3s;
+  transform: translateX(110%);
+    background-color:black;
+    text-align:center;
+    padding:21.5px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px; 
+}
+
+.mini_cart_container::-webkit-scrollbar {
+    display: none;
+}
+
+.mini_cart .remove{
+    position: absolute;
+    text-decoration: underline;
+    top: 130px;
+    right: 60px;
+    z-index: 1;
+}
+
+.mini_cart .body_text{
+    font-family:inherit;
+}
+
+.mini_cart-header{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom:26px;
+}
+
+.mini_cart-header #remove-btn svg{
+    display:block;
+}
+
+.mini_cart-header h3{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+}
+
+.mini_cart-products{
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.mini_cart-products span{
+    margin:0 36px;
+}
+
+.mini_cart .subtotal_price.body_text {
+font-weight:700;
+font-size:15px;
+line-height:18.31px;
+}
+.mini_cart-payment{
+    display:flex;
+    gap:50px;
+    flex-direction:column;
+    justify-content: space-between;
+    
+}
+
+
+
+.add-card-chk{
+    color:white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    padding:21px 0;
+}
+
+.mini_shopping_cart {
+    margin:20px 0 80px;
+}
+
+.shp_cart{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    text-decoration-line: underline;
+}
+
+.brk_line{
+    min-width:328px;
+    height:1px;
+    background-color:black;
+    display:block;
+    margin:0 -22px 35px;
+}
+
+.mini_cart_container.active ,
+.mini-add-card.active
+{
+    transform: translateX(0);
+}
+.logo_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.logo_wrapper > img {
+    width: 80px;
+}
+.subtotal_heading {
+    margin-bottom: 30px;
+}
+.mini_cart-payment .body_text.text-mdifier {
+    margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 1440px) {
   .tmbHeader {
     padding: 10px 20px;
@@ -1012,6 +1230,7 @@ export default {
     window.addEventListener("scroll", this.scollHeader);
     return {
       lastScrollY: 100,
+      show: true
     };
   },
  
@@ -1093,7 +1312,12 @@ export default {
       }
       this.header[0].removeAttribute("style");
       document.body.removeAttribute("style");
-    }
+    },
+
+    // toggle cart menu
+    // addActiveBody:function(e){
+    //     console.log("qwer");
+    // }
   }
 };
 </script>

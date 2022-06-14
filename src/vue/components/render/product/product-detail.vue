@@ -65,7 +65,7 @@
                         </ul>
                     </div>
                     <p class="product_left subtitle_b" v-if="this.currentVariantQty == 0">
-                        Out of Stoke
+                        Out of stock
                     </p>
                     <p class="product_left subtitle_b" v-else-if="this.currentVariantQty <= 5">
                         ONLY {{ this.currentVariantQty }} LEFT
