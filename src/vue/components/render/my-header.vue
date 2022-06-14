@@ -474,11 +474,11 @@
               <button class="search_btn">
                 <v-lazy-image :src=(shopifyData.search)  alt="Search Icon" />
               </button>
-              <button class="shopping_btn" @click="show = !show" >
+              <a href="/cart" class="shopping_btn">
                 <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
 
                 <span class="shopping_btn_count">0</span>
-              </button>
+              </a>
             </div>
           </li>
         </ul>
@@ -652,30 +652,54 @@
               </button>
           </div>
           <div>
-            <span class="brk_line"></span>
+          <span class="brk_line"></span>
           <div class="card">
-              <a href="#">
+              <!-- <a href="#"> -->
                   <div class="product_img_wrapper" id="product_img_wrapper6678699180129">
                       <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129">
                       <button class="body_text remove">Remove</button>
                   </div>
                   <h5 class="subtitle">ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                   <h5 class="subtitle_b">$285</h5>
-              </a>
+              <!-- </a> -->
+              <div class="mini_cart-products">
+                  <button>
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 10.4998L21 10.4998" stroke="#656565" stroke-width="1.5"/>
+                      </svg>
+                  </button>
+                  <span>1</span>
+                  <button>
+                      <svg width="21" height="21" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.7723 0.96283L17.7723 34.5824" stroke="#656565" stroke-width="1.5"/>
+                          <path d="M0.962891 17.7723L34.5824 17.7723" stroke="#656565" stroke-width="1.5"/>
+                      </svg>
+                  </button> 
+              </div>
           </div>
-          <div class="mini_cart-products">
-              <button>
-                  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 10.4998L21 10.4998" stroke="#656565" stroke-width="1.5"/>
-                  </svg>
-              </button>
-              <span>1</span>
-              <button>
-                  <svg width="21" height="21" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17.7723 0.96283L17.7723 34.5824" stroke="#656565" stroke-width="1.5"/>
-                      <path d="M0.962891 17.7723L34.5824 17.7723" stroke="#656565" stroke-width="1.5"/>
-                  </svg>
-              </button> 
+          <div class="card">
+              <!-- <a href="#"> -->
+                  <div class="product_img_wrapper" id="product_img_wrapper6678699180129">
+                      <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129">
+                      <button class="body_text remove">Remove</button>
+                  </div>
+                  <h5 class="subtitle">ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
+                  <h5 class="subtitle_b">$285</h5>
+              <!-- </a> -->
+              <div class="mini_cart-products">
+                  <button>
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 10.4998L21 10.4998" stroke="#656565" stroke-width="1.5"/>
+                      </svg>
+                  </button>
+                  <span>1</span>
+                  <button>
+                      <svg width="21" height="21" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.7723 0.96283L17.7723 34.5824" stroke="#656565" stroke-width="1.5"/>
+                          <path d="M0.962891 17.7723L34.5824 17.7723" stroke="#656565" stroke-width="1.5"/>
+                      </svg>
+                  </button> 
+              </div>
           </div>
           </div>
           <span class="brk_line"></span>
@@ -698,7 +722,7 @@
           </div>
       </div>
       <div class="mini-add-card"  :class="{ active: !show }">   
-          <a href="#" class="add-card-chk" >CHECKOUT</a>
+          <button class="add-card-chk">CHECKOUT</button>
       </div> 
   
       
@@ -716,6 +740,26 @@
     margin-top: 63px;
   }   
 }
+
+.mini_cart_container .card {
+    padding-bottom: 21px;
+    position: relative;
+}
+.mini_cart_container .card:not(:last-child):after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc( 100% + 36px);
+    background: #000;
+    height: 1px;
+    margin-left: -18px;
+}
+.mini_cart_container .card:not(:first-child){
+  margin-top: 23px;
+}
+
+
 </style>
 
 <style scoped>
@@ -781,7 +825,9 @@
 .logo{
   line-height: 0;
 }
-.nav_btns > button {
+.nav_btns > a ,
+.nav_btns > button 
+{
   display: grid;
   place-items: center;
 }
@@ -793,6 +839,12 @@
 .shopping_btn_count {
   position: absolute;
   bottom: 1px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #000000;
 }
 
 .header_toggle {
@@ -977,6 +1029,7 @@
     transition: 0.3s;
     transform: translateX(110%);
     padding:30px 45px 0;
+    overscroll-behavior: none;
 }
 .mini-add-card{
   max-width:377px;
@@ -988,23 +1041,23 @@
   z-index:5;
   transition: 0.3s;
   transform: translateX(110%);
-    background-color:black;
-    text-align:center;
-    padding:21.5px 0;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px; 
+  text-align:center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px; 
 }
 
 .mini_cart_container::-webkit-scrollbar {
     display: none;
 }
-
+.product_img_wrapper {
+    position: relative;
+}
 .mini_cart .remove{
     position: absolute;
     text-decoration: underline;
-    top: 130px;
-    right: 60px;
+    top: 13px;
+    right: 11px;
     z-index: 1;
 }
 
@@ -1037,7 +1090,7 @@
 .mini_cart-products{
     display: flex;
     align-items: center;
-    margin: 30px 0;
+    margin: 24px 0 0;
 }
 
 .mini_cart-products span{
@@ -1045,9 +1098,9 @@
 }
 
 .mini_cart .subtotal_price.body_text {
-font-weight:700;
-font-size:15px;
-line-height:18.31px;
+    font-weight:700;
+    font-size:15px;
+    line-height:18.31px;
 }
 .mini_cart-payment{
     display:flex;
@@ -1057,14 +1110,24 @@ line-height:18.31px;
     
 }
 
-
-
 .add-card-chk{
     color:white;
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-    padding:21px 0;
+    padding: 21px;
+    background: #000;
+    width: 100%;
+    display: block;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+@media(min-width:991px) {
+    .add-card-chk:hover{
+     border: 1px solid #000;
+     color:#000;
+     background: #fff;
+  }
 }
 
 .mini_shopping_cart {
@@ -1102,9 +1165,21 @@ line-height:18.31px;
 }
 .subtotal_heading {
     margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: #000000;
 }
 .mini_cart-payment .body_text.text-mdifier {
     margin-bottom: 20px;
+}
+.subtotal_price + .body_text {
+    margin-bottom: 15px;
+}
+.body_text.remove {
+    font-size: 12px;
+    line-height: 14px;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1207,6 +1282,12 @@ line-height:18.31px;
     margin-top: 10px;
   }
 }
+@media only screen and (max-width: 767px) {
+
+  .subtitle_b {
+    margin-bottom: 0 !important;
+  }
+} 
 </style>
 
 

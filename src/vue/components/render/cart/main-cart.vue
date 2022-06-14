@@ -1,6 +1,6 @@
 <template>
     <!-- ====== Shoping cart Default template ====== -->
-   <!--  <section class="cart_default_sec">
+    <section class="cart_default_sec">
         <div class="big_container">
             <div class="sec_head">
                 <div class="pre_arrow_wrapper">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- ====== Shoping cart With Products template ====== -->
   <section class="cart_with_products">
@@ -38,14 +38,64 @@
                     <h3 class="cart_heading">YOUR BAG</h3>
                     <div class="product_grid">
                         <div class="card">
-                            <a href="#">
+                            <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
                                     <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
-                                    <p class="body_text remove">Remove</p>
+                                    <button class="body_text remove">Remove</button>
                                 </div>
                                 <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                                 <h5 class="card-title bold" >$285</h5>
-                            </a>
+                            <!-- </a> -->
+                        </div>
+                        <div class="card">
+                            <!-- <a href="#"> -->
+                                <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
+                                    <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
+                                    <button class="body_text remove">Remove</button>
+                                </div>
+                                <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
+                                <h5 class="card-title bold" >$285</h5>
+                            <!-- </a> -->
+                        </div>
+                        <div class="card">
+                            <!-- <a href="#"> -->
+                                <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
+                                    <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
+                                    <button class="body_text remove">Remove</button>
+                                </div>
+                                <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
+                                <h5 class="card-title bold" >$285</h5>
+                            <!-- </a> -->
+                        </div>
+                        <div class="card">
+                            <!-- <a href="#"> -->
+                                <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
+                                    <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
+                                    <button class="body_text remove">Remove</button>
+                                </div>
+                                <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
+                                <h5 class="card-title bold" >$285</h5>
+                            <!-- </a> -->
+                        </div>
+                        <div class="card">
+                            <!-- <a href="#"> -->
+                                <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
+                                    <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
+                                    <button class="body_text remove">Remove</button>
+                                </div>
+                                <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
+                                <h5 class="card-title bold" >$285</h5>
+                            <!-- </a> -->
+                        </div>
+                        <div class="card">
+                            <!-- <a href="#"> -->
+                                <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
+                                    <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
+                                    <button class="body_text remove">Remove</button>
+                                </div>
+                                <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
+                                <h5 class="card-title bold" >$285</h5>
+                            <!-- </a> -->
                         </div>
                     </div>
                 </div>
@@ -60,7 +110,7 @@
                             <p class="body_text">ⓘ</p>
                         </div>
                         <div class="cta_wrapper">   
-                            <a href="#" class="cta_btn" >CHECKOUT</a>
+                            <button class="cta_btn" >CHECKOUT</button>
                             <a href="#" class="cta_btn cta-modifier">Continue shopping</a>
                         </div>        
                     </div>
@@ -201,6 +251,7 @@
     border: 1px solid transparent;
     text-decoration-line: underline;
     font-size: 12px;
+    font-weight: 400;
 }
 .cart_with_products .cta_btn:hover{
     border-color:#000 ;
@@ -232,8 +283,23 @@
 
 
 
-
-
+@media(max-width:1200px){
+    .cart_with_products .sec_content{
+        gap: 25px;
+    }
+}
+@media(max-width:1024px){
+    .cart_with_products .sec_right{
+        padding-left: 30px; 
+    }
+}
+@media(max-width:991px){
+    .cart_with_products,
+    .cart_default_sec
+    {
+        display: none;
+    }
+}
 </style>
 
 <script>
