@@ -5,7 +5,7 @@
       <div class="sec_content">
         <div class="sec_img">
           <a :href=(shopifyData.link) >
-            <video width="" height="" autoplay="" loop="" muted="" webkit-playsinline=""  playsinline="" preload="none">
+            <video width="" height="" controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" webkit-playsinline=""  playsinline="" preload="none">
               <source  :src=(shopifyData.videoUrl)>
             </video>
           </a>

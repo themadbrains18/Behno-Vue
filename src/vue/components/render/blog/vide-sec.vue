@@ -15,9 +15,7 @@
             <video
                 class="subtitle"
                 @click="toggle_selection_for(key)"
-                autoplay="true"
-                loop="true"
-                muted="true"
+                controls autoplay="true" loop="true" muted="true"  controlsList="nodownload"
                 webkit-playsinline="true"
                 playsinline="true"
                 preload="none"

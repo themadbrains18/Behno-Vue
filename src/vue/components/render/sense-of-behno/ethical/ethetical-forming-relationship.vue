@@ -16,7 +16,7 @@
         <div class="sec_img">
           <a :href=(shopifyData.link) >
             <template v-if="shopifyData.showVideo === 'true'">
-              <video  autoplay="true" loop="true" muted="true" webkit-playsinline="true" playsinline="true" preload="none" >
+              <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" webkit-playsinline="true" playsinline="true" preload="none" >
                 <source :src=(shopifyData.videoUrl) >
               </video>
             </template>

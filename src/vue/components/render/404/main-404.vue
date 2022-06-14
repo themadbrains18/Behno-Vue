@@ -5,18 +5,17 @@
         <h3 class="error_heading">{{ shopifyData.secHeading }}</h3>
         <p class="brief_heading">But, continue your journey below:</p>
         <div class="cta_wrapper t-center">
-          <a href="#" class="cta_btn cta_btn-black">ALL HANDBAGS & WALLETS</a>
-          <a href="#" class="cta_btn cta_btn-black">CROSSBODY BAGS</a>
-          <a href="#" class="cta_btn cta_btn-black">SHOULDER BAGS</a>
-          <a href="#" class="cta_btn cta_btn-black">MINI BAGS</a>
+          <template v-for="(item, index) in shopifyData.grid" :key="index">
+            <a :href=(item.secCtaLink) class="cta_btn cta_btn-black">{{ item.secCta }}</a>
+          </template>
         </div>
         <div class="homepage_link">
-          <a href="#">Back to homepage.</a>
+          <a :href=(shopifyData.indexCtaLink)>{{ shopifyData.indexCta }}</a>
         </div>
       </div>
     </div>
   </section>
-</template>
+</template>  
 
 <script>
 export default {
@@ -24,7 +23,7 @@ export default {
     shopifyData: {
       type: Object,
       required: true,
-    },
+    }
   },
 };
 </script>

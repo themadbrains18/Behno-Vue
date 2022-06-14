@@ -14,9 +14,7 @@
         <div class="sec_img">
           <template v-if="shopifyData.checkImage === 'true'">
             <video
-              autoplay="true"
-              loop="true"
-              muted="true"
+              controls autoplay="true" loop="true" muted="true"  controlsList="nodownload"
               webkit-playsinline="true"
               playsinline="true"
               preload="none"

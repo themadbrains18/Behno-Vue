@@ -1,7 +1,24 @@
+{% capture grid %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'grid' %}
+        {
+            secCta:`{{ block.settings.secCta }}`,
+            secCtaLink:`{{ block.settings.secCtaLink }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+
 <render-404-main-404 :shopify-data="{
     secHeading:`{{ section.settings.secHeading }}`,
-    secCta:`{{ section.settings.secCta }}`,
-    secCtaLink:`{{ section.settings.secCtaLink }}`,
+    secBrief:`{{ section.settings.secBrief }}`,
+    indexCta:`{{ section.settings.indexCta }}`,
+    indexCtaLink:`{{ section.settings.indexCtaLink }}`,
+    grid: {{ grid }}
 }">
 
 </render-404-main-404>
@@ -17,15 +34,40 @@
             "default": "THIS PAGE DOES NOT EXIST"
         },
         {
-            "id": "secCta",
+            "id": "secBrief",
             "type": "text",
-            "label": "Section Cta Text",
-            "default": "BACK TO HOMEPAGE"
+            "label": "Section Info",
+            "default": "But, continue your journey below:"
         },
         {
-            "id": "secCtaLink",
+            "id": "indexCta",
+            "type": "text",
+            "label": "Index Cta Text",
+            "default":"Back to homepage."
+        },
+        {
+            "id": "indexCtaLink",
             "type": "url",
-            "label": "Section Cta Url"
+            "label": "Index Cta Link",
+            "default":"/"
+        }
+    ],
+    "blocks":[
+        {
+            "name":"Cta Grid",
+            "type":"grid",
+            "settings":[
+                {
+                    "id": "secCta",
+                    "type": "text",
+                    "label": "Section Cta Text"
+                },
+                {
+                    "id": "secCtaLink",
+                    "type": "url",
+                    "label": "Section Cta Link"
+                }
+            ]
         }
     ]
 }
