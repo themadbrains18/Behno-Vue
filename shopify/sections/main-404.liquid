@@ -1,2 +1,74 @@
-<h1>{{ '404.title' | t }}</h1>
-<p>{{ '404.text' | t }}</p>
+{% capture grid %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'grid' %}
+        {
+            secCta:`{{ block.settings.secCta }}`,
+            secCtaLink:`{{ block.settings.secCtaLink }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+
+<render-404-main-404 :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secBrief:`{{ section.settings.secBrief }}`,
+    indexCta:`{{ section.settings.indexCta }}`,
+    indexCtaLink:`{{ section.settings.indexCtaLink }}`,
+    grid: {{ grid }}
+}">
+
+</render-404-main-404>
+
+{% schema %}
+{
+    "name":"Hero Section",
+    "settings":[
+        {
+            "id": "secHeading",
+            "type": "text",
+            "label": "Section Heading",
+            "default": "THIS PAGE DOES NOT EXIST"
+        },
+        {
+            "id": "secBrief",
+            "type": "text",
+            "label": "Section Info",
+            "default": "But, continue your journey below:"
+        },
+        {
+            "id": "indexCta",
+            "type": "text",
+            "label": "Index Cta Text",
+            "default":"Back to homepage."
+        },
+        {
+            "id": "indexCtaLink",
+            "type": "url",
+            "label": "Index Cta Link",
+            "default":"/"
+        }
+    ],
+    "blocks":[
+        {
+            "name":"Cta Grid",
+            "type":"grid",
+            "settings":[
+                {
+                    "id": "secCta",
+                    "type": "text",
+                    "label": "Section Cta Text"
+                },
+                {
+                    "id": "secCtaLink",
+                    "type": "url",
+                    "label": "Section Cta Link"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -15,7 +15,7 @@
     productid : `{{ section.settings.product.id }}`,
     productUrl : `{{ section.settings.product.url }}`,
     productidImage : `{{ section.settings.product.media[0] | img_url : "" }}`,
-    productidPrice : `{{ section.settings.product.price | money_with_currency }}`,
+    productidPrice : `{{ section.settings.product.price | money_without_trailing_zeros }}`,
     productTitle : `{{ section.settings.product.title }}`,
     productQuantity : `{{ section.selected_or_first_available_variant.inventory_quantity }}`
 }

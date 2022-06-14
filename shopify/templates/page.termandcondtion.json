@@ -6,7 +6,7 @@
         "fb5a2400-876e-4bca-b9a3-5da1d2ea9b23": {
           "type": "block-1",
           "settings": {
-            "boxImage": "shopify:\/\/shop_images\/text-icon-new.png",
+            "boxImage": "shopify:\/\/shop_images\/text.png",
             "boxHeading": "TEXT",
             "boxContent": "To experience behno White Glove Client Services, or if you have any questions, text \"HELLO\" to us. We strive to text back ASAP.",
             "link": "#",
@@ -16,7 +16,7 @@
         "e8f198dc-0dea-4895-96a5-c6d867cbd32e": {
           "type": "block-1",
           "settings": {
-            "boxImage": "shopify:\/\/shop_images\/massage-new.png",
+            "boxImage": "shopify:\/\/shop_images\/mail.png",
             "boxHeading": "EMAIL",
             "boxContent": "For assistance concerning our online store or your online purchase, please contact us via email. This is the easiest way to get in touch with us.",
             "link": "#",

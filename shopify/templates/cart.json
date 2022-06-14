@@ -1,7 +1,31 @@
 {
   "sections": {
     "main": {
-      "type": "main-cart"
+      "type": "main-cart",
+      "blocks": {
+        "8d5d7d3a-e74d-4665-bcef-22bede985c20": {
+          "type": "SectionCta",
+          "settings": {
+            "secCta": "SHOP ALL",
+            "secCtaLink": "#"
+          }
+        },
+        "af29fbb2-6bb9-4ba4-bbd0-78ac823b16f3": {
+          "type": "SectionCta",
+          "settings": {
+            "secCta": "BACK TO HOMEPAGE",
+            "secCtaLink": "\/"
+          }
+        }
+      },
+      "block_order": [
+        "8d5d7d3a-e74d-4665-bcef-22bede985c20",
+        "af29fbb2-6bb9-4ba4-bbd0-78ac823b16f3"
+      ],
+      "settings": {
+        "defaultSecHeading": "YOUR BAG",
+        "defaultSecInfo": "Your bag is empty."
+      }
     }
   },
   "order": [

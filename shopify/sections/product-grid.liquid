@@ -1,2 +1,51 @@
-<render-product-product-grid>
+{% capture metaFieldsData %}
+{   
+    img : {
+        src : `{{ product.metafields.my_fields.product_related_grid_image | img_url : "" }}`,
+        placeholder: `{{ product.metafields.my_fields.product_related_grid_image | img_url : "50x50" }}`,
+        alt: `{{ product.metafields.my_fields.product_related_grid_image.alt }}`
+    },
+    gridLeftHeading   : `{{  product.metafields.my_fields.product_related_grid_heading     }}`,
+    gridLeftPara   : `{{  product.metafields.my_fields.product_related_grid_paragraph }}`
+}
+{% endcapture %}
+
+<render-product-product-grid :shopify-data="{
+    metaFieldsData   : {{ metaFieldsData }},
+    RightGridImage   : {
+                        src : `{{ section.settings.RightGridImage | img_url : "" }}`,
+                        placeholder : `{{ section.settings.RightGridImage | img_url :  "50x50" }}`,
+                        alt : `{{ section.settings.RightGridImage.alt }}`
+                    },
+    RightGridHeading   : `{{ section.settings.RightGridHeading }}`,
+    RightGridpara   : `{{ section.settings.RightGridpara }}`
+}">
 </render-product-product-grid>
+
+
+
+{% schema %}
+{
+    "name": "Product Grid",
+    "settings": [
+     {
+        "id": "RightGridImage",
+        "type": "image_picker",
+        "label": "Right Side Grid Image"
+      },
+     {
+        "id": "RightGridHeading",
+        "type": "text",
+        "label": "Right Side Grid Paragraph",
+        "default": "AN HONEST ACCESSORY."
+      },
+     {
+        "id": "RightGridpara",
+        "type": "textarea",
+        "label": "Right Side Grid Paragraph",
+        "default": "Your bag is handcrafted in Nashik, Maharashtra, in a facility that incrementally implements The behno Standard, a set of six guiding principles."
+      }
+    ]
+  
+ }
+{% endschema %}

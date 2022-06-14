@@ -1,24 +1,53 @@
 {% capture cardData %}
 [
     {% for block in section.blocks %}
-    {
-        cardHeading   : `{{ block.settings.cardHeading }}`,
-        cardBrief   : `{{ block.settings.cardBrief }}`,
-        cardImg : {
-            src : `{{ block.settings.cardImg | img_url : "" }}`,
-            placeholder: `{{ block.settings.cardImg | img_url : "50x50" }}`,
-            alt: `{{ block.settings.cardImg.alt }}`
-        },
-        cardCta   : `{{ block.settings.cardCta }}`,
-        cardCtaLink   : `{{ block.settings.cardCtaLink }}`
-    }{% unless forloop.last %},{% endunless %}
+        {% if block.type == 'slide' %}
+        {
+            cardHeading   : `{{ block.settings.cardHeading }}`,
+            cardBrief   : `{{ block.settings.cardBrief }}`,
+            cardImg : {
+                src : `{{ block.settings.cardImg | img_url : "" }}`,
+                placeholder: `{{ block.settings.cardImg | img_url : "50x50" }}`,
+                alt: `{{ block.settings.cardImg.alt }}`
+            },
+            cardCta   : `{{ block.settings.cardCta }}`,
+            cardCtaLink   : `{{ block.settings.cardCtaLink }}`
+        }{% unless forloop.last %},{% endunless %}
+    {% endif %}
     {% endfor %}
 ]
 {% endcapture %}
+
+
+
+{% capture productData %}
+[
+{% for block in section.blocks %}
+    {% if block.type == 'box' %}
+        {
+            previewimage:{
+                src : `{{ block.settings.previewImage | img_url : "" }}`,
+                placeholder: `{{ block.settings.previewImage | img_url : "50x50" }}`,
+                alt: `{{ block.settings.previewImage.alt }}`
+            },
+            storyBtn:`{{ block.settings.storyBtn }}`,
+            storyBtnLink:`{{ block.settings.storyBtnLink }}`,
+            storyHeading:`{{ block.settings.storyHeading }}`,
+            storyBrief:`{{ block.settings.storyBrief }}`,
+            storyText:`{{ block.settings.storyText }}`,
+            bottomTextColor:`{{ block.settings.bottomTextColor }}`
+        }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+{% endfor %}
+]
+{% endcapture %}
+
+
 <render-sense-of-behno-sense-of-behno :shopify-data="{
     secTopHeading   : `{{ section.settings.secTopHeading }}`,
     secBottomHeading   : `{{ section.settings.secBottomHeading }}`,
     secBrief   : `{{ section.settings.secBrief }}`,
+    secBrief2   : `{{ section.settings.secBrief2 }}`,
     SecBtn   : `{{ section.settings.SecBtn }}`,
     SecBtnLink   : `{{ section.settings.SecBtnLink }}`,
     imgUrl : {
@@ -26,7 +55,8 @@
         placeholder: `{{ section.settings.SecImg | img_url : "50x50" }}`,
         alt: `{{ section.settings.SecImg.alt }}`
     },
-    cardData:{{ cardData }}
+    cardData:{{ cardData }},
+    productData: {{ productData }}
 }">
 </render-sense-of-behno-sense-of-behno>
 
@@ -49,8 +79,14 @@
         {
             "id":"secBrief",
             "type":"text",
-            "label":"Section Brief",
-            "default":"Welcome to our world. Get to know what encompasses our essence."
+            "label":"Section Brief1",
+            "default":"Welcome to our world."
+        },
+        {
+            "id":"secBrief2",
+            "type":"text",
+            "label":"Section Brief2",
+            "default":"Get to know what encompasses our essence."
         },
         {
             "id":"SecImg",
@@ -89,7 +125,7 @@
                     "type":"text",
                     "label":"Card brief"
                 },
-                {
+                                {
                     "id":"cardCta",
                     "type":"text",
                     "label":"Card Cta text"
@@ -99,8 +135,55 @@
                     "type":"url",
                     "label":"Card Cta Link"
                 }
+
+            ]
+        },
+        {
+            "name":"Add Image",
+            "type":"box",
+            "settings":[
+                {
+                    "id":"previewImage",
+                    "type":"image_picker",
+                    "label":"Preview Image"
+                },
+                {
+                    "id":"storyBtn",
+                    "type":"text",
+                    "label":"Story Cta Text"
+                },
+                {
+                    "id":"storyBtnLink",
+                    "type":"url",
+                    "label":"Story Cta Link"
+                },
+                {
+                    "id":"storyHeading",
+                    "type":"text",
+                    "label":"Story Heading"
+                },
+                {
+                    "id":"storyBrief",
+                    "type":"text",
+                    "label":"Story brief"
+                },
+                {
+                    "type": "range",
+                    "id": "storyText",
+                    "min": 0,
+                    "max": 100,
+                    "step": 10,
+                    "label": "Story Text Placement From Top",
+                    "default": 40       
+                },
+                {
+                    "type":"color",
+                    "id":"bottomTextColor",
+                    "label":"Bottom Text Color"
+                }
             ]
         }
+        
     ]
 }
 {% endschema %}

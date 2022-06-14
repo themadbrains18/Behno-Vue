@@ -79,8 +79,8 @@
         "872946e6-328b-444d-9a88-51ff20b4ee3b"
       ],
       "settings": {
-        "GalleryPreviewHeading": "Amrit Sandhu chats with the behno team.",
         "showProduct": true,
+        "GalleryPreviewHeading": "Amrit Sandhu chats with the behno team.",
         "PopupHeading": "GALLERY",
         "GalleryCta": "VIEW + SHOP GALLERY",
         "ProductBtn": ""
@@ -110,17 +110,17 @@
         "7275eeac-9125-4025-8627-4f2ab282c526": {
           "type": "slide",
           "settings": {
-            "product": "the-softest-tee-mens-fitted-long-sleeve-black",
+            "previewImg": "shopify:\/\/shop_images\/ghat-know5.jpg",
             "secCtaText": "SHOP THE BAG",
-            "previewImg": "shopify:\/\/shop_images\/ghat-know5.jpg"
+            "product": "the-softest-tee-mens-fitted-long-sleeve-black"
           }
         },
         "f108701b-6fef-4e99-ace5-22d0fbb5a2c1": {
           "type": "slide",
           "settings": {
-            "product": "alex-shoulder-bag-glossy-croc-balsamic",
+            "previewImg": "shopify:\/\/shop_images\/inheritance1.jpg",
             "secCtaText": "SHOP THE BAG",
-            "previewImg": "shopify:\/\/shop_images\/inheritance1.jpg"
+            "product": "alex-shoulder-bag-glossy-croc-balsamic"
           }
         }
       },
@@ -129,8 +129,7 @@
         "f108701b-6fef-4e99-ace5-22d0fbb5a2c1"
       ],
       "settings": {
-        "checkSection": true,
-        "showProduct": true
+        "checkSection": true
       }
     },
     "image-and-text": {
@@ -148,12 +147,10 @@
       ],
       "settings": {
         "checkSection": true,
-        "secImg": "shopify:\/\/shop_images\/gallery-img3.jpg",
-        "secCta": "SHOP THE BAG",
-        "secCtaLink": "",
         "checkImgHeading": true,
         "imgHeading": "I AM:",
-        "showProduct": true,
+        "secImg": "shopify:\/\/shop_images\/gallery-img3.jpg",
+        "secCta": "SHOP THE BAG",
         "product": "alex-shoulder-bag-glossy-croc-balsamic"
       }
     },
@@ -182,8 +179,7 @@
         "54fb3c7c-9948-4d0c-b5d8-98e1f8b9895c"
       ],
       "settings": {
-        "checkSection": true,
-        "showProduct": true
+        "checkSection": true
       }
     },
     "image-and-text2": {
@@ -201,12 +197,10 @@
       ],
       "settings": {
         "checkSection": true,
-        "secImg": "shopify:\/\/shop_images\/ghat-know5.jpg",
-        "secCta": "SHOP THE BAG",
-        "secCtaLink": "",
         "checkImgHeading": false,
         "imgHeading": "I AM:",
-        "showProduct": true,
+        "secImg": "shopify:\/\/shop_images\/ghat-know5.jpg",
+        "secCta": "SHOP THE BAG",
         "product": "ana-flat-tote-crossbody-nappa-ruched-olive"
       }
     },
@@ -255,7 +249,6 @@
         "checkSection": true,
         "secImg": "shopify:\/\/shop_images\/sec-full-img.jpg",
         "secCta": "SHOP THE BAG",
-        "secCtaLink": "#",
         "showProduct": true,
         "product": "elizabeth-baguette-mini-suede-acid-green"
       }

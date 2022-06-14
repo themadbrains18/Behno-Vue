@@ -20,7 +20,8 @@
     secInfo:'{{ section.settings.secInfo }}',
     collageData  : {{ collageData }},
     checkImage: `{{ section.settings.checkImage }}`,
-    videolink: `{{ section.settings.videolink }}`   
+    videolink: `{{ section.settings.videolink }}`   ,
+    mobileCaption: `{{ section.settings.mobileCaption }}`   
 
 }">
 </render-garment-garment-behind-scenes>
@@ -42,6 +43,12 @@
             "type":"text",
             "label":"Section Info",
             "default":"BTS with Dan Smith and Kent Mathews as they spend time at MSA Ethos."
+        },
+        {
+            "id":"mobileCaption",
+            "type":"text",
+            "label":"Mobile Caption",
+            "default":"(From left to right). Kent Mathews and Dan Smith at MSA Ethos."
         },
         {
             "id": "checkImage",
