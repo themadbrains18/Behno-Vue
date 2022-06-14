@@ -35,83 +35,71 @@
             </div>
             <div class="sec_content">
                 <div class="sec_left">
-                    <h3 class="cart_heading">YOUR BAG</h3>
+                    <h3 class="cart_heading">{{ shopifyData.defaultSecHeading }}</h3>
                     <div class="product_grid">
                         <div class="card">
-                            <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
                                     <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
                                     <button class="body_text remove">Remove</button>
                                 </div>
                                 <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                                 <h5 class="card-title bold" >$285</h5>
-                            <!-- </a> -->
                         </div>
                         <div class="card">
-                            <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
                                     <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
                                     <button class="body_text remove">Remove</button>
                                 </div>
                                 <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                                 <h5 class="card-title bold" >$285</h5>
-                            <!-- </a> -->
                         </div>
                         <div class="card">
-                            <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
                                     <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
                                     <button class="body_text remove">Remove</button>
                                 </div>
                                 <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                                 <h5 class="card-title bold" >$285</h5>
-                            <!-- </a> -->
                         </div>
                         <div class="card">
-                            <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
                                     <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
                                     <button class="body_text remove">Remove</button>
                                 </div>
                                 <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                                 <h5 class="card-title bold" >$285</h5>
-                            <!-- </a> -->
                         </div>
                         <div class="card">
-                            <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
                                     <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
                                     <button class="body_text remove">Remove</button>
                                 </div>
                                 <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                                 <h5 class="card-title bold" >$285</h5>
-                            <!-- </a> -->
                         </div>
                         <div class="card">
-                            <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
                                     <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
                                     <button class="body_text remove">Remove</button>
                                 </div>
                                 <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                                 <h5 class="card-title bold" >$285</h5>
-                            <!-- </a> -->
                         </div>
                     </div>
                 </div>
                 <div class="sec_right">
                     <div class="sec_right_inner">
-                        <h4 class="subtotal_heading">SUBTOTAL</h4>
+                        <h4 class="subtotal_heading">{{ shopifyData.subtotalHeading }}</h4>
                         <p class="subtotal_price body_text">$1,080</p>
-                        <p class="body_text">Excluding tax & shipping</p>
+                        <p class="body_text">{{ shopifyData.taxInfo }}</p>
                         <p class="body_text text-mdifier">or 4 interest payments of $270 with </p>
                         <div class="logo_wrapper">
                             <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076" alt="error">
                             <p class="body_text">ⓘ</p>
                         </div>
                         <div class="cta_wrapper">   
-                            <button class="cta_btn" >CHECKOUT</button>
-                            <a href="#" class="cta_btn cta-modifier">Continue shopping</a>
+                            <button class="cta_btn" >{{ shopifyData.checkoutCtaText }}</button>
+                            <a :href=(shopifyData.continuCtaLink) class="cta_btn cta-modifier">{{ shopifyData.continuCtaText }}</a>
                         </div>        
                     </div>
                 </div>

@@ -14,7 +14,12 @@
 
 <render-cart-main-cart :shopify-data="{
     defaultSecHeading: `{{ section.settings.defaultSecHeading }}` ,
+    subtotalHeading: `{{ section.settings.subtotalHeading }}` ,
     defaultSecInfo: `{{ section.settings.defaultSecInfo }}` ,
+    checkoutCtaText: `{{ section.settings.checkoutCtaText }}` ,
+    continuCtaText: `{{ section.settings.continuCtaText }}` ,
+    continuCtaLink: `{{ section.settings.continuCtaLink }}` ,
+    taxInfo: `{{ section.settings.taxInfo }}` ,
     sectionCta: {{ sectionCta }}
 }">
 
@@ -35,7 +40,38 @@
             "type":"text",
             "label":"Default Section Info",
             "default":"Your bag is empty."
+        },
+        {
+            "id":"subtotalHeading",
+            "type":"text",
+            "label":"Subtotal Heading",
+            "default":"SUBTOTAL"
+        },
+        {
+            "id":"taxInfo",
+            "type":"text",
+            "label":"Tax Section Info",
+            "default":"Excluding tax & shipping"
+        },
+        {
+            "id":"checkoutCtaText",
+            "type":"text",
+            "label":"Checkout Cta Text",
+            "default":"CHECKOUT"
+        },
+        {
+            "id":"continuCtaText",
+            "type":"text",
+            "label":"Continue Cta Text",
+            "default":"Continue shopping"
+        },
+        {
+            "id":"continuCtaLink",
+            "type":"url",
+            "label":"Continue Cta Link"
         }
+
+
     ],
     "blocks" : [
         {

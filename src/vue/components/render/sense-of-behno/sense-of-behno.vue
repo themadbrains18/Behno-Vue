@@ -361,11 +361,9 @@ components: {
     SwiperSlide,
 },
 data: function () {
-
     return {
         show: true,
     };
-    
 },
 methods : {
     addActiveBody:function(){
