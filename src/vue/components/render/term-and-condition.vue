@@ -6,16 +6,16 @@
         <div class="contact_info" v-for="(value, key) in shopifyData.box" :key="key">
           <div class="contact_logo">
             <img
-              :src=(value.imgUrl.src)
-              :src-placeholder=(value.imgUrl.placeHolder)
-              :alt=(value.imgUrl.alt)
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeHolder)"
+              :alt="(value.imgUrl.alt)"
             />
           </div>
           <h3 class="contact_heading"> {{ value.boxHeading }} </h3>
           <p class="contact_brief" v-html="renderHtml(value.boxContent)">
           </p>
           <div class="contact_number">
-            <a :href=(value.link)>{{ value.linkText }}</a>
+            <a :href="(value.link)">{{ value.linkText }}</a>
           </div>
         </div>
       </div>

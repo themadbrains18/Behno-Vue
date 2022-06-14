@@ -47,7 +47,6 @@
                                 <h5 class="card-title bold" >$285</h5>
                             </a>
                         </div>
-                        
                     </div>
                 </div>
                 <div class="sec_right">
@@ -63,62 +62,79 @@
                         <div class="cta_wrapper">   
                             <a href="#" class="cta_btn" >CHECKOUT</a>
                             <a href="#" class="cta_btn cta-modifier">Continue shopping</a>
-                        </div>  
-                        
+                        </div>        
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- ====== Shoping Mini Cart ====== -->
     <section class="mini_cart">
        <div class="mini_cart_container">
             <div class="mini_cart-header">
                 <h3>YOUR BAG</h3>
-                <img src="">
+                <button id="remove-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 48 48" fill="none">
+                        <path d="M11.8861 11.8865L35.6587 35.6591" stroke="#656565" stroke-width="1.5"/>
+                        <path d="M11.8861 35.6587L35.6587 11.8861" stroke="#656565" stroke-width="1.5"/>
+                    </svg>
+                </button>
             </div>
+           <div>
+             <span class="brk_line"></span>
             <div class="card">
+                   <button class="body_text remove">Remove</button>
                 <a href="#">
-                    <div class="product_img_wrapper" id="product_img_wrapper6678699180129" >
-                        <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129" >
-                        <p class="body_text remove">Remove</p>
+                    <div class="product_img_wrapper" id="product_img_wrapper6678699180129">
+                        <img src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216" id="6678699180129">
                     </div>
                     <h5 class="card-title" >ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX</h5>
                     <h5 class="card-title bold" >$285</h5>
                 </a>
             </div>
+            <div class="mini_cart-products">
+                <button>
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10.4998L21 10.4998" stroke="#656565" stroke-width="1.5"/>
+                    </svg>
+                </button>
+                <span>1</span>
+                <button>
+                    <svg width="21" height="21" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7723 0.96283L17.7723 34.5824" stroke="#656565" stroke-width="1.5"/>
+                        <path d="M0.962891 17.7723L34.5824 17.7723" stroke="#656565" stroke-width="1.5"/>
+                    </svg>
+                </button> 
+            </div>
+           </div>
+            <span class="brk_line"></span>
             <div class="mini_cart-payment">
-                 <div class="sec_right">
+                <div class="sec_right">
                     <div class="sec_right_inner">
                         <h4 class="subtotal_heading">SUBTOTAL</h4>
-                        <p class="subtotal_price body_text">$1,080</p>
+                        <p class="subtotal_price body_text">$1,080</p>      
                         <p class="body_text">Excluding tax & shipping</p>
                         <p class="body_text text-mdifier">or 4 interest payments of $270 with </p>
                         <div class="logo_wrapper">
                             <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076" alt="error">
                             <p class="body_text">ⓘ</p>
-                        </div>
-                        <div class="cta_wrapper">   
-                            <a href="#" class="cta_btn" >CHECKOUT</a>
-                            <a href="#" class="cta_btn cta-modifier">Continue shopping</a>
-                        </div>  
-                        
+                        </div>      
                     </div>
                 </div>
-            </div> 
+                <div class="mini_shopping_cart">
+                    <a href="#" class="shp_cart">View shopping cart</a>
+                </div> 
+            </div>
        </div>
+      
+        
+        <div class="mini-add-card">   
+            <a href="#" class="add-card-chk" >CHECKOUT</a>
+        </div> 
+   
+       
     </section>
-
-
-
-
-
-
-
-
-
-
 </template>
 
 
@@ -285,35 +301,119 @@
 .mini_cart{
     max-width:377px;
     background-color:white;
-    border:1px solid black;
     width:100%;
     min-height:100vh;
     height:100%;
     overflow-y:scroll;
     position:fixed;
-    top:80px;
+    top:0;
     right:0;
-     padding: 0 22px;
+    z-index:5;
+    border:1px solid black;
+}
+.mini_cart::-webkit-scrollbar {
+    display: none;
 }
 
+.mini_cart .remove{
+    top: 130px;
+    right: 60px;
+    z-index: 1;
+}
+
+.mini_cart .body_text{
+    font-family:inherit;
+}
+
+.mini_cart_container{
+   padding:30px 45px 0;
+}
 
 .mini_cart-header{
-    border-bottom:2px solid black;
-    display:flex;
-    padding: 30px 22px;
-    margin-bottom:42px;
-
-
-
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom:26px;
 }
+
+.mini_cart-header #remove-btn svg{
+    display:block;
+}
+
 .mini_cart-header h3{
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     letter-spacing: 0.02em;
-
 }
 
+.mini_cart-products{
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.mini_cart-products span{
+    margin:0 36px;
+}
+
+.mini_cart .subtotal_price.body_text {
+font-weight:700;
+font-size:15px;
+line-height:18.31px;
+}
+.mini_cart-payment{
+    display:flex;
+    gap:50px;
+    flex-direction:column;
+    justify-content: space-between;
+    
+}
+
+.mini-add-card{
+    width:377px;
+    background-color:black;
+    text-align:center;
+    padding:21.5px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px; 
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.add-card-chk{
+    color:white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    padding:21px 0;
+}
+
+.mini_shopping_cart {
+    margin:20px 0 80px;
+}
+
+.shp_cart{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    text-decoration-line: underline;
+}
+
+.brk_line{
+    min-width:328px;
+    height:1px;
+    background-color:black;
+    display:block;
+    margin:0 -22px 35px;
+}
 
 
 </style>
