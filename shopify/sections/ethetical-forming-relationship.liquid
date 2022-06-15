@@ -1,0 +1,83 @@
+{% assign imgSrc = section.settings.img | img_url: "" %} 
+{% assign  placeHolder = section.settings.img | img_url: "50x50" %}
+
+
+
+{% unless section.settings.img  %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+<render-sense-of-behno-ethical-ethetical-forming-relationship :shopify-data="{
+    heading: `{{ section.settings.heading }}`,
+    subHeading: `{{ section.settings.subHeading }}`,
+    para: `{{ section.settings.para }}`,
+    link: `{{ section.settings.link }}`,
+    linkText: `{{ section.settings.linkText }}`,
+    showVideo: `{{ section.settings.showVideo }}`,
+    videoUrl: `{{ section.settings.videoUrl }}`,
+    imgUrl:{
+        src : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.img.alt }}`
+    }
+}">
+</render-ethical-ethetical-forming-relationship>
+
+
+
+
+
+{% schema %}
+{
+  "name": "Forming Relationship",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Forming real relationships."
+    },
+    {
+        "id": "subHeading",
+        "type": "textarea",
+        "label": "Sub Heading",
+        "default" : "The Garment Worker Project."
+    },
+    {
+        "id": "para",
+        "type": "textarea",
+        "label": "Paragraph 1",
+        "default": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos."
+    },
+    {
+        "id": "link",
+        "type": "url",
+        "label": "Link",
+        "default" : "/"
+    },{
+        "id": "linkText",
+        "type": "text",
+        "label": "Link Btn",
+        "default" : "discover the project"
+    },
+    {
+      "id": "showVideo",
+      "type": "checkbox",
+      "label": "Show Video",
+      "default" : true
+    },
+    {
+      "id": "img",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "id": "videoUrl",
+      "type": "text",
+      "label": "video Url",
+      "default" :"https://i.shgcdn.com/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb/gif2video/-/format/mp4/-/quality/lighter/"
+    }
+  ]
+}
+{% endschema %}

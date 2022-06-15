@@ -1,0 +1,49 @@
+{% capture slideData %}
+[
+   {% for block in section.blocks %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-philanthropy-shop-ndss
+:shopify-data="{
+    redText   : `{{ section.settings.redText }}`,
+    slideData  : {{ slideData }}
+}">
+</render-sense-of-behno-philanthropy-shop-ndss>
+
+
+{% schema %}
+{
+    "name": "Slider",
+    "settings": [
+     {
+        "id": "redText",
+        "type": "textarea",
+        "label": "Red Text",
+        "default": "“IF YOU LOOK CLOSELY, THE TEXTILES ARE TELLING OF THE LIVES OF THE WEAVERS.”"
+      }
+    ],
+    "blocks" : [
+        {
+            "name": "Slider",
+            "type" : "slide",
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                }
+            ]
+        }
+    ]
+ }
+{% endschema %}

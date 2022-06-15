@@ -1,0 +1,101 @@
+<!-- capture default data -->
+{% capture defaultData %}
+[
+           {
+            imgUrl : {
+               src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+               placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png'
+            },
+             title  : 'TITLE OF THE EDIT.',
+			       linkText : 'Clickable link.',
+             link   : '#'
+           },
+           {
+             imgUrl : {
+                       src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+                       placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png'
+                      },
+             title  : 'TITLE OF THE EDIT.',
+			       linkText : 'Clickable link.',
+             link   : '#'
+           }
+]
+{% endcapture %}
+
+<!-- capture dynamic data -->
+
+
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+    {
+	   imgUrl : {
+               src : `{{ block.settings.image | img_url : "" }}`,
+               placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+               alt: `{{ block.settings.image.alt }}`
+       },
+       title : `{{ block.settings.title }}`,
+	     linkText : `{{ block.settings.linkText }}`,
+       link : `{{ block.settings.link }}` 
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% assign checkLenght =  dynamicData | size %}
+
+{% if checkLenght > 2 %}
+	{% assign loopData  =  dynamicData %}
+{% else %}
+    {% assign loopData  =  defaultData %}
+{% endif %}
+
+<render-home-two-grid :shopify-data="{
+           box :  {{ loopData }}
+          }">
+</render-home-two-grid>
+
+
+
+
+{% schema %}
+{
+   "name": "t:sections.home_two_grid.name",
+   "max_blocks": 2,
+   "blocks": [
+     {
+       "type": "slide",
+       "name": "t:sections.home_two_grid.blocks.name",
+       "limit": 2,
+       "settings": [
+         {
+           "id": "image",
+           "type": "image_picker",
+           "label": "t:sections.home_two_grid.blocks.settings.image.label"
+         },
+         {
+           "id": "title",
+           "type": "text",
+           "label": "t:sections.home_two_grid.blocks.settings.title.label"
+         },
+		 {
+          "id": "linkText",
+          "type": "text",
+          "label": "t:sections.home_single_grid.settings.clickablelink.label"
+        },
+         {
+           "id": "link",
+           "type": "url",
+           "label": "t:sections.home_two_grid.blocks.settings.link.label"
+         }
+       ]
+     }
+   ],
+   "presets": [
+     {
+       "name": "t:sections.home_two_grid.name",
+       "category": "ADVANCED LAYOUT"
+     }
+   ]
+ }
+{% endschema %}

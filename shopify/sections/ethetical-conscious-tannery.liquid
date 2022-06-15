@@ -1,0 +1,88 @@
+
+
+{% assign imgSrc = section.settings.img | img_url: "" %} 
+{% assign  placeHolder = section.settings.img | img_url: "50x50" %}
+
+{% unless section.settings.img %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+
+{% capture blockData %}
+[
+   {% for block in section.blocks %}
+    {
+        para : `{{ block.settings.para }}`,
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-sense-of-behno-ethical-ethetical-conscious-tannery :shopify-data="{
+    crdheading: `{{ section.settings.crdheading }}`,
+    crdSubHeading: `{{ section.settings.crdSubHeading }}`,
+    para: {{ blockData }},
+    link: `{{ section.settings.link }}`,
+    linkText: `{{ section.settings.linkText }}`,
+    imgUrl:{
+        src : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.img.alt }}`
+    }
+  }">
+</render-sense-of-behno-ethical-ethetical-conscious-tannery>
+
+
+
+
+{% schema %}
+{
+  "name": "Conscious Tannery",
+  "settings": [
+    {
+        "id": "img",
+        "type": "image_picker",
+        "label": "Image"
+    },
+     {
+        "id": "crdheading",
+        "type": "text",
+        "label": "Card Heading",
+        "default": "Conscious tannery, genuine leathers."
+      },
+     {
+        "id": "crdSubHeading",
+        "type": "text",
+        "label": "Card Sub Heading",
+        "default": "Our leathers come from one of the world’s finest tanneries."
+      },
+
+    {
+        "id": "link",
+        "type": "url",
+        "label": "Link",
+        "default": "/"
+    },
+    {
+        "id": "linkText",
+        "type": "text",
+        "label": "Link Btn",
+        "default": "LEARN MORE"
+    }
+  ],
+  "blocks" :[{
+    "name": "Add Paragraph",
+    "type": "paragraph",
+    "settings": [
+     {
+        "id": "para",
+        "type": "textarea",
+        "label": "Paragraph",
+        "default" : "Paragraph"
+      }
+    ]
+    }]
+}
+{% endschema %}

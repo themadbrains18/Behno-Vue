@@ -1,0 +1,77 @@
+{% assign imgSrc = section.settings.leftImg | img_url: "" %} 
+{% assign  placeHolder = section.settings.leftImg | img_url: "50x50" %}
+
+{% assign rightImgSrc = section.settings.rightImg | img_url: "" %} 
+{% assign  rightPlaceHolder = section.settings.rightImg | img_url: "50x50" %}
+
+{% unless section.settings.rightImg  %}
+  {% assign rightImgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  rightPlaceHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+{% unless section.settings.leftImg  %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+
+<render-sense-of-behno-ethical-ethical-sustainability :shopify-data="{
+    heading: `{{ section.settings.heading }}`,
+    subHeading: `{{ section.settings.subHeading }}`,
+    para1: `{{ section.settings.para1 }}`,
+    para2: `{{ section.settings.para2 }}`,
+    leftImg:{
+        src : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.leftImg.alt }}`
+    },
+    rightImg:{
+        rightImgSrc : `{{ rightImgSrc }}`,
+        rightPlaceHolder : `{{ rightPlaceHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.rightImg.alt }}`
+    }
+}">
+</render-ethical-ethical-sustainability>
+
+
+{% schema %}
+{
+  "name": "Ethetical Sustainability",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "We redefine sustainability and ethics in fashion."
+    },
+    {
+        "id": "subHeading",
+        "type": "textarea",
+        "label": "Sub Heading",
+        "default" : "We’re pioneering a new standard for manufacturing in the global garment trade, revolutionizing the way garment workers and artisans are viewed, employed, and treated."
+    },
+    {
+        "id": "para1",
+        "type": "textarea",
+        "label": "Paragraph 1",
+        "default": "Inspiring change not only by example at our own factory, we also partner with other international factories adhering to rigid compliances striving to improve factory conditions in developing countries."
+    },
+    {
+        "id": "para2",
+        "type": "textarea",
+        "label": "Paragraph 2",
+        "default": "Our objects are handmade in facilities incrementally implementing “The behno Standard,” a set of six guiding principles:"
+    },
+    {
+      "id": "leftImg",
+      "type": "image_picker",
+      "label": "Left Image"
+    },
+    {
+        "id": "rightImg",
+        "type": "image_picker",
+        "label": "Right Image"
+    }
+  ]
+}
+{% endschema %}

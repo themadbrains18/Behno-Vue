@@ -1,0 +1,78 @@
+{% assign imgSrc = section.settings.leftImg | img_url: "" %} 
+{% assign  placeHolder = section.settings.leftImg | img_url: "50x50" %}
+
+{% assign rightImgSrc = section.settings.rightImg | img_url: "" %} 
+{% assign  rightPlaceHolder = section.settings.rightImg | img_url: "50x50" %}
+
+{% unless section.settings.rightImg  %}
+  {% assign rightImgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  rightPlaceHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+{% unless section.settings.leftImg  %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+
+<render-sense-of-behno-ethical-ethical-hero :shopify-data="{
+    secHeading: `{{ section.settings.secHeading }}`,
+    leftImg:{
+        src : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.leftImg.alt }}`
+    },
+    rightImg:{
+        rightImgSrc : `{{ rightImgSrc }}`,
+        rightPlaceHolder : `{{ rightPlaceHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.rightImg.alt }}`
+    },
+    crdHeading: `{{ section.settings.crdHeading }}`,
+    crdSubHeading: `{{ section.settings.crdSubHeading }}`,
+    para: `{{ section.settings.para }}`
+}">
+
+</render-ethical-ethical-hero>
+
+
+{% schema %}
+{
+  "name": "Ethetical Hero Section",
+  "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "Section Heading",
+      "default": "OUR ETHICAL PHILOSOPHY"
+    },
+    {
+      "id": "leftImg",
+      "type": "image_picker",
+      "label": "Left Image"
+    },
+    {
+        "id": "rightImg",
+        "type": "image_picker",
+        "label": "Right Image"
+    },
+    {
+      "id": "crdHeading",
+      "type": "text",
+      "label": "Card Heading",
+      "default" : "Our name,a community."
+    },
+    {
+      "id": "crdSubHeading",
+      "type": "text",
+      "label": "Card Sub Heading",
+      "default" : "“behno” means sisters in Hindi."
+    },
+    {
+        "id": "para",
+        "type": "textarea",
+        "label": "Paragraph",
+        "default": "At our partner factories, female colleagues are referred to by their first name followed by the suffix of “behn” (sister). In plurality, they become a community of sisters."
+    }
+  ]
+}
+{% endschema %}

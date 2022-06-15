@@ -1,0 +1,71 @@
+<render-home-grid-single-text :shopify-data="{
+      imgUrl : {
+        src : `{{ section.settings.image | img_url : "" }}`,
+        placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+        alt: `{{ section.settings.image.alt }}`
+      },
+      title: '{{ section.settings.title }}',
+      btntext: '{{ section.settings.linkText }}',
+      link: '{{ section.settings.link }}',
+			toptext: '{{ section.settings.toptext }}',
+			middletop: '{{ section.settings.middletop }}',
+			middlebottom: '{{ section.settings.middlebottom }}',
+			bottomtext: '{{ section.settings.bottomtext }}'
+    }">
+</render-home-grid-single-text>
+
+
+
+{% schema %}
+{
+    "name": "t:sections.home_grid_single_text.name",
+    "settings": [
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "t:sections.home_grid_single_text.settings.image.label"
+      },
+      {
+        "id": "title",
+        "type": "text",
+        "label": "t:sections.home_grid_single_text.settings.title.label"
+      },
+ 	  {
+        "id": "linkText",
+        "type": "text",
+        "label": "t:sections.home_grid_single_text.settings.btntext.label"
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "t:sections.home_grid_single_text.settings.link.label"
+      },
+	  {
+        "id": "toptext",
+        "type": "text",
+        "label": "t:sections.home_grid_single_text.settings.toptext.label"
+      },
+	  {
+        "id": "middletop",
+        "type": "text",
+        "label": "t:sections.home_grid_single_text.settings.middletop.label"
+      },
+	  {
+        "id": "middlebottom",
+        "type": "text",
+        "label": "t:sections.home_grid_single_text.settings.middlebottom.label"
+      },
+	  {
+        "id": "bottomtext",
+        "type": "text",
+        "label": "t:sections.home_grid_single_text.settings.bottomtext.label"
+      }
+    ],
+   "presets": [
+     {
+       "name": "t:sections.home_grid_single_text.name",
+       "category": "ADVANCED LAYOUT"
+     }
+   ]
+ }
+{% endschema %}

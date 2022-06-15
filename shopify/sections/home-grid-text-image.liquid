@@ -1,0 +1,62 @@
+<render-home-grid-text-image :shopify-data="{
+            secHeading: `{{ section.settings.secHeading }}`,
+            btnText: `{{ section.settings.btnText }}`,
+            link: `{{ section.settings.link }}`,
+            imgUrl : {
+              src : `{{ section.settings.image | img_url : "" }}`,
+              placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+              alt: `{{ section.settings.image.alt }}`
+            },
+            checkImage: `{{ section.settings.checkImage }}`,
+            videolink: `{{ section.settings.videolink }}`
+          }"
+        >
+</render-home-grid-text-image>
+
+{% schema %}
+{
+  "name": "t:sections.home_grid_text_image.name",
+  "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "t:sections.home_grid_text_image.settings.title.label",
+      "default": "Title"
+    },
+    {
+      "id": "btnText",
+      "type": "text",
+      "label": "t:sections.home_grid_text_image.settings.btntext.label",
+      "default": "Title"
+    },
+	{
+    "id": "link",
+    "type": "url",
+	  "label": "t:sections.home_grid_text_image.settings.link.label"
+	},
+  {
+    "id": "checkImage",
+    "type": "checkbox",
+    "label": "Show Video",
+    "default": true
+  },
+  {
+    "id": "image",
+    "type": "image_picker",
+    "label": "t:sections.home_grid_text_image.settings.image.label"
+  },
+  {
+    "id": "videolink",
+    "type": "text",
+    "label": "t:sections.home_grid_text_image.settings.video.label",
+    "default" :"https://i.shgcdn.com/31d7ced5-2d7d-4f68-b5ba-1e616c0647fb/gif2video/-/format/mp4/-/quality/lighter/"
+  }
+  ],
+  "presets": [
+      {
+        "name": "t:sections.home_grid_text_image.name",
+        "category": "ADVANCED LAYOUT"
+      }	
+  ]
+}
+{% endschema %}

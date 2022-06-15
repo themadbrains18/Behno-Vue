@@ -1,0 +1,120 @@
+<!-- capture default data -->
+{% capture defaultData %}
+[
+    {
+        link   : '#',
+        imgUrl : {
+            src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            alt: 'behno Bag'
+        },
+        crdHeading  : 'EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY.'
+    },
+    {
+        link   : '#',
+        imgUrl : {
+            src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            alt: 'behno Bag'
+        },
+        crdHeading  : 'EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY.'
+    },
+    {
+        link   : '#',
+        imgUrl : {
+            src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            alt: 'behno Bag'
+        },
+        crdHeading  : 'EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY.'
+    },
+    {
+        link   : '#',
+        imgUrl : {
+            src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+            alt: 'behno Bag'
+        },
+        crdHeading  : 'EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY.'
+    }
+]
+{% endcapture %}
+
+<!-- capture dynamic data -->
+
+
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+    {
+        link: `{{ block.settings.link }}`,
+        imgUrl : {
+            src : `{{ block.settings.img | img_url : "" }}`,
+            placeholder: `{{ block.settings.img | img_url : "50x50" }}`,
+            alt: `{{ block.settings.img.alt }}`
+        },
+        crdHeading : `{{ block.settings.crdHeading }}`,
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% assign checkLenght =  dynamicData | size %}
+
+{% if checkLenght > 2 %}
+	{% assign loopData  =  dynamicData %}
+{% else %}
+    {% assign loopData  =  defaultData %}
+{% endif %}
+
+
+<render-sense-of-behno-ethical-ethetical-collaborations-philosophy :shopify-data="{
+    redText: `{{ section.settings.redText }}`,
+    secHeading: `{{ section.settings.secHeading }}`,
+    card :  {{ loopData }}
+  }">
+</render-sense-of-behno-ethical-ethetical-collaborations-philosophy>
+
+{% schema %}
+{
+  "name": "Collaborations Philosophy",
+  "settings": [
+     {
+        "id": "redText",
+        "type": "textarea",
+        "label": "Red Heading",
+        "default": "“COLLABORATIONS ARE AT THE CORE OF OUR ETHICAL PHILOSOPHY.”"
+      },
+     {
+        "id": "secHeading",
+        "type": "text",
+        "label": "Sec Heading",
+        "default": "A SOCIAL ENTERPRISE ON THE FRONT END, TOO."
+      }
+  ],
+  "blocks" :[{
+    "name": "Add Card",
+    "type": "card",
+    "limit": 4,
+    "settings": [
+        {
+            "id": "link",
+            "type": "url",
+            "label": "Link",
+            "default": "/"
+        },
+        {
+            "id": "img",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "crdHeading",
+            "type": "text",
+            "label": "Card Heading",
+            "default": "EXPLORE OUR PARTNERSHIP WITH THE NATIONAL DOWN SYNDROME SOCIETY."
+        }
+    ]
+    }]
+}
+{% endschema %}

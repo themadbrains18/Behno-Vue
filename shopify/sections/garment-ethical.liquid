@@ -1,0 +1,50 @@
+<render-sense-of-behno-garment-garment-ethical  :shopify-data="{
+    secHeading: `{{ section.settings.secHeading }}`,
+    secInfo: `{{ section.settings.secInfo }}`,
+    imgUrl : {
+      src : `{{ section.settings.image | img_url : "" }}`,
+      placeholder: `{{ section.settings.image | img_url : "50x50" }}`,
+      alt: `{{ section.settings.image.alt }}`
+    },
+    checkImage: `{{ section.settings.checkImage }}`,
+    videolink: `{{ section.settings.videolink }}`
+  }">
+</render-garment-garment-ethical>
+
+
+{% schema %}
+{
+  "name": "Garment Ethical",
+  "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "Section Heading",
+      "default": "An Ethical Way. The only way."
+    },
+    {
+        "id": "secInfo",
+        "type": "text",
+        "label": "Section Info",
+        "default": "A documentary film by Kent Mathews."
+      },
+  
+  {
+    "id": "checkImage",
+    "type": "checkbox",
+    "label": "Show Video",
+    "default": true
+  },
+  {
+    "id": "image",
+    "type": "image_picker",
+    "label": "Sec Image"
+  },
+  {
+    "id": "videolink",
+    "type": "text",
+    "label": "Sec Video"
+  }
+  ]
+}
+{% endschema %}

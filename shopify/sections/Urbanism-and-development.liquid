@@ -1,0 +1,62 @@
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+            {
+                para : `{{ block.settings.para }}`
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-our-partner-handbag-Urbanism-and-development :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secSubHeading:`{{ section.settings.subHeading }}`,
+    paragraph  :  {{ paraData }},
+    SecImg : {
+        src : `{{ section.settings.secImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg.alt }}`
+    },
+}">
+</render-sense-of-behno-our-partner-handbag-Urbanism-and-development>
+
+
+{% schema %}
+{
+    "name":"Urbanism And Development",
+    "settings": [
+        {
+            "id": "secHeading",
+            "type": "text",
+            "label": "Section Heading",
+            "default": "Urbanism and development among heritage and history."
+        },
+        {
+            "id": "subHeading",
+            "type": "text",
+            "label": "Sub Heading",
+            "default": "Nashik, an unspoken gem of a city."
+        },
+        {
+            "id": "secImg",
+            "type": "image_picker",
+            "label": "Section Image"
+        }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        }
+    ]
+}
+{% endschema %} 

@@ -1,0 +1,60 @@
+{% assign imgSrc = section.settings.img | img_url: "" %} 
+{% assign  placeHolder = section.settings.img | img_url: "50x50" %}
+
+{% unless section.settings.img %}
+  {% assign imgSrc = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+  {% assign  placeHolder = 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-lifestyle-1_large.png' %}
+{% endunless %}
+
+
+
+<render-sense-of-behno-ethical-ethetical-behno-standard :shopify-data="{
+    redText: `{{ section.settings.redText }}`,
+    imgUrl:{
+        src : `{{ imgSrc }}`,
+        placeHolder : `{{ placeHolder | img_url: "50x50" }}`,
+        alt : `{{ section.settings.img.alt }}`
+    },
+    para: `{{ section.settings.para }}`,
+    link: `{{ section.settings.link }}`,
+    linkText: `{{ section.settings.linkText }}`,
+  }">
+</render-ethical-ethetical-behno-standard>
+
+
+{% schema %}
+{
+  "name": "Ethetical Behno Standard",
+  "settings": [
+    {
+      "id": "redText",
+      "type": "text",
+      "label": "Big Red Text",
+      "default": "“THE BEHNO STANDARD WAS BUILT BOTTOM-UP, ENSURING GARMENT WORKERS AND ARTISANS WERE AT THE CENTER OF THE CONVERSATION.”"
+    },
+    {
+      "id": "img",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "id": "para",
+      "type": "textarea",
+      "label": "Paragraph",
+      "default" : "To implement “The behno Standard,” we founded a cut-and-sew factory, MSA Ethos, with a nonprofit partner and industry veteran."
+    },
+    {
+        "id": "link",
+        "type": "url",
+        "label": "Link",
+        "default": "/"
+    },
+    {
+        "id": "linkText",
+        "type": "text",
+        "label": "Link Text",
+        "default": "LEARN MORE"
+    }
+  ]
+}
+{% endschema %}

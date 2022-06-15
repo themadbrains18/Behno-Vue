@@ -1,0 +1,110 @@
+<!-- capture default data -->
+{% capture defaultData %}
+[
+           {
+            imgUrl : {
+               src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+               placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png'
+            },
+            link   : '#'
+           },
+           {
+             imgUrl : {
+                       src : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png',
+                       placeholder: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-collection-5_large.png'
+                      },
+             link   : '#'
+           }
+]
+{% endcapture %}
+
+
+<!-- capture dynamic data -->
+
+
+{% capture dynamicData %}
+[
+   {% for block in section.blocks %}
+    {
+	   imgUrl : {
+          src : `{{ block.settings.image | img_url : "" }}`,
+          placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+          alt: `{{ block.settings.image.alt }}`
+       },
+	     link : `{{ block.settings.link }}`
+    }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% assign checkLenght =  dynamicData | size %}
+
+{% if checkLenght > 2 %}
+	{% assign loopData  =  dynamicData %}
+{% else %}
+    {% assign loopData  =  defaultData %}
+{% endif %}
+
+{% capture productData %}
+[
+  {% for product in section.settings.product_list %}
+  {
+    productImage : `{{ product.images[0] | img_url: "" }}`,
+    productLink :  `{{ product.url }}`
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
+<render-product-product-recommanded :shopify-data="{
+  secHeading : `{{ section.settings.secHeading}}`,
+  showProduct : `{{ section.settings.showProduct}}`,
+  product :  {{ productData }},
+  box :  {{ loopData }}
+}">
+
+</render-product-product-recommanded>
+
+
+{% schema %}
+{
+   "name": "Product Slider",
+   "settings": [
+    {
+      "id": "secHeading",
+      "type": "text",
+      "label": "Section Heading",
+      "default": "YOU MAY ALSO LIKE"
+    },
+    {
+      "id": "showProduct",
+      "type": "checkbox",
+      "label": "Show Products",
+      "default": true
+    },
+    {
+      "id": "product_list",
+      "type": "product_list",
+      "label": "Products"
+    }
+  ],
+   "blocks": [
+     {
+       "type": "slide",
+       "name": "Custom Product",
+       "settings": [
+         {
+           "id": "image",
+           "type": "image_picker",
+           "label": "Custom Product Image"
+         },
+         {
+          "id": "link",
+          "type": "url",
+          "label": "Product url"
+        }
+       ]
+     }
+   ]
+ }
+{% endschema %}

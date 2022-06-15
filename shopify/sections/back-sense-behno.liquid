@@ -1,0 +1,28 @@
+<render-back-sense-behno
+:shopify-data="{
+  link   : `{{ section.settings.link }}`,
+  ctaText  : `{{ section.settings.ctaText }}`
+}">
+</render-back-sense-behno>
+
+
+
+{% schema %}
+{
+    "name": "Back Sense Behno",
+    "settings": [
+    {
+        "id": "link",
+        "type": "url",
+        "label": "Link",
+        "default": "/"
+      },
+	  {
+        "id": "ctaText",
+        "type": "text",
+        "label": "Cta Text",
+        "default": "Back to The Sense of behno"
+      }
+    ]
+ }
+{% endschema %}

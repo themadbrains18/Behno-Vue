@@ -1,0 +1,98 @@
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+            {
+                para : `{{ block.settings.para }}`
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% capture gridImages %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'gridImages' %}
+            {
+                gridImg : {
+                    src : `{{ block.settings.image | img_url : "" }}`,
+                    placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                    alt: `{{ block.settings.image.alt }}`
+                }
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-our-partner-handbag-old-world-craftsmanship :shopify-data="{
+    secHeading:`{{ section.settings.secHeading }}`,
+    secSubHeading:`{{ section.settings.secSubHeading }}`,
+    redText:`{{ section.settings.redText }}`,
+    secImg : {
+        src : `{{ section.settings.secImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg.alt }}`
+    },
+    paragraph  :  {{ paraData }},
+    gridImages  : {{ gridImages }}
+
+}">
+</render-sense-of-behno-our-partner-handbag-old-world-craftsmanship>
+
+
+{% schema %}
+{
+    "name":"Old World Craftsmanship",
+    "settings":[
+        {
+            "id": "secHeading",
+            "type": "text",
+            "label": "Section Heading",
+            "default": "Old-world craftsmanship,new world needs."
+        },
+        {
+            "id":"secSubHeading",
+            "type":"text",
+            "label":"Section Sub Heading",
+            "default":"The hands and tools."
+        },
+        {
+            "id":"redText",
+            "type":"text",
+            "label":"Section Red Text",
+            "default":"“NASHIK HAS BECOME HOME FOR US.”"
+        },
+        {
+            "id":"secImg",
+            "type":"image_picker",
+            "label":"Section Image"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        },
+        {
+            "name": "Grid Images",
+            "type": "gridImages",
+            "settings": [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Grid Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

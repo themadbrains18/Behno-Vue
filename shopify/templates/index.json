@@ -1,0 +1,251 @@
+{
+  "sections": {
+    "hero-section": {
+      "type": "home-hero-sec",
+      "settings": {
+        "heroHeading": "The World’s Finest,",
+        "herosubHeading": "Consciously Made Handbags.",
+        "heroImage": "shopify:\/\/shop_images\/hero-img.jpg",
+        "imagelink": "shopify:\/\/pages\/ethical-philosophy"
+      }
+    },
+    "two-grid": {
+      "type": "home-two-grid",
+      "blocks": {
+        "3a830e12-b092-4329-a9e4-dbc899bdb68a": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-two.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "223545bc-72f6-4216-9449-bd8b2f93d29c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-two1.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        }
+      },
+      "block_order": [
+        "3a830e12-b092-4329-a9e4-dbc899bdb68a",
+        "223545bc-72f6-4216-9449-bd8b2f93d29c"
+      ],
+      "settings": {
+      }
+    },
+    "three-grid": {
+      "type": "home-three-grid",
+      "blocks": {
+        "3905778f-0852-4482-8b4b-756436a08678": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "6e5143f4-b9c0-4fb0-9bba-5446bf01735b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three1.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "b5c511cc-bd8e-4a6a-bcab-2ad9623757eb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/grid-three2.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        }
+      },
+      "block_order": [
+        "3905778f-0852-4482-8b4b-756436a08678",
+        "6e5143f4-b9c0-4fb0-9bba-5446bf01735b",
+        "b5c511cc-bd8e-4a6a-bcab-2ad9623757eb"
+      ],
+      "settings": {
+      }
+    },
+    "featured-carousel": {
+      "type": "home-featured-carousel",
+      "blocks": {
+        "0b06f130-294d-4409-ac49-a23a921f91da": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/feature-img.jpg",
+            "link": "shopify:\/\/pages\/term-and-conditions"
+          }
+        },
+        "1536ee64-2d2d-4542-9de4-6f9486d65376": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/feature-img1.jpg",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "cd3257b1-892b-4b05-b7bd-6d21464b8505": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/feature-img.jpg",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "a749e867-5dff-4398-9611-9483f709974d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/feature-img1.jpg",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "e96f5655-04a1-499d-8af5-07a6ff7d16b8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/feature-img.jpg",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        }
+      },
+      "block_order": [
+        "0b06f130-294d-4409-ac49-a23a921f91da",
+        "1536ee64-2d2d-4542-9de4-6f9486d65376",
+        "cd3257b1-892b-4b05-b7bd-6d21464b8505",
+        "a749e867-5dff-4398-9611-9483f709974d",
+        "e96f5655-04a1-499d-8af5-07a6ff7d16b8"
+      ],
+      "settings": {
+        "secHeading": "FEATURED IN",
+        "showProduct": true,
+        "product_list": [
+          "alex-shoulder-bag-glossy-croc-balsamic",
+          "ana-flat-tote-crossbody-nappa-ruched-olive",
+          "ana-flat-tote-crossbody-pebble-ruched-apricot",
+          "ana-flat-tote-crossbody-pebble-ruched-bordeaux",
+          "ana-flat-tote-crossbody-pebble-ruched-red",
+          "ana-flat-tote-large-pebble-ruched-apricot"
+        ]
+      }
+    },
+    "grid-single": {
+      "type": "home-grid-single",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/grid-single.jpg",
+        "respnsiveimage": "shopify:\/\/shop_images\/mobile-single-grid.jpg",
+        "imageHeight": "",
+        "MobileimageHeight": "",
+        "title": "TITLE OF THE EDIT",
+        "linkText": "Clickable link",
+        "link": "shopify:\/\/pages\/ethical-philosophy"
+      }
+    },
+    "grid-text-single": {
+      "type": "home-grid-text-image",
+      "settings": {
+        "secHeading": "An honest accessory.",
+        "btnText": "THE SENSE OF BEHNO",
+        "link": "shopify:\/\/pages\/ethical-philosophy",
+        "checkImage": true,
+        "image": "shopify:\/\/shop_images\/sense-behno.jpg",
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+      }
+    },
+    "gradient-carousel": {
+      "type": "home-gradient-carousel",
+      "blocks": {
+        "4780890f-f9fa-43cd-970d-2ce9805bd299": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/g-slider1.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "0036d78c-c2ab-48ec-8cc5-bd1deeae49c1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/g-slider.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "4b9f34fb-5387-48b9-8ee9-3bf0e89943ad": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/g-slider1.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "7a19b958-dbf4-4cec-bcc5-a2f2a452266d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/g-slider.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        },
+        "ba8cd5cd-afe8-4582-8c15-4849fd9a88da": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/g-slider1.jpg",
+            "title": "TITLE OF THE EDIT.",
+            "linkText": "Clickable link.",
+            "link": "shopify:\/\/pages\/ethical-philosophy"
+          }
+        }
+      },
+      "block_order": [
+        "4780890f-f9fa-43cd-970d-2ce9805bd299",
+        "0036d78c-c2ab-48ec-8cc5-bd1deeae49c1",
+        "4b9f34fb-5387-48b9-8ee9-3bf0e89943ad",
+        "7a19b958-dbf4-4cec-bcc5-a2f2a452266d",
+        "ba8cd5cd-afe8-4582-8c15-4849fd9a88da"
+      ],
+      "settings": {
+      }
+    },
+    "grid-single-text": {
+      "type": "home-grid-single-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/grid-single-text.jpg",
+        "title": "TITLE OF THE EDIT.",
+        "linkText": "Clickable link.",
+        "link": "shopify:\/\/pages\/ethical-philosophy",
+        "toptext": "BAG",
+        "middletop": "OF",
+        "middlebottom": "THE",
+        "bottomtext": "MOMENT."
+      }
+    },
+    "main": {
+      "type": "main-index",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "hero-section",
+    "two-grid",
+    "three-grid",
+    "featured-carousel",
+    "grid-single",
+    "grid-text-single",
+    "gradient-carousel",
+    "grid-single-text",
+    "main"
+  ]
+}

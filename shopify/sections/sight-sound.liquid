@@ -1,0 +1,85 @@
+{% capture SlideImage %}
+[
+   {% for block in section.blocks %}
+   {% if block.type == 'slide' %}
+    {
+        secHeading : `{{ block.settings.secHeading}}`,
+    }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% capture productData %}
+{
+    productid : `{{ section.settings.product.id }}`,
+    productUrl : `{{ section.settings.product.url }}`,
+    productidImage : `{{ section.settings.product.media[0] | img_url : "" }}`,
+    productidPrice : `{{ section.settings.product.price | money_without_trailing_zeros }}`,
+    productTitle : `{{ section.settings.product.title }}`,
+    productQuantity : `{{ section.selected_or_first_available_variant.inventory_quantity }}`
+}
+{% endcapture %}
+
+<render-blog-sight-sound :shopify-data="{
+    checkSection: `{{ section.settings.checkSection }}`,
+    productData: {{ productData }} ,
+    secImg : {
+        src : `{{ section.settings.secImg | img_url : "" }}`,
+        placeholder: `{{ section.settings.secImg | img_url : "50x50" }}`,
+        alt: `{{ section.settings.secImg.alt }}`
+    },
+    showProduct : `{{ section.settings.showProduct }}`,
+    secCta:`{{ section.settings.secCta }}`,
+    slide: {{ SlideImage }}
+}">
+</render-blog-sight-sound>
+
+{% schema %}
+{
+    "name":"Sight Sound Section",
+    "settings":[
+        {
+            "id": "checkSection",
+            "type": "checkbox",
+            "label": "Show Section",
+            "default": true
+        },
+        {
+            "id":"secImg",
+            "label":"Section Image",
+            "type":"image_picker"
+        },
+        {
+            "id":"secCta",
+            "label":"Section Cta",
+            "type":"text",
+            "default":"SHOP THE BAG"
+        },
+        {
+            "id": "showProduct",
+            "type": "checkbox",
+            "label": "Show Products",
+            "default": true
+        },
+        {
+            "id": "product",
+            "type": "product",
+            "label": "Select Products"
+        }
+    ],
+    "blocks":[
+        {
+            "name": "Section Heading",
+            "type": "slide",
+                "settings":[
+                    {
+                        "id":"secHeading",
+                        "type":"text",
+                        "label":"Section Heading"
+                    }
+            ]
+        }
+    ]
+}
+{% endschema %}

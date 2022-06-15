@@ -1,0 +1,108 @@
+
+{% capture SlideImage %}
+[
+   {% for block in section.blocks %}
+    {
+        secHeading: `{{ block.settings.secHeading }}`,
+        secSubHeading: `{{ block.settings.secSubHeading }}`,
+        secInfo: `{{ block.settings.secInfo }}`,
+        secCtaText: `{{ block.settings.secCtaText }}`,
+        secCtaLink: `{{ block.settings.secCtaLink }}`,
+        imgUrl : {
+            src : `{{ block.settings.secImg | img_url : "" }}`,
+            placeholder: `{{ block.settings.secImg | img_url : "50x50" }}`,
+            alt: `{{ block.settings.secImg.alt }}`
+        }
+
+    }
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-behno-in-world-meet-fashion-designers :shopify-data="{
+    redHeading: `{{ section.settings.redHeading }}`,
+    
+    ctaText: `{{ section.settings.ctaText }}`,
+    ctaLink: `{{ section.settings.ctaLink }}`,
+    imgUrl2 : {
+      src : `{{ section.settings.logoImg | img_url : "" }}`,
+      placeholder: `{{ section.settings.logoImg | img_url : "50x50" }}`,
+      alt: `{{ section.settings.logoImg.alt }}`
+    },
+    Slide: {{ SlideImage }}
+  }">
+</render-sense-of-behno-behno-in-world-meet-fashion-designers>
+
+
+{% schema %}
+{
+    "name":"Meet Fashion Designers",
+    "settings":[
+        {
+            
+            "id":"redHeading",
+            "type":"text",
+            "label":"Section Red Heading",
+            "default":"“MEET FASHION’S COOL NEW WAVE OF SUSTAINABLE CHIC DESIGNERS.”"
+            
+        },
+        {
+            "id":"logoImg",
+            "type":"image_picker",
+            "label":"Section Logo"
+        },
+        {
+            "id":"ctaText",
+            "type":"text",
+            "label":"Section Cta text",
+            "default":" EXPLORE OUR PRESS "
+        },
+        {
+            "id":"ctaLink",
+            "type":"url",
+            "label":"Section Cta link"
+
+        }
+    ],
+    "blocks":[
+        {
+            "type": "slide",
+            "name": "Slide",
+                "settings":[
+                    {
+                        "id":"secHeading",
+                        "type":"text",
+                        "label":"Section Heading"
+                    },
+                    {
+                        "id":"secSubHeading",
+                        "type":"text",
+                        "label":"Section Sub Heading"
+                    },
+                    {
+                        "id":"secInfo",
+                        "type":"text",
+                        "label":"Section Info"
+                    },
+                    {
+                        "id":"secCtaText",
+                        "type":"text",
+                        "label":"Section Cta Text"
+                    },
+                    {
+                        "id":"secCtaLink",
+                        "type":"url",
+                        "label":"Section Cta Link"
+                    },
+                    {
+                        "id":"secImg",
+                        "type":"image_picker",
+                        "label":"Section Image"
+                    }
+            ]
+        }
+       
+    ]
+}
+{% endschema %}

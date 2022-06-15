@@ -1,0 +1,121 @@
+
+{% capture SliderImagesData %}
+[
+    {% for block in section.blocks %}
+        {
+            SliderImage:{
+                src : `{{ block.settings.SliderImage | img_url : "" }}`,
+                placeholder: `{{ block.settings.SliderImage | img_url : "50x50" }}`,
+                alt: `{{ block.settings.SliderImage.alt }}`
+            }
+        }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
+{% endcapture %}
+
+{% capture productData %}
+[
+    {% for product in section.settings.product %}
+        {
+            productid : `{{ product.id }}`,
+            productUrl : `{{ product.url }}`,
+            productidImage : `{{ product.media[0] | img_url : "" }}`,
+            productidPrice : `{{ product.price | money_without_trailing_zeros }}`,
+            productTitle : `{{ product.title }}`,
+            productQuantity : `{{ product.selected_or_first_available_variant.inventory_quantity }}`
+        }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
+{% endcapture %}
+
+<render-blog-vide-sec :shopify-data="{
+    checkSection: `{{ section.settings.checkSection }}`,
+    SectionShow: `{{ section.settings.SectionShow }}`,
+    SecHeading: `{{ section.settings.SecHeading }}`,
+    SliderImagesData:{{SliderImagesData}},
+    VideoShow: `{{ section.settings.VideoShow }}`,
+    CheckVideoImage: `{{ section.settings.CheckVideoImage }}`,
+    videolink: `{{ section.settings.videolink }}`,
+    productData: {{ productData }} ,
+    checkShopBtn: `{{ section.settings.checkShopBtn }}` ,
+    secCta : `{{ section.settings.secCta }}`
+}">
+</render-blog-vide-sec>
+{% schema %}
+    {
+        "name":"Video",
+        "settings":[    
+            {
+                "id": "checkSection",
+                "type": "checkbox",
+                "label": "Show Section",
+                "default": true
+            },
+            {
+                "id": "SectionShow",
+                "type": "checkbox",
+                "label": "Show Red Heading",
+                "default": true
+            },
+            {
+                "id":"SecHeading",
+                "type":"text",
+                "label":"Section Heading"
+            },
+
+            {
+                "id": "VideoShow",
+                "type": "checkbox",
+                "label": "Show Video Section",
+                "default": true
+            },
+
+            {
+                "id": "CheckVideoImage",
+                "type": "checkbox",
+                "label": "Show Product Image Slider",
+                "default": true
+            },
+
+            
+            {
+                "id": "videolink",
+                "type": "url",
+                "label": "Add Video URL"
+            },
+            
+            {
+                "id": "product",
+                "type": "product_list",
+                "label": "Select Products"
+            },
+            {
+                "id": "checkShopBtn",
+                "type": "checkbox",
+                "label": "Show Section",
+                "default": true
+            },
+            {
+                "id":"secCta",
+                "label":"Section Cta",
+                "type":"text",
+                "default":"SHOP THE BAG"
+            }
+        ],
+        "blocks":[
+            {
+                "name":"Slider Image Add",
+                "type":"Image",
+                "settings":[
+                    {
+                        "id":"SliderImage",
+                        "type":"image_picker",
+                        "label":"Add Image"
+                    }
+                ]
+            }
+            
+        ]
+
+    }
+{% endschema %}

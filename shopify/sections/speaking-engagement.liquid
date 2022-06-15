@@ -1,0 +1,88 @@
+{% capture paraData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'paragraph' %}
+            {
+                para : `{{ block.settings.para }}`
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+{% capture collageData %}
+[
+   {% for block in section.blocks %}
+        {% if block.type == 'collage' %}
+        {
+            imgUrl : {
+                src : `{{ block.settings.image | img_url : "" }}`,
+                placeholder: `{{ block.settings.image | img_url : "50x50" }}`,
+                alt: `{{ block.settings.image.alt }}`
+            },
+            imageInfo: `{{ block.settings.imageInfo }}`
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-sense-of-behno-behno-in-world-speaking-engagement :shopify-data="{
+    secHeading: `{{ section.settings.secHeading }}`,
+    secSubHeading: `{{ section.settings.secSubHeading }}`,
+    paragraph  :  {{ paraData }},
+    collageData  : {{ collageData }}
+}">
+</render-sense-of-behno-behno-in-world-speaking-engagement>
+
+
+{% schema %}
+{
+    "name":"Speaking Engagement",
+    "settings":[
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Section Heading",
+            "default":"Speaking engagement at the United Nations, a first of its kind."
+        },
+        {
+            "id":"secSubHeading",
+            "type":"text",
+            "label":"Section Sub Heading",
+            "default":"behno founder, Shivam Punjya, was invited to the United Nations to speak on fashion as a social mobilizer."
+
+        }
+    ],
+    "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "para",
+                    "type": "textarea",
+                    "label": "Paragraph"
+                } 
+            ]
+        },
+        {
+            "name": "Collage Image",
+            "type" : "collage",
+            "limit" : 3,
+            "settings" : [
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id":"imageInfo",
+                    "type":"text",
+                    "label":"Image Info"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
