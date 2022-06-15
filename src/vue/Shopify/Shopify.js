@@ -18,7 +18,8 @@ class ShopifyAPI {
     openDrawer() {
 
         // current page is cart then skip open the drawer
-        if (this.ShopifyInfo.location.pathname == 'cart')
+
+        if (this.ShopifyInfo.location.pathname == '/cart')
             return false;
 
         // get minicart container
@@ -51,7 +52,7 @@ class ShopifyAPI {
      * @returns 
      */
 
-    async getRequest(url){
+    async getRequest(url) {
         let response = await axios.get(url)
             .then(response => {
                 return response;
@@ -65,7 +66,7 @@ class ShopifyAPI {
         } else {
             return response
         }
-        
+
     }
 
     async removeItem(item = {}) {
@@ -78,12 +79,15 @@ class ShopifyAPI {
         var response = await this.postRequest('/cart/change.js', item)
 
         if (response.status == 200) {
+
             this.renderHtmlDrawer()
             this.openDrawer()
 
         } else {
             console.log('Opps! something went wrong. Please try again')
         }
+
+        return response;
 
     }
 
@@ -132,7 +136,7 @@ class ShopifyAPI {
      */
 
     async getCart() {
-           return await this.getRequest('/cart.js')
+        return await this.getRequest('/cart.js')
     }
 
     /**
@@ -174,7 +178,74 @@ class ShopifyAPI {
         document.querySelector('p.subtotal_price.body_text').innerHTML = '$' + (getCartData.data.total_price / 100).toFixed(2)
         document.querySelector('.shopping_btn_count').innerHTML = getCartData.data.item_count
         document.querySelector('#mini_cart_content').innerHTML = card
+        if (getCartData.data.item_count == 0) {
+            document.querySelector('.mini_cart-payment').style.display = 'none'
+            document.querySelector('.mini-add-card').style.display = 'none'
+        } else {
+            document.querySelector('.mini_cart-payment').style.display = 'block'
+            document.querySelector('.mini-add-card').style.display = 'block'
+        }
+
+        // this function will refresh the click events
+        this.refreshRemoveEvent()
+    }
+
+
+    /**
+     *
+     *  reander cart for behno main cart page 
+     */
+
+    async mainCart() {
+        var getCartData = await this.getCart()
         
+        console.log(getCartData);
+
+        var CartItems = getCartData.data.items;
+        var card = ''
+
+        // if (this.ShopifyInfo.location.pathname != 'cart')
+        //     return false;
+
+        for (let item in CartItems) {
+            card += `<div class="card">
+                            <!-- <a href="#"> -->
+                                <div class="product_img_wrapper" id="product_img_wrapper${CartItems[item].id}" >
+                                    <img src="${CartItems[item].featured_image.url}" id="${CartItems[item].id}" >
+                                    <button class="body_text remove">Remove</button>
+                                </div>
+                                <h5 class="card-title" >${CartItems[item].product_title}</h5>
+                                <h5 class="card-title bold" >${CartItems[item].price}</h5>
+                            <!-- </a> -->
+                        </div>`
+        }
+
+        document.querySelector('#behno_main_cart').innerHTML = card
+    }
+
+    /**
+     * refresh remove click
+     */
+
+    async refreshRemoveEvent() {
+
+        var removeBtn = document.querySelectorAll('button.body_text.remove')
+        var item = {}
+        var obj = this // (this) used behalf of cuurent class
+
+        for (const button of removeBtn) {
+            button.addEventListener('click', await function (event) {
+                console.log(event.target)
+                var variantid = event.target.getAttribute('variantid')
+                item = {
+                    id: variantid,
+                    quantity: 0
+                }
+                obj.removeItem(item)
+            })
+        }
+
+
     }
 
     /**

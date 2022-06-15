@@ -654,15 +654,22 @@
           <div>
           <span class="brk_line"></span>
          
-     
+          <!-- if card is not empty  -->
           <div id="mini_cart_content">
               
           </div>
+         
+          <!-- if cart is empty  -->
+          <div class="if_cart_is_empty">
+              <p>Your bag is empty.</p>
+          </div>
+
 
 
           </div>
-          <span class="brk_line"></span>
+          
           <div class="mini_cart-payment">
+            <span class="brk_line"></span>
               <div class="sec_right">
                   <div class="sec_right_inner">
                       <h4 class="subtotal_heading">SUBTOTAL</h4>
