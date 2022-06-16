@@ -164,7 +164,7 @@ class ShopifyAPI {
                         <path d="M0 10.4998L21 10.4998" stroke="#656565" stroke-width="1.5"/>
                         </svg>
                     </button>
-                    <span><input name="number" value="${CartItems[item].quantity}"></span>
+                    <span><input name="number" value="${CartItems[item].quantity}" readonly></span>
                     <button class="behno_increment_dec"  request="plus" key="${CartItems[item].key}">
                         <svg width="21" height="21" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.7723 0.96283L17.7723 34.5824" stroke="#656565" stroke-width="1.5"/>
@@ -181,9 +181,11 @@ class ShopifyAPI {
         if (getCartData.data.item_count == 0) {
             document.querySelector('.mini_cart-payment').style.display = 'none'
             document.querySelector('.mini-add-card').style.display = 'none'
+            document.querySelector('.if_cart_is_empty').style.display = 'block'
         } else {
             document.querySelector('.mini_cart-payment').style.display = 'block'
             document.querySelector('.mini-add-card').style.display = 'block'
+            document.querySelector('.if_cart_is_empty').style.display = 'none'
         }
 
         // this function will refresh the click events

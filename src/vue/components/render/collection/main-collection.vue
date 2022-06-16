@@ -303,7 +303,6 @@ import { constants } from 'buffer';
 // import axios from 'axios'
 export default {
     components: {
-
         Swiper,
         SwiperSlide,
     },
@@ -337,6 +336,7 @@ export default {
 
     },
     data() {
+        console.log(this.shopifyData)
         return {
             isActive: false,
             isMobile:false,
@@ -489,7 +489,6 @@ export default {
         },
 
         onSelectColor:function(color,product,event){
-            console.log(product.id);
             if(event.currentTarget.parentElement.children.length>1){
                 let childcolor=event.currentTarget.parentElement.children;
                 for(let item of childcolor){

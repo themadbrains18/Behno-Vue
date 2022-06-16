@@ -17,6 +17,9 @@ body::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
+.shopping_btn{
+  cursor: pointer;
+}
 /* Handle */
 body::-webkit-scrollbar-thumb {
   background: grey;
