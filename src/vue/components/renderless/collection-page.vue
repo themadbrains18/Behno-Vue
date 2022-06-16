@@ -5,6 +5,7 @@ import { useStore } from "vuex";
 export default {
   data() {},
   mounted: function () {
+    console.log('zfasasdasdsssssssssssssssssssssssssssssssssssssssssssssssssssssssss')
     this.renderInitalLoad(); //method1 will execute at pageload
     this.saveTotalPagination();
     this.handleDebouncedScroll = this.handleScroll;

@@ -1,5 +1,19 @@
 {%- if  collection.handle == 'all' -%}
-    <render-collection-all-page>
+    <render-collection-all-page :shopify-data="{
+        filterDropdownTextResponsive: `{{ section.settings.filterDropdownTextResponsive }}`,
+        categoriesDropdownText: `{{ section.settings.categoriesDropdownText }}`,
+        colorDropdownText: `{{ section.settings.colorDropdownText }}`,
+        sizeDropdownText: `{{ section.settings.sizeDropdownText }}`,
+        materialDropdownText: `{{ section.settings.materialDropdownText }}`,
+        sortByDropdownText: `{{ section.settings.sortByDropdownText }}`,
+        secBottomheading: `{{ section.settings.secBottomheading }}`,
+        secBottomInfo: `{{ section.settings.secBottomBrief }}`,
+        applyFilterCta: `{{ section.settings.applyFilterCta }}`,
+        sortByDropdownTextResponsive: `{{ section.settings.sortByDropdownTextResponsive }}`,
+        filterinnerResponsive: `{{ section.settings.filterinnerResponsive }}`,
+        sortinnerResponsive: `{{ section.settings.sortinnerResponsive }}`}">
+
+
     </render-collection-all-page>
 {%- else -%}
     <render-collection-page>
@@ -11,6 +25,12 @@
 {
     "name":"Main Collection",
     "settings":[
+        {
+            "id":"filterDropdownTextResponsive",
+            "label":"Filter Button Dropdown Text For Mobile",
+            "type":"text",
+            "default":"FILTER"
+        },
         {
             "id":"secBottomheading",
             "label":"Section Bottom Heading",
@@ -65,12 +85,7 @@
             "type":"text",
             "default":"SORT"
         },
-        {
-            "id":"filterDropdownTextResponsive",
-            "label":"Filter Button Dropdown Text For Mobile",
-            "type":"text",
-            "default":"FILTER"
-        },
+        
         {
             "id":"filterinnerResponsive",
             "label":"Filter Button in Filter Menu",

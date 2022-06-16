@@ -1,6 +1,218 @@
 <template>
+ <div class="filter_responsive">
+                <div class="filter_cta_wrapper">
+                    <button class="filter_cta" id="filterCta" v-on:click="myFilter">{{ shopifyData.filterDropdownTextResponsive  }}</button>
+                    <button class="filter_cta" id="sortCta" v-on:click="sortBy">{{ shopifyData.sortByDropdownTextResponsive  }}</button>
+                </div>
+            </div>
+            <div class="filter_row">
+                <div class="row_inner">
+                    <div class="apply_filter_cta_wrapper">
+                        <button class="apply_filter_cta" disabled v-on:click="applyfilter">{{ shopifyData.applyFilterCta }}</button>
+                    </div>
+                    <div class="filters">
+                        <div class="filters_inner_row">
+                        <div class="filters_responsive">
+                            <div class="close-btn" v-on:click="closeMenu">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.8861 11.8864L35.6587 35.6589" stroke="#656565" stroke-width="1.5"/>
+                                    <path d="M11.8861 35.6586L35.6587 11.886" stroke="#656565" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="filter_cta_wrapper">
+                                <button class="filter_cta filter-modifier">{{   shopifyData.filterinnerResponsive }}</button>
+                                <button class="filter_cta clear-modifier" v-bind:class="{ activeClear: showClearAll }" @click="clearAllFilter()">CLEAR FILTERS
+                                    <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-bb57343a=""><path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" data-v-bb57343a=""></path><path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" data-v-bb57343a=""></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="filters_inner">
+                            <!-- Categories filter -->
+                            <div class="filter" @mouseenter="isMobile == true?null:show = true" @mouseleave="isMobile == true?null:show = false" @click="isMobile == false?null:closeDropDown(show,'show')">
+                                <!-- v-on:mouseover="show = !show" -->
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
+                                    <div class="overselect">
+                                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <button class="c-form-input">
+                                        Categories
+                                    </button>
+                                </div>
+                                <div class="multiselect" v-bind:class="{ active: show }">
+                                    <div class="tmb_header_dopdown">
+                                        <ul>
+                                            <li v-for="(option) in ddTestCategory" :key="option.id">
+                                                <input class="multiselectOption" type="checkbox" name="category"
+                                                    :id="option.id" :value="option.value" @change="onCheck($event)" >
+                                                <label class="optionLabel" :for="option.id" >{{ option.text.toLowerCase() }}</label>
+                                            </li>
+                                        </ul>
+                                        <div class="btn_wrapper">
+                                            <!-- <button class="filterBtn modifier" @click="filterProduct">Apply</button> -->
+                                            <button class="filterBtn" @click="clearCheckBoxs('category')">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- color filter -->
+                            <div class="filter color-filter" @mouseenter="isMobile == true?null:showColor = true" @mouseleave="isMobile == true?null:showColor = false" @click="isMobile == false?null:closeDropDown(showColor,'showColor')">
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
+                                    <div class="overselect" >
+                                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <button class="c-form-input">
+                                        Color
+                                    </button>
+                                </div>
+                                <div class="multiselect" v-bind:class="{ active: showColor }">
+                                    <div class="tmb_header_dopdown">
+                                        <ul>
+                                            <li v-for="(option) in ddTestColor" :key="option.id">
+                                                <input class="multiselectOption" type="checkbox" name="color"
+                                                    :id="option.id" :value="option.value" @change="onCheckColor($event)">
+                                                <label class="optionLabel" :for="option.id">{{ option.text.toLowerCase()  }}</label>
+                                            </li>
+                                        </ul>
+                                        <div class="btn_wrapper">
+                                            <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
+                                            <button class="filterBtn" @click="clearCheckBoxs('color')">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- size filter -->
+                            <div class="filter size-filter" @mouseenter="isMobile == true?null:showSize = true" @mouseleave="isMobile == true?null:showSize = false" @click="isMobile == false?null:closeDropDown(showSize,'showSize')">
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
+                                    <div class="overselect" >
+                                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <button class="c-form-input">
+                                        Size
+                                    </button>
+                                </div>
+                                <div class="multiselect" v-bind:class="{ active: showSize }">
+                                    <div class="tmb_header_dopdown">
+                                        <ul>
+                                            <li v-for="(option) in ddTestSize" :key="option.id">
+                                                <input class="multiselectOption" type="checkbox" name="size" :id="option.id"
+                                                    :value="option.value" @change="onCheckSize($event)">
+                                                <label class="optionLabel" :for="option.id">{{ option.text.toLowerCase() }}</label>
+                                            </li>
+                                        </ul>
+                                        <div class="btn_wrapper">
+                                            <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
+                                            <button class="filterBtn" @click="clearCheckBoxs('size')">Clear</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- material filter -->
+                            <div class="filter filter-modifier" @mouseenter="isMobile == true?null:showMaterial = true" @mouseleave="isMobile == true?null:showMaterial = false" @click="isMobile == false?null:closeDropDown(showMaterial,'showMaterial')">
+                                <div class="dropdown" @click="(event)=>{addActive(event)}">
+                                    <div class="overselect" >
+                                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <button class="c-form-input">
+                                        Material
+                                    </button>
+                                </div>
+                                <div class="multiselect" v-bind:class="{ active: showMaterial }">
+                                    <div class="tmb_header_dopdown">
+                                        <ul>
+                                            <li v-for="(option) in ddTestMaterial" :key="option.id">
+                                                <input class="multiselectOption" type="checkbox" name="material"
+                                                    :id="option.id" :value="option.value" @change="onCheckMaterial($event)">
+                                                <label class="optionLabel" :for="option.id">{{ option.text.toLowerCase() }}</label>
+                                            </li>
+                                        </ul>
+                                        <div class="btn_wrapper">
+                                            <!-- <button class="filterBtn modifier" @click="filterProductByMaterial">Apply</button> -->
+                                            <button class="filterBtn" @click="clearCheckBoxs('material')">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Clear Filter -->
+                            <div class="filter">
+                                <button class="clearFilter" v-bind:class="{ activeClear: showClearAll }" @click="clearAllFilter()" >Clear filters
+                                    <svg width="6" height="6" viewBox="0 0 6 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" />
+                                        <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="sort_by">
+                        <div class="filters_responsive">
+                            <div class="close-btn" v-on:click="closeMenu">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.8861 11.8864L35.6587 35.6589" stroke="#656565" stroke-width="1.5"/>
+                                    <path d="M11.8861 35.6586L35.6587 11.886" stroke="#656565" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="filter_cta_wrapper">
+                                <button class="filter_cta filter-modifier">{{   shopifyData.sortinnerResponsive }}</button>
+                            </div>
+                        </div>
+                        <div class="sort_by_inner">
+                            <div class="range">
+                                <div class="add_remove">
+                                    <button>-</button>
+                                    <button>+</button>
+                                </div>
+                                <input id="ageInputId" type="range" value={{gridColumn}} min="2" max="6" step="2"
+                                    class="progress" @input="sliderChange($event)">
+                            </div>
+                            <div class="sortFilter" @mouseenter="showSort = true" @mouseleave="showSort = false">
+                                <button class="sortBtn">
+                                    Sort By
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path data-v-35171425="" d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75"
+                                            stroke-linejoin="round">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <div class="multiselect" v-bind:class="{ active: showSort }">
+                                    <div class="tmb_header_dopdown">
+                                        <ul>
+                                            <li v-for="(option) in ddTestSort" :key="option.id">
+                                                <input class="multiselectOption" type="checkbox" name="sort" :checked="option.id == 'sort1'?true:false"
+                                                    :id="option.id" :value="option.value" @change="onCheckSort($event)">
+                                                <label class="optionLabel" :for="option.id" @click="(event)=>{closeSortMenu(event)}">{{ option.text }}</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
   <div class="product_grid">
-    <div class="grid_inner product-containers">
+    <div class="grid_inner product-containers"  v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
       <div class="product_item" v-for="(value, key) in Products" :key="key">
         <!-- this block work for single product products -->
         <div class="card" v-if="value.hasOwnProperty('single')">
@@ -166,16 +378,632 @@ import { ShopifyAPI } from "../../Shopify/Shopify"
 export default {
   data() {
     return {
+
+
+      isActive: false,
+            isMobile:false,
+            gridMax: false,
+            gridMin: false,
+            show: false,
+            showSort: false,
+            showColor: false,
+            showSize: false,
+            showMaterial: false,
+            selected: [],
+            selectedSort: ['Recommended'],
+            selectedColor: [],
+            selectedSize: [],
+            selectedMaterial: [],
+
+
+            ddTestCategory: this.getCategoryDropDownList(),
+            ddTestColor: this.getColorDropDownList(),
+            ddTestSize: this.getSizeDropDownList(),
+            ddTestMaterial: this.getMaterialDropDownList(),
+            productList: [], //this.array_chunk(products, 20),
+            fullproductList: products,
+
+
+            page_index: 0,
+            page_size: 12,  
+            filterByCategory: [],
+            filterByColor: [],
+            filterBySize: [],
+            filterByMaterial: [],
+            busy: false,
+            showClearAll: false,
+            gridColumn:4,
+            productId:0,
+            ddTestSort: [
+                {
+                    id: "sort1",
+                    value: "Recommended",
+                    text: "Recommended"
+                },
+                {
+                    id: "sort2",
+                    value: "LowToHigh",
+                    text: "Price: Low to High"
+                },
+                {
+                    id: "sort3",
+                    value: "HighToLow",
+                    text: "Price: High to Low"
+                },
+                {
+                    id: "sort4",
+                    value: "Latest",
+                    text: "Latest Arrivals"
+                },
+                {
+                    id: "sort5",
+                    value: "Discount",
+                    text: "Percent Discount"
+                }
+            ],
+            sortObject:{},
+
+
+
+
+
+
+
+
+
+
       Products: [],
       ErrorCase: false,
       shopifyPagination: false,
       themeAssets: [],
+      
+
+
+
+
     };
   },
   mounted() {
+
     this.fetchProdustQuery();
+    this.setScreenRangeGrid();
   },
   methods: {
+      closeSortMenu:function(event){
+            console.log(event);
+            event.target.closest(".show").classList.remove("show");
+        },
+
+        addActive:function(event){
+            event.currentTarget.classList.toggle("active");
+        },
+
+        closeDropDown:function(show,type){
+            if(type == 'show'){
+                if(show==true){
+                    this.show = false;
+                }
+                else{
+                    this.show = true;
+                }
+            }
+            if(type == 'showColor'){
+                if(show==true){
+                    this.showColor = false;
+                }
+                else{
+                    this.showColor = true;
+                }
+            }
+            if(type == 'showSize'){
+                if(show==true){
+                    this.showSize = false;
+                }
+                else{
+                    this.showSize = true;
+                }
+            }
+            if(type == 'showMaterial'){
+                if(show==true){
+                    this.showMaterial = false;
+                }
+                else{
+                    this.showMaterial = true;
+                }
+            }
+        
+        },
+        // open filter navbar
+        myFilter:function(){
+            var filters  = document.querySelector(".filters");
+            var applyfilters  = document.querySelector(".apply_filter_cta_wrapper");
+            applyfilters.classList.add("show");
+            filters.classList.toggle("show");
+        },
+
+        // open sortBy navbar
+        sortBy:function(){
+            var sortBy  = document.querySelector(".sort_by");
+            sortBy.classList.toggle("show");
+        },
+
+        // close navbar
+        closeMenu:function(e){
+            var activeMenu = e.currentTarget.closest(".show");
+            activeMenu.classList.remove("show");
+            var applyfilters  = document.querySelector(".apply_filter_cta_wrapper");
+            applyfilters.classList.remove("show");
+        },
+
+        // apply filter and close filter
+        applyfilter:function(){
+            var applyfilters  = document.querySelector(".apply_filter_cta_wrapper.show");
+            var applyfilterShow  = document.querySelector(".filters.show");
+            applyfilters.classList.remove("show")   
+            applyfilterShow.classList.remove("show")   
+        },
+
+        cardmouseleave:function(id){
+            this.productId=0;
+            let quickAdd=document.querySelector('#quickAdd'+id);
+            quickAdd.classList.remove("quickAdd_active");
+        },
+        
+       
+        inlineBgImage:function(colors){
+            let color=colors.toLowerCase().replace(/[^A-Z0-9]+/ig, "-");
+            let bgImage = "//cdn.shopify.com/s/files/1/0899/2182/files/" + color + ".png?v=5251390435792914590";
+
+            let url=`background-image:url(${bgImage});`
+            return url + 'background:'+ color;
+        },
+
+        onSelectColor:function(color,product,event){
+            console.log(product.id);
+            if(event.currentTarget.parentElement.children.length>1){
+                let childcolor=event.currentTarget.parentElement.children;
+                for(let item of childcolor){
+                    item.classList.remove('activecolor')        
+                }
+            }
+            event.currentTarget.classList.add('activecolor')
+            let img=document.getElementById(product.id);
+            let div=document.querySelector('#item_left_'+product.id);
+            let product_img_div=document.querySelector('#product_img_wrapper'+product.id);
+            let out_of_stock_text=document.querySelector('#out_of_stock_text'+product.id);
+            let quickAdd=document.querySelector('#quickAdd'+product.id);
+             
+            // console.log(img);
+            let varints= product.variants.filter(item=>{
+                return item.title.includes(color)
+            })
+            if(varints.length>0){
+                if(varints[0].featured_image!=null){
+                    console.log(varints[0].featured_image.src);
+                    img.src=varints[0].featured_image.src;
+                }
+                div.textContent=varints[0].stock<=5?'ONLY '+varints[0].stock+' LEFT':'';
+
+                if(varints[0].stock == 0){
+                    div.textContent='Out Of Stock';
+                    out_of_stock_text.classList.add("out_of_stock_text_active");
+                    product_img_div.classList.add("out_of_stock");
+                    quickAdd.classList.remove("quickAdd_active");
+                    quickAdd.classList.add("quickAdd_deactive");
+                    
+                }
+                else{
+                    out_of_stock_text.classList.remove("out_of_stock_text_active");
+                    product_img_div.classList.remove("out_of_stock");
+                    quickAdd.classList.remove("quickAdd_deactive");
+                    quickAdd.classList.add("quickAdd_active");
+                }
+                
+            }
+        },
+
+        /* change images on hover */
+        mouseover: function (event, imgsrc) {
+            event.target.src = imgsrc;
+        },
+        mouseleave: function (event, imgsrc) {
+            event.target.src = imgsrc;
+        },
+        /* end change images on hover */
+
+        /* change grid column */
+        setScreenRangeGrid: function () {
+            let width = window.innerWidth;
+            if (width > 2000) {
+                this.gridColumn=6;
+            }
+            else if (width > 767 && width < 2000) {
+                this.gridColumn=4;
+            }
+            else {
+                this.gridColumn=2;
+            }
+        },
+
+        sliderChange: function (event) {
+            if (event.target.value == 2) {
+                this.gridMin = false;
+                this.gridMax = true;
+            }
+            else if (event.target.value == 6) {
+                this.gridMin = true;
+                this.gridMax = false;
+            }
+            else {
+                this.gridMin = false;
+                this.gridMax = false;
+            }
+        },
+        /* end change grid column */
+        /* Clear all filter */
+        clearAllFilter: function () {
+            let arrayName = ['category', 'color', 'size', 'material'];
+            arrayName.map(item => {
+                this.clearCheckBoxs(item);
+            })
+            this.showClearAll = false;
+        },
+        /* End Clear all filter */
+
+        /* start unchecked checkbox when click clear button in dropdown */
+        clearCheckBoxs: function (name) {
+            var markedCheckbox = document.getElementsByName(name);
+            for (var checkbox of markedCheckbox) {
+                if (checkbox.checked)
+                    checkbox.checked = false;
+            }
+            if (name == 'category') {
+                this.selected = [];
+                this.filterByCategory = [];
+            }
+            else if (name == 'color') {
+                this.selectedColor = [];
+                this.filterByColor = [];
+            }
+            else if (name == 'size') {
+                this.selectedSize = [];
+                this.filterBySize = [];
+            }
+            else if (name == 'material') {
+                this.selectedMaterial = [];
+                this.filterByMaterial = [];
+            }
+            this.clearAllOption();
+        },
+
+        /* clear option that selected in drop down under particular option */
+        clearAllOption: function () {
+            if (this.selected.length > 0) {
+                this.filterProduct();
+            } else if (this.selectedColor.length > 0) {
+                this.filterProductByColor();
+            } else if (this.selectedSize.length > 0) {
+                this.filterProductBySize();
+            } else if (this.selectedMaterial.length > 0) {
+                this.filterProductByMaterial();
+            } else {
+                this.showClearAll = false;
+                this.productList = this.fullproductList; //this.array_chunk(products, 20);
+                var applyCta = document.querySelector('.apply_filter_cta');
+                applyCta.setAttribute("disabled",'') ;
+            }
+        },
+
+        /* set selected category checkbox value */
+        onCheck: function (event) {
+            if (this.selected.includes(event.target.value)) {
+                this.selected = this.selected.filter(function (geeks) {
+                    return geeks != event.target.value;
+                });
+            } else {
+                this.selected.push(event.target.value);
+            }
+            this.filterProduct();
+        },
+
+        /* set selected color checkbox value */
+        onCheckColor: function (event) {
+            if (this.selectedColor.includes(event.target.value)) {
+                this.selectedColor = this.selectedColor.filter(function (geeks) {
+                    return geeks != event.target.value;
+                });
+            } else {
+                this.selectedColor.push(event.target.value);
+            }
+            this.filterProductByColor();
+        },
+
+        /* set selected size checkbox value */
+        onCheckSize: function (event) {
+            if (this.selectedSize.includes(event.target.value)) {
+                this.selectedSize = this.selectedSize.filter(function (geeks) {
+                    return geeks != event.target.value;
+                });
+            } else {
+                this.selectedSize.push(event.target.value);
+            }
+            this.filterProductBySize();
+        },
+
+        /* set selected material checkbox value */
+        onCheckMaterial: function (event) {
+            if (this.selectedMaterial.includes(event.target.value)) {
+                this.selectedMaterial = this.selectedMaterial.filter(function (geeks) {
+                    return geeks != event.target.value;
+                });
+            } else {
+                this.selectedMaterial.push(event.target.value);
+            }
+            this.filterProductByMaterial();
+        },
+
+        /* set selected sort checkbox value */
+        onCheckSort: function (event) {
+            var markedCheckbox = document.getElementsByName('sort');
+            
+            for (var checkbox of markedCheckbox) {
+                this.selectedSort = []
+                if (checkbox.id == event.target.id){
+                    if (this.sortObject.id != undefined && this.sortObject.id == event.target.id){
+                        checkbox.checked=false;
+                        this.sortProduct();
+                        this.sortObject={};
+                    }
+                    else{
+                        markedCheckbox = document.getElementById(event.target.id);
+                        markedCheckbox.checked = true;
+                        this.sortObject=markedCheckbox;
+                        this.selectedSort.push(event.target.value);
+                        this.sortProduct();
+                    }
+                }
+                else{
+                    checkbox.checked=false;
+                }   
+            }
+
+            // to close responsive menu in mobile
+            
+        },
+
+        /* Fill category dropdown from products data */
+
+        getCategoryDropDownList: function () {
+            let array = [];
+            products.map((item) => {
+                item.tags.map((ca) => {
+                    array.push(ca);
+                });
+            });
+            let data = [...new Set(array)];
+            array = [];
+            data.map((item, index) => {
+                let obj = { id: item + index, value: item, text: item };
+                array.push(obj);
+            });
+            return array;
+        },
+        /* End Fill category dropdown from products data */
+
+        /* Fill color dropdown from products data */
+
+        getColorDropDownList: function () {
+            let array = [];
+            products.map((item) => {
+                item.options[0].values.map((col) => {
+                    array.push(col);
+                });
+            });
+            let data = [...new Set(array)];
+            array = [];
+            data.map((item, index) => {
+                let obj = { id: item + index, value: item, text: item };
+                if (item != null) {
+                    array.push(obj);
+                }
+            });
+            return array;
+        },
+
+        /* End Fill color dropdown from products data */
+
+        /* Fill size dropdown from products data */
+        getSizeDropDownList: function () {
+            let array = [];
+            products.map((item) => {
+                item.variants.map((col) => {
+                    array.push(col.option2);
+                });
+            });
+            let data = [...new Set(array)];
+            array = [];
+            data.map((item, index) => {
+                let obj = { id: item + index, value: item, text: item };
+                if (item != null) {
+                    array.push(obj);
+                }
+            });
+            return array;
+        },
+        /* End Fill size dropdown from products data */
+
+        /* Fill material dropdown from products data */
+        getMaterialDropDownList: function () {
+            let array = [];
+            products.map((item) => {
+                item.variants.map((col) => {
+                    array.push(col.option3);
+                });
+            });
+            let data = [...new Set(array)];
+            array = [];
+            data.map((item, index) => {
+                let obj = { id: item + index, value: item, text: item };
+                if (item != null) {
+                    array.push(obj);
+                }
+            });
+            return array;
+        },
+        /* End Fill material dropdown from products data */
+
+        /* sort product based on price low to high and vice-verse */
+        sortProduct: function () {
+            if (this.selectedSort.length > 0) {
+                let obj = this.selectedSort[0];
+                this.productList.sort(function (a, b) {
+                    if (obj == 'LowToHigh') {
+                        return a.variants[0].price - b.variants[0].price
+                    }
+                    else if (obj == 'HighToLow') {
+                        return b.variants[0].price - a.variants[0].price
+                    }
+                    else if(obj=='Latest'){
+                        return new Date(b.created_at) - new Date(a.created_at);
+                    }
+                });
+            }
+        },
+
+        /* set product in array based on selected category option */
+        filterProduct: function () {
+            let array = [];
+            if (this.selected.length > 0) {
+                // Get Category product after multi select option in dropdown
+                this.selected.map((cate) => {
+                    let filter = products.filter((item) => {
+                        return item.tags.includes(cate);
+                    });
+                    if (array.length > 0) {
+                        array = new Set([...array, ...filter]);
+                        array = [...array];
+                    } else {
+                        array = filter;
+                    }
+                });
+                this.filterByCategory = array;
+                array = this.getUniqueRecord(array, 'category');
+            } else {
+                this.filterByCategory = [];
+                this.clearAllOption();
+            }
+            this.page_index = 0;
+        },
+
+        /* set product in array based on selected color option */
+        filterProductByColor: function () {
+            let array = [];
+            if (this.selectedColor.length > 0) {
+                // Get Color product after multi select option in dropdown
+                this.selectedColor.map((col) => {
+                    let filter = products.filter((item) => {
+                        return item.options[0].values.includes(col);
+                    });
+                    if (array.length > 0) {
+                        array = new Set([...array, ...filter]);
+                        array = [...array];
+                    } else {
+                        array = filter;
+                    }
+                });
+                this.filterByColor = array;
+                array = this.getUniqueRecord(array, 'color');
+            } else {
+                this.filterByColor = [];
+                this.clearAllOption();
+            }
+            this.page_index = 0;
+        },
+
+        /* set product in array based on selected size option */
+        filterProductBySize: function () {
+            let array = [];
+            if (this.selectedSize.length > 0) {
+                // Get Size product after multi select option in dropdown
+                this.selectedSize.map((siz) => {
+                    let filter = products.filter((item) => {
+                        return item.variants[0].option2 == siz.toUpperCase();
+                    });
+                    if (array.length > 0) {
+                        array = new Set([...array, ...filter]);
+                        array = [...array];
+                    } else {
+                        array = filter;
+                    }
+                });
+                this.filterBySize = array;
+                array = this.getUniqueRecord(array, 'size');
+            } else {
+                this.filterBySize = [];
+                this.clearAllOption();
+            }
+            this.page_index = 0;
+        },
+
+        /* set product in array based on selected material option */
+        filterProductByMaterial: function () {
+            let array = [];
+            if (this.selectedMaterial.length > 0) {
+                // Get Material product after multi select
+                this.selectedMaterial.map((mat) => {
+                    let filter = products.filter((item) => {
+                        return item.variants[0].option3 == mat;
+                    });
+                    if (array.length > 0) {
+                        array = new Set([...array, ...filter]);
+                        array = [...array];
+                    } else {
+                        array = filter;
+                    }
+                });
+                this.filterByMaterial = array;
+                array = this.getUniqueRecord(array, 'material');
+            } else {
+                this.filterByMaterial = [];
+                this.clearAllOption();
+            }
+            this.page_index = 0;
+        },
+
+        /*satrt filter and unique order after apply filter option */
+        getUniqueRecord: function (array, type) {
+            if (this.filterByCategory.length > 0 && type != 'category') {
+                array = this.filterArrayToUniqueRecord(array, this.filterByCategory);
+            }
+            if (this.filterByColor.length > 0 && type != 'color') {
+                array = this.filterArrayToUniqueRecord(array, this.filterByColor);
+            }
+            if (this.filterBySize.length > 0 && type != 'size') {
+                array = this.filterArrayToUniqueRecord(array, this.filterBySize);
+            }
+            if (this.filterByMaterial.length > 0 && type != 'material') {
+                array = this.filterArrayToUniqueRecord(array, this.filterByMaterial);
+            }
+            var applyCta = document.querySelector('.apply_filter_cta');
+            
+            
+            if(array.length>0){
+                applyCta.removeAttribute("disabled") ;
+            }
+            this.productList = array; ///this.array_chunk(array, 20);
+            this.showClearAll = true;
+            this.sortProduct();
+            return array;
+        },
+
+        filterArrayToUniqueRecord: function (array, filterWithArray) {
+            return filterWithArray.filter((el) => {
+                return array.some((f) => {
+                    return f.id === el.id;
+                });
+            });
+        },
+
     async fetchProdustQuery() {
       /// fetch shopify graphQl queries
       var queries = new graphQl();
@@ -476,6 +1304,12 @@ export default {
       return src;
     },
   },
+   props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        },
+    }
 };
 </script>
 
