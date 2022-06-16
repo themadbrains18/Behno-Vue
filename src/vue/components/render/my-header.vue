@@ -683,12 +683,12 @@
                   </div>
               </div>
               <div class="mini_shopping_cart">
-                  <a href="#" class="shp_cart">View shopping cart</a>
+                  <a href="/cart" class="shp_cart">View shopping cart</a>
               </div> 
           </div>
       </div>
       <div class="mini-add-card"  :class="{ active: !show }">   
-          <button class="add-card-chk">CHECKOUT</button>
+          <a href="/checkout" class="add-card-chk">CHECKOUT</a>
       </div> 
   
       
@@ -698,6 +698,18 @@
 
 
 <style >
+button.behno_increment_dec {
+    position: relative;
+}
+button.behno_increment_dec:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .tmbMain{
   margin-top: 80px;
 }

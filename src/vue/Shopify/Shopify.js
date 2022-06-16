@@ -69,7 +69,7 @@ class ShopifyAPI {
 
     }
 
-    async removeItem(item = {}) {
+    async removeItem(item = {}) {  // removeItemt (add/remove) product from the cart working for the both
         // Object.keys(item).length === 0
         if (Object.keys(item).length == 0) {
             console.log('Opps! something went wrong. Please try again.')
@@ -159,13 +159,13 @@ class ShopifyAPI {
                     <h5 class="subtitle">${CartItems[item].product_title}</h5>
                     <h5 class="subtitle_b">$${(CartItems[item].price / 100).toFixed(2)}</h5>
                 <div class="mini_cart-products">
-                    <button>
+                    <button class="behno_increment_dec" request="minus" key="${CartItems[item].key}">
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 10.4998L21 10.4998" stroke="#656565" stroke-width="1.5"/>
                         </svg>
                     </button>
-                    <span>${CartItems[item].quantity}</span>
-                    <button>
+                    <span><input name="number" value="${CartItems[item].quantity}"></span>
+                    <button class="behno_increment_dec"  request="plus" key="${CartItems[item].key}">
                         <svg width="21" height="21" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.7723 0.96283L17.7723 34.5824" stroke="#656565" stroke-width="1.5"/>
                             <path d="M0.962891 17.7723L34.5824 17.7723" stroke="#656565" stroke-width="1.5"/>
@@ -188,6 +188,43 @@ class ShopifyAPI {
 
         // this function will refresh the click events
         this.refreshRemoveEvent()
+        this.increamtDecriment()
+    }
+
+    /**
+     * qty increase decrease
+     */
+
+    increamtDecriment() {
+        var classObj = this
+        var btn = document.querySelectorAll('.behno_increment_dec')
+        for (const button of btn) {
+            button.addEventListener('click',  function (event) {
+                var targeted = event.target
+                var parent = event.target.parentNode.parentNode
+                var currentValue = parent.querySelector('input').getAttribute('value')
+                var key = targeted.getAttribute('key')
+                var qty = 0
+                /// check if request id minus
+                if(targeted.getAttribute('request') == 'minus'){
+                    qty = (parseInt(currentValue)-1)
+                }else if(targeted.getAttribute('request') == 'plus'){
+                    qty = (parseInt(currentValue)+1)
+                }
+
+                parent.querySelector('input').setAttribute('value',qty) // set new value
+
+                var items = {
+                    quantity : qty,
+                    id       : key
+                }
+               
+                classObj.removeItem(items) // working (add/delete both)
+
+
+            })
+        }
+
     }
 
 
