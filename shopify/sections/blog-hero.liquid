@@ -11,7 +11,8 @@
         src : `{{ section.settings.heroImgMobile | img_url : "" }}`,
         placeholder: `{{ section.settings.heroImgMobile | img_url : "50x50" }}`,
         alt: `{{ section.settings.heroImgMobile.alt }}`
-    }
+    },
+    mode : `{{ blog.metafields.my_fields.landscape_mode }}`,
 }">
 </render-blog-blog-hero>
 {% schema %}
@@ -24,6 +25,7 @@
                 "label": "Show Section",
                 "default": true
             },
+            
             {
                 "id":"heroHeading",
                 "label":"Hero Heading",

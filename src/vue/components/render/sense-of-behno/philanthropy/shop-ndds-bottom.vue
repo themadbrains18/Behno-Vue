@@ -5,7 +5,7 @@
                 <h4 class="card_heading_b">{{ shopifyData.secSubHeading }}</h4>
             </div>
             <div class="sec_content">
-                <div class="product_wrapper">
+                <div class="product_wrapper" id="productWrapper">
                     <div class="produts_grid">
                     <!-- product Card -->
                         <template v-if="shopifyData.showProduct === 'true'">
@@ -15,21 +15,6 @@
                                     <img :src=value.productImage alt="" />
                                     <span class="product_name subtitle">{{ value.productTitle }}</span>
                                     <span class="product_price subtitle_b">{{ value.productPrie }}</span>
-                                </a>
-                            </div>
-                            </div>
-                        </template>
-                        <!-- Custom card -->
-                        <template v-else>
-                            <div v-for="(value, key) in shopifyData.box" :key="key">
-                            <div class="grid_item featured_carousel_item">
-                                <a :href=(value.link) class="grid_img-wrap line-h-0 d-block">
-                                <img
-                                    class="grid_img"
-                                    :src=(value.imgUrl.src)
-                                    :src-placeholder=(value.imgUrl.placeholder)
-                                    :alt=(value.imgUrl.alt)
-                                />
                                 </a>
                             </div>
                             </div>
@@ -99,6 +84,11 @@
         height: 166px;
     }
 }
+@media only screen and (max-width: 480px) {
+    .grid_item img{
+        min-width: 166px;
+    }
+}
 </style>
 
 
@@ -109,6 +99,35 @@ export default {
         type: Object,
         required: true,
         }
+    },
+    data(){
+            window.addEventListener("DOMContentLoaded",()=>{
+                let slider = document.querySelector('#productWrapper');
+                let mouseDown = false;
+                let startX, scrollLeft;
+        
+                let startDragging = function (e) {
+                    mouseDown = true;
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                };
+                let stopDragging = function (event) {
+                    mouseDown = false;
+                };
+                slider.addEventListener('mousemove', (e) => {
+                    e.preventDefault();
+                    if(!mouseDown) { return; }
+                    const x = e.pageX - slider.offsetLeft;
+                    const scroll = x - startX;
+                    slider.scrollLeft = scrollLeft - scroll;
+                });
+
+                // Add the event listeners
+                slider.addEventListener('mousedown', startDragging, false);
+                slider.addEventListener('mouseup', stopDragging, false);
+                slider.addEventListener('mouseleave', stopDragging, false);
+
+        })
     }
 }
 </script>

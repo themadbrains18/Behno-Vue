@@ -238,19 +238,6 @@
     },
     "shop-ndds-bottom": {
       "type": "shop-ndds-bottom",
-      "blocks": {
-        "c451c7af-636c-44b1-9c21-a3732f24faba": {
-          "type": "slide",
-          "settings": {
-            "link": "",
-            "title": "",
-            "price": ""
-          }
-        }
-      },
-      "block_order": [
-        "c451c7af-636c-44b1-9c21-a3732f24faba"
-      ],
       "settings": {
         "secSubHeading": "SHOP NDSS X BEHNO",
         "secCtaText": "SHOP THE NDSS X BEHNO CAPSULE",
