@@ -45,6 +45,22 @@ export default {
   components: {
     VLazyImage,
   },
+  data:()=>{
+    // Hero Heading Animation
+    window.addEventListener("scroll",()=>{
+      let heroSec = document.querySelector(".hero_sec");
+      let mainHeading = document.querySelectorAll(".main_heading");
+      let heroSecHeight =  heroSec.getBoundingClientRect().height;
+
+      let halfHeight = heroSecHeight / 1.2;
+
+       if(window.scrollY <= halfHeight){
+          for(let i of mainHeading){
+            i.setAttribute("style",`opacity:${1 - (window.scrollY / halfHeight).toFixed(1)}; transition:0.4s;`);
+          }
+       }
+    });    
+  },
   props: {
     shopifyData: {
       type: Object,

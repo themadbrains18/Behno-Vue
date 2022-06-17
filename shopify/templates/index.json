@@ -29,11 +29,50 @@
             "linkText": "Clickable link.",
             "link": "shopify:\/\/pages\/ethical-philosophy"
           }
+        },
+        "e7e964b6-735c-494b-ba26-12f5fc8d6ddb": {
+          "type": "storyBox",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/text-landscape-img2.jpg",
+            "storyBtn": "Shop now",
+            "storyBtnLink": "#",
+            "storyHeading": "LATEST CAMPAIGN.",
+            "storyBrief": "Explore The Sense of behno campaign.",
+            "storyText": 70,
+            "bottomTextColor": "#ffffff"
+          }
+        },
+        "79c3118d-46d3-416f-a68d-337eda0a84a6": {
+          "type": "storyBox",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/spotted-stories.png",
+            "storyBtn": "Shop now",
+            "storyBtnLink": "#",
+            "storyHeading": "SPOTTED.",
+            "storyBrief": "Celebrity stylist Sophie Lopez wears the Elizabeth Baguette Mini.",
+            "storyText": 55,
+            "bottomTextColor": "#000000"
+          }
+        },
+        "8d991237-0f5a-48c8-a847-1f1a8826fd26": {
+          "type": "storyBox",
+          "settings": {
+            "previewImage": "shopify:\/\/shop_images\/partner-handbag-story.png",
+            "storyBtn": "Shop now",
+            "storyBtnLink": "#",
+            "storyHeading": "GET BEHIND THE SCENES.",
+            "storyBrief": "Learn more about how we make each behno piece come to life.",
+            "storyText": 15,
+            "bottomTextColor": "#ffffff"
+          }
         }
       },
       "block_order": [
         "3a830e12-b092-4329-a9e4-dbc899bdb68a",
-        "223545bc-72f6-4216-9449-bd8b2f93d29c"
+        "223545bc-72f6-4216-9449-bd8b2f93d29c",
+        "e7e964b6-735c-494b-ba26-12f5fc8d6ddb",
+        "79c3118d-46d3-416f-a68d-337eda0a84a6",
+        "8d991237-0f5a-48c8-a847-1f1a8826fd26"
       ],
       "settings": {
       }

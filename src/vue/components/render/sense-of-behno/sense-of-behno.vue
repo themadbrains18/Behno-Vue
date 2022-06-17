@@ -53,7 +53,7 @@
                 </div>
             </swiper-slide>
         </swiper>
-      </div>
+    </div>
     </div>
     <!-- Sec Content -->
     <div class="sec_content">
@@ -322,6 +322,7 @@
 body.show .tmbHeader{
     z-index: -1;
 }
+/* Mobile Storie css */
 .mobile_stories_wrapper .swiper-scrollbar {
     background: rgba(0, 0, 0, 0.14);
     height: 3px ;
@@ -361,11 +362,9 @@ components: {
     SwiperSlide,
 },
 data: function () {
-
     return {
         show: true,
     };
-    
 },
 methods : {
     addActiveBody:function(){
