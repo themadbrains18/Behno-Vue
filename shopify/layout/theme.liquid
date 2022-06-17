@@ -25,7 +25,8 @@
 
     <!-- header hook for Shopify plugins -->
     {{ content_for_header }}
-  </head>
+    {% render 'judgeme_core' %}
+</head>
 
   <body class="{{ template.name }} {{ template }}">
 
