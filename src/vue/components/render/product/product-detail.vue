@@ -80,12 +80,14 @@
                 <div class="product_description_data">
                     <!-- Product Description -->
                     <div class="product_description"  v-html="replaceString(selectedProductDescription[0])"></div>
+                    <template v-if="this.shopifyData.productData.productSeenIn.length > 0">
                         <p> As seen in: </p>
-                    <div class="see_in">
-                        <div v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
-                            <img :src="(seenIn.src)" :alt="(seenIn.alt)">
+                        <div class="see_in">
+                            <div v-for="(seenIn , index ) in this.shopifyData.productData.productSeenIn" :key="index">
+                                <img :src="(seenIn.src)" :alt="(seenIn.alt)">
+                            </div>
                         </div>
-                    </div>
+                    </template>
                     <ul class="product_accordians">
                         <!-- Product Details -->
                         <li class="product_accordian" v-if="selectedProductDescription[1]">
@@ -134,6 +136,21 @@
                             <div class="product_accordian_panel" v-html="replaceString(selectedProductDescription[4])">
                             </div>
                         </li>
+                        <!-- Product REVIEWS  -->
+                        <li class="product_accordian" v-if="selectedProductDescription[4]">
+                            <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.8566 9.88412C19.8064 9.72961 19.6625 9.625 19.5 9.625C19.3375 9.625 19.1936 9.72961 19.1434 9.88412L16.8702 16.8803H9.51391C9.35145 16.8803 9.20746 16.9849 9.15726 17.1394C9.10706 17.2939 9.16205 17.4632 9.29349 17.5587L15.2448 21.8826L12.9716 28.8788C12.9214 29.0333 12.9764 29.2026 13.1078 29.2981C13.2393 29.3936 13.4172 29.3936 13.5487 29.2981L19.5 24.9742L25.4513 29.2981C25.5828 29.3936 25.7607 29.3936 25.8922 29.2981C26.0236 29.2026 26.0786 29.0333 26.0284 28.8788L23.7552 21.8826L29.7065 17.5587C29.8379 17.4632 29.8929 17.2939 29.8427 17.1394C29.7925 16.9849 29.6486 16.8803 29.4861 16.8803H22.1299L19.8566 9.88412Z" fill="white" stroke="black" stroke-width="0.75" stroke-linejoin="round"/>
+                                    </svg>
+                                    REVIEWS
+                            </button>
+                            <div class="product_accordian_panel product_review">
+                                <ul>
+                                    <li v-html="productReview" style="height:440px;">
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -155,9 +172,10 @@
                     </swiper-slide>
                 </swiper>
             </div>
+            <span v-html="productReview"> </span>    
+            
         </div>
     </section>
-    
 </template>
 
 <style>
@@ -266,10 +284,14 @@
     color: #000 !important;
 }
 
+.product_review{
+    max-height: 440px!important;
+}
+
 .product_accordian_panel>ul {
     padding: 15px 0;
     border-bottom: 0.5px solid #252525;
-    }
+}
 
 @media only screen and (max-width:1440px) {
 
@@ -507,8 +529,6 @@
     overflow: hidden;
     transition: 0.3s;
     padding-left: 5px;
-  
-
 }
 
 .swatchs_warraper{
@@ -645,6 +665,8 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay, Pagination, Mousewheel, Thumbs } from "swiper";
 export default {
     data() {
+        console.log(atob(this.shopifyData.productData.productReview));
+        let productReview = atob(this.shopifyData.productData.productReview); 
         let variant = atob(this.shopifyData.productData.variant);
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
@@ -655,6 +677,7 @@ export default {
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
         return {
             selectedSize:"",
+            productReview,
             variant,
             product,
             selectedProduct : filterProduct,
@@ -704,8 +727,7 @@ export default {
                 document.body.style.overflow = "hidden";
             }
             productZoom.classList.toggle("active");
-        },
-     
+        },   
         replaceString(data){
             data = data.replace(/Â/g, "");
             return data;
@@ -722,7 +744,13 @@ export default {
                 accodianPanel.setAttribute("style", `height: ${accodianPanel.scrollHeight}px;`);
                 accodian.classList.add("active");
             }
-        }
+        },
+        // encodeData(data) {
+        //     data = atob(data);
+        //     data = data.replace(/Â/g, "");
+        //     return data;
+        // }
+
     },
     mounted() {
         window.addEventListener('resize', () => {

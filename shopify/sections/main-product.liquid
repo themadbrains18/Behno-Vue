@@ -1,6 +1,4 @@
 {%- if product.metafields.my_fields.variants_products and product.metafields.my_fields.variants_swtach -%}
-            
-    <div class="available-colors ">
       {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
       {% assign links = product.metafields.my_fields.variants_products | split:" " %}
       
@@ -62,15 +60,22 @@
 {% endcapture %}
 
 
-
 {% capture variantObj %}
 [{{ pVariant }}]
 {% endcapture %}
 
+
+{% capture productReview %}
+  {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false, product: product %}
+  <!-- {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %} -->
+{% endcapture %}
+
 {% capture products %}
 {
-product :  `{{ productObj | base64_encode  }}`,
-variant : `{{ variantObj | base64_encode  }}`
+  product :  `{{ productObj | base64_encode  }}`,
+  variant : `{{ variantObj | base64_encode  }}`,
+  productSeenIn : {{ productSeenIn }},
+  productReview : `{{ productReview | base64_encode }}`,
 }
 {% endcapture %}
 
