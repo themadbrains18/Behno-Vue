@@ -2,7 +2,8 @@
 
 
 <template>
-  <!-- <h2>{{shopifyData.collactionTittle}}</h2> -->
+
+  <h2>{{shopifyData.collactionTittle}}</h2>
   <div class="collaction_banner">
       <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/collaction-banner.jpg?v=1655384242" alt="Collaction Image">
       <h2 class="banner_heading">THE ELIZABETH BAGUETTE SERIES</h2>
@@ -26,7 +27,6 @@
                   : ""
               }}
             </div>
-
             <div
               class="product_img_wrapper"
               v-if="value.single.images.edges.length > 2"
@@ -180,6 +180,7 @@ export default {
     }
   },
   data() {
+    console.log(this.shopifyData)
     return {
       Products: [],
       ErrorCase: false,
