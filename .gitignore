@@ -2,7 +2,7 @@ node_modules/
 bkup/
 old/
 backup-2/
-
+stash/
 .DS_Store
 *.log
 
