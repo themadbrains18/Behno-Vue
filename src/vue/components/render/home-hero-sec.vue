@@ -49,7 +49,7 @@ export default {
     // Hero Heading Animation
     window.addEventListener("scroll",()=>{
       let heroSec = document.querySelector(".hero_sec");
-      let mainHeading = document.querySelectorAll(".main_heading");
+      let mainHeading = document.querySelectorAll(".hero_sec .main_heading");
       let heroSecHeight =  heroSec.getBoundingClientRect().height;
 
       let halfHeight = heroSecHeight / 1.2;
