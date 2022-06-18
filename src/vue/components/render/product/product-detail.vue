@@ -669,16 +669,19 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay, Pagination, Mousewheel, Thumbs } from "swiper";
 export default {
     data() {
-        let productReviewData = atob(this.shopifyData.productData.productReviewData);
-        productReviewData = JSON.parse(productReviewData);
+        
         let variant = atob(this.shopifyData.productData.variant);
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
         product = JSON.parse(product);
+         
         var currentUrl = window.location.pathname;
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
+
+        let productReviewData = atob(this.shopifyData.productData.productReviewData);
+        productReviewData = JSON.parse(productReviewData);
         let showProductReviewData = productReviewData.filter(item => item.link == currentUrl); 
         return {
             selectedSize:"",
