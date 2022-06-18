@@ -344,6 +344,16 @@
             </div>
         </div>
     </div>
+
+
+    <div class="row centeralign addmargin" v-bind:class="{ productnotfound: Products.length === 0, productfound: Products.length > 0}">
+                    <h2 class="sec_heading">We're sorry, no matches were found.</h2>
+                    <h4 class="body_text">We couldn't find any results for your selected filters. Clear your filters, or contact
+                        our team
+                        and
+                        we'll be happy to help.</h4>
+    </div>
+
 </div>
 </template>
 
