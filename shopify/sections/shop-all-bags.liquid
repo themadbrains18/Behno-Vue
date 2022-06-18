@@ -1,4 +1,4 @@
-{% capture productData %}
+<!-- {% capture productData %}
 [
 {% for product in section.settings.ProductList %}
     {
@@ -12,11 +12,19 @@
     }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]
-{% endcapture %}
+{% endcapture %} -->
+{% capture products %}  
+        [{% for product in section.settings.ProductList %}
+                [{{ product | json }},{{ product.metafields.my_fields | json }}]{% if forloop.last %}
+                {% else %},{% endif %}
+        {% endfor %}]    
+    {% endcapture %}
+
+
 <render-blog-shop-all-bags :shopify-data="{
     showProduct : `{{ section.settings.showProduct }}`,
     sectionHeading: `{{ section.settings.sectionHeading }}`,
-    productData: {{ productData }},
+    productData: '{{ products | base64_encode }}',
     addfeatureBagBtn: `{{ section.settings.addfeatureBagBtn }}` 
     
 }">
