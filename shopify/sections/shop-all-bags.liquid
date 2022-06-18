@@ -14,7 +14,7 @@
 ]
 {% endcapture %}
 <render-blog-shop-all-bags :shopify-data="{
-    showProduct : `{{ section.settings.showProduct }}`,
+    showSection : `{{ section.settings.showSection }}`,
     sectionHeading: `{{ section.settings.sectionHeading }}`,
     productData: {{ productData }},
     addfeatureBagBtn: `{{ section.settings.addfeatureBagBtn }}` 
@@ -26,9 +26,9 @@
         "name":"Shop All Bags",
         "settings":[
             {
-                "id": "showProduct",
+                "id": "showSection",
                 "type": "checkbox",
-                "label": "Show Products",
+                "label": "Show Section",
                 "default": true
             },
             {
