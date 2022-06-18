@@ -294,7 +294,7 @@
 
             <div class="card" v-if="value.hasOwnProperty('variable') && (value.variable.length-1) >= value.active">
             
-                <a :href="`/products/`">
+                <a :href="`/products/`+value.variable[value.active].handle">
                     <!-- <div class="item_left" v-bind:class="{
                 item_left_active: value.variable[value.active].totalInventory < 5,
               }" id="item_left_">
@@ -623,6 +623,12 @@ export default {
         /* end change grid column */
         /* Clear all filter */
         clearAllFilter: function () {
+            
+            let arrayName = ['category', 'color', 'size', 'material'];
+            arrayName.map(item => {
+                this.clearCheckBoxs(item);
+            })
+
             localStorage.setItem('fillters',[])
             this.showClearAll = false;
             this.fetchProdustQuery()
@@ -635,20 +641,56 @@ export default {
             for (var checkbox of markedCheckbox) {
                 if (checkbox.checked) checkbox.checked = false;
             }
+
+            var savedFilter = []
+            var savedItem = localStorage.getItem('fillters') || []
+            var category,size,material,color;
+            category = -1
+            size     = -1
+            material = -1
+            color    = -1
+            if(savedItem != ''){
+                savedFilter = JSON.parse(savedItem)
+                savedFilter.map((e,i) => {
+                        if(e.hasOwnProperty("Category")){
+                            category = i
+                        }else if(e.hasOwnProperty("Color")){
+                            color    = i
+                        }else if(e.hasOwnProperty("Size")){
+                            size     = i
+                        }else if(e.hasOwnProperty("Material")){
+                            material = i
+                        }
+                })
+            }
+
             if (name == "category") {
                 this.selected = [];
                 this.filterByCategory = [];
+                if(category >= 0){ 
+                    savedFilter.splice(parseInt(category),parseInt(savedFilter.length)) 
+                }
             } else if (name == "color") {
                 this.selectedColor = [];
                 this.filterByColor = [];
+                if(color >= 0){ 
+                    savedFilter.splice(parseInt(color),parseInt(savedFilter.length))  }
             } else if (name == "size") {
                 this.selectedSize = [];
                 this.filterBySize = [];
+                if(size >= 0){ 
+                    savedFilter.splice(parseInt(size),parseInt(savedFilter.length))  }
             } else if (name == "material") {
                 this.selectedMaterial = [];
                 this.filterByMaterial = [];
+                if(material >= 0){
+                     savedFilter.splice(parseInt(material),parseInt(savedFilter.length)) }
             }
-            this.clearAllOption();
+
+            localStorage.setItem('fillters',JSON.stringify(savedFilter))
+            this.fetchProdustQuery()
+            this.clearAllOption()
+            
         },
 
         /* clear option that selected in drop down under particular option */
@@ -757,6 +799,7 @@ export default {
                 }).indexOf("Color");
 
                 item[0].variants.map((col) => {
+                   
                     array.push(col["option" + (index + 1)].toUpperCase());
                 });
             });
@@ -794,7 +837,11 @@ export default {
                 }).indexOf("Size");
 
                 item[0].variants.map((col) => {
-                    array.push(col["option" + (index + 1)]);
+                     var size = ['XS','S','M','L','Xl','Xxl','Xxxl','Xxs','Xl','XXL','XXXL','XXS','XL']
+                    if(size.includes(col["option" + (index + 1)])) { return }else{
+                        array.push(col["option" + (index + 1)]);
+                    }
+                    
                 });
             });
 

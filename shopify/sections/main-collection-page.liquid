@@ -1,7 +1,12 @@
 {% paginate collection.products by 200 %}
 {% capture products %}  
         [{% for product in collection.products %}
-                [{{ product | json }},{{ product.metafields.my_fields | json }}]{% if forloop.last %}
+                {% capture variantsList %} 
+                    {% for variant in product.variants %}
+                        {"{{- variant.id -}}":"{{ variant.inventory_quantity }}"}{% if forloop.last %}{% else %},{% endif %}
+                    {% endfor %}
+                {% endcapture %}
+                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}}]{% if forloop.last %}
                 {% else %},{% endif %}
         {% endfor %}]    
     {% endcapture %}
