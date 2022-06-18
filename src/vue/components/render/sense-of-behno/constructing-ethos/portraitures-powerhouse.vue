@@ -16,7 +16,7 @@
         <div class="sec_img">
           <a  :href=(shopifyData.ctaLink) class="grid_img-wrap line-h-0 d-block" >
             <template v-if="shopifyData.checkbox === 'true'">
-              <video width="340" height="604" controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" webkit-playsinline="true" playsinline="true"  preload="none" >
+              <video width="340" height="604" controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true"  preload="none" >
                 <source :src=(shopifyData.videoLink) >
               </video>
             </template>

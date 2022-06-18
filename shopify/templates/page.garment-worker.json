@@ -214,8 +214,7 @@
       "settings": {
         "secHeading": "An Ethical Way. The only way.",
         "secInfo": "A documentary film by Kent Mathews.",
-        "checkImage": true,
-        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+        "checkImage": true
       }
     },
     "garment-behind-scenes": {
@@ -267,6 +266,7 @@
       "settings": {
         "secHeading": "Behind the scenes (and the people).",
         "secInfo": "BTS with Dan Smith and Kent Mathews as they spend time at MSA Ethos.",
+        "mobileCaption": "(From left to right). Kent Mathews and Dan Smith at MSA Ethos.",
         "checkImage": true,
         "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c22fa8072e994b719118c9b90421c4a1.mp4"
       }

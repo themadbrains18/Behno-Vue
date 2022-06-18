@@ -4,7 +4,7 @@
     <h2 class="card_heading_b">{{ shopifyData.secHeading }}</h2>
     <div class="sec_content">
         <template v-if="shopifyData.checkbox === 'true'">
-            <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" webkit-playsinline="true" playsinline="true"  preload="none" >
+            <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true"  preload="none" >
                 <source :src=(shopifyData.videoLink) >
             </video>
         </template>

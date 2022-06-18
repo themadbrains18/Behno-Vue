@@ -78,6 +78,7 @@ export default {
 .sec_garment_grid_slider .swiper-slide img {
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .slider_img{
