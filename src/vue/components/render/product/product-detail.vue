@@ -1,5 +1,5 @@
 <template>
-    <section :data-id="(selectedProduct.id)" class="product_sec">
+    <section  class="product_sec">
         <div class="product_grid">
             <div class="product_grid_image line-h-0 modify-slider">
                 <swiper
@@ -44,7 +44,7 @@
                     </del>
                     ${{ selectedProduct.price / 100 }}
                 </h2>
-                <form @submit="onSubmit"  method="post" action="/cart/add" id="productForm">
+                <form @submit="onAddtoCart"  method="post" id="productForm">
                     <p class="after_pay">or 4 interest-free installments of $97.50 by<img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/afterpay.png?v=1653477636"></p>
                     <ul class="product_variant">
                         <li class="color_variant_wrap" v-for="(value, key) in this.variant" :key="key" @click="changePath(value.link)">
@@ -70,7 +70,7 @@
                     <p class="product_left subtitle_b" v-else-if="this.currentVariantQty <= 5">
                         ONLY {{ this.currentVariantQty }} LEFT
                     </p>
-                    <input name="id" :value="(selectedProduct.id)" type="hidden" />
+                    <input name="id" :value="(selectedProduct.variants[0].id)" type="hidden" />
                     <input min="1" type="number" id="quantity" name="quantity" value="1" hidden/>
                     <div class="add_cart_btn_wrap">
                         <button type="submit"  name="add" id="AddToCart" data-label="Add to bag" class="add_cart_btn cta_btn cta_btn-black">
@@ -671,10 +671,6 @@ export default {
     data() {
         let productReviewData = atob(this.shopifyData.productData.productReviewData);
         productReviewData = JSON.parse(productReviewData);
-        const form = document.getElementById('form');
-        // let productReview = atob(this.shopifyData.productData.productReview); 
-        // console.log("productReview",productReviewData)
-
         let variant = atob(this.shopifyData.productData.variant);
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
@@ -684,8 +680,6 @@ export default {
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
         let showProductReviewData = productReviewData.filter(item => item.link == currentUrl); 
-
-        // console.log(showProductReviewData.productReview);
         return {
             selectedSize:"",
             productReviewData,
@@ -709,26 +703,21 @@ export default {
         SwiperSlide
     },
     methods: {
-        onSubmit(e){
-            e.preventDefault()
-            
-        const form = document.getElementById('productForm');
-           console.log(form);
-           let formData = new FormData(form);
-           console.log(formData);
-           console.log(formData.id);
-           console.log(JSON.stringify(formData));
-           for (const [key, value] of formData) {
-                console.log(value);
-            }
-            // const requestOptions = {
-            //     method: "POST",
-            //     headers: { "Content-Type": "application/json" },
-            //     body: JSON.stringify({ title: "Vue POST Request Example" })
-            // };
-            // fetch("https://jsonplaceholder.typicode.com/posts", requestOptions)
-            //     .then(response => response.json())
-            //     .then(data => (this.postId = data.id));
+        onAddtoCart(e){
+            e.preventDefault();
+            fetch(window.Shopify.routes.root + "cart/add.js", {
+                method: 'POST', 
+                body: new FormData(e.target)
+            })
+            .then(response => {
+                if(response.status ==  200){
+                    alert("Item Add in cart");
+                }
+                else {
+                    alert("ther is some problem please try again later");
+                }
+            })
+            .catch(error => console.log("Add to Cart",error))
         },
         sizeSelect(size,type){
             let label= document.querySelector("#selectSize");
