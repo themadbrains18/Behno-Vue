@@ -1,5 +1,5 @@
 <template>
-    <section :data-id=(selectedProduct.id) class="product_sec">
+    <section :data-id="(selectedProduct.id)" class="product_sec">
         <div class="product_grid">
             <div class="product_grid_image line-h-0 modify-slider">
                 <swiper
@@ -44,14 +44,14 @@
                     </del>
                     ${{ selectedProduct.price / 100 }}
                 </h2>
-                <form  method="post">
+                <form @submit="onSubmit"  method="post" action="/cart/add" id="productForm">
                     <p class="after_pay">or 4 interest-free installments of $97.50 by<img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/afterpay.png?v=1653477636"></p>
                     <ul class="product_variant">
                         <li class="color_variant_wrap" v-for="(value, key) in this.variant" :key="key" @click="changePath(value.link)">
-                            <input type="radio" :name="value.name" :id="value.name" class="color_variant"
-                                :checked="currentUrl == value.link">
+                            <!-- <input type="radio" :name="value.name" :id="value.name" class="color_variant" :checked="currentUrl == value.link"> -->
+                            <input type="radio"  :id="value.name" class="color_variant" :checked="currentUrl == value.link">
                             <label class="color_variant_label" :for="value.name">
-                                <div class="tooltip">  {{ value.name.replace('_',' ') }} </div>
+                                <div class="tooltip">  {{ value.name.replace(/_/g,' ') }} </div>
                                 <img :src="(value.img)" alt="">
                             </label>
                         </li>
@@ -70,8 +70,10 @@
                     <p class="product_left subtitle_b" v-else-if="this.currentVariantQty <= 5">
                         ONLY {{ this.currentVariantQty }} LEFT
                     </p>
+                    <input name="id" :value="(selectedProduct.id)" type="hidden" />
+                    <input min="1" type="number" id="quantity" name="quantity" value="1" hidden/>
                     <div class="add_cart_btn_wrap">
-                        <button type="submit" class="add_cart_btn cta_btn cta_btn-black" name="addCart" id="addCart">
+                        <button type="submit"  name="add" id="AddToCart" data-label="Add to bag" class="add_cart_btn cta_btn cta_btn-black">
                             ADD TO BAG
                         </button>
                     </div>
@@ -137,18 +139,16 @@
                             </div>
                         </li>
                         <!-- Product REVIEWS  -->
-                        <li class="product_accordian" v-if="selectedProductDescription[4]">
+                        <li class="product_accordian" >
                             <button class="accodian d-flex w-100" @click="(event)=>{accordion(event)}">
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M19.8566 9.88412C19.8064 9.72961 19.6625 9.625 19.5 9.625C19.3375 9.625 19.1936 9.72961 19.1434 9.88412L16.8702 16.8803H9.51391C9.35145 16.8803 9.20746 16.9849 9.15726 17.1394C9.10706 17.2939 9.16205 17.4632 9.29349 17.5587L15.2448 21.8826L12.9716 28.8788C12.9214 29.0333 12.9764 29.2026 13.1078 29.2981C13.2393 29.3936 13.4172 29.3936 13.5487 29.2981L19.5 24.9742L25.4513 29.2981C25.5828 29.3936 25.7607 29.3936 25.8922 29.2981C26.0236 29.2026 26.0786 29.0333 26.0284 28.8788L23.7552 21.8826L29.7065 17.5587C29.8379 17.4632 29.8929 17.2939 29.8427 17.1394C29.7925 16.9849 29.6486 16.8803 29.4861 16.8803H22.1299L19.8566 9.88412Z" fill="white" stroke="black" stroke-width="0.75" stroke-linejoin="round"/>
                                     </svg>
                                     REVIEWS
                             </button>
-                            <div class="product_accordian_panel product_review">
-                                <ul>
-                                    <li v-html="productReview" style="height:440px;">
-                                    </li>
-                                </ul>
+                            <div class="product_accordian_panel" >
+                                <div class="product_review" v-html="this.showProductReviewData.productReview">
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -172,7 +172,9 @@
                     </swiper-slide>
                 </swiper>
             </div>
-            <span v-html="productReview"> </span>    
+
+
+            <span v-html="this.showProductReviewData.productReview"> </span>    
             
         </div>
     </section>
@@ -286,6 +288,8 @@
 
 .product_review{
     max-height: 440px!important;
+    overflow-y: scroll;
+    border-bottom: 0.5px solid #252525;
 }
 
 .product_accordian_panel>ul {
@@ -665,8 +669,12 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay, Pagination, Mousewheel, Thumbs } from "swiper";
 export default {
     data() {
-        console.log(atob(this.shopifyData.productData.productReview));
-        let productReview = atob(this.shopifyData.productData.productReview); 
+        let productReviewData = atob(this.shopifyData.productData.productReviewData);
+        productReviewData = JSON.parse(productReviewData);
+        const form = document.getElementById('form');
+        // let productReview = atob(this.shopifyData.productData.productReview); 
+        // console.log("productReview",productReviewData)
+
         let variant = atob(this.shopifyData.productData.variant);
         variant = JSON.parse(variant);
         let product = atob(this.shopifyData.productData.product);
@@ -675,9 +683,13 @@ export default {
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
+        let showProductReviewData = productReviewData.filter(item => item.link == currentUrl); 
+
+        // console.log(showProductReviewData.productReview);
         return {
             selectedSize:"",
-            productReview,
+            productReviewData,
+            showProductReviewData,
             variant,
             product,
             selectedProduct : filterProduct,
@@ -697,6 +709,27 @@ export default {
         SwiperSlide
     },
     methods: {
+        onSubmit(e){
+            e.preventDefault()
+            
+        const form = document.getElementById('productForm');
+           console.log(form);
+           let formData = new FormData(form);
+           console.log(formData);
+           console.log(formData.id);
+           console.log(JSON.stringify(formData));
+           for (const [key, value] of formData) {
+                console.log(value);
+            }
+            // const requestOptions = {
+            //     method: "POST",
+            //     headers: { "Content-Type": "application/json" },
+            //     body: JSON.stringify({ title: "Vue POST Request Example" })
+            // };
+            // fetch("https://jsonplaceholder.typicode.com/posts", requestOptions)
+            //     .then(response => response.json())
+            //     .then(data => (this.postId = data.id));
+        },
         sizeSelect(size,type){
             let label= document.querySelector("#selectSize");
             label.innerHTML=size;
@@ -711,6 +744,10 @@ export default {
         },
         changePath(link){
             let path = link.split('/products/')[1];
+            let selectedProductReviewData = this.productReviewData.filter(item => item.link == link)[0]; 
+            this.showProductReviewData = selectedProductReviewData;
+            console.log(this.showProductReviewData.productReview);
+            
             let filterVariant = this.variant.filter(item => item.link == link)[0]; // filter variant by current path
             this.selectedProduct = this.product.filter(item => item.handle == path)[0];
             this.currentUrl = link;
@@ -780,5 +817,6 @@ export default {
         };
     }
 };
+
 
 </script>
