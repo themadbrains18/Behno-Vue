@@ -16,8 +16,7 @@
                 </div>
             </div>
             <div class="product_cards tmb-md-none">
-                
-                <div class="card" v-for="(item, index) in shopifyData.productData.slice(4,8)" :key="index">
+                <div class="card" v-for="(item, index) in shopifyData.productData.slice(4)" :key="index">
                         <a :href=(item.product.productUrl)  :product-id=(item.product.productid) class="product_link" >
                             <img :src="item.product.productidImage"  />
                             <div class="product_info"> 
@@ -56,7 +55,7 @@
     }
     .product_cards{
         display: grid;
-        gap: 6px;
+        gap:34px 6px;
         justify-content: center;
         grid-template-columns: repeat(4,1fr);
     }
@@ -64,7 +63,7 @@
         display: block;    
     }
     .product_cards:not(:last-child){
-        padding-bottom: 54px;
+        padding-bottom: 34px;
     }
     .cta_link{
         margin-top: 30px;
@@ -173,6 +172,9 @@
 <script>
 
 export default {
+    data() {
+        console.log(this.shopifyData);
+    },
     props:{
         shopifyData:{
             type:Object,
