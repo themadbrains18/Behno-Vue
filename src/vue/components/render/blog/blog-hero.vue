@@ -16,7 +16,6 @@
 <script>
     export default {
         data(){
-            console.log(this.shopifyData)
             if(this.shopifyData.mode == 'true'){
                 document.body.classList.add("landscape");
             }

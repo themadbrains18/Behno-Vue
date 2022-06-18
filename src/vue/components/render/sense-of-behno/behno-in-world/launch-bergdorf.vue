@@ -41,7 +41,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> 
   </section>
   <!-- Garment Up-close End -->
 </template>
@@ -73,7 +73,12 @@ export default {
 };
 </script>
 
-<style >
+<style>
+.sec_launch_bergdoft .modify-slider .swiper-button-next{
+  background-color: transparent !important;
+}
+
+/* Responsive Breakpoints */
 @media screen and (max-width: 767px) {
   .sec_launch_bergdoft .swiper-button-next {
     right: -5px !important;

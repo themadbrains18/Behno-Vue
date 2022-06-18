@@ -19,7 +19,7 @@
                         <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
                     </div>
                     <template v-if="shopifyData.checkImage === 'true'">
-                        <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" webkit-playsinline="true" playsinline="true" preload="none" >
+                        <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
                             <source :src=(shopifyData.videolink) >
                         </video>
                     </template>

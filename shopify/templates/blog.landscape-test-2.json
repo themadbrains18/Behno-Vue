@@ -302,7 +302,7 @@
     "shop-all-bags": {
       "type": "shop-all-bags",
       "settings": {
-        "showProduct": true,
+        "showSection": true,
         "sectionHeading": "SHOP ALL FEATURED BAGS",
         "ProductList": [
           "the-softest-tee-mens-fitted-long-sleeve-black",
@@ -312,7 +312,18 @@
           "ana-flat-tote-crossbody-nappa-ruched-olive",
           "ana-flat-tote-crossbody-pebble-ruched-bordeaux",
           "ana-flat-tote-large-pebble-ruched-apricot",
-          "ana-flat-tote-large-pebble-ruched-black"
+          "ana-flat-tote-large-pebble-ruched-black",
+          "the-softest-tee-womens-fitted-long-sleeve-black",
+          "copy-of-the-softest-tee-womens-fitted-long-sleeve-white",
+          "the-softest-tee-womens-fitted-short-sleeve-black",
+          "the-softest-tee-womens-fitted-short-sleeve-white",
+          "alex-shoulder-bag-glossy-croc-balsamic",
+          "ana-flat-tote-crossbody-pebble-ruched-apricot",
+          "ana-flat-tote-crossbody-pebble-ruched-red",
+          "ana-flat-tote-large-pebble-ruched-bone",
+          "ana-flat-tote-large-pebble-ruched-red",
+          "anita-bari",
+          "ari-split-base-crossbody-nappa-olive"
         ],
         "addfeatureBagBtn": "QUICK ADD"
       }

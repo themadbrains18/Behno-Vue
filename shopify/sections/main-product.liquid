@@ -64,40 +64,18 @@
 [{{ pVariant }}]
 {% endcapture %}
 
-<!-- 
+
 {% capture productReview %}
   {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false, product: product %}
-{% endcapture %} -->
-  
-{% capture productReviewArry %}
-    {%- for image in images -%}
-    {% assign image_forloop = forloop.index  %}
-      {%- for link in links -%}
-        {%- if forloop.index == image_forloop -%}
-          {% assign handle = link | replace : '/products/', ''  %}
-          {% assign productData = all_products[handle] %}
-            {
-              `link` : `{{ link }}`,
-              `productReview`  : `{% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false, product: productData %}` 
-            }{% if forloop.last %}{% else %},{% endif %}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endfor -%}
+  <!-- {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %} -->
 {% endcapture %}
-
-
-{% capture productReviewData %}
-  [{{ productReviewArry  | replace: '"', "'"  | strip_newlines | replace: '`', '"' }}]
-{% endcapture %}  
-
 
 {% capture products %}
 {
   product :  `{{ productObj | base64_encode  }}`,
   variant : `{{ variantObj | base64_encode  }}`,
   productSeenIn : {{ productSeenIn }},
-  <!-- productReview : `{{ productReview | base64_encode }}`, -->
-  productReviewData : `{{ productReviewData | base64_encode }}`,
+  productReview : `{{ productReview | base64_encode }}`,
 }
 {% endcapture %}
 

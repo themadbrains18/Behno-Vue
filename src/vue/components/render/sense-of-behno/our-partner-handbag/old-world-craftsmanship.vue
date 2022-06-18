@@ -71,6 +71,12 @@
     width: 100%;
     margin: 0 0 0 auto;
 }
+.sec_heading{
+    line-height: 41px;
+}
+.card_heading_b{
+    line-height: 18px;
+}
 
 /* ===== RESPONSIVE BREAKPOINTS START ===== */
 @media screen and (max-width: 1290px) {
@@ -110,6 +116,9 @@
     }
     .sec_heading{
         overflow-wrap: break-word;
+    }
+    .sec_text {
+        padding: 0 21px;
     }
 }
 </style>

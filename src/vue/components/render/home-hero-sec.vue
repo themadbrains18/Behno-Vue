@@ -12,7 +12,6 @@
     <h1 class="main_heading heroheading_bottom">{{ shopifyData.subHeading }}</h1>
   </section>
 </template>
-
 <style scoped>
 /* index Hero sec */
 .hero_sec {
@@ -30,7 +29,7 @@
 
 @media only screen and (max-width: 767px) {
   .hero_sec {
-    padding: 50px 0px 70px;
+    padding: 50px 0px 30px;
   }
   .heroheading_bottom {
     transform: translateY(-35%);
@@ -49,7 +48,7 @@ export default {
     // Hero Heading Animation
     window.addEventListener("scroll",()=>{
       let heroSec = document.querySelector(".hero_sec");
-      let mainHeading = document.querySelectorAll(".main_heading");
+      let mainHeading = document.querySelectorAll(".hero_sec .main_heading");
       let heroSecHeight =  heroSec.getBoundingClientRect().height;
 
       let halfHeight = heroSecHeight / 1.2;

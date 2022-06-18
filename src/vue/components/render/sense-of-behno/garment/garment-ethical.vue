@@ -13,14 +13,15 @@
         </div>
         <div class="sec_img">
           <template v-if="shopifyData.checkImage === 'true'">
-            <video
-              controls autoplay="true" loop="true" muted="true"  controlsList="nodownload"
+            <!-- <video
+              controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture
               webkit-playsinline="true"
               playsinline="true"
               preload="none"
             >
               <source :src="shopifyData.videolink" />
-            </video>
+            </video> -->
+            <iframe src="https://www.youtube.com/embed/A6opxWqCCiM?autoplay=1&mute=1&loop=1&rel=0" title="YouTube video player" allow="autoplay"></iframe>
           </template>
           <template v-else>
             <img
@@ -67,6 +68,10 @@ iframe {
   width: 695px;
   height: 390px;
   border: none;
+}
+.sec_img iframe{
+    width: 100%;
+    height: 480px;
 }
 /* Resposive css Code */
 @media screen and (max-width: 1200px) {

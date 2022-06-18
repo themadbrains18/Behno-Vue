@@ -271,6 +271,7 @@
         left: 0;
         text-align: center;
         max-width: 160px;   
+        line-height: 41px;
     }
     .hero_img img {
         margin-bottom: 0;    

@@ -4,7 +4,7 @@
         <div class="big_container">
             <div class="sec_video">
                 <template v-if="shopifyData.checkImage === 'true'">
-                    <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" webkit-playsinline="true" playsinline="true" preload="none" >
+                    <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
                         <source :src=(shopifyData.videolink) />
                     </video>
                 </template>
