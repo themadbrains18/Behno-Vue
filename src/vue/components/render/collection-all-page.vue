@@ -320,7 +320,7 @@
                         {{ value.variable[value.active].title }}
                     </h5>
                     <h5 class="card-title bold product_price">
-                        $ {{ value.variable[value.active].compare_at_price }}
+                        $ {{ (value.variable[value.active].compare_at_price / 100).toFixed(2) }}
                     </h5>
                 </a>
 
@@ -748,8 +748,10 @@ export default {
                         markedCheckbox = document.getElementById(event.target.id);
                         markedCheckbox.checked = true;
                         this.sortObject = markedCheckbox;
-                        this.selectedSort.push(event.target.value);
-                        this.sortProduct();
+                        
+                        this.saveFilter("sort", event.target.value)
+                        this.page_index = 0;
+                        
                     }
                 } else {
                     checkbox.checked = false;
@@ -898,18 +900,27 @@ export default {
 
         /* sort product based on price low to high and vice-verse */
         sortProduct: function () {
-            if (this.selectedSort.length > 0) {
-                let obj = this.selectedSort[0];
-                this.productList.sort(function (a, b) {
+            let getSavedFilter = localStorage.getItem('fillters');
+            let savefiltr = JSON.parse(getSavedFilter);
+            if(savefiltr[0].hasOwnProperty('sort')){
+                let obj = savefiltr[0].hasOwnProperty('sort');
+                this.Products.sort(function (a, b) {
                     if (obj == "LowToHigh") {
-                        return a.variants[0].price - b.variants[0].price;
+                        if(a.hasOwnProperty('variable')){
+                            return a.variable[a.active].price - (b.variable!=undefined?b.variable[b.active].price:b.single.price);
+                        }
+                        if(a.hasOwnProperty('single')){
+                            return a.single.price - (b.single!=undefined?b.single.price:b.variable[b.active].price);
+                        }
+                        
                     } else if (obj == "HighToLow") {
-                        return b.variants[0].price - a.variants[0].price;
+                        return b.variable[b.active].price - a.variable[a.active].price;
                     } else if (obj == "Latest") {
-                        return new Date(b.created_at) - new Date(a.created_at);
+                        return new Date(b.variable[b.active].created_at) - new Date(a.variable[a.active].created_at);
                     }
                 });
             }
+            
         },
 
         /* set product in array based on selected category option */
@@ -1309,6 +1320,12 @@ export default {
             console.log(filterListing);
 
             this.Products = [...filterListing].slice(0, 100);
+
+            // let savefiltr = JSON.parse(getSavedFilter);
+
+            // if(savefiltr[0].hasOwnProperty('sort')){
+            //     this.sortProduct();
+            // }
         },
 
         randomIntFromInterval(min, max) {
