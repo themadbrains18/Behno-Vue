@@ -1321,7 +1321,6 @@ export default {
             console.log(filterListing);
 
             this.Products = [...filterListing].slice(0, 100);
-
             // let savefiltr = JSON.parse(getSavedFilter);
             // if(savefiltr[0].hasOwnProperty('sort')){
             //     this.sortProduct();
