@@ -39,7 +39,7 @@
                 disablepictureinpicture
                 webkit-playsinline="true"
                 playsinline="true"
-preload="none"
+                preload="none"
               >
                 <source :src="(shopifyData.videoLink)">
               </video>
