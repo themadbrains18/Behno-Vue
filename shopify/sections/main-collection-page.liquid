@@ -1,0 +1,129 @@
+{% paginate collection.products by 200 %}
+{% capture products %}  
+        [{% for product in collection.products %}
+                {% capture variantsList %} 
+                    {% for variant in product.variants %}
+                        {"{{- variant.id -}}":"{{ variant.inventory_quantity }}"}{% if forloop.last %}{% else %},{% endif %}
+                    {% endfor %}
+                {% endcapture %}
+                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}}]{% if forloop.last %}
+                {% else %},{% endif %}
+        {% endfor %}]    
+    {% endcapture %}
+{% endpaginate %}
+
+
+<render-collection-all-page :shopify-data="{
+    filterDropdownTextResponsive: '{{ section.settings.filterDropdownTextResponsive }}',
+    categoriesDropdownText: '{{ section.settings.categoriesDropdownText }}',
+    colorDropdownText: '{{ section.settings.colorDropdownText }}',
+    sizeDropdownText: '{{ section.settings.sizeDropdownText }}',
+    materialDropdownText: '{{ section.settings.materialDropdownText }}',
+    sortByDropdownText: '{{ section.settings.sortByDropdownText }}',
+    secBottomheading: '{{ section.settings.secBottomheading }}',
+    secBottomInfo: '{{ section.settings.secBottomBrief }}',
+    applyFilterCta: '{{ section.settings.applyFilterCta }}',
+    sortByDropdownTextResponsive: '{{ section.settings.sortByDropdownTextResponsive }}',
+    filterinnerResponsive: '{{ section.settings.filterinnerResponsive }}',
+    sortinnerResponsive: '{{ section.settings.sortinnerResponsive }}',
+    collectionListing : '{{ products | base64_encode }}'
+}">
+
+</render-collection-all-page>
+
+
+
+{% schema %}
+{
+"name":"Main Collection",
+"settings":[
+    {
+        "id":"filterDropdownTextResponsive",
+        "label":"Filter Button Dropdown Text For Mobile",
+        "type":"text",
+        "default":"FILTER"
+    },
+    {
+        "id":"secBottomheading",
+        "label":"Section Bottom Heading",
+        "type":"text",
+        "default":"We are working to redefine sustainability and ethics in fashion."
+    },
+    {
+        "id":"secBottomBrief",
+        "label":"Section Bottom Info",
+        "type":"text",
+        "default":"Each behno piece is handcrafted in facilities incrementally implementing The behno Standard, a set of six guiding principles:"
+    },
+    {
+        "id":"categoriesDropdownText",
+        "label":"Categories Button Dropdown Text",
+        "type":"text",
+        "default":"Categories"
+    },
+    {
+        "id":"applyFilterCta",
+        "label":"Categories Button Dropdown Text",
+        "type":"text",
+        "default":"APPLY FILTERS"
+    },
+    {
+        "id":"colorDropdownText",
+        "label":"Color Button Dropdown Text",
+        "type":"text",
+        "default":"Color"
+    },
+    {
+        "id":"sizeDropdownText",
+        "label":"Size Button Dropdown Text",
+        "type":"text",
+        "default":" Size"
+    },
+    {
+        "id":"materialDropdownText",
+        "label":"Material Button Dropdown Text",
+        "type":"text",
+        "default":"Material"
+    },
+    {
+        "id":"sortByDropdownText",
+        "label":" Sort By Button Dropdown Text",
+        "type":"text",
+        "default":"Sort By"
+    },
+    {
+        "id":"sortByDropdownTextResponsive",
+        "label":" Sort By Button Dropdown Text For Mobile",
+        "type":"text",
+        "default":"SORT"
+    },
+    
+    {
+        "id":"filterinnerResponsive",
+        "label":"Filter Button in Filter Menu",
+        "type":"text",
+        "default":"FILTER"
+    },
+    {
+        "id":"sortinnerResponsive",
+        "label":"Sort By Button in Sort Menu",
+        "type":"text",
+        "default":"SORT"
+    }
+],
+"blocks":[
+    {
+        "type": "slide",
+        "name": "Fashion Image",
+            "settings":[
+                {
+                    "id":"secImg",
+                    "type":"image_picker",
+                    "label":"Section Image"
+                }
+        ]
+    }
+
+]
+}
+{% endschema %}
