@@ -5,18 +5,29 @@
       <nav class="navbar navbar-desktop">
         <!-- Toggle Button -->
         <div class="header_toggle_wrap">
-          <button type="button" class="header_toggle" @click="togleHeader">
-            <span class="toggle_bar toggle_bar-top"></span>
-            <span class="toggle_bar toggle_bar-center"></span>
-            <span class="toggle_bar toggle_bar-bottom"></span>
+          <button
+            type="button"
+            class="header_toggle"
+            @click="togleHeader"
+          >
+            <span class="toggle_bar toggle_bar-top" />
+            <span class="toggle_bar toggle_bar-center" />
+            <span class="toggle_bar toggle_bar-bottom" />
           </button>
         </div>
         <!-- left Navlist -->
         <ul class="navlist navlist-left">
           <li class="navitem first-navitem">
-            <a href="#" class="navlink navlink_drpdown" > HANDBAGS & WALLETS </a>
+            <a
+              href="#"
+              class="navlink navlink_drpdown"
+            > HANDBAGS & WALLETS </a>
             <!--  HANDBAGS & WALLETS Start -->
-            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
+            <div
+              class="navlink__hover"
+              @mouseenter="stopScroll"
+              @mouseleave="workScroll"
+            >
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item">
                   <ul class="subnavlink__list hover-img">
@@ -29,12 +40,18 @@
                       </a>
                     </li>
                     <li class="subnavlink__item">
-                      <a href="/collections/crossbody-bags" class="subnavlink">
+                      <a
+                        href="/collections/crossbody-bags"
+                        class="subnavlink"
+                      >
                         CROSSBODY BAGS
                       </a>
                     </li>
                     <li class="subnavlink__item">
-                      <a href="/collections/shoulder-bags" class="subnavlink">
+                      <a
+                        href="/collections/shoulder-bags"
+                        class="subnavlink"
+                      >
                         SHOULDER BAGS
                       </a>
                     </li>
@@ -47,12 +64,18 @@
                       </a>
                     </li>
                     <li class="subnavlink__item">
-                      <a href="/collections/top-handles" class="subnavlink">
+                      <a
+                        href="/collections/top-handles"
+                        class="subnavlink"
+                      >
                         TOP HANDLE BAGS
                       </a>
                     </li>
                     <li class="subnavlink__item">
-                      <a href="/collections/totes" class="subnavlink">
+                      <a
+                        href="/collections/totes"
+                        class="subnavlink"
+                      >
                         TOTE BAGS
                       </a>
                     </li>
@@ -65,7 +88,10 @@
                       </a>
                     </li>
                     <li class="subnavlink__item">
-                      <a href="/collections/new-arrivals" class="subnavlink">
+                      <a
+                        href="/collections/new-arrivals"
+                        class="subnavlink"
+                      >
                         NEW ARRIVALS
                       </a>
                       <a
@@ -74,7 +100,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/new_arrivals_SS22.jpg?v=1647023074"
-                        />
+                        >
                       </a>
                     </li>
                   </ul>
@@ -100,7 +126,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/Simone.jpg?v=1647023074"
-                        />
+                        >
                       </a>
                     </li>
 
@@ -118,7 +144,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/lex.jpg?v=1647023073"
-                        />
+                        >
                       </a>
                     </li>
 
@@ -136,7 +162,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/tilda.jpg?v=1647023074"
-                        />
+                        >
                       </a>
                     </li>
                   </ul>
@@ -162,7 +188,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/Ina_Mini_Crossbody_Pebble_Red_Front_HiRes_copy_2.jpg?v=1644008601"
-                        />
+                        >
                       </a>
                     </li>
 
@@ -180,7 +206,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/NORDSTROM_FW21_WHITE_BACKGROUND0205_copy_2.jpg?v=1644008600"
-                        />
+                        >
                       </a>
                     </li>
 
@@ -198,7 +224,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/Elizabeth_Baguette_Black_Front_41293_copy_2.jpg?v=1644008601"
-                        />
+                        >
                       </a>
                     </li>
 
@@ -216,7 +242,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/MARY_MINI_NAPPA_DEEP_RED_FRONT_41405-Edit_copy_2.jpg?v=1644008601"
-                        />
+                        >
                       </a>
                     </li>
 
@@ -234,7 +260,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/FRIDA_MED_GRASS_GREEN_copy_2.jpg?v=1644008601"
-                        />
+                        >
                       </a>
                     </li>
                   </ul>
@@ -247,7 +273,10 @@
                       </span>
                     </li>
                     <li class="subnavlink__item">
-                      <a href="/collections/ndss" class="subnavlink">
+                      <a
+                        href="/collections/ndss"
+                        class="subnavlink"
+                      >
                         NATIONAL DOWN SYNDROME SOCIETY x BEHNO
                       </a>
                     </li>
@@ -258,9 +287,16 @@
             <!--  HANDBAGS & WALLETS End -->
           </li>
           <li class="navitem">
-            <a href="#" class="navlink navlink_drpdown"> NANAMOTA BASICS </a>
+            <a
+              href="#"
+              class="navlink navlink_drpdown"
+            > NANAMOTA BASICS </a>
             <!--NANAMOTA  Start -->
-            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
+            <div
+              class="navlink__hover"
+              @mouseenter="stopScroll"
+              @mouseleave="workScroll"
+            >
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item">
                   <ul class="subnavlink__list hover-img">
@@ -277,7 +313,7 @@
                       >
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/cloud.jpg?v=1621614772"
-                        />
+                        >
                       </a>
                     </li>
                     <li class="subnavlink__item">
@@ -313,7 +349,7 @@
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505"
                           alt=""
-                        />
+                        >
                         <a
                           href="/pages/nanamota-the-worlds-softest-basics"
                           class="nanamoto-basics-crd-txt"
@@ -332,23 +368,39 @@
             <!--NANAMOTA End  -->
           </li>
           <li class="navitem">
-            <a href="#" class="navlink"> SALE </a>
+            <a
+              href="#"
+              class="navlink"
+            > SALE </a>
           </li>
         </ul>
 
         <!-- Header logo -->
         <div class="logo_wrap line-h-0">
-          <a class="logo d-inline-block" href="/">
-            <v-lazy-image :src=(shopifyData.logo) alt="Logo" />
+          <a
+            class="logo d-inline-block"
+            href="/"
+          >
+            <v-lazy-image
+              :src="(shopifyData.logo)"
+              alt="Logo"
+            />
           </a>
         </div>
 
         <!-- Rigth Navlist -->
         <ul class="navlist navlist-right">
           <li class="navitem">
-            <a href="#" class="navlink navlink_drpdown" > CLIENT SERVICES </a>
+            <a
+              href="#"
+              class="navlink navlink_drpdown"
+            > CLIENT SERVICES </a>
             <!-- CLIENT SERVICES Start -->
-            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
+            <div
+              class="navlink__hover"
+              @mouseenter="stopScroll"
+              @mouseleave="workScroll"
+            >
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item">
                   <ul class="subnavlink__list">
@@ -400,9 +452,16 @@
             <!-- CLIENT SERVICES End -->
           </li>
           <li class="navitem">
-            <a href="#" class="navlink navlink_drpdown" > THE SENSE OF BEHNO </a>
+            <a
+              href="#"
+              class="navlink navlink_drpdown"
+            > THE SENSE OF BEHNO </a>
             <!-- THE SENSE OF BEHNO Start -->
-            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
+            <div
+              class="navlink__hover"
+              @mouseenter="stopScroll"
+              @mouseleave="workScroll"
+            >
               <ul class="navink__hover_list">
                 <!-- ===   ON hover Class Show First row ===  -->
                 <li class="navlink__hover_item">
@@ -459,7 +518,7 @@
                         <img
                           src="https://cdn.shopify.com/s/files/1/1000/3130/files/the-sense-of-behno.png?v=1621617767"
                           alt=""
-                        />
+                        >
                       </a>
                     </li>
                   </ul>
@@ -472,10 +531,19 @@
           <li class="desktop_btn_grp">
             <div class="nav_btns">
               <button class="search_btn">
-                <v-lazy-image :src=(shopifyData.search)  alt="Search Icon" />
+                <v-lazy-image
+                  :src="(shopifyData.search)"
+                  alt="Search Icon"
+                />
               </button>
-              <a  class="shopping_btn" @click="show = !show">
-                <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
+              <a
+                class="shopping_btn"
+                @click="show = !show"
+              >
+                <v-lazy-image
+                  :src="(shopifyData.bag)"
+                  alt="Shopping Icon"
+                />
 
                 <span class="shopping_btn_count">0</span>
               </a>
@@ -487,10 +555,19 @@
         <div class="mobile_btn_grp">
           <div class="nav_btns">
             <button class="search_btn">
-              <v-lazy-image :src=(shopifyData.search) alt="Search Icon" />
+              <v-lazy-image
+                :src="(shopifyData.search)"
+                alt="Search Icon"
+              />
             </button>
-            <button class="shopping_btn" @click="show = !show" >
-              <v-lazy-image :src=(shopifyData.bag)  alt="Shopping Icon" />
+            <button
+              class="shopping_btn"
+              @click="show = !show"
+            >
+              <v-lazy-image
+                :src="(shopifyData.bag)"
+                alt="Shopping Icon"
+              />
               <span class="shopping_btn_count">0</span>
             </button>
           </div>
@@ -513,7 +590,10 @@
             <ul class="m_drpdown_list">
               <!--  sub nav link  -->
               <li class="m_drpdown_item">
-                <a href="#" class="subnavlink"> SHOP ALL </a>
+                <a
+                  href="#"
+                  class="subnavlink"
+                > SHOP ALL </a>
               </li>
               <!--  sub nav link  -->
               <li class="m_drpdown_item">
@@ -526,19 +606,34 @@
                 <div class="nav_drpbtn_content">
                   <ul class="m_subnavlink_list">
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> CROSSBODY BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > CROSSBODY BAGS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> SHOULDER BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > SHOULDER BAGS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> MINI BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > MINI BAGS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> TOP HANDLES</a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > TOP HANDLES</a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> TOTE BAGS</a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > TOTE BAGS</a>
                     </li>
                   </ul>
                 </div>
@@ -554,13 +649,22 @@
                 <div class="nav_drpbtn_content">
                   <ul class="m_subnavlink_list">
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> SIMONE FLAP CROSSBODIES </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > SIMONE FLAP CROSSBODIES </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> LEX ACCORDIONS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > LEX ACCORDIONS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> TILDA SADDLE BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > TILDA SADDLE BAGS </a>
                     </li>
                   </ul>
                 </div>
@@ -579,7 +683,10 @@
             <ul class="m_drpdown_list">
               <!--  sub nav link  -->
               <li class="m_drpdown_item">
-                <a href="#" class="subnavlink"> SHOP ALL </a>
+                <a
+                  href="#"
+                  class="subnavlink"
+                > SHOP ALL </a>
               </li>
               <!--  sub nav link  -->
               <li class="m_drpdown_item">
@@ -592,19 +699,34 @@
                 <div class="nav_drpbtn_content">
                   <ul class="m_subnavlink_list">
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> CROSSBODY BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > CROSSBODY BAGS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> SHOULDER BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > SHOULDER BAGS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> MINI BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > MINI BAGS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> TOP HANDLES</a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > TOP HANDLES</a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> TOTE BAGS</a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > TOTE BAGS</a>
                     </li>
                   </ul>
                 </div>
@@ -620,13 +742,22 @@
                 <div class="nav_drpbtn_content">
                   <ul class="m_subnavlink_list">
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> SIMONE FLAP CROSSBODIES </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > SIMONE FLAP CROSSBODIES </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> LEX ACCORDIONS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > LEX ACCORDIONS </a>
                     </li>
                     <li class="m_subnavlink_item">
-                      <a href="#" class="navlink"> TILDA SADDLE BAGS </a>
+                      <a
+                        href="#"
+                        class="navlink"
+                      > TILDA SADDLE BAGS </a>
                     </li>
                   </ul>
                 </div>
@@ -641,59 +772,216 @@
 
   <!-- ====== Shoping Mini Cart ====== -->
   <section class="mini_cart">
-      <div class="mini_cart_container" :class="{ active: !show }">
-          <div class="mini_cart-header">
-              <h3>YOUR BAG</h3>
-              <button id="remove-btn" @click="show = !show">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 48 48" fill="none">
-                      <path d="M11.8861 11.8865L35.6587 35.6591" stroke="#656565" stroke-width="1.5"/>
-                      <path d="M11.8861 35.6587L35.6587 11.8861" stroke="#656565" stroke-width="1.5"/>
-                  </svg>
-              </button>
-          </div>
-          <div>
-          <span class="brk_line"></span>
-         
-          <!-- if card is not empty  -->
-          <div id="mini_cart_content">
-              
-          </div>
-         
-          <!-- if cart is empty  -->
-          <div class="if_cart_is_empty">
-              <p>Your bag is empty.</p>
-          </div>
-
-          </div>
-          
-          <div class="mini_cart-payment">
-            <span class="brk_line"></span>
-              <div class="sec_right">
-                  <div class="sec_right_inner">
-                      <h4 class="subtotal_heading">SUBTOTAL</h4>
-                      <p class="subtotal_price body_text">$1,080</p>      
-                      <p class="body_text">Excluding tax & shipping</p>
-                      <p class="body_text text-mdifier">or 4 interest payments of $270 with </p>
-                      <div class="logo_wrapper">
-                          <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076" alt="error">
-                          <p class="body_text">ⓘ</p>
-                      </div>      
-                  </div>
-              </div>
-              <div class="mini_shopping_cart">
-                  <a href="/cart" class="shp_cart">View shopping cart</a>
-              </div> 
-          </div>
+    <div
+      class="mini_cart_container"
+      :class="{ active: !show }"
+    >
+      <div class="mini_cart-header">
+        <h3>YOUR BAG</h3>
+        <button
+          id="remove-btn"
+          @click="show = !show"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            viewBox="0 0 48 48"
+            fill="none"
+          >
+            <path
+              d="M11.8861 11.8865L35.6587 35.6591"
+              stroke="#656565"
+              stroke-width="1.5"
+            />
+            <path
+              d="M11.8861 35.6587L35.6587 11.8861"
+              stroke="#656565"
+              stroke-width="1.5"
+            />
+          </svg>
+        </button>
       </div>
-      <div class="mini-add-card"  :class="{ active: !show }">   
-          <a href="/checkout" class="add-card-chk">CHECKOUT</a>
-      </div> 
-  
-      
+      <div>
+        <span class="brk_line" />
+         
+        <!-- if card is not empty  -->
+        <div id="mini_cart_content" />
+         
+        <!-- if cart is empty  -->
+        <div class="if_cart_is_empty">
+          <p>Your bag is empty.</p>
+        </div>
+      </div>
+          
+      <div class="mini_cart-payment">
+        <span class="brk_line" />
+        <div class="sec_right">
+          <div class="sec_right_inner">
+            <h4 class="subtotal_heading">
+              SUBTOTAL
+            </h4>
+            <p class="subtotal_price body_text">
+              $1,080
+            </p>      
+            <p class="body_text">
+              Excluding tax & shipping
+            </p>
+            <p class="body_text text-mdifier">
+              or 4 interest payments of $270 with
+            </p>
+            <div class="logo_wrapper">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076"
+                alt="error"
+              >
+              <p class="body_text">
+                ⓘ
+              </p>
+            </div>      
+          </div>
+        </div>
+        <div class="mini_shopping_cart">
+          <a
+            href="/cart"
+            class="shp_cart"
+          >View shopping cart</a>
+        </div> 
+      </div>
+    </div>
+    <div
+      class="mini-add-card"
+      :class="{ active: !show }"
+    >   
+      <a
+        href="/checkout"
+        class="add-card-chk"
+      >CHECKOUT</a>
+    </div>
   </section>
-
 </template>
 
+
+<script>
+import { ShopifyAPI } from "../../Shopify/Shopify"
+
+import VLazyImage from "v-lazy-image";
+
+export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+  data() {
+    window.addEventListener("scroll", this.scollHeader);
+    return {
+      lastScrollY: 100,
+      show: true
+    };
+  },
+  created: function () {
+    this.header = document.getElementsByClassName("tmbHeader");   
+  },
+  mounted (){
+      this.refreshMiniCart()
+  },
+ 
+  methods: {
+    refreshMiniCart(){
+        var refreshCart = new ShopifyAPI()
+        refreshCart.refreshMiniCart();
+    },
+    togleHeader() {
+      if(document.body.getAttribute("style")){
+        document.body.removeAttribute("style");
+      }else{
+        document.body.setAttribute("style","overflow:hidden;")
+      }
+      this.header[0].classList.toggle("active");
+    },
+
+    toggleDropDown(e) {
+      if (e.currentTarget.matches(".subnavlink")) {
+        let parentElement = e.currentTarget.closest(".nav_drpbtn_content");
+        let currentElement = e.currentTarget.nextElementSibling;
+        if (e.currentTarget.matches(".active")) {
+          parentElement.setAttribute(
+            "style",
+            `height: ${
+              parentElement.offsetHeight - currentElement.scrollHeight
+            }px;`
+          );
+        } else {
+          parentElement.setAttribute(
+            "style",
+            `height: ${
+              parentElement.offsetHeight + currentElement.scrollHeight
+            }px;`
+          );
+        }
+      }
+      if (e.currentTarget.matches(".active")) {
+        e.currentTarget.nextElementSibling.removeAttribute("style");
+      } else {
+        e.currentTarget.nextElementSibling.setAttribute(
+          "style",
+          `height:${e.currentTarget.nextElementSibling.scrollHeight}px;`
+        );
+      }
+      e.currentTarget.classList.toggle("active");
+    },
+    
+    scollHeader(e) {
+      if (window.scrollY >= this.lastScrollY) {
+        this.header[0].classList.add("stickyup");
+      } else {
+        this.header[0].classList.remove("stickyup");
+      }
+
+      if(window.scrollY >= 100){
+        this.lastScrollY = window.scrollY;
+      }
+    },
+
+    subnavlinkHover(e) {
+      let alreadyActive = e.currentTarget
+        .closest(".subnavlink__list")
+        .querySelector(".hover_active");
+      if (alreadyActive) {
+        alreadyActive.classList.remove("hover_active");
+      }
+      e.currentTarget.classList.add("hover_active");
+    },
+
+    stopScroll(e){
+        const bodyWidth = document.body.offsetWidth;  
+        document.body.setAttribute("style", `overflow:hidden;`);
+        if(e.currentTarget.closest(".navlist-right")){
+          e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
+        }
+        this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
+        document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
+    },
+    workScroll(e){
+       if(e.currentTarget.closest(".navlist-right")){
+        e.currentTarget.removeAttribute("style");  
+      }
+      this.header[0].removeAttribute("style");
+      document.body.removeAttribute("style");
+    },
+
+    // toggle cart menu
+    // addActiveBody:function(e){
+    //     console.log("qwer");
+    // }
+  }
+};
+</script>
 
 <style >
 button.behno_increment_dec {
@@ -934,6 +1222,7 @@ button.behno_increment_dec:after {
 
 
 </style>
+
 
 <style scoped>
 .header_toggle_wrap,
@@ -1289,125 +1578,3 @@ button.behno_increment_dec:after {
   }
 } 
 </style>
-
-
-<script>
-import { ShopifyAPI } from "../../Shopify/Shopify"
-
-import VLazyImage from "v-lazy-image";
-
-export default {
-  components: {
-    VLazyImage,
-  },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    },
-  },
-  created: function () {
-    this.header = document.getElementsByClassName("tmbHeader");   
-  },
-  data() {
-    window.addEventListener("scroll", this.scollHeader);
-    return {
-      lastScrollY: 100,
-      show: true
-    };
-  },
-  mounted (){
-      this.refreshMiniCart()
-  },
- 
-  methods: {
-    refreshMiniCart(){
-        var refreshCart = new ShopifyAPI()
-        refreshCart.refreshMiniCart();
-    },
-    togleHeader() {
-      if(document.body.getAttribute("style")){
-        document.body.removeAttribute("style");
-      }else{
-        document.body.setAttribute("style","overflow:hidden;")
-      }
-      this.header[0].classList.toggle("active");
-    },
-
-    toggleDropDown(e) {
-      if (e.currentTarget.matches(".subnavlink")) {
-        let parentElement = e.currentTarget.closest(".nav_drpbtn_content");
-        let currentElement = e.currentTarget.nextElementSibling;
-        if (e.currentTarget.matches(".active")) {
-          parentElement.setAttribute(
-            "style",
-            `height: ${
-              parentElement.offsetHeight - currentElement.scrollHeight
-            }px;`
-          );
-        } else {
-          parentElement.setAttribute(
-            "style",
-            `height: ${
-              parentElement.offsetHeight + currentElement.scrollHeight
-            }px;`
-          );
-        }
-      }
-      if (e.currentTarget.matches(".active")) {
-        e.currentTarget.nextElementSibling.removeAttribute("style");
-      } else {
-        e.currentTarget.nextElementSibling.setAttribute(
-          "style",
-          `height:${e.currentTarget.nextElementSibling.scrollHeight}px;`
-        );
-      }
-      e.currentTarget.classList.toggle("active");
-    },
-    
-    scollHeader(e) {
-      if (window.scrollY >= this.lastScrollY) {
-        this.header[0].classList.add("stickyup");
-      } else {
-        this.header[0].classList.remove("stickyup");
-      }
-
-      if(window.scrollY >= 100){
-        this.lastScrollY = window.scrollY;
-      }
-    },
-
-    subnavlinkHover(e) {
-      let alreadyActive = e.currentTarget
-        .closest(".subnavlink__list")
-        .querySelector(".hover_active");
-      if (alreadyActive) {
-        alreadyActive.classList.remove("hover_active");
-      }
-      e.currentTarget.classList.add("hover_active");
-    },
-
-    stopScroll(e){
-        const bodyWidth = document.body.offsetWidth;  
-        document.body.setAttribute("style", `overflow:hidden;`);
-        if(e.currentTarget.closest(".navlist-right")){
-          e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
-        }
-        this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
-        document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
-    },
-    workScroll(e){
-       if(e.currentTarget.closest(".navlist-right")){
-        e.currentTarget.removeAttribute("style");  
-      }
-      this.header[0].removeAttribute("style");
-      document.body.removeAttribute("style");
-    },
-
-    // toggle cart menu
-    // addActiveBody:function(e){
-    //     console.log("qwer");
-    // }
-  }
-};
-</script>

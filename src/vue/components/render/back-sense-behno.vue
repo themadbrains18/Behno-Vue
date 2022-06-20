@@ -1,8 +1,22 @@
 <template>
-    <a class="back_sense_behno samll_text" :href=(shopifyData.link)>
-      {{ shopifyData.ctaText }}
-    </a> 
+  <a
+    class="back_sense_behno samll_text"
+    :href="(shopifyData.link)"
+  >
+    {{ shopifyData.ctaText }}
+  </a> 
 </template>
+
+<script>
+export default  {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  }
+}
+</script>
 
 <style scoped>
 .back_sense_behno{
@@ -27,14 +41,3 @@
   } 
 }
 </style>
-
-<script>
-export default  {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    },
-  }
-}
-</script>

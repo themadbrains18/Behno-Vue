@@ -1,57 +1,98 @@
 -<template>
-
-    <!-- Section Garment Behind Scenes  Start -->
-    <section class="sec_behind_scenes">
-        <div class="big_container">
-            <div class="sec_head">          
-                <h2 class="sec_heading">
-                    {{ shopifyData.secHeading }}
-                </h2>
-                <p class="body_text">
-                    {{ shopifyData.secInfo }}
-                </p>
+  <!-- Section Garment Behind Scenes  Start -->
+  <section class="sec_behind_scenes">
+    <div class="big_container">
+      <div class="sec_head">          
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <p class="body_text">
+          {{ shopifyData.secInfo }}
+        </p>
+      </div>
+      <div class="sec_content">
+        <div class="sec_content_inner">
+          <div class="sec_img">
+            <div class="top_images">
+              <template v-if="shopifyData.collageData[0]"> 
+                <img
+                  class="item1"
+                  :src="(shopifyData.collageData[0].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[0].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[0].imgUrl.alt)"
+                >
+              </template>
+              <template v-if="shopifyData.collageData[1]"> 
+                <img
+                  class="item2"
+                  :src="(shopifyData.collageData[1].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[1].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[1].imgUrl.alt)"
+                >
+              </template>
             </div>
-            <div class="sec_content">
-                <div class="sec_content_inner">
-                    <div class="sec_img">
-                        <div class="top_images">
-                            <template v-if="shopifyData.collageData[0]"> 
-                                <img class="item1" :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
-                            </template>
-                            <template v-if="shopifyData.collageData[1]"> 
-                                <img class="item2" :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
-                            </template>
-                        </div>
-                        <div class="bottom_images">
-                            <div class="img_caption" v-if="shopifyData.collageData[2]"> 
-                                <img class="item3" :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
-                            </div>
-                            <template v-if="shopifyData.collageData[3]">
-                                <img class="item4" :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
-                            </template>
-                            <template v-if="shopifyData.collageData[4]">
-                                <img class="item5" :src=(shopifyData.collageData[4].imgUrl.src) :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)  :alt=(shopifyData.collageData[4].imgUrl.alt)>
-                            </template>
-                        </div>
-                    </div>
-                </div>
-                    <div class="sec_video">
-                         <template v-if="shopifyData.checkImage === 'true'">
-                            <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
-                                <source :src=(shopifyData.videolink) >
-                            </video>
-                        </template>
-                        <template v-else>
-                            <img  :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
-                        </template>    
-                    </div>
+            <div class="bottom_images">
+              <div
+                v-if="shopifyData.collageData[2]"
+                class="img_caption"
+              > 
+                <img
+                  class="item3"
+                  :src="(shopifyData.collageData[2].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[2].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[2].imgUrl.alt)"
+                >
+              </div>
+              <template v-if="shopifyData.collageData[3]">
+                <img
+                  class="item4"
+                  :src="(shopifyData.collageData[3].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[3].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[3].imgUrl.alt)"
+                >
+              </template>
+              <template v-if="shopifyData.collageData[4]">
+                <img
+                  class="item5"
+                  :src="(shopifyData.collageData[4].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[4].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[4].imgUrl.alt)"
+                >
+              </template>
             </div>
-            <p class="body_text body-modifier">
-               {{ shopifyData.mobileCaption }}
-            </p>
+          </div>
         </div>
-    </section>
-    <!-- Section Garment Behind Scenes  End -->
+        <div class="sec_video">
+          <template v-if="shopifyData.checkImage === 'true'">
+            <video
+              controls
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controlsList="nodownload"
+              disablepictureinpicture
+              webkit-playsinline="true"
+              playsinline="true"
+              preload="none"
+            >
+              <source :src="(shopifyData.videolink)">
+            </video>
+          </template>
+          <template v-else>
+            <img
+              :src="(shopifyData.imgUrl.src)"
+              :src-placeholder="(shopifyData.imgUrl.placeholder)"
+              :alt="(shopifyData.imgUrl.alt)"
+            >
+          </template>    
+        </div>
+      </div>
+      <p class="body_text body-modifier">
+        {{ shopifyData.mobileCaption }}
+      </p>
+    </div>
+  </section>
+  <!-- Section Garment Behind Scenes  End -->
 </template>
 
 <script>

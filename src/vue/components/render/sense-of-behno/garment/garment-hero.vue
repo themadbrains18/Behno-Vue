@@ -2,20 +2,34 @@
   <!-- Garment Hero Section Start -->
   <section class="sec_garment_hero">
     <div class="sec_content">
-        <h2 class="card_heading_b">
-            {{ shopifyData.secheading }}
-        </h2>
-        <h3 class="card_heading_b sec_heading">
-            {{ shopifyData.subheading }}
-        </h3>
-        <p class="body_text" v-for="(item, index) in shopifyData.para" :key="index">
-          {{ item.para }}
-        </p>
+      <h2 class="card_heading_b">
+        {{ shopifyData.secheading }}
+      </h2>
+      <h3 class="card_heading_b sec_heading">
+        {{ shopifyData.subheading }}
+      </h3>
+      <p
+        v-for="(item, index) in shopifyData.para"
+        :key="index"
+        class="body_text"
+      >
+        {{ item.para }}
+      </p>
     </div>
   </section>
   <!-- Garment Hero Section End -->
 </template>
 
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
 <style scoped>
 .sec_garment_hero {
   padding: 72px 0 120px;
@@ -58,13 +72,3 @@
 
 }
 </style>
-<script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

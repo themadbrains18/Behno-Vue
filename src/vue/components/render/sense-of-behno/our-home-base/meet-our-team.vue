@@ -4,14 +4,29 @@
     <div class="big_container">
       <div class="sec_content">
         <div class="sec_img">
-          <a :href=(shopifyData.link) >
-            <video width="" height="" controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline=""  playsinline="" preload="none">
-              <source  :src=(shopifyData.videoUrl)>
+          <a :href="(shopifyData.link)">
+            <video
+              width=""
+              height=""
+              controls
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controlsList="nodownload"
+              disablepictureinpicture
+              webkit-playsinline=""
+              playsinline=""
+preload="none"
+            >
+              <source :src="(shopifyData.videoUrl)">
             </video>
           </a>
         </div>
         <div class="sec_text">
-          <a :href=(shopifyData.link) class="cta_btn cta_btn-white">{{ shopifyData.ctaText }}</a>
+          <a
+            :href="(shopifyData.link)"
+            class="cta_btn cta_btn-white"
+          >{{ shopifyData.ctaText }}</a>
         </div>
       </div>
     </div>
@@ -19,6 +34,16 @@
 
   <!-- Section Garment Ethical End -->
 </template>
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  }
+};
+</script>
 <style scoped>
 .sec_meet_our_team {
   background: #000000;
@@ -78,14 +103,4 @@ iframe {
   }
 }
 </style>
-<script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    },
-  }
-};
-</script>
 

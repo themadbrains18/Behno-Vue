@@ -1,51 +1,108 @@
 <template>
-<div class="grid_inner" v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
-    <div class="product_item" v-for="product in productList" :key="product.id">
-        <div class="card"  v-if="product.images.length>0" @mouseenter="isMobile==false?productId=product.id:''" @mouseleave="cardmouseleave(product.id)"  >
-            <a :href="product.handle" >
-                <div class="item_left" v-bind:class="{ item_left_active: product.id == productId }" :id="'item_left_'+product.id">{{product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':''}}</div>
-                <div class="product_img_wrapper" :id="'product_img_wrapper'+product.id" v-bind:class="{ out_of_stock: product.variants[0].stock == 0 }">
-                    <img v-if="product.variants[0].featured_image!=null" :src="product.variants[0].featured_image.src" :id="product.id" />
-                    <img  :src="product.images[0].src" :id="product.id"
-                    @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
-                    @mouseleave="mouseleave($event, product.images[0].src)" v-else />
-                </div>  
-                <h5 class="card-title">{{ product.title }}</h5>
-                <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
-            </a>
-            <div class="quickButton" v-bind:class="{ quickActive: isMobile==false?product.id == productId:true }">
-                <div class="color_swatches">
-                    <ul>
-                        <li :key="color+index" class="nav-dots" v-for="(color,index) in product.options">
-                            <span v-if="color.name.toLowerCase().includes('color')">
-                                <template v-if="color.values.length <= 4 ">
-                                    <label for="img-1" :key="colors" class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" v-for="colors in color.values"></label>
-                                </template>
-                                <template v-else>
-                                    <swiper
-                                        :modules="modules"
-                                        :slidesPerView="4"
-                                        :slidesPerSlide="1"
-                                        navigation
-                                        >
-                                            <swiper-slide :key="colors" v-for="colors in color.values">
-                                                <label for="img-1"  class="nav-dot" :style="inlineBgImage(colors)" :id="'img-dot-'+product.id+colors" @click="(e)=>onSelectColor(colors,product,e)" ></label>
-                                            </swiper-slide>
-                                    </swiper>
-                                </template>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="product_cta_wrapper">
-                    <button :id="'quickAdd'+product.id" class="quickAdd" v-bind:class="{ quickAdd_deactive: product.variants[0].stock == 0 }" @click="addToCard(product)">
-                        <span>Quick Add</span>
-                    </button>
-                </div>
-            </div>
+  <div
+    class="grid_inner"
+    :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }"
+  >
+    <div
+      v-for="product in productList"
+      :key="product.id"
+      class="product_item"
+    >
+      <div
+        v-if="product.images.length>0"
+        class="card"
+        @mouseenter="isMobile==false?productId=product.id:''"
+        @mouseleave="cardmouseleave(product.id)"
+      >
+        <a :href="product.handle">
+          <div
+            :id="'item_left_'+product.id"
+            class="item_left"
+            :class="{ item_left_active: product.id == productId }"
+          >{{ product.variants[0].stock<=5 && product.variants[0].stock>=1?'ONLY '+ product.variants[0].stock +' LEFT':product.variants[0].stock==0?'Out Of Stock':'' }}</div>
+          <div
+            :id="'product_img_wrapper'+product.id"
+            class="product_img_wrapper"
+            :class="{ out_of_stock: product.variants[0].stock == 0 }"
+          >
+            <img
+              v-if="product.variants[0].featured_image!=null"
+              :id="product.id"
+              :src="product.variants[0].featured_image.src"
+            >
+            <img
+              v-else
+              :id="product.id"
+              :src="product.images[0].src"
+              @mouseenter="mouseover($event, product.images[product.images.length - 1].src)"
+              @mouseleave="mouseleave($event, product.images[0].src)"
+            >
+          </div>  
+          <h5 class="card-title">{{ product.title }}</h5>
+          <h5 class="card-title bold">${{ Math.floor(product.variants[0].price) }}</h5>
+        </a>
+        <div
+          class="quickButton"
+          :class="{ quickActive: isMobile==false?product.id == productId:true }"
+        >
+          <div class="color_swatches">
+            <ul>
+              <li
+                v-for="(color,index) in product.options"
+                :key="color+index"
+                class="nav-dots"
+              >
+                <span v-if="color.name.toLowerCase().includes('color')">
+                  <template v-if="color.values.length <= 4 ">
+                    <label
+                      v-for="colors in color.values"
+                      :id="'img-dot-'+product.id+colors"
+                      :key="colors"
+                      for="img-1"
+                      class="nav-dot"
+                      :style="inlineBgImage(colors)"
+                      @click="(e)=>onSelectColor(colors,product,e)"
+                    />
+                  </template>
+                  <template v-else>
+                    <swiper
+                      :modules="modules"
+                      :slides-per-view="4"
+                      :slides-per-slide="1"
+                      navigation
+                    >
+                      <swiper-slide
+                        v-for="colors in color.values"
+                        :key="colors"
+                      >
+                        <label
+                          :id="'img-dot-'+product.id+colors"
+                          for="img-1"
+                          class="nav-dot"
+                          :style="inlineBgImage(colors)"
+                          @click="(e)=>onSelectColor(colors,product,e)"
+                        />
+                      </swiper-slide>
+                    </swiper>
+                  </template>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="product_cta_wrapper">
+            <button
+              :id="'quickAdd'+product.id"
+              class="quickAdd"
+              :class="{ quickAdd_deactive: product.variants[0].stock == 0 }"
+              @click="addToCard(product)"
+            >
+              <span>Quick Add</span>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-    </div>    
+  </div>    
 </template>
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";

@@ -4,26 +4,37 @@
   <section class="gradient_carousel big_container modify-slider">
     <swiper
       :modules="modules"
-      :slidesPerView="'auto'"
-      :mousewheel= "{
-          invert: false,
-          releaseOnEdges: true
+      :slides-per-view="'auto'"
+      :mousewheel="{
+        invert: false,
+        releaseOnEdges: true
       }"
-      :spaceBetween="20"
+      :space-between="20"
       navigation
     >
-      <swiper-slide v-for="(value, key) in shopifyData.box" :key="key">
+      <swiper-slide
+        v-for="(value, key) in shopifyData.box"
+        :key="key"
+      >
         <div class="grid_item gradient_carousel_item">
-          <a :href=(value.link) class="grid_img-wrap line-h-0 d-block">
+          <a
+            :href="(value.link)"
+            class="grid_img-wrap line-h-0 d-block"
+          >
             <v-lazy-image
               class="grid_img"
-              :src=(value.imgUrl.src)
-              :src-placeholder=(value.imgUrl.placeholder)
-              :alt=(value.imgUrl.alt)
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.alt)"
             />
           </a>
-          <h3 class="card_heading grid_heading">{{ value.title }}</h3>
-          <a :href=(value.link) class="link body_text">
+          <h3 class="card_heading grid_heading">
+            {{ value.title }}
+          </h3>
+          <a
+            :href="(value.link)"
+            class="link body_text"
+          >
             {{ value.linkText }}
           </a>
         </div>
@@ -31,6 +42,32 @@
     </swiper>
   </section>
 </template>
+
+<script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Mousewheel} from "swiper";
+import VLazyImage from "v-lazy-image";
+
+export default {
+  components: {
+    VLazyImage,
+    Swiper,
+    SwiperSlide,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+  setup() {
+    return {
+      modules: [Navigation,Mousewheel],
+    };
+  }
+};
+</script>
+
 
 <style >
 /* Gradient Carousel Text */
@@ -62,29 +99,3 @@
   }
 }
 </style>
-
-
-<script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, Mousewheel} from "swiper";
-import VLazyImage from "v-lazy-image";
-
-export default {
-  components: {
-    VLazyImage,
-    Swiper,
-    SwiperSlide,
-  },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  },
-  setup() {
-    return {
-      modules: [Navigation,Mousewheel],
-    };
-  }
-};
-</script>

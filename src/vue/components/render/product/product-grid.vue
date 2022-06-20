@@ -1,32 +1,57 @@
 <template>
-    <section class="product_page_grid_wrap">
-        <div class="product_page_grid">
-            <div class="product_page_grid_item product_page_grid_item-first">
-                <img v-if=(shopifyData.metaFieldsData.img.src) :src=(shopifyData.metaFieldsData.img.src) :src-placeholder=(shopifyData.metaFieldsData.img.placeholder) :alt=(shopifyData.metaFieldsData.img.alt)>
-                <div class="product_page_grid_content">
-                    <h3 class="product_grid_heading subtitle_b" v-if=(shopifyData.metaFieldsData.gridLeftHeading)>
-                        {{  shopifyData.metaFieldsData.gridLeftHeading }}
-                    </h3>
-                    <p class="caption" v-if=(shopifyData.metaFieldsData.gridLeftPara)>
-                        {{  shopifyData.metaFieldsData.gridLeftPara }}
-                    </p>
-                </div>
-            </div>
-            <div class="product_page_grid_item product_page_grid_item-second">
-                <img :src=(shopifyData.RightGridImage.src) :src-placeholder=(shopifyData.RightGridImage.placeholder) :alt=(shopifyData.RightGridImage.alt)>
-                <div class="product_page_grid_content">
-                    <h3 class="product_grid_heading subtitle_b">
-                        {{  shopifyData.RightGridHeading }}
-                    </h3>
-                    <p class="caption">
-                        {{  shopifyData.RightGridpara }}
-                    </p>
-                </div>
-            </div>
+  <section class="product_page_grid_wrap">
+    <div class="product_page_grid">
+      <div class="product_page_grid_item product_page_grid_item-first">
+        <img
+          v-if="(shopifyData.metaFieldsData.img.src)"
+          :src="(shopifyData.metaFieldsData.img.src)"
+          :src-placeholder="(shopifyData.metaFieldsData.img.placeholder)"
+          :alt="(shopifyData.metaFieldsData.img.alt)"
+        >
+        <div class="product_page_grid_content">
+          <h3
+            v-if="(shopifyData.metaFieldsData.gridLeftHeading)"
+            class="product_grid_heading subtitle_b"
+          >
+            {{ shopifyData.metaFieldsData.gridLeftHeading }}
+          </h3>
+          <p
+            v-if="(shopifyData.metaFieldsData.gridLeftPara)"
+            class="caption"
+          >
+            {{ shopifyData.metaFieldsData.gridLeftPara }}
+          </p>
         </div>
-    </section>
+      </div>
+      <div class="product_page_grid_item product_page_grid_item-second">
+        <img
+          :src="(shopifyData.RightGridImage.src)"
+          :src-placeholder="(shopifyData.RightGridImage.placeholder)"
+          :alt="(shopifyData.RightGridImage.alt)"
+        >
+        <div class="product_page_grid_content">
+          <h3 class="product_grid_heading subtitle_b">
+            {{ shopifyData.RightGridHeading }}
+          </h3>
+          <p class="caption">
+            {{ shopifyData.RightGridpara }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
+<script>
+export default {
+    props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        }
+    }
+}
+</script>
 <style scoped>
     .product_page_grid_wrap{
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #E9E7E3 100%);
@@ -80,13 +105,3 @@
         }
     }
 </style>
-<script>
-export default {
-    props: {
-        shopifyData: {
-            type: Object,
-            required: true,
-        }
-    }
-}
-</script>

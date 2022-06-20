@@ -1,29 +1,44 @@
 <template>
-    <section class="banner_sec" v-if="shopifyData.checkSection=='true'">
-        <!-- Banner Content -->
-        <div class="banner_content">
-            <div class="banner_content">
-                <h1 class="banner_main_heading">{{ shopifyData.heroHeading }}</h1>
-                <div class="banner_img t-center">
-                    <img class="desktop_img" :src=(shopifyData.heroImgDesktop.src) :src-placeholder=(shopifyData.heroImgDesktop.placeholder) :alt=(shopifyData.heroImgDesktop.alt)  />
-                    <img class="mobile_img" :src=(shopifyData.heroImgMobile.src) :src-placeholder=(shopifyData.heroImgMobile.placeholder) :alt=(shopifyData.heroImgMobile.alt)>
-                </div>
-            </div>
+  <section
+    v-if="shopifyData.checkSection=='true'"
+    class="banner_sec"
+  >
+    <!-- Banner Content -->
+    <div class="banner_content">
+      <div class="banner_content">
+        <h1 class="banner_main_heading">
+          {{ shopifyData.heroHeading }}
+        </h1>
+        <div class="banner_img t-center">
+          <img
+            class="desktop_img"
+            :src="(shopifyData.heroImgDesktop.src)"
+            :src-placeholder="(shopifyData.heroImgDesktop.placeholder)"
+            :alt="(shopifyData.heroImgDesktop.alt)"
+          >
+          <img
+            class="mobile_img"
+            :src="(shopifyData.heroImgMobile.src)"
+            :src-placeholder="(shopifyData.heroImgMobile.placeholder)"
+            :alt="(shopifyData.heroImgMobile.alt)"
+          >
         </div>
-        <!-- gal -->
-    </section>
+      </div>
+    </div>
+    <!-- gal -->
+  </section>
 </template>
 <script>
     export default {
-        data(){
-            if(this.shopifyData.mode == 'true'){
-                document.body.classList.add("landscape");
-            }
-        },
         props:{
             shopifyData:{
                 type: Object,
                 required: true,
+            }
+        },
+        data(){
+            if(this.shopifyData.mode == 'true'){
+                document.body.classList.add("landscape");
             }
         }            
     }

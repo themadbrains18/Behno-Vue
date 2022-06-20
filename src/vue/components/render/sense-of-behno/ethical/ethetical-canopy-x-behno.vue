@@ -1,36 +1,56 @@
 <template>
-    <!-- ========== Section CANOPY x BEHNO Start ========== -->
-    <section class="sec_making_our_bags sec-canopy-x-behno">
-      <div class="container">
-        <h2 class="card_heading_b t-center sec-heading">{{ shopifyData.secheading }}</h2>
-        <div class="sec_content">
-          <!--    Section text  -->
-          <div class="sec_text">
-            <h2 class="sec_heading">{{ shopifyData.crdheading }}</h2>
-            <h4
-              class="card_heading_b"
-            >{{ shopifyData.crdSubHeading }}</h4>
+  <!-- ========== Section CANOPY x BEHNO Start ========== -->
+  <section class="sec_making_our_bags sec-canopy-x-behno">
+    <div class="container">
+      <h2 class="card_heading_b t-center sec-heading">
+        {{ shopifyData.secheading }}
+      </h2>
+      <div class="sec_content">
+        <!--    Section text  -->
+        <div class="sec_text">
+          <h2 class="sec_heading">
+            {{ shopifyData.crdheading }}
+          </h2>
+          <h4
+            class="card_heading_b"
+          >
+            {{ shopifyData.crdSubHeading }}
+          </h4>
             
-            <p class="body_text" v-for="(item, index) in shopifyData.para" :key="index">
-              {{ item.para }}
-            </p>
-            </div>
-          <!--    Section Image        -->
-          <div class="sec_img">
-            <img
-              :src=(shopifyData.imgUrl.src)
-              :src-placeholder=(shopifyData.imgUrl.placeholder)
-              :alt=(shopifyData.imgUrl.alt)
-            />
-          </div>
+          <p
+            v-for="(item, index) in shopifyData.para"
+            :key="index"
+            class="body_text"
+          >
+            {{ item.para }}
+          </p>
+        </div>
+        <!--    Section Image        -->
+        <div class="sec_img">
+          <img
+            :src="(shopifyData.imgUrl.src)"
+            :src-placeholder="(shopifyData.imgUrl.placeholder)"
+            :alt="(shopifyData.imgUrl.alt)"
+          >
         </div>
       </div>
-    </section>
-    <!-- ========== Section CANOPY x BEHNO End ========== -->
+    </div>
+  </section>
+  <!-- ========== Section CANOPY x BEHNO End ========== -->
 
-    <!-- ========== Back to The Sense of behno  ========== -->
-  
+  <!-- ========== Back to The Sense of behno  ========== -->
 </template>
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
+
 <style scoped>
 /* ========== Section Canopy X Behno Css Code Start ========== */
 .sec_making_our_bags.sec-canopy-x-behno {
@@ -133,14 +153,3 @@ margin-bottom:0px;
 
 /* ========== Section Canopy X Behno Css Code End ========== */
 </style>
-
-<script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

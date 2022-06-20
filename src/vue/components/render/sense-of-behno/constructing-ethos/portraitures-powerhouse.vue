@@ -5,32 +5,71 @@
       <div class="sec_content">
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="sec_heading"> {{ shopifyData.secHeading }}</h2>
-          <h4 class="card_heading_b">{{ shopifyData.subHeading }}</h4>
-          <p class="body_text">{{ shopifyData.secinfo }}</p>
+          <h2 class="sec_heading">
+            {{ shopifyData.secHeading }}
+          </h2>
+          <h4 class="card_heading_b">
+            {{ shopifyData.subHeading }}
+          </h4>
+          <p class="body_text">
+            {{ shopifyData.secinfo }}
+          </p>
           <div class="cta_wrapper">
-            <a :href=(shopifyData.ctaLink) class="cta_btn">{{ shopifyData.ctatext }}</a>
+            <a
+              :href="(shopifyData.ctaLink)"
+              class="cta_btn"
+            >{{ shopifyData.ctatext }}</a>
           </div>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
-          <a  :href=(shopifyData.ctaLink) class="grid_img-wrap line-h-0 d-block" >
+          <a
+            :href="(shopifyData.ctaLink)"
+            class="grid_img-wrap line-h-0 d-block"
+          >
             <template v-if="shopifyData.checkbox === 'true'">
-              <video width="340" height="604" controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true"  preload="none" >
-                <source :src=(shopifyData.videoLink) >
+              <video
+                width="340"
+                height="604"
+                controls
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controlsList="nodownload"
+                disablepictureinpicture
+                webkit-playsinline="true"
+                playsinline="true"
+preload="none"
+              >
+                <source :src="(shopifyData.videoLink)">
               </video>
             </template>
             <template v-else>
-              <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+              <img
+                :src="(shopifyData.imgUrl.src)"
+                :src-placeholder="(shopifyData.imgUrl.placeholder)"
+                :alt="(shopifyData.imgUrl.alt)"
+              >
             </template>
           </a>
         </div>
       </div>
     </div>
-    
   </section>
   <!-- ========== Section Forming real relationships End ========== -->
 </template>
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 
 <style scoped>
 /* ========== Section Forming real relationships Css Code Start  ========== */
@@ -149,15 +188,3 @@
 }
 /* ========== Section Forming real relationships Responsive Css Code End  ========== */
 </style>
-
-<script>
-
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>

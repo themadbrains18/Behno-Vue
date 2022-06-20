@@ -3,40 +3,52 @@
   <section class="sec_bit_about_ndss">
     <div class="big_container">
       <div class="sec_content">
-
-        <template v-for="(value, key) in shopifyData.gridImage" :key="key">
-            <div class="sec_img" v-if="key <= 4">
-                <img
-                  :src=(value.imgUrl.src)
-                  :src-placeholder=(value.imgUrl.placeholder)
-                  :alt=(value.imgUrl.alt)
-                />
-            </div>
-        </template>
-
-        <!-- Section Main Content Grid Box Start -->
-          <div class="main_contenet">
-            <div class="inner_text">
-              <h2 class="sec_heading">{{shopifyData.redText}}</h2>
-              <h4 class="card_heading_b sec_inner_heading">
-                {{shopifyData.subHeading}}
-              </h4>
-              <p class="body_text">
-                {{shopifyData.para}}
-              </p>
-            </div>
+        <template
+          v-for="(value, key) in shopifyData.gridImage"
+          :key="key"
+        >
+          <div
+            v-if="key <= 4"
+            class="sec_img"
+          >
+            <img
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.alt)"
+            >
           </div>
-        <!-- Section Main Content Grid Box Start -->
-        <template v-for="(value, key) in shopifyData.gridImage" :key="key">
-            <div class="sec_img" v-if="key >= 5">
-                <img
-                  :src=(value.imgUrl.src)
-                  :src-placeholder=(value.imgUrl.placeholder)
-                  :alt=(value.imgUrl.alt)
-                />
-            </div>
         </template>
 
+        <!-- Section Main Content Grid Box Start -->
+        <div class="main_contenet">
+          <div class="inner_text">
+            <h2 class="sec_heading">
+              {{ shopifyData.redText }}
+            </h2>
+            <h4 class="card_heading_b sec_inner_heading">
+              {{ shopifyData.subHeading }}
+            </h4>
+            <p class="body_text">
+              {{ shopifyData.para }}
+            </p>
+          </div>
+        </div>
+        <!-- Section Main Content Grid Box Start -->
+        <template
+          v-for="(value, key) in shopifyData.gridImage"
+          :key="key"
+        >
+          <div
+            v-if="key >= 5"
+            class="sec_img"
+          >
+            <img
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.alt)"
+            >
+          </div>
+        </template>
       </div>
 
 
@@ -47,6 +59,17 @@
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
+
+<script>
+export default {
+    props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 
 <style scoped>
 .sec_bit_about_ndss {
@@ -158,14 +181,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-    props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>

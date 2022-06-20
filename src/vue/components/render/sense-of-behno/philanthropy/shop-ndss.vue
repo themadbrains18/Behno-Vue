@@ -2,7 +2,6 @@
   <!-- section lives weavers Start -->
   <section class="sec_lives__weavers">
     <div class="big_container">
-    
       <div class="sec_header">
         <h2 class="quotes_text">
           {{ shopifyData.redText }}
@@ -14,8 +13,8 @@
           :scrollbar="{ draggable: true }"
           :navigation="true"
           :modules="modules"
-          :centeredSlides="true"
-          :spaceBetween="100"
+          :centered-slides="true"
+          :space-between="100"
           :loop="true"
           :effect="'fade'"
           :autoplay="{
@@ -24,12 +23,15 @@
           }"
           class="mySwiper"
         >
-          <swiper-slide v-for="(value, key) in shopifyData.slideData" :key="key">
+          <swiper-slide
+            v-for="(value, key) in shopifyData.slideData"
+            :key="key"
+          >
             <img
-              :src=(value.imgUrl.src)
-              :src-plceholder=(value.imgUrl.placeholder)
-              :alt=(value.imgUrl.alt)
-            />
+              :src="(value.imgUrl.src)"
+              :src-plceholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.alt)"
+            >
           </swiper-slide>
         </swiper>
       </div>
@@ -49,15 +51,15 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     }
-  },
-  components: {
-    Swiper,
-    SwiperSlide,
   },
   setup() {
     return {

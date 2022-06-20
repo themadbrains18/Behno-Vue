@@ -1,24 +1,72 @@
 <template>
   <div class="product_info_card">
-      <div class="product_img">
-        <img  @click="$emit('close')"  class="close-icon" src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909" alt="error">
-        <a :href=(productData.productUrl)>
-          <img :src=(productData.productidImage) >
-        </a>
-      </div>
-      <p class="subtitle">{{ productData.productTitle }}</p>
-      <p class="subtitle_b">{{ productData.productidPrice }}</p>
-      <div class="product_cta">
-        <template v-if="productData.productQuantity > 0">
-          <a :href=(productData.productUrl) class="cta_btn">VIEW</a>
-          <button type="button" class="cta_btn cta-modifier">QUICK ADD</button>  
-        </template>
-        <template v-else>
-          <button type="button" class="cta_btn sold-out">SOLD OUT</button>
-        </template>
-      </div>
+    <div class="product_img">
+      <img
+        class="close-icon"
+        src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909"
+        alt="error"
+        @click="$emit('close')"
+      >
+      <a :href="(productData.productUrl)">
+        <img :src="(productData.productidImage)">
+      </a>
+    </div>
+    <p class="subtitle">
+      {{ productData.productTitle }}
+    </p>
+    <p class="subtitle_b">
+      {{ productData.productidPrice }}
+    </p>
+    <div class="product_cta">
+      <template v-if="productData.productQuantity > 0">
+        <a
+          :href="(productData.productUrl)"
+          class="cta_btn"
+        >VIEW</a>
+        <button
+          type="button"
+          class="cta_btn cta-modifier"
+        >
+          QUICK ADD
+        </button>  
+      </template>
+      <template v-else>
+        <button
+          type="button"
+          class="cta_btn sold-out"
+        >
+          SOLD OUT
+        </button>
+      </template>
+    </div>
   </div>
 </template>
+<script>
+
+export default {
+  name:"ProductPopup",
+  props:{
+    productData:{
+      type:Object,
+    }
+  },
+  emits:['close'],
+ 
+  methods:{
+    toggle_selection_for(e){
+        var popupParent =  e.target;
+        // console.log(popupParent.parentNode);
+          this.$store.dispatch('my-module/toggle');
+          console.log(this.$store.state['my-module'].visible)
+      //  $store.dispatch('my-module/toggle');
+      console.log('woo ')
+    }
+  }
+  
+}
+
+</script>
+
 <style scoped>
   .product_info_card{
       padding: 10px 12px;
@@ -103,29 +151,3 @@
   }
 }
 </style>
-
-<script>
-
-export default {
-  name:"productPopup",
-  emits:['close'],
-  props:{
-    productData:{
-      type:Object,
-    }
-  },
- 
-  methods:{
-    toggle_selection_for(e){
-        var popupParent =  e.target;
-        // console.log(popupParent.parentNode);
-          this.$store.dispatch('my-module/toggle');
-          console.log(this.$store.state['my-module'].visible)
-      //  $store.dispatch('my-module/toggle');
-      console.log('woo ')
-    }
-  }
-  
-}
-
-</script>

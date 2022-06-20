@@ -1,44 +1,70 @@
 <template>
-<!-- Section Meet Fashion Desingners Start -->
-<section class="sec_meet_fashion_designers">
+  <!-- Section Meet Fashion Desingners Start -->
+  <section class="sec_meet_fashion_designers">
     <div class="big_container">
-        <div class="sec_header">
-            <h2 class="quotes_text">
-                {{ shopifyData.redHeading }}
-            </h2>
-            <div class="logo">
-                <img :src=(shopifyData.imgUrl2.src) :placeholder=(shopifyData.imgUrl2.placeholder) :alt=(shopifyData.imgUrl2.alt) />  
-                <a :href=(shopifyData.ctaLink) class="cta_btn">
-                    {{ shopifyData.ctaText }}
-                </a>
-            </div>
+      <div class="sec_header">
+        <h2 class="quotes_text">
+          {{ shopifyData.redHeading }}
+        </h2>
+        <div class="logo">
+          <img
+            :src="(shopifyData.imgUrl2.src)"
+            :placeholder="(shopifyData.imgUrl2.placeholder)"
+            :alt="(shopifyData.imgUrl2.alt)"
+          >  
+          <a
+            :href="(shopifyData.ctaLink)"
+            class="cta_btn"
+          >
+            {{ shopifyData.ctaText }}
+          </a>
         </div>
-        <div class="sec_content" v-for="(value, key) in shopifyData.Slide" :key="key" >
-            <div class="sec_text invited_showcase" >
-                <h2 class="sec_heading">
-                    {{ value.secHeading }}
-                </h2>
-                <h4 class="card_heading_b">
-                    {{ value.secSubHeading }}
-                </h4>
-                <p class="body_text">
-                    {{ value.secInfo }}
-                </p>
-                <div class="cta_wrapper">
-                    <a :href=(value.secCtaLink) class="cta_btn" > {{ value.secCtaText }}</a>
-                </div>
-            </div>
-            <div class="sec_img">
-                <img    
-                    :src="value.imgUrl.src"
-                    :placeholder="value.imgUrl.placeholder"
-                    :alt="value.imgUrl.alt" />
-            </div>
+      </div>
+      <div
+        v-for="(value, key) in shopifyData.Slide"
+        :key="key"
+        class="sec_content"
+      >
+        <div class="sec_text invited_showcase">
+          <h2 class="sec_heading">
+            {{ value.secHeading }}
+          </h2>
+          <h4 class="card_heading_b">
+            {{ value.secSubHeading }}
+          </h4>
+          <p class="body_text">
+            {{ value.secInfo }}
+          </p>
+          <div class="cta_wrapper">
+            <a
+              :href="(value.secCtaLink)"
+              class="cta_btn"
+            > {{ value.secCtaText }}</a>
+          </div>
         </div>
+        <div class="sec_img">
+          <img    
+            :src="value.imgUrl.src"
+            :placeholder="value.imgUrl.placeholder"
+            :alt="value.imgUrl.alt"
+          >
         </div>
-</section>    
+      </div>
+    </div>
+  </section>    
 <!-- Section Meet Fashion Desingners End -->
 </template>
+<script>
+export default{
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    }
+}
+</script>
+
 <style scoped>
 .sec_meet_fashion_designers{
     padding: 85px 0;
@@ -190,19 +216,8 @@
 
 
 </style>
-
 <style>
 .sec_meet_fashion_designers  .sec_header+.sec_content .cta_btn{
     display: none ;
 }
 </style>
-<script>
-export default{
-    props:{
-        shopifyData:{
-            type:Object,
-            required:true,
-        }
-    }
-}
-</script>

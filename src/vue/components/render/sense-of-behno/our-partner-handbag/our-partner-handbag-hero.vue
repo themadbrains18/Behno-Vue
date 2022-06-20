@@ -1,20 +1,51 @@
 <template>
-    <section class="partner_handbag_hero">
-        <div class="big_container">
-            <h2 class="card_heading_b" data-v-75498a5c="">{{ shopifyData.secSubHeading }}</h2>
-            <div class="sec_video">
-                <template v-if="shopifyData.checkImage === 'true'">
-                    <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
-                        <source :src=(shopifyData.videolink) />
-                    </video>
-                </template>
-                <template v-else>
-                    <img class="grid_img" :src=(shopifyData.checkImage.src) :placeholder=(shopifyData.checkImage.placeholder) :alt=(shopifyData.checkImage.alt) />
-                </template>
-            </div>
-        </div>
-    </section>
+  <section class="partner_handbag_hero">
+    <div class="big_container">
+      <h2
+        class="card_heading_b"
+        data-v-75498a5c=""
+      >
+        {{ shopifyData.secSubHeading }}
+      </h2>
+      <div class="sec_video">
+        <template v-if="shopifyData.checkImage === 'true'">
+          <video
+            controls
+            autoplay="true"
+            loop="true"
+            muted="true"
+            controlsList="nodownload"
+            disablepictureinpicture
+            webkit-playsinline="true"
+            playsinline="true"
+            preload="none"
+          >
+            <source :src="(shopifyData.videolink)">
+          </video>
+        </template>
+        <template v-else>
+          <img
+            class="grid_img"
+            :src="(shopifyData.checkImage.src)"
+            :placeholder="(shopifyData.checkImage.placeholder)"
+            :alt="(shopifyData.checkImage.alt)"
+          >
+        </template>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script>
+    export default{
+        props:{
+            shopifyData:{
+                type:Object,
+                required:true,
+            }
+        }
+    }
+</script>
 
 <style scoped>
     .partner_handbag_hero {
@@ -48,14 +79,3 @@
     }
     /* ===== RESPONSIVE BREAKPOINTS END ===== */
 </style>
-
-<script>
-    export default{
-        props:{
-            shopifyData:{
-                type:Object,
-                required:true,
-            }
-        }
-    }
-</script>

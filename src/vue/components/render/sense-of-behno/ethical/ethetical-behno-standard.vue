@@ -4,30 +4,50 @@
     <div class="big_container">
       <h2
         class="sec_heading"
-      >{{ shopifyData.redText }}</h2>
+      >
+        {{ shopifyData.redText }}
+      </h2>
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
-          <a :href=(shopifyData.link)>
+          <a :href="(shopifyData.link)">
             <img
-              :src=(shopifyData.imgUrl.src) 
-              :src-placeholder=(shopifyData.imgUrl.placeholder) 
-              :alt=(shopifyData.imgUrl.alt) 
-            />
+              :src="(shopifyData.imgUrl.src)" 
+              :src-placeholder="(shopifyData.imgUrl.placeholder)" 
+              :alt="(shopifyData.imgUrl.alt)" 
+            >
           </a>
         </div>
         <!-- Section Text           -->
         <div class="sec_text">
           <p
             class="sec_info"
-          >{{ shopifyData.para }}</p>
-          <a :href=(shopifyData.link)   class="cta_btn cta_btn-black">{{ shopifyData.linkText }}</a>
+          >
+            {{ shopifyData.para }}
+          </p>
+          <a
+            :href="(shopifyData.link)"
+            class="cta_btn cta_btn-black"
+          >{{ shopifyData.linkText }}</a>
         </div>
       </div>
     </div>
   </section>
   <!-- ========== Section Behno Standard End ========== -->
 </template>
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
+
 
 <style scoped>
 /* ========== Section Behno  standard  Start Css Code Start ========== */
@@ -154,16 +174,3 @@
   }
 }
 </style>
-
-
-<script>
-
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

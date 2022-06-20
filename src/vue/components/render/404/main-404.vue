@@ -2,15 +2,25 @@
   <section class="error_hero_sec">
     <div class="big_container">
       <div class="sec_head">
-        <h3 class="error_heading">{{ shopifyData.secHeading }}</h3>
-        <p class="brief_heading">But, continue your journey below:</p>
+        <h3 class="error_heading">
+          {{ shopifyData.secHeading }}
+        </h3>
+        <p class="brief_heading">
+          But, continue your journey below:
+        </p>
         <div class="cta_wrapper t-center">
-          <template v-for="(item, index) in shopifyData.grid" :key="index">
-            <a :href=(item.secCtaLink) class="cta_btn cta_btn-black">{{ item.secCta }}</a>
+          <template
+            v-for="(item, index) in shopifyData.grid"
+            :key="index"
+          >
+            <a
+              :href="(item.secCtaLink)"
+              class="cta_btn cta_btn-black"
+            >{{ item.secCta }}</a>
           </template>
         </div>
         <div class="homepage_link">
-          <a :href=(shopifyData.indexCtaLink)>{{ shopifyData.indexCta }}</a>
+          <a :href="(shopifyData.indexCtaLink)">{{ shopifyData.indexCta }}</a>
         </div>
       </div>
     </div>

@@ -14,17 +14,20 @@
             disableOnInteraction: false,
           }"
           :modules="modules"
-          :centeredSlides="true"
-          :spaceBetween="100"
+          :centered-slides="true"
+          :space-between="100"
           :loop="true"
           class="mySwiper"
         >
-          <swiper-slide v-for="(value, key) in shopifyData.Slide" :key="key">
+          <swiper-slide
+            v-for="(value, key) in shopifyData.Slide"
+            :key="key"
+          >
             <img
               :src="value.imgUrl.src"
               :src-placeholder="value.imgUrl.placeholder"
               :alt="value.imgUrl.alt"
-            />
+            >
           </swiper-slide>
         </swiper>
       </div>
@@ -46,15 +49,15 @@ import "swiper/css/effect-fade";
 // import required modules
 import { Navigation, Autoplay, EffectFade } from "swiper";
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     },
-  },
-  components: {
-    Swiper,
-    SwiperSlide,
   },
   setup() {
     return {

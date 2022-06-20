@@ -1,8 +1,9 @@
 <template>
   <section
-    class="gallery_preview_sec "
+    v-if="shopifyData.showProduct == 'true'"
     id="app"
-    v-if="shopifyData.showProduct == 'true'">
+    class="gallery_preview_sec "
+  >
     <!-- Sec Content -->
     <div class="sec_content">
       <h1 class="main_heading">
@@ -10,18 +11,24 @@
       </h1>
       <!-- Preview Images -->
       <div class="gallery_preview">
-        <div v-for="(item, index) in shopifyData.productData" :key="index">
+        <div
+          v-for="(item, index) in shopifyData.productData"
+          :key="index"
+        >
           <img
-            @click="show = !show"
+            v-if="index <= 3"
             :src="item.previewimage.src"
             :src-placeholder="item.previewimage.placeholder"
             :alt="item.previewimage.alt"
-            v-if="index <= 3"
-          />
+            @click="show = !show"
+          >
         </div>
       </div>
       <div class="gallery-cta">
-        <button @click="show = !show" class="subtitle">
+        <button
+          class="subtitle"
+          @click="show = !show"
+        >
           {{ shopifyData.GalleryCta }}
         </button>
       </div>
@@ -30,24 +37,29 @@
         class="overlay"
         :class="{ active: !show }"
         @click="show = !show"
-      ></div>
+      />
       <!-- Preview Images Popup -->
-      <div class="gallery_preview_popup" :class="{ active: !show }">
+      <div
+        class="gallery_preview_popup"
+        :class="{ active: !show }"
+      >
         <div class="gallery_preview_inner">
           <div class="popup_top_row">
-            <h3 class="card_heading">{{ shopifyData.PopupHeading }}</h3>
+            <h3 class="card_heading">
+              {{ shopifyData.PopupHeading }}
+            </h3>
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/close-icon.png?v=1651150909"
               alt="error"
               class="popup_close"
               @click="show = !show"
-            />
+            >
           </div>
           <div class="gallery_cards">
             <div
-              class="card"
               v-for="(value, key) in shopifyData.productData"
               :key="key"
+              class="card"
             >
               <a
                 :href="value.product.productUrl"
@@ -55,9 +67,9 @@
                 class="product_link"
               >
                 <div class="card_img">
-                  <img :src="value.product.productidImage" />
+                  <img :src="value.product.productidImage">
                   <div class="card_preview_img">
-                    <img :src="value.previewimage.src" />
+                    <img :src="value.previewimage.src">
                   </div>
                 </div>
                 <p class="subtitle">{{ value.product.productTitle }}</p>
@@ -80,13 +92,13 @@
               alt="error"
               class="popup_close"
               @click="show = !show"
-            />
+            >
           </div>
           <swiper
             :scrollbar="{ hide: false }"
             :modules="modules"
-            :slidesPerView="'auto'"
-            :spaceBetween="10"
+            :slides-per-view="'auto'"
+            :space-between="10"
             :mousewheel="{
               invert: false,
               releaseOnEdges: true,
@@ -99,7 +111,7 @@
             >
               <div class="card">
                 <div class="card_preview_img">
-                  <img :src="value.previewimage.src" />
+                  <img :src="value.previewimage.src">
                 </div>
                 <div class="slider_image bg-black">
                   <div>
@@ -118,7 +130,7 @@
                         <img
                           src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761"
                           alt=""
-                        />
+                        >
                       </a>
                       <span class="color-white subtitle">
                         {{ shopifyData.ProductBtn }}
@@ -126,7 +138,7 @@
                     </div>
                   </div>
                   <div class="card_img">
-                    <img :src="value.product.productidImage" />
+                    <img :src="value.product.productidImage">
                   </div>
                 </div>
               </div>
@@ -147,6 +159,12 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
   },
 
   setup() {
@@ -170,12 +188,6 @@ export default {
     return {
       show: true,
     };
-  },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    },
   },
 };
 </script>

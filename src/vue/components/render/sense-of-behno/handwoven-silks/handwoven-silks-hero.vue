@@ -1,25 +1,51 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_handwoven_hero">
-          <h2 class="card_heading_b">{{ shopifyData.preHeading }}</h2>
-        <div class="container">
-          <div class="main_contenet">
-        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-        <h4 class="card_heading_b sec_inner_heading">{{ shopifyData.subHeading }}</h4>
-          <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
-              {{ value.para }}
-          </p>
-        </div>
+    <h2 class="card_heading_b">
+      {{ shopifyData.preHeading }}
+    </h2>
+    <div class="container">
+      <div class="main_contenet">
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <h4 class="card_heading_b sec_inner_heading">
+          {{ shopifyData.subHeading }}
+        </h4>
+        <p
+          v-for="(value, key) in shopifyData.paragraphData"
+          :key="key"
+          class="body_text"
+        >
+          {{ value.para }}
+        </p>
       </div>
-      <div class="sec_img">
-          <img class="w-100" :src=(shopifyData.imgUrl.src)  :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)>
-      </div>
-      <p class="subtitle">
-          {{ shopifyData.afterImageText }}
-      </p>
+    </div>
+    <div class="sec_img">
+      <img
+        class="w-100"
+        :src="(shopifyData.imgUrl.src)"
+        :src-placeholder="(shopifyData.imgUrl.placeholder)"
+        :alt="(shopifyData.imgUrl.alt)"
+      >
+    </div>
+    <p class="subtitle">
+      {{ shopifyData.afterImageText }}
+    </p>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
+
+<script>
+export default {
+  props :{
+    shopifyData : {
+      type : Object,
+      required : true
+    }
+  }
+}
+</script>
 
 <style scoped>
 .sec_handwoven_hero {
@@ -101,14 +127,3 @@
 }
 }
 </style>
-
-<script>
-export default {
-  props :{
-    shopifyData : {
-      type : Object,
-      required : true
-    }
-  }
-}
-</script>

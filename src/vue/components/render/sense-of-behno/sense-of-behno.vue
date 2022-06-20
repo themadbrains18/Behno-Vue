@@ -3,74 +3,164 @@
     <!-- Sec Head -->
     <div class="sec_head">
       <div class="hero-component">
-        <h1 class="main_heading item1">{{ shopifyData.secTopHeading }}</h1>
+        <h1 class="main_heading item1">
+          {{ shopifyData.secTopHeading }}
+        </h1>
         <div class="hero_img">
-          <img :src=(shopifyData.imgUrl.src) :placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
+          <img
+            :src="(shopifyData.imgUrl.src)"
+            :placeholder="(shopifyData.imgUrl.placeholder)"
+            :alt="(shopifyData.imgUrl.alt)"
+          >
         </div>
-        <h1 class="main_heading item2">{{ shopifyData.secBottomHeading }}</h1>
+        <h1 class="main_heading item2">
+          {{ shopifyData.secBottomHeading }}
+        </h1>
       </div>
       <div class="brief_wrapper"> 
-      <p class="body_text t-center">
-        {{ shopifyData.secBrief }}
-      </p>
-      <p class="body_text t-center">
-        {{ shopifyData.secBrief2 }}
-      </p>
+        <p class="body_text t-center">
+          {{ shopifyData.secBrief }}
+        </p>
+        <p class="body_text t-center">
+          {{ shopifyData.secBrief2 }}
+        </p>
       </div>
       <div class="sec_btn t-center">
-        <button class="cta_btn" @click="show = !show , addActiveBody()">{{ shopifyData.SecBtn }}</button>
+        <button
+          class="cta_btn"
+          @click="show = !show , addActiveBody()"
+        >
+          {{ shopifyData.SecBtn }}
+        </button>
       </div>
 
-    <div class="mobile_stories_wrapper" :class="{ active: !show }">
-
+      <div
+        class="mobile_stories_wrapper"
+        :class="{ active: !show }"
+      >
         <swiper
-            :scrollbar="{ hide: false }"
-            :modules="modules"
-            :slidesPerView="'auto'"
-            :spaceBetween="10"
-            :mousewheel="{
-              invert: false,
-              releaseOnEdges: true,
-            }"
-            navigation
+          :scrollbar="{ hide: false }"
+          :modules="modules"
+          :slides-per-view="'auto'"
+          :space-between="10"
+          :mousewheel="{
+            invert: false,
+            releaseOnEdges: true,
+          }"
+          navigation
+        >
+          <swiper-slide
+            v-for="(value, key) in shopifyData.productData"
+            :key="key"
           >
-            <swiper-slide v-for="(value, key) in shopifyData.productData" :key="key">
-                <div class="card_preview_img">
-                    <img :src="value.previewimage.src" />
-                </div>
-                <div class="slider_product_btn">
-                    <a :href=(value.storyBtnLink) class="slider_tmb_btn" >
-                        <img src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761" alt="error">
-                    </a>
-                    <span class="color-white subtitle" :style="{ 'color': value.bottomTextColor}">{{ value.storyBtn }}</span>
-                </div>
-                <div class="close_icon" @click="show = !show , addActiveBody()">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/x-storie.svg?v=1655114346" alt="error" class="popup_close">
-                </div>
-                <div class="sec_text" :style="{'top': value.storyText +'%'}">
-                    <h4 class="card_heading_b"> {{ value.storyHeading }} </h4>
-                    <p class="body_text"> {{ value.storyBrief }} </p>
-                </div>
-            </swiper-slide>
+            <div class="card_preview_img">
+              <img :src="value.previewimage.src">
+            </div>
+            <div class="slider_product_btn">
+              <a
+                :href="(value.storyBtnLink)"
+                class="slider_tmb_btn"
+              >
+                <img
+                  src="//cdn.shopify.com/s/files/1/0577/1178/8125/t/5/assets/slider-arrow.svg?v=7926845654508591761"
+                  alt="error"
+                >
+              </a>
+              <span
+                class="color-white subtitle"
+                :style="{ 'color': value.bottomTextColor}"
+              >{{ value.storyBtn }}</span>
+            </div>
+            <div
+              class="close_icon"
+              @click="show = !show , addActiveBody()"
+            >
+              <img
+                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/x-storie.svg?v=1655114346"
+                alt="error"
+                class="popup_close"
+              >
+            </div>
+            <div
+              class="sec_text"
+              :style="{'top': value.storyText +'%'}"
+            >
+              <h4 class="card_heading_b">
+                {{ value.storyHeading }}
+              </h4>
+              <p class="body_text">
+                {{ value.storyBrief }}
+              </p>
+            </div>
+          </swiper-slide>
         </swiper>
-    </div>
+      </div>
     </div>
     <!-- Sec Content -->
     <div class="sec_content">
-        <div class="sense_cards">
-            <div class="card" v-for="(value, key) in shopifyData.cardData" :key="key">
-                <div class="card_img">
-                    <img :src=(value.cardImg.src) :placeholder=(value.cardImg.placeholder) :alt=(value.cardImg.src) >
-                    <a :href=(value.cardCtaLink) class="cta_btn">{{ value.cardCta }}</a>
-                </div>
-                <h4 class="card_heading_b">{{ value.cardHeading }}</h4>
-                <p class="body_text">{{ value.cardBrief }}</p>
-            </div>
+      <div class="sense_cards">
+        <div
+          v-for="(value, key) in shopifyData.cardData"
+          :key="key"
+          class="card"
+        >
+          <div class="card_img">
+            <img
+              :src="(value.cardImg.src)"
+              :placeholder="(value.cardImg.placeholder)"
+              :alt="(value.cardImg.src)"
+            >
+            <a
+              :href="(value.cardCtaLink)"
+              class="cta_btn"
+            >{{ value.cardCta }}</a>
+          </div>
+          <h4 class="card_heading_b">
+            {{ value.cardHeading }}
+          </h4>
+          <p class="body_text">
+            {{ value.cardBrief }}
+          </p>
         </div>
+      </div>
     </div>
   </section>
 </template>
 
+<script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Scrollbar} from "swiper";
+import "swiper/css";
+import "swiper/css/scrollbar";
+
+export default{
+components: {
+    Swiper,
+    SwiperSlide,
+},
+props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+setup() {
+    return {
+      modules: [Navigation, Scrollbar],
+    };
+},
+data: function () {
+    return {
+        show: true,
+    };
+},
+methods : {
+    addActiveBody:function(){
+        document.querySelector("body").classList.toggle("show");
+    }
+}
+}
+</script>
 <style scoped>
 
 .sens_of_behno_sec {
@@ -316,6 +406,7 @@
 }
     
 </style>
+
 <style>
 .page.page\.sense-of-behno{
     background:#DDCEC7 ;
@@ -350,39 +441,4 @@ body.show .tmbHeader{
     visibility: hidden;
 }
 </style>
-
-<script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, Scrollbar} from "swiper";
-import "swiper/css";
-import "swiper/css/scrollbar";
-
-export default{
-components: {
-    Swiper,
-    SwiperSlide,
-},
-data: function () {
-    return {
-        show: true,
-    };
-},
-methods : {
-    addActiveBody:function(){
-        document.querySelector("body").classList.toggle("show");
-    }
-},
-setup() {
-    return {
-      modules: [Navigation, Scrollbar],
-    };
-},
-props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>
 

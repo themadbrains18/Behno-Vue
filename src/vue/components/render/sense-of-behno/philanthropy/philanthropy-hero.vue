@@ -1,26 +1,47 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_philanthropy_hero">
-    <h2 class="card_heading_b">{{ shopifyData.preHeading }}</h2>
+    <h2 class="card_heading_b">
+      {{ shopifyData.preHeading }}
+    </h2>
     <div class="container">
       <div class="main_contenet">
-        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-        <p class="body_text" v-for="(value, key) in shopifyData.paraData" :key="key">
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <p
+          v-for="(value, key) in shopifyData.paraData"
+          :key="key"
+          class="body_text"
+        >
           {{ value.para }}
         </p>
       </div>
     </div>
     <div class="sec_img">
       <img
-        :src=(shopifyData.imgUrl.src)
-        :src-placeholder =(shopifyData.imgUrl.placeholder)
-        :alt=(shopifyData.imgUrl.alt)
-      />
+        :src="(shopifyData.imgUrl.src)"
+        :src-placeholder="(shopifyData.imgUrl.placeholder)"
+        :alt="(shopifyData.imgUrl.alt)"
+      >
     </div>
-    <p class="subtitle">{{ shopifyData.afterImageText }}</p>
+    <p class="subtitle">
+      {{ shopifyData.afterImageText }}
+    </p>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
+
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 
 <style scoped>
 .sec_philanthropy_hero {
@@ -111,15 +132,4 @@
   }
 }
 </style>
-
-<script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>
 

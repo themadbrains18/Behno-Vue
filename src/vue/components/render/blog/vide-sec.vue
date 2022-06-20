@@ -1,61 +1,99 @@
 <template>
-  <section class="video_sec" v-if="shopifyData.checkSection == 'true'">
+  <section
+    v-if="shopifyData.checkSection == 'true'"
+    class="video_sec"
+  >
     <!-- Sec Head -->
-    <div class="sec_head" v-if="shopifyData.SectionShow == 'true'">
-      <h1 class="main_heading">{{ shopifyData.SecHeading }}</h1>
+    <div
+      v-if="shopifyData.SectionShow == 'true'"
+      class="sec_head"
+    >
+      <h1 class="main_heading">
+        {{ shopifyData.SecHeading }}
+      </h1>
     </div>
     <!-- Sec Content -->
     <div
-      class="sec_content bg-black"
       v-if="shopifyData.VideoShow === 'true'"
+      class="sec_content bg-black"
     >
       <div class="sec_video modify-slider">
-          <div class="tmb_blog_slider_image">
-            <div v-if="shopifyData.CheckVideoImage == 'false'">
+        <div class="tmb_blog_slider_image">
+          <div v-if="shopifyData.CheckVideoImage == 'false'">
             <video
-                class="subtitle"
-                @click="toggle_selection_for(key)"
-                controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture
-                webkit-playsinline="true"
-                playsinline="true"
-                preload="none"
+              class="subtitle"
+              controls
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controlsList="nodownload"
+              disablepictureinpicture
+              webkit-playsinline="true"
+              playsinline="true"
+              preload="none"
+              @click="toggle_selection_for(key)"
             >
-                <source :src="shopifyData.videolink" />
+              <source :src="shopifyData.videolink">
             </video>
-            </div>  
-            <div class="sec_image_slider" v-if="shopifyData.CheckVideoImage == 'true'">
-                <div class="sec_content modify-slider " @click="toggle_selection_for(key)">
-                    <swiper  :effect="'fade'" 
-                    :modules="modules"
-                    :centeredSlides="true"
-                    :spaceBetween="100"
-                    :loop="true"
-                    class="mySwiper">
-                    <swiper-slide v-for="(value, key) in shopifyData.SliderImagesData" :key="key" >
-                        <img :src="value.SliderImage.src" :src-placeholder="value.SliderImage.placeholder" :alt="value.SliderImage.alt"  />
-                    </swiper-slide>
-                    </swiper>
-                </div>
+          </div>  
+          <div
+            v-if="shopifyData.CheckVideoImage == 'true'"
+            class="sec_image_slider"
+          >
+            <div
+              class="sec_content modify-slider "
+              @click="toggle_selection_for(key)"
+            >
+              <swiper
+                :effect="'fade'" 
+                :modules="modules"
+                :centered-slides="true"
+                :space-between="100"
+                :loop="true"
+                class="mySwiper"
+              >
+                <swiper-slide
+                  v-for="(value, key) in shopifyData.SliderImagesData"
+                  :key="key"
+                >
+                  <img
+                    :src="value.SliderImage.src"
+                    :src-placeholder="value.SliderImage.placeholder"
+                    :alt="value.SliderImage.alt"
+                  >
+                </swiper-slide>
+              </swiper>
             </div>
-            <swiper
+          </div>
+          <swiper
             :class="{ active: isactive.includes(key) }"
             class="product_info_card"
             :modules="modules"
             :loop="true"
-            :slidesPerView="'1'"
+            :slides-per-view="'1'"
             :mousewheel="{ invert: false, releaseOnEdges: true }"
-            :navigation="true">
-            <swiper-slide v-for="(product, index) in shopifyData.productData" :key="index">
-                <productPopup
-                :productData="product"
+            :navigation="true"
+          >
+            <swiper-slide
+              v-for="(product, index) in shopifyData.productData"
+              :key="index"
+            >
+              <productPopup
+                :product-data="product"
                 
                 @close="toggle_selection_for(key)"
-                />
+              />
             </swiper-slide>
-            </swiper>
-          </div>
-        <div class="shop_cta" v-if="shopifyData.checkShopBtn == 'true'">
-          <button class="subtitle" @click="toggle_selection_for(key)">
+          </swiper>
+        </div>
+        <div
+          v-if="shopifyData.checkShopBtn == 'true'"
+          class="shop_cta"
+        >
+          <button
+            class="subtitle"
+            @click="toggle_selection_for(key)"
+          >
             {{ shopifyData.secCta }}
           </button>
         </div>
@@ -77,25 +115,17 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
 
   setup() {
     return {
       modules: [Navigation, Autoplay, EffectFade],
     };
-  },
-  methods: {
-    
-    toggle_selection_for(key) {
-      if(window.innerWidth <= 768){
-        if (this.isactive.includes(key)) {
-          this.isactive = this.isactive.filter(
-            (item) => item !== key
-          );
-        } else {
-          this.isactive.push(key);
-        }
-      }
-    },
   },
   data() {
     window.addEventListener("scroll",()=>{
@@ -117,10 +147,18 @@ export default {
       isactive: [],
     };
   },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
+  methods: {
+    
+    toggle_selection_for(key) {
+      if(window.innerWidth <= 768){
+        if (this.isactive.includes(key)) {
+          this.isactive = this.isactive.filter(
+            (item) => item !== key
+          );
+        } else {
+          this.isactive.push(key);
+        }
+      }
     },
   },
 };

@@ -1,49 +1,73 @@
 <template>
-<!-- Garment Up-close Start -->
-    <section class="sec_working_with_artisan">
-        <div class="big_container">
-          <div class="sec_content modify-slider">
-                <swiper 
-                :navigation="true" 
-                :modules="modules" 
-                :centeredSlides= "true" 
-                :spaceBetween= "100"
-                :loop="true"
-                :effect="'fade'"
-                :autoplay="{
-                delay: 1500,
-                disableOnInteraction: false,
-                }"
-                class="mySwiper">
-                <swiper-slide v-for="(value, key) in shopifyData.slideData" :key="key">
-                  <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.alt)>
-                </swiper-slide>
-          </swiper>
+  <!-- Garment Up-close Start -->
+  <section class="sec_working_with_artisan">
+    <div class="big_container">
+      <div class="sec_content modify-slider">
+        <swiper 
+          :navigation="true" 
+          :modules="modules" 
+          :centered-slides="true" 
+          :space-between="100"
+          :loop="true"
+          :effect="'fade'"
+          :autoplay="{
+            delay: 1500,
+            disableOnInteraction: false,
+          }"
+          class="mySwiper"
+        >
+          <swiper-slide
+            v-for="(value, key) in shopifyData.slideData"
+            :key="key"
+          >
+            <img
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.alt)"
+            >
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div class="sec_header">
+        <h2 class="quotes_text">
+          {{ shopifyData.redText }}
+        </h2>
+      </div>
+    </div>
+    <div class="sec_content_inner">
+      <div class="big_container">
+        <div class="sec_text">
+          <h2 class="sec_heading">
+            {{ shopifyData.secHeading }}
+          </h2>
+          <h4 class="card_heading_b">
+            {{ shopifyData.subHeading }}
+          </h4>
+          <p
+            v-for="(value, key) in shopifyData.paragraphData"
+            :key="key"
+            class="body_text"
+          >
+            {{ value.para }}
+          </p>
+          <div class="text_inner_img">
+            <img
+              :src="(shopifyData.imgUrl.src)"
+              :src-placeholder="(shopifyData.imgUrl.placeholder)"
+              :alt="(shopifyData.imgUrl.alt)"
+            >
+          </div>
         </div>
-        <div class="sec_header">
-            <h2 class="quotes_text">
-                {{ shopifyData.redText }}
-            </h2>
+        <div class="sec_img">
+          <img
+            :src="(shopifyData.rightimgUrl.src)"
+            :src-placeholder="(shopifyData.rightimgUrl.placeholder)"
+            :alt="(shopifyData.rightimgUrl.alt)"
+          >
         </div>
-        </div>
-        <div class="sec_content_inner">
-          <div class="big_container">
-            <div class="sec_text">
-                <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-                <h4 class="card_heading_b">{{ shopifyData.subHeading }}</h4>
-                <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
-                    {{ value.para }}
-                </p>
-                <div class="text_inner_img">
-                  <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)>
-                </div>
-            </div>
-            <div class="sec_img">
-                <img :src=(shopifyData.rightimgUrl.src) :src-placeholder=(shopifyData.rightimgUrl.placeholder) :alt=(shopifyData.rightimgUrl.alt)>
-            </div>
-        </div>
-        </div>
-    </section>    
+      </div>
+    </div>
+  </section>    
 <!-- Garment Up-close End -->
 </template>
 
@@ -59,15 +83,15 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay,EffectFade ,Navigation} from "swiper";
 export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     }
-  },
-  components: {
-    Swiper,
-    SwiperSlide
   },
   setup() {
     return {

@@ -3,36 +3,44 @@
   <section class="sec_ghat_know_about">
     <div class="big_container">
       <div class="main_contenet">
-        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
         <h4 class="card_heading_b sec_inner_heading">
           {{ shopifyData.subHeading }}
         </h4>
-        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
+        <p
+          v-for="(item, index) in shopifyData.paragraph"
+          :key="index"
+          class="body_text"
+        >
           {{ item.paragraph }}
         </p>
-       
       </div>
       <div class="sec_slider">
         <div class="sec_slider modify-slider">
           <swiper
             :navigation="true"
             :modules="modules"
-            :centeredSlides="true"
-            :spaceBetween="100"
+            :centered-slides="true"
+            :space-between="100"
             :loop="true"
             :effect="'fade'"
             :autoplay="{ 
-            delay: 2000,
-            disableOnInteraction: false,
+              delay: 2000,
+              disableOnInteraction: false,
             }"
             class="mySwiper"
           >
-            <swiper-slide v-for="(item, index) in shopifyData.sliderImg" :key="index">
+            <swiper-slide
+              v-for="(item, index) in shopifyData.sliderImg"
+              :key="index"
+            >
               <img
-                :src=(item.imgUrl.src)
-                :src-placeholder=(item.imgUrl.placeholder)
-                :alt=(item.imgUrl.alt)
-              />
+                :src="(item.imgUrl.src)"
+                :src-placeholder="(item.imgUrl.placeholder)"
+                :alt="(item.imgUrl.alt)"
+              >
             </swiper-slide>
           </swiper>
         </div>
@@ -58,16 +66,16 @@ export default {
     Swiper,
     SwiperSlide
   },
-  setup() {
-    return {
-      modules: [Navigation,Autoplay,EffectFade]
-    };
-  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     }
+  },
+  setup() {
+    return {
+      modules: [Navigation,Autoplay,EffectFade]
+    };
   }
 };
 </script>

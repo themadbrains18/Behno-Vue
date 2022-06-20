@@ -1,15 +1,34 @@
 <template>
-    <section class="text_box" v-if="shopifyData.checkSection == 'true'">
-        <!-- Sec Content -->
-        <div class="sec_content">
-           <h4 class="subtitle_b">{{ shopifyData.secSubHeading }}</h4> 
-           <p class="body_text" v-for="(item, key) in shopifyData.secInfo" :key="key">
-               {{ item.secInfo }}
-           </p>
-        </div>
-    </section>
+  <section
+    v-if="shopifyData.checkSection == 'true'"
+    class="text_box"
+  >
+    <!-- Sec Content -->
+    <div class="sec_content">
+      <h4 class="subtitle_b">
+        {{ shopifyData.secSubHeading }}
+      </h4> 
+      <p
+        v-for="(item, key) in shopifyData.secInfo"
+        :key="key"
+        class="body_text"
+      >
+        {{ item.secInfo }}
+      </p>
+    </div>
+  </section>
 </template>
 
+<script>
+export default {
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    } 
+}
+</script>
 <style scoped>
     .text_box{
         padding-top: 45px;
@@ -34,13 +53,3 @@
         }
     }
 </style>
-<script>
-export default {
-    props:{
-        shopifyData:{
-            type:Object,
-            required:true,
-        }
-    } 
-}
-</script>

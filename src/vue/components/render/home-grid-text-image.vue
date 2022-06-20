@@ -5,22 +5,58 @@
       <h2 class="main_heading grid_text_image_heading color-white">
         {{ shopifyData.secHeading }}
       </h2>
-      <a  :href=(shopifyData.link) class="cta_btn cta_btn-white"> {{ shopifyData.btnText }} </a>
+      <a
+        :href="(shopifyData.link)"
+        class="cta_btn cta_btn-white"
+      > {{ shopifyData.btnText }} </a>
     </div>
     <div class="grid_item grid_item_img">
-      <a  :href=(shopifyData.link) class="grid_img-wrap line-h-0 d-block" >
-          <template v-if="shopifyData.checkImage === 'true'">
-            <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
-              <source :src=(shopifyData.videolink) >
-            </video>
-          </template>
-          <template v-else>
-            <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
-          </template>
+      <a
+        :href="(shopifyData.link)"
+        class="grid_img-wrap line-h-0 d-block"
+      >
+        <template v-if="shopifyData.checkImage === 'true'">
+          <video
+            controls
+            autoplay="true"
+            loop="true"
+            muted="true"
+            controlsList="nodownload"
+            disablepictureinpicture
+            webkit-playsinline="true"
+            playsinline="true"
+            preload="none"
+          >
+            <source :src="(shopifyData.videolink)">
+          </video>
+        </template>
+        <template v-else>
+          <v-lazy-image
+            class="grid_img"
+            :src="(shopifyData.imgUrl.src)"
+            :src-placeholder="(shopifyData.imgUrl.placeholder)"
+            :alt="(shopifyData.imgUrl.alt)"
+          />
+        </template>
       </a>
     </div>
   </section>
 </template>
+
+<script>
+import VLazyImage from "v-lazy-image";
+export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
 
 <style scoped>
 .main_heading{
@@ -58,18 +94,3 @@
 }
 
 </style>
-
-<script>
-import VLazyImage from "v-lazy-image";
-export default {
-  components: {
-    VLazyImage,
-  },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

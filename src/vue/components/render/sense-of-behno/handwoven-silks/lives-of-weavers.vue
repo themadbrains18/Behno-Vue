@@ -2,11 +2,18 @@
   <!-- section lives weavers Start -->
   <section class="sec_lives__weavers">
     <div class="big_container">
-        <div class="sec_grid_img">
-            <template v-for="(value, key) in shopifyData.gridImage" :key="key">
-              <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.src)>
-            </template>
-         </div>
+      <div class="sec_grid_img">
+        <template
+          v-for="(value, key) in shopifyData.gridImage"
+          :key="key"
+        >
+          <img
+            :src="(value.imgUrl.src)"
+            :src-placeholder="(value.imgUrl.placeholder)"
+            :alt="(value.imgUrl.src)"
+          >
+        </template>
+      </div>
       <div class="sec_header">
         <h2 class="quotes_text">
           {{ shopifyData.redText }}
@@ -16,8 +23,8 @@
         <swiper
           :navigation="true"
           :modules="modules"
-          :centeredSlides="true"
-          :spaceBetween="100"
+          :centered-slides="true"
+          :space-between="100"
           :loop="true"
           :effect="'fade'"
           :autoplay="{
@@ -26,10 +33,16 @@
           }"
           class="mySwiper"
         >
-          <swiper-slide v-for="(value, key) in shopifyData.SlidedynamicData" :key="key">
-           <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.src)>
+          <swiper-slide
+            v-for="(value, key) in shopifyData.SlidedynamicData"
+            :key="key"
+          >
+            <img
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.src)"
+            >
           </swiper-slide>
-          
         </swiper>
       </div>
     </div>
@@ -47,15 +60,15 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, EffectFade, Navigation } from "swiper";
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     }
-  },
-  components: {
-    Swiper,
-    SwiperSlide,
   },
   setup() {
     return {

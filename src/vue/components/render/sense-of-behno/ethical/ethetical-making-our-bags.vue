@@ -2,31 +2,52 @@
   <!-- ========== Section Making Our Bags Start ========== -->
   <section class="sec_making_our_bags">
     <div class="container">
-      <h2 class="card_heading_b t-center sec-heading">{{ shopifyData.secHeading }}</h2>
+      <h2 class="card_heading_b t-center sec-heading">
+        {{ shopifyData.secHeading }}
+      </h2>
       <div class="sec_content">
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="sec_heading">{{ shopifyData.crdheading }}</h2>
-          <h4 class="card_heading_b">{{ shopifyData.crdSubHeading }}</h4>
+          <h2 class="sec_heading">
+            {{ shopifyData.crdheading }}
+          </h2>
+          <h4 class="card_heading_b">
+            {{ shopifyData.crdSubHeading }}
+          </h4>
           <p
             class="body_text"
-          >{{ shopifyData.para }}</p>
-          <a :href=(shopifyData.link) class="cta_btn cta_btn-black ">{{ shopifyData.linkText }}</a>
+          >
+            {{ shopifyData.para }}
+          </p>
+          <a
+            :href="(shopifyData.link)"
+            class="cta_btn cta_btn-black "
+          >{{ shopifyData.linkText }}</a>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
-          <a :href=(shopifyData.link)> 
+          <a :href="(shopifyData.link)"> 
             <template v-if="shopifyData.showVideo === 'true'">
-              <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
-              <source :src=(shopifyData.video_url) >
+              <video
+                controls
+                autoplay="true"
+                loop="true"
+                muted="true"
+                controlsList="nodownload"
+                disablepictureinpicture
+                webkit-playsinline="true"
+                playsinline="true"
+                preload="none"
+              >
+                <source :src="(shopifyData.video_url)">
               </video>
             </template>
             <template v-else>
               <img
-                :src=(shopifyData.imgUrl.src)
-                :src-placeholder=(shopifyData.imgUrl.placeholder)
-                :alt=(shopifyData.imgUrl.alt)
-              />
+                :src="(shopifyData.imgUrl.src)"
+                :src-placeholder="(shopifyData.imgUrl.placeholder)"
+                :alt="(shopifyData.imgUrl.alt)"
+              >
             </template>
           
           </a>
@@ -36,6 +57,18 @@
   </section>
   <!-- ========== Section Forming real relationships End ========== -->
 </template>
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
 
 <style >
 /* ========== Section Making Our Bags Css Code Start ========== */
@@ -125,15 +158,3 @@ iframe{
 }
 /* ========== Section Making Our Bags Responsive Css Code End ========== */
 </style>
-
-<script>
-
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

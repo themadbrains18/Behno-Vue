@@ -1,42 +1,79 @@
 <template>
-
-<section class="sec_speaking_angagment">
+  <section class="sec_speaking_angagment">
     <div class="big_container">
-            <div class="main_contenet">
-                <h2 class="sec_heading">
-                    {{ shopifyData.secHeading }}
-                </h2>
-                <h4 class="card_heading_b">
-                    {{ shopifyData.secSubHeading }}
-                </h4>
-                <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
-                    {{ item.para }}
-                </p>
+      <div class="main_contenet">
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <h4 class="card_heading_b">
+          {{ shopifyData.secSubHeading }}
+        </h4>
+        <p
+          v-for="(item, index) in shopifyData.paragraph"
+          :key="index"
+          class="body_text"
+        >
+          {{ item.para }}
+        </p>
+      </div>
+      <div class="sec_img">                 
+        <div class="img_grid">
+          <div class="grid_items">
+            <div
+              v-if="shopifyData.collageData[0]"
+              class="figCaption"
+            >    
+              <img
+                :src="(shopifyData.collageData[0].imgUrl.src)"
+                :src-placeholder="(shopifyData.collageData[0].imgUrl.placeholder)"
+                :alt="(shopifyData.collageData[0].imgUrl.alt)"
+              >  
+              <p class="fig_caption">
+                {{ shopifyData.collageData[0].imageInfo }}
+              </p>   
             </div>
-            <div class="sec_img">                 
-                <div class="img_grid">
-                    <div class="grid_items">
-                        <div class="figCaption" v-if="shopifyData.collageData[0]">    
-                            <img :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>  
-                            <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>   
-                        </div>
-                        <div class="figCaption middle" v-if="shopifyData.collageData[1]">  
-                            <img :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>  
-                        </div>
-                    </div>
-                    <div class="grid_items">
-                        <div class="figCaption" v-if="shopifyData.collageData[2]">  
-                            <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>  
-                            <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
-                        </div>
-                    </div>
-                </div>
+            <div
+              v-if="shopifyData.collageData[1]"
+              class="figCaption middle"
+            >  
+              <img
+                :src="(shopifyData.collageData[1].imgUrl.src)"
+                :src-placeholder="(shopifyData.collageData[1].imgUrl.placeholder)"
+                :alt="(shopifyData.collageData[1].imgUrl.alt)"
+              >  
             </div>
+          </div>
+          <div class="grid_items">
+            <div
+              v-if="shopifyData.collageData[2]"
+              class="figCaption"
+            >  
+              <img
+                :src="(shopifyData.collageData[2].imgUrl.src)"
+                :src-placeholder="(shopifyData.collageData[2].imgUrl.placeholder)"
+                :alt="(shopifyData.collageData[2].imgUrl.alt)"
+              >  
+              <p class="fig_caption">
+                {{ shopifyData.collageData[2].imageInfo }}
+              </p>
+            </div>
+          </div>
         </div>
-        
-</section>    
-        
+      </div>
+    </div>
+  </section>
 </template>
+<script>
+    export default{
+        props:{
+            shopifyData:{
+                type:Object,
+                required:true,
+            }
+        }
+    }
+</script>
+
 <style scoped>
     .sec_speaking_angagment{
         padding-top:46px;
@@ -152,14 +189,3 @@
     
  
 </style>
-
-<script>
-    export default{
-        props:{
-            shopifyData:{
-                type:Object,
-                required:true,
-            }
-        }
-    }
-</script>

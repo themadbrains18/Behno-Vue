@@ -3,17 +3,25 @@
     <div class="container">
       <!-- Sec Head -->
       <div class="sec_head">
-        <div class="contact_info" v-for="(value, key) in shopifyData.box" :key="key">
+        <div
+          v-for="(value, key) in shopifyData.box"
+          :key="key"
+          class="contact_info"
+        >
           <div class="contact_logo">
             <img
               :src="(value.imgUrl.src)"
               :src-placeholder="(value.imgUrl.placeHolder)"
               :alt="(value.imgUrl.alt)"
-            />
+            >
           </div>
-          <h3 class="contact_heading"> {{ value.boxHeading }} </h3>
-          <p class="contact_brief" v-html="renderHtml(value.boxContent)">
-          </p>
+          <h3 class="contact_heading">
+            {{ value.boxHeading }}
+          </h3>
+          <p
+            class="contact_brief"
+            v-html="renderHtml(value.boxContent)"
+          />
           <div class="contact_number">
             <a :href="(value.link)">{{ value.linkText }}</a>
           </div>
@@ -22,24 +30,35 @@
       <!-- Sec Content -->
       <div class="tnd_tabs">
         <ul class="tnd_tabs_inner">
-          <li v-for="(value, key) in shopifyData.tabs" :key="key">
-            <button class="tab_btn show" v-if="key === 0">
+          <li
+            v-for="(value, key) in shopifyData.tabs"
+            :key="key"
+          >
+            <button
+              v-if="key === 0"
+              class="tab_btn show"
+            >
               {{ value.Heading }}
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/tab-button-icon.png?v=1650705094"
                 alt="image_decription"
-              />
+              >
             </button>
-            <button class="tab_btn" v-else>
+            <button
+              v-else
+              class="tab_btn"
+            >
               {{ value.Heading }}
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/tab-button-icon.png?v=1650705094"
                 alt="image_decription"
-              />
+              >
             </button>
             <div class="tab_content">
-              <div class="tab_content_inner"  v-html="renderHtml(value.Content)">
-              </div>
+              <div
+                class="tab_content_inner"
+                v-html="renderHtml(value.Content)"
+              />
             </div>
           </li>
         </ul>
@@ -47,6 +66,101 @@
     </div>
   </section>
 </template>
+
+<script>
+import { Buffer } from "buffer";
+window.Buffer = Buffer;
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+  
+  data() {
+    window.addEventListener("load", this.onWindowLoad);
+    window.addEventListener("resize", this.onWindowLoad);
+  },
+  created: function () {
+    this.renderHtml();
+  },
+  methods: {
+    renderHtml(html) {
+      if (html == null || html == "undefined") {
+        return;
+      }
+      var finalhtml = window.atob(html);
+      return finalhtml;
+    },
+    onWindowLoad() {
+      try {
+        const tabBtn = document.querySelectorAll(".tnd_tabs .tab_btn");
+        if (window.innerWidth >= 768) {
+          const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
+          showTabBtn
+            .closest(".tnd_tabs_inner")
+            .setAttribute(
+              "style",
+              `padding-bottom:${showTabBtn.nextElementSibling.offsetHeight}px`
+            );
+          for (let i of tabBtn) {
+            i.addEventListener("click", () => {
+              const showTabBtn = document.querySelector(
+                ".tnd_tabs .tab_btn.show"
+              );
+              if (showTabBtn) {
+                showTabBtn.classList.remove("show");
+              }
+              if (i != showTabBtn) {
+                i.classList.add("show");
+                i.closest(".tnd_tabs_inner").setAttribute(
+                  "style",
+                  `padding-bottom:${i.nextElementSibling.offsetHeight}px`
+                );
+              } else {
+                i.closest(".tnd_tabs_inner").setAttribute(
+                  "style",
+                  `padding-bottom:0px`
+                );
+              }
+            });
+          }
+        } else {
+          const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
+          showTabBtn.nextElementSibling.setAttribute(
+            "style",
+            `height:${showTabBtn.nextElementSibling.scrollHeight}px;`
+          );
+          for (let i of tabBtn) {
+            // showTabBtn
+            i.addEventListener("click", () => {
+              const showTabBtn = document.querySelector(
+                ".tnd_tabs .tab_btn.show"
+              );
+              if (showTabBtn) {
+                showTabBtn.classList.remove("show");
+              }
+              if (i != showTabBtn) {
+                i.classList.add("show");
+                i.nextElementSibling.setAttribute(
+                  "style",
+                  `height:${i.nextElementSibling.scrollHeight}px;`
+                );
+              } else {
+                i.nextElementSibling.setAttribute("style", `height:0px;`);
+              }
+            });
+          }
+        }
+      } catch (error) {
+        console.log("Error in Term and Custom js code Error");
+      }
+    }
+  }
+};
+</script>
 
 <style >
 .mb-35,
@@ -97,6 +211,8 @@
     letter-spacing: .02em;
 }
 </style>
+
+
 
 <style scoped>
 
@@ -268,101 +384,4 @@
   }
 }
 </style>
-
-
-
-<script>
-import { Buffer } from "buffer";
-window.Buffer = Buffer;
-
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    },
-  },
-  
-  data() {
-    window.addEventListener("load", this.onWindowLoad);
-    window.addEventListener("resize", this.onWindowLoad);
-  },
-  created: function () {
-    this.renderHtml();
-  },
-  methods: {
-    renderHtml(html) {
-      if (html == null || html == "undefined") {
-        return;
-      }
-      var finalhtml = window.atob(html);
-      return finalhtml;
-    },
-    onWindowLoad() {
-      try {
-        const tabBtn = document.querySelectorAll(".tnd_tabs .tab_btn");
-        if (window.innerWidth >= 768) {
-          const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
-          showTabBtn
-            .closest(".tnd_tabs_inner")
-            .setAttribute(
-              "style",
-              `padding-bottom:${showTabBtn.nextElementSibling.offsetHeight}px`
-            );
-          for (let i of tabBtn) {
-            i.addEventListener("click", () => {
-              const showTabBtn = document.querySelector(
-                ".tnd_tabs .tab_btn.show"
-              );
-              if (showTabBtn) {
-                showTabBtn.classList.remove("show");
-              }
-              if (i != showTabBtn) {
-                i.classList.add("show");
-                i.closest(".tnd_tabs_inner").setAttribute(
-                  "style",
-                  `padding-bottom:${i.nextElementSibling.offsetHeight}px`
-                );
-              } else {
-                i.closest(".tnd_tabs_inner").setAttribute(
-                  "style",
-                  `padding-bottom:0px`
-                );
-              }
-            });
-          }
-        } else {
-          const showTabBtn = document.querySelector(".tnd_tabs .tab_btn.show");
-          showTabBtn.nextElementSibling.setAttribute(
-            "style",
-            `height:${showTabBtn.nextElementSibling.scrollHeight}px;`
-          );
-          for (let i of tabBtn) {
-            // showTabBtn
-            i.addEventListener("click", () => {
-              const showTabBtn = document.querySelector(
-                ".tnd_tabs .tab_btn.show"
-              );
-              if (showTabBtn) {
-                showTabBtn.classList.remove("show");
-              }
-              if (i != showTabBtn) {
-                i.classList.add("show");
-                i.nextElementSibling.setAttribute(
-                  "style",
-                  `height:${i.nextElementSibling.scrollHeight}px;`
-                );
-              } else {
-                i.nextElementSibling.setAttribute("style", `height:0px;`);
-              }
-            });
-          }
-        }
-      } catch (error) {
-        console.log("Error in Term and Custom js code Error");
-      }
-    }
-  }
-};
-</script>
 

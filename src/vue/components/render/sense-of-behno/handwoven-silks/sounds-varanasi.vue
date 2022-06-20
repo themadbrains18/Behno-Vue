@@ -1,23 +1,52 @@
 <template>
   <!-- Section Sounds Varanasi Start -->
   <section class="sec_sounds_varanasi">
-        <div class="container">
-          <div class="main_contenet">
-        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-        <h4 class="card_heading_b sec_inner_heading">{{ shopifyData.subHeading }}</h4>
-          <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
-              {{ item.para }}
-          </p>        
-          </div>
+    <div class="container">
+      <div class="main_contenet">
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <h4 class="card_heading_b sec_inner_heading">
+          {{ shopifyData.subHeading }}
+        </h4>
+        <p
+          v-for="(item, index) in shopifyData.paragraph"
+          :key="index"
+          class="body_text"
+        >
+          {{ item.para }}
+        </p>        
       </div>
-      <div class="sec_video">
-          <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" v-for="(item, index) in shopifyData.videoData" :key="index">
-            <source :src=(item.video) >
-          </video>
-      </div>
+    </div>
+    <div class="sec_video">
+      <video
+        v-for="(item, index) in shopifyData.videoData"
+        controls
+        autoplay="true"
+        :key="index"
+        loop="true"
+        muted="true"
+        controlsList="nodownload"
+        disablepictureinpicture
+webkit-playsinline="true" playsinline="true" preload="none"
+      >
+        <source :src="(item.video)">
+      </video>
+    </div>
   </section>
   <!-- Section Sounds Varanasi Start -->
 </template>
+
+<script>
+export default {
+    props: {
+      shopifyData: {
+        type: Object,
+        required: true,
+      }
+    }
+}
+</script>
 
 <style scoped>
 .sec_sounds_varanasi {
@@ -108,14 +137,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-    props: {
-      shopifyData: {
-        type: Object,
-        required: true,
-      }
-    }
-}
-</script>

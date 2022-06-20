@@ -8,55 +8,65 @@
         <h4 class="card_heading_b">
           {{ shopifyData.subHeading }}
         </h4>
-        <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
+        <p
+          v-for="(value, key) in shopifyData.paragraphData"
+          :key="key"
+          class="body_text"
+        >
           {{ value.para }}
         </p>
       </div>
       <div class="sec_content">
-        <div class="icon" >
-          <img v-if="shopifyData.collageData[0]"
-            :src=(shopifyData.collageData[0].imgUrl.src)
-            :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)
-            :alt=(shopifyData.collageData[0].imgUrl.alt)
-          />
+        <div class="icon">
+          <img
+            v-if="shopifyData.collageData[0]"
+            :src="(shopifyData.collageData[0].imgUrl.src)"
+            :src-placeholder="(shopifyData.collageData[0].imgUrl.placeholder)"
+            :alt="(shopifyData.collageData[0].imgUrl.alt)"
+          >
         </div>
         <div class="sec_img">
           <div class="first_img">
-            <img v-if="shopifyData.collageData[1]"
-            :src=(shopifyData.collageData[1].imgUrl.src)
-            :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)
-            :alt=(shopifyData.collageData[1].imgUrl.alt)
-          />
+            <img
+              v-if="shopifyData.collageData[1]"
+              :src="(shopifyData.collageData[1].imgUrl.src)"
+              :src-placeholder="(shopifyData.collageData[1].imgUrl.placeholder)"
+              :alt="(shopifyData.collageData[1].imgUrl.alt)"
+            >
           </div>
           <div class="img second_img">
-            <img v-if="shopifyData.collageData[2]"
-            :src=(shopifyData.collageData[2].imgUrl.src)
-            :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)
-            :alt=(shopifyData.collageData[2].imgUrl.alt)
-          />
+            <img
+              v-if="shopifyData.collageData[2]"
+              :src="(shopifyData.collageData[2].imgUrl.src)"
+              :src-placeholder="(shopifyData.collageData[2].imgUrl.placeholder)"
+              :alt="(shopifyData.collageData[2].imgUrl.alt)"
+            >
           </div>
         </div>
         <div class="sec_img">
           <div class="third_img">
-            <img v-if="shopifyData.collageData[3]"
-            :src=(shopifyData.collageData[3].imgUrl.src)
-            :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)
-            :alt=(shopifyData.collageData[3].imgUrl.alt)
-          />
+            <img
+              v-if="shopifyData.collageData[3]"
+              :src="(shopifyData.collageData[3].imgUrl.src)"
+              :src-placeholder="(shopifyData.collageData[3].imgUrl.placeholder)"
+              :alt="(shopifyData.collageData[3].imgUrl.alt)"
+            >
           </div>
           <div class="four_img">
-            <img v-if="shopifyData.collageData[4]"
-            :src=(shopifyData.collageData[4].imgUrl.src)
-            :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)
-            :alt=(shopifyData.collageData[4].imgUrl.alt)
-          />
+            <img
+              v-if="shopifyData.collageData[4]"
+              :src="(shopifyData.collageData[4].imgUrl.src)"
+              :src-placeholder="(shopifyData.collageData[4].imgUrl.placeholder)"
+              :alt="(shopifyData.collageData[4].imgUrl.alt)"
+            >
           </div>
           <div class="img fifth_img">
-            <img v-if="shopifyData.collageData[5]"
-            :src=(shopifyData.collageData[5].imgUrl.src)
-            :src-placeholder=(shopifyData.collageData[5].imgUrl.placeholder)
-            :alt=(shopifyData.collageData[5].imgUrl.alt)
-          />
+            <img
+              v-if="shopifyData.collageData[5]"
+              :src="(shopifyData.collageData[5].imgUrl.src)"
+              :src-placeholder="(shopifyData.collageData[5].imgUrl.placeholder)"
+              :alt="(shopifyData.collageData[5].imgUrl.alt)"
+            >
           </div>
         </div>
       </div>
@@ -66,10 +76,10 @@
         </h2>
         <div class="sec_img">
           <img
-            :src=(shopifyData.gridImage.src)
-            :src-placeholder=(shopifyData.gridImage.placeholder)
-            :alt=(shopifyData.gridImage.alt)
-          />
+            :src="(shopifyData.gridImage.src)"
+            :src-placeholder="(shopifyData.gridImage.placeholder)"
+            :alt="(shopifyData.gridImage.alt)"
+          >
         </div>
       </div>
     </div>

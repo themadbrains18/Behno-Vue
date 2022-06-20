@@ -1,15 +1,30 @@
 <template>
-    <!-- Section Behno In World Start -->
-    <section class="sec_behno_world">
-        <h2 class="card_heading_b">
-            {{ shopifyData.SecHeading }}
-        </h2>
-        <div class="sec_img">
-            <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)>
-        </div>
-    </section>
-    <!-- Section Behno In World End -->
+  <!-- Section Behno In World Start -->
+  <section class="sec_behno_world">
+    <h2 class="card_heading_b">
+      {{ shopifyData.SecHeading }}
+    </h2>
+    <div class="sec_img">
+      <img
+        :src="(shopifyData.imgUrl.src)"
+        :src-placeholder="(shopifyData.imgUrl.placeholder)"
+        :alt="(shopifyData.imgUrl.alt)"
+      >
+    </div>
+  </section>
+  <!-- Section Behno In World End -->
 </template>
+
+<script>
+    export default {
+        props:{
+            shopifyData:{
+                type: Object,
+                required: true,
+            }
+        }            
+    }
+</script>
 
 <style scoped>
 .sec_behno_world{
@@ -44,14 +59,3 @@
 }
 }
 </style>
-
-<script>
-    export default {
-        props:{
-            shopifyData:{
-                type: Object,
-                required: true,
-            }
-        }            
-    }
-</script>

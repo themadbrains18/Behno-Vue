@@ -1,36 +1,68 @@
 <template>
-    <section class="old_world_craftsmanship_sec">
-        <div class="big_container">
-            <!-- sec content -->
-            <div class="sec_content">
-                <div class="sec_content_inner">
-                    <div class="sec_text">
-                        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-                        <h4 class="card_heading_b">{{ shopifyData.secSubHeading }}</h4>
-                        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index"> {{ item.para }}</p>
-                    </div>
-                    <div class="sec_img">
-                        <div class="image_grid">
-                            <template v-for="(value, key) in shopifyData.gridImages" :key="key">
-                                <img :src=(value.gridImg.src) :placeholder=(value.gridImg.placeholder) :alt=(value.gridImg.alt)>
-                            </template>
-                        </div>
-                    </div>
-                </div>  
-                <div class="sec_content_inner bottom">
-                    <div class="sec_text">
-                        <h2 class="quotes_text">
-                            {{ shopifyData.redText }}
-                        </h2>
-                    </div>
-                    <div class="sec_img">
-                        <img :src=(shopifyData.secImg.src) :placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt)>
-                    </div>
-                </div>
+  <section class="old_world_craftsmanship_sec">
+    <div class="big_container">
+      <!-- sec content -->
+      <div class="sec_content">
+        <div class="sec_content_inner">
+          <div class="sec_text">
+            <h2 class="sec_heading">
+              {{ shopifyData.secHeading }}
+            </h2>
+            <h4 class="card_heading_b">
+              {{ shopifyData.secSubHeading }}
+            </h4>
+            <p
+              v-for="(item, index) in shopifyData.paragraph"
+              :key="index"
+              class="body_text"
+            >
+              {{ item.para }}
+            </p>
+          </div>
+          <div class="sec_img">
+            <div class="image_grid">
+              <template
+                v-for="(value, key) in shopifyData.gridImages"
+                :key="key"
+              >
+                <img
+                  :src="(value.gridImg.src)"
+                  :placeholder="(value.gridImg.placeholder)"
+                  :alt="(value.gridImg.alt)"
+                >
+              </template>
             </div>
+          </div>
+        </div>  
+        <div class="sec_content_inner bottom">
+          <div class="sec_text">
+            <h2 class="quotes_text">
+              {{ shopifyData.redText }}
+            </h2>
+          </div>
+          <div class="sec_img">
+            <img
+              :src="(shopifyData.secImg.src)"
+              :placeholder="(shopifyData.secImg.placeholder)"
+              :alt="(shopifyData.secImg.alt)"
+            >
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script>
+export default {
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 
 <style scoped>
 .old_world_craftsmanship_sec{
@@ -122,14 +154,3 @@
     }
 }
 </style>
-
-<script>
-export default {
-   props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>

@@ -7,37 +7,52 @@
         <div class="sec_text">
           <h2
             class="sec_heading"
-          >{{ shopifyData.heading }}</h2>
+          >
+            {{ shopifyData.heading }}
+          </h2>
           <h4
             class="card_heading_b"
-          >{{ shopifyData.subHeading }}</h4>
+          >
+            {{ shopifyData.subHeading }}
+          </h4>
           <p class="body_text">
             {{ shopifyData.para1 }}
           </p>
-            <p class="body_text">
+          <p class="body_text">
             {{ shopifyData.para2 }}
           </p>
           <div class="sec_img">
             <img
-              :src=(shopifyData.leftImg.src)
-              :src-placeholder=(shopifyData.leftImg.placeHolder)
-              :alt=(shopifyData.leftImg.alt)
-            />
+              :src="(shopifyData.leftImg.src)"
+              :src-placeholder="(shopifyData.leftImg.placeHolder)"
+              :alt="(shopifyData.leftImg.alt)"
+            >
           </div>
         </div>
         <!--    Section Image        -->
         <div class="sec_img">
           <img
-            :src=(shopifyData.rightImg.rightImgSrc)
-            :src-placeHolder=(shopifyData.rightImg.rightPlaceHolder)
-            :alt=(shopifyData.rightImg.alt)
-            />
+            :src="(shopifyData.rightImg.rightImgSrc)"
+            :src-placeHolder="(shopifyData.rightImg.rightPlaceHolder)"
+            :alt="(shopifyData.rightImg.alt)"
+          >
         </div>
       </div>
     </div>
   </section>
   <!-- ========== Section sustainability and ethics  End ========== -->
 </template>
+
+<script>
+export default {
+  props:{
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 
 <style scoped>
 /* ========== Section sustainability and ethics  Start Css Code Start ========== */
@@ -143,14 +158,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  props:{
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>

@@ -1,34 +1,88 @@
 <template>
-    <section class="shop_ndds_bottom">
-        <div class="big_container">
-            <div class="sec_head">
-                <h4 class="card_heading_b">{{ shopifyData.secSubHeading }}</h4>
-            </div>
-            <div class="sec_content">
-                <div class="product_wrapper" id="productWrapper">
-                    <div class="produts_grid">
-                    <!-- product Card -->
-                        <template v-if="shopifyData.showProduct === 'true'">
-                            <div v-for="(value, key) in shopifyData.product" :key="key">
-                            <div class="grid_item featured_carousel_item">
-                                <a :href=value.productLink>
-                                    <img :src=value.productImage alt="" />
-                                    <span class="product_name subtitle">{{ value.productTitle }}</span>
-                                    <span class="product_price subtitle_b">{{ value.productPrie }}</span>
-                                </a>
-                            </div>
-                            </div>
-                        </template>
-                    </div>
+  <section class="shop_ndds_bottom">
+    <div class="big_container">
+      <div class="sec_head">
+        <h4 class="card_heading_b">
+          {{ shopifyData.secSubHeading }}
+        </h4>
+      </div>
+      <div class="sec_content">
+        <div
+          id="productWrapper"
+          class="product_wrapper"
+        >
+          <div class="produts_grid">
+            <!-- product Card -->
+            <template v-if="shopifyData.showProduct === 'true'">
+              <div
+                v-for="(value, key) in shopifyData.product"
+                :key="key"
+              >
+                <div class="grid_item featured_carousel_item">
+                  <a :href="value.productLink">
+                    <img
+                      :src="value.productImage"
+                      alt=""
+                    >
+                    <span class="product_name subtitle">{{ value.productTitle }}</span>
+                    <span class="product_price subtitle_b">{{ value.productPrie }}</span>
+                  </a>
                 </div>
-                <div class="sec_cta">
-                    <a :href=(shopifyData.secCtaLink) class="cta_btn">{{ shopifyData.secCtaText }}</a>
-                </div>
-            </div>
+              </div>
+            </template>
+          </div>
         </div>
-    </section>
-  
+        <div class="sec_cta">
+          <a
+            :href="(shopifyData.secCtaLink)"
+            class="cta_btn"
+          >{{ shopifyData.secCtaText }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script>
+export default {
+    props: {
+        shopifyData: {
+        type: Object,
+        required: true,
+        }
+    },
+    data(){
+            window.addEventListener("DOMContentLoaded",()=>{
+                let slider = document.querySelector('#productWrapper');
+                let mouseDown = false;
+                let startX, scrollLeft;
+        
+                let startDragging = function (e) {
+                    mouseDown = true;
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                };
+                let stopDragging = function (event) {
+                    mouseDown = false;
+                };
+                slider.addEventListener('mousemove', (e) => {
+                    e.preventDefault();
+                    if(!mouseDown) { return; }
+                    const x = e.pageX - slider.offsetLeft;
+                    const scroll = x - startX;
+                    slider.scrollLeft = scrollLeft - scroll;
+                });
+
+                // Add the event listeners
+                slider.addEventListener('mousedown', startDragging, false);
+                slider.addEventListener('mouseup', stopDragging, false);
+                slider.addEventListener('mouseleave', stopDragging, false);
+
+        })
+    }
+}
+</script>
+
 
 <style scoped>
 .shop_ndds_bottom{
@@ -90,44 +144,3 @@
     }
 }
 </style>
-
-
-<script>
-export default {
-    props: {
-        shopifyData: {
-        type: Object,
-        required: true,
-        }
-    },
-    data(){
-            window.addEventListener("DOMContentLoaded",()=>{
-                let slider = document.querySelector('#productWrapper');
-                let mouseDown = false;
-                let startX, scrollLeft;
-        
-                let startDragging = function (e) {
-                    mouseDown = true;
-                    startX = e.pageX - slider.offsetLeft;
-                    scrollLeft = slider.scrollLeft;
-                };
-                let stopDragging = function (event) {
-                    mouseDown = false;
-                };
-                slider.addEventListener('mousemove', (e) => {
-                    e.preventDefault();
-                    if(!mouseDown) { return; }
-                    const x = e.pageX - slider.offsetLeft;
-                    const scroll = x - startX;
-                    slider.scrollLeft = scrollLeft - scroll;
-                });
-
-                // Add the event listeners
-                slider.addEventListener('mousedown', startDragging, false);
-                slider.addEventListener('mouseup', stopDragging, false);
-                slider.addEventListener('mouseleave', stopDragging, false);
-
-        })
-    }
-}
-</script>

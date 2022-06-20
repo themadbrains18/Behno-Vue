@@ -2,18 +2,20 @@
   <!-- Section Sister Brothers Start -->
   <section class="sec_sister-brothers">
     <div class="big_container">
-      <h2 class="card_heading_b">{{shopifyData.Heading}}</h2>
+      <h2 class="card_heading_b">
+        {{ shopifyData.Heading }}
+      </h2>
       <div class="sec_content">
         <img
-          :src=(shopifyData.imgUrl.src)
-          :src-placeholder=(shopifyData.imgUrl.placeholder)
-          :alt=(shopifyData.imgUrl.alt)
-        />
+          :src="(shopifyData.imgUrl.src)"
+          :src-placeholder="(shopifyData.imgUrl.placeholder)"
+          :alt="(shopifyData.imgUrl.alt)"
+        >
         <img
-          :src=(shopifyData.rightImgUrl.src)
-          :src-placeholder=(shopifyData.rightImgUrl.placeholder)
-          :alt=(shopifyData.rightImgUrl.alt)
-        />
+          :src="(shopifyData.rightImgUrl.src)"
+          :src-placeholder="(shopifyData.rightImgUrl.placeholder)"
+          :alt="(shopifyData.rightImgUrl.alt)"
+        >
       </div>
     </div>
   </section>
@@ -21,6 +23,18 @@
 </template>
 
 <!-- Section Sister Brothers Css Code Start -->
+<script>
+export default {
+    props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
+<!-- Section Sister Brothers Css Code End -->
+
 <style scoped>
 .sec_sister-brothers {
   padding-top: 73px;
@@ -49,15 +63,3 @@
     }
 }
 </style>
-<!-- Section Sister Brothers Css Code End -->
-
-<script>
-export default {
-    props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>

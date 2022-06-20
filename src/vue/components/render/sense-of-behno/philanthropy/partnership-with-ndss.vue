@@ -4,24 +4,51 @@
     <div class="big_container">
       <div class="sec_header">
         <h2 class="quotes_text">
-          {{shopifyData.redText}}
+          {{ shopifyData.redText }}
         </h2>
-        <p class="body_text">{{shopifyData.secInfo}}</p>
+        <p class="body_text">
+          {{ shopifyData.secInfo }}
+        </p>
       </div>
       <div class="sec_video">
         <template v-if="shopifyData.checkImage === 'true'">
-            <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
-              <source :src=(shopifyData.videolink) >
-            </video>
-          </template>
-          <template v-else>
-            <img  :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
-          </template>
+          <video
+            controls
+            autoplay="true"
+            loop="true"
+            muted="true"
+            controlsList="nodownload"
+            disablepictureinpicture
+            webkit-playsinline="true"
+            playsinline="true"
+            preload="none"
+          >
+            <source :src="(shopifyData.videolink)">
+          </video>
+        </template>
+        <template v-else>
+          <img
+            :src="(shopifyData.imgUrl.src)"
+            :src-placeholder="(shopifyData.imgUrl.placeholder)"
+            :alt="(shopifyData.imgUrl.alt)"
+          >
+        </template>
       </div>
     </div>
   </section>
   <!-- section lives weavers End -->
 </template>
+
+<script>
+export default {
+    props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 
 <style scoped>
 .sec_partnership_with_ndss {
@@ -97,14 +124,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-    props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>

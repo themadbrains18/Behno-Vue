@@ -1,49 +1,95 @@
 <template>
-    <section class="sec_glocalizing_our_practices">
-        <div class="big_container">
-            <div class="main_contenet">
-                <h2 class="sec_heading">
-                    {{shopifyData.secHeading}}
-                </h2>
-                <h4 class="card_heading_b">
-                    {{shopifyData.subHeading}}
-                </h4>
-                <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
-                    {{ value.para }}
+  <section class="sec_glocalizing_our_practices">
+    <div class="big_container">
+      <div class="main_contenet">
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <h4 class="card_heading_b">
+          {{ shopifyData.subHeading }}
+        </h4>
+        <p
+          v-for="(value, key) in shopifyData.paragraphData"
+          :key="key"
+          class="body_text"
+        >
+          {{ value.para }}
+        </p>
+      </div>
+      <div class="sec_content">
+        <div class="sec_img">
+          <div class="sec_img_inner">
+            <div class="images_row">
+              <div
+                v-if="shopifyData.collageData[0]"
+                class="figCaption1"
+              > 
+                <img
+                  :src="(shopifyData.collageData[0].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[0].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[0].imgUrl.alt)"
+                >
+                <p class="fig_caption">
+                  {{ shopifyData.collageData[0].imageInfo }}
                 </p>
+              </div>
+              <div
+                v-if="shopifyData.collageData[1]"
+                class="figCaption2"
+              > 
+                <img
+                  :src="(shopifyData.collageData[1].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[1].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[1].imgUrl.alt)"
+                >
+                <p class="fig_caption">
+                  {{ shopifyData.collageData[1].imageInfo }}
+                </p>
+              </div>
+              <div
+                v-if="shopifyData.collageData[2]"
+                class="figCaption3"
+              > 
+                <img
+                  :src="(shopifyData.collageData[2].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[2].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[2].imgUrl.alt)"
+                >                                
+              </div>
             </div>
-            <div class="sec_content">
-                <div class="sec_img">
-                    <div class="sec_img_inner">
-                        <div class="images_row">
-                            <div class="figCaption1" v-if="shopifyData.collageData[0]"> 
-                                <img :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
-                                <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
-                            </div>
-                            <div class="figCaption2" v-if="shopifyData.collageData[1]"> 
-                                <img :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
-                                <p class="fig_caption">{{ shopifyData.collageData[1].imageInfo }}</p>
-                            </div>
-                            <div class="figCaption3" v-if="shopifyData.collageData[2]"> 
-                                <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>                                
-                            </div>
-                        </div>
-                        <div class="images_row last">
-                            <div class="figCaption4" v-if="shopifyData.collageData[3]"> 
-                                <img :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
-                                <p class="fig_caption">{{ shopifyData.collageData[3].imageInfo }}</p>
-                            </div>
-                            <div class="figCaption5" v-if="shopifyData.collageData[4]"> 
-                                <img :src=(shopifyData.collageData[4].imgUrl.src) :src-placeholder=(shopifyData.collageData[4].imgUrl.placeholder)  :alt=(shopifyData.collageData[4].imgUrl.alt)>
-                                <p class="fig_caption">{{ shopifyData.collageData[4].imageInfo }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
+            <div class="images_row last">
+              <div
+                v-if="shopifyData.collageData[3]"
+                class="figCaption4"
+              > 
+                <img
+                  :src="(shopifyData.collageData[3].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[3].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[3].imgUrl.alt)"
+                >
+                <p class="fig_caption">
+                  {{ shopifyData.collageData[3].imageInfo }}
+                </p>
+              </div>
+              <div
+                v-if="shopifyData.collageData[4]"
+                class="figCaption5"
+              > 
+                <img
+                  :src="(shopifyData.collageData[4].imgUrl.src)"
+                  :src-placeholder="(shopifyData.collageData[4].imgUrl.placeholder)"
+                  :alt="(shopifyData.collageData[4].imgUrl.alt)"
+                >
+                <p class="fig_caption">
+                  {{ shopifyData.collageData[4].imageInfo }}
+                </p>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

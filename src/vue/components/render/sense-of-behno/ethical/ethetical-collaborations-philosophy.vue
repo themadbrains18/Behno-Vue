@@ -2,43 +2,70 @@
   <!-- ========== Section COLLABORATIONS PHILOSOPHY Start ========== -->
   <section class="sec_collaborations_philosophy">
     <div class="big_container">
-      <h2 class="sec_heading">{{ shopifyData.redText }}</h2>
-      <div class="sec_content"  >
+      <h2 class="sec_heading">
+        {{ shopifyData.redText }}
+      </h2>
+      <div class="sec_content">
         <!--    Section Image        -->
-        <template v-for="(item, index) in shopifyData.card" :key="index"> 
-          <div class="sec_img"  v-if="index <= 1">
-          <a :href=(item.link) >
-            <img
-              :src=(item.imgUrl.src)
-              :src-placeholder=(item.imgUrl.placeholder)
-              :alt=(item.imgUrl.alt)
-            />
-            <p class="sec_info">{{ item.crdHeading }}</p>
-          </a>
-        </div>
+        <template
+          v-for="(item, index) in shopifyData.card"
+          :key="index"
+        > 
+          <div
+            v-if="index <= 1"
+            class="sec_img"
+          >
+            <a :href="(item.link)">
+              <img
+                :src="(item.imgUrl.src)"
+                :src-placeholder="(item.imgUrl.placeholder)"
+                :alt="(item.imgUrl.alt)"
+              >
+              <p class="sec_info">{{ item.crdHeading }}</p>
+            </a>
+          </div>
         </template>
       </div>
-      <h3 class="sec_inner_heading">{{ shopifyData.secHeading }}</h3>
-      <div class="sec_content" >
+      <h3 class="sec_inner_heading">
+        {{ shopifyData.secHeading }}
+      </h3>
+      <div class="sec_content">
         <!--    Section Image        -->
-        <template v-for="(item, index) in shopifyData.card" :key="index"> 
-          <div class="sec_img"  v-if="index >= 2">
-          <a :href=(item.link) >
-            <img
-              :src=(item.imgUrl.src)
-              :src-placeholder=(item.imgUrl.placeholder)
-              :alt=(item.imgUrl.alt)
-            />
-            <p class="sec_info">{{ item.crdHeading }}</p>
-          </a>
-        </div>
+        <template
+          v-for="(item, index) in shopifyData.card"
+          :key="index"
+        > 
+          <div
+            v-if="index >= 2"
+            class="sec_img"
+          >
+            <a :href="(item.link)">
+              <img
+                :src="(item.imgUrl.src)"
+                :src-placeholder="(item.imgUrl.placeholder)"
+                :alt="(item.imgUrl.alt)"
+              >
+              <p class="sec_info">{{ item.crdHeading }}</p>
+            </a>
+          </div>
         </template>
-        
       </div>
     </div>
   </section>
   <!-- ========== Section COLLABORATIONS PHILOSOPHY End ========== -->
 </template>
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
 
 <style scoped>
 /* ========== Section COLLABORATIONS PHILOSOPHY Css Code Start ========== */
@@ -144,15 +171,3 @@
 }
 /* ========== Section COLLABORATIONS PHILOSOPHY Responsive Css Code End ========== */
 </style>
-
-<script>
-
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

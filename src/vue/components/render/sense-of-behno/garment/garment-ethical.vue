@@ -21,7 +21,11 @@
             >
               <source :src="shopifyData.videolink" />
             </video> -->
-            <iframe src="https://www.youtube.com/embed/A6opxWqCCiM?autoplay=1&mute=1&loop=1&rel=0" title="YouTube video player" allow="autoplay"></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/A6opxWqCCiM?autoplay=1&mute=1&loop=1&rel=0"
+              title="YouTube video player"
+              allow="autoplay"
+            />
           </template>
           <template v-else>
             <img
@@ -29,7 +33,7 @@
               :src="shopifyData.imgUrl.src"
               :src-placeholder="shopifyData.imgUrl.placeholder"
               :alt="shopifyData.imgUrl.alt"
-            />
+            >
           </template>
         </div>
       </div>
@@ -37,6 +41,16 @@
   </section>
   <!-- Section Garment Ethical End -->
 </template>
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    },
+  },
+};
+</script>
 <style scoped>
 .sec_ethical {
   background: #000000;
@@ -110,14 +124,4 @@ iframe {
   }
 }
 </style>
-<script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    },
-  },
-};
-</script>
 

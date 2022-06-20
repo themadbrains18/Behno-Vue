@@ -1,43 +1,93 @@
 <template>
-    <section class="ascension_seeker_sec bg-black">
-        <div class="big_container">
-            <!-- section content -->
-            <div class="sec_content">
-                <div class="sec_content_innner">
-                    <div class="sec_text">
-                        <h2 class="sec_heading"> {{ shopifyData.secHeading }}</h2>
-                        <h4 class="card_heading_b"> {{ shopifyData.secSubHeading }} </h4>
-                        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
-                            {{ item.para }}
-                        </p>
-                    </div>
-                    <div class="sec_img">
-                        <img :src=(shopifyData.SecImg.src) :placeholder=(shopifyData.SecImg.placeholder) :alt=(shopifyData.SecImg.alt)>
-                    </div>
-                </div>
-                <!-- section slider -->
-                <div class="sec_slider">
-                    <swiper
-                        :navigation="true"
-                        :modules="modules"
-                        :centeredSlides="true"
-                        :spaceBetween="100"
-                        :loop="true"
-                        :effect="'fade'"
-                        :autoplay="{
-                        delay: 2000,
-                        disableOnInteraction: false,
-                        }"
-                        class="mySwiper ascension-seeker-slider">
-                        <swiper-slide v-for="(value, key) in shopifyData.SlidedynamicData" :key="key">
-                            <img :src=(value.sliderImg.src) :placeholder=(value.sliderImg.placeholder) :alt=(value.sliderImg.src)>
-                        </swiper-slide>
-                    </swiper>   
-                </div>
-            </div>
+  <section class="ascension_seeker_sec bg-black">
+    <div class="big_container">
+      <!-- section content -->
+      <div class="sec_content">
+        <div class="sec_content_innner">
+          <div class="sec_text">
+            <h2 class="sec_heading">
+              {{ shopifyData.secHeading }}
+            </h2>
+            <h4 class="card_heading_b">
+              {{ shopifyData.secSubHeading }}
+            </h4>
+            <p
+              v-for="(item, index) in shopifyData.paragraph"
+              :key="index"
+              class="body_text"
+            >
+              {{ item.para }}
+            </p>
+          </div>
+          <div class="sec_img">
+            <img
+              :src="(shopifyData.SecImg.src)"
+              :placeholder="(shopifyData.SecImg.placeholder)"
+              :alt="(shopifyData.SecImg.alt)"
+            >
+          </div>
         </div>
-    </section>
+        <!-- section slider -->
+        <div class="sec_slider">
+          <swiper
+            :navigation="true"
+            :modules="modules"
+            :centered-slides="true"
+            :space-between="100"
+            :loop="true"
+            :effect="'fade'"
+            :autoplay="{
+              delay: 2000,
+              disableOnInteraction: false,
+            }"
+            class="mySwiper ascension-seeker-slider"
+          >
+            <swiper-slide
+              v-for="(value, key) in shopifyData.SlidedynamicData"
+              :key="key"
+            >
+              <img
+                :src="(value.sliderImg.src)"
+                :placeholder="(value.sliderImg.placeholder)"
+                :alt="(value.sliderImg.src)"
+              >
+            </swiper-slide>
+          </swiper>   
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation,Autoplay,EffectFade } from "swiper";
+export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+  setup() {
+    return {
+      modules: [Navigation,Autoplay,EffectFade]
+    };
+  }
+};
+</script>
 
 <style scoped>
 .ascension_seeker_sec{
@@ -98,7 +148,6 @@
     }
 }
 </style>
-
 <style>
     .ascension-seeker-slider {
         padding: 0 43px;
@@ -115,32 +164,3 @@
         position: absolute;
     }
 </style>
-<script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/css";
-
-import "swiper/css/navigation";
-
-// import required modules
-import { Navigation,Autoplay,EffectFade } from "swiper";
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  },
-  components: {
-    Swiper,
-    SwiperSlide
-  },
-  setup() {
-    return {
-      modules: [Navigation,Autoplay,EffectFade]
-    };
-  }
-};
-</script>

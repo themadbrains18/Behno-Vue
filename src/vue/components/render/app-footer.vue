@@ -3,7 +3,10 @@
     <div class="footer_wave">
       <!-- ../../assets/images/footer-wave.png -->
 
-      <v-lazy-image class="footer_wave_img" :src=(shopifyData.footerWave) />
+      <v-lazy-image
+        class="footer_wave_img"
+        :src="(shopifyData.footerWave)"
+      />
     </div>
     <footer class="footer">
       <div class="big_container">
@@ -11,28 +14,49 @@
           <!-- Footer Link -->
           <ul class="footer_link_list">
             <li class="footer_item">
-              <a class="footer_link" href="#"> CLIENT SERVICES & POLICY </a>
+              <a
+                class="footer_link"
+                href="#"
+              > CLIENT SERVICES & POLICY </a>
             </li>
             <li class="footer_item">
-              <a class="footer_link" href="#"> OUR ETHICAL PHILISOPHY </a>
+              <a
+                class="footer_link"
+                href="#"
+              > OUR ETHICAL PHILISOPHY </a>
             </li>
             <li class="footer_item">
-              <a class="footer_link" href="#"> PRESS </a>
+              <a
+                class="footer_link"
+                href="#"
+              > PRESS </a>
             </li>
             <li class="footer_item">
-              <a class="footer_link" href="#"> TEAM </a>
+              <a
+                class="footer_link"
+                href="#"
+              > TEAM </a>
             </li>
             <li class="footer_item">
-              <a class="footer_link" href="#"> JOIN OUR AFFILIATE PROGRAM </a>
+              <a
+                class="footer_link"
+                href="#"
+              > JOIN OUR AFFILIATE PROGRAM </a>
             </li>
             <li class="footer_item follow-journey">
               <span class="footer_link">FOLLOW OUR JOURNEY</span>
               <div class="footer_social_link">
-                <a class="link" href="#">
-                  <v-lazy-image :src=(shopifyData.fbIcon)  />
+                <a
+                  class="link"
+                  href="#"
+                >
+                  <v-lazy-image :src="(shopifyData.fbIcon)" />
                 </a>
-                <a class="link" href="#">
-                  <v-lazy-image :src=(shopifyData.instaIcon)  />
+                <a
+                  class="link"
+                  href="#"
+                >
+                  <v-lazy-image :src="(shopifyData.instaIcon)" />
                 </a>
               </div>
             </li>
@@ -46,18 +70,26 @@
                 behno newsletter.
               </span>
             </h3>
-            <form action="" class="email_form">
+            <form
+              action=""
+              class="email_form"
+            >
               <input
-                class="footer_input"
                 id="footeremail"
+                class="footer_input"
                 type="email"
                 placeholder="Enter your email address"
-              />
-              <button type="submit" class="footer_form_btn">SUBSCRIBE</button>
+              >
+              <button
+                type="submit"
+                class="footer_form_btn"
+              >
+                SUBSCRIBE
+              </button>
             </form>
             <h4 class="footer_after_pay">
               <!-- ../../assets/svg/after-icon.svg -->
-              <v-lazy-image :src=(shopifyData.afterIcon) />
+              <v-lazy-image :src="(shopifyData.afterIcon)" />
 
               <span> Finance your favorite bag with only 25% up front. </span>
             </h4>
@@ -67,6 +99,22 @@
     </footer>
   </div>
 </template>
+
+<script>
+import VLazyImage from "v-lazy-image";
+
+export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
 
 <style>
 /* Footer Css Code */
@@ -205,19 +253,3 @@
   }
 }
 </style>
-
-<script>
-import VLazyImage from "v-lazy-image";
-
-export default {
-  components: {
-    VLazyImage,
-  },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

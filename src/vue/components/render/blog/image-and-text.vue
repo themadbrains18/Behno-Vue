@@ -1,25 +1,97 @@
 <template>
-    <section class="image_and_text_sec " v-if="shopifyData.checkSection == 'true'" >
-        <!-- Sec Content -->
-        <div class="sec_content">
-            <div class="sec_img">
-                <div class="product_popup" >
-                    <img :src=(shopifyData.secImg.src) :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt) @click="toggle_selection_for()"/>
-                    <productPopup :productData=(shopifyData.productData)  :class="{ active: isactive.includes() }"  @close="toggle_selection_for()"/>
-                </div>
-                <h2 class="img_text" v-if="shopifyData.checkImgHeading == 'true'" >{{ shopifyData.imgHeading }}</h2>
-                <button class="shop_cta subtitle"  @click="toggle_selection_for()">
-                    {{ shopifyData.secCta }}
-                </button>
-            </div>
-            <div class="sec_text">
-                <p class="body_text" v-for="(item, key) in shopifyData.paragraph" :key="key">
-                    {{ item.para }}
-                </p>
-            </div>
+  <section
+    v-if="shopifyData.checkSection == 'true'"
+    class="image_and_text_sec "
+  >
+    <!-- Sec Content -->
+    <div class="sec_content">
+      <div class="sec_img">
+        <div class="product_popup">
+          <img
+            :src="(shopifyData.secImg.src)"
+            :src-placeholder="(shopifyData.secImg.placeholder)"
+            :alt="(shopifyData.secImg.alt)"
+            @click="toggle_selection_for()"
+          >
+          <productPopup
+            :product-data="(shopifyData.productData)"
+            :class="{ active: isactive.includes() }"
+            @close="toggle_selection_for()"
+          />
         </div>
-    </section>
+        <h2
+          v-if="shopifyData.checkImgHeading == 'true'"
+          class="img_text"
+        >
+          {{ shopifyData.imgHeading }}
+        </h2>
+        <button
+          class="shop_cta subtitle"
+          @click="toggle_selection_for()"
+        >
+          {{ shopifyData.secCta }}
+        </button>
+      </div>
+      <div class="sec_text">
+        <p
+          v-for="(item, key) in shopifyData.paragraph"
+          :key="key"
+          class="body_text"
+        >
+          {{ item.para }}
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
+<script>
+import productPopup from '../product-popup.vue'
+
+export default {
+    components:{
+        productPopup
+    },
+    props:{
+        shopifyData:{
+            type:Object,
+            required:true,
+        }
+    },
+    data:()=>{
+    window.addEventListener("scroll",()=>{
+        if(document.querySelectorAll(".image_and_text_sec")[1]){
+            let VideoSection=document.querySelectorAll(".image_and_text_sec")[1];
+            VideoSection.getBoundingClientRect();
+            if(VideoSection.getBoundingClientRect().top<0){
+                document.body.classList.remove("active-Bg");
+                VideoSection.classList.remove("active")
+            }
+            else{
+                VideoSection.classList.add("active")
+            }
+        }
+    });    
+        return {
+            isactive: [],
+            windowWidth: window.innerWidth
+    }
+  },
+    methods: {
+    toggle_selection_for(key) {
+      if(window.innerWidth <= 768){
+        if (this.isactive.includes(key)) {
+          this.isactive = this.isactive.filter(
+            (item) => item !== key
+          );
+        } else {
+          this.isactive.push(key);
+        }
+      }
+    },
+  }
+}
+</script>
+
 <style scoped>
 
     .image_and_text_sec.active .body_text,.image_and_text_sec.active .shop_cta.subtitle{
@@ -93,51 +165,3 @@
     }
 
 </style>
-
-<script>
-import productPopup from '../product-popup.vue'
-
-export default {
-    components:{
-        productPopup
-    },
-    methods: {
-    toggle_selection_for(key) {
-      if(window.innerWidth <= 768){
-        if (this.isactive.includes(key)) {
-          this.isactive = this.isactive.filter(
-            (item) => item !== key
-          );
-        } else {
-          this.isactive.push(key);
-        }
-      }
-    },
-  },
-    data:()=>{
-    window.addEventListener("scroll",()=>{
-        if(document.querySelectorAll(".image_and_text_sec")[1]){
-            let VideoSection=document.querySelectorAll(".image_and_text_sec")[1];
-            VideoSection.getBoundingClientRect();
-            if(VideoSection.getBoundingClientRect().top<0){
-                document.body.classList.remove("active-Bg");
-                VideoSection.classList.remove("active")
-            }
-            else{
-                VideoSection.classList.add("active")
-            }
-        }
-    });    
-        return {
-            isactive: [],
-            windowWidth: window.innerWidth
-    }
-  },
-    props:{
-        shopifyData:{
-            type:Object,
-            required:true,
-        }
-    }
-}
-</script>

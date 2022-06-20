@@ -12,22 +12,28 @@
           }"
           :modules="modules"
           :breakpoints="{
-              '320': {
-                enabled: true
-              },
-              '768': {
-                enabled: false
-              }
-            }"
+            '320': {
+              enabled: true
+            },
+            '768': {
+              enabled: false
+            }
+          }"
           class="mySwiper"
         >
-          <swiper-slide v-for="(item, index) in shopifyData.box" :key="index">
-            <a :href=(item.link) class="slider_img">
+          <swiper-slide
+            v-for="(item, index) in shopifyData.box"
+            :key="index"
+          >
+            <a
+              :href="(item.link)"
+              class="slider_img"
+            >
               <img
-                :src=(item.image)
-                :alt=(item.imagealt)
-              />
-              <span class="employee_name">{{item.text}}</span>
+                :src="(item.image)"
+                :alt="(item.imagealt)"
+              >
+              <span class="employee_name">{{ item.text }}</span>
             </a>
           </swiper-slide>
         </swiper>
@@ -49,16 +55,16 @@ import "swiper/css/effect-fade";
 import { Navigation,Autoplay } from "swiper";
 
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
    
   props: {
     shopifyData: {
       type: Object,
       required: true,
     }
-  },
-  components: {
-    Swiper,
-    SwiperSlide,
   },
   setup() {
     return {

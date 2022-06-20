@@ -1,24 +1,30 @@
 <template>
-<!-- Section Garment Ethical Start  -->
-    <section class="sec_power_house">
-        <div class="big_container">
-            <div class="sec_content">
-                <div class="sec_img">
-                    <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)  />
-                </div>
-                <div class="sec_text">
-                    <h2 class="sec_heading">
-                        {{ shopifyData.secheading }} 
-                    </h2>
-                    <a :href=(shopifyData.Btnlink) class="cta_btn  cta_btn-black">
-                        {{ shopifyData.BtnText }} 
-                    </a>
-                </div>
-            </div>
+  <!-- Section Garment Ethical Start  -->
+  <section class="sec_power_house">
+    <div class="big_container">
+      <div class="sec_content">
+        <div class="sec_img">
+          <img
+            :src="(shopifyData.imgUrl.src)"
+            :src-placeholder="(shopifyData.imgUrl.placeholder)"
+            :alt="(shopifyData.imgUrl.alt)"
+          >
         </div>
-    </section>
+        <div class="sec_text">
+          <h2 class="sec_heading">
+            {{ shopifyData.secheading }} 
+          </h2>
+          <a
+            :href="(shopifyData.Btnlink)"
+            class="cta_btn  cta_btn-black"
+          >
+            {{ shopifyData.BtnText }} 
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 <!-- Section Garment Ethical End -->
-    
 </template>
 
 <script>

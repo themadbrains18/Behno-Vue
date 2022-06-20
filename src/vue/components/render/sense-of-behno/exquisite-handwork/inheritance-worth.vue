@@ -1,33 +1,58 @@
 <template>
-<!-- Section inheritance worth Start -->
-<section class=" sec_inheritance_worth">
+  <!-- Section inheritance worth Start -->
+  <section class=" sec_inheritance_worth">
     <div class="big_container">
-        <div class="sec_content">
-            <div class="sec_img">
-                <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder)  :alt=(shopifyData.imgUrl.alt) >
-            </div>
-            <div class="sec_text">
-                <div class="inner_text">
-                    <h2
-                        class="sec_heading"
-                    >{{ shopifyData.secHeading }}</h2>
-                    <h4
-                        class="card_heading_b"
-                    >{{ shopifyData.subHeading }}</h4>
-                    <p class="body_text" v-for="(value, key) in shopifyData.paragraphData" :key="key">
-                        {{value.para}}
-                    </p>
-                    
-                </div>
-                <div class="sec_img">
-                    <img :src=(shopifyData.rightimgUrl.src) :src-placeholder=(shopifyData.rightimgUrl.placeholder)  :alt=(shopifyData.rightimgUrl.alt) >
-                </div>
-            </div>
+      <div class="sec_content">
+        <div class="sec_img">
+          <img
+            :src="(shopifyData.imgUrl.src)"
+            :src-placeholder="(shopifyData.imgUrl.placeholder)"
+            :alt="(shopifyData.imgUrl.alt)"
+          >
         </div>
+        <div class="sec_text">
+          <div class="inner_text">
+            <h2
+              class="sec_heading"
+            >
+              {{ shopifyData.secHeading }}
+            </h2>
+            <h4
+              class="card_heading_b"
+            >
+              {{ shopifyData.subHeading }}
+            </h4>
+            <p
+              v-for="(value, key) in shopifyData.paragraphData"
+              :key="key"
+              class="body_text"
+            >
+              {{ value.para }}
+            </p>
+          </div>
+          <div class="sec_img">
+            <img
+              :src="(shopifyData.rightimgUrl.src)"
+              :src-placeholder="(shopifyData.rightimgUrl.placeholder)"
+              :alt="(shopifyData.rightimgUrl.alt)"
+            >
+          </div>
+        </div>
+      </div>
     </div>
-</section>    
+  </section>    
 <!-- Section inheritance worth End -->
 </template>
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
 <style scoped>
 .sec_inheritance_worth{
     padding: 81px 0 151px;
@@ -175,13 +200,3 @@
   }
 }
 </style>
-<script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

@@ -1,31 +1,48 @@
 <template>
-    <section class="sight_sound " v-if="shopifyData.checkSection == 'true'" >
-        <!-- Sec head -->
-        <div class="sec_head">
-            <h1 class="sec_heading">
-                <template v-for="(item, key) in shopifyData.slide" :key="key">
-                    <span >{{ item.secHeading }}</span>
-                </template>
-            </h1>
+  <section
+    v-if="shopifyData.checkSection == 'true'"
+    class="sight_sound "
+  >
+    <!-- Sec head -->
+    <div class="sec_head">
+      <h1 class="sec_heading">
+        <template
+          v-for="(item, key) in shopifyData.slide"
+          :key="key"
+        >
+          <span>{{ item.secHeading }}</span>
+        </template>
+      </h1>
+    </div>
+    <!-- Sec Content -->
+    <div class="sec_content">
+      <div class="sec_img">
+        <div class="product_popup">
+          <img
+            :src="(shopifyData.secImg.src)"
+            :src-placeholder="(shopifyData.secImg.placeholder)"
+            :alt="(shopifyData.secImg.alt)"
+            @click="toggle_selection_for(key)"
+          >
+          <template v-if="shopifyData.productData">
+            <productPopup
+              :product-data="(shopifyData.productData)"
+              :class="{ active: isactive.includes(key) }"
+              @close="toggle_selection_for(key)"
+            />
+          </template>
         </div>
-        <!-- Sec Content -->
-        <div class="sec_content">
-            <div class="sec_img">
-                <div class="product_popup">
-                    <img @click="toggle_selection_for(key)" :src=(shopifyData.secImg.src)  :src-placeholder=(shopifyData.secImg.placeholder) :alt=(shopifyData.secImg.alt)>
-                    <template v-if="shopifyData.productData">
-                        <productPopup :productData=(shopifyData.productData)  :class="{ active: isactive.includes(key) }"  @close="toggle_selection_for(key)"/>
-                    </template>
-                </div>
-                <div class="shop_cta" >
-                    
-                    <button class="subtitle"  @click="toggle_selection_for(key)" >
-                        {{ shopifyData.secCta }}
-                    </button>
-                </div>
-            </div>
+        <div class="shop_cta">
+          <button
+            class="subtitle"
+            @click="toggle_selection_for(key)"
+          >
+            {{ shopifyData.secCta }}
+          </button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -36,6 +53,14 @@ export default {
             required:true,
         }
     },
+
+   data() {
+    
+    return {
+      windowWidth: window.innerWidth,
+      isactive: []
+    };
+  },
       methods: {
     toggle_selection_for(key) {
       if(window.innerWidth <= 768){
@@ -48,14 +73,6 @@ export default {
         } 
       }
     },
-  },
-
-   data() {
-    
-    return {
-      windowWidth: window.innerWidth,
-      isactive: []
-    };
   },
 }
 </script>

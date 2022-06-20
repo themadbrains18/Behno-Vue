@@ -5,29 +5,54 @@
       <div class="sec_content">
         <!--    Section Image        -->
         <div class="sec_img">
-          <a :href=(shopifyData.link)>
+          <a :href="(shopifyData.link)">
             <img
-              :src=(shopifyData.imgUrl.src)
-              :src-placeholder=(shopifyData.imgUrl.placeHolder)
-              :alt=(shopifyData.imgUrl.alt)
-            />
+              :src="(shopifyData.imgUrl.src)"
+              :src-placeholder="(shopifyData.imgUrl.placeHolder)"
+              :alt="(shopifyData.imgUrl.alt)"
+            >
           </a>
         </div>
         <!--    Section text        -->
         <div class="sec_text">
-          <h2 class="sec_heading ">{{ shopifyData.crdheading }}</h2>
-          <h4 class="card_heading_b">{{ shopifyData.crdSubHeading }}</h4>
+          <h2 class="sec_heading ">
+            {{ shopifyData.crdheading }}
+          </h2>
+          <h4 class="card_heading_b">
+            {{ shopifyData.crdSubHeading }}
+          </h4>
           <!-- {{ shopifyData.para }} -->
-          <p class="body_text" v-for="(item, index) in shopifyData.para" :key="index">
+          <p
+            v-for="(item, index) in shopifyData.para"
+            :key="index"
+            class="body_text"
+          >
             {{ item.para }}
           </p>
-          <a :href=(shopifyData.link) class="cta_btn cta_btn-black">{{ shopifyData.linkText }}</a>
+          <a
+            :href="(shopifyData.link)"
+            class="cta_btn cta_btn-black"
+          >{{ shopifyData.linkText }}</a>
         </div>
       </div>
     </div>
   </section>
   <!-- ========== Section Conscious tannery End ========== -->
 </template>
+
+<script>
+
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
+
+
 
 <style scoped>
 /* ========== Section Conscious tannery Css Code Start ========== */
@@ -100,17 +125,3 @@
 }
 /* ========== Section Conscious tannery Css Code End ========== */
 </style>
-
-
-
-<script>
-
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>

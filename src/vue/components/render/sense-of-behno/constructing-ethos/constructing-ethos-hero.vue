@@ -1,42 +1,55 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_Constructing_ethos_hero">
-      <h2 class="card_heading_b">{{ shopifyData.preHeading }}</h2>
-      <div class="main_contenet">
-        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-        <h4 class="card_heading_b sec_inner_heading">{{ shopifyData.subHeading }}</h4>
-          <p class="body_text" v-for="(value, key) in shopifyData.blockData" :key="key" >
-              {{ value.para }}
-          </p>
-      </div>
-      <div class="sec_slider">
-        <div class="sec_slider modify-slider">
-          <swiper
-            :navigation="false"
-            :modules="modules"
-            :centeredSlides="true"
-            :spaceBetween="100"
-            :loop="true"
-            :effect="'fade'"
-            :autoplay="{
+    <h2 class="card_heading_b">
+      {{ shopifyData.preHeading }}
+    </h2>
+    <div class="main_contenet">
+      <h2 class="sec_heading">
+        {{ shopifyData.secHeading }}
+      </h2>
+      <h4 class="card_heading_b sec_inner_heading">
+        {{ shopifyData.subHeading }}
+      </h4>
+      <p
+        v-for="(value, key) in shopifyData.blockData"
+        :key="key"
+        class="body_text"
+      >
+        {{ value.para }}
+      </p>
+    </div>
+    <div class="sec_slider">
+      <div class="sec_slider modify-slider">
+        <swiper
+          :navigation="false"
+          :modules="modules"
+          :centered-slides="true"
+          :space-between="100"
+          :loop="true"
+          :effect="'fade'"
+          :autoplay="{
             delay: 2000,
             disableOnInteraction: false,
-            }"
-            class="mySwiper"
+          }"
+          class="mySwiper"
+        >
+          <swiper-slide
+            v-for="(value, key) in shopifyData.SlidedynamicData"
+            :key="key"
           >
-            <swiper-slide v-for="(value, key) in shopifyData.SlidedynamicData" :key="key">
-              <img
-                :src=(value.imgUrl.src)
-                :src-placeholder=(value.imgUrl.placeholder)
-                :alt=(value.imgUrl.alt)
-              />
-            </swiper-slide>
-          </swiper>
-        </div>
+            <img
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.alt)"
+            >
+          </swiper-slide>
+        </swiper>
       </div>
-      <p class="subtitle">
-          {{ shopifyData.afterImageText}}
-      </p>
+    </div>
+    <p class="subtitle">
+      {{ shopifyData.afterImageText }}
+    </p>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>
@@ -54,15 +67,15 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation,Autoplay,EffectFade } from "swiper";
 export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     }
-  },
-  components: {
-    Swiper,
-    SwiperSlide
   },
   setup() {
     return {

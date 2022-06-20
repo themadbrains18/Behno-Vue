@@ -1,29 +1,46 @@
 <template>
   <!-- Section Constructing Ethos Hero Start -->
   <section class="sec_setting_standard">
-      <div class="big_container">
-        <div class="main_contenet">
-            <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-            <p class="body_text">
-                {{ shopifyData.secinfo }}
-            </p>
-        </div>
-        <div class="sec_accordian">
-            <div class="accordian_card" v-for="(value, key) in shopifyData.cardData" :key="key">
-                <button class="accordian_btn" @click="(event)=>{setActive(event)}">
-                    <span class="subtitle_b">{{ value.crdHeading }}</span>
-                    <div class="crose_icon line-h-0">
-                        <img src="../../../../../assets/svg/accordian-arrow-icon.svg" alt="">
-                    </div>
-                </button>
-                <div class="accordian_info" >
-                    <img :src=(value.imgUrl.src) :src-placeholder=(value.imgUrl.placeholder) :alt=(value.imgUrl.src)>
-                    <div class="body_text_wrapper">{{ value.cardInfo }}</div>
-                </div>
+    <div class="big_container">
+      <div class="main_contenet">
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <p class="body_text">
+          {{ shopifyData.secinfo }}
+        </p>
+      </div>
+      <div class="sec_accordian">
+        <div
+          v-for="(value, key) in shopifyData.cardData"
+          :key="key"
+          class="accordian_card"
+        >
+          <button
+            class="accordian_btn"
+            @click="(event)=>{setActive(event)}"
+          >
+            <span class="subtitle_b">{{ value.crdHeading }}</span>
+            <div class="crose_icon line-h-0">
+              <img
+                src="../../../../../assets/svg/accordian-arrow-icon.svg"
+                alt=""
+              >
             </div>
-            
+          </button>
+          <div class="accordian_info">
+            <img
+              :src="(value.imgUrl.src)"
+              :src-placeholder="(value.imgUrl.placeholder)"
+              :alt="(value.imgUrl.src)"
+            >
+            <div class="body_text_wrapper">
+              {{ value.cardInfo }}
+            </div>
+          </div>
         </div>
       </div>
+    </div>
   </section>
   <!-- Constructing Ethos Hero Start -->
 </template>

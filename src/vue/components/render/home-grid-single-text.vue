@@ -2,8 +2,16 @@
   <!-- Grid Single Text -->
   <section class="grid_single_text big_container">
     <div class="grid_item">
-      <a  :href=(shopifyData.link)  class="grid_img-wrap line-h-0 d-block">
-        <v-lazy-image class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt)  />
+      <a
+        :href="(shopifyData.link)"
+        class="grid_img-wrap line-h-0 d-block"
+      >
+        <v-lazy-image
+          class="grid_img"
+          :src="(shopifyData.imgUrl.src)"
+          :src-placeholder="(shopifyData.imgUrl.placeholder)"
+          :alt="(shopifyData.imgUrl.alt)"
+        />
         <div class="grid_img_text-wrap">
           <span class="grid_img_text grid_img_text-first"> {{ shopifyData.toptext }} </span>
           <span class="grid_img_text grid_img_text-second"> {{ shopifyData.middletop }} </span>
@@ -12,14 +20,34 @@
         </div>
       </a>
       <div class="grid_info">
-        <h3 class="card_heading grid_heading">  {{ shopifyData.title }} </h3>
-        <a  :href=(shopifyData.link) class="link body_text"> {{ shopifyData.btntext }} </a>
+        <h3 class="card_heading grid_heading">
+          {{ shopifyData.title }}
+        </h3>
+        <a
+          :href="(shopifyData.link)"
+          class="link body_text"
+        > {{ shopifyData.btntext }} </a>
       </div>
     </div>
   </section>
 </template>
 
 
+<script>
+ import VLazyImage from "v-lazy-image";
+ export default {
+  components: {
+    VLazyImage,
+  },
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+};
+</script>
+  
 <style scoped>
 /* Single Grid Text */
 .grid_single_text {
@@ -83,20 +111,5 @@
   }
 }
 </style>
-  
-<script>
- import VLazyImage from "v-lazy-image";
- export default {
-  components: {
-    VLazyImage,
-  },
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-};
-</script>
   
   

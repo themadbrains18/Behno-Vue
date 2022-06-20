@@ -7,9 +7,9 @@
           <swiper
             :navigation="true"
             :modules="modules"
-            :centeredSlides="true"
+            :centered-slides="true"
             :effect="'fade'"
-            :spaceBetween="100"
+            :space-between="100"
             :autoplay="{
               delay: 1500,
               disableOnInteraction: false,
@@ -18,13 +18,16 @@
 
             class="mySwiper"
           >
-            <swiper-slide v-for="(value, key) in shopifyData.slide" :key="key">
-                <img
-                  :src="value.imgUrl.src"
-                  :placeholder="value.imgUrl.placeholder"
-                  :alt="value.imgUrl.alt"
-                />
-              </swiper-slide>
+            <swiper-slide
+              v-for="(value, key) in shopifyData.slide"
+              :key="key"
+            >
+              <img
+                :src="value.imgUrl.src"
+                :placeholder="value.imgUrl.placeholder"
+                :alt="value.imgUrl.alt"
+              >
+            </swiper-slide>
           </swiper>
         </div>
         <!--    Section text        -->
@@ -34,7 +37,6 @@
           </h2>
           <h4 class="card_heading_b">
             {{ shopifyData.secSubHeading }}
-            
           </h4>
           <p class="body_text">
             {{ shopifyData.secInfo }}
@@ -59,16 +61,16 @@ export default {
     Swiper,
     SwiperSlide
   },
-  setup() {
-    return {
-      modules: [Navigation,Autoplay]
-    };
-  },
   props:{
     shopifyData:{
         type:Object,
         required:true,
     }
+  },
+  setup() {
+    return {
+      modules: [Navigation,Autoplay]
+    };
   } 
 };
 </script>

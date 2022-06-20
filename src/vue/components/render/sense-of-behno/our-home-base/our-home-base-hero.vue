@@ -1,20 +1,48 @@
 <template>
-<!-- Exquisite-Handwork-Hero Section Start -->
-<section class="sec_exquisite_handwork_hero">
-    <h2 class="card_heading_b">{{ shopifyData.secHeading }}</h2>
+  <!-- Exquisite-Handwork-Hero Section Start -->
+  <section class="sec_exquisite_handwork_hero">
+    <h2 class="card_heading_b">
+      {{ shopifyData.secHeading }}
+    </h2>
     <div class="sec_content">
-        <template v-if="shopifyData.checkbox === 'true'">
-            <video   controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true"  preload="none" >
-                <source :src=(shopifyData.videoLink) >
-            </video>
-        </template>
-        <template v-else>
-            <img :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
-        </template>
+      <template v-if="shopifyData.checkbox === 'true'">
+        <video
+          controls
+          autoplay="true"
+          loop="true"
+          muted="true"
+          controlsList="nodownload"
+          disablepictureinpicture
+          webkit-playsinline="true"
+          playsinline="true"
+          preload="none"
+        >
+          <source :src="(shopifyData.videoLink)">
+        </video>
+      </template>
+      <template v-else>
+        <img
+          :src="(shopifyData.imgUrl.src)"
+          :src-placeholder="(shopifyData.imgUrl.placeholder)"
+          :alt="(shopifyData.imgUrl.alt)"
+        >
+      </template>
     </div>
-</section>  
+  </section>  
 <!-- Exquisite-Handwork-Hero Section End -->
 </template>
+<script>
+export default {
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+
+};
+</script>
+
 <style scoped>
     .sec_exquisite_handwork_hero{
         padding-top: 45px;
@@ -53,15 +81,3 @@
     }
 }
 </style>
-
-<script>
-export default {
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-
-};
-</script>

@@ -1,56 +1,119 @@
 <template>
-    <section class="sec_invited_buckingham">
-        <div class="big_container">
-            <div class="main_contenet">
-                <h2 class="sec_heading">
-                    {{ shopifyData.secHeading }}
-                </h2>
-                <h4 class="card_heading_b">
-                    {{ shopifyData.secSubHeading }}
-                </h4>
-                <p class="body_text">
-                    {{ shopifyData.secInfo }}
-                </p>
-            </div>
-            <div class="sec_content">
-                <div class="sec_video">
-                    <div class="sec-image-modifier" v-if="shopifyData.collageData[0]">                        
-                        <img class="item1" :src=(shopifyData.collageData[0].imgUrl.src) :src-placeholder=(shopifyData.collageData[0].imgUrl.placeholder)  :alt=(shopifyData.collageData[0].imgUrl.alt)>
-                        <p class="fig_caption">{{ shopifyData.collageData[0].imageInfo }}</p>
-                    </div>
-                    <template v-if="shopifyData.checkImage === 'true'">
-                        <video  controls autoplay="true" loop="true" muted="true"  controlsList="nodownload" disablepictureinpicture webkit-playsinline="true" playsinline="true" preload="none" >
-                            <source :src=(shopifyData.videolink) >
-                        </video>
-                    </template>
-                    <template v-else>
-                        <img class="grid_img" :src=(shopifyData.imgUrl.src) :src-placeholder=(shopifyData.imgUrl.placeholder) :alt=(shopifyData.imgUrl.alt) />
-                    </template>
-                </div>
-                <div class="sec_img">
-                    <div class="t-start">
-                        <div class="img_item1" v-if="shopifyData.collageData[1]">
-                            <img  :src=(shopifyData.collageData[1].imgUrl.src) :src-placeholder=(shopifyData.collageData[1].imgUrl.placeholder)  :alt=(shopifyData.collageData[1].imgUrl.alt)>
-                            <p class="fig_caption">{{ shopifyData.collageData[1].imageInfo }}</p>
-                        </div>
-                    </div>
-                    <div class="t-end">
-                        <div class="item1 img_item2" v-if="shopifyData.collageData[2]">
-                            <img :src=(shopifyData.collageData[2].imgUrl.src) :src-placeholder=(shopifyData.collageData[2].imgUrl.placeholder)  :alt=(shopifyData.collageData[2].imgUrl.alt)>
-                            <p class="fig_caption">{{ shopifyData.collageData[2].imageInfo }}</p>
-                        </div>
-                    </div>
-                    <div class="t-center">
-                        <div class="img_item3" v-if="shopifyData.collageData[3]">
-                            <img  :src=(shopifyData.collageData[3].imgUrl.src) :src-placeholder=(shopifyData.collageData[3].imgUrl.placeholder)  :alt=(shopifyData.collageData[3].imgUrl.alt)>
-                            <p class="fig_caption">{{ shopifyData.collageData[3].imageInfo }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section class="sec_invited_buckingham">
+    <div class="big_container">
+      <div class="main_contenet">
+        <h2 class="sec_heading">
+          {{ shopifyData.secHeading }}
+        </h2>
+        <h4 class="card_heading_b">
+          {{ shopifyData.secSubHeading }}
+        </h4>
+        <p class="body_text">
+          {{ shopifyData.secInfo }}
+        </p>
+      </div>
+      <div class="sec_content">
+        <div class="sec_video">
+          <div
+            v-if="shopifyData.collageData[0]"
+            class="sec-image-modifier"
+          >                        
+            <img
+              class="item1"
+              :src="(shopifyData.collageData[0].imgUrl.src)"
+              :src-placeholder="(shopifyData.collageData[0].imgUrl.placeholder)"
+              :alt="(shopifyData.collageData[0].imgUrl.alt)"
+            >
+            <p class="fig_caption">
+              {{ shopifyData.collageData[0].imageInfo }}
+            </p>
+          </div>
+          <template v-if="shopifyData.checkImage === 'true'">
+            <video
+              controls
+              autoplay="true"
+              loop="true"
+              muted="true"
+              controlsList="nodownload"
+              disablepictureinpicture
+              webkit-playsinline="true"
+              playsinline="true"
+              preload="none"
+            >
+              <source :src="(shopifyData.videolink)">
+            </video>
+          </template>
+          <template v-else>
+            <img
+              class="grid_img"
+              :src="(shopifyData.imgUrl.src)"
+              :src-placeholder="(shopifyData.imgUrl.placeholder)"
+              :alt="(shopifyData.imgUrl.alt)"
+            >
+          </template>
         </div>
-    </section>
+        <div class="sec_img">
+          <div class="t-start">
+            <div
+              v-if="shopifyData.collageData[1]"
+              class="img_item1"
+            >
+              <img
+                :src="(shopifyData.collageData[1].imgUrl.src)"
+                :src-placeholder="(shopifyData.collageData[1].imgUrl.placeholder)"
+                :alt="(shopifyData.collageData[1].imgUrl.alt)"
+              >
+              <p class="fig_caption">
+                {{ shopifyData.collageData[1].imageInfo }}
+              </p>
+            </div>
+          </div>
+          <div class="t-end">
+            <div
+              v-if="shopifyData.collageData[2]"
+              class="item1 img_item2"
+            >
+              <img
+                :src="(shopifyData.collageData[2].imgUrl.src)"
+                :src-placeholder="(shopifyData.collageData[2].imgUrl.placeholder)"
+                :alt="(shopifyData.collageData[2].imgUrl.alt)"
+              >
+              <p class="fig_caption">
+                {{ shopifyData.collageData[2].imageInfo }}
+              </p>
+            </div>
+          </div>
+          <div class="t-center">
+            <div
+              v-if="shopifyData.collageData[3]"
+              class="img_item3"
+            >
+              <img
+                :src="(shopifyData.collageData[3].imgUrl.src)"
+                :src-placeholder="(shopifyData.collageData[3].imgUrl.placeholder)"
+                :alt="(shopifyData.collageData[3].imgUrl.alt)"
+              >
+              <p class="fig_caption">
+                {{ shopifyData.collageData[3].imageInfo }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
+<script>
+    export default{
+        props:{
+            shopifyData:{
+                type: Object,
+                required: true,
+            }
+        }   
+    }
+</script>    
+
 <style scoped>
     .sec_invited_buckingham{
         padding: 125px 0 46px;
@@ -156,15 +219,4 @@
             width: 90px;
         }
     }
-</style>    
-
-<script>
-    export default{
-        props:{
-            shopifyData:{
-                type: Object,
-                required: true,
-            }
-        }   
-    }
-</script>
+</style>

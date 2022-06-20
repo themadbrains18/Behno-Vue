@@ -1,26 +1,49 @@
 <template>
-    <section class="Urbanism_and_development_sec">
-        <div class="big_container">
-            <!-- sec content -->
-            <div class="sec_content">
-                <div class="sec_content_inner">
-                    <div class="sec_img">
-                        <div class="image_grid">
-                            <img :src=(shopifyData.SecImg.src) :placeholder=(shopifyData.SecImg.placeholder) :alt=(shopifyData.SecImg.alt) />
-                        </div>
-                    </div>
-                    <div class="sec_text">
-                        <h2 class="sec_heading">{{ shopifyData.secHeading }}</h2>
-                        <h4 class="card_heading_b">{{ shopifyData.secSubHeading }}</h4>
-                        <p class="body_text" v-for="(item, index) in shopifyData.paragraph" :key="index">
-                            {{ item.para }}
-                        </p>
-                    </div>
-                </div>
+  <section class="Urbanism_and_development_sec">
+    <div class="big_container">
+      <!-- sec content -->
+      <div class="sec_content">
+        <div class="sec_content_inner">
+          <div class="sec_img">
+            <div class="image_grid">
+              <img
+                :src="(shopifyData.SecImg.src)"
+                :placeholder="(shopifyData.SecImg.placeholder)"
+                :alt="(shopifyData.SecImg.alt)"
+              >
             </div>
+          </div>
+          <div class="sec_text">
+            <h2 class="sec_heading">
+              {{ shopifyData.secHeading }}
+            </h2>
+            <h4 class="card_heading_b">
+              {{ shopifyData.secSubHeading }}
+            </h4>
+            <p
+              v-for="(item, index) in shopifyData.paragraph"
+              :key="index"
+              class="body_text"
+            >
+              {{ item.para }}
+            </p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script>
+export default{
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  }
+}
+</script>
 
 <style scoped>
 .Urbanism_and_development_sec{
@@ -71,14 +94,3 @@
     }
 }
 </style>
-
-<script>
-export default{
-   props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  }
-}
-</script>
