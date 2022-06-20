@@ -21,14 +21,16 @@
     <div class="sec_video">
       <video
         v-for="(item, index) in shopifyData.videoData"
+        :key="index"
         controls
         autoplay="true"
-        :key="index"
         loop="true"
         muted="true"
         controlsList="nodownload"
         disablepictureinpicture
-webkit-playsinline="true" playsinline="true" preload="none"
+        webkit-playsinline="true"
+        playsinline="true"
+        preload="none"
       >
         <source :src="(item.video)">
       </video>

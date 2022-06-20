@@ -48,6 +48,7 @@ export default {
   props:{
     productData:{
       type:Object,
+      required: true
     }
   },
   emits:['close'],

@@ -1,260 +1,558 @@
 <template>
-
-<!-- Collacction Banner Code -->
-<h2>{{shopifyData.collactionTittle}}</h2>
+  <!-- Collacction Banner Code -->
+  <h2>{{ shopifyData.collactionTittle }}</h2>
   <div class="collaction_banner">
-      <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/collaction-banner.jpg?v=1655384242" alt="Collaction Image">
-      <h2 class="banner_heading">THE ELIZABETH BAGUETTE SERIES</h2>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/collaction-banner.jpg?v=1655384242"
+      alt="Collaction Image"
+    >
+    <h2 class="banner_heading">
+      THE ELIZABETH BAGUETTE SERIES
+    </h2>
   </div>
-<div class="filter_responsive">
+  <div class="filter_responsive">
     <div class="filter_cta_wrapper">
-        <button class="filter_cta" id="filterCta" v-on:click="myFilter">
-            {{ shopifyData.filterDropdownTextResponsive }}
-        </button>
-        <button class="filter_cta" id="sortCta" v-on:click="sortBy">
-            {{ shopifyData.sortByDropdownTextResponsive }}
-        </button>
+      <button
+        id="filterCta"
+        class="filter_cta"
+        @click="myFilter"
+      >
+        {{ shopifyData.filterDropdownTextResponsive }}
+      </button>
+      <button
+        id="sortCta"
+        class="filter_cta"
+        @click="sortBy"
+      >
+        {{ shopifyData.sortByDropdownTextResponsive }}
+      </button>
     </div>
-</div>
-<div class="filter_row">
+  </div>
+  <div class="filter_row">
     <div class="row_inner">
-        <div class="apply_filter_cta_wrapper">
-            <button class="apply_filter_cta" disabled v-on:click="applyfilter">
-                {{ shopifyData.applyFilterCta }}
-            </button>
-        </div>
-        <div class="filters">
-            <div class="filters_inner_row">
-                <div class="filters_responsive">
-                    <div class="close-btn" v-on:click="closeMenu">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.8861 11.8864L35.6587 35.6589" stroke="#656565" stroke-width="1.5" />
-                            <path d="M11.8861 35.6586L35.6587 11.886" stroke="#656565" stroke-width="1.5" />
-                        </svg>
-                    </div>
-                    <div class="filter_cta_wrapper">
-                        <button class="filter_cta filter-modifier">
-                            {{ shopifyData.filterinnerResponsive }}
-                        </button>
-                        <button class="filter_cta clear-modifier" v-bind:class="{ activeClear: showClearAll }" @click="clearAllFilter()">
-                            CLEAR FILTERS
-                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-bb57343a="">
-                                <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" data-v-bb57343a=""></path>
-                                <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" data-v-bb57343a=""></path>
-                            </svg>
-                        </button>
-                    </div>
+      <div class="apply_filter_cta_wrapper">
+        <button
+          class="apply_filter_cta"
+          disabled
+          @click="applyfilter"
+        >
+          {{ shopifyData.applyFilterCta }}
+        </button>
+      </div>
+      <div class="filters">
+        <div class="filters_inner_row">
+          <div class="filters_responsive">
+            <div
+              class="close-btn"
+              @click="closeMenu"
+            >
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.8861 11.8864L35.6587 35.6589"
+                  stroke="#656565"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M11.8861 35.6586L35.6587 11.886"
+                  stroke="#656565"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <div class="filter_cta_wrapper">
+              <button class="filter_cta filter-modifier">
+                {{ shopifyData.filterinnerResponsive }}
+              </button>
+              <button
+                class="filter_cta clear-modifier"
+                :class="{ activeClear: showClearAll }"
+                @click="clearAllFilter()"
+              >
+                CLEAR FILTERS
+                <svg
+                  width="6"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-v-bb57343a=""
+                >
+                  <path
+                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
+                    stroke="white"
+                    data-v-bb57343a=""
+                  />
+                  <path
+                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
+                    stroke="white"
+                    data-v-bb57343a=""
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="filters_inner">
+            <!-- Categories filter -->
+            <div
+              class="filter"
+              @mouseenter="isMobile == true ? null : (show = true)"
+              @mouseleave="isMobile == true ? null : (show = false)"
+              @click="isMobile == false ? null : closeDropDown(show, 'show')"
+            >
+              <!-- v-on:mouseover="show = !show" -->
+              <div
+                class="dropdown"
+                @click="
+                  (event) => {
+                    addActive(event);
+                  }
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </div>
-                <div class="filters_inner">
-                    <!-- Categories filter -->
-                    <div class="filter" @mouseenter="isMobile == true ? null : (show = true)" @mouseleave="isMobile == true ? null : (show = false)" @click="isMobile == false ? null : closeDropDown(show, 'show')">
-                        <!-- v-on:mouseover="show = !show" -->
-                        <div class="dropdown" @click="
-                  (event) => {
-                    addActive(event);
-                  }
-                ">
-                            <div class="overselect">
-                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <button class="c-form-input">Categories</button>
-                        </div>
-                        <div class="multiselect" v-bind:class="{ active: show }">
-                            <div class="tmb_header_dopdown">
-                                <ul>
-                                    <li v-for="option in ddTestCategory" :key="option.id">
-                                        <input class="multiselectOption" type="radio" name="category" :id="option.id" :value="option.value" @change="onCheck($event)" />
-                                        <label class="optionLabel" :for="option.id">{{
+                <button class="c-form-input">
+                  Categories
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: show }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestCategory"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="radio"
+                        name="category"
+                        :value="option.value"
+                        @change="onCheck($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
-                                    </li>
-                                </ul>
-                                <div class="btn_wrapper">
-                                    <!-- <button class="filterBtn modifier" @click="filterProduct">Apply</button> -->
-                                    <button class="filterBtn" @click="clearCheckBoxs('category')">
-                                        Clear
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- color filter -->
-                    <div class="filter color-filter" @mouseenter="isMobile == true ? null : (showColor = true)" @mouseleave="isMobile == true ? null : (showColor = false)" @click="
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProduct">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('category')"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- color filter -->
+            <div
+              class="filter color-filter"
+              @mouseenter="isMobile == true ? null : (showColor = true)"
+              @mouseleave="isMobile == true ? null : (showColor = false)"
+              @click="
                 isMobile == false ? null : closeDropDown(showColor, 'showColor')
-              ">
-                        <div class="dropdown" @click="
+              "
+            >
+              <div
+                class="dropdown"
+                @click="
                   (event) => {
                     addActive(event);
                   }
-                ">
-                            <div class="overselect">
-                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <button class="c-form-input">Color</button>
-                        </div>
-                        <div class="multiselect" v-bind:class="{ active: showColor }">
-                            <div class="tmb_header_dopdown">
-                                <ul>
-                                    <li v-for="option in ddTestColor" :key="option.id">
-                                        <input class="multiselectOption" type="radio" name="color" :id="option.id" :value="option.value" @change="onCheckColor($event)" />
-                                        <label class="optionLabel" :for="option.id">{{
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <button class="c-form-input">
+                  Color
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: showColor }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestColor"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="radio"
+                        name="color"
+                        :value="option.value"
+                        @change="onCheckColor($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
-                                    </li>
-                                </ul>
-                                <div class="btn_wrapper">
-                                    <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
-                                    <button class="filterBtn" @click="clearCheckBoxs('color')">
-                                        Clear
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- size filter -->
-                    <div class="filter size-filter" @mouseenter="isMobile == true ? null : (showSize = true)" @mouseleave="isMobile == true ? null : (showSize = false)" @click="
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('color')"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- size filter -->
+            <div
+              class="filter size-filter"
+              @mouseenter="isMobile == true ? null : (showSize = true)"
+              @mouseleave="isMobile == true ? null : (showSize = false)"
+              @click="
                 isMobile == false ? null : closeDropDown(showSize, 'showSize')
-              ">
-                        <div class="dropdown" @click="
+              "
+            >
+              <div
+                class="dropdown"
+                @click="
                   (event) => {
                     addActive(event);
                   }
-                ">
-                            <div class="overselect">
-                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <button class="c-form-input">Size</button>
-                        </div>
-                        <div class="multiselect" v-bind:class="{ active: showSize }">
-                            <div class="tmb_header_dopdown">
-                                <ul>
-                                    <li v-for="option in ddTestSize" :key="option.id">
-                                        <input class="multiselectOption" type="radio" name="size" :id="option.id" :value="option.value" @change="onCheckSize($event)" />
-                                        <label class="optionLabel" :for="option.id">{{
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <button class="c-form-input">
+                  Size
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: showSize }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestSize"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="radio"
+                        name="size"
+                        :value="option.value"
+                        @change="onCheckSize($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
-                                    </li>
-                                </ul>
-                                <div class="btn_wrapper">
-                                    <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
-                                    <button class="filterBtn" @click="clearCheckBoxs('size')">
-                                        Clear
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- material filter -->
-                    <div class="filter filter-modifier" @mouseenter="isMobile == true ? null : (showMaterial = true)" @mouseleave="isMobile == true ? null : (showMaterial = false)" @click="
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('size')"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- material filter -->
+            <div
+              class="filter filter-modifier"
+              @mouseenter="isMobile == true ? null : (showMaterial = true)"
+              @mouseleave="isMobile == true ? null : (showMaterial = false)"
+              @click="
                 isMobile == false
                   ? null
                   : closeDropDown(showMaterial, 'showMaterial')
-              ">
-                        <div class="dropdown" @click="
+              "
+            >
+              <div
+                class="dropdown"
+                @click="
                   (event) => {
                     addActive(event);
                   }
-                ">
-                            <div class="overselect">
-                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <button class="c-form-input">Material</button>
-                        </div>
-                        <div class="multiselect" v-bind:class="{ active: showMaterial }">
-                            <div class="tmb_header_dopdown">
-                                <ul>
-                                    <li v-for="option in ddTestMaterial" :key="option.id">
-                                        <input class="multiselectOption" type="radio" name="material" :id="option.id" :value="option.value" @change="onCheckMaterial($event)" />
-                                        <label class="optionLabel" :for="option.id">{{
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <button class="c-form-input">
+                  Material
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: showMaterial }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestMaterial"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="radio"
+                        name="material"
+                        :value="option.value"
+                        @change="onCheckMaterial($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
-                                    </li>
-                                </ul>
-                                <div class="btn_wrapper">
-                                    <!-- <button class="filterBtn modifier" @click="filterProductByMaterial">Apply</button> -->
-                                    <button class="filterBtn" @click="clearCheckBoxs('material')">
-                                        Clear
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Clear Filter -->
-                    <div class="filter">
-                        <button class="clearFilter" v-bind:class="{ activeClear: showClearAll }" @click="clearAllFilter()">
-                            Clear filters
-                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" />
-                                <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" />
-                            </svg>
-                        </button>
-                    </div>
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProductByMaterial">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('material')"
+                    >
+                      Clear
+                    </button>
+                  </div>
                 </div>
+              </div>
             </div>
+            <!-- Clear Filter -->
+            <div class="filter">
+              <button
+                class="clearFilter"
+                :class="{ activeClear: showClearAll }"
+                @click="clearAllFilter()"
+              >
+                Clear filters
+                <svg
+                  width="6"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
+                    stroke="white"
+                  />
+                  <path
+                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
+                    stroke="white"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="sort_by">
-            <div class="filters_responsive">
-                <div class="close-btn" v-on:click="closeMenu">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.8861 11.8864L35.6587 35.6589" stroke="#656565" stroke-width="1.5" />
-                        <path d="M11.8861 35.6586L35.6587 11.886" stroke="#656565" stroke-width="1.5" />
-                    </svg>
-                </div>
-                <div class="filter_cta_wrapper">
-                    <button class="filter_cta filter-modifier">
-                        {{ shopifyData.sortinnerResponsive }}
-                    </button>
-                </div>
+      </div>
+      <div class="sort_by">
+        <div class="filters_responsive">
+          <div
+            class="close-btn"
+            @click="closeMenu"
+          >
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.8861 11.8864L35.6587 35.6589"
+                stroke="#656565"
+                stroke-width="1.5"
+              />
+              <path
+                d="M11.8861 35.6586L35.6587 11.886"
+                stroke="#656565"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+          <div class="filter_cta_wrapper">
+            <button class="filter_cta filter-modifier">
+              {{ shopifyData.sortinnerResponsive }}
+            </button>
+          </div>
+        </div>
+        <div class="sort_by_inner">
+          <div class="range">
+            <div class="add_remove">
+              <button>-</button>
+              <button>+</button>
             </div>
-            <div class="sort_by_inner">
-                <div class="range">
-                    <div class="add_remove">
-                        <button>-</button>
-                        <button>+</button>
-                    </div>
-                    <input id="ageInputId" type="range" value="{{gridColumn}}" min="2" max="6" step="2" class="progress" @input="sliderChange($event)" />
-                </div>
-                <div class="sortFilter" @mouseenter="showSort = true" @mouseleave="showSort = false">
-                    <button class="sortBtn">
-                        Sort By
-                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path data-v-35171425="" d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round"></path>
-                        </svg>
-                    </button>
-                    <div class="multiselect" v-bind:class="{ active: showSort }">
-                        <div class="tmb_header_dopdown">
-                            <ul>
-                                <li v-for="option in ddTestSort" :key="option.id">
-                                    <input class="multiselectOption" type="checkbox" name="sort" :checked="option.id == 'sort1' ? true : false" :id="option.id" :value="option.value" @change="onCheckSort($event)" />
-                                    <label class="optionLabel" :for="option.id" @click="
+            <input
+              id="ageInputId"
+              type="range"
+              value="{{gridColumn}}"
+              min="2"
+              max="6"
+              step="2"
+              class="progress"
+              @input="sliderChange($event)"
+            >
+          </div>
+          <div
+            class="sortFilter"
+            @mouseenter="showSort = true"
+            @mouseleave="showSort = false"
+          >
+            <button class="sortBtn">
+              Sort By
+              <svg
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  data-v-35171425=""
+                  d="M1 1L5 5L9 1"
+                  stroke="black"
+                  stroke-width="0.75"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              class="multiselect"
+              :class="{ active: showSort }"
+            >
+              <div class="tmb_header_dopdown">
+                <ul>
+                  <li
+                    v-for="option in ddTestSort"
+                    :key="option.id"
+                  >
+                    <input
+                      :id="option.id"
+                      class="multiselectOption"
+                      type="checkbox"
+                      name="sort"
+                      :checked="option.id == 'sort1' ? true : false"
+                      :value="option.value"
+                      @change="onCheckSort($event)"
+                    >
+                    <label
+                      class="optionLabel"
+                      :for="option.id"
+                      @click="
                         (event) => {
                           closeSortMenu(event);
                         }
-                      ">{{ option.text }}</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                      "
+                    >{{ option.text }}</label>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<div class="product_grid">
-    <div class="grid_inner product-containers" v-bind:class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
-        <div class="product_item" v-for="(value, key) in Products" :key="key">
-            <!-- this block work for single product products -->
-            <div class="card" v-if="value.hasOwnProperty('single')">
-                <a :href="`/products/` + value.single.handle">
-                    <!-- <div class="item_left" v-bind:class="{ item_left_active: value.totalInventory < 5 }" id="item_left_">
+  </div>
+  <div class="product_grid">
+    <div
+      class="grid_inner product-containers"
+      :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }"
+    >
+      <div
+        v-for="(value, key) in Products"
+        :key="key"
+        class="product_item"
+      >
+        <!-- this block work for single product products -->
+        <div
+          v-if="value.hasOwnProperty('single')"
+          class="card"
+        >
+          <a :href="`/products/` + value.single.handle">
+            <!-- <div class="item_left" v-bind:class="{ item_left_active: value.totalInventory < 5 }" id="item_left_">
                         {{
                 value.totalInventory <= 5 && value.totalInventory >= 1
                   ? "ONLY " + value.totalInventory + " LEFT"
@@ -264,38 +562,66 @@
               }}
                     </div> -->
 
-                    <div class="product_img_wrapper" v-if="value.single.images.length > 2">
-                        <img :src="value.single.images[0]" alt="{{ value.single.images[0] }}" class="normal" />
-                        <img :src="value.single.images[1]" alt="{{ value.single.images[1] }}" class="hoverImg" />
-                    </div>
-                    <div class="product_img_wrapper" v-else>
-                        <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" alt="" class="normal" />
-                    </div>
-
-                    <h5 class="card-title product_title">
-                        {{ value.single.title }}
-                    </h5>
-                    <h5 class="card-title bold product_price">
-                        $ {{ (value.single.compare_at_price / 100).toFixed(2) }}
-                    </h5>
-                </a>
-
-                <div class="quickButton quickActive">
-                    <div class="color_swatches"></div>
-                    <div class="product_cta_wrapper" data-v-32bfb114="">
-                        <button :id="'quickAdd' + value.single.id" class="quickAdd" v-on:click="addToCard" :variantid="value.single.variants[0].id">
-                            <span>Quick Add</span>
-                        </button>
-                    </div>
-                </div>
+            <div
+              v-if="value.single.images.length > 2"
+              class="product_img_wrapper"
+            >
+              <img
+                :src="value.single.images[0]"
+                alt="{{ value.single.images[0] }}"
+                class="normal"
+              >
+              <img
+                :src="value.single.images[1]"
+                alt="{{ value.single.images[1] }}"
+                class="hoverImg"
+              >
+            </div>
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
+              <img
+                src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+                alt=""
+                class="normal"
+              >
             </div>
 
-            <!-- this block work for single product products -->
+            <h5 class="card-title product_title">
+              {{ value.single.title }}
+            </h5>
+            <h5 class="card-title bold product_price">
+              $ {{ (value.single.compare_at_price / 100).toFixed(2) }}
+            </h5>
+          </a>
 
-            <div class="card" v-if="value.hasOwnProperty('variable') && (value.variable.length-1) >= value.active">
-            
-                <a :href="`/products/`+value.variable[value.active].handle">
-                    <!-- <div class="item_left" v-bind:class="{
+          <div class="quickButton quickActive">
+            <div class="color_swatches" />
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
+              <button
+                :id="'quickAdd' + value.single.id"
+                class="quickAdd"
+                :variantid="value.single.variants[0].id"
+                @click="addToCard"
+              >
+                <span>Quick Add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- this block work for single product products -->
+
+        <div
+          v-if="value.hasOwnProperty('variable') && (value.variable.length-1) >= value.active"
+          class="card"
+        >
+          <a :href="`/products/`+value.variable[value.active].handle">
+            <!-- <div class="item_left" v-bind:class="{
                 item_left_active: value.variable[value.active].totalInventory < 5,
               }" id="item_left_">
                         {{
@@ -308,53 +634,98 @@
               }}
                     </div> -->
 
-                    <div class="product_img_wrapper" id="product_img_wrapper6617090588769" v-if="value.variable[value.active].images.length > 2">
-                        <img :src="value.variable[value.active].images[0]" alt="{{ value.variable[value.active].images[0] }}" class="normal" />
-                        <img :src="value.variable[value.active].images[1]" alt="{{ value.variable[value.active].images[1] }}" class="hoverImg" />
-                    </div>
-                    <div class="product_img_wrapper" v-else>
-                        <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" alt="" class="normal" />
-                    </div>
-
-                    <h5 class="card-title product_title">
-                        {{ value.variable[value.active].title }}
-                    </h5>
-                    <h5 class="card-title bold product_price">
-                        $ {{ (value.variable[value.active].compare_at_price / 100).toFixed(2) }}
-                    </h5>
-                </a>
-
-                <div class="quickButton quickActive">
-                    <div class="color_swatches">
-                        <ul :mainKey="JSON.stringify(value)">
-                            <li v-for="(sValue, sKey) in value.swatches" :key="sKey" :index="sKey" :link="sValue.link" @click="selectVariation" class="nav-dots" v-bind:class="sKey == value.active ? 'active' : ''">
-                                <span>
-                                    <img :src="getThemeAssets(sValue.img)" :class="sValue.img" />
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="product_cta_wrapper" data-v-32bfb114="">
-                        <button :id="'quickAdd' + value.variable[value.active].id" :variantid="value.variable[value.active].variants[0].id" qty="1" class="quickAdd" v-on:click="addToCard">
-                            <span>Quick Add</span>
-                        </button>
-                    </div>
-                </div>
+            <div
+              v-if="value.variable[value.active].images.length > 2"
+              id="product_img_wrapper6617090588769"
+              class="product_img_wrapper"
+            >
+              <img
+                :src="value.variable[value.active].images[0]"
+                alt="{{ value.variable[value.active].images[0] }}"
+                class="normal"
+              >
+              <img
+                :src="value.variable[value.active].images[1]"
+                alt="{{ value.variable[value.active].images[1] }}"
+                class="hoverImg"
+              >
             </div>
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
+              <img
+                src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+                alt=""
+                class="normal"
+              >
+            </div>
+
+            <h5 class="card-title product_title">
+              {{ value.variable[value.active].title }}
+            </h5>
+            <h5 class="card-title bold product_price">
+              $ {{ (value.variable[value.active].compare_at_price / 100).toFixed(2) }}
+            </h5>
+          </a>
+
+          <div class="quickButton quickActive">
+            <div class="color_swatches">
+              <ul :mainKey="JSON.stringify(value)">
+                <li
+                  v-for="(sValue, sKey) in value.swatches"
+                  :key="sKey"
+                  :index="sKey"
+                  :link="sValue.link"
+                  class="nav-dots"
+                  :class="sKey == value.active ? 'active' : ''"
+                  @click="selectVariation"
+                >
+                  <span>
+                    <img
+                      :src="getThemeAssets(sValue.img)"
+                      :class="sValue.img"
+                    >
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
+              <button
+                :id="'quickAdd' + value.variable[value.active].id"
+                :variantid="value.variable[value.active].variants[0].id"
+                qty="1"
+                class="quickAdd"
+                @click="addToCard"
+              >
+                <span>Quick Add</span>
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
 
-    <div class="row centeralign addmargin" v-bind:class="{ productnotfound: Products.length === 0, productfound: Products.length > 0}">
-                    <h2 class="sec_heading">We're sorry, no matches were found.</h2>
-                    <h4 class="body_text">We couldn't find any results for your selected filters. Clear your filters, or contact
-                        our team
-                        and
-                        we'll be happy to help.</h4>
+    <div
+      class="row centeralign addmargin"
+      :class="{ productnotfound: Products.length === 0, productfound: Products.length > 0}"
+    >
+      <h2 class="sec_heading">
+        We're sorry, no matches were found.
+      </h2>
+      <h4 class="body_text">
+        We couldn't find any results for your selected filters. Clear your filters, or contact
+        our team
+        and
+        we'll be happy to help.
+      </h4>
     </div>
-
-</div>
+  </div>
 </template>
 
 <script>
@@ -369,6 +740,12 @@ import {
 } from "../../Shopify/Shopify";
 
 export default {
+    props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        },
+    },
     data() {
         return {
             isActive: false,
@@ -1500,12 +1877,6 @@ export default {
             }
 
             return src;
-        },
-    },
-    props: {
-        shopifyData: {
-            type: Object,
-            required: true,
         },
     },
 };

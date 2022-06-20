@@ -113,7 +113,8 @@ export default {
     },   
     props: {
         productList: {
-            type: Array
+            type: Array,
+            required: true
         },
         isMobile:{
             type: Boolean

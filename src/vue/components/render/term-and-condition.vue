@@ -18,10 +18,12 @@
           <h3 class="contact_heading">
             {{ value.boxHeading }}
           </h3>
+          <!-- eslint-disable -->
           <p
             class="contact_brief"
             v-html="renderHtml(value.boxContent)"
           />
+          <!-- eslint-enable -->
           <div class="contact_number">
             <a :href="(value.link)">{{ value.linkText }}</a>
           </div>
@@ -55,10 +57,12 @@
               >
             </button>
             <div class="tab_content">
+              <!-- eslint-disable -->
               <div
                 class="tab_content_inner"
                 v-html="renderHtml(value.Content)"
               />
+              <!-- eslint-enable -->
             </div>
           </li>
         </ul>

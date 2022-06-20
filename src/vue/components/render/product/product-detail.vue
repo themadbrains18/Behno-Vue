@@ -3,6 +3,7 @@
     <div class="product_grid">
       <div class="product_grid_image line-h-0 modify-slider">
         <swiper
+          id="productMediaslider"
           :modules="modules"
           watch-slides-progress
           :slides-per-view="1"
@@ -27,9 +28,8 @@
               slidesPerView: '1'
             }
           }"
-          @swiper="setThumbsSwiper"
           class="product-media-slider "
-          id="productMediaslider"
+          @swiper="setThumbsSwiper"
         >
           <swiper-slide
             v-for="(value, key) in selectedProduct.media"
@@ -292,10 +292,12 @@
                 </svg>
                 ETHICAL PHILOSOPHY
               </button>
+              <!-- eslint-disable -->
               <div
                 class="product_accordian_panel"
                 v-html="replaceString(selectedProductDescription[4])"
               />
+              <!-- eslint-enable -->
             </li>
             <!-- Product REVIEWS  -->
             <li class="product_accordian">
@@ -320,11 +322,13 @@
                 </svg>
                 REVIEWS
               </button>
+              <!-- eslint-disable -->
               <div class="product_accordian_panel">
                 <div
                   class="product_review"
                   v-html="showProductReviewData.productReview"
                 />
+                <!-- eslint-enable -->
               </div>
             </li>
           </ul>
@@ -360,8 +364,9 @@
         </swiper>
       </div>
 
-
+      <!-- eslint-disable -->
       <span v-html="showProductReviewData.productReview" />
+      <!-- eslint-enable -->
     </div>
   </section>
 </template>
