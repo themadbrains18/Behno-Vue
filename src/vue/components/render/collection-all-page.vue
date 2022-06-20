@@ -653,13 +653,13 @@ export default {
             if(savedItem != ''){
                 savedFilter = JSON.parse(savedItem)
                 savedFilter.map((e,i) => {
-                        if(e.hasOwnProperty("Category")){
+                        if(Object.prototype.hasOwnProperty.call(e,"Category")){
                             category = i
-                        }else if(e.hasOwnProperty("Color")){
+                        }else if(Object.prototype.hasOwnProperty.call(e,"Color")){
                             color    = i
-                        }else if(e.hasOwnProperty("Size")){
+                        }else if(Object.prototype.hasOwnProperty.call(e,"Size")){
                             size     = i
-                        }else if(e.hasOwnProperty("Material")){
+                        }else if(Object.prototype.hasOwnProperty.call(e,"Material")){
                             material = i
                         }
                 })
@@ -906,10 +906,10 @@ export default {
                 let obj = this.selectedSort[0];
                 this.Products.sort(function (a, b) {
                     if (obj == "LowToHigh") {
-                        if(a.hasOwnProperty('variable')){
+                        if(Object.prototype.hasOwnProperty.call(a,'variable')){
                             return a.variable[a.active].price - (b.variable!=undefined?b.variable[b.active].price:b.single.price);
                         }
-                        if(a.hasOwnProperty('single')){
+                        if(Object.prototype.hasOwnProperty.call(a,'single')){
                             return a.single.price - (b.single!=undefined?b.single.price:b.variable[b.active].price);
                         }
                         
@@ -967,7 +967,7 @@ export default {
 
             var flag = false
             var index = prev.map(function (e, i) {
-                if (e.hasOwnProperty(name)) {
+                if (Object.prototype.hasOwnProperty.call(e,name)) {
                     flag = true
                 }
             });
@@ -979,7 +979,7 @@ export default {
                 var newArray = []
                 prev.map(function (o) {
                     // return o.Category; 
-                    if (o.hasOwnProperty(name)) {
+                    if (Object.prototype.hasOwnProperty.call(o,name)) {
                         var updateval = {
                             [name]: ColVal
                         }
@@ -1071,13 +1071,13 @@ export default {
              if(getSavedFilter !=''){
                    let savefiltr = JSON.parse(getSavedFilter)
                    savefiltr.map((filter_elem,filter_index) =>{
-                        if(filter_elem.hasOwnProperty("Category")){
+                        if(Object.prototype.hasOwnProperty.call(filter_elem,"Category")){
                             Categories = Object.values(filter_elem)[0]
-                        }else if(filter_elem.hasOwnProperty("Color")){
+                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Color")){
                             Color = Object.values(filter_elem)[0]
-                        }else if(filter_elem.hasOwnProperty("Size")){
+                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Size")){
                             Size = Object.values(filter_elem)[0]
-                        }else if(filter_elem.hasOwnProperty("Material")){
+                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Material")){
                             Material = Object.values(filter_elem)[0]
                         }
                    })
@@ -1122,7 +1122,7 @@ export default {
                 var links = ""; /// product pair links
                 for (let varints in v) {
                     if ("variants_products" == varints || "variants_swtach" == varints) {
-                        var links = v["variants_products"];
+                         links = v["variants_products"];
                     }
                 }
 
@@ -1136,7 +1136,9 @@ export default {
                     if ("object" == typeof links) {
                         // console.log(links)
                         for (let lnk in links) {
-                            if (links[lnk].replace("/products/", "") == handle) {} else {
+                            if (links[lnk].replace("/products/", "") == handle) {
+                                // 
+                            } else {
                                 bindInPair.push(links[lnk].replace("/products/", ""));
                                 duplicateRecord.push(links[lnk].replace("/products/", ""));
                             }
@@ -1181,11 +1183,11 @@ export default {
                                 if (Products[childPair][0].handle == Phandle.replace("/products/", "")) {
                                     // console.log(Products[childPair][0]);
 
-                                        var sP_variant = Products[childPair][0].variants
+                                        var sP1_variant = Products[childPair][0].variants
                                         
                                         var counterMatch = 0
                                     
-                                        sP_variant.map((sP) => { // sP means single product
+                                        sP1_variant.map((sP) => { // sP means single product
                                             counterMatch = 0
                                             sP.options.map((options) => { // sP means single product
                                             
@@ -1230,10 +1232,10 @@ export default {
                     }else{
 
                         for (let swatchPl in swatch) {
-                            var Phandle = swatch[swatchPl].link;
+                            var Phandle2 = swatch[swatchPl].link;
                             for (let childPair in Products) {
                                 //  console.log(products[childPair].node.handle,'===', Phandle)
-                                if (Products[childPair][0].handle == Phandle.replace("/products/", "")) {
+                                if (Products[childPair][0].handle == Phandle2.replace("/products/", "")) {
                                     // console.log(Products[childPair][0]);
                                     collectPairProducts.push(Products[childPair][0]); 
                                    
@@ -1266,21 +1268,21 @@ export default {
 
                         // set filter priority
 
-                        var priority = []
+                        var priorityS = [] // priorityS for single
 
                         if(Size != '')
-                            priority.push(Size)
+                            priorityS.push(Size)
                         if(Material != '')
-                            priority.push(Material)
+                            priorityS.push(Material)
                         if(Color != '')
-                            priority.push(Color)
+                            priorityS.push(Color)
 
                         var VaraintFlag = false
                         var sP_variant = p.variants
-                        var counterMatch = 0
+                        var counterMatch1 = 0
                        
                         sP_variant.map((sP) => { // sP means single product
-                            counterMatch = 0
+                            counterMatch1 = 0
                             sP.options.map((options) => { // sP means single product
                                if(options == Size)
                                     counterMatch++
@@ -1291,7 +1293,7 @@ export default {
                             })
                         })
 
-                        if(counterMatch == priority.length){
+                        if(counterMatch1 == priorityS.length){
 
                             productType["single"] = p;
                             filterListing.push(productType);
@@ -1320,10 +1322,10 @@ export default {
 
             this.Products = [...filterListing].slice(0, 100);
 
-            let savefiltr = JSON.parse(getSavedFilter);
-            if(savefiltr[0].hasOwnProperty('sort')){
-                this.sortProduct();
-            }
+            // let savefiltr = JSON.parse(getSavedFilter);
+            // if(savefiltr[0].hasOwnProperty('sort')){
+            //     this.sortProduct();
+            // }
         },
 
         randomIntFromInterval(min, max) {
