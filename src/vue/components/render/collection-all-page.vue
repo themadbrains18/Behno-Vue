@@ -512,7 +512,7 @@
                     <input
                       :id="option.id"
                       class="multiselectOption"
-                      type="checkbox"
+                      type="radio"
                       name="sort"
                       :checked="option.id == 'sort1' ? true : false"
                       :value="option.value"
@@ -554,9 +554,11 @@
           <a :href="`/products/` + value.single.handle">
             <!-- <div class="item_left" v-bind:class="{ item_left_active: value.totalInventory < 5 }" id="item_left_">
                         {{
-                value.totalInventory <= 5 && value.totalInventory >= 1
-                  ? "ONLY " + value.totalInventory + " LEFT"
-                  : value.totalInventory == 0
+                            // Object.prototype.hasOwnProperty.call(value.single[2],value.single.variants[0].id)
+                            
+                value.single[2][value.single.variants[0].id] <= 5 && value.single[2][value.single.variants[0].id] >= 1
+                  ? "ONLY " + value.single[2][value.single.variants[0].id] + " LEFT"
+                  : value.single[2][value.single.variants[0].id] == 0
                   ? "Out Of Stock"
                   : ""
               }}
@@ -592,7 +594,7 @@
               {{ value.single.title }}
             </h5>
             <h5 class="card-title bold product_price">
-              $ {{ (value.single.compare_at_price / 100).toFixed(2) }}
+              $ {{ (value.single.price / 100).toFixed(2) }}
             </h5>
           </a>
 
@@ -617,10 +619,10 @@
         <!-- this block work for single product products -->
 
         <div
-          v-if="value.hasOwnProperty('variable') && (value.variable.length-1) >= value.active"
+          v-if="value.hasOwnProperty('variable') && (value.variable.length - 1) >= value.active"
           class="card"
         >
-          <a :href="`/products/`+value.variable[value.active].handle">
+          <a :href="`/products/` + value.variable[value.active].handle">
             <!-- <div class="item_left" v-bind:class="{
                 item_left_active: value.variable[value.active].totalInventory < 5,
               }" id="item_left_">
@@ -665,7 +667,7 @@
               {{ value.variable[value.active].title }}
             </h5>
             <h5 class="card-title bold product_price">
-              $ {{ (value.variable[value.active].compare_at_price / 100).toFixed(2) }}
+              $ {{ (value.variable[value.active].price / 100).toFixed(2) }}
             </h5>
           </a>
 
@@ -713,7 +715,7 @@
 
     <div
       class="row centeralign addmargin"
-      :class="{ productnotfound: Products.length === 0, productfound: Products.length > 0}"
+      :class="{ productnotfound: Products.length === 0, productfound: Products.length > 0 }"
     >
       <h2 class="sec_heading">
         We're sorry, no matches were found.
@@ -782,30 +784,30 @@ export default {
             gridColumn: 4,
             productId: 0,
             ddTestSort: [{
-                    id: "sort1",
-                    value: "Recommended",
-                    text: "Recommended",
-                },
-                {
-                    id: "sort2",
-                    value: "LowToHigh",
-                    text: "Price: Low to High",
-                },
-                {
-                    id: "sort3",
-                    value: "HighToLow",
-                    text: "Price: High to Low",
-                },
-                {
-                    id: "sort4",
-                    value: "Latest",
-                    text: "Latest Arrivals",
-                },
-                {
-                    id: "sort5",
-                    value: "Discount",
-                    text: "Percent Discount",
-                },
+                id: "sort1",
+                value: "Recommended",
+                text: "Recommended",
+            },
+            {
+                id: "sort2",
+                value: "LowToHigh",
+                text: "Price: Low to High",
+            },
+            {
+                id: "sort3",
+                value: "HighToLow",
+                text: "Price: High to Low",
+            },
+            {
+                id: "sort4",
+                value: "Latest",
+                text: "Latest Arrivals",
+            },
+            {
+                id: "sort5",
+                value: "Discount",
+                text: "Percent Discount",
+            },
             ],
             sortObject: {},
 
@@ -833,7 +835,9 @@ export default {
         },
         closeSortMenu: function (event) {
             console.log(event);
-            event.target.closest(".show").classList.remove("show");
+            if (event.target.closest(".show") != null) {
+                event.target.closest(".show").classList.remove("show");
+            }
         },
 
         addActive: function (event) {
@@ -1001,13 +1005,13 @@ export default {
         /* end change grid column */
         /* Clear all filter */
         clearAllFilter: function () {
-            
+
             let arrayName = ['category', 'color', 'size', 'material'];
             arrayName.map(item => {
                 this.clearCheckBoxs(item);
             })
 
-            localStorage.setItem('fillters',[])
+            localStorage.setItem('fillters', [])
             this.showClearAll = false;
             this.fetchProdustQuery()
         },
@@ -1022,53 +1026,64 @@ export default {
 
             var savedFilter = []
             var savedItem = localStorage.getItem('fillters') || []
-            var category,size,material,color;
+            var category, size, material, color,sort;
             category = -1
-            size     = -1
+            size = -1
             material = -1
-            color    = -1
-            if(savedItem != ''){
+            color = -1
+            sort =-1
+            if (savedItem != '') {
                 savedFilter = JSON.parse(savedItem)
-                savedFilter.map((e,i) => {
-                        if(Object.prototype.hasOwnProperty.call(e,"Category")){
-                            category = i
-                        }else if(Object.prototype.hasOwnProperty.call(e,"Color")){
-                            color    = i
-                        }else if(Object.prototype.hasOwnProperty.call(e,"Size")){
-                            size     = i
-                        }else if(Object.prototype.hasOwnProperty.call(e,"Material")){
-                            material = i
-                        }
+                savedFilter.map((e, i) => {
+                    if (Object.prototype.hasOwnProperty.call(e, "Category")) {
+                        category = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "Color")) {
+                        color = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "Size")) {
+                        size = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "Material")) {
+                        material = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "sort")) {
+                        sort = i
+                    }
                 })
             }
 
             if (name == "category") {
                 this.selected = [];
                 this.filterByCategory = [];
-                if(category >= 0){ 
-                    savedFilter.splice(parseInt(category),parseInt(savedFilter.length)) 
+                if (category >= 0) {
+                    savedFilter.splice(parseInt(category), parseInt(savedFilter.length))
                 }
             } else if (name == "color") {
                 this.selectedColor = [];
                 this.filterByColor = [];
-                if(color >= 0){ 
-                    savedFilter.splice(parseInt(color),parseInt(savedFilter.length))  }
+                if (color >= 0) {
+                    savedFilter.splice(parseInt(color), parseInt(savedFilter.length))
+                }
             } else if (name == "size") {
                 this.selectedSize = [];
                 this.filterBySize = [];
-                if(size >= 0){ 
-                    savedFilter.splice(parseInt(size),parseInt(savedFilter.length))  }
+                if (size >= 0) {
+                    savedFilter.splice(parseInt(size), parseInt(savedFilter.length))
+                }
             } else if (name == "material") {
                 this.selectedMaterial = [];
                 this.filterByMaterial = [];
-                if(material >= 0){
-                     savedFilter.splice(parseInt(material),parseInt(savedFilter.length)) }
+                if (material >= 0) {
+                    savedFilter.splice(parseInt(material), parseInt(savedFilter.length))
+                }
+            }
+            else if (name == "sort") {
+                if (sort >= 0) {
+                    savedFilter.splice(parseInt(sort), parseInt(savedFilter.length))
+                }
             }
 
-            localStorage.setItem('fillters',JSON.stringify(savedFilter))
+            localStorage.setItem('fillters', JSON.stringify(savedFilter))
             this.fetchProdustQuery()
             this.clearAllOption()
-            
+
         },
 
         /* clear option that selected in drop down under particular option */
@@ -1110,32 +1125,34 @@ export default {
 
         /* set selected sort checkbox value */
         onCheckSort: function (event) {
-            var markedCheckbox = document.getElementsByName("sort");
+            
+            this.saveFilter("sort", event.target.value)
+            this.page_index = 0;
+            // var markedCheckbox = document.getElementsByName("sort");
+            // for (var checkbox of markedCheckbox) {
+            //     this.selectedSort = [];
+            //     if (checkbox.id == event.target.id) {
+            //         if (
+            //             this.sortObject.id != undefined &&
+            //             this.sortObject.id == event.target.id
+            //         ) {
+            //             checkbox.checked = false;
+            //             this.sortProduct();
+            //             this.sortObject = {};
+            //         } else {
+            //             markedCheckbox = document.getElementById(event.target.id);
+            //             markedCheckbox.checked = true;
+            //             this.sortObject = markedCheckbox;
+            //             this.selectedSort.push(event.target.value);
 
-            for (var checkbox of markedCheckbox) {
-                this.selectedSort = [];
-                if (checkbox.id == event.target.id) {
-                    if (
-                        this.sortObject.id != undefined &&
-                        this.sortObject.id == event.target.id
-                    ) {
-                        checkbox.checked = false;
-                        this.sortProduct();
-                        this.sortObject = {};
-                    } else {
-                        markedCheckbox = document.getElementById(event.target.id);
-                        markedCheckbox.checked = true;
-                        this.sortObject = markedCheckbox;
-                        this.selectedSort.push(event.target.value);
-                        
-                        this.saveFilter("sort", event.target.value)
-                        this.page_index = 0;
-                        
-                    }
-                } else {
-                    checkbox.checked = false;
-                }
-            }
+            //             this.saveFilter("sort", event.target.value)
+            //             this.page_index = 0;
+
+            //         }
+            //     } else {
+            //         checkbox.checked = false;
+            //     }
+            // }
 
             // to close responsive menu in mobile
         },
@@ -1180,7 +1197,7 @@ export default {
                 }).indexOf("Color");
 
                 item[0].variants.map((col) => {
-                   
+
                     array.push(col["option" + (index + 1)].toUpperCase());
                 });
             });
@@ -1218,11 +1235,11 @@ export default {
                 }).indexOf("Size");
 
                 item[0].variants.map((col) => {
-                     var size = ['XS','S','M','L','Xl','Xxl','Xxxl','Xxs','Xl','XXL','XXXL','XXS','XL']
-                    if(size.includes(col["option" + (index + 1)])) { return }else{
+                    var size = ['XS', 'S', 'M', 'L', 'Xl', 'Xxl', 'Xxxl', 'Xxs', 'Xl', 'XXL', 'XXXL', 'XXS', 'XL']
+                    if (size.includes(col["option" + (index + 1)])) { return } else {
                         array.push(col["option" + (index + 1)]);
                     }
-                    
+
                 });
             });
 
@@ -1277,28 +1294,6 @@ export default {
         },
         /* End Fill material dropdown from products data */
 
-        /* sort product based on price low to high and vice-verse */
-        sortProduct: function () {
-            if (this.selectedSort.length > 0) {
-                let obj = this.selectedSort[0];
-                this.Products.sort(function (a, b) {
-                    if (obj == "LowToHigh") {
-                        if(Object.prototype.hasOwnProperty.call(a,'variable')){
-                            return a.variable[a.active].price - (b.variable!=undefined?b.variable[b.active].price:b.single.price);
-                        }
-                        if(Object.prototype.hasOwnProperty.call(a,'single')){
-                            return a.single.price - (b.single!=undefined?b.single.price:b.variable[b.active].price);
-                        }
-                        
-                    } else if (obj == "HighToLow") {
-                        return b.variable[b.active].price - a.variable[a.active].price;
-                    } else if (obj == "Latest") {
-                        return new Date(b.variable[b.active].created_at) - new Date(a.variable[a.active].created_at);
-                    }
-                });
-            }
-        },
-
         /* set product in array based on selected category option */
         filterProduct: function () {
 
@@ -1310,7 +1305,7 @@ export default {
             // this.clearAllOption();
             this.page_index = 0;
         },
-       
+
 
 
 
@@ -1327,7 +1322,7 @@ export default {
 
             /* when selectedFilter is empty */
             if (filter == '') {
-               
+
                 dd[name] = value
                 saveVal.push(dd)
                 localStorage.setItem('fillters', JSON.stringify(saveVal))
@@ -1344,7 +1339,7 @@ export default {
 
             var flag = false
             var index = prev.map(function (e, i) {
-                if (Object.prototype.hasOwnProperty.call(e,name)) {
+                if (Object.prototype.hasOwnProperty.call(e, name)) {
                     flag = true
                 }
             });
@@ -1356,7 +1351,7 @@ export default {
                 var newArray = []
                 prev.map(function (o) {
                     // return o.Category; 
-                    if (Object.prototype.hasOwnProperty.call(o,name)) {
+                    if (Object.prototype.hasOwnProperty.call(o, name)) {
                         var updateval = {
                             [name]: ColVal
                         }
@@ -1435,34 +1430,34 @@ export default {
             var duplicateRecord = [];
 
 
-             /*********************************************************/
-             // start filter (initailize value)
-             /*********************************************************/
-             var  Categories,Color,Size,Material;
-             Categories = ''
-             Color      = ''
-             Size       = ''
-             Material   = ''
-             let getSavedFilter = localStorage.getItem('fillters')
-            
-             if(getSavedFilter !=''){
-                   let savefiltr = JSON.parse(getSavedFilter)
-                   savefiltr.map((filter_elem,filter_index) =>{
-                        if(Object.prototype.hasOwnProperty.call(filter_elem,"Category")){
-                            Categories = Object.values(filter_elem)[0]
-                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Color")){
-                            Color = Object.values(filter_elem)[0]
-                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Size")){
-                            Size = Object.values(filter_elem)[0]
-                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Material")){
-                            Material = Object.values(filter_elem)[0]
-                        }
-                   })
-             }
-             
-             /*********************************************************/
-             // end filter
-             /*********************************************************/
+            /*********************************************************/
+            // start filter (initailize value)
+            /*********************************************************/
+            var Categories, Color, Size, Material;
+            Categories = ''
+            Color = ''
+            Size = ''
+            Material = ''
+            let getSavedFilter = localStorage.getItem('fillters')
+
+            if (getSavedFilter != '') {
+                let savefiltr = JSON.parse(getSavedFilter)
+                savefiltr.map((filter_elem, filter_index) => {
+                    if (Object.prototype.hasOwnProperty.call(filter_elem, "Category")) {
+                        Categories = Object.values(filter_elem)[0]
+                    } else if (Object.prototype.hasOwnProperty.call(filter_elem, "Color")) {
+                        Color = Object.values(filter_elem)[0]
+                    } else if (Object.prototype.hasOwnProperty.call(filter_elem, "Size")) {
+                        Size = Object.values(filter_elem)[0]
+                    } else if (Object.prototype.hasOwnProperty.call(filter_elem, "Material")) {
+                        Material = Object.values(filter_elem)[0]
+                    }
+                })
+            }
+
+            /*********************************************************/
+            // end filter
+            /*********************************************************/
 
 
             for (let product in Products) {
@@ -1480,8 +1475,8 @@ export default {
                 /// category filter applied here (start)
                 /*********************************************************/
 
-                if(Categories !=''){ // first check if value set
-                    if(p.tags.includes(Categories) == false){
+                if (Categories != '') { // first check if value set
+                    if (p.tags.includes(Categories) == false) {
                         continue
                     }
                 }
@@ -1499,7 +1494,7 @@ export default {
                 var links = ""; /// product pair links
                 for (let varints in v) {
                     if ("variants_products" == varints || "variants_swtach" == varints) {
-                         links = v["variants_products"];
+                        links = v["variants_products"];
                     }
                 }
 
@@ -1527,24 +1522,24 @@ export default {
 
                 var productType = {}; // check product type is single or variation
 
-                if (bindInPair.length > 0) { 
+                if (bindInPair.length > 0) {
 
-                /*********************************************************/
-                /// filter variable product
-                /*********************************************************/
+                    /*********************************************************/
+                    /// filter variable product
+                    /*********************************************************/
                     var swatch = await this.getSwatch(v);
                     var collectPairProducts = [];
 
-                    if(Size || Material || Color){
-                             // set filter priority
+                    if (Size || Material || Color) {
+                        // set filter priority
 
                         var priority = []
 
-                        if(Size != '')
+                        if (Size != '')
                             priority.push(Size)
-                        if(Material != '')
+                        if (Material != '')
                             priority.push(Material)
-                        if(Color != '')
+                        if (Color != '')
                             priority.push(Color)
 
 
@@ -1560,53 +1555,53 @@ export default {
                                 if (Products[childPair][0].handle == Phandle.replace("/products/", "")) {
                                     // console.log(Products[childPair][0]);
 
-                                        var sP1_variant = Products[childPair][0].variants
-                                        
-                                        var counterMatch = 0
-                                    
-                                        sP1_variant.map((sP) => { // sP means single product
-                                            counterMatch = 0
-                                            sP.options.map((options) => { // sP means single product
-                                            
-                                            if(options == Size)
-                                                    counterMatch++
-                                            else if(options == Material)
-                                                    counterMatch++
-                                            else if(options == Color)
-                                                    counterMatch++
-                                            })
+                                    var sP1_variant = Products[childPair][0].variants
+
+                                    var counterMatch = 0
+
+                                    sP1_variant.map((sP) => { // sP means single product
+                                        counterMatch = 0
+                                        sP.options.map((options) => { // sP means single product
+
+                                            if (options == Size)
+                                                counterMatch++
+                                            else if (options == Material)
+                                                counterMatch++
+                                            else if (options == Color)
+                                                counterMatch++
                                         })
+                                    })
 
 
-                                        if(counterMatch == priority.length){
-                                            flagForPair = true
-                                            activeIndex = swatchPl
-                                        }
-                                        filterpair.push(Products[childPair][0])
-                                        // collectPairProducts.push(Products[childPair][0])
+                                    if (counterMatch == priority.length) {
+                                        flagForPair = true
+                                        activeIndex = swatchPl
+                                    }
+                                    filterpair.push(Products[childPair][0])
+                                    // collectPairProducts.push(Products[childPair][0])
 
-                                        // if(flagForPair){
-                                        //   collectPairProducts.push(Products[childPair][0]);
-                                        // }
+                                    // if(flagForPair){
+                                    //   collectPairProducts.push(Products[childPair][0]);
+                                    // }
                                 }
                             }
 
                         }
-                     
-                       
 
-                         if(flagForPair == false){
-                                filterpair = []
-                                continue
+
+
+                        if (flagForPair == false) {
+                            filterpair = []
+                            continue
                         }
 
 
-                             productType["active"] = activeIndex
-                             productType["variable"] = filterpair;
-                             productType["swatches"] = swatch;
-                             filterListing.push(productType);
+                        productType["active"] = activeIndex
+                        productType["variable"] = filterpair;
+                        productType["swatches"] = swatch;
+                        filterListing.push(productType);
 
-                    }else{
+                    } else {
 
                         for (let swatchPl in swatch) {
                             var Phandle2 = swatch[swatchPl].link;
@@ -1614,8 +1609,9 @@ export default {
                                 //  console.log(products[childPair].node.handle,'===', Phandle)
                                 if (Products[childPair][0].handle == Phandle2.replace("/products/", "")) {
                                     // console.log(Products[childPair][0]);
-                                    collectPairProducts.push(Products[childPair][0]); 
-                                   
+                                    
+                                    collectPairProducts.push(Products[childPair][0]);
+
                                 }
                             }
                         }
@@ -1630,64 +1626,64 @@ export default {
 
                     }
 
-                /*********************************************************/
-                /// filter variable product (END)
-                /*********************************************************/
+                    /*********************************************************/
+                    /// filter variable product (END)
+                    /*********************************************************/
 
                 } else if (bindInPair.length == 0) {
 
 
-                /*********************************************************/
-                /// filter apply at single products
-                /*********************************************************/
+                    /*********************************************************/
+                    /// filter apply at single products
+                    /*********************************************************/
 
-                    if(Size || Material || Color){
+                    if (Size || Material || Color) {
 
                         // set filter priority
 
                         var priorityS = [] // priorityS for single
 
-                        if(Size != '')
+                        if (Size != '')
                             priorityS.push(Size)
-                        if(Material != '')
+                        if (Material != '')
                             priorityS.push(Material)
-                        if(Color != '')
+                        if (Color != '')
                             priorityS.push(Color)
 
                         var VaraintFlag = false
                         var sP_variant = p.variants
                         var counterMatch1 = 0
-                       
+
                         sP_variant.map((sP) => { // sP means single product
                             counterMatch1 = 0
                             sP.options.map((options) => { // sP means single product
-                               if(options == Size)
+                                if (options == Size)
                                     counterMatch++
-                               else if(options == Material)
-                                     counterMatch++
-                               else if(options == Color)
-                                     counterMatch++
+                                else if (options == Material)
+                                    counterMatch++
+                                else if (options == Color)
+                                    counterMatch++
                             })
                         })
 
-                        if(counterMatch1 == priorityS.length){
+                        if (counterMatch1 == priorityS.length) {
 
                             productType["single"] = p;
                             filterListing.push(productType);
                         }
-                        
 
-                        
-                    }else{ 
+
+
+                    } else {
                         /// first time browser load
                         productType["single"] = p;
                         filterListing.push(productType);
                     }
 
 
-                /*********************************************************/
-                /// filter variable product (END)
-                /*********************************************************/
+                    /*********************************************************/
+                    /// filter variable product (END)
+                    /*********************************************************/
 
                 } else if (flag) {
                     // else condition will be work if product have no variation
@@ -1696,13 +1692,49 @@ export default {
             }
 
             console.log(filterListing);
-
             this.Products = [...filterListing].slice(0, 100);
 
-            // let savefiltr = JSON.parse(getSavedFilter);
-            // if(savefiltr[0].hasOwnProperty('sort')){
-            //     this.sortProduct();
-            // }
+            if (getSavedFilter != "") {
+                let savefiltr = JSON.parse(getSavedFilter);
+                if (Object.prototype.hasOwnProperty.call(savefiltr[0], 'sort')) {
+                    this.sortProduct(savefiltr[0].sort);
+                }
+            }
+
+            
+
+
+        },
+
+
+        /* sort product based on price low to high and vice-verse */
+        sortProduct: function (obj) {
+            this.Products.sort(function (a, b) {
+                if (obj == "LowToHigh") {
+                    if (Object.prototype.hasOwnProperty.call(a, 'variable')) {
+                        return a.variable[a.active].price - (b.variable != undefined ? b.variable[b.active].price : b.single.price);
+                    }
+                    if (Object.prototype.hasOwnProperty.call(a, 'single')) {
+                        return a.single.price - (b.single != undefined ? b.single.price : b.variable[b.active].price);
+                    }
+
+                } else if (obj == "HighToLow") {
+                    if (Object.prototype.hasOwnProperty.call(b, 'variable')) {
+                        return b.variable[b.active].price - (a.variable != undefined ? a.variable[a.active].price : a.single.price);
+                    }
+                    if (Object.prototype.hasOwnProperty.call(b, 'single')) {
+                        return b.single.price - (a.single != undefined ? a.single.price : a.variable[a.active].price);
+                    }
+                } else if (obj == "Latest") {
+                    if (Object.prototype.hasOwnProperty.call(b, 'variable')) {
+                        return new Date(b.variable[b.active].created_at) - (a.variable != undefined ? new Date(a.variable[a.active].created_at) : new Date(a.single.created_at));
+                    }
+                    if (Object.prototype.hasOwnProperty.call(b, 'single')) {
+                        return new Date(b.single.created_at) - (a.single != undefined ? new Date(a.single.created_at) : new Date(a.variable[a.active].created_at));
+                    }
+                }
+            });
+
         },
 
         randomIntFromInterval(min, max) {
@@ -1823,8 +1855,8 @@ export default {
                 .setAttribute(
                     "src",
                     activeProduct.images[0] == null ?
-                    "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" :
-                    activeProduct.images[0]
+                        "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" :
+                        activeProduct.images[0]
                 );
 
             grid
@@ -1832,8 +1864,8 @@ export default {
                 .setAttribute(
                     "src",
                     activeProduct.images.length > 2 ?
-                    activeProduct.images[1] :
-                    "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+                        activeProduct.images[1] :
+                        "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 );
 
             // chnage quick button content
@@ -1884,32 +1916,34 @@ export default {
 </script>
 
 <style scoped>
-
 /* Collaction Banner Css Code */
-.collaction_banner{
-  position: relative;
+.collaction_banner {
+    position: relative;
 }
-.collaction_banner img{
-  width: 100%;
+
+.collaction_banner img {
+    width: 100%;
 }
-.collaction_banner .banner_heading{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  padding: 0 20px;
-  transform: translate(-50%,-50%);
-  font-weight: 700;
-  text-align: center;
-  font-size: 49px;
-  color: #FFFFFF;
-  text-shadow: 0px 2.3824px 55.3909px rgba(0, 0, 0, 0.42);
+
+.collaction_banner .banner_heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0 20px;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    text-align: center;
+    font-size: 49px;
+    color: #FFFFFF;
+    text-shadow: 0px 2.3824px 55.3909px rgba(0, 0, 0, 0.42);
 }
 
 
 .product_item:empty {
     display: none;
 }
+
 .color_swatches ul {
     display: flex;
     gap: 7px;
@@ -2682,7 +2716,8 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
     .progress {
         width: 105px;
     }
-    .collaction_banner .banner_heading{
+
+    .collaction_banner .banner_heading {
         font-size: 40px;
     }
 }
@@ -3020,21 +3055,21 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
         grid-template-columns: 1fr 1fr;
         column-gap: 10px;
     }
-    .collaction_banner .banner_heading{
+
+    .collaction_banner .banner_heading {
         font-size: 30px;
         text-shadow: 0px 0.794134px 18.4636px rgba(0, 0, 0, 0.42);
     }
 }
 
 @media (max-width: 575px) {
-    .collaction_banner .banner_heading{
+    .collaction_banner .banner_heading {
         font-size: 16.3333px;
         text-shadow: 0px 0.794134px 18.4636px rgba(0, 0, 0, 0.42);
     }
-    .filter_row{
-        margin: 5px 0 12px;        
+
+    .filter_row {
+        margin: 5px 0 12px;
     }
 }
-
-
 </style>
