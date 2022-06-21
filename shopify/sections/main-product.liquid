@@ -9,7 +9,85 @@
             {%- if forloop.index == image_forloop -%}
               {% assign handle = link | replace : '/products/', ''  %}
               {% assign productData = all_products[handle] %}
-              {{ productData | json }}{% if forloop.last %}{% else %},{% endif %}
+
+              {% if productData.metafields.my_fields.seen_in %} 
+                {% assign seenin = productData.metafields.my_fields.seen_in | split:" " %}
+                {% capture productSeenIn %}
+                  [
+                      {%- for seenin in seenin -%}
+                        {
+                          "src" :"{{ seenin | asset_url   }}",
+                          "alt" :"{{ seenin | replace: '.svg', '' }}"
+                        }
+                        {% unless forloop.last %},{% endunless %}
+                      {%- endfor -%}
+                  ]
+                {% endcapture %}
+              {% else %}
+                {% capture productSeenIn %}
+                  [
+                    {
+                      "src" :"",
+                      "alt" :""
+                    }
+                  ]
+                {% endcapture %}
+              {%- endif -%}
+
+                {% if productData.metafields.my_fields.product_related_grid_image %}
+                  {% capture metaFieldsData %}
+                    {   
+                        "img" : {
+                            "src" : "{{ productData.metafields.my_fields.product_related_grid_image | img_url : "" }}",
+                            "placeholder": "{{ productData.metafields.my_fields.product_related_grid_image | img_url : "50x50" }}",
+                            "alt": "{{ productData.metafields.my_fields.product_related_grid_image.alt }}"
+                        },
+                        "gridLeftHeading"   : "{{  productData.metafields.my_fields.product_related_grid_heading     }}",
+                        "gridLeftPara"   : "{{  productData.metafields.my_fields.product_related_grid_paragraph }}"
+                    }
+                  {% endcapture %}
+
+                  {% capture productGridData %}
+                    {
+                        "metaFieldsData"   : {{ metaFieldsData }},
+                        "RightGridImage"   : {
+                                            "src" : "{{ section.settings.RightGridImage | img_url : "" }}",
+                                            "placeholder" : "{{ section.settings.RightGridImage | img_url :  "50x50" }}",
+                                            "alt" : "{{ section.settings.RightGridImage.alt }}"
+                                        },
+                        "RightGridHeading"   : "{{ section.settings.RightGridHeading }}",
+                        "RightGridpara"   : "{{ section.settings.RightGridpara }}"
+                    }
+                  {% endcapture %}
+                {% else %}
+                  {% capture productGridData %}
+                    {
+                        "metaFieldsData"   : {   
+                          "img" : {
+                              "src" : "",
+                              "placeholder": "",
+                              "alt": ""
+                          },
+                          "gridLeftHeading"   : "",
+                          "gridLeftPara"   : ""
+                        },
+                        "RightGridImage"   : {
+                                            "src" : "",
+                                            "placeholder" : "",
+                                            "alt" : ""
+                                        },
+                        "RightGridHeading"   : "",
+                        "RightGridpara"   : ""
+                    }
+                  {% endcapture %}  
+                {% endif %}
+
+              {
+                
+                "product" : {{ productData | json }}, 
+                "meta_field_seen": {{ productSeenIn }},
+                "meta_field_grid" : {{ productGridData }}
+              }{% if forloop.last %}{% else %},{% endif %}
             {%- endif -%}
           {%- endfor -%}
         {%- endfor -%}
@@ -33,39 +111,100 @@
             {%- endfor -%}
           {%- endfor -%}
         {% endcapture %}
-{%- endif -%}
+{% else %}
+  {% capture Obj %}
+    {% if product.metafields.my_fields.seen_in %} 
+      {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
+      {% capture productSeenIn %}
+        [
+            {%- for seenin in seenin -%}
+              {
+                "src" :"{{ seenin | asset_url   }}",
+                "alt" :"{{ seenin | replace: '.svg', '' }}"
+              }
+              {% unless forloop.last %},{% endunless %}
+            {%- endfor -%}
+        ]
+      {% endcapture %}
+    {% else %}
+      {% capture productSeenIn %}
+        [
+          {
+            "src" :"",
+            "alt" :""
+          }
+        ]
+      {% endcapture %}
+    {%- endif -%}
 
+    {% if product.metafields.my_fields.product_related_grid_image %}
+        {% capture metaFieldsData %}
+          {   
+              "img" : {
+                  "src" : "{{ product.metafields.my_fields.product_related_grid_image | img_url : "" }}",
+                  "placeholder": "{{ product.metafields.my_fields.product_related_grid_image | img_url : "50x50" }}",
+                  "alt": "{{ product.metafields.my_fields.product_related_grid_image.alt }}"
+              },
+              "gridLeftHeading"   : "{{  product.metafields.my_fields.product_related_grid_heading     }}",
+              "gridLeftPara"   : "{{  product.metafields.my_fields.product_related_grid_paragraph }}"
+          }
+        {% endcapture %}
 
-
-{% if product.metafields.my_fields.seen_in %} 
-  {% assign seenin = product.metafields.my_fields.seen_in | split:" " %}
-  {% capture productSeenIn %}
-  [
-      {%- for seenin in seenin -%}
+        {% capture productGridData %}
+          {
+              "metaFieldsData"   : {{ metaFieldsData }},
+              "RightGridImage"   : {
+                                  "src" : "{{ section.settings.RightGridImage | img_url : "" }}",
+                                  "placeholder" : "{{ section.settings.RightGridImage | img_url :  "50x50" }}",
+                                  "alt" : "{{ section.settings.RightGridImage.alt }}"
+                              },
+              "RightGridHeading"   : "{{ section.settings.RightGridHeading }}",
+              "RightGridpara"   : "{{ section.settings.RightGridpara }}"
+          }
+        {% endcapture %}
+    {% else %}
+      {% capture productGridData %}
         {
-          src :`{{ seenin | asset_url   }}`,
-          alt :`{{ seenin | replace: '.svg', '' }}`
+            "metaFieldsData"   : {   
+              "img" : {
+                  "src" : "",
+                  "placeholder": "",
+                  "alt": ""
+              },
+              "gridLeftHeading"   : "",
+              "gridLeftPara"   : ""
+            },
+            "RightGridImage"   : {
+                                "src" : "",
+                                "placeholder" : "",
+                                "alt" : ""
+                            },
+            "RightGridHeading"   : "",
+            "RightGridpara"   : ""
         }
-        {% unless forloop.last %},{% endunless %}
-      {%- endfor -%}
-  ]
+      {% endcapture %}
+    {% endif %}
+    {
+                
+      "product" : {{ product | json }}, 
+      "meta_field_seen": {{ productSeenIn }},
+      "meta_field_grid" : {{ productGridData }}
+    }            
+  {% endcapture %}
+
+  {% capture pVariant %}
+  {
+    "name" : "{{ product.handle }}",
+    "img"  : "",
+    "link" : "/products/{{ product.handle }}",
+    "qty" : "{{ product.variants.first.inventory_quantity }}"
+  }
   {% endcapture %}
 {%- endif -%}
 
 <!-- make products variant object -->
 
-
-{% capture productObj %}
-[{{ Obj }}]
-{% endcapture %}
-
-
-{% capture variantObj %}
-[{{ pVariant }}]
-{% endcapture %}
-
-
-{% capture productReviewArry %}
+<!-- {% capture productReviewArry %}
     {%- for image in images -%}
     {% assign image_forloop = forloop.index  %}
       {%- for link in links -%}
@@ -79,22 +218,58 @@
         {%- endif -%}
       {%- endfor -%}
     {%- endfor -%}
+{% endcapture %} -->
+
+{% capture productObj %}
+  [{{ Obj }}]
 {% endcapture %}
 
-{% capture productReviewData %}
+<!-- {{ productObj }} -->
+
+{% capture variantObj %}
+  [{{ pVariant }}]
+{% endcapture %}
+
+<!-- {% capture productReviewData %}
   [{{ productReviewArry  | replace: '"', "'"  | strip_newlines | replace: '`', '"' }}]
-{% endcapture %}  
+{% endcapture %}   -->
 
 {% capture products %}
 {
   product :  `{{ productObj | base64_encode  }}`,
-  variant : `{{ variantObj | base64_encode  }}`,
-  productSeenIn : {{ productSeenIn }},
-  productReviewData : `{{ productReviewData | base64_encode }}`
+  variant : `{{ variantObj | base64_encode  }}`
 }
 {% endcapture %}
 
 <render-product-product-detail :shopify-data="{
-  productData : {{ products }}
-}">
+    productData : {{ products }}
+  }">
 </render-product-product-detail>  
+
+
+
+{% schema %}
+{
+    "name": "Product Grid",
+    "settings": [
+     {
+        "id": "RightGridImage",
+        "type": "image_picker",
+        "label": "Right Side Grid Image"
+      },
+     {
+        "id": "RightGridHeading",
+        "type": "text",
+        "label": "Right Side Grid Paragraph",
+        "default": "AN HONEST ACCESSORY."
+      },
+     {
+        "id": "RightGridpara",
+        "type": "textarea",
+        "label": "Right Side Grid Paragraph",
+        "default": "Your bag is handcrafted in Nashik, Maharashtra, in a facility that incrementally implements The behno Standard, a set of six guiding principles."
+      }
+    ]
+  
+ }
+{% endschema %}

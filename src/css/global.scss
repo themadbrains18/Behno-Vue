@@ -249,12 +249,27 @@ button {
   color: #000;
 }
 
+.cta_btn-outstock {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  cursor: no-drop;
+}
+
 .fig_caption {
   font-family: 'adobe-caslon-pro', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
   line-height: 1;
+}
+
+.jdgm-rev-widg{
+  display: block !important;
+}
+
+.jdgm-spinner{
+  display: none !important;
 }
 
 @media (hover:hover) {

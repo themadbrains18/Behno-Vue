@@ -77,7 +77,7 @@
                 class="color_variant"
                 :checked="currentUrl == value.link"
               >
-              <label
+              <label v-if="value.img !=''"
                 class="color_variant_label"
                 :for="value.name"
               >
@@ -133,6 +133,7 @@
           >
           <div class="add_cart_btn_wrap">
             <button
+              v-if="currentVariantQty > 0"
               id="AddToCart"
               type="submit"
               name="add"
@@ -140,6 +141,16 @@
               class="add_cart_btn cta_btn cta_btn-black"
             >
               ADD TO BAG
+            </button>
+            <button
+              v-if="currentVariantQty == 0"
+              id="OutOfStock"
+              type="button"
+              name="out"
+              data-label="Out Of Stock"
+              class="add_cart_btn cta_btn cta_btn-outstock"
+            >
+              Out Of Stock
             </button>
           </div>
         </form>
@@ -152,11 +163,12 @@
             v-html="replaceString(selectedProductDescription[0])"
           />
           <!-- eslint-enable -->
-          <template v-if="shopifyData.productData.productSeenIn.length > 0">
+          
+          <template v-if="metaFieldSeenIn.length > 0">
             <p> As seen in: </p>
             <div class="see_in">
               <div
-                v-for="(seenIn , index ) in shopifyData.productData.productSeenIn"
+                v-for="(seenIn , index ) in metaFieldSeenIn"
                 :key="index"
               >
                 <img
@@ -166,6 +178,7 @@
               </div>
             </div>
           </template>
+
           <ul class="product_accordians">
             <!-- Product Details -->
             <li
@@ -323,13 +336,13 @@
                 REVIEWS
               </button>
               <!-- eslint-disable -->
-              <div class="product_accordian_panel">
+              <!-- <div class="product_accordian_panel">
                 <div
                   class="product_review"
                   v-html="showProductReviewData.productReview"
                 />
-                <!-- eslint-enable -->
-              </div>
+              </div> -->
+              <!-- eslint-enable -->
             </li>
           </ul>
         </div>
@@ -365,9 +378,52 @@
       </div>
 
       <!-- eslint-disable -->
-      <span v-html="showProductReviewData.productReview" />
+      <span v-html="showProductReviewData" />
       <!-- eslint-enable -->
+
+        
     </div>
+  </section>
+  <section class="product_page_grid_wrap">
+          <div class="product_page_grid">
+            <div class="product_page_grid_item product_page_grid_item-first">
+              <img
+                v-if="(metaFieldGrid.metaFieldsData.img.src)"
+                :src="(metaFieldGrid.metaFieldsData.img.src)"
+                :src-placeholder="(metaFieldGrid.metaFieldsData.img.placeholder)"
+                :alt="(metaFieldGrid.metaFieldsData.img.alt)"
+              >
+              <div class="product_page_grid_content">
+                <h3
+                  v-if="(metaFieldGrid.metaFieldsData.gridLeftHeading)"
+                  class="product_grid_heading subtitle_b"
+                >
+                  {{ metaFieldGrid.metaFieldsData.gridLeftHeading }}
+                </h3>
+                <p
+                  v-if="(metaFieldGrid.metaFieldsData.gridLeftPara)"
+                  class="caption"
+                >
+                  {{ metaFieldGrid.metaFieldsData.gridLeftPara }}
+                </p>
+              </div>
+            </div>
+            <div class="product_page_grid_item product_page_grid_item-second">
+              <img
+                :src="(metaFieldGrid.RightGridImage.src)"
+                :src-placeholder="(metaFieldGrid.RightGridImage.placeholder)"
+                :alt="(metaFieldGrid.RightGridImage.alt)"
+              >
+              <div class="product_page_grid_content">
+                <h3 class="product_grid_heading subtitle_b">
+                  {{ metaFieldGrid.RightGridHeading }}
+                </h3>
+                <p class="caption">
+                  {{ metaFieldGrid.RightGridpara }}
+                </p>
+              </div>
+            </div>
+          </div>
   </section>
 </template>
 
@@ -379,6 +435,10 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
+import {
+    ShopifyAPI
+} from "../../../Shopify/Shopify";
 
 
 // import required modules
@@ -409,23 +469,35 @@ export default {
         
         let variant = atob(this.shopifyData.productData.variant);
         variant = JSON.parse(variant);
-        let product = atob(this.shopifyData.productData.product);
-        product = JSON.parse(product);
-         
+
+        let productObj = atob(this.shopifyData.productData.product);
+        productObj = JSON.parse(productObj);
+        
+        let product = productObj.map((item)=>{
+          return item.product;
+        });
+
         var currentUrl = window.location.pathname;
         let path=currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
+        let index = product.findIndex( x => x.handle === path);
+
+        let metaFieldSeenIn=productObj[index].meta_field_seen;
+        let metaFieldGrid=productObj[index].meta_field_grid;
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
 
-        let productReviewData = atob(this.shopifyData.productData.productReviewData);
-        productReviewData = JSON.parse(productReviewData);
-        let showProductReviewData = productReviewData.filter(item => item.link == currentUrl); 
+        // let productReviewData = atob(this.shopifyData.productData.productReviewData);
+        // productReviewData = JSON.parse(productReviewData);
+        // let showProductReviewData = productReviewData.filter(item => item.link == currentUrl);
+
         return {
             selectedSize:"",
-            productReviewData,
-            showProductReviewData,
+            // productReviewData,
+            showProductReviewData : [],
             variant,
-            product,
+            product : productObj,
+            metaFieldSeenIn,
+            metaFieldGrid,
             selectedProduct : filterProduct,
             currentUrl,
             selectedProductDescription: filterProduct.description.split('<!-- split -->'),
@@ -433,6 +505,8 @@ export default {
         }
     },
     mounted() {
+        this.getProductReview();
+
         window.addEventListener('resize', () => {
             if (window.innerWidth <= 991) {
                 document.querySelector(".footer_content").style.paddingBottom = `${document.querySelector(".add_cart_btn_wrap").offsetHeight}px`;
@@ -449,21 +523,44 @@ export default {
         }
     },
     methods: {
+        async  getProductReview(){
+          var dynamic = new ShopifyAPI();
+
+          var reviewOption = {
+            id: this.selectedProduct.id,
+            handle: this.selectedProduct.handle,
+          };
+          
+          let data = await dynamic.getProductReviewData(reviewOption);
+          this.showProductReviewData = data;
+        },
         onAddtoCart(e){
             e.preventDefault();
-            fetch(window.Shopify.routes.root + "cart/add.js", {
-                method: 'POST', 
-                body: new FormData(e.target)
-            })
-            .then(response => {
-                if(response.status ==  200){
-                    alert("Item Add in cart");
-                }
-                else {
-                    alert("ther is some problem please try again later");
-                }
-            })
-            .catch(error => console.log("Add to Cart",error))
+
+            console.log(this.selectedProduct.variants[0].id);
+            
+            var dynamic = new ShopifyAPI();
+
+            var item = {
+                id: this.selectedProduct.variants[0].id,
+                qty: 1,
+            };
+
+            dynamic.addItem(item);
+
+            // fetch(window.Shopify.routes.root + "cart/add.js", {
+            //     method: 'POST', 
+            //     body: new FormData(e.target)
+            // })
+            // .then(response => {
+            //     if(response.status ==  200){
+            //         alert("Item Add in cart");
+            //     }
+            //     else {
+            //         alert("ther is some problem please try again later");
+            //     }
+            // })
+            // .catch(error => console.log("Add to Cart",error))
         },
         sizeSelect(size,type){
             let label= document.querySelector("#selectSize");
@@ -479,15 +576,25 @@ export default {
         },
         changePath(link){
             let path = link.split('/products/')[1];
-            let selectedProductReviewData = this.productReviewData.filter(item => item.link == link)[0]; 
-            this.showProductReviewData = selectedProductReviewData;
-            console.log(this.showProductReviewData.productReview);
+            // let selectedProductReviewData = this.productReviewData.filter(item => item.link == link)[0]; 
+            this.showProductReviewData = [];
             
             let filterVariant = this.variant.filter(item => item.link == link)[0]; // filter variant by current path
-            this.selectedProduct = this.product.filter(item => item.handle == path)[0];
+            let product = this.product.map((item)=>{
+              return item.product;
+            });
+            
+            this.selectedProduct = product.filter(item => item.handle == path)[0];
+            let index = product.findIndex( x => x.handle === path);
+
+            let metaFieldSeenIn = this.product[index].meta_field_seen;
+            let metaFieldGrid = this.product[index].meta_field_grid;
+            this.metaFieldSeenIn = metaFieldSeenIn;
+            this.metaFieldGrid = metaFieldGrid;
             this.currentUrl = link;
             this.selectedProductDescription= this.selectedProduct.description.split('<!-- split -->');
             this.currentVariantQty = parseInt(filterVariant.qty)
+            this.getProductReview();
             window.history.pushState("","", link);
         },
         productZoomInOut() {
@@ -1002,4 +1109,57 @@ justify-content: center;
         z-index: 3;
     }
 }
+</style>
+<style scoped>
+    .product_page_grid_wrap{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #E9E7E3 100%);
+        padding: 50px 0 130px;
+    }
+    .product_page_grid{
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap : 80px ;
+    }
+    .product_page_grid_item-first{
+        margin-top: 320px;
+    }
+    .product_grid_heading{
+        margin: 17px 0 21px;
+    }
+    @media only screen and (max-width:991px){
+        .product_page_grid_wrap{
+            padding: 50px 0 80px;
+        }
+        .product_page_grid{
+            gap: 50px;
+        }
+    }
+    @media only screen and (max-width:768px){
+        .product_page_grid_wrap{
+            padding: 50px 0;
+        }
+        .product_page_grid{
+            grid-template-columns: 1fr;
+        }
+        .product_page_grid_item{
+            text-align: center;
+        }
+        .product_page_grid_item-first{
+            order: 2;
+            margin-top: 0;
+        }
+        .product_page_grid_content{
+            padding: 0 12px;
+            text-align: left;
+        }
+    }
+    @media only screen and (max-width:480px){
+        .product_page_grid_item img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
 </style>
