@@ -21,7 +21,7 @@ class ShopifyAPI {
 
         // current page is cart then skip open the drawer
 
-        if (this.ShopifyInfo.location.pathname == '/cart')
+        if (location.pathname == '/cart')
             return false;
 
         // get minicart container
@@ -305,6 +305,23 @@ class ShopifyAPI {
         // alert('There are now ' + cart.item_count + ' items in the cart.');
     }
 
+
+    // get review Data
+
+    async getProductReviewData(option){
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        return await fetch("https://judge.me/api/v1/widgets/product_review?api_token=Ln85i0GnbjlrBqsqL8QjVKShJLQ&shop_domain=behno.myshopify.com&external_id="+option.id+"&handle="+option.handle+"", requestOptions)
+          .then(response => response.text())
+          .then(result => {
+            let resultData=JSON.parse(result);
+            return resultData.widget;
+          })
+          .catch(error => console.log('error', error));
+    }
 
 }
 
