@@ -2,9 +2,11 @@
 {% capture products %}  
         [{% for product in collection.products %}
                 {% capture variantsList %} 
-                    {% for variant in product.variants %}
-                        {"{{- variant.id -}}":"{{ variant.inventory_quantity }}"}{% if forloop.last %}{% else %},{% endif %}
-                    {% endfor %}
+                 {
+                        {% for variant in product.variants %}
+                         "{{- variant.id -}}":"{{ variant.inventory_quantity }}"{% if forloop.last %}{% else %},{% endif %}
+                        {% endfor %}
+                 }
                 {% endcapture %}
                 [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}}]{% if forloop.last %}
                 {% else %},{% endif %}

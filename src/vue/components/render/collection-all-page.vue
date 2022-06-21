@@ -1,731 +1,387 @@
 <template>
-  <!-- Collacction Banner Code -->
-  <h2>{{ shopifyData.collactionTittle }}</h2>
-  <div class="collaction_banner">
-    <img
-      src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/collaction-banner.jpg?v=1655384242"
-      alt="Collaction Image"
-    >
+<!-- Collacction Banner Code -->
+<h2>{{ shopifyData.collactionTittle }}</h2>
+<div class="collaction_banner">
+    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/collaction-banner.jpg?v=1655384242" alt="Collaction Image">
     <h2 class="banner_heading">
-      THE ELIZABETH BAGUETTE SERIES
+        THE ELIZABETH BAGUETTE SERIES
     </h2>
-  </div>
-  <div class="filter_responsive">
+</div>
+<div class="filter_responsive">
     <div class="filter_cta_wrapper">
-      <button
-        id="filterCta"
-        class="filter_cta"
-        @click="myFilter"
-      >
-        {{ shopifyData.filterDropdownTextResponsive }}
-      </button>
-      <button
-        id="sortCta"
-        class="filter_cta"
-        @click="sortBy"
-      >
-        {{ shopifyData.sortByDropdownTextResponsive }}
-      </button>
-    </div>
-  </div>
-  <div class="filter_row">
-    <div class="row_inner">
-      <div class="apply_filter_cta_wrapper">
-        <button
-          class="apply_filter_cta"
-          disabled
-          @click="applyfilter"
-        >
-          {{ shopifyData.applyFilterCta }}
+        <button id="filterCta" class="filter_cta" @click="myFilter">
+            {{ shopifyData.filterDropdownTextResponsive }}
         </button>
-      </div>
-      <div class="filters">
-        <div class="filters_inner_row">
-          <div class="filters_responsive">
-            <div
-              class="close-btn"
-              @click="closeMenu"
-            >
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.8861 11.8864L35.6587 35.6589"
-                  stroke="#656565"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M11.8861 35.6586L35.6587 11.886"
-                  stroke="#656565"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div class="filter_cta_wrapper">
-              <button class="filter_cta filter-modifier">
-                {{ shopifyData.filterinnerResponsive }}
-              </button>
-              <button
-                class="filter_cta clear-modifier"
-                :class="{ activeClear: showClearAll }"
-                @click="clearAllFilter()"
-              >
-                CLEAR FILTERS
-                <svg
-                  width="6"
-                  height="6"
-                  viewBox="0 0 6 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  data-v-bb57343a=""
-                >
-                  <path
-                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
-                    stroke="white"
-                    data-v-bb57343a=""
-                  />
-                  <path
-                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
-                    stroke="white"
-                    data-v-bb57343a=""
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="filters_inner">
-            <!-- Categories filter -->
-            <div
-              class="filter"
-              @mouseenter="isMobile == true ? null : (show = true)"
-              @mouseleave="isMobile == true ? null : (show = false)"
-              @click="isMobile == false ? null : closeDropDown(show, 'show')"
-            >
-              <!-- v-on:mouseover="show = !show" -->
-              <div
-                class="dropdown"
-                @click="
+        <button id="sortCta" class="filter_cta" @click="sortBy">
+            {{ shopifyData.sortByDropdownTextResponsive }}
+        </button>
+    </div>
+</div>
+<div class="filter_row">
+    <div class="row_inner">
+        <div class="apply_filter_cta_wrapper">
+            <button class="apply_filter_cta" disabled @click="applyfilter">
+                {{ shopifyData.applyFilterCta }}
+            </button>
+        </div>
+        <div class="filters">
+            <div class="filters_inner_row">
+                <div class="filters_responsive">
+                    <div class="close-btn" @click="closeMenu">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8861 11.8864L35.6587 35.6589" stroke="#656565" stroke-width="1.5" />
+                            <path d="M11.8861 35.6586L35.6587 11.886" stroke="#656565" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div class="filter_cta_wrapper">
+                        <button class="filter_cta filter-modifier">
+                            {{ shopifyData.filterinnerResponsive }}
+                        </button>
+                        <button class="filter_cta clear-modifier" :class="{ activeClear: showClearAll }" @click="clearAllFilter()">
+                            CLEAR FILTERS
+                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-bb57343a="">
+                                <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" data-v-bb57343a="" />
+                                <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" data-v-bb57343a="" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="filters_inner">
+                    <!-- Categories filter -->
+                    <div class="filter" @mouseenter="isMobile == true ? null : (show = true)" @mouseleave="isMobile == true ? null : (show = false)" @click="isMobile == false ? null : closeDropDown(show, 'show')">
+                        <!-- v-on:mouseover="show = !show" -->
+                        <div class="dropdown" @click="
                   (event) => {
                     addActive(event);
                   }
-                "
-              >
-                <div class="overselect">
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 1L5 5L9 1"
-                      stroke="black"
-                      stroke-width="0.75"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <button class="c-form-input">
-                  Categories
-                </button>
-              </div>
-              <div
-                class="multiselect"
-                :class="{ active: show }"
-              >
-                <div class="tmb_header_dopdown">
-                  <ul>
-                    <li
-                      v-for="option in ddTestCategory"
-                      :key="option.id"
-                    >
-                      <input
-                        :id="option.id"
-                        class="multiselectOption"
-                        type="radio"
-                        name="category"
-                        :value="option.value"
-                        @change="onCheck($event)"
-                      >
-                      <label
-                        class="optionLabel"
-                        :for="option.id"
-                      >{{
+                ">
+                            <div class="overselect">
+                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <button class="c-form-input">
+                                Categories
+                            </button>
+                        </div>
+                        <div class="multiselect" :class="{ active: show }">
+                            <div class="tmb_header_dopdown">
+                                <ul>
+                                    <li v-for="option in ddTestCategory" :key="option.id">
+                                        <input :id="option.id" class="multiselectOption" type="radio" name="category" :value="option.value" @change="onCheck($event)">
+                                        <label class="optionLabel" :for="option.id">{{
                         option.text.toLowerCase()
                       }}</label>
-                    </li>
-                  </ul>
-                  <div class="btn_wrapper">
-                    <!-- <button class="filterBtn modifier" @click="filterProduct">Apply</button> -->
-                    <button
-                      class="filterBtn"
-                      @click="clearCheckBoxs('category')"
-                    >
-                      Clear
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- color filter -->
-            <div
-              class="filter color-filter"
-              @mouseenter="isMobile == true ? null : (showColor = true)"
-              @mouseleave="isMobile == true ? null : (showColor = false)"
-              @click="
+                                    </li>
+                                </ul>
+                                <div class="btn_wrapper">
+                                    <!-- <button class="filterBtn modifier" @click="filterProduct">Apply</button> -->
+                                    <button class="filterBtn" @click="clearCheckBoxs('category')">
+                                        Clear
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- color filter -->
+                    <div class="filter color-filter" @mouseenter="isMobile == true ? null : (showColor = true)" @mouseleave="isMobile == true ? null : (showColor = false)" @click="
                 isMobile == false ? null : closeDropDown(showColor, 'showColor')
-              "
-            >
-              <div
-                class="dropdown"
-                @click="
+              ">
+                        <div class="dropdown" @click="
                   (event) => {
                     addActive(event);
                   }
-                "
-              >
-                <div class="overselect">
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 1L5 5L9 1"
-                      stroke="black"
-                      stroke-width="0.75"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <button class="c-form-input">
-                  Color
-                </button>
-              </div>
-              <div
-                class="multiselect"
-                :class="{ active: showColor }"
-              >
-                <div class="tmb_header_dopdown">
-                  <ul>
-                    <li
-                      v-for="option in ddTestColor"
-                      :key="option.id"
-                    >
-                      <input
-                        :id="option.id"
-                        class="multiselectOption"
-                        type="radio"
-                        name="color"
-                        :value="option.value"
-                        @change="onCheckColor($event)"
-                      >
-                      <label
-                        class="optionLabel"
-                        :for="option.id"
-                      >{{
+                ">
+                            <div class="overselect">
+                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <button class="c-form-input">
+                                Color
+                            </button>
+                        </div>
+                        <div class="multiselect" :class="{ active: showColor }">
+                            <div class="tmb_header_dopdown">
+                                <ul>
+                                    <li v-for="option in ddTestColor" :key="option.id">
+                                        <input :id="option.id" class="multiselectOption" type="radio" name="color" :value="option.value" @change="onCheckColor($event)">
+                                        <label class="optionLabel" :for="option.id">{{
                         option.text.toLowerCase()
                       }}</label>
-                    </li>
-                  </ul>
-                  <div class="btn_wrapper">
-                    <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
-                    <button
-                      class="filterBtn"
-                      @click="clearCheckBoxs('color')"
-                    >
-                      Clear
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- size filter -->
-            <div
-              class="filter size-filter"
-              @mouseenter="isMobile == true ? null : (showSize = true)"
-              @mouseleave="isMobile == true ? null : (showSize = false)"
-              @click="
+                                    </li>
+                                </ul>
+                                <div class="btn_wrapper">
+                                    <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
+                                    <button class="filterBtn" @click="clearCheckBoxs('color')">
+                                        Clear
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- size filter -->
+                    <div class="filter size-filter" @mouseenter="isMobile == true ? null : (showSize = true)" @mouseleave="isMobile == true ? null : (showSize = false)" @click="
                 isMobile == false ? null : closeDropDown(showSize, 'showSize')
-              "
-            >
-              <div
-                class="dropdown"
-                @click="
+              ">
+                        <div class="dropdown" @click="
                   (event) => {
                     addActive(event);
                   }
-                "
-              >
-                <div class="overselect">
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 1L5 5L9 1"
-                      stroke="black"
-                      stroke-width="0.75"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <button class="c-form-input">
-                  Size
-                </button>
-              </div>
-              <div
-                class="multiselect"
-                :class="{ active: showSize }"
-              >
-                <div class="tmb_header_dopdown">
-                  <ul>
-                    <li
-                      v-for="option in ddTestSize"
-                      :key="option.id"
-                    >
-                      <input
-                        :id="option.id"
-                        class="multiselectOption"
-                        type="radio"
-                        name="size"
-                        :value="option.value"
-                        @change="onCheckSize($event)"
-                      >
-                      <label
-                        class="optionLabel"
-                        :for="option.id"
-                      >{{
+                ">
+                            <div class="overselect">
+                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <button class="c-form-input">
+                                Size
+                            </button>
+                        </div>
+                        <div class="multiselect" :class="{ active: showSize }">
+                            <div class="tmb_header_dopdown">
+                                <ul>
+                                    <li v-for="option in ddTestSize" :key="option.id">
+                                        <input :id="option.id" class="multiselectOption" type="radio" name="size" :value="option.value" @change="onCheckSize($event)">
+                                        <label class="optionLabel" :for="option.id">{{
                         option.text.toLowerCase()
                       }}</label>
-                    </li>
-                  </ul>
-                  <div class="btn_wrapper">
-                    <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
-                    <button
-                      class="filterBtn"
-                      @click="clearCheckBoxs('size')"
-                    >
-                      Clear
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- material filter -->
-            <div
-              class="filter filter-modifier"
-              @mouseenter="isMobile == true ? null : (showMaterial = true)"
-              @mouseleave="isMobile == true ? null : (showMaterial = false)"
-              @click="
+                                    </li>
+                                </ul>
+                                <div class="btn_wrapper">
+                                    <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
+                                    <button class="filterBtn" @click="clearCheckBoxs('size')">
+                                        Clear
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- material filter -->
+                    <div class="filter filter-modifier" @mouseenter="isMobile == true ? null : (showMaterial = true)" @mouseleave="isMobile == true ? null : (showMaterial = false)" @click="
                 isMobile == false
                   ? null
                   : closeDropDown(showMaterial, 'showMaterial')
-              "
-            >
-              <div
-                class="dropdown"
-                @click="
+              ">
+                        <div class="dropdown" @click="
                   (event) => {
                     addActive(event);
                   }
-                "
-              >
-                <div class="overselect">
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 1L5 5L9 1"
-                      stroke="black"
-                      stroke-width="0.75"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <button class="c-form-input">
-                  Material
-                </button>
-              </div>
-              <div
-                class="multiselect"
-                :class="{ active: showMaterial }"
-              >
-                <div class="tmb_header_dopdown">
-                  <ul>
-                    <li
-                      v-for="option in ddTestMaterial"
-                      :key="option.id"
-                    >
-                      <input
-                        :id="option.id"
-                        class="multiselectOption"
-                        type="radio"
-                        name="material"
-                        :value="option.value"
-                        @change="onCheckMaterial($event)"
-                      >
-                      <label
-                        class="optionLabel"
-                        :for="option.id"
-                      >{{
+                ">
+                            <div class="overselect">
+                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <button class="c-form-input">
+                                Material
+                            </button>
+                        </div>
+                        <div class="multiselect" :class="{ active: showMaterial }">
+                            <div class="tmb_header_dopdown">
+                                <ul>
+                                    <li v-for="option in ddTestMaterial" :key="option.id">
+                                        <input :id="option.id" class="multiselectOption" type="radio" name="material" :value="option.value" @change="onCheckMaterial($event)">
+                                        <label class="optionLabel" :for="option.id">{{
                         option.text.toLowerCase()
                       }}</label>
-                    </li>
-                  </ul>
-                  <div class="btn_wrapper">
-                    <!-- <button class="filterBtn modifier" @click="filterProductByMaterial">Apply</button> -->
-                    <button
-                      class="filterBtn"
-                      @click="clearCheckBoxs('material')"
-                    >
-                      Clear
-                    </button>
-                  </div>
+                                    </li>
+                                </ul>
+                                <div class="btn_wrapper">
+                                    <!-- <button class="filterBtn modifier" @click="filterProductByMaterial">Apply</button> -->
+                                    <button class="filterBtn" @click="clearCheckBoxs('material')">
+                                        Clear
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Clear Filter -->
+                    <div class="filter">
+                        <button class="clearFilter" :class="{ activeClear: showClearAll }" @click="clearAllFilter()">
+                            Clear filters
+                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" />
+                                <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-              </div>
             </div>
-            <!-- Clear Filter -->
-            <div class="filter">
-              <button
-                class="clearFilter"
-                :class="{ activeClear: showClearAll }"
-                @click="clearAllFilter()"
-              >
-                Clear filters
-                <svg
-                  width="6"
-                  height="6"
-                  viewBox="0 0 6 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
-                    stroke="white"
-                  />
-                  <path
-                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
-                    stroke="white"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="sort_by">
-        <div class="filters_responsive">
-          <div
-            class="close-btn"
-            @click="closeMenu"
-          >
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.8861 11.8864L35.6587 35.6589"
-                stroke="#656565"
-                stroke-width="1.5"
-              />
-              <path
-                d="M11.8861 35.6586L35.6587 11.886"
-                stroke="#656565"
-                stroke-width="1.5"
-              />
-            </svg>
-          </div>
-          <div class="filter_cta_wrapper">
-            <button class="filter_cta filter-modifier">
-              {{ shopifyData.sortinnerResponsive }}
-            </button>
-          </div>
-        </div>
-        <div class="sort_by_inner">
-          <div class="range">
-            <div class="add_remove">
-              <button>-</button>
-              <button>+</button>
+        <div class="sort_by">
+            <div class="filters_responsive">
+                <div class="close-btn" @click="closeMenu">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.8861 11.8864L35.6587 35.6589" stroke="#656565" stroke-width="1.5" />
+                        <path d="M11.8861 35.6586L35.6587 11.886" stroke="#656565" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <div class="filter_cta_wrapper">
+                    <button class="filter_cta filter-modifier">
+                        {{ shopifyData.sortinnerResponsive }}
+                    </button>
+                </div>
             </div>
-            <input
-              id="ageInputId"
-              type="range"
-              value="{{gridColumn}}"
-              min="2"
-              max="6"
-              step="2"
-              class="progress"
-              @input="sliderChange($event)"
-            >
-          </div>
-          <div
-            class="sortFilter"
-            @mouseenter="showSort = true"
-            @mouseleave="showSort = false"
-          >
-            <button class="sortBtn">
-              Sort By
-              <svg
-                width="10"
-                height="6"
-                viewBox="0 0 10 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  data-v-35171425=""
-                  d="M1 1L5 5L9 1"
-                  stroke="black"
-                  stroke-width="0.75"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <div
-              class="multiselect"
-              :class="{ active: showSort }"
-            >
-              <div class="tmb_header_dopdown">
-                <ul>
-                  <li
-                    v-for="option in ddTestSort"
-                    :key="option.id"
-                  >
-                    <input
-                      :id="option.id"
-                      class="multiselectOption"
-                      type="checkbox"
-                      name="sort"
-                      :checked="option.id == 'sort1' ? true : false"
-                      :value="option.value"
-                      @change="onCheckSort($event)"
-                    >
-                    <label
-                      class="optionLabel"
-                      :for="option.id"
-                      @click="
+            <div class="sort_by_inner">
+                <div class="range">
+                    <div class="add_remove">
+                        <button>-</button>
+                        <button>+</button>
+                    </div>
+                    <input id="ageInputId" type="range" value="{{gridColumn}}" min="2" max="6" step="2" class="progress" @input="sliderChange($event)">
+                </div>
+                <div class="sortFilter" @mouseenter="showSort = true" @mouseleave="showSort = false">
+                    <button class="sortBtn">
+                        Sort By
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path data-v-35171425="" d="M1 1L5 5L9 1" stroke="black" stroke-width="0.75" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="multiselect" :class="{ active: showSort }">
+                        <div class="tmb_header_dopdown">
+                            <ul>
+                                <li v-for="option in ddTestSort" :key="option.id">
+                                    <input :id="option.id" class="multiselectOption" type="radio" name="sort" :checked="option.id == 'sort1' ? true : false" :value="option.value" @change="onCheckSort($event)">
+                                    <label class="optionLabel" :for="option.id" @click="
                         (event) => {
                           closeSortMenu(event);
                         }
-                      "
-                    >{{ option.text }}</label>
-                  </li>
-                </ul>
-              </div>
+                      ">{{ option.text }}</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="product_grid">
-    <div
-      class="grid_inner product-containers"
-      :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }"
-    >
-      <div
-        v-for="(value, key) in Products"
-        :key="key"
-        class="product_item"
-      >
-        <!-- this block work for single product products -->
-        <div
-          v-if="value.hasOwnProperty('single')"
-          class="card"
-        >
-          <a :href="`/products/` + value.single.handle">
-            <!-- <div class="item_left" v-bind:class="{ item_left_active: value.totalInventory < 5 }" id="item_left_">
+</div>
+<div class="product_grid">
+    <div class="grid_inner product-containers" :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }">
+        <div v-for="(value, key) in Products" :key="key" class="product_item">
+            <!-- this block work for single product products -->
+            <div v-if="value.hasOwnProperty('single')" class="card">
+                <a :href="`/products/` + value.single.handle">
+                    <div class="item_left" v-bind:class="{ item_left_active: value.single.variants[0].inStock < 5 }" id="item_left_">
                         {{
-                value.totalInventory <= 5 && value.totalInventory >= 1
-                  ? "ONLY " + value.totalInventory + " LEFT"
-                  : value.totalInventory == 0
+                            
+                value.single.variants[0].inStock <= 5 && value.single.variants[0].inStock >= 1
+                  ? "ONLY " + value.single.variants[0].inStock + " LEFT"
+                  : value.single.variants[0].inStock == 0
                   ? "Out Of Stock"
                   : ""
               }}
-                    </div> -->
+                    </div>
 
-            <div
-              v-if="value.single.images.length > 2"
-              class="product_img_wrapper"
-            >
-              <img
-                :src="value.single.images[0]"
-                alt="{{ value.single.images[0] }}"
-                class="normal"
-              >
-              <img
-                :src="value.single.images[1]"
-                alt="{{ value.single.images[1] }}"
-                class="hoverImg"
-              >
+                  
+
+                    <div v-if="(value.single.images.length > 1)" class="product_img_wrapper">
+                        <img :src="value.single.featured_image" alt="{{ value.single.featured_image }}" class="normal">
+                        <img :src="value.single.images[1]" alt="{{ value.single.images[1] }}" class="hoverImg">
+                    </div>
+                     <div v-else-if="(value.single.images.length == 1)" class="product_img_wrapper">
+                        <img :src="value.single.featured_image" alt="{{ value.single.featured_image }}" class="normal">
+                    </div>
+                    <div v-else class="product_img_wrapper">
+                        <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" alt="" class="normal">
+                    </div>
+
+                    <h5 class="card-title product_title">
+                        {{ value.single.title }}
+                    </h5>
+                    <h5 class="card-title bold product_price">
+                        $ {{ (value.single.price / 100).toFixed(2) }}
+                    </h5>
+                </a>
+
+                <div class="quickButton quickActive">
+                    <div class="color_swatches" />
+                    <div class="product_cta_wrapper" data-v-32bfb114="">
+                        <!-- if quantity is 0 then hide -->
+
+                        <span v-if="value.single.variants[0].inStock != 0">
+                            <button :id="'quickAdd' + value.single.id" class="quickAdd" :variantid="value.single.variants[0].id" @click="addToCard">
+                                <span>Quick Add</span>
+                            </button>
+                        </span>
+                       
+
+                    </div>
+                </div>
             </div>
-            <div
-              v-else
-              class="product_img_wrapper"
-            >
-              <img
-                src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
-                alt=""
-                class="normal"
-              >
-            </div>
 
-            <h5 class="card-title product_title">
-              {{ value.single.title }}
-            </h5>
-            <h5 class="card-title bold product_price">
-              $ {{ (value.single.compare_at_price / 100).toFixed(2) }}
-            </h5>
-          </a>
+            <!-- this block work for single product products -->
 
-          <div class="quickButton quickActive">
-            <div class="color_swatches" />
-            <div
-              class="product_cta_wrapper"
-              data-v-32bfb114=""
-            >
-              <button
-                :id="'quickAdd' + value.single.id"
-                class="quickAdd"
-                :variantid="value.single.variants[0].id"
-                @click="addToCard"
-              >
-                <span>Quick Add</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- this block work for single product products -->
-
-        <div
-          v-if="value.hasOwnProperty('variable') && (value.variable.length-1) >= value.active"
-          class="card"
-        >
-          <a :href="`/products/`+value.variable[value.active].handle">
-            <!-- <div class="item_left" v-bind:class="{
-                item_left_active: value.variable[value.active].totalInventory < 5,
+            <div v-if="value.hasOwnProperty('variable') && (value.variable.length - 1) >= value.active" class="card">
+                <a :href="`/products/` + value.variable[value.active].handle">
+                
+                    <div class="item_left" v-bind:class="{
+                item_left_active: value.variable[value.active].variants[0].inStock < 5,
               }" id="item_left_">
                         {{
-                value.variable[value.active].totalInventory <= 5 &&
-                value.variable[value.active].totalInventory >= 1
-                  ? "ONLY " + value.variable[value.active].totalInventory + " LEFT"
-                  : value.variable[value.active].totalInventory == 0
+                value.variable[value.active].variants[0].inStock <= 5 &&
+                value.variable[value.active].variants[0].inStock >= 1
+                  ? "ONLY " + value.variable[value.active].variants[0].inStock + " LEFT"
+                  : value.variable[value.active].variants[0].inStock == 0
                   ? "Out Of Stock"
                   : ""
               }}
-                    </div> -->
+                    </div>
 
-            <div
-              v-if="value.variable[value.active].images.length > 2"
-              id="product_img_wrapper6617090588769"
-              class="product_img_wrapper"
-            >
-              <img
-                :src="value.variable[value.active].images[0]"
-                alt="{{ value.variable[value.active].images[0] }}"
-                class="normal"
-              >
-              <img
-                :src="value.variable[value.active].images[1]"
-                alt="{{ value.variable[value.active].images[1] }}"
-                class="hoverImg"
-              >
-            </div>
-            <div
-              v-else
-              class="product_img_wrapper"
-            >
-              <img
-                src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
-                alt=""
-                class="normal"
-              >
-            </div>
+                    <div v-if="value.variable[value.active].images.length > 2" id="product_img_wrapper6617090588769" class="product_img_wrapper">
+                        <img :src="value.variable[value.active].featured_image" alt="{{ value.variable[value.active].images[0] }}" class="normal">
+                        <img :src="value.variable[value.active].images[1]" alt="{{ value.variable[value.active].images[1] }}" class="hoverImg">
+                    </div>
+                     <div v-else-if="value.variable[value.active].images.length == 1" id="product_img_wrapper6617090588769" class="product_img_wrapper">
+                        <img :src="value.variable[value.active].featured_image" alt="{{ value.variable[value.active].images[0] }}" class="normal">
+                    </div>
+                    <div v-else class="product_img_wrapper">
+                        <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" alt="" class="normal">
+                    </div>
 
-            <h5 class="card-title product_title">
-              {{ value.variable[value.active].title }}
-            </h5>
-            <h5 class="card-title bold product_price">
-              $ {{ (value.variable[value.active].compare_at_price / 100).toFixed(2) }}
-            </h5>
-          </a>
+                    <h5 class="card-title product_title">
+                        {{ value.variable[value.active].title }}
+                    </h5>
+                    <h5 class="card-title bold product_price">
+                        $ {{ (value.variable[value.active].price / 100).toFixed(2) }}
+                    </h5>
+                </a>
 
-          <div class="quickButton quickActive">
-            <div class="color_swatches">
-              <ul :mainKey="JSON.stringify(value)">
-                <li
-                  v-for="(sValue, sKey) in value.swatches"
-                  :key="sKey"
-                  :index="sKey"
-                  :link="sValue.link"
-                  class="nav-dots"
-                  :class="sKey == value.active ? 'active' : ''"
-                  @click="selectVariation"
-                >
-                  <span>
-                    <img
-                      :src="getThemeAssets(sValue.img)"
-                      :class="sValue.img"
-                    >
-                  </span>
-                </li>
-              </ul>
-            </div>
+                <div class="quickButton quickActive">
+                    <div class="color_swatches">
+                        <ul :mainKey="JSON.stringify(value)">
+                            <li v-for="(sValue, sKey) in value.swatches" :key="sKey" :index="sKey" :link="sValue.link" class="nav-dots" :class="sKey == value.active ? 'active' : ''" @click="selectVariation">
+                                <span>
+                                    <img :src="getThemeAssets(sValue.img)" :class="sValue.img">
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
 
-            <div
-              class="product_cta_wrapper"
-              data-v-32bfb114=""
-            >
-              <button
-                :id="'quickAdd' + value.variable[value.active].id"
-                :variantid="value.variable[value.active].variants[0].id"
-                qty="1"
-                class="quickAdd"
-                @click="addToCard"
-              >
-                <span>Quick Add</span>
-              </button>
+                    <div class="product_cta_wrapper" data-v-32bfb114="">
+                            <button :class="{ quickAdd_deactive: value.variable[value.active].variants[0].inStock == 0 }"  :id="'quickAdd' + value.variable[value.active].id" :variantid="value.variable[value.active].variants[0].id" qty="1" class="quickAdd" @click="addToCard">
+                                <span>Quick Add</span>
+                            </button>
+
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
-
-    <div
-      class="row centeralign addmargin"
-      :class="{ productnotfound: Products.length === 0, productfound: Products.length > 0}"
-    >
-      <h2 class="sec_heading">
-        We're sorry, no matches were found.
-      </h2>
-      <h4 class="body_text">
-        We couldn't find any results for your selected filters. Clear your filters, or contact
-        our team
-        and
-        we'll be happy to help.
-      </h4>
+    <div class="row centeralign addmargin" :class="{ productnotfound: Products.length === 0, productfound: Products.length > 0 }">
+        <h2 class="sec_heading">
+            We're sorry, no matches were found.
+        </h2>
+        <h4 class="body_text">
+            We couldn't find any results for your selected filters. Clear your filters, or contact
+            our team
+            and
+            we'll be happy to help.
+        </h4>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -833,7 +489,9 @@ export default {
         },
         closeSortMenu: function (event) {
             console.log(event);
-            event.target.closest(".show").classList.remove("show");
+            if (event.target.closest(".show") != null) {
+                event.target.closest(".show").classList.remove("show");
+            }
         },
 
         addActive: function (event) {
@@ -1001,13 +659,13 @@ export default {
         /* end change grid column */
         /* Clear all filter */
         clearAllFilter: function () {
-            
+
             let arrayName = ['category', 'color', 'size', 'material'];
             arrayName.map(item => {
                 this.clearCheckBoxs(item);
             })
 
-            localStorage.setItem('fillters',[])
+            localStorage.setItem('fillters', [])
             this.showClearAll = false;
             this.fetchProdustQuery()
         },
@@ -1022,53 +680,63 @@ export default {
 
             var savedFilter = []
             var savedItem = localStorage.getItem('fillters') || []
-            var category,size,material,color;
+            var category, size, material, color, sort;
             category = -1
-            size     = -1
+            size = -1
             material = -1
-            color    = -1
-            if(savedItem != ''){
+            color = -1
+            sort = -1
+            if (savedItem != '') {
                 savedFilter = JSON.parse(savedItem)
-                savedFilter.map((e,i) => {
-                        if(Object.prototype.hasOwnProperty.call(e,"Category")){
-                            category = i
-                        }else if(Object.prototype.hasOwnProperty.call(e,"Color")){
-                            color    = i
-                        }else if(Object.prototype.hasOwnProperty.call(e,"Size")){
-                            size     = i
-                        }else if(Object.prototype.hasOwnProperty.call(e,"Material")){
-                            material = i
-                        }
+                savedFilter.map((e, i) => {
+                    if (Object.prototype.hasOwnProperty.call(e, "Category")) {
+                        category = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "Color")) {
+                        color = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "Size")) {
+                        size = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "Material")) {
+                        material = i
+                    } else if (Object.prototype.hasOwnProperty.call(e, "sort")) {
+                        sort = i
+                    }
                 })
             }
 
             if (name == "category") {
                 this.selected = [];
                 this.filterByCategory = [];
-                if(category >= 0){ 
-                    savedFilter.splice(parseInt(category),parseInt(savedFilter.length)) 
+                if (category >= 0) {
+                    savedFilter.splice(parseInt(category), parseInt(savedFilter.length))
                 }
             } else if (name == "color") {
                 this.selectedColor = [];
                 this.filterByColor = [];
-                if(color >= 0){ 
-                    savedFilter.splice(parseInt(color),parseInt(savedFilter.length))  }
+                if (color >= 0) {
+                    savedFilter.splice(parseInt(color), parseInt(savedFilter.length))
+                }
             } else if (name == "size") {
                 this.selectedSize = [];
                 this.filterBySize = [];
-                if(size >= 0){ 
-                    savedFilter.splice(parseInt(size),parseInt(savedFilter.length))  }
+                if (size >= 0) {
+                    savedFilter.splice(parseInt(size), parseInt(savedFilter.length))
+                }
             } else if (name == "material") {
                 this.selectedMaterial = [];
                 this.filterByMaterial = [];
-                if(material >= 0){
-                     savedFilter.splice(parseInt(material),parseInt(savedFilter.length)) }
+                if (material >= 0) {
+                    savedFilter.splice(parseInt(material), parseInt(savedFilter.length))
+                }
+            } else if (name == "sort") {
+                if (sort >= 0) {
+                    savedFilter.splice(parseInt(sort), parseInt(savedFilter.length))
+                }
             }
 
-            localStorage.setItem('fillters',JSON.stringify(savedFilter))
+            localStorage.setItem('fillters', JSON.stringify(savedFilter))
             this.fetchProdustQuery()
             this.clearAllOption()
-            
+
         },
 
         /* clear option that selected in drop down under particular option */
@@ -1110,32 +778,34 @@ export default {
 
         /* set selected sort checkbox value */
         onCheckSort: function (event) {
-            var markedCheckbox = document.getElementsByName("sort");
 
-            for (var checkbox of markedCheckbox) {
-                this.selectedSort = [];
-                if (checkbox.id == event.target.id) {
-                    if (
-                        this.sortObject.id != undefined &&
-                        this.sortObject.id == event.target.id
-                    ) {
-                        checkbox.checked = false;
-                        this.sortProduct();
-                        this.sortObject = {};
-                    } else {
-                        markedCheckbox = document.getElementById(event.target.id);
-                        markedCheckbox.checked = true;
-                        this.sortObject = markedCheckbox;
-                        this.selectedSort.push(event.target.value);
-                        
-                        this.saveFilter("sort", event.target.value)
-                        this.page_index = 0;
-                        
-                    }
-                } else {
-                    checkbox.checked = false;
-                }
-            }
+            this.saveFilter("sort", event.target.value)
+            this.page_index = 0;
+            // var markedCheckbox = document.getElementsByName("sort");
+            // for (var checkbox of markedCheckbox) {
+            //     this.selectedSort = [];
+            //     if (checkbox.id == event.target.id) {
+            //         if (
+            //             this.sortObject.id != undefined &&
+            //             this.sortObject.id == event.target.id
+            //         ) {
+            //             checkbox.checked = false;
+            //             this.sortProduct();
+            //             this.sortObject = {};
+            //         } else {
+            //             markedCheckbox = document.getElementById(event.target.id);
+            //             markedCheckbox.checked = true;
+            //             this.sortObject = markedCheckbox;
+            //             this.selectedSort.push(event.target.value);
+
+            //             this.saveFilter("sort", event.target.value)
+            //             this.page_index = 0;
+
+            //         }
+            //     } else {
+            //         checkbox.checked = false;
+            //     }
+            // }
 
             // to close responsive menu in mobile
         },
@@ -1180,11 +850,10 @@ export default {
                 }).indexOf("Color");
 
                 item[0].variants.map((col) => {
-                   
+
                     array.push(col["option" + (index + 1)].toUpperCase());
                 });
             });
-
 
             let data = [...new Set(array)];
 
@@ -1218,11 +887,13 @@ export default {
                 }).indexOf("Size");
 
                 item[0].variants.map((col) => {
-                     var size = ['XS','S','M','L','Xl','Xxl','Xxxl','Xxs','Xl','XXL','XXXL','XXS','XL']
-                    if(size.includes(col["option" + (index + 1)])) { return }else{
+                    var size = ['XS', 'S', 'M', 'L', 'Xl', 'Xxl', 'Xxxl', 'Xxs', 'Xl', 'XXL', 'XXXL', 'XXS', 'XL']
+                    if (size.includes(col["option" + (index + 1)])) {
+                        return
+                    } else {
                         array.push(col["option" + (index + 1)]);
                     }
-                    
+
                 });
             });
 
@@ -1277,28 +948,6 @@ export default {
         },
         /* End Fill material dropdown from products data */
 
-        /* sort product based on price low to high and vice-verse */
-        sortProduct: function () {
-            if (this.selectedSort.length > 0) {
-                let obj = this.selectedSort[0];
-                this.Products.sort(function (a, b) {
-                    if (obj == "LowToHigh") {
-                        if(Object.prototype.hasOwnProperty.call(a,'variable')){
-                            return a.variable[a.active].price - (b.variable!=undefined?b.variable[b.active].price:b.single.price);
-                        }
-                        if(Object.prototype.hasOwnProperty.call(a,'single')){
-                            return a.single.price - (b.single!=undefined?b.single.price:b.variable[b.active].price);
-                        }
-                        
-                    } else if (obj == "HighToLow") {
-                        return b.variable[b.active].price - a.variable[a.active].price;
-                    } else if (obj == "Latest") {
-                        return new Date(b.variable[b.active].created_at) - new Date(a.variable[a.active].created_at);
-                    }
-                });
-            }
-        },
-
         /* set product in array based on selected category option */
         filterProduct: function () {
 
@@ -1310,10 +959,6 @@ export default {
             // this.clearAllOption();
             this.page_index = 0;
         },
-       
-
-
-
 
         /**
          * save filter in localstorage when user choose filter option
@@ -1327,7 +972,7 @@ export default {
 
             /* when selectedFilter is empty */
             if (filter == '') {
-               
+
                 dd[name] = value
                 saveVal.push(dd)
                 localStorage.setItem('fillters', JSON.stringify(saveVal))
@@ -1344,7 +989,7 @@ export default {
 
             var flag = false
             var index = prev.map(function (e, i) {
-                if (Object.prototype.hasOwnProperty.call(e,name)) {
+                if (Object.prototype.hasOwnProperty.call(e, name)) {
                     flag = true
                 }
             });
@@ -1356,7 +1001,7 @@ export default {
                 var newArray = []
                 prev.map(function (o) {
                     // return o.Category; 
-                    if (Object.prototype.hasOwnProperty.call(o,name)) {
+                    if (Object.prototype.hasOwnProperty.call(o, name)) {
                         var updateval = {
                             [name]: ColVal
                         }
@@ -1379,22 +1024,17 @@ export default {
 
         },
 
-
-
         /* set selected category checkbox value */
         onCheck(event) {
             this.saveFilter("Category", event.target.value)
             this.page_index = 0;
         },
 
-
         /* set product in array based on selected color option */
         filterProductByColor: function () {
             this.saveFilter("Color", this.selectedColor)
             this.page_index = 0;
         },
-
-
 
         /* set product in array based on selected size option */
         filterProductBySize: function () {
@@ -1404,8 +1044,6 @@ export default {
             this.page_index = 0;
         },
 
-
-
         /* set product in array based on selected material option */
         filterProductByMaterial: function () {
             this.saveFilter("Material", this.selectedMaterial)
@@ -1413,8 +1051,6 @@ export default {
             //     this.clearAllOption();
             this.page_index = 0;
         },
-
-
 
         filterArrayToUniqueRecord: function (array, filterWithArray) {
             return filterWithArray.filter((el) => {
@@ -1434,36 +1070,34 @@ export default {
             var filterListing = [];
             var duplicateRecord = [];
 
+            /*********************************************************/
+            // start filter (initailize value)
+            /*********************************************************/
+            var Categories, Color, Size, Material;
+            Categories = ''
+            Color = ''
+            Size = ''
+            Material = ''
+            let getSavedFilter = localStorage.getItem('fillters')
 
-             /*********************************************************/
-             // start filter (initailize value)
-             /*********************************************************/
-             var  Categories,Color,Size,Material;
-             Categories = ''
-             Color      = ''
-             Size       = ''
-             Material   = ''
-             let getSavedFilter = localStorage.getItem('fillters')
-            
-             if(getSavedFilter !=''){
-                   let savefiltr = JSON.parse(getSavedFilter)
-                   savefiltr.map((filter_elem,filter_index) =>{
-                        if(Object.prototype.hasOwnProperty.call(filter_elem,"Category")){
-                            Categories = Object.values(filter_elem)[0]
-                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Color")){
-                            Color = Object.values(filter_elem)[0]
-                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Size")){
-                            Size = Object.values(filter_elem)[0]
-                        }else if(Object.prototype.hasOwnProperty.call(filter_elem,"Material")){
-                            Material = Object.values(filter_elem)[0]
-                        }
-                   })
-             }
-             
-             /*********************************************************/
-             // end filter
-             /*********************************************************/
+            if (getSavedFilter != '') {
+                let savefiltr = JSON.parse(getSavedFilter)
+                savefiltr.map((filter_elem, filter_index) => {
+                    if (Object.prototype.hasOwnProperty.call(filter_elem, "Category")) {
+                        Categories = Object.values(filter_elem)[0]
+                    } else if (Object.prototype.hasOwnProperty.call(filter_elem, "Color")) {
+                        Color = Object.values(filter_elem)[0]
+                    } else if (Object.prototype.hasOwnProperty.call(filter_elem, "Size")) {
+                        Size = Object.values(filter_elem)[0]
+                    } else if (Object.prototype.hasOwnProperty.call(filter_elem, "Material")) {
+                        Material = Object.values(filter_elem)[0]
+                    }
+                })
+            }
 
+            /*********************************************************/
+            // end filter
+            /*********************************************************/
 
             for (let product in Products) {
                 // Products.map(async (e, i) => {
@@ -1472,16 +1106,16 @@ export default {
                 // console.log(e)
                 var p = Products[product][0]; /// product object
                 var v = Products[product][1]; /// variant object
+                var stock = Products[product][2]; /// variant object
 
                 var handle = p.handle;
-
 
                 /*********************************************************/
                 /// category filter applied here (start)
                 /*********************************************************/
 
-                if(Categories !=''){ // first check if value set
-                    if(p.tags.includes(Categories) == false){
+                if (Categories != '') { // first check if value set
+                    if (p.tags.includes(Categories) == false) {
                         continue
                     }
                 }
@@ -1489,17 +1123,19 @@ export default {
                 /*********************************************************/
                 /// category filter applied here (end)
                 /*********************************************************/
-
-                // check handle is already used then return
-                if (duplicateRecord.includes(handle)) {
-                    continue;
+                if(getSavedFilter !='') {
+                    // check handle is already used then return
+                    if (duplicateRecord.includes(handle)) {
+                        continue;
+                    }
                 }
+                   
 
                 /// filter variants check links exist
                 var links = ""; /// product pair links
                 for (let varints in v) {
                     if ("variants_products" == varints || "variants_swtach" == varints) {
-                         links = v["variants_products"];
+                        links = v["variants_products"];
                     }
                 }
 
@@ -1527,26 +1163,25 @@ export default {
 
                 var productType = {}; // check product type is single or variation
 
-                if (bindInPair.length > 0) { 
+                if (bindInPair.length > 0) {
 
-                /*********************************************************/
-                /// filter variable product
-                /*********************************************************/
+                    /*********************************************************/
+                    /// filter variable product
+                    /*********************************************************/
                     var swatch = await this.getSwatch(v);
                     var collectPairProducts = [];
 
-                    if(Size || Material || Color){
-                             // set filter priority
+                    if (Size || Material || Color) {
+                        // set filter priority
 
                         var priority = []
 
-                        if(Size != '')
+                        if (Size != '')
                             priority.push(Size)
-                        if(Material != '')
+                        if (Material != '')
                             priority.push(Material)
-                        if(Color != '')
+                        if (Color != '')
                             priority.push(Color)
-
 
                         var activeIndex = 0
                         var flagForPair = false
@@ -1560,134 +1195,144 @@ export default {
                                 if (Products[childPair][0].handle == Phandle.replace("/products/", "")) {
                                     // console.log(Products[childPair][0]);
 
-                                        var sP1_variant = Products[childPair][0].variants
-                                        
-                                        var counterMatch = 0
-                                    
-                                        sP1_variant.map((sP) => { // sP means single product
-                                            counterMatch = 0
-                                            sP.options.map((options) => { // sP means single product
-                                            
-                                            if(options == Size)
-                                                    counterMatch++
-                                            else if(options == Material)
-                                                    counterMatch++
-                                            else if(options == Color)
-                                                    counterMatch++
-                                            })
+                                    var sP1_variant = Products[childPair][0].variants
+
+                                    var counterMatch = 0
+
+                                    sP1_variant.map((sP) => { // sP means single product
+                                        counterMatch = 0
+                                        sP.options.map((options) => { // sP means single product
+
+                                            if (options == Size)
+                                                counterMatch++
+                                            else if (options == Material)
+                                                counterMatch++
+                                            else if (options == Color)
+                                                counterMatch++
                                         })
+                                    })
+
+                                    if (counterMatch == priority.length) {
+                                        flagForPair = true
+                                        activeIndex = swatchPl
+                                    }
+
+                                    Products[childPair][0].variants = this.appendStock(Products[childPair][0].variants, Products[childPair][2]);
 
 
-                                        if(counterMatch == priority.length){
-                                            flagForPair = true
-                                            activeIndex = swatchPl
-                                        }
-                                        filterpair.push(Products[childPair][0])
-                                        // collectPairProducts.push(Products[childPair][0])
+                                    filterpair.push(Products[childPair][0])
+                                    collectPairProducts.push(Products[childPair][0])
 
-                                        // if(flagForPair){
-                                        //   collectPairProducts.push(Products[childPair][0]);
-                                        // }
+                                    // if(flagForPair){
+                                    //   collectPairProducts.push(Products[childPair][0]);
+                                    // }
                                 }
                             }
 
                         }
-                     
-                       
 
-                         if(flagForPair == false){
-                                filterpair = []
-                                continue
+                        if (flagForPair == false) {
+                            filterpair = []
+                            continue
                         }
 
+                        productType["active"] = activeIndex
+                        productType["variable"] = filterpair;
+                        productType["swatches"] = swatch;
+                        filterListing.push(productType);
 
-                             productType["active"] = activeIndex
-                             productType["variable"] = filterpair;
-                             productType["swatches"] = swatch;
-                             filterListing.push(productType);
+                    } else {
 
-                    }else{
+                        /*********************************************/
+                        // default load code for variable products
+                        /*********************************************/
 
+                        var variableActiveIndex = 0
                         for (let swatchPl in swatch) {
                             var Phandle2 = swatch[swatchPl].link;
+                            
                             for (let childPair in Products) {
                                 //  console.log(products[childPair].node.handle,'===', Phandle)
                                 if (Products[childPair][0].handle == Phandle2.replace("/products/", "")) {
+
+                                    if(handle == Products[childPair][0].handle){
+                                        variableActiveIndex = swatchPl;
+                                    }
                                     // console.log(Products[childPair][0]);
-                                    collectPairProducts.push(Products[childPair][0]); 
-                                   
+                                    // append stock qty
+                                    Products[childPair][0].variants = this.appendStock(Products[childPair][0].variants, Products[childPair][2]);
+                                    collectPairProducts.push(Products[childPair][0]);
                                 }
                             }
                         }
+
+                        // console.log(variableActiveIndex)
 
                         productType["variable"] = collectPairProducts;
                         productType["swatches"] = swatch;
 
-
-                        productType["active"] = this.randomIntFromInterval(0, (collectPairProducts.length - 1))
+                        productType["active"] = variableActiveIndex
 
                         filterListing.push(productType);
 
                     }
 
-                /*********************************************************/
-                /// filter variable product (END)
-                /*********************************************************/
+                    /*********************************************************/
+                    /// filter variable product (END)
+                    /*********************************************************/
 
                 } else if (bindInPair.length == 0) {
 
+                    /*********************************************************/
+                    /// filter apply at single products
+                    /*********************************************************/
 
-                /*********************************************************/
-                /// filter apply at single products
-                /*********************************************************/
-
-                    if(Size || Material || Color){
+                    if (Size || Material || Color) {
 
                         // set filter priority
 
                         var priorityS = [] // priorityS for single
 
-                        if(Size != '')
+                        if (Size != '')
                             priorityS.push(Size)
-                        if(Material != '')
+                        if (Material != '')
                             priorityS.push(Material)
-                        if(Color != '')
+                        if (Color != '')
                             priorityS.push(Color)
 
                         var VaraintFlag = false
                         var sP_variant = p.variants
                         var counterMatch1 = 0
-                       
+
                         sP_variant.map((sP) => { // sP means single product
                             counterMatch1 = 0
                             sP.options.map((options) => { // sP means single product
-                               if(options == Size)
+                                if (options == Size)
                                     counterMatch++
-                               else if(options == Material)
-                                     counterMatch++
-                               else if(options == Color)
-                                     counterMatch++
+                                else if (options == Material)
+                                    counterMatch++
+                                else if (options == Color)
+                                    counterMatch++
                             })
                         })
 
-                        if(counterMatch1 == priorityS.length){
-
+                        if (counterMatch1 == priorityS.length) {
+                            /// append stock qty
+                            p.variants = this.appendStock(p.variants, stock);
                             productType["single"] = p;
                             filterListing.push(productType);
                         }
-                        
-
-                        
-                    }else{ 
+                    } else {
                         /// first time browser load
+                        /// append stock qty
+                        p.variants = this.appendStock(p.variants, stock);
                         productType["single"] = p;
                         filterListing.push(productType);
                     }
 
-
-                /*********************************************************/
-                /// filter variable product (END)
-                /*********************************************************/
+                    /*********************************************************/
+                    /// filter variable product (END)
+                    /*********************************************************/
 
                 } else if (flag) {
                     // else condition will be work if product have no variation
@@ -1695,13 +1340,61 @@ export default {
                 }
             }
 
-            console.log(filterListing);
 
             this.Products = [...filterListing].slice(0, 100);
-            // let savefiltr = JSON.parse(getSavedFilter);
-            // if(savefiltr[0].hasOwnProperty('sort')){
-            //     this.sortProduct();
-            // }
+
+            if (getSavedFilter != "") {
+                let savefiltr = JSON.parse(getSavedFilter);
+                if (Object.prototype.hasOwnProperty.call(savefiltr[0], 'sort')) {
+                    this.sortProduct(savefiltr[0].sort);
+                }
+            }
+        },
+      
+
+        appendStock(variants, stocks) {
+            var newVariants = []
+            variants.map((appendStock) => {
+                var V_id = appendStock.id
+                for (let stok in stocks) {
+                    if (stok == V_id) {
+                        var newVar = appendStock
+                        newVar.inStock = stocks[stok]
+                        newVariants.push(newVar)
+                    }
+                }
+            })
+            return newVariants
+        },
+
+        /* sort product based on price low to high and vice-verse */
+        sortProduct: function (obj) {
+            this.Products.sort(function (a, b) {
+                if (obj == "LowToHigh") {
+                    if (Object.prototype.hasOwnProperty.call(a, 'variable')) {
+                        return a.variable[a.active].price - (b.variable != undefined ? b.variable[b.active].price : b.single.price);
+                    }
+                    if (Object.prototype.hasOwnProperty.call(a, 'single')) {
+                        return a.single.price - (b.single != undefined ? b.single.price : b.variable[b.active].price);
+                    }
+
+                } else if (obj == "HighToLow") {
+                    if (Object.prototype.hasOwnProperty.call(b, 'variable')) {
+                        return b.variable[b.active].price - (a.variable != undefined ? a.variable[a.active].price : a.single.price);
+                    }
+                    if (Object.prototype.hasOwnProperty.call(b, 'single')) {
+                        return b.single.price - (a.single != undefined ? a.single.price : a.variable[a.active].price);
+                    }
+                } else if (obj == "Latest") {
+                    if (Object.prototype.hasOwnProperty.call(b, 'variable')) {
+                        return new Date(b.variable[b.active].created_at) - (a.variable != undefined ? new Date(a.variable[a.active].created_at) : new Date(a.single.created_at));
+                    }
+                    if (Object.prototype.hasOwnProperty.call(b, 'single')) {
+                        return new Date(b.single.created_at) - (a.single != undefined ? new Date(a.single.created_at) : new Date(a.variable[a.active].created_at));
+                    }
+                }
+            });
+
         },
 
         randomIntFromInterval(min, max) {
@@ -1799,7 +1492,6 @@ export default {
 
             var productsData = JSON.parse(target.parentNode.getAttribute("mainkey"));
 
-            console.log(productsData);
 
             // active product
             var activeProduct = productsData.variable[index];
@@ -1809,7 +1501,7 @@ export default {
 
             grid.querySelector(".product_title").innerHTML = activeProduct.title;
             grid.querySelector(".product_price").innerHTML =
-                "$ " + (activeProduct.compare_at_price / 100).toFixed(2);
+                "$ " + (activeProduct.price / 100).toFixed(2);
 
             /// update link of the grid
             grid
@@ -1836,28 +1528,32 @@ export default {
                 );
 
             // chnage quick button content
+            console.log(activeProduct)
+
+
             grid
                 .querySelector("button")
                 .setAttribute("variantid", activeProduct.variants[0].id);
 
-            // if (activeProduct.totalInventory == 0) {
-            //     grid.querySelector("button").classList.add("quickAdd_deactive");
-            // } else {
-            //     grid.querySelector("button").classList.remove("quickAdd_deactive");
-            // }
+
+            if (activeProduct.variants[0].inStock == 0) {
+                grid.querySelector("button").classList.add("quickAdd_deactive");
+            } else {
+                grid.querySelector("button").classList.remove("quickAdd_deactive");
+            }
 
             // check how many product are left in product inventory
 
-            // if (activeProduct.totalInventory == 0) {
-            //     grid.querySelector(".item_left").classList.add("item_left_active");
-            //     grid.querySelector(".item_left").innerHTML = "Out Of Stock";
-            // } else if (activeProduct.totalInventory < 5) {
-            //     grid.querySelector(".item_left").classList.add("item_left_active");
-            //     grid.querySelector(".item_left").innerHTML =
-            //         "Only " + activeProduct.totalInventory + " Left";
-            // } else {
-            //     grid.querySelector(".item_left").classList.remove("item_left_active");
-            // }
+            if (activeProduct.variants[0].inStock == 0) {
+                grid.querySelector(".item_left").classList.add("item_left_active");
+                grid.querySelector(".item_left").innerHTML = "Out Of Stock";
+            } else if (activeProduct.totalInventory < 5) {
+                grid.querySelector(".item_left").classList.add("item_left_active");
+                grid.querySelector(".item_left").innerHTML =
+                    "Only " + activeProduct.variants[0].inStock + " Left";
+            } else {
+                grid.querySelector(".item_left").classList.remove("item_left_active");
+            }
         },
         /**
          * get theme upload assets list
@@ -1883,32 +1579,33 @@ export default {
 </script>
 
 <style scoped>
-
 /* Collaction Banner Css Code */
-.collaction_banner{
-  position: relative;
-}
-.collaction_banner img{
-  width: 100%;
-}
-.collaction_banner .banner_heading{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  padding: 0 20px;
-  transform: translate(-50%,-50%);
-  font-weight: 700;
-  text-align: center;
-  font-size: 49px;
-  color: #FFFFFF;
-  text-shadow: 0px 2.3824px 55.3909px rgba(0, 0, 0, 0.42);
+.collaction_banner {
+    position: relative;
 }
 
+.collaction_banner img {
+    width: 100%;
+}
+
+.collaction_banner .banner_heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0 20px;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    text-align: center;
+    font-size: 49px;
+    color: #FFFFFF;
+    text-shadow: 0px 2.3824px 55.3909px rgba(0, 0, 0, 0.42);
+}
 
 .product_item:empty {
     display: none;
 }
+
 .color_swatches ul {
     display: flex;
     gap: 7px;
@@ -2681,7 +2378,8 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
     .progress {
         width: 105px;
     }
-    .collaction_banner .banner_heading{
+
+    .collaction_banner .banner_heading {
         font-size: 40px;
     }
 }
@@ -3019,21 +2717,21 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
         grid-template-columns: 1fr 1fr;
         column-gap: 10px;
     }
-    .collaction_banner .banner_heading{
+
+    .collaction_banner .banner_heading {
         font-size: 30px;
         text-shadow: 0px 0.794134px 18.4636px rgba(0, 0, 0, 0.42);
     }
 }
 
 @media (max-width: 575px) {
-    .collaction_banner .banner_heading{
+    .collaction_banner .banner_heading {
         font-size: 16.3333px;
         text-shadow: 0px 0.794134px 18.4636px rgba(0, 0, 0, 0.42);
     }
-    .filter_row{
-        margin: 5px 0 12px;        
+
+    .filter_row {
+        margin: 5px 0 12px;
     }
 }
-
-
 </style>

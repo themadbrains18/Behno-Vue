@@ -8,7 +8,9 @@ class ShopifyAPI {
 
     // ShopifyInfo = window
 
-
+    constructor (ShopifyInfo){
+        this.ShopifyInfo = window
+    }
 
 
     /**
