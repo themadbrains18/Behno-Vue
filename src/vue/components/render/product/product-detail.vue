@@ -77,7 +77,8 @@
                 class="color_variant"
                 :checked="currentUrl == value.link"
               >
-              <label v-if="value.img !=''"
+              <label
+                v-if="value.img !=''"
                 class="color_variant_label"
                 :for="value.name"
               >
@@ -380,50 +381,48 @@
       <!-- eslint-disable -->
       <span v-html="showProductReviewData" />
       <!-- eslint-enable -->
-
-        
     </div>
   </section>
   <section class="product_page_grid_wrap">
-          <div class="product_page_grid">
-            <div class="product_page_grid_item product_page_grid_item-first">
-              <img
-                v-if="(metaFieldGrid.metaFieldsData.img.src)"
-                :src="(metaFieldGrid.metaFieldsData.img.src)"
-                :src-placeholder="(metaFieldGrid.metaFieldsData.img.placeholder)"
-                :alt="(metaFieldGrid.metaFieldsData.img.alt)"
-              >
-              <div class="product_page_grid_content">
-                <h3
-                  v-if="(metaFieldGrid.metaFieldsData.gridLeftHeading)"
-                  class="product_grid_heading subtitle_b"
-                >
-                  {{ metaFieldGrid.metaFieldsData.gridLeftHeading }}
-                </h3>
-                <p
-                  v-if="(metaFieldGrid.metaFieldsData.gridLeftPara)"
-                  class="caption"
-                >
-                  {{ metaFieldGrid.metaFieldsData.gridLeftPara }}
-                </p>
-              </div>
-            </div>
-            <div class="product_page_grid_item product_page_grid_item-second">
-              <img
-                :src="(metaFieldGrid.RightGridImage.src)"
-                :src-placeholder="(metaFieldGrid.RightGridImage.placeholder)"
-                :alt="(metaFieldGrid.RightGridImage.alt)"
-              >
-              <div class="product_page_grid_content">
-                <h3 class="product_grid_heading subtitle_b">
-                  {{ metaFieldGrid.RightGridHeading }}
-                </h3>
-                <p class="caption">
-                  {{ metaFieldGrid.RightGridpara }}
-                </p>
-              </div>
-            </div>
-          </div>
+    <div class="product_page_grid">
+      <div class="product_page_grid_item product_page_grid_item-first">
+        <img
+          v-if="(metaFieldGrid.metaFieldsData.img.src)"
+          :src="(metaFieldGrid.metaFieldsData.img.src)"
+          :src-placeholder="(metaFieldGrid.metaFieldsData.img.placeholder)"
+          :alt="(metaFieldGrid.metaFieldsData.img.alt)"
+        >
+        <div class="product_page_grid_content">
+          <h3
+            v-if="(metaFieldGrid.metaFieldsData.gridLeftHeading)"
+            class="product_grid_heading subtitle_b"
+          >
+            {{ metaFieldGrid.metaFieldsData.gridLeftHeading }}
+          </h3>
+          <p
+            v-if="(metaFieldGrid.metaFieldsData.gridLeftPara)"
+            class="caption"
+          >
+            {{ metaFieldGrid.metaFieldsData.gridLeftPara }}
+          </p>
+        </div>
+      </div>
+      <div class="product_page_grid_item product_page_grid_item-second">
+        <img
+          :src="(metaFieldGrid.RightGridImage.src)"
+          :src-placeholder="(metaFieldGrid.RightGridImage.placeholder)"
+          :alt="(metaFieldGrid.RightGridImage.alt)"
+        >
+        <div class="product_page_grid_content">
+          <h3 class="product_grid_heading subtitle_b">
+            {{ metaFieldGrid.RightGridHeading }}
+          </h3>
+          <p class="caption">
+            {{ metaFieldGrid.RightGridpara }}
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
