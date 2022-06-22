@@ -1,20 +1,44 @@
+{% capture footerMenu %}
+[
+{% for link in linklists.footer.links %}
+    {
+      linkUrl : `{{ link.url }}`,
+      linkTitle : `{{ link.title }}`
+    }{% unless forloop.last %},{% endunless %}  
+  {% endfor %}
+]
+
+{% endcapture %}
+
 <render-app-footer :shopify-data="{
-            footerWave: '{{ 'footer-wave.png' | asset_url }}',
-            fbIcon: '{{ 'fblogo.svg' | asset_url }}',
-            instaIcon: '{{ 'instagramfooter.svg' | asset_url }}',
-            afterIcon: '{{ 'after.svg' | asset_url }}' 
-          }">
+    footerWave: '{{ 'footer-wave.png' | asset_url }}',
+    footerMenu: {{ footerMenu }},
+    fbIcon: '{{ 'fblogo.svg' | asset_url }}',
+    instaIcon: '{{ 'instagramfooter.svg' | asset_url }}',
+    afterIcon: '{{ 'after.svg' | asset_url }}',
+    stayTouch: '{{ section.settings.stayTouch  }}',
+    afterpay: '{{ section.settings.afterpay }}',
+  }">
 </render-app-footer>
+
 
 
 {% schema %}
 {
-"name": "t:sections.footer.name",
-"settings": [
-{
-"type": "paragraph",
-"content": "t:sections.footer.settings.paragraph"
-}
-]
+  "name": "t:sections.footer.name",
+  "settings": [
+    {
+      "id" : "stayTouch",
+      "type": "text",
+      "label": "STAY IN TOUCH Text",
+      "default": "Enjoy 10% off your first order when you subscribe to the behno newsletter."
+    },
+    {
+      "id" : "afterpay",
+      "type": "text",
+      "label": "After Pay Text",
+      "default": "Finance your favorite bag with only 25% up front."
+    }
+  ]
 }
 {% endschema %}

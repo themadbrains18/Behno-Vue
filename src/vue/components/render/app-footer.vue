@@ -13,49 +13,16 @@
         <div class="footer_content">
           <!-- Footer Link -->
           <ul class="footer_link_list">
-            <li class="footer_item">
-              <a
-                class="footer_link"
-                href="#"
-              > CLIENT SERVICES & POLICY </a>
-            </li>
-            <li class="footer_item">
-              <a
-                class="footer_link"
-                href="#"
-              > OUR ETHICAL PHILISOPHY </a>
-            </li>
-            <li class="footer_item">
-              <a
-                class="footer_link"
-                href="#"
-              > PRESS </a>
-            </li>
-            <li class="footer_item">
-              <a
-                class="footer_link"
-                href="#"
-              > TEAM </a>
-            </li>
-            <li class="footer_item">
-              <a
-                class="footer_link"
-                href="#"
-              > JOIN OUR AFFILIATE PROGRAM </a>
+            <li class="footer_item" v-for="(item,index) in  this.shopifyData.footerMenu" :key="index">
+              <a class="footer_link" :href="item.linkTitle" > {{ item.linkTitle }} </a>
             </li>
             <li class="footer_item follow-journey">
               <span class="footer_link">FOLLOW OUR JOURNEY</span>
               <div class="footer_social_link">
-                <a
-                  class="link"
-                  href="#"
-                >
+                <a class="link" href="https://www.facebook.com/behno-461960733987428/?fref=ts&ref=br_tf">
                   <v-lazy-image :src="(shopifyData.fbIcon)" />
                 </a>
-                <a
-                  class="link"
-                  href="#"
-                >
+                <a class="link" href="https://www.instagram.com/behno_official/">
                   <v-lazy-image :src="(shopifyData.instaIcon)" />
                 </a>
               </div>
@@ -66,8 +33,7 @@
             <h3 class="footer_form_heading">
               STAY IN TOUCH.
               <span>
-                &nbsp;Enjoy 10% off your first order when you subscribe to the
-                behno newsletter.
+                &nbsp;{{ this.shopifyData.stayTouch }}
               </span>
             </h3>
             <form
@@ -89,9 +55,8 @@
             </form>
             <h4 class="footer_after_pay">
               <!-- ../../assets/svg/after-icon.svg -->
-              <v-lazy-image :src="(shopifyData.afterIcon)" />
-
-              <span> Finance your favorite bag with only 25% up front. </span>
+              <v-lazy-image :src="(this.shopifyData.afterIcon)" />
+              <span> {{ this.shopifyData.afterpay }} </span>
             </h4>
           </div>
         </div>
@@ -104,6 +69,9 @@
 import VLazyImage from "v-lazy-image";
 
 export default {
+  data(){
+    console.log("shopifyData",this.shopifyData)
+  },
   components: {
     VLazyImage,
   },
