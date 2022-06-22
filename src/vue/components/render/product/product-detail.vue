@@ -337,12 +337,12 @@
                 REVIEWS
               </button>
               <!-- eslint-disable -->
-              <!-- <div class="product_accordian_panel">
+              <div class="product_accordian_panel">
                 <div
                   class="product_review"
-                  v-html="showProductReviewData.productReview"
+                  v-html="showProductReviewData"
                 />
-              </div> -->
+              </div>
               <!-- eslint-enable -->
             </li>
           </ul>
@@ -377,12 +377,11 @@
           </swiper-slide>
         </swiper>
       </div>
-
-      <!-- eslint-disable -->
-      <span v-html="showProductReviewData" />
-      <!-- eslint-enable -->
     </div>
   </section>
+  <!-- <section class="product_review">
+      <span v-html="showProductReviewData" />
+  </section> -->
   <section class="product_page_grid_wrap">
     <div class="product_page_grid">
       <div class="product_page_grid_item product_page_grid_item-first">
@@ -743,7 +742,8 @@ export default {
 .product_review{
     max-height: 440px!important;
     overflow-y: scroll;
-    border-bottom: 0.5px solid #252525;
+    border: 0.5px solid #252525;
+    margin-top: 10px;
 }
 
 .product_accordian_panel>ul {
@@ -816,6 +816,7 @@ export default {
 <style scoped>
 .product_sec {
     padding-top: 30px;
+    padding-bottom:30px;
 }
 .product_grid {
     display: grid;
@@ -1161,4 +1162,124 @@ justify-content: center;
             object-fit: cover;
         }
     }
+</style>
+
+<!-- css for revoew -->
+<style>
+.product_review{
+  max-width: 1440px;
+  padding: 0 !important;
+  margin: auto !important;
+}
+.jdgm-rev__header{
+  margin-bottom: 5px;
+}
+.jdgm-rev__icon{
+  position: relative;
+  float: left;
+  width: 3.2em;
+  height: 3.2em;
+  line-height: 3.2em;
+  margin-right: 12px;
+  text-align: center;
+  border-radius: 50%;
+  color: #333333;
+  background-color: #e9e9e9;
+}
+.jdgm-quest[data-verified-buyer=true] .jdgm-rev__icon:not(.jdgm--loading):after, .jdgm-rev[data-verified-buyer=true] .jdgm-rev__icon:not(.jdgm--loading):after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    line-height: 15px;
+    border: 1px solid white;
+    text-align: center;
+}
+span.jdgm-star{
+  color: #363636;
+  font-size: 14px;
+}
+:not(.jdgm-prev-badge__stars)>.jdgm-star{
+  color: #585858;
+}
+.jdgm-star.jdgm--on:before{
+  content: \e000;
+}
+.jdgm-rev__timestamp+.jdgm-rev__br{
+  padding-bottom: 1px;
+}
+.jdgm-rev__br:empty{
+  display: block;
+}
+.jdgm-rev__icon::after, .jdgm-rev__buyer-badge{
+  display: inline-block;
+  color: #ffffff;
+  background-color: rgb(0,123,255);
+}
+.jdgm-rev__buyer-badge{
+  padding: 3px 7px;
+  font-size: 11px;
+  line-height: 1;
+  vertical-align: middle;
+}
+.jdgm-rev__buyer-badge:before{
+  content: 'Verified';
+}
+.jdgm-rev__author-wrapper{
+  font-weight: bold;
+  vertical-align: middle;
+}
+.jdgm-rev__author{
+  vertical-align: middle;
+}
+.jdgm-rev__location{
+  opacity: 0.35;
+  vertical-align: middle;
+}
+.jdgm-rev__title{
+  display: block;
+  font-size: 110%;
+}
+.jdgm-rev__body>p:last-of-type{
+  margin-bottom: 0;
+}
+.jdgm-rev__pics{
+  font-size: 0;
+  white-space: nowrap;
+  height: auto;
+  overflow: auto;
+}
+.jdgm-rev__vids{
+  overflow: auto;
+  white-space: nowrap;
+
+}
+.jdgm-rev__social{
+  float: left;
+}
+.jdgm-rev__votes{
+  float: right;
+}
+.jdgm-quest, .jdgm-rev{
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+  margin-top: 16px;
+}
+.jdgm-rev-widg.jdgm-rev-widg{
+  display: block;
+  clear: both;
+}
+.jdgm-all-reviews-widget, .jdgm-rev-widg{
+  padding: 24px;
+  border: 1px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
 </style>
