@@ -6,7 +6,6 @@ class ShopifyAPI {
      *  shopify global attributes
      */
 
-    // ShopifyInfo = window
 
     constructor (ShopifyInfo){
         this.ShopifyInfo = window
