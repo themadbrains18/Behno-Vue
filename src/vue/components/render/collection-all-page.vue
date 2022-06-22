@@ -575,12 +575,12 @@
             >
               <img
                 :src="value.single.featured_image"
-                alt="{{ value.single.featured_image }}"
+                alt=""
                 class="normal"
               >
               <img
                 :src="value.single.images[1]"
-                alt="{{ value.single.images[1] }}"
+                alt=""
                 class="hoverImg"
               >
             </div>
@@ -590,7 +590,7 @@
             >
               <img
                 :src="value.single.featured_image"
-                alt="{{ value.single.featured_image }}"
+                alt=""
                 class="normal"
               >
             </div>
@@ -667,12 +667,12 @@
             >
               <img
                 :src="value.variable[value.active].featured_image"
-                alt="{{ value.variable[value.active].images[0] }}"
+                alt=""
                 class="normal"
               >
               <img
                 :src="value.variable[value.active].images[1]"
-                alt="{{ value.variable[value.active].images[1] }}"
+                alt=""
                 class="hoverImg"
               >
             </div>
@@ -683,7 +683,7 @@
             >
               <img
                 :src="value.variable[value.active].featured_image"
-                alt="{{ value.variable[value.active].images[0] }}"
+                alt=""
                 class="normal"
               >
             </div>
