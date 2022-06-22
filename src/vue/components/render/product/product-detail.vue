@@ -28,6 +28,8 @@
               slidesPerView: '1'
             }
           }"
+          :initialSlide="0"
+          :init="true"
           class="product-media-slider "
           @swiper="setThumbsSwiper"
         >
@@ -524,13 +526,16 @@ export default {
         async  getProductReview(){
           var dynamic = new ShopifyAPI();
 
-          var reviewOption = {
+          var option = {
             id: this.selectedProduct.id,
             handle: this.selectedProduct.handle,
           };
+          let url="https://judge.me/api/v1/widgets/product_review?api_token=Ln85i0GnbjlrBqsqL8QjVKShJLQ&shop_domain=behno.myshopify.com&external_id="+option.id+"&handle="+option.handle+"";
+          let data = await dynamic.getRequest(url);
+          if(data.status == 200){
+            this.showProductReviewData = data.data.widget;
+          }
           
-          let data = await dynamic.getProductReviewData(reviewOption);
-          this.showProductReviewData = data;
         },
         onAddtoCart(e){
             e.preventDefault();
@@ -573,6 +578,7 @@ export default {
             }
         },
         changePath(link){
+            // console.log(SwiperSlide)
             let path = link.split('/products/')[1];
             // let selectedProductReviewData = this.productReviewData.filter(item => item.link == link)[0]; 
             this.showProductReviewData = [];
@@ -594,6 +600,12 @@ export default {
             this.currentVariantQty = parseInt(filterVariant.qty)
             this.getProductReview();
             window.history.pushState("","", link);
+            const swiper = document.querySelector('.swiper').swiper;
+            swiper.realIndex=0;
+            swiper.initialSlide=0;
+            swiper.init(swiper.el)
+            swiper.visibleSlidesIndexes=[0];
+            swiper.slideTo(1, 10, false);
         },
         productZoomInOut() {
             let productZoom = document.querySelector("#productZoom");
