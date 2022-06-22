@@ -861,12 +861,9 @@ export default {
         
          
         window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
+            // window.scrollTo(0, 0);
         }
 
-        window.onunload = function () {
-            window.scrollTo(0, 0);
-        };
         this.loadMore();
 
         if(window.innerWidth<=767){
@@ -883,7 +880,10 @@ export default {
 
       /* load product on scroll */
         loadMore() {
-            
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
             window.onscroll = () => {
                 if(this.busy == false){
                   let bottomOfWindow = document.documentElement.scrollHeight - document.documentElement.scrollTop;
