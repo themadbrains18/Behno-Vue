@@ -771,16 +771,12 @@
   </header>
 
   <!-- ====== Shoping Mini Cart ====== -->
+  
   <section class="mini_cart">
     <div
       class="mini_cart_container"
       :class="{ active: !show }"
     >
-    <div class="loder_tmb"> 
-      <div class="loder_tmb_inner">  
-        <span></span><span></span>
-      </div>
-    </div>
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
         <button
@@ -1064,7 +1060,7 @@ button.behno_increment_dec:after {
     border:1px solid black;
     transition: 0.3s;
     transform: translateX(110%);
-    padding:30px 45px 0;
+    padding:30px 42px 0;
     overscroll-behavior: none;
 }
 .mini-add-card{
@@ -1124,7 +1120,7 @@ button.behno_increment_dec:after {
 .mini_cart-products{
     display: flex;
     align-items: center;
-    margin: 24px 0 0;
+    margin: 26px 0 0;
 }
 
 .mini_cart-products span{
@@ -1190,7 +1186,7 @@ button.behno_increment_dec:after {
     height:1px;
     background-color:black;
     display:block;
-    margin:0 -22px 35px;
+    margin:0 -22px 40px;
 }
 
 .mini_cart_container.active ,
@@ -1223,6 +1219,98 @@ button.behno_increment_dec:after {
 .body_text.remove {
     font-size: 12px;
     line-height: 14px;
+}
+
+
+/* Tmb Loder Css Code */
+
+.mini_cart_container .card.active .loder_tmb{
+  visibility: visible;
+}
+
+#mini_cart_content .product_img_wrapper{
+  position: relative;
+}
+
+.mini_cart .card.active .product_img_wrapper::after{
+  visibility: visible;
+}
+
+.product_img_wrapper::after{
+    content: "";
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    background: #000;
+    z-index: 2;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.loder_tmb {
+  display:flex;
+  position: absolute;
+  left: 50%;
+  transition: 0.3s;
+  gap: 5px;
+  top:50%;
+  align-items: center;
+  transform: translate(-50% , -50%);
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  visibility: hidden;
+  
+}
+.loder_tmb span {
+   vertical-align:middle;
+   border-radius:100%;
+   display:inline-block;
+   width:10px;
+   height:10px;
+   margin:3px 2px;
+   -webkit-animation:loader1 0.8s linear infinite alternate;
+   animation:loader1 0.8s linear infinite alternate;
+}
+.loder_tmb span:nth-child(1) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
+}
+.loder_tmb span:nth-child(2) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+}
+.loder_tmb span:nth-child(3) {
+   -webkit-animation-delay:-0.26666s;
+   animation-delay:-0.26666s;
+  background:#dbdbdb;
+}
+.loder_tmb span:nth-child(4) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+  
+}
+.loder_tmb span:nth-child(5) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
+}
+
+@keyframes loader1 {
+   from {transform: scale(0, 0);}
+   to {transform: scale(1, 1);}
+}
+@-webkit-keyframes loader1 {
+   from {-webkit-transform: scale(0, 0);}
+   to {-webkit-transform: scale(1, 1);}
 }
 
 
@@ -1303,6 +1391,7 @@ button.behno_increment_dec:after {
 .shopping_btn {
   position: relative;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 .shopping_btn_count {
   position: absolute;
@@ -1584,61 +1673,9 @@ button.behno_increment_dec:after {
   }
 }
 
-/* Tmb Loder Css Code */
-.loder_tmb{
-  position: absolute;
-  top:50%;
-  left: 50%;
-  height: 100px;
-  width: 100px;
-  transform: translate(-50% ,-50%);
-  z-index: 1;
-}
 
-.activeloder.mini_cart_container::after,.activeloder .loder_tmb span{
-  visibility: visible;
-}
-.activeloder.mini_cart_container{
-  overflow: hidden;
-}
+  
 
-.mini_cart_container::after{
-  content: "";
-  position: absolute;
-  top: 0; 
-  left: 0;
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  opacity: 0.1;
-  z-index: 3;
-  visibility: hidden;
-  transition: 0.3s;
-}
 
-.loder_tmb span {
-   position:absolute;
-   display:inline-block;
-   width:100px;
-   height:100px;
-   border-radius:100%;
-   visibility: hidden;
-   background:#0f581954;
-   -webkit-animation:loader3 1.5s linear infinite;
-   animation:loader3 1.5s linear infinite;
-}
-.loder_tmb span:last-child {
-   animation-delay:-0.9s;
-   -webkit-animation-delay:-0.9s;
-}
-@keyframes loader3 {
-   0% {transform: scale(0, 0);opacity:0.8;}
-   100% {transform: scale(1, 1);opacity:0;}
-}
-@-webkit-keyframes loader3 {
-   0% {-webkit-transform: scale(0, 0);opacity:0.8;}
-   100% {-webkit-transform: scale(1, 1);opacity:0;}
-}
 </style>
 

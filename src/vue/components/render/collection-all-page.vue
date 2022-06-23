@@ -3,7 +3,7 @@
   <h2>{{ shopifyData.collactionTittle }}</h2>
   <div class="collaction_banner">
     <img
-      src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/collaction-banner.jpg?v=1655384242"
+      src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/banner-collaction-img.jpg?v=1655966174"
       alt="Collaction Image"
     >
     <h2 class="banner_heading">
@@ -553,7 +553,7 @@
         >
           <a :href="`/products/` + value.single.handle">
             <div
-              id="item_left_"
+              :id="`item_left_`+ value.single.handle"
               class="item_left"
               :class="{ item_left_active: value.single.variants[0].inStock < 5 }"
             >
@@ -644,7 +644,7 @@
           <a :href="`/products/` + value.variable[value.active].handle">
                 
             <div
-              id="item_left_"
+             :id="`item_left_`+value.variable[value.active].handle"
               class="item_left"
               :class="{
                 item_left_active: value.variable[value.active].variants[0].inStock < 5,
@@ -747,7 +747,13 @@
         </div>
       </div>
     </div>
-    <div id="loader"></div>
+    <div id="loader">
+       <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div
       class="row centeralign addmargin"
       :class="{ productnotfound: Products.length === 0, productfound: Products.length > 0 }"
@@ -890,7 +896,7 @@ export default {
                   if (bottomOfWindow < 1200 && this.Products.length != this.AllProducts.length) {
                       let obj = this;
                       this.busy = true;
-                      document.getElementById("loader").style.display = "block";
+                      document.getElementById("loader").style.display = "flex";
                       setTimeout(() => {
                         const append = obj.AllProducts.slice(
                           obj.Products.length,
@@ -2473,7 +2479,15 @@ select {
 
 .grid_inner .card {
     border: none;
+    position: relative;
 }
+.grid_inner .card .item_left{
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 1;
+}
+
 
 .card>img {
     width: 100%;
@@ -2779,6 +2793,7 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
 
 .product_img_wrapper img {
     width: 100%;
+    /* height: 348px; */
     object-fit: cover;
 }
 
@@ -3179,7 +3194,10 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
         font-size: 16.3333px;
         text-shadow: 0px 0.794134px 18.4636px rgba(0, 0, 0, 0.42);
     }
-
+    .grid_inner .card .item_left{
+      top: 5px;
+      right: 5px;
+    }
     .filter_row {
         margin: 5px 0 12px;
     }
@@ -3189,7 +3207,7 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
 <!-- loader -->
 <style scoped>
 /* Center the loader */
-#loader {
+/* #loader {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -3197,16 +3215,75 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
   width: 50px;
   height: 50px;
   margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid green;
-  border-bottom: 16px solid red;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+} */
+
+
+ 
+#loader {
+  display:flex;
+  position: absolute;
+  left: 50%;
+  gap: 5px;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  
+}
+#loader span {
+   vertical-align:middle;
+   border-radius:100%;
+   display:inline-block;
+   width:10px;
+   height:10px;
+   margin:3px 2px;
+   -webkit-animation:loader1 0.8s linear infinite alternate;
+   animation:loader1 0.8s linear infinite alternate;
+}
+#loader span:nth-child(1) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
+}
+#loader span:nth-child(2) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+}
+#loader span:nth-child(3) {
+   -webkit-animation-delay:-0.26666s;
+   animation-delay:-0.26666s;
+  background:#dbdbdb;
+}
+#loader span:nth-child(4) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+  
+}
+#loader span:nth-child(5) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
 }
 
-@-webkit-keyframes spin {
+@keyframes loader1 {
+   from {transform: scale(0, 0);}
+   to {transform: scale(1, 1);}
+}
+@-webkit-keyframes loader1 {
+   from {-webkit-transform: scale(0, 0);}
+   to {-webkit-transform: scale(1, 1);}
+}
+
+  
+
+
+/* @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
@@ -3214,7 +3291,7 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+} */
 
 /* Add animation to "page content" */
 .animate-bottom {

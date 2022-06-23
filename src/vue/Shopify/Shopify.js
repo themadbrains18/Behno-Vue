@@ -166,6 +166,13 @@ class ShopifyAPI {
         for (let item in CartItems) {
             card += `<div class="card">
                     <div class="product_img_wrapper" id="product_img_wrapper6678699180129" pid="${CartItems[item].product_id}">
+                    <div class="loder_tmb"> 
+                        <div class="loder_tmb_inner">  
+                            <span></span><span></span>
+                            <span></span><span></span>
+                            <span></span>
+                        </div>
+                    </div>
                         <img src="${CartItems[item].image}" id="6678699180129">
                         <button class="body_text remove" variantID="${CartItems[item].variant_id}">Remove</button>
                     </div>
@@ -215,12 +222,10 @@ class ShopifyAPI {
         var classObj = this
         var btn = document.querySelectorAll('.behno_increment_dec')
         
-        
         for (const button of btn) {
             button.addEventListener('click',  function (event) {
                 var targeted = event.target
-                document.querySelector('.mini_cart_container').classList.add("activeloder");
-                
+                button.closest(".card").classList.add("active")
                 var parent = event.target.parentNode.parentNode
                 var currentValue = parent.querySelector('input').getAttribute('value')
                 var key = targeted.getAttribute('key')
@@ -292,6 +297,7 @@ class ShopifyAPI {
 
         for (const button of removeBtn) {
             button.addEventListener('click', await function (event) {
+                button.closest(".card").classList.add("active")
                 console.log(event.target)
                 var variantid = event.target.getAttribute('variantid')
                 item = {
