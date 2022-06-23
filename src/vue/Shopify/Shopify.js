@@ -67,6 +67,7 @@ class ShopifyAPI {
         if (response.status == 200) {
             // new Toast("Welcome!","success",4000);
             return response
+
         } else {
             let errorMessage = response.message;
             console.log(errorMessage);
@@ -186,7 +187,6 @@ class ShopifyAPI {
                 </div>
             </div>`
         }
-
         document.querySelector('p.subtotal_price.body_text').innerHTML = '$' + (getCartData.data.total_price / 100).toFixed(2)
         document.querySelector('.shopping_btn_count').innerHTML = getCartData.data.item_count
         document.querySelector('#mini_cart_content').innerHTML = card
@@ -209,12 +209,18 @@ class ShopifyAPI {
      * qty increase decrease
      */
 
+    
+     
     increamtDecriment() {
         var classObj = this
         var btn = document.querySelectorAll('.behno_increment_dec')
+        
+        
         for (const button of btn) {
             button.addEventListener('click',  function (event) {
                 var targeted = event.target
+                document.querySelector('.mini_cart_container').classList.add("activeloder");
+                
                 var parent = event.target.parentNode.parentNode
                 var currentValue = parent.querySelector('input').getAttribute('value')
                 var key = targeted.getAttribute('key')
