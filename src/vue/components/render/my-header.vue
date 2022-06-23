@@ -776,6 +776,11 @@
       class="mini_cart_container"
       :class="{ active: !show }"
     >
+    <div class="loder_tmb"> 
+      <div class="loder_tmb_inner">  
+        <span></span><span></span>
+      </div>
+    </div>
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
         <button
@@ -888,7 +893,8 @@ export default {
     this.header = document.getElementsByClassName("tmbHeader");   
   },
   mounted (){
-      this.refreshMiniCart()
+      this.refreshMiniCart();
+      
   },
  
   methods: {
@@ -1576,5 +1582,63 @@ button.behno_increment_dec:after {
   .subtitle_b {
     margin-bottom: 0 !important;
   }
-} 
+}
+
+/* Tmb Loder Css Code */
+.loder_tmb{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  height: 100px;
+  width: 100px;
+  transform: translate(-50% ,-50%);
+  z-index: 1;
+}
+
+.activeloder.mini_cart_container::after,.activeloder .loder_tmb span{
+  visibility: visible;
+}
+.activeloder.mini_cart_container{
+  overflow: hidden;
+}
+
+.mini_cart_container::after{
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.1;
+  z-index: 3;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.loder_tmb span {
+   position:absolute;
+   display:inline-block;
+   width:100px;
+   height:100px;
+   border-radius:100%;
+   visibility: hidden;
+   background:#0f581954;
+   -webkit-animation:loader3 1.5s linear infinite;
+   animation:loader3 1.5s linear infinite;
+}
+.loder_tmb span:last-child {
+   animation-delay:-0.9s;
+   -webkit-animation-delay:-0.9s;
+}
+@keyframes loader3 {
+   0% {transform: scale(0, 0);opacity:0.8;}
+   100% {transform: scale(1, 1);opacity:0;}
+}
+@-webkit-keyframes loader3 {
+   0% {-webkit-transform: scale(0, 0);opacity:0.8;}
+   100% {-webkit-transform: scale(1, 1);opacity:0;}
+}
 </style>
+
