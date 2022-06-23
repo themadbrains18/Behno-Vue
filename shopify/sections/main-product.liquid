@@ -1,3 +1,4 @@
+
 {%- if product.metafields.my_fields.variants_products and product.metafields.my_fields.variants_swtach -%}
       {% assign images = product.metafields.my_fields.variants_swtach | split:" " %}
       {% assign links = product.metafields.my_fields.variants_products | split:" " %}
@@ -216,28 +217,27 @@
         }
       {% endcapture %}
     {% endif %}
-             {% capture productMedia %}
-                [
-                    {% for media in product.media %}
-                        
-                            {% case media.media_type %}
-                                {% when 'image' %}
-                                    "media" : "{{ media | json }}"
-                                {% when 'external_video' %}
-                                    "media" : "{{  media | json  }}"
-                                {% when 'video' %}
-                                    "media" : "{{  media | json  }}"
-                                {% when 'model' %}
-                                    "media" : "{{  media | json  }}"
-                                {% else %}
-                                    "media" : "{{  media | json  }}"
-                                {% endcase %}
-                        {% unless forloop.last  %},{% endunless %}
-                    {% endfor %}
-                ]
-              {% endcapture %}
-    {
-                
+    {% capture productMedia %}
+      [
+        {% for media in product.media %}
+          {% case media.media_type %}
+            {% when 'image' %}
+              {{ media | json }}
+            {% when 'external_video' %}
+              {{  media | json  }}
+            {% when 'video' %}
+              {{  media | json  }}
+            {% when 'model' %}
+              {{  media | json  }}
+            {% else %}
+             {{  media | json  }}
+            {% endcase %}
+              {% unless forloop.last  %},{% endunless %}
+            {% endfor %}
+      ]
+    {% endcapture %}
+
+    {       
       "product" : {{ product | json }}, 
       "meta_field_seen": {{ productSeenIn }},
       "meta_field_grid" : {{ productGridData }},
@@ -261,7 +261,7 @@
 
 <!-- {{ productObj }} -->
 
-{% capture variantObj %}
+ {% capture variantObj %}
   [{{ pVariant }}]
 {% endcapture %}
 
@@ -275,7 +275,7 @@
 <render-product-product-detail :shopify-data="{
     productData : {{ products }}
   }">
-</render-product-product-detail>  
+</render-product-product-detail>   
 
 
 

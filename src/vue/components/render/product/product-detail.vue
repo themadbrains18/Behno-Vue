@@ -490,14 +490,16 @@ export default {
           return item.product;
         });
 
+        console.log(product);
+
         var currentUrl = window.location.pathname;
-        let path=currentUrl.split('/products/')[1];
+        let path = currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path
         let index = product.findIndex( x => x.handle === path);
 
-        let metaFieldSeenIn=productObj[index].meta_field_seen;
-        let metaFieldGrid=productObj[index].meta_field_grid;
-        let mediaGrid= productObj[index].productMedia;
+        let metaFieldSeenIn = productObj[index].meta_field_seen;
+        let metaFieldGrid = productObj[index].meta_field_grid;
+        let mediaGrid = productObj[index].productMedia;
         filterProduct.media = mediaGrid;
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
 
