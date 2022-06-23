@@ -38,11 +38,18 @@
             :key="key"
             class="product_slide"
           >
+
             <div
               class="product_media"
-              @click="productZoomInOut"
+              @click="productZoomInOut" v-if="value.media_type == 'image'"
             >
               <img :src="value.src">
+            </div>
+            <div
+              class="product_media"
+              @click="productZoomInOut" v-if="value.media_type == 'video'"
+            >
+              <video autoplay loop="true" width="450" :src="value.sources[0].url"></video>
             </div>
           </swiper-slide>
         </swiper>
@@ -372,9 +379,15 @@
           >
             <div
               class="product_media"
-              @click="productZoomInOut"
+              @click="productZoomInOut" v-if="value.media_type == 'image'"
             >
               <img :src="value.src">
+            </div>
+            <div
+              class="product_media"
+              @click="productZoomInOut" v-if="value.media_type == 'video'"
+            >
+              <video autoplay loop="true" width="720" :src="value.sources[1].url"></video>
             </div>
           </swiper-slide>
         </swiper>
@@ -484,6 +497,8 @@ export default {
 
         let metaFieldSeenIn=productObj[index].meta_field_seen;
         let metaFieldGrid=productObj[index].meta_field_grid;
+        let mediaGrid= productObj[index].productMedia;
+        filterProduct.media = mediaGrid;
         let filterVariant = variant.filter(item => item.link == currentUrl)[0]; // filter variant by current path
 
         // let productReviewData = atob(this.shopifyData.productData.productReviewData);
@@ -593,6 +608,9 @@ export default {
 
             let metaFieldSeenIn = this.product[index].meta_field_seen;
             let metaFieldGrid = this.product[index].meta_field_grid;
+            let mediaGrid= this.product[index].productMedia;
+            this.selectedProduct.media = mediaGrid;
+
             this.metaFieldSeenIn = metaFieldSeenIn;
             this.metaFieldGrid = metaFieldGrid;
             this.currentUrl = link;
