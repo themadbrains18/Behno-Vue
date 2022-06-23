@@ -18,13 +18,13 @@
         <!-- product Card -->
         <template v-if="shopifyData.showProduct === 'true'">
           <swiper-slide
-            v-for="(value, key) in shopifyData.product"
+            v-for="(value, key) in relatedProduct"
             :key="key"
           >
             <div class="grid_item product_slider_item">
-              <a :href="value.productLink">
+              <a :href="'/products/'+value.handle">
                 <img
-                  :src="value.productImage"
+                  :src="value.featured_image"
                   alt=""
                 >
               </a>
@@ -32,26 +32,7 @@
           </swiper-slide>
         </template>
         <!-- Custom card -->
-        <template v-else>
-          <swiper-slide
-            v-for="(value, key) in shopifyData.box"
-            :key="key"
-          >
-            <div class="grid_item product_slider_item">
-              <a
-                :href="(value.link)"
-                class="grid_img-wrap line-h-0 d-block"
-              >
-                <img 
-                  class="grid_img"
-                  :src="(value.imgUrl.src)"
-                  :src-placeholder="(value.imgUrl.placeholder)"
-                  :alt="(value.imgUrl.alt)"
-                >
-              </a>
-            </div>
-          </swiper-slide>
-        </template>
+       
       </swiper>
     </section>
   </div>
@@ -62,12 +43,31 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation,Mousewheel } from "swiper";
 
 import "swiper/css";
+import { ShopifyAPI } from "@/vue/Shopify/Shopify";
 
 export default {
-  components: {
+   components: {
     Swiper,
     SwiperSlide,
   },
+  data() {
+        return {
+            relatedProduct : []
+        }
+  },
+  mounted() {
+        this.relatedProducts()
+  },
+  methods: {
+      async relatedProducts () {
+        console.log(this.shopifyData.relatedProduct)
+          var relatedProduct = new ShopifyAPI();
+          var data =  await relatedProduct.getRequest(this.shopifyData.relatedProduct)
+          this.relatedProduct = data.data.products
+          console.log(data)
+      }
+  },
+
   props: {
     shopifyData: {
       type: Object,

@@ -1,12 +1,12 @@
 import axios from "axios"
 
+
 class ShopifyAPI {
 
     /**
      *  shopify global attributes
      */
 
-    // ShopifyInfo = window
 
     constructor (ShopifyInfo){
         this.ShopifyInfo = window
@@ -43,6 +43,7 @@ class ShopifyAPI {
                 return response;
             })
             .catch(function (error) {
+
                 return error;
             });
         return response;
@@ -64,9 +65,14 @@ class ShopifyAPI {
             });
 
         if (response.status == 200) {
+            // new Toast("Welcome!","success",4000);
             return response
 
         } else {
+            let errorMessage = response.message;
+            console.log(errorMessage);
+            // let toastDiv=document.querySelector('#toaster');
+            // toastDiv.innerHTML=errorMessage;
             return response
         }
 
@@ -87,6 +93,8 @@ class ShopifyAPI {
             this.openDrawer()
 
         } else {
+            let errorMessage = response.message;
+            console.log(errorMessage);
             console.log('Opps! something went wrong. Please try again')
         }
 
@@ -112,6 +120,8 @@ class ShopifyAPI {
             this.openDrawer()
 
         } else {
+            let errorMessage = response.message;
+            console.log(errorMessage);
             console.log('Opps! something went wrong. Please try again')
         }
 
@@ -309,24 +319,6 @@ class ShopifyAPI {
      */
     onCartUpdate  (cart) {
         // alert('There are now ' + cart.item_count + ' items in the cart.');
-    }
-
-
-    // get review Data
-
-    async getProductReviewData(option){
-        var requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-
-        return await fetch("https://judge.me/api/v1/widgets/product_review?api_token=Ln85i0GnbjlrBqsqL8QjVKShJLQ&shop_domain=behno.myshopify.com&external_id="+option.id+"&handle="+option.handle+"", requestOptions)
-          .then(response => response.text())
-          .then(result => {
-            let resultData=JSON.parse(result);
-            return resultData.widget;
-          })
-          .catch(error => console.log('error', error));
     }
 
 }
