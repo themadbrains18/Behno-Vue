@@ -777,7 +777,8 @@
 //     graphQl
 // } from "../../../assets/graphql/collection-query";
 
-import assets from "../../../assets/graphql/assets.json";
+// import assets from "../../../assets/graphql/assets.json";
+
 import {
     ShopifyAPI
 } from "../../Shopify/Shopify";
@@ -858,7 +859,7 @@ export default {
             ErrorCase: false,
             shopifyPagination: false,
             themeAssets: [],
-            loadInit:false
+            loadInit:false,
         };
     },
     mounted() {
@@ -875,7 +876,7 @@ export default {
         if(window.innerWidth<=767){
             this.isMobile=true;
         }
-
+        this.fetchThemeAssets()
         this.filterStorage()
         this.fetchProdustQuery();
         this.setScreenRangeGrid();
@@ -883,6 +884,12 @@ export default {
         this.loadInit=true;
     },
     methods: {
+        async fetchThemeAssets(){
+
+        let api=new ShopifyAPI();
+        let response = await api.getAsstes();
+        this.themeAssets = response;
+       },
 
       /* load product on scroll */
         loadMore() {
@@ -2017,11 +2024,11 @@ export default {
         getThemeAssets(image) {
             // console.log(image)
 
-            let assetsLIst = assets.assets;
+            // let assetsLIst = assets.assets;
+            let assetsLIst = this.themeAssets.assets;
 
             var src = "";
             for (let images in assetsLIst) {
-                // console.log(response[images].key )
                 if (assetsLIst[images].key == "assets/" + image) {
                     src = assetsLIst[images].public_url;
                 }
