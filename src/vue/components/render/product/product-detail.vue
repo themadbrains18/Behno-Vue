@@ -490,8 +490,6 @@ export default {
           return item.product;
         });
 
-        console.log(product);
-
         var currentUrl = window.location.pathname;
         let path = currentUrl.split('/products/')[1];
         let filterProduct = product.filter(item => item.handle == path)[0]; // filter product by current path

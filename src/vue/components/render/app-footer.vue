@@ -93,11 +93,11 @@ export default {
     border-radius: 6px;
     display: flex;
     align-items: center;
-    max-width: 200px;
+    max-width: 500px;
     width: 100%;
     position: fixed;
-    bottom: 100px;
-    right: 100px;
+    bottom: 50px;
+    right: 50px;
     transform: translateY( -20%);
     gap: 10px;
     background: #fff;
@@ -110,7 +110,7 @@ export default {
     transform: translateY( -50%);
     background: #fff;
     opacity: 1;
-    max-width: 500px;
+    
     visibility: visible;
 }
 .common_warning.warning path{

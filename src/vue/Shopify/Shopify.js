@@ -43,7 +43,7 @@ class ShopifyAPI {
                 return response;
             })
             .catch(function (error) {
-
+                /// addpend message
                 return error;
             });
         return response;
@@ -65,14 +65,20 @@ class ShopifyAPI {
             });
 
         if (response.status == 200) {
-            // new Toast("Welcome!","success",4000);
             return response
 
         } else {
-            let errorMessage = response.message;
-            console.log(errorMessage);
-            // let toastDiv=document.querySelector('#toaster');
-            // toastDiv.innerHTML=errorMessage;
+            let errorMessage = response;
+            if(response.response!=undefined){
+                response = response.response;
+                if(response.data.error!=undefined){
+                    errorMessage = response.data.error;
+                }
+                else{
+                    errorMessage = response.data;
+                }
+            }
+            this.openToast(errorMessage);
             return response
         }
 
@@ -94,8 +100,7 @@ class ShopifyAPI {
 
         } else {
             let errorMessage = response.message;
-            console.log(errorMessage);
-            console.log('Opps! something went wrong. Please try again')
+            this.openToast(errorMessage);
         }
 
         return response;
@@ -109,7 +114,8 @@ class ShopifyAPI {
     async addItem(item = {}) {
         // Object.keys(item).length === 0
         if (Object.keys(item).length == 0) {
-            console.log('Opps! something went wrong. Please try again.')
+            let errorMessage = 'Opps! something went wrong. Please try again.';
+            this.openToast(errorMessage);
             return;
         }
 
@@ -120,11 +126,26 @@ class ShopifyAPI {
             this.openDrawer()
 
         } else {
-            let errorMessage = response.message;
-            console.log(errorMessage);
-            console.log('Opps! something went wrong. Please try again')
+            let errorMessage = response;
+            if(response.response!=undefined){
+                response = response.response;
+                errorMessage = response.data.message;
+            }
+            this.openToast(errorMessage);
+            
         }
 
+    }
+
+    openToast(message){
+        let toastDiv=document.querySelector('.common_warning.error .message');
+        toastDiv.innerHTML=message;
+        let warningDiv=document.querySelector('.error');
+        warningDiv.classList.add('active');
+        setTimeout(() => {
+            toastDiv.innerHTML='';
+            warningDiv.classList.remove('active');
+        }, 3000);
     }
 
     /**
