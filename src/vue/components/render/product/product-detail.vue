@@ -555,7 +555,7 @@ export default {
         onAddtoCart(e){
             e.preventDefault();
 
-            console.log(this.selectedProduct.variants[0].id);
+            // console.log(this.selectedProduct.variants[0].id);
             
             var dynamic = new ShopifyAPI();
 
@@ -1217,6 +1217,27 @@ justify-content: center;
 }
 .jdgm-rev__header{
   margin-bottom: 5px;
+}
+.product .jdgm-widget.jdgm-widget .jdgm-rev-widg__header{
+  text-align: center;
+}
+.product .jdgm-widget.jdgm-widget .jdgm-rev-widg__header h2.jdgm-rev-widg__title{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 36px;
+}
+.content h2{
+  margin-bottom: 0;
+}
+.jdgm-rev-widg__title{
+  visibility: visible !important;
+}
+
+.product .jdgm-widget.jdgm-widget .jdgm-rev-widg__header .jdgm-widget-actions-wrapper a.jdgm-write-rev-link{
+  background: #000;
+  padding: 15px;
+  width: 210px;
 }
 .jdgm-rev__icon{
   position: relative;

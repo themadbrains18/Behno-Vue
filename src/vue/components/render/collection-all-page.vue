@@ -788,7 +788,8 @@
 //     graphQl
 // } from "../../../assets/graphql/collection-query";
 
-import assets from "../../../assets/graphql/assets.json";
+// import assets from "../../../assets/graphql/assets.json";
+
 import {
     ShopifyAPI
 } from "../../Shopify/Shopify";
@@ -869,7 +870,7 @@ export default {
             ErrorCase: false,
             shopifyPagination: false,
             themeAssets: [],
-            loadInit:false
+            loadInit:false,
         };
     },
     mounted() {
@@ -886,7 +887,7 @@ export default {
         if(window.innerWidth<=767){
             this.isMobile=true;
         }
-
+        this.fetchThemeAssets()
         this.filterStorage()
         this.fetchProdustQuery();
         this.setScreenRangeGrid();
@@ -894,6 +895,12 @@ export default {
         this.loadInit=true;
     },
     methods: {
+        async fetchThemeAssets(){
+
+        let api=new ShopifyAPI();
+        let response = await api.getAsstes();
+        this.themeAssets = response;
+       },
 
       /* load product on scroll */
         loadMore() {
@@ -934,7 +941,7 @@ export default {
             return JSON.parse(productData);
         },
         closeSortMenu: function (event) {
-            console.log(event);
+            // console.log(event);
             if (event.target.closest(".show") != null) {
                 event.target.closest(".show").classList.remove("show");
             }
@@ -1024,7 +1031,7 @@ export default {
         },
 
         onSelectColor: function (color, product, event) {
-            console.log(product.id);
+            // console.log(product.id);
             if (event.currentTarget.parentElement.children.length > 1) {
                 let childcolor = event.currentTarget.parentElement.children;
                 for (let item of childcolor) {
@@ -1048,7 +1055,7 @@ export default {
             });
             if (varints.length > 0) {
                 if (varints[0].featured_image != null) {
-                    console.log(varints[0].featured_image.src);
+                    // console.log(varints[0].featured_image.src);
                     img.src = varints[0].featured_image.src;
                 }
                 div.textContent =
@@ -1637,7 +1644,7 @@ export default {
                             var Phandle = swatch[swatchPl].link;
 
                             for (let childPair in Products) {
-                                //  console.log(products[childPair].node.handle,'===', Phandle)
+                                //  // console.log(products[childPair].node.handle,'===', Phandle)
                                 if (Products[childPair][0].handle == Phandle.replace("/products/", "")) {
                                     // console.log(Products[childPair][0]);
 
@@ -1698,7 +1705,7 @@ export default {
                             var Phandle2 = swatch[swatchPl].link;
                             
                             for (let childPair in Products) {
-                                //  console.log(products[childPair].node.handle,'===', Phandle)
+                                //  // console.log(products[childPair].node.handle,'===', Phandle)
                                 if (Products[childPair][0].handle == Phandle2.replace("/products/", "")) {
 
                                     if(handle == Products[childPair][0].handle){
@@ -1997,7 +2004,7 @@ export default {
                 );
 
             // chnage quick button content
-            console.log(activeProduct)
+            // console.log(activeProduct)
 
 
             grid
@@ -2031,11 +2038,11 @@ export default {
         getThemeAssets(image) {
             // console.log(image)
 
-            let assetsLIst = assets.assets;
+            // let assetsLIst = assets.assets;
+            let assetsLIst = this.themeAssets.assets;
 
             var src = "";
             for (let images in assetsLIst) {
-                // console.log(response[images].key )
                 if (assetsLIst[images].key == "assets/" + image) {
                     src = assetsLIst[images].public_url;
                 }
