@@ -110,6 +110,7 @@ export default {
     transform: translateY( -50%);
     background: #fff;
     opacity: 1;
+    
     visibility: visible;
 }
 .common_warning.warning path{
