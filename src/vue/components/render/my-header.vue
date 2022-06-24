@@ -771,12 +771,11 @@
   </header>
 
   <!-- ====== Shoping Mini Cart ====== -->
-  
+  <!-- :class= "{active: !show }" -->
+  <!-- :class="[{ active: !show }, mini_cart_container]" -->
   <section class="mini_cart">
-    <div
-      class="mini_cart_container"
-      :class="{ active: !show }"
-    >
+    <div :class="[{ active: !show }, 'mini_cart_container']" >
+    
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
         <button
@@ -850,6 +849,8 @@
         </div> 
       </div>
     </div>
+    <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show">
+    </span>
     <div
       class="mini-add-card"
       :class="{ active: !show }"
@@ -1056,7 +1057,7 @@ button.behno_increment_dec:after {
     position:fixed;
     top:0;
     right:0;
-    z-index:5;
+    z-index:6;
     border:1px solid black;
     transition: 0.3s;
     transform: translateX(110%);
@@ -1221,8 +1222,21 @@ button.behno_increment_dec:after {
     line-height: 14px;
 }
 
-
-
+.bg_layer_removecart.active{
+  visibility: visible;
+  transition: 0.3s;
+}
+.bg_layer_removecart{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.3;
+  z-index: 5;
+  visibility: hidden;
+}
 
 
 </style>

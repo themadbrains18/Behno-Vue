@@ -381,7 +381,28 @@ body.landscape .image_and_text_sec .sec_content > .sec_img{
 .card.active .product_img_wrapper::after{
   visibility: visible;
 }
+.card .quickAdd{
+  position: relative;
+}
+.card.active .quickAdd::after{
+  visibility: visible;
+}
+.card .quickAdd::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  visibility: hidden;
+  transition: 0.3s;
+}
 
+.product_grid .card.active .product_img_wrapper::after{
+  visibility: hidden;
+}
 .product_img_wrapper::after{
     content: "";
     position: absolute;

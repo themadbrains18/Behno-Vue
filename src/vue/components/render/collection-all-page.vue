@@ -629,6 +629,12 @@
                   @click="addToCard"
                 >
                   <span>Quick Add</span>
+                  <div class="loder_tmb"> 
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        <span></span>
+                    </div>
+
                 </button>
               </span>
             </div>
@@ -727,7 +733,6 @@
                 </li>
               </ul>
             </div>
-
             <div
               class="product_cta_wrapper"
               data-v-32bfb114=""
@@ -741,6 +746,12 @@
                 @click="addToCard"
               >
                 <span>Quick Add</span>
+                <div class="loder_tmb"> 
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        <span></span>
+                    </div>
+
               </button>
             </div>
           </div>
@@ -1857,7 +1868,8 @@ export default {
             return Math.floor(Math.random() * (max - min + 1) + min);
         },
 
-        addToCard(event) {
+        async addToCard(event) {
+            event.target.closest(".card").classList.add("active")
             var product = event.target.parentNode;
             var variant = product.getAttribute("variantid");
             var dynamic = new ShopifyAPI();
@@ -1866,8 +1878,10 @@ export default {
                 id: variant,
                 qty: 1,
             };
+            await dynamic.addItem(item);
+            event.target.closest(".card").classList.remove("active")
 
-            dynamic.addItem(item);
+
         },
 
         /**

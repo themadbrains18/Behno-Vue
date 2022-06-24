@@ -96,6 +96,7 @@ export default {
     max-width: 500px;
     width: 100%;
     position: fixed;
+    z-index: 10;
     bottom: 50px;
     right: 50px;
     transform: translateY( -20%);

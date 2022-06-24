@@ -173,24 +173,22 @@ export default {
       let cartdata = window.atob(this.shopifyData.cartItems); // decode cart string
       cartdata = JSON.parse(cartdata);
 
-      console.log(cartdata);
       this.cartData = cartdata;
     },
-
     async removeCart(event) {
-      event.target.closest(".card").classList.add("active")
       var dd = this;
+      event.target.closest(".card").classList.add("active")
       var variant = event.target.getAttribute("variant");
       var shopifyApi = new ShopifyAPI();
-
       var item = {
         id: variant,
         quantity: 0,
       };
-
       var newData = await shopifyApi.removeItem(item);
       event.target.closest(".card").classList.remove("active")
+      await new Promise(r => setTimeout(r, 500));
       dd.cartData = newData.data;
+      
     },
   },
 };

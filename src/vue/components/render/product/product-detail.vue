@@ -772,8 +772,9 @@ export default {
 .product_review{
     max-height: 440px!important;
     overflow-y: scroll;
-    border: 0.5px solid #252525;
+    border: none;
     margin-top: 10px;
+
 }
 
 .product_accordian_panel>ul {
@@ -841,6 +842,20 @@ export default {
     }
 
     /* product zoom End */
+}
+
+/* Review Css Code */
+.jdgm-rev.jdgm-divider-top .jdgm-rev__icon{
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
+  padding-top:7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jdgm-rev__buyer-badge-wrapper{
+  display: none;
 }
 </style>
 <style scoped>
@@ -1199,7 +1214,6 @@ justify-content: center;
 .product_review{
   max-width: 1440px;
   padding: 0 !important;
-  margin: auto !important;
 }
 .jdgm-rev__header{
   margin-bottom: 5px;
@@ -1210,11 +1224,18 @@ justify-content: center;
   width: 3.2em;
   height: 3.2em;
   line-height: 3.2em;
-  margin-right: 12px;
   text-align: center;
   border-radius: 50%;
+  margin-right: 14px;
   color: #333333;
   background-color: #e9e9e9;
+}
+
+.jdgm-star.jdgm--on{
+  padding-right:3px!important;
+}
+.jdgm-rev__title{
+  display: none!important;
 }
 .jdgm-quest[data-verified-buyer=true] .jdgm-rev__icon:not(.jdgm--loading):after, .jdgm-rev[data-verified-buyer=true] .jdgm-rev__icon:not(.jdgm--loading):after {
     display: block;
@@ -1239,6 +1260,7 @@ span.jdgm-star{
 }
 .jdgm-star.jdgm--on:before{
   content: \e000;
+  font-size: 9px;
 }
 .jdgm-rev__timestamp+.jdgm-rev__br{
   padding-bottom: 1px;
@@ -1271,10 +1293,10 @@ span.jdgm-star{
   opacity: 0.35;
   vertical-align: middle;
 }
-.jdgm-rev__title{
+/* .jdgm-rev__title{
   display: block;
   font-size: 110%;
-}
+} */
 .jdgm-rev__body>p:last-of-type{
   margin-bottom: 0;
 }
@@ -1299,17 +1321,26 @@ span.jdgm-star{
   position: relative;
   overflow: hidden;
   border-top: 1px solid #eee;
-  padding-top: 16px;
-  margin-top: 16px;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.product_review::-webkit-scrollbar {
+  width: 4px;
+}
+ 
+.product_review::-webkit-scrollbar-thumb {
+  background: #C4C4C4;
+  border-radius: 35px;
+}
+
+.jdgm-rev-widg__summary,.jdgm-rev-widg__header{
+  display: none;
 }
 .jdgm-rev-widg.jdgm-rev-widg{
   display: block;
   clear: both;
 }
-.jdgm-all-reviews-widget, .jdgm-rev-widg{
-  padding: 24px;
-  border: 1px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
+
+
 </style>
