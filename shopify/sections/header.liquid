@@ -1,8 +1,38 @@
+{% capture HeaderNavData %}
+[
+  {
+    {% for link in linklists.main-menu.links %}
+      links : {
+          url : `{{ link.url  }}`,
+          title  : `{{ link.title  }}`,
+          links : [
+            {% for child_link in link.links %}
+              {
+                url : `{{ child_link.url  }}`,
+                title  : `{{ child_link.title  }}`,
+                links : [
+                    {% for grandchild_link  in child_link.links %}
+                      {
+                          url : `{{ grandchild_link.url  }}`,
+                          title  : `{{ grandchild_link.title  }}`
+                      }{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                ]
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  }
+]
+{% endcapture %}
+
 
 <render-my-header :shopify-data="{
   logo: '{{ 'logo.svg' | asset_url }}',
   search: '{{ 'search-icon.svg' | asset_url }}',
   bag: '{{ 'shopping-bag-icon.svg' | asset_url }}',
+  HeaderNavData: {{ HeaderNavData }}
 }">
 </render-my-header>
 

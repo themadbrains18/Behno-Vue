@@ -69,9 +69,7 @@
 import VLazyImage from "v-lazy-image";
 
 export default {
-  data(){
-    console.log("shopifyData",this.shopifyData)
-  },
+  
   components: {
     VLazyImage,
   },

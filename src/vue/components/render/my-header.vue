@@ -878,6 +878,7 @@ export default {
     },
   },
   data() {
+    console.log("shopifyData",this.shopifyData)
     window.addEventListener("scroll", this.scollHeader);
     return {
       lastScrollY: 100,
