@@ -58,6 +58,11 @@
             <div class="card" v-for="(value, key) in cartData.items" :key="key">
               <!-- <a :href=(value.url)> -->
               <div class="product_img_wrapper" :id="product_img_wrapper">
+                <div class="loder_tmb"> 
+                    <span></span><span></span>
+                    <span></span><span></span>
+                    <span></span>
+                </div>
                 <img :src="value.featured_image.url" :id="value.id" />
                 <button
                   class="body_text1 remove"
@@ -163,6 +168,7 @@ export default {
   },
   methods: {
     refreshMainCart() {
+
       //    console.log(this.shopifyData.cartItems)
       let cartdata = window.atob(this.shopifyData.cartItems); // decode cart string
       cartdata = JSON.parse(cartdata);
@@ -172,6 +178,7 @@ export default {
     },
 
     async removeCart(event) {
+      event.target.closest(".card").classList.add("active")
       var dd = this;
       var variant = event.target.getAttribute("variant");
       var shopifyApi = new ShopifyAPI();
@@ -182,7 +189,7 @@ export default {
       };
 
       var newData = await shopifyApi.removeItem(item);
-
+      event.target.closest(".card").classList.remove("active")
       dd.cartData = newData.data;
     },
   },
@@ -191,6 +198,8 @@ export default {
 
 
 <style scoped>
+
+
 .cart_default_sec,
 .cart_with_products,
 .thanks_sec {
@@ -364,6 +373,14 @@ export default {
 }
 .thanks_sec .cta_wrapper {
   margin-top: 73px;
+}
+
+.body_text1.remove{
+    position: absolute;
+    text-decoration: underline;
+    top: 13px;
+    right: 11px;
+    z-index: 1;
 }
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1200px) {

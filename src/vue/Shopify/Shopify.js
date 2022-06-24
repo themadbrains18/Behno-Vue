@@ -188,11 +188,9 @@ class ShopifyAPI {
             card += `<div class="card">
                     <div class="product_img_wrapper" id="product_img_wrapper6678699180129" pid="${CartItems[item].product_id}">
                     <div class="loder_tmb"> 
-                        <div class="loder_tmb_inner">  
-                            <span></span><span></span>
-                            <span></span><span></span>
-                            <span></span>
-                        </div>
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        <span></span>
                     </div>
                         <img src="${CartItems[item].image}" id="6678699180129">
                         <button class="body_text remove" variantID="${CartItems[item].variant_id}">Remove</button>
@@ -319,7 +317,6 @@ class ShopifyAPI {
         for (const button of removeBtn) {
             button.addEventListener('click', await function (event) {
                 button.closest(".card").classList.add("active")
-                console.log(event.target)
                 var variantid = event.target.getAttribute('variantid')
                 item = {
                     id: variantid,
