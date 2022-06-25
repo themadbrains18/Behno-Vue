@@ -347,40 +347,6 @@ class ShopifyAPI {
 
     /** Get Assets  */
 
-    getAsstes(){
-        var config = {
-            method: 'get',
-            url: '/admin/api/2021-10/themes/124418359389/assets.json',
-            headers: { 
-              'Content-Type': 'application/json', 
-              'X-Shopify-Access-Token': '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'
-            }
-        };
-        let obj=this;  
-        return axios(config)
-
-          .then(function (response) {
-            return response.data
-          })
-          .catch(function (error) {
-            let errorMessage='';
-            if(error.response!=undefined){
-                if(error.response.data!=undefined){
-                    errorMessage=error.response.data;
-                }
-                else{
-                    errorMessage = error.message;
-                }
-            }
-            else{
-                errorMessage = error.message;
-            }
-            obj.openToast(errorMessage);
-            // console.log(error);
-        });
-          
-    }
-
 }
 
 

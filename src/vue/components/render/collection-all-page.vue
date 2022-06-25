@@ -887,7 +887,7 @@ export default {
         if(window.innerWidth<=767){
             this.isMobile=true;
         }
-        this.fetchThemeAssets()
+       
         this.filterStorage()
         this.fetchProdustQuery();
         this.setScreenRangeGrid();
@@ -895,12 +895,7 @@ export default {
         this.loadInit=true;
     },
     methods: {
-        async fetchThemeAssets(){
-
-        let api=new ShopifyAPI();
-        let response = await api.getAsstes();
-        this.themeAssets = response;
-       },
+      
 
       /* load product on scroll */
         loadMore() {
@@ -2036,18 +2031,15 @@ export default {
          */
 
         getThemeAssets(image) {
-            // console.log(image)
-
-            // let assetsLIst = assets.assets;
-            let assetsLIst = this.themeAssets.assets;
+            var assets = window.atob(this.shopifyData.swatchesImages);
+            assets = JSON.parse(assets)
 
             var src = "";
-            for (let images in assetsLIst) {
-                if (assetsLIst[images].key == "assets/" + image) {
-                    src = assetsLIst[images].public_url;
-                }
+            for (let images in assets) {
+                 if (Object.keys(assets[images])[0] ==  image) {
+                    src = Object.values(assets[images])[0];
+                 }
             }
-
             return src;
         },
     },
