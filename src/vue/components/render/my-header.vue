@@ -5,11 +5,7 @@
       <nav class="navbar navbar-desktop">
         <!-- Toggle Button -->
         <div class="header_toggle_wrap">
-          <button
-            type="button"
-            class="header_toggle"
-            @click="togleHeader"
-          >
+          <button type="button" class="header_toggle" @click="togleHeader">
             <span class="toggle_bar toggle_bar-top" />
             <span class="toggle_bar toggle_bar-center" />
             <span class="toggle_bar toggle_bar-bottom" />
@@ -17,433 +13,125 @@
         </div>
         <!-- left Navlist -->
         <ul class="navlist navlist-left">
-          <li class="navitem first-navitem">
-            <a
-              href="#"
-              class="navlink navlink_drpdown"
-            > HANDBAGS & WALLETS </a>
+          <li class="navitem first-navitem" @mouseenter="stopScroll" @mouseleave="workScroll">
+            <a :href="HeaderNavData[0].url" class="navlink navlink_drpdown" v-html="HeaderNavData[0].title"></a>
             <!--  HANDBAGS & WALLETS Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
+            <div class="navlink__hover"  >
               <ul class="navink__hover_list">
-                <li class="navlink__hover_item">
+                <li class="navlink__hover_item" v-for="subLink in  HeaderNavData[0].links" :key="subLink.title">
                   <ul class="subnavlink__list hover-img">
-                    <li class="subnavlink__item">
-                      <a
-                        href="https://behno.com/collections/all-product-sbf2019"
-                        class="subnavlink"
-                      >
-                        SHOP ALL CATEGORIES
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/crossbody-bags"
-                        class="subnavlink"
-                      >
-                        CROSSBODY BAGS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/shoulder-bags"
-                        class="subnavlink"
-                      >
-                        SHOULDER BAGS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="https://behno.com/collections/mini-bags"
-                        class="subnavlink"
-                      >
-                        MINI BAGS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/top-handles"
-                        class="subnavlink"
-                      >
-                        TOP HANDLE BAGS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/totes"
-                        class="subnavlink"
-                      >
-                        TOTE BAGS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="https://behno.com/collections/clutches-and-wallets"
-                        class="subnavlink"
-                      >
-                        CLUTCHES &amp; WALLETS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/new-arrivals"
-                        class="subnavlink"
-                      >
-                        NEW ARRIVALS
-                      </a>
-                      <a
-                        href="/collections/new-arrivals"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/new_arrivals_SS22.jpg?v=1647023074"
-                        >
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="navlink__hover_item">
-                  <ul class="subnavlink__list hover-img">
-                    <li class="subnavlink__item">
-                      <span class="subnavlink subnavlink-heading">
-                        NEWEST ICONS
-                      </span>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="https://behno.com/collections/simone-series"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        SIMONE FLAP CROSSBODIES
-                      </a>
-                      <a
-                        href="https://behno.com/collections/simone-series"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/Simone.jpg?v=1647023074"
-                        >
-                      </a>
-                    </li>
-
-                    <li class="subnavlink__item">
-                      <a
-                        href="https://behno.com/collections/lex-accordion"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        LEX ACCORDIONS
-                      </a>
-                      <a
-                        href="https://behno.com/collections/lex-accordion"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/lex.jpg?v=1647023073"
-                        >
-                      </a>
-                    </li>
-
-                    <li class="subnavlink__item">
-                      <a
-                        href="https://behno.com/collections/tilda-saddle-bag-series"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        TILDA SADDLE BAGS
-                      </a>
-                      <a
-                        href="https://behno.com/collections/tilda-saddle-bag-series"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/tilda.jpg?v=1647023074"
-                        >
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="navlink__hover_item">
-                  <ul class="subnavlink__list hover-img">
-                    <li class="subnavlink__item">
-                      <span class="subnavlink subnavlink-heading">
-                        OUR BESTSELLERS
-                      </span>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/ina-bag-series"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        INA &amp; TINA BUCKET BAGS
-                      </a>
-                      <a
-                        href="/collections/ina-bag-series"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/Ina_Mini_Crossbody_Pebble_Red_Front_HiRes_copy_2.jpg?v=1644008601"
-                        >
-                      </a>
-                    </li>
-
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/ana-ruched-series"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        ANA RUCHED BAGS
-                      </a>
-                      <a
-                        href="/collections/ana-ruched-series"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/NORDSTROM_FW21_WHITE_BACKGROUND0205_copy_2.jpg?v=1644008600"
-                        >
-                      </a>
-                    </li>
-
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/elizabeth-baguette-series"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        ELIZABETH BAGUETTES
-                      </a>
-                      <a
-                        href="/collections/elizabeth-baguette-series"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/Elizabeth_Baguette_Black_Front_41293_copy_2.jpg?v=1644008601"
-                        >
-                      </a>
-                    </li>
-
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/mary-bag-series"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        MARY BOX BAGS
-                      </a>
-                      <a
-                        href="/collections/mary-bag-series"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/MARY_MINI_NAPPA_DEEP_RED_FRONT_41405-Edit_copy_2.jpg?v=1644008601"
-                        >
-                      </a>
-                    </li>
-
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/frida"
-                        class="subnavlink"
-                        @mouseover="subnavlinkHover"
-                      >
-                        FRIDA FLAT TOTES
-                      </a>
-                      <a
-                        href="/collections/frida"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/FRIDA_MED_GRASS_GREEN_copy_2.jpg?v=1644008601"
-                        >
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="navlink__hover_item">
-                  <ul class="subnavlink__list hover-img">
-                    <li class="subnavlink__item">
-                      <span class="subnavlink subnavlink-heading">
-                        SPECIAL PROJECTS
-                      </span>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/ndss"
-                        class="subnavlink"
-                      >
-                        NATIONAL DOWN SYNDROME SOCIETY x BEHNO
-                      </a>
-                    </li>
+                    <template v-for="(nestedSubLink,nestedSubLinkIndex) in  subLink.links" :key="nestedSubLink.title">
+                          <template v-if="nestedSubLink.url.includes('.png') || nestedSubLink.url.includes('.jpg') || nestedSubLink.url.includes('.svg')">
+                              <!-- continue Content -->
+                          </template>    
+                          <template v-else>  
+                            <li class="subnavlink__item" >
+                                  <template v-if="(typeof(subLink.links[nestedSubLinkIndex + 1]) != 'undefined') && (subLink.links[nestedSubLinkIndex + 1].url.includes('.png') || subLink.links[nestedSubLinkIndex + 1].url.includes('.jpg') || subLink.links[nestedSubLinkIndex + 1].url.includes('.svg'))">
+                                      <a :href="nestedSubLink.url" class="subnavlink" @mouseover="subnavlinkHover" v-html="nestedSubLink.title">
+                                      </a>
+                                      <a :href="nestedSubLink.url" class="subnavlink subnavlink-img">
+                                        <img :src="subLink.links[nestedSubLinkIndex + 1].url">
+                                      </a>
+                                  </template>    
+                                  <template v-else-if="nestedSubLink.url == '#'">
+                                    <span class="subnavlink subnavlink-heading" v-html="nestedSubLink.title">
+                                    </span>
+                                  </template>
+                                  <template v-else>
+                                    <a :href="nestedSubLink.url" class="subnavlink" v-html="nestedSubLink.title"></a>
+                                  </template>    
+                              </li>
+                        </template>
+                    </template>
                   </ul>
                 </li>
               </ul>
             </div>
             <!--  HANDBAGS & WALLETS End -->
           </li>
-          <li class="navitem">
-            <a
-              href="#"
-              class="navlink navlink_drpdown"
-            > NANAMOTA BASICS </a>
+          <li class="navitem"  @mouseenter="stopScroll" @mouseleave="workScroll">
+            <a :href="HeaderNavData[1].title" class="navlink navlink_drpdown" v-html="HeaderNavData[1].title"></a>
             <!--NANAMOTA  Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
+            <div class="navlink__hover">
               <ul class="navink__hover_list">
-                <li class="navlink__hover_item">
+                <li class="navlink__hover_item" v-for="(subLink,subLinkIndex) in  HeaderNavData[1].links" :key="subLink.title">
                   <ul class="subnavlink__list hover-img">
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/nanamota-the-worlds-softest-basics"
-                        class="subnavlink"
-                      >
-                        EXPLORE NANAMOTA
-                      </a>
-                      <a
-                        href="/pages/nanamota-the-worlds-softest-basics"
-                        class="subnavlink subnavlink-img"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/cloud.jpg?v=1621614772"
-                        >
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/nanamota-womens-tee"
-                        class="subnavlink"
-                      >
-                        SHOP WOMENS TEES
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/nanamota-mens-tee"
-                        class="subnavlink"
-                      >
-                        SHOP MENS TEES
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/collections/nanamota-face-masks"
-                        class="subnavlink"
-                      >
-                        SHOP FACE MASKS
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="navlink__hover_item">
-                  <ul class="subnavlink__list hover-img">
-                    <li class="subnavlink__item">
-                      <div class="nanamoto-basics-crd">
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505"
-                          alt=""
-                        >
-                        <a
-                          href="/pages/nanamota-the-worlds-softest-basics"
-                          class="nanamoto-basics-crd-txt"
-                        >
-                          <span>The World’s Softest Basics. </span>
-                          <span>Constructed ethically. </span>
-                          <span>Worn responsibly.</span>
-                          <span>Sourced sustainably. </span>
-                        </a>
-                      </div>
-                    </li>
+                        <template v-if="HeaderNavData[1].links.length - 1 == subLinkIndex">
+                            <li class="navlink__hover_item">
+                              <ul class="subnavlink__list hover-img">
+                                <li class="subnavlink__item">
+                                  <div class="nanamoto-basics-crd">
+                                    <a :href="subLink.links[0].url"  class="d-block">
+                                      <img src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505" alt="" >
+                                    </a>
+                                    <div  class="nanamoto-basics-crd-txt">
+                                      <template v-for="(nestedSubLink) in  subLink.links" :key="nestedSubLink.title">
+                                        <a :href="nestedSubLink.url" v-html="nestedSubLink.title"></a>
+                                      </template>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                        </template>
+                        <template v-else>
+                            <template v-for="(nestedSubLink,nestedSubLinkIndex) in  subLink.links" :key="nestedSubLink.title">
+                                  <template v-if="nestedSubLink.url.includes('.png') || nestedSubLink.url.includes('.jpg') || nestedSubLink.url.includes('.svg')">
+                                      <!-- continue Content -->
+                                  </template>    
+                                  <template v-else>  
+                                    <li class="subnavlink__item" >
+                                          <template v-if="(typeof(subLink.links[nestedSubLinkIndex + 1]) != 'undefined') && (subLink.links[nestedSubLinkIndex + 1].url.includes('.png') || subLink.links[nestedSubLinkIndex + 1].url.includes('.jpg') || subLink.links[nestedSubLinkIndex + 1].url.includes('.svg'))">
+                                              <a :href="nestedSubLink.url" class="subnavlink" @mouseover="subnavlinkHover" v-html="nestedSubLink.title"></a>
+                                              <a :href="nestedSubLink.url" class="subnavlink subnavlink-img"><img :src="subLink.links[nestedSubLinkIndex + 1].url"></a>
+                                          </template>    
+                                          <template v-else-if="nestedSubLink.url == '#'">
+                                            <span class="subnavlink subnavlink-heading" v-html="nestedSubLink.title">
+                                            </span>
+                                          </template>
+                                          <template v-else>
+                                            <a :href="nestedSubLink.url" class="subnavlink" v-html="nestedSubLink.title"></a>
+                                          </template>    
+                                      </li>
+                                  </template>
+                          </template>
+                      </template>
                   </ul>
                 </li>
               </ul>
             </div>
             <!--NANAMOTA End  -->
           </li>
-          <li class="navitem">
-            <a
-              href="#"
-              class="navlink"
-            > SALE </a>
+
+          <li class="navitem" v-if="HeaderNavData[2]">
+            <a :href="HeaderNavData[2].title" class="navlink navlink_drpdown" v-html="HeaderNavData[2].title"></a>
           </li>
         </ul>
 
         <!-- Header logo -->
         <div class="logo_wrap line-h-0">
-          <a
-            class="logo d-inline-block"
-            href="/"
-          >
-            <v-lazy-image
-              :src="(shopifyData.logo)"
-              alt="Logo"
-            />
+          <a class="logo d-inline-block" :href="HeaderNavData[this.logoImageIndex].url">
+            <img :src="HeaderNavData[this.logoImageIndex].title" alt=""/>
           </a>
         </div>
 
         <!-- Rigth Navlist -->
         <ul class="navlist navlist-right">
-          <li class="navitem">
-            <a
-              href="#"
-              class="navlink navlink_drpdown"
-            > CLIENT SERVICES </a>
+          <li class="navitem" @mouseenter="stopScroll" @mouseleave="workScroll">
+            <a :href="HeaderNavData[this.logoImageIndex + 1].url" class="navlink navlink_drpdown"> {{ HeaderNavData[this.logoImageIndex + 1].title }} </a>
             <!-- CLIENT SERVICES Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
+            <div class="navlink__hover" >
               <ul class="navink__hover_list">
-                <li class="navlink__hover_item">
+                <li class="navlink__hover_item" v-for="subLink in  HeaderNavData[this.logoImageIndex + 1].links" :key="subLink.title">
                   <ul class="subnavlink__list">
-                    <li class="subnavlink__item">
-                      <a
-                        href="mailto:CLIENTSERVICES@BEHNO.COM"
-                        class="subnavlink"
-                      >
-                        WRITE TO US AT CLIENTSERVICES@BEHNO.COM
-                      </a>
-                    </li>
-                    <li class="subnavlink__item remove_hover">
-                      <span class="subnavlink">
-                        TEXT US <b>HELLO</b> AT +1(833) 217-2636
-                      </span>
-                    </li>
-                  </ul>
-                </li>
-                <li class="navlink__hover_item">
-                  <ul class="subnavlink__list">
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/behno-client-services?tab=shipping-delivery"
-                        class="subnavlink"
-                      >
-                        SHIPPING &amp; DELIVERY
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/behno-client-services?tab=returns-exchanges"
-                        class="subnavlink"
-                      >
-                        RETURNS &amp; EXCHANGES
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/behno-client-services?tab=general-policy"
-                        class="subnavlink"
-                      >
-                        GENERAL POLICY
-                      </a>
+                    <li class="subnavlink__item" v-for="(nestedSubLink) in  subLink.links" :key="nestedSubLink.title">
+                      <template v-if="nestedSubLink.url == '#'">
+                        <span class="subnavlink" v-html="nestedSubLink.title">
+                        </span>
+                      </template>
+                      <template v-else>
+                        <a :href="nestedSubLink.url" class="subnavlink" v-html="nestedSubLink.title"></a>
+                      </template>
                     </li>
                   </ul>
                 </li>
@@ -451,75 +139,27 @@
             </div>
             <!-- CLIENT SERVICES End -->
           </li>
-          <li class="navitem">
-            <a
-              href="#"
-              class="navlink navlink_drpdown"
-            > THE SENSE OF BEHNO </a>
+          <li class="navitem" @mouseenter="stopScroll" @mouseleave="workScroll">
+            <a :href="HeaderNavData[this.logoImageIndex + 2].url" class="navlink navlink_drpdown" v-html="HeaderNavData[this.logoImageIndex + 2].title">  </a>
             <!-- THE SENSE OF BEHNO Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
+            <div class="navlink__hover" >
               <ul class="navink__hover_list">
                 <!-- ===   ON hover Class Show First row ===  -->
-                <li class="navlink__hover_item">
+                <li class="navlink__hover_item" v-for="subLink in  HeaderNavData[this.logoImageIndex + 2].links" :key="subLink.title">
                   <ul class="subnavlink__list">
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/welcome-to-our-world-the-sense-of-behno"
-                        class="subnavlink"
-                      >
-                        EXPLORE OUR WORLD
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/delve-into-our-ethical-philosophy"
-                        class="subnavlink"
-                      >
-                        OUR ETHICAL PHILISOPHY
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/behno-in-the-world-milestones"
-                        class="subnavlink"
-                      >
-                        BEHNO IN THE WORLD &amp; PRESS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/constructing-msa-ethos"
-                        class="subnavlink"
-                      >
-                        THE BEHNO STANDARD &amp; MSA ETHOS
-                      </a>
-                    </li>
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/our-partner-handbag-factory"
-                        class="subnavlink"
-                      >
-                        OUR PARTNER HANDBAG FACTORY
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="navlink__hover_item">
-                  <ul class="subnavlink__list">
-                    <li class="subnavlink__item">
-                      <a
-                        href="/pages/welcome-to-our-world-the-sense-of-behno"
-                        class="nav_sensebehno__img subnavlink"
-                      >
-                        <img
-                          src="https://cdn.shopify.com/s/files/1/1000/3130/files/the-sense-of-behno.png?v=1621617767"
-                          alt=""
-                        >
-                      </a>
+                    <li class="subnavlink__item" v-for="(nestedSubLink) in  subLink.links" :key="nestedSubLink.title">
+                      <template v-if="nestedSubLink.url == '#'">
+                        <span class="subnavlink" v-html="nestedSubLink.title">
+                        </span>
+                      </template>
+                      <template v-if="nestedSubLink.title.includes('.png') || nestedSubLink.title.includes('.jpg') || nestedSubLink.title.includes('.svg')">
+                        <a :href="nestedSubLink.url" class="nav_sensebehno__img subnavlink">
+                          <img :src="nestedSubLink.title" alt="">
+                        </a>
+                      </template>
+                      <template v-else>
+                        <a :href="nestedSubLink.url" class="subnavlink" v-html="nestedSubLink.title"></a>
+                      </template>
                     </li>
                   </ul>
                 </li>
@@ -531,10 +171,7 @@
           <li class="desktop_btn_grp">
             <div class="nav_btns">
               <button class="search_btn">
-                <v-lazy-image
-                  :src="(shopifyData.search)"
-                  alt="Search Icon"
-                />
+                <v-lazy-image :src="(shopifyData.search)" alt="Search Icon" />
               </button>
               <a
                 class="shopping_btn"
@@ -579,191 +216,36 @@
     <!-- ======= Mobile Navigation Start ======= -->
     <nav class="m_navbar_list navbar-Mobile">
       <ul class="m_navlist d-block w-100">
-        <li class="m_navitem">
-          <button
-            class="navlink nav_drpbtn w-100 t-left"
-            @click="toggleDropDown"
-          >
-            HANDBAGS & WALLETS
-          </button>
-          <div class="nav_drpbtn_content">
-            <ul class="m_drpdown_list">
-              <!--  sub nav link  -->
-              <li class="m_drpdown_item">
-                <a
-                  href="#"
-                  class="subnavlink"
-                > SHOP ALL </a>
-              </li>
-              <!--  sub nav link  -->
-              <li class="m_drpdown_item">
-                <button
-                  class="subnavlink nav_drpbtn w-100 t-left"
-                  @click="toggleDropDown"
-                >
-                  SHOP BY CATEGORY
-                </button>
-                <div class="nav_drpbtn_content">
-                  <ul class="m_subnavlink_list">
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > CROSSBODY BAGS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > SHOULDER BAGS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > MINI BAGS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > TOP HANDLES</a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > TOTE BAGS</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <!--  sub nav link  -->
-              <li class="m_drpdown_item">
-                <button
-                  class="subnavlink nav_drpbtn w-100 t-left"
-                  @click="toggleDropDown"
-                >
-                  NEWEST ICONS
-                </button>
-                <div class="nav_drpbtn_content">
-                  <ul class="m_subnavlink_list">
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > SIMONE FLAP CROSSBODIES </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > LEX ACCORDIONS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > TILDA SADDLE BAGS </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="m_navitem">
-          <button
-            class="navlink nav_drpbtn w-100 t-left"
-            @click="toggleDropDown"
-          >
-            HANDBAGS & WALLETS
-          </button>
-          <div class="nav_drpbtn_content">
-            <ul class="m_drpdown_list">
-              <!--  sub nav link  -->
-              <li class="m_drpdown_item">
-                <a
-                  href="#"
-                  class="subnavlink"
-                > SHOP ALL </a>
-              </li>
-              <!--  sub nav link  -->
-              <li class="m_drpdown_item">
-                <button
-                  class="subnavlink nav_drpbtn w-100 t-left"
-                  @click="toggleDropDown"
-                >
-                  SHOP BY CATEGORY
-                </button>
-                <div class="nav_drpbtn_content">
-                  <ul class="m_subnavlink_list">
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > CROSSBODY BAGS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > SHOULDER BAGS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > MINI BAGS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > TOP HANDLES</a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > TOTE BAGS</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <!--  sub nav link  -->
-              <li class="m_drpdown_item">
-                <button
-                  class="subnavlink nav_drpbtn w-100 t-left"
-                  @click="toggleDropDown"
-                >
-                  NEWEST ICONS
-                </button>
-                <div class="nav_drpbtn_content">
-                  <ul class="m_subnavlink_list">
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > SIMONE FLAP CROSSBODIES </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > LEX ACCORDIONS </a>
-                    </li>
-                    <li class="m_subnavlink_item">
-                      <a
-                        href="#"
-                        class="navlink"
-                      > TILDA SADDLE BAGS </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <li class="m_navitem" v-for="(link) in MobileNavData" :key="link.title" >
+
+          <template v-if="link.links.length > 0">
+            <button class="navlink nav_drpbtn w-100 t-left" @click="toggleDropDown" v-html="link.title">
+            </button>
+            <div class="nav_drpbtn_content">
+              <ul class="m_drpdown_list">
+                <!--  sub nav link  -->
+                <li class="m_drpdown_item" v-for="subLink in link.links" :key="subLink.title">
+                  <template v-if="subLink.links.length > 0">
+                    <button class="subnavlink nav_drpbtn w-100 t-left" @click="toggleDropDown" v-html="subLink.title">
+                    </button>
+                    <div class="nav_drpbtn_content">
+                      <ul class="m_subnavlink_list">
+                        <li class="m_subnavlink_item" v-for="(nestedSubLink) in  subLink.links" :key="nestedSubLink.title">
+                          <a :href="nestedSubLink.url" class="navlink">{{ nestedSubLink.title }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </template>
+                  <template v-else>
+                    <a :href="subLink.url" class="subnavlink" v-html="subLink.title"></a>
+                  </template>
+                </li>
+              </ul>
+            </div>
+          </template>
+          <template v-else>
+            <a :href="link.url" class="navlink w-100 t-left" v-html="link.title"></a>
+          </template>
         </li>
       </ul>
     </nav>
@@ -881,15 +363,24 @@ export default {
     console.log("shopifyData",this.shopifyData)
     window.addEventListener("scroll", this.scollHeader);
     return {
+      logoImageIndex :0,
       lastScrollY: 100,
-      show: true
+      show: true,
+      HeaderNavData: this.shopifyData.HeaderNavData,
+      MobileNavData: this.shopifyData.MobileNavData
     };
   },
   created: function () {
     this.header = document.getElementsByClassName("tmbHeader");   
   },
   mounted (){
-      this.refreshMiniCart()
+      this.refreshMiniCart(),
+      this.shopifyData.HeaderNavData.forEach((element,index) => {
+        if(element.title.includes('.png') || element.title.includes('.jpg') || element.title.includes('.svg')){
+          this.logoImageIndex = index;
+        }
+      });
+      
   },
  
   methods: {
@@ -1363,7 +854,7 @@ button.behno_increment_dec:after {
 }
 
 .nanamoto-basics-crd {
-  margin-top: 60px;
+  margin-top: 15px;
   padding: 50px 30px;
   background: #758f8f;
   width: 100%;
@@ -1376,10 +867,10 @@ button.behno_increment_dec:after {
   display: inline-block;
   margin-top: 25px;
 }
-.nanamoto-basics-crd-txt span:first-child {
+.nanamoto-basics-crd-txt a:first-child {
   margin-bottom: 15px;
 }
-.nanamoto-basics-crd-txt span {
+.nanamoto-basics-crd-txt a{
   font-size: 13px;
   color: #fff;
   font-weight: 400;

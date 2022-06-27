@@ -1,51 +1,62 @@
 {% capture HeaderNavData %}
 [
-  {
     {% for link in linklists.main-menu.links %}
-      links : {
-          url : `{{ link.url  }}`,
-          title  : `{{ link.title  }}`,
+    {
+          url : `{{ link.url  | escape }}`,
+          title  : `{{ link.title | escape  }}`,
           links : [
             {% for child_link in link.links %}
               {
-                url : `{{ child_link.url  }}`,
-                title  : `{{ child_link.title  }}`,
+                url : `{{ child_link.url | escape }}`,
+                title  : `{{ child_link.title | escape  }}`,
                 links : [
                     {% for grandchild_link  in child_link.links %}
                       {
-                          url : `{{ grandchild_link.url  }}`,
-                          title  : `{{ grandchild_link.title  }}`
+                          url : `{{ grandchild_link.url | escape }}`,
+                          title  : `{{ grandchild_link.title | escape }}`
                       }{% unless forloop.last %},{% endunless %}
                     {% endfor %}
-                ]
+                  ]
               }{% unless forloop.last %},{% endunless %}
             {% endfor %}
           ]
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %} 
+]
+{% endcapture %}
+
+{% capture MobileNavData %}
+[
+    {% for link in linklists.mobile-main-menu.links %}
+    {
+          url : `{{ link.url  | escape }}`,
+          title  : `{{ link.title | escape  }}`,
+          links : [
+            {% for child_link in link.links %}
+              {
+                url : `{{ child_link.url | escape }}`,
+                title  : `{{ child_link.title | escape  }}`,
+                links : [
+                    {% for grandchild_link  in child_link.links %}
+                      {
+                          url : `{{ grandchild_link.url | escape }}`,
+                          title  : `{{ grandchild_link.title | escape }}`
+                      }{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                  ]
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %} 
 ]
 {% endcapture %}
 
 
 <render-my-header :shopify-data="{
-  logo: '{{ 'logo.svg' | asset_url }}',
   search: '{{ 'search-icon.svg' | asset_url }}',
   bag: '{{ 'shopping-bag-icon.svg' | asset_url }}',
-  HeaderNavData: {{ HeaderNavData }}
+  HeaderNavData: {{ HeaderNavData }},
+  MobileNavData: {{ MobileNavData }}
 }">
 </render-my-header>
-
-
-
-{% schema %}
-{
-  "name": "t:sections.header.name",
-  "settings": [
-    {
-      "type": "paragraph",
-      "content": "t:sections.header.settings.paragraph"
-    }
-  ]
-}
-{% endschema %}
