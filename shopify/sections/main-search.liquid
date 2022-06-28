@@ -1,0 +1,50 @@
+{% paginate search.results by 50 %}
+{% capture products %}  
+        [{% for product in search.results %}
+                {% capture variantsList %} 
+                 {
+                        {% for variant in product.variants %}
+                         "{{- variant.id -}}":"{{ variant.inventory_quantity }}"{% if forloop.last %}{% else %},{% endif %}
+                        {% endfor %}
+                 }
+                {% endcapture %}
+                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}}]{% if forloop.last %}
+                {% else %},{% endif %}
+        {% endfor %}]    
+    {% endcapture %}
+{% endpaginate %}
+
+<!-- Please don't add any space in between the commented code  -->
+{% paginate search.results by 50 %}{% capture assets %}[{% for assetss in search.results %}{%- if assetss.metafields.my_fields.variants_swtach -%}{% assign imagesAssets = assetss.metafields.my_fields.variants_swtach | split:" " %}{%- for images in imagesAssets -%}{ "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}{% endfor %},{% endif %}{% endfor %}]{% endcapture %}{% endpaginate %}
+<!-- Please don't add any space in between the commented code  -->
+
+
+
+
+<render-search-search-page :shopify-data="{
+    title : '{{ search.terms }}',
+    filterDropdownTextResponsive: '',
+    categoriesDropdownText: '',
+    colorDropdownText: '',
+    sizeDropdownText: '',
+    materialDropdownText: '',
+    sortByDropdownText: '',
+    secBottomheading: '',
+    secBottomInfo: '',
+    applyFilterCta: '',
+    sortByDropdownTextResponsive: '',
+    filterinnerResponsive: '',
+    sortinnerResponsive: '',
+    collectionListing : '{{ products | base64_encode }}',
+    swatchesImages : '{{ assets | replace: ',]',']' | base64_encode }}'
+}">
+
+</render-search-search-page> 
+
+
+
+{% schema %}
+{
+
+}
+{% endschema %}
