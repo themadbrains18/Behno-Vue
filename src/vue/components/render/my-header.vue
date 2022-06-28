@@ -544,10 +544,10 @@ button.behno_increment_dec:after {
 }
 
 
-
-
-
 /*------- Mini Cart Css -------*/
+
+
+
 
 .product_img_wrapper {
     position: relative;
@@ -584,7 +584,7 @@ button.behno_increment_dec:after {
   right: 0;  
   top: auto;
   bottom: 0;
-  z-index:5;
+  z-index:6;
   transition: 0.3s;
   transform: translateX(110%);
   text-align:center;
