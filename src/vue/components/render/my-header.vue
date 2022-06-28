@@ -170,24 +170,16 @@
           <!-- Header Button Group -->
           <li class="desktop_btn_grp">
             <div class="nav_btns">
-              <button class="search_btn">
+              <button class="search_btn" id="searcBtn">
                 <v-lazy-image :src="(shopifyData.search)" alt="Search Icon" />
               </button>
-              <a
-                class="shopping_btn"
-                @click="show = !show"
-              >
-                <v-lazy-image
-                  :src="(shopifyData.bag)"
-                  alt="Shopping Icon"
-                />
-
+              <a class="shopping_btn" @click="show = !show">
+                <v-lazy-image :src="(shopifyData.bag)" alt="Shopping Icon"/>
                 <span class="shopping_btn_count">0</span>
               </a>
             </div>
           </li>
         </ul>
-
         <!-- Responsive Mobile Btn Grp -->
         <div class="mobile_btn_grp">
           <div class="nav_btns">
@@ -250,6 +242,18 @@
       </ul>
     </nav>
     <!-- ======= Mobile Navigation End ======= -->
+
+      <form class="search_bar active" id="searchBar">
+        <button type="submit">
+          <img :src="(shopifyData.search)" alt="Search Icon"/>
+        </button>
+        <input type="text" name="q" placeholder="Search...">
+        <button type="button" class="header_toggle">
+          <span class="toggle_bar toggle_bar-top" />
+          <span class="toggle_bar toggle_bar-center" />
+          <span class="toggle_bar toggle_bar-bottom" />
+        </button>
+      </form>
   </header>
 
   <!-- ====== Shoping Mini Cart ====== -->
@@ -257,7 +261,6 @@
   <!-- :class="[{ active: !show }, mini_cart_container]" -->
   <section class="mini_cart">
     <div :class="[{ active: !show }, 'mini_cart_container']" >
-    
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
         <button
@@ -472,7 +475,7 @@ export default {
     // addActiveBody:function(e){
     //     console.log("qwer");
     // }
-  }
+  } 
 };
 </script>
 
