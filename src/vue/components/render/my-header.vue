@@ -331,7 +331,7 @@
         </div> 
       </div>
     </div>
-    <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show">
+    <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show" >
     </span>
     <div
       class="mini-add-card"
@@ -376,6 +376,7 @@ export default {
     this.header = document.getElementsByClassName("tmbHeader");   
   },
   mounted (){
+
       this.refreshMiniCart(),
       this.shopifyData.HeaderNavData.forEach((element,index) => {
         if(element.title.includes('.png') || element.title.includes('.jpg') || element.title.includes('.svg')){

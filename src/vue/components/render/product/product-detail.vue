@@ -143,6 +143,7 @@
           >
           <div class="add_cart_btn_wrap">
             <button
+              @click="dsfsdfsdf"
               v-if="currentVariantQty > 0"
               id="AddToCart"
               type="submit"
@@ -151,8 +152,11 @@
               class="add_cart_btn cta_btn cta_btn-black"
             >
               ADD TO BAG
+              <div class="loder_tmb"> <span></span><span></span> <span></span><span></span> <span></span> </div>
             </button>
+
             <button
+            
               v-if="currentVariantQty == 0"
               id="OutOfStock"
               type="button"
@@ -456,6 +460,7 @@ import {
 
 // import required modules
 import { Navigation, Autoplay, Pagination, Mousewheel, Thumbs } from "swiper";
+import { constants } from 'buffer';
 export default {
     components: {
         Swiper,
@@ -521,8 +526,9 @@ export default {
     },
     mounted() {
         this.getProductReview();
-
+        
         window.addEventListener('resize', () => {
+
             if (window.innerWidth <= 991) {
                 document.querySelector(".footer_content").style.paddingBottom = `${document.querySelector(".add_cart_btn_wrap").offsetHeight}px`;
                 document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
@@ -552,9 +558,14 @@ export default {
           }
           
         },
-        onAddtoCart(e){
+        async onAddtoCart(e){
             e.preventDefault();
+            let form = e.target
+          
+            // find button add acctive class
+            form.querySelector('button[type="submit"]').classList.add('active')
 
+            // e.classList.add("active")
             // console.log(this.selectedProduct.variants[0].id);
             
             var dynamic = new ShopifyAPI();
@@ -564,21 +575,10 @@ export default {
                 qty: 1,
             };
 
-            dynamic.addItem(item);
-
-            // fetch(window.Shopify.routes.root + "cart/add.js", {
-            //     method: 'POST', 
-            //     body: new FormData(e.target)
-            // })
-            // .then(response => {
-            //     if(response.status ==  200){
-            //         alert("Item Add in cart");
-            //     }
-            //     else {
-            //         alert("ther is some problem please try again later");
-            //     }
-            // })
-            // .catch(error => console.log("Add to Cart",error))
+            await dynamic.addItem(item);
+            form.querySelector('button[type="submit"]').classList.remove('active')
+            
+        
         },
         sizeSelect(size,type){
             let label= document.querySelector("#selectSize");
@@ -664,6 +664,10 @@ export default {
 
 </script>
 <style>
+
+button#AddToCart{
+  position: relative;  
+}
 .product_slide,
 .product_zoom {
     background: #fff;

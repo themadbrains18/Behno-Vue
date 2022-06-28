@@ -382,10 +382,13 @@ body.landscape .image_and_text_sec .sec_content > .sec_img{
 .card .quickAdd{
   position: relative;
 }
-.card.active .quickAdd::after{
+
+
+
+.card.active .quickAdd::after,button#AddToCart.active::after{
   visibility: visible;
 }
-.card .quickAdd::after{
+.card .quickAdd::after,button#AddToCart::after{
   content: "";
   position: absolute;
   top: 0;
@@ -479,7 +482,7 @@ body.landscape .image_and_text_sec .sec_content > .sec_img{
 }
 
 
-.card.active .loder_tmb{
+.card.active .loder_tmb,button#AddToCart.active .loder_tmb{
   visibility: visible;
 }
 
