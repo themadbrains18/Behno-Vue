@@ -369,6 +369,123 @@ body.landscape .image_and_text_sec .sec_content > .sec_img{
   width: 71%;
 }
 
+/* Tmb Loder Css Code */
+
+
+.product_img_wrapper{
+  position: relative;
+}
+
+.card.active .product_img_wrapper::after{
+  visibility: visible;
+}
+.card .quickAdd{
+  position: relative;
+}
+.card.active .quickAdd::after{
+  visibility: visible;
+}
+.card .quickAdd::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.product_grid .card.active .product_img_wrapper::after{
+  visibility: hidden;
+}
+.product_img_wrapper::after{
+    content: "";
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    background: #000;
+    z-index: 2;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.loder_tmb {
+  display:flex;
+  position: absolute;
+  left: 50%;
+  transition: 0.3s;
+  gap: 5px;
+  top:50%;
+  align-items: center;
+  transform: translate(-50% , -50%);
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  visibility: hidden;
+  
+}
+.loder_tmb span {
+   vertical-align:middle;
+   border-radius:100%;
+   display:inline-block;
+   width:10px;
+   height:10px;
+   margin:3px 2px;
+   -webkit-animation:loader1 0.8s linear infinite alternate;
+   animation:loader1 0.8s linear infinite alternate;
+}
+.loder_tmb span:nth-child(1) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
+}
+.loder_tmb span:nth-child(2) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+}
+.loder_tmb span:nth-child(3) {
+   -webkit-animation-delay:-0.26666s;
+   animation-delay:-0.26666s;
+  background:#dbdbdb;
+}
+.loder_tmb span:nth-child(4) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+  
+}
+.loder_tmb span:nth-child(5) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
+}
+
+@keyframes loader1 {
+   from {transform: scale(0, 0);}
+   to {transform: scale(1, 1);}
+}
+@-webkit-keyframes loader1 {
+   from {-webkit-transform: scale(0, 0);}
+   to {-webkit-transform: scale(1, 1);}
+}
+
+
+.card.active .loder_tmb{
+  visibility: visible;
+}
+
+
+
+
 @media only screen and (max-width: 1024px) {
   .quotes_text {
     font-size: 50px;

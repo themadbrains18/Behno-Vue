@@ -1,4 +1,4 @@
-{% paginate collection.products by 200 %}
+{% paginate collection.products by 800 %}
 {% capture products %}  
         [{% for product in collection.products %}
                 {% capture variantsList %} 
@@ -12,6 +12,18 @@
                 {% else %},{% endif %}
         {% endfor %}]    
     {% endcapture %}
+{% endpaginate %}
+
+<!-- get swatches (images) list  -->
+{% paginate collection.products by 800 %}
+{% capture assets %}   
+        [{% for assetss in collection.products %}
+        {%- if assetss.metafields.my_fields.variants_swtach -%}
+             {% assign imagesAssets = assetss.metafields.my_fields.variants_swtach | split:" " %}
+             {%- for images in imagesAssets -%}
+                 { "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}
+             {% endfor %},{% endif %}{% endfor %}]    
+   {% endcapture %} 
 {% endpaginate %}
 
 
@@ -28,7 +40,8 @@
     sortByDropdownTextResponsive: '{{ section.settings.sortByDropdownTextResponsive }}',
     filterinnerResponsive: '{{ section.settings.filterinnerResponsive }}',
     sortinnerResponsive: '{{ section.settings.sortinnerResponsive }}',
-    collectionListing : '{{ products | base64_encode }}'
+    collectionListing : '{{ products | base64_encode }}',
+    swatchesImages : '{{ assets | replace: ',]',']' | base64_encode }}'
 }">
 
 </render-collection-all-page>
@@ -122,6 +135,17 @@
                     "id":"secImg",
                     "type":"image_picker",
                     "label":"Section Image"
+                }
+        ]
+    },
+    {
+        "type": "swatches",
+        "name": "Swatches Images",
+            "settings":[
+                {
+                    "id":"swatches",
+                    "type":"image_picker",
+                    "label":"Swatches Image"
                 }
         ]
     }

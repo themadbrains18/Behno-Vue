@@ -253,11 +253,11 @@
   </header>
 
   <!-- ====== Shoping Mini Cart ====== -->
+  <!-- :class= "{active: !show }" -->
+  <!-- :class="[{ active: !show }, mini_cart_container]" -->
   <section class="mini_cart">
-    <div
-      class="mini_cart_container"
-      :class="{ active: !show }"
-    >
+    <div :class="[{ active: !show }, 'mini_cart_container']" >
+    
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
         <button
@@ -331,6 +331,8 @@
         </div> 
       </div>
     </div>
+    <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show">
+    </span>
     <div
       class="mini-add-card"
       :class="{ active: !show }"
@@ -380,7 +382,6 @@ export default {
           this.logoImageIndex = index;
         }
       });
-      
   },
  
   methods: {
@@ -546,11 +547,11 @@ button.behno_increment_dec:after {
     position:fixed;
     top:0;
     right:0;
-    z-index:5;
+    z-index:6;
     border:1px solid black;
     transition: 0.3s;
     transform: translateX(110%);
-    padding:30px 45px 0;
+    padding:30px 42px 0;
     overscroll-behavior: none;
 }
 .mini-add-card{
@@ -610,7 +611,7 @@ button.behno_increment_dec:after {
 .mini_cart-products{
     display: flex;
     align-items: center;
-    margin: 24px 0 0;
+    margin: 26px 0 0;
 }
 
 .mini_cart-products span{
@@ -676,7 +677,7 @@ button.behno_increment_dec:after {
     height:1px;
     background-color:black;
     display:block;
-    margin:0 -22px 35px;
+    margin:0 -22px 40px;
 }
 
 .mini_cart_container.active ,
@@ -711,6 +712,21 @@ button.behno_increment_dec:after {
     line-height: 14px;
 }
 
+.bg_layer_removecart.active{
+  visibility: visible;
+  transition: 0.3s;
+}
+.bg_layer_removecart{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.3;
+  z-index: 5;
+  visibility: hidden;
+}
 
 
 </style>
@@ -766,6 +782,7 @@ button.behno_increment_dec:after {
   position: relative;
   font-weight: 400;
   display: inline-block;
+  text-transform: uppercase;
 }
 
 .nav_btns {
@@ -789,6 +806,7 @@ button.behno_increment_dec:after {
 .shopping_btn {
   position: relative;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 .shopping_btn_count {
   position: absolute;
@@ -1068,5 +1086,11 @@ button.behno_increment_dec:after {
   .subtitle_b {
     margin-bottom: 0 !important;
   }
-} 
+}
+
+
+  
+
+
 </style>
+

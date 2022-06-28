@@ -24,7 +24,8 @@
     ThanksSecCtaText: `{{ section.settings.ThanksSecCtaText }}`,
     ThanksSecCtaLink: `{{ section.settings.ThanksSecCtaLink }}`,
     taxInfo: `{{ section.settings.taxInfo }}` ,
-    sectionCta: {{ sectionCta }}
+    sectionCta: {{ sectionCta }},
+    cartItems : '{{ cart | json | base64_encode  }}',
 }">
 
 </render-cart-main-cart>

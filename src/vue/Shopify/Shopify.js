@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 class ShopifyAPI {
 
     /**
@@ -42,6 +43,7 @@ class ShopifyAPI {
                 return response;
             })
             .catch(function (error) {
+                /// addpend message
                 return error;
             });
         return response;
@@ -64,7 +66,19 @@ class ShopifyAPI {
 
         if (response.status == 200) {
             return response
+
         } else {
+            let errorMessage = response;
+            if(response.response!=undefined){
+                response = response.response;
+                if(response.data.error!=undefined){
+                    errorMessage = response.data.error;
+                }
+                else{
+                    errorMessage = response.data;
+                }
+            }
+            this.openToast(errorMessage);
             return response
         }
 
@@ -85,7 +99,8 @@ class ShopifyAPI {
             this.openDrawer()
 
         } else {
-            console.log('Opps! something went wrong. Please try again')
+            let errorMessage = response.message;
+            this.openToast(errorMessage);
         }
 
         return response;
@@ -99,7 +114,8 @@ class ShopifyAPI {
     async addItem(item = {}) {
         // Object.keys(item).length === 0
         if (Object.keys(item).length == 0) {
-            console.log('Opps! something went wrong. Please try again.')
+            let errorMessage = 'Opps! something went wrong. Please try again.';
+            this.openToast(errorMessage);
             return;
         }
 
@@ -110,9 +126,26 @@ class ShopifyAPI {
             this.openDrawer()
 
         } else {
-            console.log('Opps! something went wrong. Please try again')
+            let errorMessage = response;
+            if(response.response!=undefined){
+                response = response.response;
+                errorMessage = response.data.message;
+            }
+            this.openToast(errorMessage);
+            
         }
 
+    }
+
+    openToast(message){
+        let toastDiv=document.querySelector('.common_warning.error .message');
+        toastDiv.innerHTML=message;
+        let warningDiv=document.querySelector('.error');
+        warningDiv.classList.add('active');
+        setTimeout(() => {
+            toastDiv.innerHTML='';
+            warningDiv.classList.remove('active');
+        }, 3000);
     }
 
     /**
@@ -154,6 +187,11 @@ class ShopifyAPI {
         for (let item in CartItems) {
             card += `<div class="card">
                     <div class="product_img_wrapper" id="product_img_wrapper6678699180129" pid="${CartItems[item].product_id}">
+                    <div class="loder_tmb"> 
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        <span></span>
+                    </div>
                         <img src="${CartItems[item].image}" id="6678699180129">
                         <button class="body_text remove" variantID="${CartItems[item].variant_id}">Remove</button>
                     </div>
@@ -175,7 +213,6 @@ class ShopifyAPI {
                 </div>
             </div>`
         }
-
         document.querySelector('p.subtotal_price.body_text').innerHTML = '$' + (getCartData.data.total_price / 100).toFixed(2)
         document.querySelector('.shopping_btn_count').innerHTML = getCartData.data.item_count
         document.querySelector('#mini_cart_content').innerHTML = card
@@ -198,12 +235,16 @@ class ShopifyAPI {
      * qty increase decrease
      */
 
+    
+     
     increamtDecriment() {
         var classObj = this
         var btn = document.querySelectorAll('.behno_increment_dec')
+        
         for (const button of btn) {
             button.addEventListener('click',  function (event) {
                 var targeted = event.target
+                button.closest(".card").classList.add("active")
                 var parent = event.target.parentNode.parentNode
                 var currentValue = parent.querySelector('input').getAttribute('value')
                 var key = targeted.getAttribute('key')
@@ -275,7 +316,7 @@ class ShopifyAPI {
 
         for (const button of removeBtn) {
             button.addEventListener('click', await function (event) {
-                console.log(event.target)
+                button.closest(".card").classList.add("active")
                 var variantid = event.target.getAttribute('variantid')
                 item = {
                     id: variantid,
@@ -304,23 +345,7 @@ class ShopifyAPI {
         // alert('There are now ' + cart.item_count + ' items in the cart.');
     }
 
-
-    // get review Data
-
-    async getProductReviewData(option){
-        var requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-
-        return await fetch("https://judge.me/api/v1/widgets/product_review?api_token=Ln85i0GnbjlrBqsqL8QjVKShJLQ&shop_domain=behno.myshopify.com&external_id="+option.id+"&handle="+option.handle+"", requestOptions)
-          .then(response => response.text())
-          .then(result => {
-            let resultData=JSON.parse(result);
-            return resultData.widget;
-          })
-          .catch(error => console.log('error', error));
-    }
+    /** Get Assets  */
 
 }
 

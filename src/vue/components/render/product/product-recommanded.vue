@@ -60,7 +60,7 @@ export default {
   },
   methods: {
       async relatedProducts () {
-        console.log(this.shopifyData.relatedProduct)
+        // console.log(this.shopifyData.relatedProduct)
           var relatedProduct = new ShopifyAPI();
           var data =  await relatedProduct.getRequest(this.shopifyData.relatedProduct)
           this.relatedProduct = data.data.products

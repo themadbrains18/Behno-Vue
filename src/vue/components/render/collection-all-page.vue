@@ -3,7 +3,7 @@
   <h2>{{ shopifyData.collactionTittle }}</h2>
   <div class="collaction_banner">
     <img
-      src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/collaction-banner.jpg?v=1655384242"
+      src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/banner-collaction-img.jpg?v=1655966174"
       alt="Collaction Image"
     >
     <h2 class="banner_heading">
@@ -553,7 +553,7 @@
         >
           <a :href="`/products/` + value.single.handle">
             <div
-              id="item_left_"
+              :id="`item_left_`+ value.single.handle"
               class="item_left"
               :class="{ item_left_active: value.single.variants[0].inStock < 5 }"
             >
@@ -629,6 +629,12 @@
                   @click="addToCard"
                 >
                   <span>Quick Add</span>
+                  <div class="loder_tmb"> 
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        <span></span>
+                    </div>
+
                 </button>
               </span>
             </div>
@@ -644,7 +650,7 @@
           <a :href="`/products/` + value.variable[value.active].handle">
                 
             <div
-              id="item_left_"
+             :id="`item_left_`+value.variable[value.active].handle"
               class="item_left"
               :class="{
                 item_left_active: value.variable[value.active].variants[0].inStock < 5,
@@ -727,7 +733,6 @@
                 </li>
               </ul>
             </div>
-
             <div
               class="product_cta_wrapper"
               data-v-32bfb114=""
@@ -741,13 +746,25 @@
                 @click="addToCard"
               >
                 <span>Quick Add</span>
+                <div class="loder_tmb"> 
+                        <span></span><span></span>
+                        <span></span><span></span>
+                        <span></span>
+                    </div>
+
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="loader"></div>
+    <div id="loader">
+       <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div
       class="row centeralign addmargin"
       :class="{ productnotfound: Products.length === 0, productfound: Products.length > 0 }"
@@ -771,7 +788,8 @@
 //     graphQl
 // } from "../../../assets/graphql/collection-query";
 
-import assets from "../../../assets/graphql/assets.json";
+// import assets from "../../../assets/graphql/assets.json";
+
 import {
     ShopifyAPI
 } from "../../Shopify/Shopify";
@@ -852,7 +870,7 @@ export default {
             ErrorCase: false,
             shopifyPagination: false,
             themeAssets: [],
-            loadInit:false
+            loadInit:false,
         };
     },
     mounted() {
@@ -869,7 +887,7 @@ export default {
         if(window.innerWidth<=767){
             this.isMobile=true;
         }
-
+       
         this.filterStorage()
         this.fetchProdustQuery();
         this.setScreenRangeGrid();
@@ -877,6 +895,7 @@ export default {
         this.loadInit=true;
     },
     methods: {
+      
 
       /* load product on scroll */
         loadMore() {
@@ -890,7 +909,7 @@ export default {
                   if (bottomOfWindow < 1200 && this.Products.length != this.AllProducts.length) {
                       let obj = this;
                       this.busy = true;
-                      document.getElementById("loader").style.display = "block";
+                      document.getElementById("loader").style.display = "flex";
                       setTimeout(() => {
                         const append = obj.AllProducts.slice(
                           obj.Products.length,
@@ -917,7 +936,7 @@ export default {
             return JSON.parse(productData);
         },
         closeSortMenu: function (event) {
-            console.log(event);
+            // console.log(event);
             if (event.target.closest(".show") != null) {
                 event.target.closest(".show").classList.remove("show");
             }
@@ -1007,7 +1026,7 @@ export default {
         },
 
         onSelectColor: function (color, product, event) {
-            console.log(product.id);
+            // console.log(product.id);
             if (event.currentTarget.parentElement.children.length > 1) {
                 let childcolor = event.currentTarget.parentElement.children;
                 for (let item of childcolor) {
@@ -1031,7 +1050,7 @@ export default {
             });
             if (varints.length > 0) {
                 if (varints[0].featured_image != null) {
-                    console.log(varints[0].featured_image.src);
+                    // console.log(varints[0].featured_image.src);
                     img.src = varints[0].featured_image.src;
                 }
                 div.textContent =
@@ -1620,7 +1639,7 @@ export default {
                             var Phandle = swatch[swatchPl].link;
 
                             for (let childPair in Products) {
-                                //  console.log(products[childPair].node.handle,'===', Phandle)
+                                //  // console.log(products[childPair].node.handle,'===', Phandle)
                                 if (Products[childPair][0].handle == Phandle.replace("/products/", "")) {
                                     // console.log(Products[childPair][0]);
 
@@ -1681,7 +1700,7 @@ export default {
                             var Phandle2 = swatch[swatchPl].link;
                             
                             for (let childPair in Products) {
-                                //  console.log(products[childPair].node.handle,'===', Phandle)
+                                //  // console.log(products[childPair].node.handle,'===', Phandle)
                                 if (Products[childPair][0].handle == Phandle2.replace("/products/", "")) {
 
                                     if(handle == Products[childPair][0].handle){
@@ -1851,7 +1870,8 @@ export default {
             return Math.floor(Math.random() * (max - min + 1) + min);
         },
 
-        addToCard(event) {
+        async addToCard(event) {
+            event.target.closest(".card").classList.add("active")
             var product = event.target.parentNode;
             var variant = product.getAttribute("variantid");
             var dynamic = new ShopifyAPI();
@@ -1860,8 +1880,10 @@ export default {
                 id: variant,
                 qty: 1,
             };
+            await dynamic.addItem(item);
+            event.target.closest(".card").classList.remove("active")
 
-            dynamic.addItem(item);
+
         },
 
         /**
@@ -1977,7 +1999,7 @@ export default {
                 );
 
             // chnage quick button content
-            console.log(activeProduct)
+            // console.log(activeProduct)
 
 
             grid
@@ -2009,18 +2031,15 @@ export default {
          */
 
         getThemeAssets(image) {
-            // console.log(image)
-
-            let assetsLIst = assets.assets;
+            var assets = window.atob(this.shopifyData.swatchesImages);
+            assets = JSON.parse(assets)
 
             var src = "";
-            for (let images in assetsLIst) {
-                // console.log(response[images].key )
-                if (assetsLIst[images].key == "assets/" + image) {
-                    src = assetsLIst[images].public_url;
-                }
+            for (let images in assets) {
+                 if (Object.keys(assets[images])[0] ==  image) {
+                    src = Object.values(assets[images])[0];
+                 }
             }
-
             return src;
         },
     },
@@ -2473,7 +2492,15 @@ select {
 
 .grid_inner .card {
     border: none;
+    position: relative;
 }
+.grid_inner .card .item_left{
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 1;
+}
+
 
 .card>img {
     width: 100%;
@@ -2779,6 +2806,7 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
 
 .product_img_wrapper img {
     width: 100%;
+    /* height: 348px; */
     object-fit: cover;
 }
 
@@ -3179,7 +3207,10 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
         font-size: 16.3333px;
         text-shadow: 0px 0.794134px 18.4636px rgba(0, 0, 0, 0.42);
     }
-
+    .grid_inner .card .item_left{
+      top: 5px;
+      right: 5px;
+    }
     .filter_row {
         margin: 5px 0 12px;
     }
@@ -3189,7 +3220,7 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
 <!-- loader -->
 <style scoped>
 /* Center the loader */
-#loader {
+/* #loader {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -3197,16 +3228,75 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
   width: 50px;
   height: 50px;
   margin: -76px 0 0 -76px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid green;
-  border-bottom: 16px solid red;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+} */
+
+
+ 
+#loader {
+  display:flex;
+  position: absolute;
+  left: 50%;
+  gap: 5px;
+  transform: translateX(-50%);
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  
+}
+#loader span {
+   vertical-align:middle;
+   border-radius:100%;
+   display:inline-block;
+   width:10px;
+   height:10px;
+   margin:3px 2px;
+   -webkit-animation:loader1 0.8s linear infinite alternate;
+   animation:loader1 0.8s linear infinite alternate;
+}
+#loader span:nth-child(1) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
+}
+#loader span:nth-child(2) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+}
+#loader span:nth-child(3) {
+   -webkit-animation-delay:-0.26666s;
+   animation-delay:-0.26666s;
+  background:#dbdbdb;
+}
+#loader span:nth-child(4) {
+   -webkit-animation-delay:-0.8s;
+   animation-delay:-0.8s;
+  background:#dbdbdb;
+  
+}
+#loader span:nth-child(5) {
+   -webkit-animation-delay:-1s;
+   animation-delay:-1s;
+  background:#dbdbdb;
 }
 
-@-webkit-keyframes spin {
+@keyframes loader1 {
+   from {transform: scale(0, 0);}
+   to {transform: scale(1, 1);}
+}
+@-webkit-keyframes loader1 {
+   from {-webkit-transform: scale(0, 0);}
+   to {-webkit-transform: scale(1, 1);}
+}
+
+  
+
+
+/* @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
@@ -3214,7 +3304,7 @@ input#img-6:checked~.nav-dots label#img-dot-6 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+} */
 
 /* Add animation to "page content" */
 .animate-bottom {

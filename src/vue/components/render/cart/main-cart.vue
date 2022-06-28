@@ -1,6 +1,9 @@
 <template>
   <!-- ====== Shoping cart Default template ====== -->
-  <section class="cart_default_sec">
+  <section
+    class="cart_default_sec"
+    v-bind:style="cartData.item_count == 0 ? 'display:block' : 'display:none'"
+  >
     <div class="big_container">
       <div class="sec_head">
         <div class="pre_arrow_wrapper">
@@ -8,7 +11,7 @@
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/left-arrow-new.svg?v=1654580925"
               alt="error"
-            >
+            />
           </button>
         </div>
       </div>
@@ -24,10 +27,7 @@
             v-for="(item, index) in shopifyData.sectionCta"
             :key="index"
           >
-            <a
-              :href="item.secCtaLink"
-              class="cta_btn cta_btn-black"
-            >
+            <a :href="item.secCtaLink" class="cta_btn cta_btn-black">
               {{ item.secCta }}
             </a>
           </template>
@@ -37,7 +37,7 @@
   </section>
 
   <!-- ====== Shoping cart With Products template ====== -->
-  <section class="cart_with_products">
+  <section class="cart_with_products" v-bind:style="(cartData.item_count > 0 ) ? 'display:block' : 'display:none'">
     <div class="big_container">
       <div class="sec_head">
         <div class="pre_arrow_wrapper">
@@ -45,7 +45,7 @@
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/left-arrow-new.svg?v=1654580925"
               alt="error"
-            >
+            />
           </button>
         </div>
       </div>
@@ -55,125 +55,28 @@
             {{ shopifyData.defaultSecHeading }}
           </h3>
           <div class="product_grid">
-            <div class="card">
-              <div
-                id="product_img_wrapper6678699180129"
-                class="product_img_wrapper"
-              >
-                <img
-                  id="6678699180129"
-                  src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216"
+            <div class="card" v-for="(value, key) in cartData.items" :key="key">
+              <!-- <a :href=(value.url)> -->
+              <div class="product_img_wrapper" :id="product_img_wrapper">
+                <div class="loder_tmb"> 
+                    <span></span><span></span>
+                    <span></span><span></span>
+                    <span></span>
+                </div>
+                <img :src="value.featured_image.url" :id="value.id" />
+                <button
+                  class="body_text1 remove"
+                  :variant="value.key"
+                  @click="removeCart"
                 >
-                <button class="body_text remove">
                   Remove
                 </button>
               </div>
-              <h5 class="card-title">
-                ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX
-              </h5>
+              <h5 class="card-title">{{ value.product_title }}</h5>
               <h5 class="card-title bold">
-                $285
+                ${{ (value.price / 100).toFixed(2) }}
               </h5>
-            </div>
-            <div class="card">
-              <div
-                id="product_img_wrapper6678699180129"
-                class="product_img_wrapper"
-              >
-                <img
-                  id="6678699180129"
-                  src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216"
-                >
-                <button class="body_text remove">
-                  Remove
-                </button>
-              </div>
-              <h5 class="card-title">
-                ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX
-              </h5>
-              <h5 class="card-title bold">
-                $285
-              </h5>
-            </div>
-            <div class="card">
-              <div
-                id="product_img_wrapper6678699180129"
-                class="product_img_wrapper"
-              >
-                <img
-                  id="6678699180129"
-                  src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216"
-                >
-                <button class="body_text remove">
-                  Remove
-                </button>
-              </div>
-              <h5 class="card-title">
-                ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX
-              </h5>
-              <h5 class="card-title bold">
-                $285
-              </h5>
-            </div>
-            <div class="card">
-              <div
-                id="product_img_wrapper6678699180129"
-                class="product_img_wrapper"
-              >
-                <img
-                  id="6678699180129"
-                  src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216"
-                >
-                <button class="body_text remove">
-                  Remove
-                </button>
-              </div>
-              <h5 class="card-title">
-                ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX
-              </h5>
-              <h5 class="card-title bold">
-                $285
-              </h5>
-            </div>
-            <div class="card">
-              <div
-                id="product_img_wrapper6678699180129"
-                class="product_img_wrapper"
-              >
-                <img
-                  id="6678699180129"
-                  src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216"
-                >
-                <button class="body_text remove">
-                  Remove
-                </button>
-              </div>
-              <h5 class="card-title">
-                ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX
-              </h5>
-              <h5 class="card-title bold">
-                $285
-              </h5>
-            </div>
-            <div class="card">
-              <div
-                id="product_img_wrapper6678699180129"
-                class="product_img_wrapper"
-              >
-                <img
-                  id="6678699180129"
-                  src="https://cdn.shopify.com/s/files/1/1000/3130/products/ELIZABETHBAGUETTEMINIAPRICOTFRONTcopy.jpg?v=1637782216"
-                >
-                <button class="body_text remove">
-                  Remove
-                </button>
-              </div>
-              <h5 class="card-title">
-                ELIZABETH BAGUETTE MINI PEBBLE BORDEAUX
-              </h5>
-              <h5 class="card-title bold">
-                $285
-              </h5>
+              <!-- </a> -->
             </div>
           </div>
         </div>
@@ -182,9 +85,7 @@
             <h4 class="subtotal_heading">
               {{ shopifyData.subtotalHeading }}
             </h4>
-            <p class="subtotal_price body_text">
-              $1,080
-            </p>
+            <p class="subtotal_price body_text">${{ (cartData.original_total_price / 100).toFixed(2) }}</p>
             <p class="body_text">
               {{ shopifyData.taxInfo }}
             </p>
@@ -195,10 +96,8 @@
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076"
                 alt="error"
-              >
-              <p class="body_text">
-                ⓘ
-              </p>
+              />
+              <p class="body_text">ⓘ</p>
             </div>
             <div class="cta_wrapper">
               <button class="cta_btn">
@@ -207,7 +106,8 @@
               <a
                 :href="shopifyData.continuCtaLink"
                 class="cta_btn cta-modifier"
-              >{{ shopifyData.continuCtaText }}</a>
+                >{{ shopifyData.continuCtaText }}</a
+              >
             </div>
           </div>
         </div>
@@ -224,7 +124,7 @@
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/left-arrow-new.svg?v=1654580925"
               alt="error"
-            >
+            />
           </button>
         </div>
       </div>
@@ -239,25 +139,65 @@
           <a
             :href="shopifyData.ThanksSecCtaLink"
             class="cta_btn cta_btn-black"
-          >{{ shopifyData.ThanksSecCtaText }}</a>
+            >{{ shopifyData.ThanksSecCtaText }}</a
+          >
         </div>
       </div>
     </div>
   </section>
 </template>
 
+
 <script>
+import { ShopifyAPI } from "../../../Shopify/Shopify";
+
 export default {
+  data() {
+    return {
+      cartData: [],
+    };
+  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     },
   },
+  mounted() {
+    this.refreshMainCart();
+  },
+  methods: {
+    refreshMainCart() {
+
+      //    console.log(this.shopifyData.cartItems)
+      let cartdata = window.atob(this.shopifyData.cartItems); // decode cart string
+      cartdata = JSON.parse(cartdata);
+
+      this.cartData = cartdata;
+    },
+    async removeCart(event) {
+      var dd = this;
+      event.target.closest(".card").classList.add("active")
+      var variant = event.target.getAttribute("variant");
+      var shopifyApi = new ShopifyAPI();
+      var item = {
+        id: variant,
+        quantity: 0,
+      };
+      var newData = await shopifyApi.removeItem(item);
+      event.target.closest(".card").classList.remove("active")
+      await new Promise(r => setTimeout(r, 500));
+      dd.cartData = newData.data;
+      
+    },
+  },
 };
 </script>
 
+
 <style scoped>
+
+
 .cart_default_sec,
 .cart_with_products,
 .thanks_sec {
@@ -431,6 +371,14 @@ export default {
 }
 .thanks_sec .cta_wrapper {
   margin-top: 73px;
+}
+
+.body_text1.remove{
+    position: absolute;
+    text-decoration: underline;
+    top: 13px;
+    right: 11px;
+    z-index: 1;
 }
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1200px) {

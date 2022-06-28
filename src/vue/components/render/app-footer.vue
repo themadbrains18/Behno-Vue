@@ -83,6 +83,60 @@ export default {
 </script>
 
 <style>
+
+/* Warning Css Code */
+.common_warning{
+    box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    bottom: 50px;
+    right: 50px;
+    transform: translateY( -20%);
+    gap: 10px;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    
+}
+.common_warning.warning.active,.common_warning.error.active,.common_warning.success.active{
+    transform: translateY( -50%);
+    background: #fff;
+    opacity: 1;
+    
+    visibility: visible;
+}
+.common_warning.warning path{
+  fill: #ffc107;
+}
+.common_warning.warning span{
+  color: #ffc107;
+  line-height: 1;
+}
+
+.common_warning.error path{
+  fill: red;
+}
+.common_warning.error span{
+    color: red;
+    line-height: 1;
+}
+
+.common_warning.success path{
+  fill: green;
+}
+
+.common_warning.success span{
+  color: green;
+  line-height: 1;
+}
+
 /* Footer Css Code */
 .footer_wave {
   line-height: 0;
