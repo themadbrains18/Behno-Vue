@@ -209,8 +209,10 @@
     <nav class="m_navbar_list navbar-Mobile">
       <ul class="m_navlist d-block w-100">
         <li class="m_navitem" v-for="(link) in MobileNavData" :key="link.title" >
-
-          <template v-if="link.links.length > 0">
+          <template v-if="link.url == '#'">
+            <sapn class="navlink w-100 t-left"></sapn>
+          </template>
+          <template v-else-if="link.links.length > 0">
             <button class="navlink nav_drpbtn w-100 t-left" @click="toggleDropDown" v-html="link.title">
             </button>
             <div class="nav_drpbtn_content">
@@ -1081,7 +1083,7 @@ button.behno_increment_dec:after {
     height: 100%;
     min-height: 100vh;
     width: min(100%, 300px);
-    background: #f3f3f3;
+    background: #E9E7E3;
     padding: 25px 20px 70px;
     z-index: 5;
     display: flex;
