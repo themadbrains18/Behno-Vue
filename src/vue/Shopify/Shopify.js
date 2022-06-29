@@ -3,8 +3,8 @@ import axios from "axios"
 
 class ShopifyAPI {
 
-    /**
-     *  shopify global attributes
+    /*
+       shopify global attributes
      */
 
 
@@ -132,11 +132,8 @@ class ShopifyAPI {
                 errorMessage = response.data.message;
             }
             this.openToast(errorMessage);
-            
         }
-
     }
-
     openToast(message){
         let toastDiv=document.querySelector('.common_warning.error .message');
         toastDiv.innerHTML=message;
@@ -347,6 +344,17 @@ class ShopifyAPI {
 
     /** Get Assets  */
 
+
+    /**
+     * page over layer when user product add to cart also open drawer
+     */
+
+    addOverLayer(){
+        // let bg_Layer= document.querySelector(".bg_layer_removecart");
+        // bg_Layer.addEventListener("click",()=>{
+        //     bg_Layer.classList.toggle("active")
+        // })
+    }
 }
 
 

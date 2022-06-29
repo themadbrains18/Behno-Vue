@@ -13,10 +13,10 @@
         </div>
         <!-- left Navlist -->
         <ul class="navlist navlist-left">
-          <li class="navitem first-navitem" @mouseenter="stopScroll" @mouseleave="workScroll">
+          <li class="navitem first-navitem" >
             <a :href="HeaderNavData[0].url" class="navlink navlink_drpdown" v-html="HeaderNavData[0].title"></a>
             <!--  HANDBAGS & WALLETS Start -->
-            <div class="navlink__hover"  >
+            <div class="navlink__hover"  @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item" v-for="subLink in  HeaderNavData[0].links" :key="subLink.title">
                   <ul class="subnavlink__list hover-img">
@@ -49,10 +49,10 @@
             </div>
             <!--  HANDBAGS & WALLETS End -->
           </li>
-          <li class="navitem"  @mouseenter="stopScroll" @mouseleave="workScroll">
+          <li class="navitem" >
             <a :href="HeaderNavData[1].title" class="navlink navlink_drpdown" v-html="HeaderNavData[1].title"></a>
             <!--NANAMOTA  Start -->
-            <div class="navlink__hover">
+            <div class="navlink__hover"  @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item" v-for="(subLink,subLinkIndex) in  HeaderNavData[1].links" :key="subLink.title">
                   <ul class="subnavlink__list hover-img">
@@ -117,10 +117,10 @@
 
         <!-- Rigth Navlist -->
         <ul class="navlist navlist-right">
-          <li class="navitem" @mouseenter="stopScroll" @mouseleave="workScroll">
+          <li class="navitem" >
             <a :href="HeaderNavData[this.logoImageIndex + 1].url" class="navlink navlink_drpdown"> {{ HeaderNavData[this.logoImageIndex + 1].title }} </a>
             <!-- CLIENT SERVICES Start -->
-            <div class="navlink__hover" >
+            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <li class="navlink__hover_item" v-for="subLink in  HeaderNavData[this.logoImageIndex + 1].links" :key="subLink.title">
                   <ul class="subnavlink__list">
@@ -139,10 +139,10 @@
             </div>
             <!-- CLIENT SERVICES End -->
           </li>
-          <li class="navitem" @mouseenter="stopScroll" @mouseleave="workScroll">
+          <li class="navitem" >
             <a :href="HeaderNavData[this.logoImageIndex + 2].url" class="navlink navlink_drpdown" v-html="HeaderNavData[this.logoImageIndex + 2].title">  </a>
             <!-- THE SENSE OF BEHNO Start -->
-            <div class="navlink__hover" >
+            <div class="navlink__hover" @mouseenter="stopScroll" @mouseleave="workScroll">
               <ul class="navink__hover_list">
                 <!-- ===   ON hover Class Show First row ===  -->
                 <li class="navlink__hover_item" v-for="subLink in  HeaderNavData[this.logoImageIndex + 2].links" :key="subLink.title">
@@ -170,24 +170,16 @@
           <!-- Header Button Group -->
           <li class="desktop_btn_grp">
             <div class="nav_btns">
-              <button class="search_btn">
+              <button class="search_btn" id="searcBtn" @click="toggleSearchBar">
                 <v-lazy-image :src="(shopifyData.search)" alt="Search Icon" />
               </button>
-              <a
-                class="shopping_btn"
-                @click="show = !show"
-              >
-                <v-lazy-image
-                  :src="(shopifyData.bag)"
-                  alt="Shopping Icon"
-                />
-
+              <a class="shopping_btn" @click="show = !show">
+                <v-lazy-image :src="(shopifyData.bag)" alt="Shopping Icon"/>
                 <span class="shopping_btn_count">0</span>
               </a>
             </div>
           </li>
         </ul>
-
         <!-- Responsive Mobile Btn Grp -->
         <div class="mobile_btn_grp">
           <div class="nav_btns">
@@ -217,8 +209,10 @@
     <nav class="m_navbar_list navbar-Mobile">
       <ul class="m_navlist d-block w-100">
         <li class="m_navitem" v-for="(link) in MobileNavData" :key="link.title" >
-
-          <template v-if="link.links.length > 0">
+          <template v-if="link.url == '#'">
+            <sapn class="navlink w-100 t-left"></sapn>
+          </template>
+          <template v-else-if="link.links.length > 0">
             <button class="navlink nav_drpbtn w-100 t-left" @click="toggleDropDown" v-html="link.title">
             </button>
             <div class="nav_drpbtn_content">
@@ -250,6 +244,34 @@
       </ul>
     </nav>
     <!-- ======= Mobile Navigation End ======= -->
+       <!-- ======= Search Bar Start ======= -->
+    <div class="main_search_bar" id="mainSearchBar">
+      <form action="/search" class="search_bar_items" id="searchBar">
+        <button type="submit" class="search_icon">
+          <img :src="shopifyData.search" alt="Search Icon" />
+        </button>
+        <input type="text" name="type" hidden value="product"/>
+        <input type="text" name="q" class="search_item" placeholder="Search..." />
+        <button type="button" @click="toggleSearchBar()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <!-- ======= Search Bar Start ======= -->
   </header>
 
   <!-- ====== Shoping Mini Cart ====== -->
@@ -257,7 +279,6 @@
   <!-- :class="[{ active: !show }, mini_cart_container]" -->
   <section class="mini_cart">
     <div :class="[{ active: !show }, 'mini_cart_container']" >
-    
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
         <button
@@ -331,12 +352,10 @@
         </div> 
       </div>
     </div>
-    <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show">
+    <!-- <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show" > -->
+    <span class="bg_layer_removecart">
     </span>
-    <div
-      class="mini-add-card"
-      :class="{ active: !show }"
-    >   
+    <div class="mini-add-card" :class="{ active: !show }">
       <a
         href="/checkout"
         class="add-card-chk"
@@ -362,7 +381,6 @@ export default {
     },
   },
   data() {
-    console.log("shopifyData",this.shopifyData)
     window.addEventListener("scroll", this.scollHeader);
     return {
       logoImageIndex :0,
@@ -376,6 +394,17 @@ export default {
     this.header = document.getElementsByClassName("tmbHeader");   
   },
   mounted (){
+    window.addEventListener("click",()=>{
+      let miniCartRemoveActive= document.querySelectorAll(".mini_cart_container");
+      let miniCartCheckoutRemoveActive= document.querySelector(".mini-add-card");
+      document.querySelector(".bg_layer_removecart").addEventListener("click",()=>{
+        miniCartCheckoutRemoveActive.classList.remove("active");
+        for(let i of miniCartRemoveActive){
+          i.classList.remove("active");
+        }
+      });
+      
+    })
       this.refreshMiniCart(),
       this.shopifyData.HeaderNavData.forEach((element,index) => {
         if(element.title.includes('.png') || element.title.includes('.jpg') || element.title.includes('.svg')){
@@ -385,6 +414,11 @@ export default {
   },
  
   methods: {
+    
+    toggleSearchBar(){
+      document.querySelector("#mainSearchBar").classList.toggle("show");
+      document.querySelector("#mainSearchBar .search_item").focus();
+    },
     refreshMiniCart(){
         var refreshCart = new ShopifyAPI()
         refreshCart.refreshMiniCart();
@@ -472,7 +506,7 @@ export default {
     // addActiveBody:function(e){
     //     console.log("qwer");
     // }
-  }
+  } 
 };
 </script>
 
@@ -521,10 +555,10 @@ button.behno_increment_dec:after {
 }
 
 
-
-
-
 /*------- Mini Cart Css -------*/
+
+
+
 
 .product_img_wrapper {
     position: relative;
@@ -561,7 +595,7 @@ button.behno_increment_dec:after {
   right: 0;  
   top: auto;
   bottom: 0;
-  z-index:5;
+  z-index:6;
   transition: 0.3s;
   transform: translateX(110%);
   text-align:center;
@@ -711,11 +745,11 @@ button.behno_increment_dec:after {
     font-size: 12px;
     line-height: 14px;
 }
-
-.bg_layer_removecart.active{
+.active.mini_cart_container+ .bg_layer_removecart{
   visibility: visible;
   transition: 0.3s;
 }
+
 .bg_layer_removecart{
   position: fixed;
   top: 0;
@@ -733,6 +767,48 @@ button.behno_increment_dec:after {
 
 
 <style scoped>
+.tmbHeader .main_search_bar.show{
+  transform: translateY(55px);
+}
+.tmbHeader .main_search_bar{
+    position: absolute;
+    /* border-bottom: solid 1px #eee; */
+    box-shadow: 0 0 20px #eee;
+    transform: translateY(-100%);
+    transition: transform .3s linear;
+    max-width: 480px;
+    width: 100%;
+    background: #fff;
+    right: 0;
+    top: 0;
+}
+.search_bar_items {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.search_item{
+  border: none;
+  margin: 0 10px;
+  width: 100%;
+  outline: none;
+}
+
+.search_icon img{
+  width: 20px;
+}
+
+.search_item + button svg{
+  width: 20px;
+  height: 20px;
+}
+@media only screen and (max-width: 575px){
+  .tmbHeader .main_search_bar{
+    max-width: 320px;
+  }
+}
+/*   search bar */
+
 .header_toggle_wrap,
 .mobile_btn_grp,
 .navbar-Mobile {
@@ -805,7 +881,6 @@ button.behno_increment_dec:after {
 
 .shopping_btn {
   position: relative;
-  margin-bottom: 10px;
   cursor: pointer;
 }
 .shopping_btn_count {
@@ -1018,7 +1093,7 @@ button.behno_increment_dec:after {
     height: 100%;
     min-height: 100vh;
     width: min(100%, 300px);
-    background: #f3f3f3;
+    background: #E9E7E3;
     padding: 25px 20px 70px;
     z-index: 5;
     display: flex;
