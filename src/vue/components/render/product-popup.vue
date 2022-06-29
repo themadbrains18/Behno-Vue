@@ -60,7 +60,7 @@ export default {
           this.$store.dispatch('my-module/toggle');
           console.log(this.$store.state['my-module'].visible)
       //  $store.dispatch('my-module/toggle');
-      console.log('woo ')
+      
     }
   }
   

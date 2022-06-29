@@ -1871,6 +1871,8 @@ export default {
         },
 
         async addToCard(event) {
+            // document.querySelector('.bg_layer_removecart').classList.add('active');
+
             event.target.closest(".card").classList.add("active")
             var product = event.target.parentNode;
             var variant = product.getAttribute("variantid");
