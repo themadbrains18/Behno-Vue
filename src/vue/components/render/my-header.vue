@@ -350,12 +350,10 @@
         </div> 
       </div>
     </div>
-    <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show" >
+    <!-- <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show" > -->
+    <span class="bg_layer_removecart">
     </span>
-    <div
-      class="mini-add-card"
-      :class="{ active: !show }"
-    >   
+    <div class="mini-add-card" :class="{ active: !show }">
       <a
         href="/checkout"
         class="add-card-chk"
@@ -394,7 +392,17 @@ export default {
     this.header = document.getElementsByClassName("tmbHeader");   
   },
   mounted (){
-
+    window.addEventListener("click",()=>{
+      let miniCartRemoveActive= document.querySelectorAll(".mini_cart_container");
+      let miniCartCheckoutRemoveActive= document.querySelector(".mini-add-card");
+      document.querySelector(".bg_layer_removecart").addEventListener("click",()=>{
+        miniCartCheckoutRemoveActive.classList.remove("active");
+        for(let i of miniCartRemoveActive){
+          i.classList.remove("active");
+        }
+      });
+      
+    })
       this.refreshMiniCart(),
       this.shopifyData.HeaderNavData.forEach((element,index) => {
         if(element.title.includes('.png') || element.title.includes('.jpg') || element.title.includes('.svg')){
@@ -404,6 +412,7 @@ export default {
   },
  
   methods: {
+    
     toggleSearchBar(){
       document.querySelector("#mainSearchBar").classList.toggle("show");
       document.querySelector("#mainSearchBar .search_item").focus();
@@ -734,11 +743,11 @@ button.behno_increment_dec:after {
     font-size: 12px;
     line-height: 14px;
 }
-
-.bg_layer_removecart.active{
+.active.mini_cart_container+ .bg_layer_removecart{
   visibility: visible;
   transition: 0.3s;
 }
+
 .bg_layer_removecart{
   position: fixed;
   top: 0;

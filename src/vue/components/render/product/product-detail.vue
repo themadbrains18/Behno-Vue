@@ -143,7 +143,6 @@
           >
           <div class="add_cart_btn_wrap">
             <button
-              @click="dsfsdfsdf"
               v-if="currentVariantQty > 0"
               id="AddToCart"
               type="submit"
@@ -563,7 +562,7 @@ export default {
             let form = e.target
           
             // find button add acctive class
-            form.querySelector('button[type="submit"]').classList.add('active')
+            form.querySelector('button[type="submit"]').classList.add('active');
 
             // e.classList.add("active")
             // console.log(this.selectedProduct.variants[0].id);
@@ -576,9 +575,10 @@ export default {
             };
 
             await dynamic.addItem(item);
-            form.querySelector('button[type="submit"]').classList.remove('active')
-            
-        
+            form.querySelector('button[type="submit"]').classList.remove('active');
+
+            // document.querySelector('.bg_layer_removecart').click();
+
         },
         sizeSelect(size,type){
             let label= document.querySelector("#selectSize");
