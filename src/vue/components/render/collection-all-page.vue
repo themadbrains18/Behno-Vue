@@ -147,7 +147,7 @@
                       <input
                         :id="option.id"
                         class="multiselectOption"
-                        type="radio"
+                        type="checkbox"
                         name="category"
                         :value="option.value"
                         @change="onCheck($event)"
@@ -222,7 +222,7 @@
                       <input
                         :id="option.id"
                         class="multiselectOption"
-                        type="radio"
+                        type="checkbox"
                         name="color"
                         :value="option.value"
                         @change="onCheckColor($event)"
@@ -297,7 +297,7 @@
                       <input
                         :id="option.id"
                         class="multiselectOption"
-                        type="radio"
+                        type="checkbox"
                         name="size"
                         :value="option.value"
                         @change="onCheckSize($event)"
@@ -374,7 +374,7 @@
                       <input
                         :id="option.id"
                         class="multiselectOption"
-                        type="radio"
+                        type="checkbox"
                         name="material"
                         :value="option.value"
                         @change="onCheckMaterial($event)"
@@ -630,10 +630,10 @@
                 >
                   <span>Quick Add</span>
                   <div class="loder_tmb"> 
-                        <span></span><span></span>
-                        <span></span><span></span>
-                        <span></span>
-                    </div>
+                    <span /><span />
+                    <span /><span />
+                    <span />
+                  </div>
 
                 </button>
               </span>
@@ -650,7 +650,7 @@
           <a :href="`/products/` + value.variable[value.active].handle">
                 
             <div
-             :id="`item_left_`+value.variable[value.active].handle"
+              :id="`item_left_`+value.variable[value.active].handle"
               class="item_left"
               :class="{
                 item_left_active: value.variable[value.active].variants[0].inStock < 5,
@@ -747,11 +747,10 @@
               >
                 <span>Quick Add</span>
                 <div class="loder_tmb"> 
-                        <span></span><span></span>
-                        <span></span><span></span>
-                        <span></span>
-                    </div>
-
+                  <span /><span />
+                  <span /><span />
+                  <span />
+                </div>
               </button>
             </div>
           </div>
@@ -759,11 +758,11 @@
       </div>
     </div>
     <div id="loader">
-       <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span />
+      <span />
+      <span />
+      <span />
+      <span />
     </div>
     <div
       class="row centeralign addmargin"
@@ -812,12 +811,12 @@ export default {
             showColor: false,
             showSize: false,
             showMaterial: false,
-            selected: '',
+            selected: [],
             selectedFilter: [],
             selectedSort: ["Recommended"],
-            selectedColor: '',
-            selectedSize: '',
-            selectedMaterial: '',
+            selectedColor: [],
+            selectedSize: [],
+            selectedMaterial: [],
 
             ddTestCategory: this.getCategoryDropDownList(),
             ddTestColor: this.getColorDropDownList(),
@@ -1207,21 +1206,38 @@ export default {
 
         /* set selected color checkbox value */
         onCheckColor: function (event) {
-            this.selectedColor = (event.target.value);
-            this.filterProductByColor()
+            if (this.selectedColor.includes(event.target.value)) {
+                this.selectedColor = this.selectedColor.filter(function (geeks) {
+                    return geeks != event.target.value;
+                });
+            } else {
+                this.selectedColor.push(event.target.value);
+            }
+            console.log(this.selectedColor)
         },
 
         /* set selected size checkbox value */
         onCheckSize: function (event) {
-            this.selectedSize = (event.target.value);
-            this.filterProductBySize();
+           if (this.selectedSize.includes(event.target.value)) {
+                this.selectedSize = this.selectedSize.filter(function (geeks) {
+                    return geeks != event.target.value;
+                });
+            } else {
+                this.selectedSize.push(event.target.value);
+            }
+            console.log(this.selectedSize)
         },
 
         /* set selected material checkbox value */
         onCheckMaterial: function (event) {
-
-            this.selectedMaterial = (event.target.value);
-            this.filterProductByMaterial();
+            if (this.selectedMaterial.includes(event.target.value)) {
+                this.selectedMaterial = this.selectedMaterial.filter(function (geeks) {
+                    return geeks != event.target.value;
+                });
+            } else {
+                this.selectedMaterial.push(event.target.value);
+            }
+            console.log(this.selectedMaterial)
         },
 
         /* set selected sort checkbox value */
@@ -1408,74 +1424,20 @@ export default {
             this.page_index = 0;
         },
 
-        /**
-         * save filter in localstorage when user choose filter option
-         */
-        saveFilter(name, value) {
-            var saveVal = []
-
-            // var filter = localStorage.setItem('fillters',[])
-            var filter = localStorage.getItem('fillters')
-            var dd = {}
-
-            /* when selectedFilter is empty */
-            if (filter == '') {
-
-                dd[name] = value
-                saveVal.push(dd)
-                localStorage.setItem('fillters', JSON.stringify(saveVal))
-                this.showClearAll = true;
-                this.fetchProdustQuery()
-                return;
-            }
-
-            var prev = JSON.parse(filter)
-
-            var values = prev.map(function (o) {
-                return o[name];
-            });
-
-            var flag = false
-            var index = prev.map(function (e, i) {
-                if (Object.prototype.hasOwnProperty.call(e, name)) {
-                    flag = true
-                }
-            });
-
-            var ColVal = value
-
-            /* in property has already filled */
-            if (flag) {
-                var newArray = []
-                prev.map(function (o) {
-                    // return o.Category; 
-                    if (Object.prototype.hasOwnProperty.call(o, name)) {
-                        var updateval = {
-                            [name]: ColVal
-                        }
-                        newArray.push(updateval)
-                    } else {
-                        newArray.push(o)
-                    }
-                })
-                localStorage.setItem('fillters', JSON.stringify(newArray))
-            } else {
-                dd[name] = ColVal
-                prev.push(dd)
-                localStorage.setItem('fillters', JSON.stringify(prev))
-            }
-
-            this.showClearAll = true;
-            this.fetchProdustQuery()
-
-            // console.log(localStorage.getItem('fillters'))
-
-        },
+       
 
         /* set selected category checkbox value */
         onCheck(event) {
-            this.saveFilter("Category", event.target.value)
+            if (this.selected.includes(event.target.value)) {
+                  this.selected = this.selected.filter(function (geeks) {
+                      return geeks != event.target.value;
+                  });
+            } else {
+                  this.selected.push(event.target.value);
+            }
+            this.fetchProdustQuery()
             this.page_index = 0;
+
         },
 
         /* set product in array based on selected color option */
@@ -1521,6 +1483,9 @@ export default {
             /*********************************************************/
             // start filter (initailize value)
             /*********************************************************/
+            
+
+
             var Categories, Color, Size, Material;
             Categories = ''
             Color = ''
@@ -1561,11 +1526,20 @@ export default {
                 /*********************************************************/
                 /// category filter applied here (start)
                 /*********************************************************/
+                if (JSON.parse(JSON.stringify(this.selected)).length !== 0) { // first check if value set
+                    var catFlag = false
 
-                if (Categories != '') { // first check if value set
-                    if (p.tags.includes(Categories) == false) {
+                    JSON.parse(JSON.stringify(this.selected)).map((selectedTags) => {
+                        console.log(selectedTags)
+                        if (p.tags.includes(selectedTags)) {
+                            catFlag = true
+                        }
+                    })
+
+
+                    if(catFlag == false)
                         continue
-                    }
+
                 }
 
                 /*********************************************************/

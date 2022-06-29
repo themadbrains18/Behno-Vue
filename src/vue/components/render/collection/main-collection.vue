@@ -537,7 +537,6 @@
                 class="quickButton"
                 :class="{ quickActive: isMobile==false?product.id == productId:true }"
               >
-             
                 <div class="color_swatches">
                   <ul>
                     <li
@@ -591,9 +590,9 @@
                   >
                     <span>Quick Add</span>
                     <div class="loder_tmb"> 
-                        <span></span><span></span>
-                        <span></span><span></span>
-                        <span></span>
+                      <span /><span />
+                      <span /><span />
+                      <span />
                     </div>
                   </button>
                 </div>

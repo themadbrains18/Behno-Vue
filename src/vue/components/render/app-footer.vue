@@ -13,16 +13,29 @@
         <div class="footer_content">
           <!-- Footer Link -->
           <ul class="footer_link_list">
-            <li class="footer_item" v-for="(item,index) in  this.shopifyData.footerMenu" :key="index">
-              <a class="footer_link" :href="item.linkTitle" > {{ item.linkTitle }} </a>
+            <li
+              v-for="(item,index) in shopifyData.footerMenu"
+              :key="index"
+              class="footer_item"
+            >
+              <a
+                class="footer_link"
+                :href="item.linkTitle"
+              > {{ item.linkTitle }} </a>
             </li>
             <li class="footer_item follow-journey">
               <span class="footer_link">FOLLOW OUR JOURNEY</span>
               <div class="footer_social_link">
-                <a class="link" href="https://www.facebook.com/behno-461960733987428/?fref=ts&ref=br_tf">
+                <a
+                  class="link"
+                  href="https://www.facebook.com/behno-461960733987428/?fref=ts&ref=br_tf"
+                >
                   <v-lazy-image :src="(shopifyData.fbIcon)" />
                 </a>
-                <a class="link" href="https://www.instagram.com/behno_official/">
+                <a
+                  class="link"
+                  href="https://www.instagram.com/behno_official/"
+                >
                   <v-lazy-image :src="(shopifyData.instaIcon)" />
                 </a>
               </div>
@@ -33,7 +46,7 @@
             <h3 class="footer_form_heading">
               STAY IN TOUCH.
               <span>
-                &nbsp;{{ this.shopifyData.stayTouch }}
+                &nbsp;{{ shopifyData.stayTouch }}
               </span>
             </h3>
             <form
@@ -55,8 +68,8 @@
             </form>
             <h4 class="footer_after_pay">
               <!-- ../../assets/svg/after-icon.svg -->
-              <v-lazy-image :src="(this.shopifyData.afterIcon)" />
-              <span> {{ this.shopifyData.afterpay }} </span>
+              <v-lazy-image :src="(shopifyData.afterIcon)" />
+              <span> {{ shopifyData.afterpay }} </span>
             </h4>
           </div>
         </div>

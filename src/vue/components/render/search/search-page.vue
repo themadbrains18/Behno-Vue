@@ -1,15 +1,27 @@
 <template>
   <!-- Collacction Banner Code -->
-  <h2 class="t-center" style="padding: 50px 0;" >Search</h2>
+  <h2
+    class="t-center"
+    style="padding: 50px 0;"
+  >
+    Search
+  </h2>
 
   <div class="product_grid">
     <div
       class="grid_inner product-containers"
       :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }"
     >
-      <div v-for="(value, key) in Products" :key="key" class="product_item">
+      <div
+        v-for="(value, key) in Products"
+        :key="key"
+        class="product_item"
+      >
         <!-- this block work for single product products -->
-        <div v-if="value.hasOwnProperty('single')" class="card">
+        <div
+          v-if="value.hasOwnProperty('single')"
+          class="card"
+        >
           <a :href="`/products/` + value.single.handle">
             <div
               :id="`item_left_` + value.single.handle"
@@ -20,11 +32,11 @@
             >
               {{
                 value.single.variants[0].inStock <= 5 &&
-                value.single.variants[0].inStock >= 1
+                  value.single.variants[0].inStock >= 1
                   ? "ONLY " + value.single.variants[0].inStock + " LEFT"
                   : value.single.variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -32,21 +44,36 @@
               v-if="value.single.images.length > 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
-              <img :src="value.single.images[1]" alt="" class="hoverImg" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
+              <img
+                :src="value.single.images[1]"
+                alt=""
+                class="hoverImg"
+              >
             </div>
             <div
               v-else-if="value.single.images.length == 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -59,7 +86,10 @@
 
           <div class="quickButton quickActive">
             <div class="color_swatches" />
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
               <!-- if quantity is 0 then hide -->
 
               <span v-if="value.single.variants[0].inStock != 0">
@@ -71,8 +101,8 @@
                 >
                   <span>Quick Add</span>
                   <div class="loder_tmb">
-                    <span></span><span></span> <span></span><span></span>
-                    <span></span>
+                    <span /><span /> <span /><span />
+                    <span />
                   </div>
                 </button>
               </span>
@@ -85,7 +115,7 @@
         <div
           v-if="
             value.hasOwnProperty('variable') &&
-            value.variable.length - 1 >= value.active
+              value.variable.length - 1 >= value.active
           "
           class="card"
         >
@@ -100,13 +130,13 @@
             >
               {{
                 value.variable[value.active].variants[0].inStock <= 5 &&
-                value.variable[value.active].variants[0].inStock >= 1
+                  value.variable[value.active].variants[0].inStock >= 1
                   ? "ONLY " +
                     value.variable[value.active].variants[0].inStock +
                     " LEFT"
                   : value.variable[value.active].variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -119,12 +149,12 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
               <img
                 :src="value.variable[value.active].images[1]"
                 alt=""
                 class="hoverImg"
-              />
+              >
             </div>
             <div
               v-else-if="value.variable[value.active].images.length == 1"
@@ -135,14 +165,17 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -169,12 +202,15 @@
                     <img
                       :src="getThemeAssets(sValue.img)"
                       :class="sValue.img"
-                    />
+                    >
                   </span>
                 </li>
               </ul>
             </div>
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
               <button
                 :id="'quickAdd' + value.variable[value.active].id"
                 :class="{
@@ -188,8 +224,8 @@
               >
                 <span>Quick Add</span>
                 <div class="loder_tmb">
-                  <span></span><span></span> <span></span><span></span>
-                  <span></span>
+                  <span /><span /> <span /><span />
+                  <span />
                 </div>
               </button>
             </div>
@@ -198,11 +234,11 @@
       </div>
     </div>
     <div id="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span />
+      <span />
+      <span />
+      <span />
+      <span />
     </div>
     <div
       class="row centeralign addmargin"
@@ -211,7 +247,9 @@
         productfound: Products.length > 0,
       }"
     >
-      <h2 class="sec_heading">We're sorry, no matches were found.</h2>
+      <h2 class="sec_heading">
+        We're sorry, no matches were found.
+      </h2>
       <h4 class="body_text">
         We couldn't find any results for your selected filters. Clear your
         filters, or contact our team and we'll be happy to help.

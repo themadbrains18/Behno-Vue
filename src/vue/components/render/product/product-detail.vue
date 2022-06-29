@@ -28,7 +28,7 @@
               slidesPerView: '1'
             }
           }"
-          :initialSlide="0"
+          :initial-slide="0"
           :init="true"
           class="product-media-slider "
           @swiper="setThumbsSwiper"
@@ -38,18 +38,24 @@
             :key="key"
             class="product_slide"
           >
-
             <div
+              v-if="value.media_type == 'image'"
               class="product_media"
-              @click="productZoomInOut" v-if="value.media_type == 'image'"
+              @click="productZoomInOut"
             >
               <img :src="value.src">
             </div>
             <div
+              v-if="value.media_type == 'video'"
               class="product_media"
-              @click="productZoomInOut" v-if="value.media_type == 'video'"
+              @click="productZoomInOut"
             >
-              <video autoplay loop="true" width="450" :src="value.sources[0].url"></video>
+              <video
+                autoplay
+                loop="true"
+                width="450"
+                :src="value.sources[0].url"
+              />
             </div>
           </swiper-slide>
         </swiper>
@@ -151,7 +157,9 @@
               class="add_cart_btn cta_btn cta_btn-black"
             >
               ADD TO BAG
-              <div class="loder_tmb"> <span></span><span></span> <span></span><span></span> <span></span> </div>
+              <div class="loder_tmb">
+                <span /><span /> <span /><span /> <span />
+              </div>
             </button>
 
             <button
@@ -381,16 +389,23 @@
             class="t-center"
           >
             <div
+              v-if="value.media_type == 'image'"
               class="product_media"
-              @click="productZoomInOut" v-if="value.media_type == 'image'"
+              @click="productZoomInOut"
             >
               <img :src="value.src">
             </div>
             <div
+              v-if="value.media_type == 'video'"
               class="product_media"
-              @click="productZoomInOut" v-if="value.media_type == 'video'"
+              @click="productZoomInOut"
             >
-              <video autoplay loop="true" width="720" :src="value.sources[1].url"></video>
+              <video
+                autoplay
+                loop="true"
+                width="720"
+                :src="value.sources[1].url"
+              />
             </div>
           </swiper-slide>
         </swiper>

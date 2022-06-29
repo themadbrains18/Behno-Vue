@@ -32,7 +32,6 @@
           </swiper-slide>
         </template>
         <!-- Custom card -->
-       
       </swiper>
     </section>
   </div>
@@ -50,6 +49,18 @@ export default {
     Swiper,
     SwiperSlide,
   },
+
+  props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+  setup() {
+    return {
+      modules: [Navigation,Mousewheel],
+    };
+  },
   data() {
         return {
             relatedProduct : []
@@ -66,18 +77,6 @@ export default {
           this.relatedProduct = data.data.products
           console.log(data)
       }
-  },
-
-  props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  },
-  setup() {
-    return {
-      modules: [Navigation,Mousewheel],
-    };
   }
 };
 </script>

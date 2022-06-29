@@ -89,7 +89,7 @@
               </li>
             </ul>
           </div>
-          <div class="product_cta_wrapper"  >
+          <div class="product_cta_wrapper">
             <button
               :id="'quickAdd'+product.id"
               class="quickAdd"
