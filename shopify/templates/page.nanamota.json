@@ -7,9 +7,13 @@
         "shop-tabs-sec": {
             "type": "shop-tabs-sec",
             "settings": {}
+        },
+        "nanamota-shop-grid": {
+            "type": "nanamota-shop-grid",
+            "settings": {}
         }
     },
     "order": [
-        "nanamota-hero", "shop-tabs-sec"
+        "nanamota-hero", "shop-tabs-sec","nanamota-shop-grid"
     ]
 }
