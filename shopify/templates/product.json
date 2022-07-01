@@ -8,21 +8,11 @@
         "RightGridpara": "Your bag is handcrafted in Nashik, Maharashtra, in a facility that incrementally implements The behno Standard, a set of six guiding principles."
       }
     },
-    
     "product-recommanded": {
       "type": "product-recommanded",
       "settings": {
         "secHeading": "YOU MAY ALSO LIKE",
-        "showProduct": true,
-        "product_list": [
-          "alex-shoulder-bag-glossy-croc-balsamic",
-          "ana-flat-tote-crossbody-nappa-ruched-olive",
-          "ana-flat-tote-crossbody-pebble-ruched-apricot",
-          "ana-flat-tote-crossbody-pebble-ruched-bordeaux",
-          "ana-flat-tote-crossbody-pebble-ruched-red",
-          "ana-flat-tote-large-pebble-ruched-apricot",
-          "ana-flat-tote-large-pebble-ruched-black"
-        ]
+        "showProduct": true
       }
     }
   },

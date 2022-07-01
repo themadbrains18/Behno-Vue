@@ -1,0 +1,15 @@
+{
+    "sections": {
+        "nanamota-hero": {
+            "type": "nanamota-hero",
+            "settings": {}
+        },
+        "shop-tabs-sec": {
+            "type": "shop-tabs-sec",
+            "settings": {}
+        }
+    },
+    "order": [
+        "nanamota-hero", "shop-tabs-sec"
+    ]
+}

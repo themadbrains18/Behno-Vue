@@ -4,7 +4,7 @@
       "type": "blog-hero",
       "settings": {
         "checkSection": true,
-        "heroHeading": "new",
+        "heroHeading": "Test Blog",
         "heroImgDesktop": "shopify:\/\/shop_images\/blog-banner-bg.jpg",
         "heroImgMobile": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg"
       }
