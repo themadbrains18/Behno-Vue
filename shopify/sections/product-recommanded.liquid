@@ -1,7 +1,47 @@
+<!-- get swatches (images) list  -->
+{% paginate collections.all.products by 800 %}
+{% capture products %}  
+        [{% for product in collections.all.products %}
+                {% capture variantsList %} 
+                 {
+                        {% for variant in product.variants %}
+                         "{{- variant.id -}}":"{{ variant.inventory_quantity }}"{% if forloop.last %}{% else %},{% endif %}
+                        {% endfor %}
+                 }
+                {% endcapture %}
+                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}}]{% if forloop.last %}
+                {% else %},{% endif %}
+        {% endfor %}]    
+    {% endcapture %}
+{% endpaginate %}
+
+
+<!-- get swatches (images) list  -->
+{% paginate collections.all.products by 800 %}
+{% capture assets %}   
+        [{% for assetss in collections.all.products %}
+        {%- if assetss.metafields.my_fields.variants_swtach -%}
+             {% assign imagesAssets = assetss.metafields.my_fields.variants_swtach | split:" " %}
+             {%- for images in imagesAssets -%}
+                 { "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}
+             {% endfor %},{% endif %}{% endfor %}]    
+   {% endcapture %} 
+{% endpaginate %}
+
+
+<!-- {% capture Tags  %}
+  [{% for tag in product.tags %}
+    `{{tag}}`
+  {% if forloop.last %}{% else %},{% endif %}
+  {% endfor %}]
+{% endcapture %} -->
 
 <render-product-product-recommanded :shopify-data="{
   secHeading     : `{{ section.settings.secHeading}}`,
   showProduct    : `{{ section.settings.showProduct}}`,
+  productTag     : `{{ product.tags | base64_encode  }}`,
+  collectionListing : '{{ products | base64_encode }}',
+  swatchesImages : '{{ assets | replace: ',]',']' | base64_encode }}',
   relatedProduct :  `{{ routes.product_recommendations_url }}.json?section_id={{ section.id }}&product_id={{ product.id }}&limit=20`,
 }">
 </render-product-product-recommanded>
