@@ -8,25 +8,19 @@
             "type": "shop-tabs-sec",
             "settings": {}
         },
-<<<<<<< HEAD
         "nanamota-commitment": {
             "type": "nanamota-commitment",
             "settings": {}
         },
         "nanamota-small-thing":{
-            "type": "nanamota-small-thing",
-=======
+            "type": "nanamota-small-thing"
+        },    
         "nanamota-shop-grid": {
             "type": "nanamota-shop-grid",
->>>>>>> c7bfc241bc482f979aa75bbe5ad0e8c631c062a4
             "settings": {}
         }
     },
     "order": [
-<<<<<<< HEAD
-        "nanamota-hero", "shop-tabs-sec","nanamota-commitment","nanamota-small-thing"
-=======
-        "nanamota-hero", "shop-tabs-sec","nanamota-shop-grid"
->>>>>>> c7bfc241bc482f979aa75bbe5ad0e8c631c062a4
+        "nanamota-hero", "shop-tabs-sec","nanamota-commitment","nanamota-shop-grid","nanamota-small-thing"
     ]
 }

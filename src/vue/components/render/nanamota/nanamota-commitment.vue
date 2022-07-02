@@ -66,8 +66,6 @@
     .sec_info {
         font-size: 24px;
         color: #29b0ff;
-        
-        
     }
     .commitment_card{
         display: flex;
@@ -76,6 +74,10 @@
         max-width: 1420px;
         margin: -60px auto 0;
     }
+    .sec_img{
+        text-align:center;
+    }
+
     .sec_img img{
         min-height: 1200px;
         object-fit: cover;
