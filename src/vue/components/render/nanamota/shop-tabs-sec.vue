@@ -2,19 +2,30 @@
     <!-- Shop Tab Section -->
     <section class="shop_tabs_sec">
       <div class="container">
-         <!-- Tabs Tittles Button -->
-         <ul class="shop_tab_list">
-            <li class="tab_btn">
-                <button  class="tab_title active">WOMENS</button>
-            </li>
-            <li class="tab_btn">
-                <button  class="tab_title">MENS</button>
-            </li>
-            <li class="tab_btn">
-                <button  class="tab_title">FACEMASKS</button>
-            </li>        
-       </ul>
-
+        <!-- Tabs Header on Scroll -->
+            <ul class="nanamota_tabs_header">
+                <!-- nanamota logo -->
+                <li class="nanamota_logo d-block ">
+                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/nanamota-logo.png?v=1656669813" class="d-block" alt="">
+                </li>
+            <!-- Tabs Tittles Button  -->
+                <li class="d-block">
+                     <ul class="shop_tab_list">
+                        <li class="tab_btn">
+                            <button  class="tab_title active">WOMENS</button>
+                        </li>
+                        <li class="tab_btn">
+                            <button  class="tab_title">MENS</button>
+                        </li>
+                        <li class="tab_btn">
+                            <button  class="tab_title">FACEMASKS</button>
+                        </li>        
+                    </ul>    
+                </li>
+                <li class="d-block">
+                    <a href="#">BACK TO BEHNO</a>
+                </li>
+            </ul>
         <!-- Tabs Body -->
        <div class="tabs_body">
             <div class="tabs_contents_grid">
@@ -60,8 +71,8 @@
             </div>
         </div> 
       </div>
-      <div class="shop_btn">
-        <a href="#">SHOP ALL WOMENS > </a>
+      <div class="cta_wrapper">
+        <a class="shop_btn d-block" href="#">SHOP ALL WOMENS > </a>
       </div>
     </section>
 </template>
@@ -88,22 +99,34 @@ p{
     padding-inline:20px;
     margin: 0 auto;
 }
-
+/*------- Tabs Header on Scroll -------*/
+.nanamota_tabs_header{
+    display: grid;
+    grid-template-columns: 200px 600px 155px;
+    justify-content: space-between;
+    align-items:center;
+}
+.nanamota_tabs_header > li:last-child{
+    text-align: end;
+    font-size: 14px;
+    padding: 10px 20px;
+}
 .shop_tab_list{
     display:flex;
-    justify-content: center;
+    max-width: 600px;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 .tab_btn{
     cursor: pointer;
-    padding: 10px 60px;
+    padding: 10px 15px;
 }
 
 .tab_title{
     font-family: 'Work Sans',sans-serif;
     font-size:18px;
     font-weight: normal;
-    
     width:auto;
     text-align:center;
     color:#7d8d8d;
@@ -181,5 +204,35 @@ p{
         grid-template-columns: 1fr;
         justify-content: center;
     }
+    .shop_btn a{
+        font-size: 13px;
+}
+    /*------- Tabs Header on Scroll -------*/
+    .nanamota_tabs_header > li:last-child,
+    .nanamota_logo{
+        display: none;
+    }
+    .nanamota_tabs_header{
+        grid-template-columns:1fr;
+    }
+    .tab_title{
+        font-size: 16px;
+    }
+
+}
+/*=== Breakpoint At 767px ===*/
+@media only screen and (max-width: 767px){
+    /*------- Tabs body css -------*/
+    .tabs_body{
+        margin-top:60px;
+}
+
+}
+/*=== Breakpoint At 575px ===*/
+@media only screen and (max-width: 575px){
+    .tab_btn{
+        padding: 10px 5px;
+    }
+
 }
 </style>
