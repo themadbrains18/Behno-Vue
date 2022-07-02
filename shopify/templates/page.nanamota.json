@@ -7,9 +7,17 @@
         "shop-tabs-sec": {
             "type": "shop-tabs-sec",
             "settings": {}
+        },
+        "nanamota-commitment": {
+            "type": "nanamota-commitment",
+            "settings": {}
+        },
+        "nanamota-small-thing":{
+            "type": "nanamota-small-thing",
+            "settings": {}
         }
     },
     "order": [
-        "nanamota-hero", "shop-tabs-sec"
+        "nanamota-hero", "shop-tabs-sec","nanamota-commitment","nanamota-small-thing"
     ]
 }

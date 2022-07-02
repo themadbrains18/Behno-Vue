@@ -14,7 +14,7 @@
 </template>
 
 
-<style scope>
+<style scoped>
 .hero_sec_imgContainer video{
     display:none;
 }

@@ -67,7 +67,7 @@
 </template>
 
 
-<style scope>
+<style scoped>
 /*======= CSS=======*/
 .d-block{
     display: block;

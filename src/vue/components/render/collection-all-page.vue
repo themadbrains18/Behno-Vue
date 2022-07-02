@@ -10,15 +10,19 @@
     </div>
   </div>
   <!-- Collacction Banner Code -->
-  <h2 class="cross_heading">CROSSBODY BAGS</h2>
+  
   <div class="collaction_banner">
-    <img
+    <h2 class="cross_heading">CROSSBODY BAGS</h2>
+    <div>
+      <img
       src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/banner-collaction-img.jpg?v=1655966174"
       alt="Collaction Image"
     >
     <h2 class="banner_heading">
       THE ELIZABETH BAGUETTE SERIES
     </h2>
+    </div>
+    
   </div>
  
   <div class="filter_row">
