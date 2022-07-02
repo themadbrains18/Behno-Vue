@@ -147,5 +147,12 @@ p{
         display: none;
     }
 }
+/*=== Breakpoint At 776px ===*/
+@media only screen and (max-width: 776px){
+      .sec_image img{
+        max-width: 100%;
+    }
+
+}
 </style>
     

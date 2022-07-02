@@ -81,6 +81,7 @@
     .sec_img img{
         min-height: 1200px;
         object-fit: cover;
+        display: block;
     }
     .card{
         padding: 35px 25px;
@@ -144,6 +145,10 @@
         .sec_text{
             padding:45px 24px;
         }
+        .sec_heading{
+            font-size: 44px;
+            line-height:32px;
+    }
     
     }
     

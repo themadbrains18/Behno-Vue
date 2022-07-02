@@ -9,6 +9,7 @@
         </div>
     </section>
 </template>
+
 <style scoped>
     
     .d-block{
@@ -18,7 +19,6 @@
     p{
         font-family: 'Work Sans',sans-serif;
         color: #ffff;
-
     }
 
     .container{
@@ -42,23 +42,36 @@
         margin-bottom: 30px;
         font-weight: 500;
         letter-spacing:-0.16px;
-       
     }
+
     .small_things-texts{
         display: flex;
         justify-content: space-between;
         text-align: center;
-
+        flex-wrap:wrap;
     }
+
     .small_things-texts p{
         line-height: 24px;
         font-size: 24px;
         font-weight: normal;
         letter-spacing:-0.08;
-         width: 50%;
-
-
+        width: 50%;
     }
-    
+
+/*=== Breakpoint At 767px ===*/
+@media only screen and (max-width: 767px){
+    .small_things-texts{
+        flex-direction:column;
+    }
+    .small_things_heading{
+        font-size: 44px;
+        line-height: 40px;
+    }
+    .small_things-texts p{
+        line-height: 18px;
+        font-size: 18px;
+        width: 100%;
+    }
+}
 </style>
-    
