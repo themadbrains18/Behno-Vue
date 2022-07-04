@@ -31,6 +31,7 @@
     .small_things_sec{
         background-color: #f0ded0;
         padding:100px 0;
+        margin-bottom: 30px;
     }
 
     .small_things_heading{

@@ -3,29 +3,35 @@
     <section class="shop_tabs_sec">
       <div class="container">
         <!-- Tabs Header on Scroll -->
-            <ul class="nanamota_tabs_header">
-                <!-- nanamota logo -->
-                <li class="nanamota_logo d-block ">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/nanamota-logo.png?v=1656669813" class="d-block" alt="">
-                </li>
-            <!-- Tabs Tittles Button  -->
-                <li class="d-block">
-                     <ul class="shop_tab_list">
-                        <li class="tab_btn">
-                            <button  class="tab_title active">WOMENS</button>
-                        </li>
-                        <li class="tab_btn">
-                            <button  class="tab_title">MENS</button>
-                        </li>
-                        <li class="tab_btn">
-                            <button  class="tab_title">FACEMASKS</button>
-                        </li>        
-                    </ul>    
-                </li>
-                <li class="d-block">
-                    <a href="#">BACK TO BEHNO</a>
-                </li>
-            </ul>
+            <div class="nanamota_tabs_header-main">
+                <div class="inner_tab_header">
+                    <ul class="nanamota_tabs_header">
+                    <!-- nanamota logo -->
+                    <li class="nanamota_logo d-block ">
+                        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/nanamota-logo.png?v=1656669813" class="d-block" alt="">
+                    </li>
+                    <!-- Tabs Tittles Button  -->
+                    <li class="d-block">
+                        <ul class="shop_tab_list">
+                            <li class="tab_btn">
+                                <button  class="tab_title active">WOMENS</button>
+                            </li>
+                            <li class="tab_btn">
+                                <button  class="tab_title">MENS</button>
+                            </li>
+                            <li class="tab_btn">
+                                <button  class="tab_title">FACEMASKS</button>
+                            </li>        
+                        </ul>    
+                    </li>
+                    <li class="d-block back_to_behno_btn">
+                        <a href="#">BACK TO BEHNO</a>
+                    </li>
+                </ul>
+                </div>
+                
+            </div>
+            
         <!-- Tabs Body -->
        <div class="tabs_body">
             <div class="tabs_contents_grid">
@@ -90,7 +96,7 @@ p{
 
 /*------- Tabs Tittles Button css -------*/
 .shop_tabs_sec{
-    padding-block:45px;
+    padding-block:15px;
 }
 
 .container{
@@ -105,17 +111,32 @@ p{
     grid-template-columns: 200px 600px 155px;
     justify-content: space-between;
     align-items:center;
+    max-width: 1420px;
+    margin: 0 auto;
+    width: 100%;
 }
 .nanamota_tabs_header > li:last-child{
     text-align: end;
     font-size: 14px;
     padding: 10px 20px;
 }
+
 .shop_tab_list{
     display:flex;
     max-width: 600px;
     justify-content: space-between;
     margin: 0 auto;
+    transition: 0.5s;
+    animation: nanamotatabsremove 0.4s linear;
+}
+
+@keyframes nanamotatabsremove {
+    0%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
 
 .tab_btn{
@@ -130,6 +151,10 @@ p{
     width:auto;
     text-align:center;
     color:#7d8d8d;
+    transition: 0.5s;
+}
+.shop_tabs_sec.active .tab_title{
+    color: #fff;
 }
 
 .tab_title.active{
@@ -139,7 +164,7 @@ p{
 
 /*------- Tabs body css -------*/
 .tabs_body{
-    margin-top:90px;
+    margin-top:75px;
 }
 
 .tabs_contents_grid{
@@ -196,7 +221,46 @@ p{
     font-weight: 300;
     letter-spacing: 1px;
 }
+.inner_tab_header{
+    transition: 0.5s;
+    padding: 30px 0 15px;
+    background: transparent;
+}
 
+.shop_tabs_sec.active .inner_tab_header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    background: #000;   
+}
+.back_to_behno_btn,
+.nanamota_logo{
+    opacity: 0;
+    transition: 0.5s;
+}
+.back_to_behno_btn a{
+    color: #ffff;
+}
+.shop_tabs_sec.active .nanamota_logo,
+.shop_tabs_sec.active .back_to_behno_btn{
+    opacity: 1;
+}
+
+    
+.shop_tabs_sec.active .shop_tab_list{
+    animation: nanamotatabs 0.4s linear;
+    transition: 0.5s;
+}
+@keyframes nanamotatabs {
+    0%{
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
 /*=== Breakpoint At 991px ===*/
 
 @media only screen and (max-width: 991px) {
@@ -218,7 +282,16 @@ p{
     .tab_title{
         font-size: 16px;
     }
-
+    .shop_tab_list{
+        display: grid;
+        grid-template-columns:  repeat(3,1fr);
+    }
+    .inner_tab_header{
+        padding: 2px 0;
+    }
+    .tab_btn{
+        text-align: center;
+    }
 }
 /*=== Breakpoint At 767px ===*/
 @media only screen and (max-width: 767px){
@@ -236,3 +309,30 @@ p{
 
 }
 </style>
+
+
+<script>
+
+export default ({
+      data:()=>{
+    // Tab sticky Header
+    window.addEventListener("scroll",()=>{
+        let tabheader=document.querySelector(".shop_tabs_sec");
+        let tabInnerheader=document.querySelector(".inner_tab_header");
+        let maintabheader=document.querySelector(".nanamota_tabs_header-main");
+        let getHeight=tabInnerheader.clientHeight;
+        
+        let gettopheader= tabheader.getBoundingClientRect().top;
+        
+        if(gettopheader<-20){
+            tabheader.classList.add("active");
+            maintabheader.setAttribute("style",`min-height:${getHeight}px`);
+        }
+        else{
+            tabheader.classList.remove("active")
+            maintabheader.removeAttribute("style")
+        }
+    });    
+  }
+})
+</script>
