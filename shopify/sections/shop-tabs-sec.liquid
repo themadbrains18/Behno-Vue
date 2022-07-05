@@ -1,2 +1,14 @@
-<render-nanamota-shop-tabs-sec>
+
+{% capture tabs %}
+    [
+    {% for product in collections['nanamota-womens'].products %}
+        {{ product | json }} {% unless forloop.last %},{% endunless %} 
+    {% endfor %}
+    ]
+{% endcapture %}    
+
+
+<render-nanamota-shop-tabs-sec :shopify-data="{
+    products :  `{{ tabs | base64_encode }}`
+}">
 </render-nanamota-shop-tabs-sec>
