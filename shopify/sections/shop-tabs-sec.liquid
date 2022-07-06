@@ -1,14 +1,85 @@
-
 {% capture tabs %}
-    [
-    {% for product in collections['nanamota-womens'].products %}
-        {{ product | json }} {% unless forloop.last %},{% endunless %} 
-    {% endfor %}
-    ]
-{% endcapture %}    
+[{% for block in section.blocks %}
+    {% capture productList %}
+        {% for product in collections[block.settings.selected_collection].products %}
+            {{ product | json }} {% unless forloop.last %},{% endunless %} 
+        {% endfor %}
+    {% endcapture %}
+        {
+          "product" : [{{ productList }}],
+          "label"   : "{{ block.settings.collection_label }}"
+        }{% unless forloop.last %},{% endunless %} 
+{% endfor %}]
+{% endcapture %}
+
 
 
 <render-nanamota-shop-tabs-sec :shopify-data="{
-    products :  `{{ tabs | base64_encode }}`
+    checkSection:`{{ section.settings.checkSection }}`,
+    products :  `{{ tabs | base64_encode }}`,
+    secCtaText:`{{ section.settings.secCtaText }}`,
+    secCtaLink:`{{ section.settings.secCtaLink }}`
 }">
 </render-nanamota-shop-tabs-sec>
+
+
+
+
+{%  schema %}
+{
+    "name": "Nanamota Tabs",
+    "settings": [
+      {
+        "id": "checkSection",
+        "type": "checkbox",
+        "label": "Hide Section",
+        "default": false
+      },
+     {
+       "id": "secCtaText",
+       "type": "text",
+       "label": "Section Cta Text",
+       "default": "SHOP ALL WOMENS >"
+     },
+     {
+       "id": "secCtaLink",
+       "type": "url",
+       "label": "Section Cta Link"
+     }
+     
+   ],
+    "name":"nanamotatabs",
+    "max_blocks": 3,
+    "blocks": [
+        {
+            "name": "TabsItem",
+            "type": "items",
+            "settings": [
+              {
+               "type" : "text",
+               "id"   : "tabitem",
+               "label": "Add Tabs Items"
+              }
+            ]
+        },
+       {
+         "name": "Slide",
+         "type": "slide",
+         "settings": [
+           {
+             "type": "collection",
+             "id": "selected_collection",
+             "label": "Choose Collection"
+           },
+           {
+            "type" : "text",
+            "id"   : "collection_label",
+            "label": "Collection Label"
+           }
+         ]
+       }
+      
+     ]
+}
+
+{% endschema %}

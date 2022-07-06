@@ -1,2 +1,81 @@
-<render-nanamota-nanamota-shop-grid>
+{% capture infodata %}
+[
+   {% for block in section.blocks %}
+            {
+                secinfo : `{{ block.settings.secinfo }}`
+            }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+
+<render-nanamota-nanamota-shop-grid :shopify-data="{
+    checkSection:`{{ section.settings.checkSection }}`,
+    SecModifier:`{{ section.settings.SecModifier }}`,
+    secheading:`{{ section.settings.secheading }}`,
+    infodata  :  {{ infodata }},
+    secBtn:`{{ section.settings.secBtn }}`,
+    secBtnUrl:`{{ section.settings.secBtnUrl }}`,
+    secimg:{
+        src : `{{ section.settings.secImage | img_url : "" }}`,
+        placeholder: `{{ block.settings.secImage | img_url : "50x50" }}`,
+        alt: `{{ block.settings.secImage.alt }}`
+    },
+}">
 </render-nanamota-nanamota-shop-grid>
+
+{% schema %}
+    {
+        "name":"shop-grid",
+        "settings":[
+            {
+                "id": "checkSection",
+                "type": "checkbox",
+                "label": "Hide Section",
+                "default": false
+            },
+            {
+                "id":"SecModifier",
+                "type":"checkbox",
+                "label":"Add Bg White Section",
+                "default": false
+            },
+            {
+                "id":"secheading",
+                "type":"text",
+                "label":"Add Section Heading"
+            },
+            
+            {
+                "id":"secBtn",
+                "type":"text",
+                "label":"Add Section Button"
+            },
+            {
+                "id":"secBtnUrl",
+                "type":"url",
+                "label":"Add Section Button URL"
+            },
+            {
+                "id":"secImage",
+                "type":"image_picker",
+                "label":"Add Section Image"
+            }
+        ],
+        "blocks" : [
+            {
+                "name": "Add Paragraph",
+                "type" : "paragraph",
+                "settings" : [
+                    {
+                        "id": "secinfo",
+                        "type": "textarea",
+                        "label": "Add Section Info"
+                    } 
+                ]
+            }
+        ]
+            
+    }
+    
+{% endschema %}

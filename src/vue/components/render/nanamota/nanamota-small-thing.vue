@@ -1,10 +1,11 @@
 <template>
-    <section class="small_things_sec">
+    <section class="small_things_sec" v-if="shopifyData.checkSection=='false'">
         <div class="container">
-            <h2 class="small_things_heading d-block">The small things we do have a big impact.</h2>
+            <h2 class="small_things_heading d-block">{{shopifyData.secHeading}}</h2>
             <div class="small_things-texts">
-                <p>nana = small</p>
-                <p>mota = big</p>
+                <p v-for="(item, index) in shopifyData.infodata" :key="index">
+                    {{ item.secinfo }}
+                </p>
             </div>
         </div>
     </section>
@@ -76,3 +77,15 @@
     }
 }
 </style>
+
+
+<script>
+export default ({
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+})
+</script>

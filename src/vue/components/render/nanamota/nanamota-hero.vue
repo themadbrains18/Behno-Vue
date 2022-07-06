@@ -1,12 +1,15 @@
 <template>
     <!-- Hero Section -->
-    <section class="tmb_hero_sec">
+    <section class="tmb_hero_sec" v-if="shopifyData.checkSection=='false'">
        <div class="hero_sec_imgContainer">
-        <!-- image hide at 991-->
-        <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/nanamota-banner.gif?v=1656576827" alt="">
+        <img
+            :src="shopifyData.bannerimg.src"
+            :src-placeholder="shopifyData.bannerimg.placeholder"
+            :alt="shopifyData.bannerimg.alt"
+          >
         <!-- video show at 991 -->
         <video  preload="none" class="shogun-image ">
-        <source src="https://cdn.shopify.com/videos/c/o/v/63af3ea31ec041b6bb3c692785bba200.mp4" type="video/mp4">
+        <source :src="(shopifyData.bannerMobileImg)">
       </video>
        </div>
     </section>
@@ -31,6 +34,17 @@
 }
 </style>
 
+<script>
+
+export default ({
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+})
+</script>
 
 
 

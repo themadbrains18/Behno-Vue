@@ -1,14 +1,6 @@
 <template>
   <!-- Shop Tab Section -->
-
-
-
-
-  <section class="shop_tabs_sec">
-
-    
-
-
+  <section class="shop_tabs_sec" v-if="shopifyData.checkSection=='false'">
     <div class="container">
       <!-- Tabs Header on Scroll -->
       <div class="nanamota_tabs_header-main">
@@ -25,7 +17,7 @@
             <!-- Tabs Tittles Button  -->
             <li class="d-block">
               <ul class="shop_tab_list">
-                <li class="tab_btn">
+                <li class="tab_btn" >
                   <a class="tab_title active">WOMENS</a>
                 </li>
                 <li class="tab_btn">
@@ -44,32 +36,26 @@
       </div>
 
 
-
       <!-- Tabs Body -->
       <div class="tabs_body testing">
         
-        <div class="tabs_contents_grid active" >
+        <div class="tabs_contents_grid " v-for="(value,key) in  productLists" :key="key" >
           <!-- Image Of Product -->
-          
-          <div class="tabs_img" v-for="(value,key) in  productLists" :key="key" >
+          <div class="tabs_img" v-for="(ChildVal,ChildKey) in value.product.slice(0,3)" :key="ChildKey" >
             <a class="tabs_contents_link d-block" href="#">
-              <img class="d-block" :src="(value.images[0])" alt=""/>
-              <!-- Content Detail Of Product On Image -->
+              <img class="d-block" :src="(ChildVal.images[0])" alt=""/> 
               <div class="content_detail">
-                <p class="content_name">{{value.title}}</p>
-                <p class="content_type">{{value.name}}</p>
-                <p class="content_cost">{{value.price}}</p>
+                <p class="content_name">{{ChildVal.title}}</p>
+                <p class="content_type">{{ChildVal.name}}</p>
+                <p class="content_cost">${{ (ChildVal.price / 100).toFixed(2) }}</p>
               </div>
             </a>
           </div>
-        
         </div>
-        <div class="tabs_contents_grid">2</div>
-        <div class="tabs_contents_grid">3</div>
       </div>
     </div>
     <div class="cta_wrapper">
-      <a class="shop_btn d-block" href="#">SHOP ALL WOMENS > </a>
+      <a class="shop_btn d-block"  :href="(shopifyData.secCtaLink)"  >{{shopifyData.secCtaText}} </a>
     </div>
   </section>
 </template>
@@ -158,10 +144,14 @@ p {
 }
 
 .tabs_contents_grid {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
-  gap: 30px;
+  gap: 30px; 
+}
+
+.tabs_contents_grid.active{
+  display: grid;
 }
 
 /*-- Image of Product --*/
@@ -249,6 +239,8 @@ p {
     transform: translateX(0px);
   }
 }
+
+
 /*=== Breakpoint At 991px ===*/
 
 @media only screen and (max-width: 991px) {
@@ -295,8 +287,6 @@ p {
   }
 }
 </style>
-
-
 <script>
 
 export default ({
@@ -306,8 +296,6 @@ export default ({
             required: true,
         },
     },
-   
-    
     data(){
         return {
            productLists: [],
@@ -329,6 +317,7 @@ export default ({
             window.addEventListener("load",()=>{
                 let ancherList=document.querySelectorAll(".shop_tab_list a");
                 let TabSConten=document.querySelectorAll(".tabs_contents_grid");
+                let TabSContenfirst=document.querySelector(".tabs_contents_grid").classList.add("active");
                 ancherList.forEach((element,index)=>{
                         element.addEventListener("click",()=>{
                             document.querySelector(".shop_tab_list a.active" ).classList.remove("active");
@@ -364,7 +353,6 @@ export default ({
                     }
                 }
             });    
-            
         },
 
         /**

@@ -1,40 +1,24 @@
 <template>
 <!-- NanaMota Commitmet Section  -->
-    <section class="sec_nanmota_commitment">
+    <section class="sec_nanmota_commitment" v-if="shopifyData.checkSection=='false'">
         <div class="sec_text bg-black">
-            <h2 class="sec_heading work-sans-family">A new commitment to the Boys & Girls Clubs of America.</h2>
-            <p class="sec_info work-sans-family">10% of all sales from nanamota will be donated to the Boys and Girls
-                Club of America as they become critical stakeholders of the future of
-                our youth. Today especially, students of the Boys and Girls Clubs across
-                the country rely on their clubs to be safe havens as they attend virtual
-                classrooms while their caretakers often work from home or go in.
+            <h2 class="sec_heading work-sans-family"> {{shopifyData.secheading}}</h2>
+            <p class="sec_info work-sans-family">{{shopifyData.secinfo}}
             </p>
         </div>
         <div class="sec_img">
-            <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/download.jpg?v=1656672298" alt="error">
+            <img
+                :src="shopifyData.secimg.src"
+                :src-placeholder="shopifyData.secimg.placeholder"
+                :alt="shopifyData.secimg.alt"
+            >
             <div class="commitment_card">
-                <div class="card">
+                <div class="card" v-for="(item, index) in shopifyData.collageData" :key="index">
                     <h3 class="card_heading work-sans-family">
-                        Sourced Sustainably.
+                        {{item.cardHeading}}
                     </h3>
                     <p class="card_info work-sans-family">
-                        We have partnered with Canopy, a leading environmental nonprofit, to add to "The behno Standard." There will be no sourcing from ancient and endangered forests and a preference for innovative alternatives.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card_heading work-sans-family">
-                        Sourced Sustainably.
-                    </h3>
-                    <p class="card_info work-sans-family">
-                        We have partnered with Canopy, a leading environmental nonprofit, to add to "The behno Standard." There will be no sourcing from ancient and endangered forests and a preference for innovative alternatives.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card_heading work-sans-family">
-                        Sourced Sustainably.
-                    </h3>
-                    <p class="card_info work-sans-family">
-                        We have partnered with Canopy, a leading environmental nonprofit, to add to "The behno Standard." There will be no sourcing from ancient and endangered forests and a preference for innovative alternatives.
+                        {{item.cardinfo}}
                     </p>
                 </div>
             </div>
@@ -154,3 +138,16 @@
     
     
 </style>
+
+
+<script>
+
+export default ({
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+})
+</script>

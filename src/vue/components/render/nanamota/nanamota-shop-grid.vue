@@ -1,24 +1,31 @@
-<template>
-    <section class="nanamota_shop_grid">
+<template v-if="shopifyData.checkSection=='false'">
+    <section class="nanamota_shop_grid" :class="[shopifyData.SecModifier=='false' ? activeClass : 'bg-white']" >
+        
         <div class="container">
             <div class="nanamota_grid_container">
                 <!-------- Text Section ------->
                 <div class="sec_text">
-                    <h2 class="sec_text-heading">Feel it.</h2>
-                    <p>Our Softest Tees are made with the highest quality ultra soft micromodal.</p>
-                    <p>Tees so soft they are meant to be lived in and lived with.</p>
+                    <h2 class="sec_text-heading">{{shopifyData.secheading}}</h2>
+                    <p v-for="(item, index) in shopifyData.infodata" :key="index">
+                        {{ item.secinfo }}
+                    </p>
                     <!--- Shop button --->
                     <div class="cta_wrapper">
-                        <a class="shop_btn d-block" href="#">SHOP ALL WOMENS > </a>
+                        <a class="shop_btn d-block" :href="(shopifyData.secBtnUrl)">{{shopifyData.secBtn}}</a>
                     </div>
                 </div>
                 <!-------- Image Section ------->
                 <div class="sec_image">
-                    <img src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/shop-women.png?v=1656678499" class="d-block" alt="">
+                    <img
+                        class="d-block"
+                        :src="(shopifyData.secimg.src)"
+                        :src-placeholder="(shopifyData.secimg.placeholder)"
+                        :alt="(shopifyData.secimg.alt)"
+                    >
                 </div>
                  <!--- Shop button in Responive --->
                 <div class="cta_wrapper">
-                    <a class="shop_btn mob_shop_btn d-block" href="#">SHOP ALL WOMENS > </a>
+                    <a class="shop_btn mob_shop_btn d-block" :href="(shopifyData.secBtnUrl)">{{shopifyData.secBtn}}</a>
                 </div>
             </div>
         </div>    
@@ -104,6 +111,14 @@ p{
     display: none;
 }
 
+.nanamota_shop_grid.bg-white{
+    background: #fff;
+}
+.nanamota_shop_grid.bg-white .sec_text-heading,.nanamota_shop_grid.bg-white .sec_text p{
+    color: #000;
+}
+
+
 /*======= Responsive Start =======*/
 /*=== Breakpoint At 991px ===*/
 @media only screen and (max-width: 991px){
@@ -156,3 +171,14 @@ p{
 }
 </style>
     
+<script>
+
+export default ({
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+})
+</script>

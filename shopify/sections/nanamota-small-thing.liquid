@@ -1,3 +1,49 @@
-<render-nanamota-nanamota-small-thing>
-    
+{% capture infodata %}
+[
+   {% for block in section.blocks %}
+            {
+                secinfo : `{{ block.settings.secinfo }}`
+            }{% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
+{% endcapture %}
+
+<render-nanamota-nanamota-small-thing :shopify-Data="{
+    checkSection:`{{section.settings.checkSection}}`,
+    secHeading:`{{section.settings.secHeading}}`,
+    infodata  :  {{ infodata }}
+}">
 </render-nanamota-nanamota-small-thing>
+
+{% schema %}
+    {
+       "name":"small-things" ,
+       "settings":[
+        {
+                "id": "checkSection",
+                "type": "checkbox",
+                "label": "Hide Section",
+                "default": false
+            },
+        {
+            "id":"secHeading",
+            "type":"text",
+            "label":"Add Section Heading"
+        }
+        
+       ],
+       "blocks" : [
+        {
+            "name": "Add Paragraph",
+            "type" : "paragraph",
+            "settings" : [
+                {
+                    "id": "secinfo",
+                    "type": "textarea",
+                    "label": "Add Section Info"
+                } 
+            ]
+        }
+    ]
+    }
+{% endschema %}
