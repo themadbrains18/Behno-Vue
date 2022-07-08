@@ -23,10 +23,11 @@
                         :alt="(shopifyData.secimg.alt)"
                     >
                 </div>
-                 <!--- Shop button in Responive --->
-                <div class="cta_wrapper">
-                    <a class="shop_btn mob_shop_btn d-block" :href="(shopifyData.secBtnUrl)">{{shopifyData.secBtn}}</a>
-                </div>
+               
+            </div>
+              <!--- Shop button in Responive --->
+            <div class="cta_wrapper">
+                <a class="shop_btn mob_shop_btn d-block" :href="(shopifyData.secBtnUrl)">{{shopifyData.secBtn}}</a>
             </div>
         </div>    
     </section>
@@ -46,7 +47,7 @@ p{
 .container{
     max-width:1460px;
     width:100%;
-    padding-inline:20px;
+    padding:0 20px;
     margin: 0 auto;
 }
 
@@ -67,13 +68,14 @@ p{
     margin: 0 auto;
 }
 
+
 .sec_text-heading{
     padding-bottom: 30px;
     font-size: 52px;
     color: #fff;
     font-family: 'Work Sans',sans-serif;
     text-align: left;
-    line-height: 44px;
+    /* line-height: 44px; */
 }
 .sec_text p{
     font-size: 24px;
@@ -104,6 +106,21 @@ p{
     font-weight: 300;
     letter-spacing: 1px;
     
+}
+.nanamota_shop_grid.bg-white .sec_text:nth-of-type(1) {
+    order: 2;
+}
+.nanamota_shop_grid.bg-white .sec_image:nth-of-type(2) {
+    order: 1;
+}
+.nanamota_shop_grid.bg-white p{
+    text-align: end;
+}
+.nanamota_shop_grid.bg-white h2{
+    text-align: end;
+}
+.nanamota_shop_grid.bg-white .shop_btn{
+    margin: 40px 0 0 auto;
 }
 /*======= Image Section ======*/
 /*-- Shop button in Responive -- */
@@ -147,6 +164,18 @@ p{
         max-width: 600px;
 
     }
+    .nanamota_shop_grid.bg-white .sec_text:nth-of-type(1) {
+    order: 1;
+}
+.nanamota_shop_grid.bg-white .sec_image:nth-of-type(2) {
+    order: 2;
+}
+.nanamota_shop_grid.bg-white p{
+    text-align: start;
+}
+.nanamota_shop_grid.bg-white h2{
+    text-align: start;
+}
 
     /*-- Shop button in Responive -- */
     .shop_btn.mob_shop_btn{
@@ -161,6 +190,7 @@ p{
     .shop_btn{
         display: none;
     }
+
 }
 /*=== Breakpoint At 776px ===*/
 @media only screen and (max-width: 776px){
