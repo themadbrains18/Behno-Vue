@@ -65,7 +65,7 @@ p{
     max-width: 450px;
     width: 100%;
     align-self:center;
-    margin: 0 auto;
+    
 }
 
 
@@ -134,7 +134,9 @@ p{
 .nanamota_shop_grid.bg-white .sec_text-heading,.nanamota_shop_grid.bg-white .sec_text p{
     color: #000;
 }
-
+.nanamota_shop_grid.bg-white .sec_text{
+    justify-self: end;
+}
 
 /*======= Responsive Start =======*/
 /*=== Breakpoint At 991px ===*/
