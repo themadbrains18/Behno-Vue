@@ -9,32 +9,25 @@
             <!-- nanamota logo -->
             <li class="nanamota_logo d-block">
               <img
-                src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/nanamota-logo.png?v=1656669813"
-                class="d-block"
-                alt=""
-              />
+                        :src="(shopifyData.headerlogo.src)"
+                        :src-placeholder="(shopifyData.headerlogo.placeholder)"
+                        :alt="(shopifyData.headerlogo.alt)"
+                    >
             </li>
             <!-- Tabs Tittles Button  -->
             <li class="d-block">
               <ul class="shop_tab_list">
-                <li class="tab_btn" >
-                  <a class="tab_title active">WOMENS</a>
-                </li>
-                <li class="tab_btn">
-                  <a class="tab_title">MENS</a>
-                </li>
-                <li class="tab_btn">
-                  <a class="tab_title">FACEMASKS</a>
+                <li class="tab_btn" v-for="(item, index) in shopifyData.tabsItemsNannamota.slice(3,6)" :key="index">
+                  <a class="tab_title">{{ item.tabsItems }} </a>
                 </li>
               </ul>
             </li>
             <li class="d-block back_to_behno_btn">
-              <a href="#">BACK TO BEHNO</a>
+              <a :href="(shopifyData.NanaMotaHeaderBackToLink)">{{shopifyData.NanaMotaHeaderBackTo}}</a>
             </li>
           </ul>
         </div>
       </div>
-
 
       <!-- Tabs Body -->
       <div class="tabs_body testing">

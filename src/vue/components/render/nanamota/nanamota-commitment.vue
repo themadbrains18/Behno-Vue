@@ -57,6 +57,7 @@
         gap: 10px;
         max-width: 1420px;
         margin: -60px auto 0;
+        padding-bottom:45px;
     }
     .sec_img{
         text-align:center;
@@ -68,7 +69,7 @@
         display: block;
     }
     .card{
-        padding: 35px 25px;
+        padding:  25px 35px;
         border-radius: 15px;
         background: #fff;
     }
@@ -80,6 +81,7 @@
         text-transform: none;
         margin-bottom:15px;
         line-height: 40px;
+        text-align: start;
 
     }
     .card_info{
