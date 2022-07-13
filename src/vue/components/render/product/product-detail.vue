@@ -28,7 +28,7 @@
               slidesPerView: '1'
             }
           }"
-          :initial-slide="0"
+          :initialSlide="0"
           :init="true"
           class="product-media-slider "
           @swiper="setThumbsSwiper"
@@ -38,24 +38,18 @@
             :key="key"
             class="product_slide"
           >
+
             <div
-              v-if="value.media_type == 'image'"
               class="product_media"
-              @click="productZoomInOut"
+              @click="productZoomInOut" v-if="value.media_type == 'image'"
             >
               <img :src="value.src">
             </div>
             <div
-              v-if="value.media_type == 'video'"
               class="product_media"
-              @click="productZoomInOut"
+              @click="productZoomInOut" v-if="value.media_type == 'video'"
             >
-              <video
-                autoplay
-                loop="true"
-                width="450"
-                :src="value.sources[0].url"
-              />
+              <video autoplay loop="true" width="450" :src="value.sources[0].url"></video>
             </div>
           </swiper-slide>
         </swiper>
@@ -157,9 +151,7 @@
               class="add_cart_btn cta_btn cta_btn-black"
             >
               ADD TO BAG
-              <div class="loder_tmb">
-                <span /><span /> <span /><span /> <span />
-              </div>
+              <div class="loder_tmb"> <span></span><span></span> <span></span><span></span> <span></span> </div>
             </button>
 
             <button
@@ -389,23 +381,16 @@
             class="t-center"
           >
             <div
-              v-if="value.media_type == 'image'"
               class="product_media"
-              @click="productZoomInOut"
+              @click="productZoomInOut" v-if="value.media_type == 'image'"
             >
               <img :src="value.src">
             </div>
             <div
-              v-if="value.media_type == 'video'"
               class="product_media"
-              @click="productZoomInOut"
+              @click="productZoomInOut" v-if="value.media_type == 'video'"
             >
-              <video
-                autoplay
-                loop="true"
-                width="720"
-                :src="value.sources[1].url"
-              />
+              <video autoplay loop="true" width="720" :src="value.sources[1].url"></video>
             </div>
           </swiper-slide>
         </swiper>
@@ -539,8 +524,8 @@ export default {
         }
     },
     mounted() {
-        this.getProductReview();
         
+        this.getProductReview();
         window.addEventListener('resize', () => {
 
             if (window.innerWidth <= 991) {
@@ -556,6 +541,8 @@ export default {
             document.querySelector(".footer_content").style.paddingBottom = `${document.querySelector(".add_cart_btn_wrap").offsetHeight}px`;
             document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
         }
+        let getemptyData=document.querySelector(".product_page_grid_wrap");
+        getemptyData.setAttribute('id', ` ${getemptyData.innerText ? "" : "TmbemptyGrid"}`);
     },
     methods: {
         async  getProductReview(){

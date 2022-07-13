@@ -1,3 +1,16 @@
+{% assign bannerImg = '' %}
+{% assign bannerheading = '' %}
+
+
+{% if collection.handle == 'all' %}
+    {% assign bannerImg = section.settings.collectionText  %}
+    {% assign bannerheading = section.settings.collectionImage | img_url : "" %}
+{% else %}
+    {% assign bannerImg = collection.metafields.custom.hero_image | img_url : "" %}
+    {% assign bannerheading = collection.metafields.custom.hero_banner_heading %}
+{% endif %}
+
+
 {% paginate collection.products by 800 %}
 {% capture products %}  
         [{% for product in collection.products %}
@@ -41,7 +54,11 @@
     filterinnerResponsive: '{{ section.settings.filterinnerResponsive }}',
     sortinnerResponsive: '{{ section.settings.sortinnerResponsive }}',
     collectionListing : '{{ products | base64_encode }}',
-    swatchesImages : '{{ assets | replace: ',]',']' | base64_encode }}'
+    swatchesImages : '{{ assets | replace: ',]',']' | base64_encode }}',
+    bannerImage:`{{ bannerImg }}`,
+    bannerHeading : `{{ bannerheading }}`,
+    collectionText:`{{ section.settings.collectionText }}`,
+    collectionImage : `{{ section.settings.collectionImage }}`,
 }">
 
 </render-collection-all-page>
@@ -52,6 +69,16 @@
 {
 "name":"Main Collection",
 "settings":[
+    {
+        "id":"collectionText",
+        "label":"Add Collaction Banner Text",
+        "type":"text"
+    },
+    {
+        "id":"collectionImage",
+        "label":"Add Collaction Banner Image",
+        "type":"image_picker"
+    },
     {
         "id":"filterDropdownTextResponsive",
         "label":"Filter Button Dropdown Text For Mobile",

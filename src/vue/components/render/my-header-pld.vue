@@ -964,7 +964,7 @@
       class="mini-add-card"
       :class="{ active: !show }"
     >   
-      <button class="add-card-chk">
+      <button class="add-card-chk" >
         CHECKOUT
       </button>
     </div>

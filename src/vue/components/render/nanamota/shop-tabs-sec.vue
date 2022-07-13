@@ -1,6 +1,9 @@
 <template>
   <!-- Shop Tab Section -->
-  <section class="shop_tabs_sec" v-if="shopifyData.checkSection=='false'">
+  <section
+    v-if="shopifyData.checkSection=='false'"
+    class="shop_tabs_sec"
+  >
     <div class="container">
       <!-- Tabs Header on Scroll -->
       <div class="nanamota_tabs_header-main">
@@ -9,21 +12,25 @@
             <!-- nanamota logo -->
             <li class="nanamota_logo d-block">
               <img
-                        :src="(shopifyData.headerlogo.src)"
-                        :src-placeholder="(shopifyData.headerlogo.placeholder)"
-                        :alt="(shopifyData.headerlogo.alt)"
-                    >
+                :src="(shopifyData.headerlogo.src)"
+                :src-placeholder="(shopifyData.headerlogo.placeholder)"
+                :alt="(shopifyData.headerlogo.alt)"
+              >
             </li>
             <!-- Tabs Tittles Button  -->
             <li class="d-block">
               <ul class="shop_tab_list">
-                <li class="tab_btn" v-for="(item, index) in shopifyData.tabsItemsNannamota.slice(3,6)" :key="index">
+                <li
+                  v-for="(item, index) in shopifyData.tabsItemsNannamota.slice(3,6)"
+                  :key="index"
+                  class="tab_btn"
+                >
                   <a class="tab_title">{{ item.tabsItems }} </a>
                 </li>
               </ul>
             </li>
             <li class="d-block back_to_behno_btn">
-              <a :href="(shopifyData.NanaMotaHeaderBackToLink)">{{shopifyData.NanaMotaHeaderBackTo}}</a>
+              <a :href="(shopifyData.NanaMotaHeaderBackToLink)">{{ shopifyData.NanaMotaHeaderBackTo }}</a>
             </li>
           </ul>
         </div>
@@ -31,15 +38,29 @@
 
       <!-- Tabs Body -->
       <div class="tabs_body testing">
-        
-        <div class="tabs_contents_grid " v-for="(value,key) in  productLists" :key="key" >
+        <div
+          v-for="(value,key) in productLists"
+          :key="key"
+          class="tabs_contents_grid "
+        >
           <!-- Image Of Product -->
-          <div class="tabs_img" v-for="(ChildVal,ChildKey) in value.product.slice(0,3)" :key="ChildKey" >
-            <a class="tabs_contents_link d-block" href="#">
-              <img class="d-block" :src="(ChildVal.images[0])" alt=""/> 
+          <div
+            v-for="(ChildVal,ChildKey) in value.product.slice(0,3)"
+            :key="ChildKey"
+            class="tabs_img"
+          >
+            <a
+              class="tabs_contents_link d-block"
+              href="#"
+            >
+              <img
+                class="d-block"
+                :src="(ChildVal.images[0])"
+                alt=""
+              > 
               <div class="content_detail">
-                <p class="content_name">{{ChildVal.title}}</p>
-                <p class="content_type">{{ChildVal.name}}</p>
+                <p class="content_name">{{ ChildVal.title }}</p>
+                <p class="content_type">{{ ChildVal.name }}</p>
                 <p class="content_cost">${{ (ChildVal.price / 100).toFixed(2) }}</p>
               </div>
             </a>
@@ -48,12 +69,95 @@
       </div>
     </div>
     <div class="cta_wrapper">
-      <a class="shop_btn d-block"  :href="(shopifyData.secCtaLink)"  >{{shopifyData.secCtaText}} </a>
+      <a
+        class="shop_btn d-block"
+        :href="(shopifyData.secCtaLink)"
+      >{{ shopifyData.secCtaText }} </a>
     </div>
   </section>
 </template>
 
 
+<script>
+
+export default ({
+    props: {
+        shopifyData: {
+            type: Object,
+            required: true,
+        },
+    },
+    data(){
+        return {
+           productLists: [],
+           sEvent : this.scrollEvents()
+        }
+   },
+   mounted() {
+        this.productsList();
+    },
+   
+    methods : {
+
+        /**
+         * Scroll events
+         */
+
+        scrollEvents() {
+            // // Tab sticky Header
+            window.addEventListener("load",()=>{
+                let ancherList=document.querySelectorAll(".shop_tab_list a");
+                document.querySelector(".shop_tab_list a").classList.add("active");
+                let TabSConten=document.querySelectorAll(".tabs_contents_grid");
+                let TabSContenfirst=document.querySelector(".tabs_contents_grid").classList.add("active");
+                ancherList.forEach((element,index)=>{
+                        element.addEventListener("click",()=>{
+                            document.querySelector(".shop_tab_list a.active" ).classList.remove("active");
+                            document.querySelector(".tabs_contents_grid.active" ).classList.remove("active");
+                            element.classList.add("active");
+                            TabSConten[index].classList.add("active")
+                        })
+                })
+                
+            }),
+            window.addEventListener("scroll",()=>{
+                let tabheader=document.querySelector(".shop_tabs_sec");
+                let tabInnerheader=document.querySelector(".inner_tab_header");
+                let maintabheader=document.querySelector(".nanamota_tabs_header-main");
+                let getHeight=tabInnerheader.clientHeight;
+                let ancherList=document.querySelectorAll(".shop_tab_list a");
+                let araay =["https://store-testing-tmb.myshopify.com/collections/nanamota-womens","https://store-testing-tmb.myshopify.com/collections/nanamota-mens","https://store-testing-tmb.myshopify.com/collections/nanamota-facemasks"]
+                // console.log(araay)
+                let gettopheader= tabheader.getBoundingClientRect().top;
+                
+                if(gettopheader<-20){
+                    ancherList.forEach(( elemetn,index)=>{
+                        elemetn.setAttribute("href", `${araay[index]}`);
+                    })
+                    tabheader.classList.add("active");
+                    maintabheader.setAttribute("style",`min-height:${getHeight}px`);
+                }
+                else{
+                    tabheader.classList.remove("active");
+                    maintabheader.removeAttribute("style");
+                    for(let i of ancherList){
+                        i.removeAttribute("href")
+                    }
+                }
+            });    
+        },
+
+        /**
+         * Get Product List by collection
+         */
+        productsList()  {
+            var pList = JSON.parse(window.atob(this.shopifyData.products))
+            this.productLists = [...pList].slice(0,3)
+            console.log(this.productLists = [...pList].slice(0,3))
+        }
+    }
+})
+</script>
 <style scoped>
 /*======= CSS=======*/
 .d-block {
@@ -66,7 +170,7 @@ p {
 
 /*------- Tabs Tittles Button css -------*/
 .shop_tabs_sec {
-  padding-block: 15px;
+  padding-block: 15px 45px;
 }
 
 .container {
@@ -280,82 +384,3 @@ p {
   }
 }
 </style>
-<script>
-
-export default ({
-    props: {
-        shopifyData: {
-            type: Object,
-            required: true,
-        },
-    },
-    data(){
-        return {
-           productLists: [],
-           sEvent : this.scrollEvents()
-        }
-   },
-   mounted() {
-        this.productsList();
-    },
-   
-    methods : {
-
-        /**
-         * Scroll events
-         */
-
-        scrollEvents() {
-            // // Tab sticky Header
-            window.addEventListener("load",()=>{
-                let ancherList=document.querySelectorAll(".shop_tab_list a");
-                let TabSConten=document.querySelectorAll(".tabs_contents_grid");
-                let TabSContenfirst=document.querySelector(".tabs_contents_grid").classList.add("active");
-                ancherList.forEach((element,index)=>{
-                        element.addEventListener("click",()=>{
-                            document.querySelector(".shop_tab_list a.active" ).classList.remove("active");
-                            document.querySelector(".tabs_contents_grid.active" ).classList.remove("active");
-                            element.classList.add("active");
-                            TabSConten[index].classList.add("active")
-                        })
-                })
-                
-            }),
-            window.addEventListener("scroll",()=>{
-                let tabheader=document.querySelector(".shop_tabs_sec");
-                let tabInnerheader=document.querySelector(".inner_tab_header");
-                let maintabheader=document.querySelector(".nanamota_tabs_header-main");
-                let getHeight=tabInnerheader.clientHeight;
-                let ancherList=document.querySelectorAll(".shop_tab_list a");
-                let araay =["https://store-testing-tmb.myshopify.com/collections/nanamota-womens","https://store-testing-tmb.myshopify.com/collections/nanamota-mens","https://store-testing-tmb.myshopify.com/collections/nanamota-facemasks"]
-                // console.log(araay)
-                let gettopheader= tabheader.getBoundingClientRect().top;
-                
-                if(gettopheader<-20){
-                    ancherList.forEach(( elemetn,index)=>{
-                        elemetn.setAttribute("href", `${araay[index]}`);
-                    })
-                    tabheader.classList.add("active");
-                    maintabheader.setAttribute("style",`min-height:${getHeight}px`);
-                }
-                else{
-                    tabheader.classList.remove("active");
-                    maintabheader.removeAttribute("style");
-                    for(let i of ancherList){
-                        i.removeAttribute("href")
-                    }
-                }
-            });    
-        },
-
-        /**
-         * Get Product List by collection
-         */
-        productsList()  {
-            var pList = JSON.parse(window.atob(this.shopifyData.products))
-            this.productLists = [...pList].slice(0,3)
-            console.log(this.productLists = [...pList].slice(0,3))
-        }
-    }
-})
-</script>

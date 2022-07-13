@@ -1,15 +1,35 @@
 <template>
-    <section class="small_things_sec" v-if="shopifyData.checkSection=='false'">
-        <div class="container">
-            <h2 class="small_things_heading d-block">{{shopifyData.secHeading}}</h2>
-            <div class="small_things-texts">
-                <p v-for="(item, index) in shopifyData.infodata" :key="index">
-                    {{ item.secinfo }}
-                </p>
-            </div>
-        </div>
-    </section>
+  <section
+    v-if="shopifyData.checkSection=='false'"
+    class="small_things_sec"
+  >
+    <div class="container">
+      <h2 class="small_things_heading d-block">
+        {{ shopifyData.secHeading }}
+      </h2>
+      <div class="small_things-texts">
+        <p
+          v-for="(item, index) in shopifyData.infodata"
+          :key="index"
+        >
+          {{ item.secinfo }}
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
+
+<script>
+export default ({
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+})
+</script>
+
 
 <style scoped>
     
@@ -77,15 +97,3 @@
     }
 }
 </style>
-
-
-<script>
-export default ({
-   props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  },
-})
-</script>

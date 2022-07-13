@@ -85,7 +85,7 @@
           </a>
 
           <div class="quickButton quickActive">
-            <div class="color_swatches" />
+            <div class="color_swatches " />
             <div
               class="product_cta_wrapper"
               data-v-32bfb114=""
@@ -187,7 +187,7 @@
           </a>
 
           <div class="quickButton quickActive">
-            <div class="color_swatches">
+            <div class="color_swatches ">
               <ul :mainKey="JSON.stringify(value)">
                 <li
                   v-for="(sValue, sKey) in value.swatches"

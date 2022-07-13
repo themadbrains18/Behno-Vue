@@ -1,10 +1,18 @@
 <template>
- <div class="filter_responsive">
+  <div class="filter_responsive">
     <div class="filter_cta_wrapper">
-      <button id="filterCta" class="filter_cta" @click="myFilter">
+      <button
+        id="filterCta"
+        class="filter_cta"
+        @click="myFilter"
+      >
         {{ shopifyData.filterDropdownTextResponsive }}
       </button>
-      <button id="sortCta" class="filter_cta" @click="sortBy">
+      <button
+        id="sortCta"
+        class="filter_cta"
+        @click="sortBy"
+      >
         {{ shopifyData.sortByDropdownTextResponsive }}
       </button>
     </div>
@@ -12,30 +20,37 @@
   <!-- Collacction Banner Code -->
   
   <div class="collaction_banner">
-    <h2 class="cross_heading">CROSSBODY BAGS</h2>
+    <h2 class="cross_heading">
+      {{shopifyData.bannerImage}}
+    </h2>
     <div>
       <img
-      src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/banner-collaction-img.jpg?v=1655966174"
-      alt="Collaction Image"
-    >
-    <h2 class="banner_heading">
-      THE ELIZABETH BAGUETTE SERIES
-    </h2>
+          :src="(shopifyData.collectionImage)"
+      >
+      <h2 class="banner_heading">
+        THE ELIZABETH BAGUETTE SERIESnpm
+      </h2>
     </div>
-    
   </div>
  
   <div class="filter_row">
     <div class="row_inner">
       <div class="apply_filter_cta_wrapper">
-        <button class="apply_filter_cta" disabled @click="applyfilter">
+        <button
+          class="apply_filter_cta"
+          disabled
+          @click="applyfilter"
+        >
           {{ shopifyData.applyFilterCta }}
         </button>
       </div>
       <div class="filters">
         <div class="filters_inner_row">
           <div class="filters_responsive">
-            <div class="close-btn" @click="closeMenu">
+            <div
+              class="close-btn"
+              @click="closeMenu"
+            >
               <svg
                 width="48"
                 height="48"
@@ -120,12 +135,20 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Categories</button>
+                <button class="c-form-input">
+                  Categories
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: show }">
+              <div
+                class="multiselect"
+                :class="{ active: show }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
-                    <li v-for="option in ddTestCategory" :key="option.id">
+                    <li
+                      v-for="option in ddTestCategory"
+                      :key="option.id"
+                    >
                       <input
                         :id="option.id"
                         class="multiselectOption"
@@ -133,8 +156,11 @@
                         name="category"
                         :value="option.value"
                         @change="onCheck($event)"
-                      />
-                      <label class="optionLabel" :for="option.id">{{
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
                     </li>
@@ -184,12 +210,20 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Color</button>
+                <button class="c-form-input">
+                  Color
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showColor }">
+              <div
+                class="multiselect"
+                :class="{ active: showColor }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
-                    <li v-for="option in ddTestColor" :key="option.id">
+                    <li
+                      v-for="option in ddTestColor"
+                      :key="option.id"
+                    >
                       <input
                         :id="option.id"
                         class="multiselectOption"
@@ -197,15 +231,21 @@
                         name="color"
                         :value="option.value"
                         @change="onCheckColor($event)"
-                      />
-                      <label class="optionLabel" :for="option.id">{{
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
                     <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
-                    <button class="filterBtn" @click="clearCheckBoxs('color')">
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('color')"
+                    >
                       Clear
                     </button>
                   </div>
@@ -245,12 +285,20 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Size</button>
+                <button class="c-form-input">
+                  Size
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showSize }">
+              <div
+                class="multiselect"
+                :class="{ active: showSize }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
-                    <li v-for="option in ddTestSize" :key="option.id">
+                    <li
+                      v-for="option in ddTestSize"
+                      :key="option.id"
+                    >
                       <input
                         :id="option.id"
                         class="multiselectOption"
@@ -258,15 +306,21 @@
                         name="size"
                         :value="option.value"
                         @change="onCheckSize($event)"
-                      />
-                      <label class="optionLabel" :for="option.id">{{
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
                     <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
-                    <button class="filterBtn" @click="clearCheckBoxs('size')">
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('size')"
+                    >
                       Clear
                     </button>
                   </div>
@@ -308,12 +362,20 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Material</button>
+                <button class="c-form-input">
+                  Material
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showMaterial }">
+              <div
+                class="multiselect"
+                :class="{ active: showMaterial }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
-                    <li v-for="option in ddTestMaterial" :key="option.id">
+                    <li
+                      v-for="option in ddTestMaterial"
+                      :key="option.id"
+                    >
                       <input
                         :id="option.id"
                         class="multiselectOption"
@@ -321,8 +383,11 @@
                         name="material"
                         :value="option.value"
                         @change="onCheckMaterial($event)"
-                      />
-                      <label class="optionLabel" :for="option.id">{{
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
                     </li>
@@ -354,8 +419,14 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" />
-                  <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" />
+                  <path
+                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
+                    stroke="white"
+                  />
+                  <path
+                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
+                    stroke="white"
+                  />
                 </svg>
               </button>
             </div>
@@ -364,7 +435,10 @@
       </div>
       <div class="sort_by">
         <div class="filters_responsive">
-          <div class="close-btn" @click="closeMenu">
+          <div
+            class="close-btn"
+            @click="closeMenu"
+          >
             <svg
               width="48"
               height="48"
@@ -405,7 +479,7 @@
               step="2"
               class="progress"
               @input="sliderChange($event)"
-            />
+            >
           </div>
           <div
             class="sortFilter"
@@ -430,10 +504,16 @@
                 />
               </svg>
             </button>
-            <div class="multiselect" :class="{ active: showSort }">
+            <div
+              class="multiselect"
+              :class="{ active: showSort }"
+            >
               <div class="tmb_header_dopdown">
                 <ul>
-                  <li v-for="option in ddTestSort" :key="option.id">
+                  <li
+                    v-for="option in ddTestSort"
+                    :key="option.id"
+                  >
                     <input
                       :id="option.id"
                       class="multiselectOption"
@@ -442,7 +522,7 @@
                       :checked="option.id == 'sort1' ? true : false"
                       :value="option.value"
                       @change="onCheckSort($event)"
-                    />
+                    >
                     <label
                       class="optionLabel"
                       :for="option.id"
@@ -451,8 +531,7 @@
                           closeSortMenu(event);
                         }
                       "
-                      >{{ option.text }}</label
-                    >
+                    >{{ option.text }}</label>
                   </li>
                 </ul>
               </div>
@@ -467,9 +546,16 @@
       class="grid_inner product-containers"
       :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }"
     >
-      <div v-for="(value, key) in Products" :key="key" class="product_item">
+      <div
+        v-for="(value, key) in Products"
+        :key="key"
+        class="product_item"
+      >
         <!-- this block work for single product products -->
-        <div v-if="value.hasOwnProperty('single')" class="card">
+        <div
+          v-if="value.hasOwnProperty('single')"
+          class="card"
+        >
           <a :href="`/products/` + value.single.handle">
             <div
               :id="`item_left_` + value.single.handle"
@@ -480,11 +566,11 @@
             >
               {{
                 value.single.variants[0].inStock <= 5 &&
-                value.single.variants[0].inStock >= 1
+                  value.single.variants[0].inStock >= 1
                   ? "ONLY " + value.single.variants[0].inStock + " LEFT"
                   : value.single.variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -492,21 +578,36 @@
               v-if="value.single.images.length > 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
-              <img :src="value.single.images[1]" alt="" class="hoverImg" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
+              <img
+                :src="value.single.images[1]"
+                alt=""
+                class="hoverImg"
+              >
             </div>
             <div
               v-else-if="value.single.images.length == 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -519,7 +620,10 @@
 
           <div class="quickButton quickActive">
             <div class="color_swatches" />
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
               <!-- if quantity is 0 then hide -->
 
               <span v-if="value.single.variants[0].inStock != 0">
@@ -545,7 +649,7 @@
         <div
           v-if="
             value.hasOwnProperty('variable') &&
-            value.variable.length - 1 >= value.active
+              value.variable.length - 1 >= value.active
           "
           class="card"
         >
@@ -560,13 +664,13 @@
             >
               {{
                 value.variable[value.active].variants[0].inStock <= 5 &&
-                value.variable[value.active].variants[0].inStock >= 1
+                  value.variable[value.active].variants[0].inStock >= 1
                   ? "ONLY " +
                     value.variable[value.active].variants[0].inStock +
                     " LEFT"
                   : value.variable[value.active].variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -579,12 +683,12 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
               <img
                 :src="value.variable[value.active].images[1]"
                 alt=""
                 class="hoverImg"
-              />
+              >
             </div>
             <div
               v-else-if="value.variable[value.active].images.length == 1"
@@ -595,14 +699,17 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -629,12 +736,15 @@
                     <img
                       :src="getThemeAssets(sValue.img)"
                       :class="sValue.img"
-                    />
+                    >
                   </span>
                 </li>
               </ul>
             </div>
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
               <button
                 :id="'quickAdd' + value.variable[value.active].id"
                 :class="{
@@ -671,7 +781,9 @@
         productfound: Products.length > 0,
       }"
     >
-      <h2 class="sec_heading">We're sorry, no matches were found.</h2>
+      <h2 class="sec_heading">
+        We're sorry, no matches were found.
+      </h2>
       <h4 class="body_text">
         We couldn't find any results for your selected filters. Clear your
         filters, or contact our team and we'll be happy to help.
@@ -698,6 +810,7 @@ export default {
     },
   },
   data() {
+    console.log(this.shopifyData)
     return {
       isActive: false,
       isMobile: false,

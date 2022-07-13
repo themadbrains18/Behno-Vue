@@ -3,8 +3,8 @@ import axios from "axios"
 
 class ShopifyAPI {
 
-    /*
-       shopify global attributes
+    /**
+     *  shopify global attributes
      */
 
 
@@ -132,8 +132,11 @@ class ShopifyAPI {
                 errorMessage = response.data.message;
             }
             this.openToast(errorMessage);
+            
         }
+
     }
+
     openToast(message){
         let toastDiv=document.querySelector('.common_warning.error .message');
         toastDiv.innerHTML=message;
@@ -183,16 +186,16 @@ class ShopifyAPI {
 
         for (let item in CartItems) {
             card += `<div class="card">
-                    <div class="product_img_wrapper" id="product_img_wrapper6678699180129" pid="${CartItems[item].product_id}">
-                    <div class="loder_tmb"> 
-                        <span></span><span></span>
-                        <span></span><span></span>
-                        <span></span>
-                    </div>
+                    <div class="product_img_wrapper " id="product_img_wrapper6678699180129" pid="${CartItems[item].product_id}">
+                        <div class="loder_tmb"> 
+                            <span></span><span></span>
+                            <span></span><span></span>
+                            <span></span>
+                        </div>
                         <img src="${CartItems[item].image}" id="6678699180129">
                         <button class="body_text remove" variantID="${CartItems[item].variant_id}">Remove</button>
                     </div>
-                    <h5 class="subtitle">${CartItems[item].product_title}</h5>
+                    <a href="${CartItems[item].url}" class="subtitle">${CartItems[item].product_title}</a>
                     <h5 class="subtitle_b">$${(CartItems[item].price / 100).toFixed(2)}</h5>
                 <div class="mini_cart-products">
                     <button class="behno_increment_dec" request="minus" key="${CartItems[item].key}">
@@ -281,11 +284,13 @@ class ShopifyAPI {
 
         var CartItems = getCartData.data.items;
         var card = ''
+        
 
         // if (this.ShopifyInfo.location.pathname != 'cart')
         //     return false;
 
         for (let item in CartItems) {
+            
             card += `<div class="card">
                             <!-- <a href="#"> -->
                                 <div class="product_img_wrapper" id="product_img_wrapper${CartItems[item].id}" >
@@ -295,7 +300,7 @@ class ShopifyAPI {
                                 <h5 class="card-title" >${CartItems[item].product_title}</h5>
                                 <h5 class="card-title bold" >${CartItems[item].price}</h5>
                             <!-- </a> -->
-                        </div>`
+                    </div>`
         }
 
         document.querySelector('#behno_main_cart').innerHTML = card
@@ -344,17 +349,6 @@ class ShopifyAPI {
 
     /** Get Assets  */
 
-
-    /**
-     * page over layer when user product add to cart also open drawer
-     */
-
-    addOverLayer(){
-        // let bg_Layer= document.querySelector(".bg_layer_removecart");
-        // bg_Layer.addEventListener("click",()=>{
-        //     bg_Layer.classList.toggle("active")
-        // })
-    }
 }
 
 

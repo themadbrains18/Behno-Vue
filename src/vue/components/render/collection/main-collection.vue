@@ -8,7 +8,7 @@
             class="filter_cta"
             @click="myFilter"
           >
-            {{ shopifyData.filterDropdownTextResponsive }}
+            {{ shopifyData.applyFilterCta }}
           </button>
           <button
             id="sortCta"
@@ -537,7 +537,7 @@
                 class="quickButton"
                 :class="{ quickActive: isMobile==false?product.id == productId:true }"
               >
-                <div class="color_swatches">
+                <div class="color_swatches ">
                   <ul>
                     <li
                       v-for="color in product.options"

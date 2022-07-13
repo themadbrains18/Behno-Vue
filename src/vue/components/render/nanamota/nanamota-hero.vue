@@ -1,20 +1,38 @@
 <template>
-    <!-- Hero Section -->
-    <section class="tmb_hero_sec" v-if="shopifyData.checkSection=='false'">
-       <div class="hero_sec_imgContainer">
-        <img
-            :src="shopifyData.bannerimg.src"
-            :src-placeholder="shopifyData.bannerimg.placeholder"
-            :alt="shopifyData.bannerimg.alt"
-          >
-        <!-- video show at 991 -->
-        <video  preload="none" class="shogun-image ">
+  <!-- Hero Section -->
+  <section
+    v-if="shopifyData.checkSection=='false'"
+    class="tmb_hero_sec"
+  >
+    <div class="hero_sec_imgContainer">
+      <img
+        :src="shopifyData.bannerimg.src"
+        :src-placeholder="shopifyData.bannerimg.placeholder"
+        :alt="shopifyData.bannerimg.alt"
+      >
+      <!-- video show at 991 -->
+      <video
+        preload="none"
+        class="shogun-image "
+      >
         <source :src="(shopifyData.bannerMobileImg)">
       </video>
-       </div>
-    </section>
+    </div>
+  </section>
 </template>
 
+
+<script>
+
+export default ({
+   props: {
+    shopifyData: {
+      type: Object,
+      required: true,
+    }
+  },
+})
+</script>
 
 <style scoped>
 .hero_sec_imgContainer{
@@ -33,18 +51,6 @@
  }  
 }
 </style>
-
-<script>
-
-export default ({
-   props: {
-    shopifyData: {
-      type: Object,
-      required: true,
-    }
-  },
-})
-</script>
 
 
 

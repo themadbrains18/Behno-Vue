@@ -1,45 +1,87 @@
 <template>
   <div>
     <!-- featured Carousel -->
-    <section class="product_slider big_container modify-slider" v-if="relatedProduct.length > 0">
+    <section
+      v-if="relatedProduct.length > 0"
+      class="product_slider big_container modify-slider"
+    >
       <h2 class="card_heading product_slider_heading">
         {{ shopifyData.secHeading }}
       </h2>
-      <swiper :modules="modules" :slides-per-view="'auto'" :space-between="10" :mousewheel="{
-        invert: false,
-        releaseOnEdges: true
-      }" navigation>
+      <swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :space-between="10"
+        :mousewheel="{
+          invert: false,
+          releaseOnEdges: true
+        }"
+        navigation
+      >
         <!-- product Card -->
         <template v-if="shopifyData.showProduct === 'true'">
-          <swiper-slide class="product_item" v-for="(value, key) in relatedProduct" :key="key">
-
+          <swiper-slide
+            v-for="(value, key) in relatedProduct"
+            :key="key"
+            class="product_item"
+          >
             <!-- this block work for single product products -->
-            <div v-if="value.hasOwnProperty('single')" class="card">
+            <div
+              v-if="value.hasOwnProperty('single')"
+              class="card"
+            >
               <a :href="`/products/` + value.single.handle">
-                <div :id="`item_left_` + value.single.handle" class="item_left"
-                  :class="{ item_left_active: value.single.variants[0].inStock < 5 }">
+                <div
+                  :id="`item_left_` + value.single.handle"
+                  class="item_left"
+                  :class="{ item_left_active: value.single.variants[0].inStock < 5 }"
+                >
                   {{
                   
-                      value.single.variants[0].inStock <= 5 && value.single.variants[0].inStock >= 1
-                        ? "ONLY " + value.single.variants[0].inStock + " LEFT"
-                        : value.single.variants[0].inStock == 0
-                          ? "Out Of Stock"
-                          : ""
+                    value.single.variants[0].inStock <= 5 && value.single.variants[0].inStock >= 1
+                      ? "ONLY " + value.single.variants[0].inStock + " LEFT"
+                      : value.single.variants[0].inStock == 0
+                        ? "Out Of Stock"
+                        : ""
                   }}
                 </div>
 
 
 
-                <div v-if="(value.single.images.length > 1)" class="product_img_wrapper">
-                  <img :src="value.single.featured_image" alt="" class="normal">
-                  <img :src="value.single.images[1]" alt="" class="hoverImg">
+                <div
+                  v-if="(value.single.images.length > 1)"
+                  class="product_img_wrapper"
+                >
+                  <img
+                    :src="value.single.featured_image"
+                    alt=""
+                    class="normal"
+                  >
+                  <img
+                    :src="value.single.images[1]"
+                    alt=""
+                    class="hoverImg"
+                  >
                 </div>
-                <div v-else-if="(value.single.images.length == 1)" class="product_img_wrapper">
-                  <img :src="value.single.featured_image" alt="" class="normal">
+                <div
+                  v-else-if="(value.single.images.length == 1)"
+                  class="product_img_wrapper"
+                >
+                  <img
+                    :src="value.single.featured_image"
+                    alt=""
+                    class="normal"
+                  >
                 </div>
-                <div v-else class="product_img_wrapper">
-                  <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" alt=""
-                    class="normal">
+                <div
+                  v-else
+                  class="product_img_wrapper"
+                >
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+                    alt=""
+                    class="normal"
+                  >
                 </div>
 
                 <!-- <h5 class="card-title product_title">
@@ -51,7 +93,7 @@
               </a>
 
               <div class="quickButton quickActive">
-                <div class="color_swatches" />
+                <div class="color_swatches "  />
                 <!-- <div class="product_cta_wrapper" data-v-32bfb114="">
 
                   <span v-if="value.single.variants[0].inStock != 0">
@@ -72,34 +114,65 @@
 
             <!-- this block work for single product products -->
 
-            <div v-if="value.hasOwnProperty('variable') && (value.variable.length - 1) >= value.active" class="card">
+            <div
+              v-if="value.hasOwnProperty('variable') && (value.variable.length - 1) >= value.active"
+              class="card"
+            >
               <a :href="`/products/` + value.variable[value.active].handle">
 
-                <div :id="`item_left_` + value.variable[value.active].handle" class="item_left" :class="{
-                  item_left_active: value.variable[value.active].variants[0].inStock < 5,
-                }">
+                <div
+                  :id="`item_left_` + value.variable[value.active].handle"
+                  class="item_left"
+                  :class="{
+                    item_left_active: value.variable[value.active].variants[0].inStock < 5,
+                  }"
+                >
                   {{
-                      value.variable[value.active].variants[0].inStock <= 5 &&
-                        value.variable[value.active].variants[0].inStock >= 1
-                        ? "ONLY " + value.variable[value.active].variants[0].inStock + " LEFT"
-                        : value.variable[value.active].variants[0].inStock == 0
-                          ? "Out Of Stock"
-                          : ""
+                    value.variable[value.active].variants[0].inStock <= 5 &&
+                      value.variable[value.active].variants[0].inStock >= 1
+                      ? "ONLY " + value.variable[value.active].variants[0].inStock + " LEFT"
+                      : value.variable[value.active].variants[0].inStock == 0
+                        ? "Out Of Stock"
+                        : ""
                   }}
                 </div>
 
-                <div v-if="value.variable[value.active].images.length > 2" id="product_img_wrapper6617090588769"
-                  class="product_img_wrapper">
-                  <img :src="value.variable[value.active].featured_image" alt="" class="normal">
-                  <img :src="value.variable[value.active].images[1]" alt="" class="hoverImg">
+                <div
+                  v-if="value.variable[value.active].images.length > 2"
+                  id="product_img_wrapper6617090588769"
+                  class="product_img_wrapper"
+                >
+                  <img
+                    :src="value.variable[value.active].featured_image"
+                    alt=""
+                    class="normal"
+                  >
+                  <img
+                    :src="value.variable[value.active].images[1]"
+                    alt=""
+                    class="hoverImg"
+                  >
                 </div>
-                <div v-else-if="value.variable[value.active].images.length == 1" id="product_img_wrapper6617090588769"
-                  class="product_img_wrapper">
-                  <img :src="value.variable[value.active].featured_image" alt="" class="normal">
+                <div
+                  v-else-if="value.variable[value.active].images.length == 1"
+                  id="product_img_wrapper6617090588769"
+                  class="product_img_wrapper"
+                >
+                  <img
+                    :src="value.variable[value.active].featured_image"
+                    alt=""
+                    class="normal"
+                  >
                 </div>
-                <div v-else class="product_img_wrapper">
-                  <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png" alt=""
-                    class="normal">
+                <div
+                  v-else
+                  class="product_img_wrapper"
+                >
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+                    alt=""
+                    class="normal"
+                  >
                 </div>
 
                 <!-- <h5 class="card-title product_title">
@@ -111,12 +184,22 @@
               </a>
 
               <div class="quickButton quickActive">
-                <div class="color_swatches">
+                <div class="color_swatches ">
                   <ul :mainKey="JSON.stringify(value)">
-                    <li v-for="(sValue, sKey) in value.swatches" :key="sKey" :index="sKey" :link="sValue.link"
-                      class="nav-dots" :class="sKey == value.active ? 'active' : ''" @click="selectVariation">
+                    <li
+                      v-for="(sValue, sKey) in value.swatches"
+                      :key="sKey"
+                      :index="sKey"
+                      :link="sValue.link"
+                      class="nav-dots"
+                      :class="sKey == value.active ? 'active' : ''"
+                      @click="selectVariation"
+                    >
                       <span>
-                        <img :src="getThemeAssets(sValue.img)" :class="sValue.img">
+                        <img
+                          :src="getThemeAssets(sValue.img)"
+                          :class="sValue.img"
+                        >
                       </span>
                     </li>
                   </ul>
@@ -148,7 +231,10 @@
         <!-- Custom card -->
       </swiper>
     </section>
-    <section class="product_slider big_container modify-slider" v-if="relatedProduct.length == 0">
+    <section
+      v-if="relatedProduct.length == 0"
+      class="product_slider big_container modify-slider"
+    >
       <h2 class="card_heading product_slider_heading">
         {{ shopifyData.secHeading }}
       </h2>
