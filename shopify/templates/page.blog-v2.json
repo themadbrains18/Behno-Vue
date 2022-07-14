@@ -4,8 +4,8 @@
       "type": "blog-hero",
       "settings": {
         "heroHeading": "I AM:",
-        "heroImgDesktop": "shopify:\/\/shop_images\/blog-banner-bg.jpg",
-        "heroImgMobile": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg"
+        "heroImgDesktop": "shopify://shop_images/blog-banner-bg.jpg",
+        "heroImgMobile": "shopify://shop_images/blog-banner-bg-res.jpg"
       }
     },
     "gallery-preview": {
@@ -14,28 +14,28 @@
         "eef26de5-e9bb-4122-8e87-19ca9996db8b": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/galler-preview1.jpg",
+            "previewImage": "shopify://shop_images/galler-preview1.jpg",
             "product": "the-softest-tee-mens-fitted-long-sleeve-black"
           }
         },
         "31ed3ef1-0b8b-4178-ba5d-25c7d00cc084": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/bleed1.jpg",
+            "previewImage": "shopify://shop_images/bleed1.jpg",
             "product": "ana-flat-tote-large-pebble-ruched-apricot"
           }
         },
         "02c8897c-98d1-4142-a54f-8eaca909bd7e": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gallery-img3.jpg",
+            "previewImage": "shopify://shop_images/gallery-img3.jpg",
             "product": "ari-split-base-crossbody-nappa-olive"
           }
         },
         "b60d0b1d-0dc8-47e5-a19f-ab870a717d3b": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/shop-bag1.jpg",
+            "previewImage": "shopify://shop_images/shop-bag1.jpg",
             "product": "devon-wallet-black"
           }
         }
@@ -75,7 +75,7 @@
         "d353feb1-4050-42e1-b293-0fa18433b7c5": {
           "type": "slide",
           "settings": {
-            "previewImg": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg",
+            "previewImg": "shopify://shop_images/blog-banner-bg-res.jpg",
             "secCtaText": "SHOP THE BAG",
             "product": "elizabeth-baguette-pebble-avocado"
           }
@@ -83,7 +83,7 @@
         "f0401990-7813-4007-910e-1262978cf512": {
           "type": "slide",
           "settings": {
-            "previewImg": "shopify:\/\/shop_images\/shop-bag2_f4aefbae-c315-4681-b839-22f939a48ee9.jpg",
+            "previewImg": "shopify://shop_images/shop-bag2_f4aefbae-c315-4681-b839-22f939a48ee9.jpg",
             "secCtaText": "SHOP THE BAG",
             "product": "frida-flat-tote-nappa-orchid"
           }
@@ -113,7 +113,7 @@
       "settings": {
         "checkSection": true,
         "imgHeading": "I AM:",
-        "secImg": "shopify:\/\/shop_images\/image-text.jpg",
+        "secImg": "shopify://shop_images/image-text.jpg",
         "secCta": "SHOP THE BAG",
         "product": "ana-flat-tote-large-pebble-ruched-red"
       }
@@ -126,7 +126,7 @@
           "settings": {
             "product": "devon-wallet-pebble-chain-cognac-orange",
             "secCtaText": "SHOP THE BAG",
-            "previewImg": "shopify:\/\/shop_images\/bleed1.jpg"
+            "previewImg": "shopify://shop_images/bleed1.jpg"
           }
         },
         "c27f6abe-f6dc-403d-b0d3-8700b5ecab52": {
@@ -134,7 +134,7 @@
           "settings": {
             "product": "elizabeth-baguette-mini-pebble-mango",
             "secCtaText": "SHOP THE BAG",
-            "previewImg": "shopify:\/\/shop_images\/bleed2.jpg"
+            "previewImg": "shopify://shop_images/bleed2.jpg"
           }
         }
       },
@@ -194,7 +194,7 @@
       ],
       "settings": {
         "checkSection": true,
-        "secImg": "shopify:\/\/shop_images\/sec-full-img.jpg",
+        "secImg": "shopify://shop_images/sec-full-img.jpg",
         "secCta": "SHOP THE BAG",
         "showProduct": true,
         "product": "elizabeth-baguette-mini-suede-acid-green"

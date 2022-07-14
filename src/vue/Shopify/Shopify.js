@@ -153,7 +153,7 @@ class ShopifyAPI {
      */
 
     addItems(items = {}) {
-        console.log('i am here!', this.location.pathname)
+        // console.log('i am here!', this.location.pathname)
     }
 
     /**
@@ -161,7 +161,7 @@ class ShopifyAPI {
     */
 
     chnageCart(item = {}) {
-        console.log('i am here!', this.location.pathname)
+        // console.log('i am here!', this.location.pathname)
     }
 
 

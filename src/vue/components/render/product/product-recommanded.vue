@@ -93,7 +93,7 @@
               </a>
 
               <div class="quickButton quickActive">
-                <div class="color_swatches "  />
+                <div class="color_swatches " />
                 <!-- <div class="product_cta_wrapper" data-v-32bfb114="">
 
                   <span v-if="value.single.variants[0].inStock != 0">

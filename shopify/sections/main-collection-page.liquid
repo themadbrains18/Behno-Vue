@@ -1,3 +1,28 @@
+
+
+
+
+
+{% assign material = section.settings.material |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign category = section.settings.category |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign size = section.settings.size |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign color = section.settings.color |  newline_to_br | strip_newlines | split: '<br />'  %}
+
+{% capture materials %}
+    [{% for mts in material %}{% assign mtsList = mts | split: ':' %}{"label":"{{ mtsList[0] }}","rules": {{ collections[mtsList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+{% capture categories %}
+    [{% for cates in category %}{% assign catList = cates | split: ':' %}{"label":"{{ catList[0] }}","rules": {{ collections[catList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+{% capture colors %}
+    [{% for clrs in color %}{% assign clrsList = clrs | split: ':' %}{"label":"{{ clrsList[0] }}","rules": {{ collections[clrsList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+
+
+
 {% assign bannerImg = '' %}
 {% assign bannerheading = '' %}
 
@@ -21,11 +46,18 @@
                         {% endfor %}
                  }
                 {% endcapture %}
-                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}}]{% if forloop.last %}
+                {% capture collection %}
+                   [{% for c in product.collections %}
+                     "{{ c.title }}"{% if forloop.last %}{% else %},{% endif %}
+                   {% endfor %}]  
+                {% endcapture %}
+
+                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}},{{ collection }}]{% if forloop.last %}
                 {% else %},{% endif %}
         {% endfor %}]    
     {% endcapture %}
 {% endpaginate %}
+
 
 <!-- get swatches (images) list  -->
 {% paginate collection.products by 800 %}
@@ -38,7 +70,6 @@
              {% endfor %},{% endif %}{% endfor %}]    
    {% endcapture %} 
 {% endpaginate %}
-
 
 <render-collection-all-page :shopify-data="{
     filterDropdownTextResponsive: '{{ section.settings.filterDropdownTextResponsive }}',
@@ -59,9 +90,17 @@
     bannerHeading : `{{ bannerheading }}`,
     collectionText:`{{ section.settings.collectionText }}`,
     collectionImage : `{{ section.settings.collectionImage }}`,
-}">
+    category : '{{ categories | strip_newlines  | base64_encode }}',
+    color : '{{ colors | strip_newlines  | base64_encode }}',
+    size : '{{ size | strip_newlines  | base64_encode }}',
+    material : '{{ materials | strip_newlines  | base64_encode }}'
 
+}">
 </render-collection-all-page>
+{%comment%}
+
+{%endcomment%}
+
 
 
 
@@ -151,7 +190,38 @@
         "label":"Sort By Button in Sort Menu",
         "type":"text",
         "default":"SORT"
+    },
+    {
+        "type": "header",
+        "content": "Collection Fillters"
+    },
+    {
+        "id":"category",
+        "label":"Category Fillter",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"color",
+        "label":"Color Fillter",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"size",
+        "label":"Size Fillter",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"material",
+        "label":"Material Fillter",
+        "type":"textarea",
+        "default":"xyz"
     }
+
+
+
 ],
 "blocks":[
     {

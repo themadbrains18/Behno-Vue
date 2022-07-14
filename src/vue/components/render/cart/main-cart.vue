@@ -2,7 +2,7 @@
   <!-- ====== Shoping cart Default template ====== -->
   <section
     class="cart_default_sec"
-    v-bind:style="cartData.item_count == 0 ? 'display:block' : 'display:none'"
+    :style="cartData.item_count == 0 ? 'display:block' : 'display:none'"
   >
     <div class="big_container">
       <div class="sec_head">
@@ -11,7 +11,7 @@
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/left-arrow-new.svg?v=1654580925"
               alt="error"
-            />
+            >
           </button>
         </div>
       </div>
@@ -27,7 +27,10 @@
             v-for="(item, index) in shopifyData.sectionCta"
             :key="index"
           >
-            <a :href="item.secCtaLink" class="cta_btn cta_btn-black">
+            <a
+              :href="item.secCtaLink"
+              class="cta_btn cta_btn-black"
+            >
               {{ item.secCta }}
             </a>
           </template>
@@ -37,7 +40,10 @@
   </section>
 
   <!-- ====== Shoping cart With Products template ====== -->
-  <section class="cart_with_products" v-bind:style="(cartData.item_count > 0 ) ? 'display:block' : 'display:none'">
+  <section
+    class="cart_with_products"
+    :style="(cartData.item_count > 0 ) ? 'display:block' : 'display:none'"
+  >
     <div class="big_container">
       <div class="sec_head">
         <div class="pre_arrow_wrapper">
@@ -45,7 +51,7 @@
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/left-arrow-new.svg?v=1654580925"
               alt="error"
-            />
+            >
           </button>
         </div>
       </div>
@@ -55,15 +61,25 @@
             {{ shopifyData.defaultSecHeading }}
           </h3>
           <div class="product_grid">
-            <div class="card" v-for="(value, key) in cartData.items" :key="key">
+            <div
+              v-for="(value, key) in cartData.items"
+              :key="key"
+              class="card"
+            >
               <!-- <a :href=(value.url)> -->
-              <div class="product_img_wrapper" :id="product_img_wrapper">
+              <div
+                :id="product_img_wrapper"
+                class="product_img_wrapper"
+              >
                 <div class="loder_tmb"> 
-                    <span></span><span></span>
-                    <span></span><span></span>
-                    <span></span>
+                  <span /><span />
+                  <span /><span />
+                  <span />
                 </div>
-                <img :src="value.featured_image.url" :id="value.id" />
+                <img
+                  :id="value.id"
+                  :src="value.featured_image.url"
+                >
                 <button
                   class="body_text1 remove"
                   :variant="value.key"
@@ -72,7 +88,9 @@
                   Remove
                 </button>
               </div>
-              <h5 class="card-title">{{ value.product_title }}</h5>
+              <h5 class="card-title">
+                {{ value.product_title }}
+              </h5>
               <h5 class="card-title bold">
                 ${{ (value.price / 100).toFixed(2) }}
               </h5>
@@ -85,7 +103,9 @@
             <h4 class="subtotal_heading">
               {{ shopifyData.subtotalHeading }}
             </h4>
-            <p class="subtotal_price body_text">${{ (cartData.original_total_price / 100).toFixed(2) }}</p>
+            <p class="subtotal_price body_text">
+              ${{ (cartData.original_total_price / 100).toFixed(2) }}
+            </p>
             <p class="body_text">
               {{ shopifyData.taxInfo }}
             </p>
@@ -96,18 +116,22 @@
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076"
                 alt="error"
-              />
-              <p class="body_text">ⓘ</p>
+              >
+              <p class="body_text">
+                ⓘ
+              </p>
             </div>
             <div class="cta_wrapper">
-              <a class="cta_btn" href="/checkout">
+              <a
+                class="cta_btn"
+                href="/checkout"
+              >
                 {{ shopifyData.checkoutCtaText }}
               </a>
               <a
                 :href="shopifyData.continuCtaLink"
                 class="cta_btn cta-modifier"
-                >{{ shopifyData.continuCtaText }}</a
-              >
+              >{{ shopifyData.continuCtaText }}</a>
             </div>
           </div>
         </div>
@@ -124,7 +148,7 @@
             <img
               src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/left-arrow-new.svg?v=1654580925"
               alt="error"
-            />
+            >
           </button>
         </div>
       </div>
@@ -139,8 +163,7 @@
           <a
             :href="shopifyData.ThanksSecCtaLink"
             class="cta_btn cta_btn-black"
-            >{{ shopifyData.ThanksSecCtaText }}</a
-          >
+          >{{ shopifyData.ThanksSecCtaText }}</a>
         </div>
       </div>
     </div>
@@ -152,16 +175,16 @@
 import { ShopifyAPI } from "../../../Shopify/Shopify";
 
 export default {
-  data() {
-    return {
-      cartData: [],
-    };
-  },
   props: {
     shopifyData: {
       type: Object,
       required: true,
     },
+  },
+  data() {
+    return {
+      cartData: [],
+    };
   },
   mounted() {
     this.refreshMainCart();

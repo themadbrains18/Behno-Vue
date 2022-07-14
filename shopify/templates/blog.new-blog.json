@@ -5,8 +5,8 @@
       "settings": {
         "checkSection": true,
         "heroHeading": "Test Blog",
-        "heroImgDesktop": "shopify:\/\/shop_images\/blog-banner-bg.jpg",
-        "heroImgMobile": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg"
+        "heroImgDesktop": "shopify://shop_images/blog-banner-bg.jpg",
+        "heroImgMobile": "shopify://shop_images/blog-banner-bg-res.jpg"
       }
     },
     "gallery-preview": {
@@ -15,56 +15,56 @@
         "eef26de5-e9bb-4122-8e87-19ca9996db8b": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img1.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img1.jpg",
             "product": "the-softest-tee-mens-fitted-long-sleeve-black"
           }
         },
         "31ed3ef1-0b8b-4178-ba5d-25c7d00cc084": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img2.jpg",
             "product": "ana-flat-tote-large-pebble-ruched-apricot"
           }
         },
         "02c8897c-98d1-4142-a54f-8eaca909bd7e": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img3.jpg",
             "product": "ari-split-base-crossbody-nappa-olive"
           }
         },
         "b60d0b1d-0dc8-47e5-a19f-ab870a717d3b": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img1.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img1.jpg",
             "product": "devon-wallet-black"
           }
         },
         "053f1a3e-2ffd-4408-8562-403daef29d4b": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img2.jpg",
             "product": "the-softest-tee-mens-fitted-short-sleeve-black"
           }
         },
         "f02cbbbd-e72b-4a5f-8a44-38fef385da8e": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img3.jpg",
             "product": "copy-of-the-softest-tee-womens-fitted-long-sleeve-white"
           }
         },
         "81c351ff-73b4-4f69-ab8a-b1ceffe359ee": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img2.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img2.jpg",
             "product": "ana-flat-tote-crossbody-pebble-ruched-red"
           }
         },
         "c190422a-0938-45a3-b263-9bce36a9ad21": {
           "type": "Image",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/gellary-slider-popup-img3.jpg",
+            "previewImage": "shopify://shop_images/gellary-slider-popup-img3.jpg",
             "product": "ana-flat-tote-large-pebble-ruched-apricot"
           }
         }
@@ -111,7 +111,7 @@
         "d353feb1-4050-42e1-b293-0fa18433b7c5": {
           "type": "slide",
           "settings": {
-            "previewImg": "shopify:\/\/shop_images\/blog-banner-bg-res.jpg",
+            "previewImg": "shopify://shop_images/blog-banner-bg-res.jpg",
             "secCtaText": "SHOP THE BAG",
             "product": "elizabeth-baguette-pebble-avocado"
           }
@@ -119,7 +119,7 @@
         "f0401990-7813-4007-910e-1262978cf512": {
           "type": "slide",
           "settings": {
-            "previewImg": "shopify:\/\/shop_images\/shop-bag2_f4aefbae-c315-4681-b839-22f939a48ee9.jpg",
+            "previewImg": "shopify://shop_images/shop-bag2_f4aefbae-c315-4681-b839-22f939a48ee9.jpg",
             "secCtaText": "SHOP THE BAG",
             "product": "frida-flat-tote-nappa-orchid"
           }
@@ -150,7 +150,7 @@
         "checkSection": true,
         "checkImgHeading": true,
         "imgHeading": "I AM:",
-        "secImg": "shopify:\/\/shop_images\/image-text.jpg",
+        "secImg": "shopify://shop_images/image-text.jpg",
         "secCta": "SHOP THE BAG",
         "product": "ana-flat-tote-large-pebble-ruched-red"
       }
@@ -161,19 +161,19 @@
         "f9be777b-83d1-4f4d-94d0-691af5cf3dcd": {
           "type": "Image",
           "settings": {
-            "SliderImage": "shopify:\/\/shop_images\/inheritance2.jpg"
+            "SliderImage": "shopify://shop_images/inheritance2.jpg"
           }
         },
         "f10a3adb-db05-4eb2-bb19-4f9afd531293": {
           "type": "Image",
           "settings": {
-            "SliderImage": "shopify:\/\/shop_images\/inheritance1.jpg"
+            "SliderImage": "shopify://shop_images/inheritance1.jpg"
           }
         },
         "a5c6e8b0-6cfb-4d86-95cb-1d17cb96ff02": {
           "type": "Image",
           "settings": {
-            "SliderImage": "shopify:\/\/shop_images\/ghat-know5.jpg"
+            "SliderImage": "shopify://shop_images/ghat-know5.jpg"
           }
         }
       },
@@ -188,7 +188,7 @@
         "SecHeading": "“I WAS ALWAYS FEARLESS.”",
         "VideoShow": true,
         "CheckVideoImage": true,
-        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/ab4ac139b6114d1589dafb7c2df0b0b6.mov",
+        "videolink": "https://cdn.shopify.com/videos/c/o/v/ab4ac139b6114d1589dafb7c2df0b0b6.mov",
         "product": [
           "the-softest-tee-mens-fitted-long-sleeve-black",
           "the-softest-tee-mens-fitted-long-sleeve-white",
@@ -208,7 +208,7 @@
           "settings": {
             "product": "devon-wallet-pebble-chain-cognac-orange",
             "secCtaText": "SHOP THE BAG",
-            "previewImg": "shopify:\/\/shop_images\/bleed1.jpg"
+            "previewImg": "shopify://shop_images/bleed1.jpg"
           }
         },
         "c27f6abe-f6dc-403d-b0d3-8700b5ecab52": {
@@ -216,7 +216,7 @@
           "settings": {
             "product": "elizabeth-baguette-mini-pebble-mango",
             "secCtaText": "SHOP THE BAG",
-            "previewImg": "shopify:\/\/shop_images\/bleed2.jpg"
+            "previewImg": "shopify://shop_images/bleed2.jpg"
           }
         }
       },
@@ -245,7 +245,7 @@
         "checkSection": true,
         "checkImgHeading": false,
         "imgHeading": "I AM:",
-        "secImg": "shopify:\/\/shop_images\/img-text-2.jpg",
+        "secImg": "shopify://shop_images/img-text-2.jpg",
         "secCta": "SHOP THE BAG",
         "product": "the-softest-tee-mens-fitted-short-sleeve-black"
       }
@@ -293,7 +293,7 @@
       ],
       "settings": {
         "checkSection": true,
-        "secImg": "shopify:\/\/shop_images\/sec-full-img.jpg",
+        "secImg": "shopify://shop_images/sec-full-img.jpg",
         "secCta": "SHOP THE BAG",
         "showProduct": true,
         "product": "elizabeth-baguette-mini-suede-acid-green"

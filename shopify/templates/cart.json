@@ -14,7 +14,7 @@
           "type": "SectionCta",
           "settings": {
             "secCta": "BACK TO HOMEPAGE",
-            "secCtaLink": "\/"
+            "secCtaLink": "/"
           }
         }
       },

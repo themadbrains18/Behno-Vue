@@ -1,10 +1,18 @@
 <template>
   <div class="filter_responsive">
     <div class="filter_cta_wrapper">
-      <button id="filterCta" class="filter_cta" @click="myFilter">
+      <button
+        id="filterCta"
+        class="filter_cta"
+        @click="myFilter"
+      >
         {{ shopifyData.filterDropdownTextResponsive }}
       </button>
-      <button id="sortCta" class="filter_cta" @click="sortBy">
+      <button
+        id="sortCta"
+        class="filter_cta"
+        @click="sortBy"
+      >
         {{ shopifyData.sortByDropdownTextResponsive }}
       </button>
     </div>
@@ -16,22 +24,31 @@
       {{ shopifyData.bannerImage }}
     </h2>
     <div>
-      <img :src="shopifyData.collectionImage" />
-      <h2 class="banner_heading">THE ELIZABETH BAGUETTE SERIESnpm</h2>
+      <img :src="shopifyData.collectionImage">
+      <h2 class="banner_heading">
+        THE ELIZABETH BAGUETTE SERIESnpm
+      </h2>
     </div>
   </div>
 
   <div class="filter_row">
     <div class="row_inner">
       <div class="apply_filter_cta_wrapper">
-        <button class="apply_filter_cta" disabled @click="applyfilter">
+        <button
+          class="apply_filter_cta"
+          disabled
+          @click="applyfilter"
+        >
           {{ shopifyData.applyFilterCta }}
         </button>
       </div>
       <div class="filters">
         <div class="filters_inner_row">
           <div class="filters_responsive">
-            <div class="close-btn" @click="closeMenu">
+            <div
+              class="close-btn"
+              @click="closeMenu"
+            >
               <svg
                 width="48"
                 height="48"
@@ -116,28 +133,34 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Categories</button>
+                <button class="c-form-input">
+                  Categories
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: show }">
+              <div
+                class="multiselect"
+                :class="{ active: show }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
                     <li
-                      v-for="option in ddTestCategory[0]"
-                      :key="'Categories_' + option.id"
+                      v-for="option in ddTestCategory"
+                      :key="option.id"
                     >
                       <input
-                        :id="'Categories_' + option.id"
+                        :id="option.id"
                         class="multiselectOption"
                         type="checkbox"
                         name="category"
                         :value="option.value"
                         @change="onCheck($event)"
-                      />
+                      >
                       <label
                         class="optionLabel"
-                        :for="'Categories_' + option.id"
-                        >{{ option.text.toLowerCase() }}</label
-                      >
+                        :for="option.id"
+                      >{{
+                        option.text.toLowerCase()
+                      }}</label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
@@ -185,31 +208,42 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Color</button>
+                <button class="c-form-input">
+                  Color
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showColor }">
+              <div
+                class="multiselect"
+                :class="{ active: showColor }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
                     <li
-                      v-for="option in ddTestColor[0]"
-                      :key="'Color_' + option.id"
+                      v-for="option in ddTestColor"
+                      :key="option.id"
                     >
                       <input
-                        :id="'Color_' + option.id"
+                        :id="option.id"
                         class="multiselectOption"
                         type="checkbox"
                         name="color"
                         :value="option.value"
                         @change="onCheckColor($event)"
-                      />
-                      <label class="optionLabel" :for="'Color_' + option.id">{{
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
                     <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
-                    <button class="filterBtn" @click="clearCheckBoxs('color')">
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('color')"
+                    >
                       Clear
                     </button>
                   </div>
@@ -249,28 +283,42 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Size</button>
+                <button class="c-form-input">
+                  Size
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showSize }">
+              <div
+                class="multiselect"
+                :class="{ active: showSize }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
-                    <li v-for="option in ddTestSize" :key="'Size_' + option.id">
+                    <li
+                      v-for="option in ddTestSize"
+                      :key="option.id"
+                    >
                       <input
-                        :id="'Size_' + option.id"
+                        :id="option.id"
                         class="multiselectOption"
                         type="checkbox"
                         name="size"
                         :value="option.value"
                         @change="onCheckSize($event)"
-                      />
-                      <label class="optionLabel" :for="'Size_' + option.id">{{
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
                         option.text.toLowerCase()
                       }}</label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
                     <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
-                    <button class="filterBtn" @click="clearCheckBoxs('size')">
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('size')"
+                    >
                       Clear
                     </button>
                   </div>
@@ -312,28 +360,34 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Material</button>
+                <button class="c-form-input">
+                  Material
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showMaterial }">
+              <div
+                class="multiselect"
+                :class="{ active: showMaterial }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
                     <li
-                      v-for="option in ddTestMaterial[0]"
-                      :key="'Material_' + option.id"
+                      v-for="option in ddTestMaterial"
+                      :key="option.id"
                     >
                       <input
-                        :id="'Material_' + option.id"
+                        :id="option.id"
                         class="multiselectOption"
                         type="checkbox"
                         name="material"
                         :value="option.value"
                         @change="onCheckMaterial($event)"
-                      />
+                      >
                       <label
                         class="optionLabel"
-                        :for="'Material_' + option.id"
-                        >{{ option.text.toLowerCase() }}</label
-                      >
+                        :for="option.id"
+                      >{{
+                        option.text.toLowerCase()
+                      }}</label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
@@ -363,8 +417,14 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" />
-                  <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" />
+                  <path
+                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
+                    stroke="white"
+                  />
+                  <path
+                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
+                    stroke="white"
+                  />
                 </svg>
               </button>
             </div>
@@ -373,7 +433,10 @@
       </div>
       <div class="sort_by">
         <div class="filters_responsive">
-          <div class="close-btn" @click="closeMenu">
+          <div
+            class="close-btn"
+            @click="closeMenu"
+          >
             <svg
               width="48"
               height="48"
@@ -414,7 +477,7 @@
               step="2"
               class="progress"
               @input="sliderChange($event)"
-            />
+            >
           </div>
           <div
             class="sortFilter"
@@ -439,10 +502,16 @@
                 />
               </svg>
             </button>
-            <div class="multiselect" :class="{ active: showSort }">
+            <div
+              class="multiselect"
+              :class="{ active: showSort }"
+            >
               <div class="tmb_header_dopdown">
                 <ul>
-                  <li v-for="option in ddTestSort" :key="option.id">
+                  <li
+                    v-for="option in ddTestSort"
+                    :key="option.id"
+                  >
                     <input
                       :id="option.id"
                       class="multiselectOption"
@@ -451,7 +520,7 @@
                       :checked="option.id == 'sort1' ? true : false"
                       :value="option.value"
                       @change="onCheckSort($event)"
-                    />
+                    >
                     <label
                       class="optionLabel"
                       :for="option.id"
@@ -460,8 +529,7 @@
                           closeSortMenu(event);
                         }
                       "
-                      >{{ option.text }}</label
-                    >
+                    >{{ option.text }}</label>
                   </li>
                 </ul>
               </div>
@@ -476,9 +544,16 @@
       class="grid_inner product-containers"
       :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }"
     >
-      <div v-for="(value, key) in Products" :key="key" class="product_item">
+      <div
+        v-for="(value, key) in Products"
+        :key="key"
+        class="product_item"
+      >
         <!-- this block work for single product products -->
-        <div v-if="value.hasOwnProperty('single')" class="card">
+        <div
+          v-if="value.hasOwnProperty('single')"
+          class="card"
+        >
           <a :href="`/products/` + value.single.handle">
             <div
               :id="`item_left_` + value.single.handle"
@@ -489,11 +564,11 @@
             >
               {{
                 value.single.variants[0].inStock <= 5 &&
-                value.single.variants[0].inStock >= 1
+                  value.single.variants[0].inStock >= 1
                   ? "ONLY " + value.single.variants[0].inStock + " LEFT"
                   : value.single.variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -501,21 +576,36 @@
               v-if="value.single.images.length > 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
-              <img :src="value.single.images[1]" alt="" class="hoverImg" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
+              <img
+                :src="value.single.images[1]"
+                alt=""
+                class="hoverImg"
+              >
             </div>
             <div
               v-else-if="value.single.images.length == 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -528,7 +618,10 @@
 
           <div class="quickButton quickActive">
             <div class="color_swatches" />
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
               <!-- if quantity is 0 then hide -->
 
               <span v-if="value.single.variants[0].inStock != 0">
@@ -554,7 +647,7 @@
         <div
           v-if="
             value.hasOwnProperty('variable') &&
-            value.variable.length - 1 >= value.active
+              value.variable.length - 1 >= value.active
           "
           class="card"
         >
@@ -569,13 +662,13 @@
             >
               {{
                 value.variable[value.active].variants[0].inStock <= 5 &&
-                value.variable[value.active].variants[0].inStock >= 1
+                  value.variable[value.active].variants[0].inStock >= 1
                   ? "ONLY " +
                     value.variable[value.active].variants[0].inStock +
                     " LEFT"
                   : value.variable[value.active].variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -588,12 +681,12 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
               <img
                 :src="value.variable[value.active].images[1]"
                 alt=""
                 class="hoverImg"
-              />
+              >
             </div>
             <div
               v-else-if="value.variable[value.active].images.length == 1"
@@ -604,14 +697,17 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -638,12 +734,15 @@
                     <img
                       :src="getThemeAssets(sValue.img)"
                       :class="sValue.img"
-                    />
+                    >
                   </span>
                 </li>
               </ul>
             </div>
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
               <button
                 :id="'quickAdd' + value.variable[value.active].id"
                 :class="{
@@ -680,7 +779,9 @@
         productfound: Products.length > 0,
       }"
     >
-      <h2 class="sec_heading">We're sorry, no matches were found.</h2>
+      <h2 class="sec_heading">
+        We're sorry, no matches were found.
+      </h2>
       <h4 class="body_text">
         We couldn't find any results for your selected filters. Clear your
         filters, or contact our team and we'll be happy to help.
@@ -697,7 +798,7 @@
 
 // import assets from "../../../assets/graphql/assets.json";
 
-import { ShopifyAPI } from "../../Shopify/Shopify";
+import { ShopifyAPI } from "../../../Shopify/Shopify";
 
 export default {
   props: {
@@ -708,11 +809,6 @@ export default {
   },
   data() {
     return {
-      categoryRules: [],
-      colorRules: [],
-      cizeRules: [],
-      materialRules: [],
-
       isActive: false,
       isMobile: false,
       gridMax: false,
@@ -1122,8 +1218,7 @@ export default {
       } else {
         this.selectedColor.push(event.target.value);
       }
-      this.fetchProdustQuery();
-      // console.log(this.selectedColor);
+      console.log(this.selectedColor);
     },
 
     /* set selected size checkbox value */
@@ -1135,8 +1230,7 @@ export default {
       } else {
         this.selectedSize.push(event.target.value);
       }
-      // this.fetchProdustQuery();
-      // console.log(this.selectedSize);
+      console.log(this.selectedSize);
     },
 
     /* set selected material checkbox value */
@@ -1148,22 +1242,7 @@ export default {
       } else {
         this.selectedMaterial.push(event.target.value);
       }
-      this.fetchProdustQuery();
-      // console.log(this.selectedMaterial);
-    },
-
-    /* set selected category checkbox value */
-    onCheck(event) {
-      if (this.selected.includes(event.target.value)) {
-        this.selected = this.selected.filter(function (geeks) {
-          return geeks != event.target.value;
-        });
-      } else {
-        this.selected.push(event.target.value);
-      }
-
-      this.fetchProdustQuery();
-      this.page_index = 0;
+      console.log(this.selectedMaterial);
     },
 
     /* set selected sort checkbox value */
@@ -1175,27 +1254,18 @@ export default {
     /* Fill category dropdown from products data */
 
     getCategoryDropDownList: function () {
-      let objects = this.categoryRules;
       let products = this.roughData();
-      let data = window.atob(this.shopifyData.category);
-      let cat = JSON.parse(data);
+      let cat = JSON.parse(window.atob(this.shopifyData.category));
       let array = [];
-      let rol = [];
       cat.map((cList, index) => {
-        // console.log(cList.rules)
         let obj = {
           id: index + 1,
-          value: cList.label,
-          text: cList.label,
+          value: cList,
+          text: cList,
         };
         array.push(obj);
-
-        rol.push(cList.rules);
       });
-
-      let newarray = [array, rol];
-
-      return newarray;
+      return array;
     },
     /* End Fill category dropdown from products data */
 
@@ -1204,18 +1274,16 @@ export default {
     getColorDropDownList: function () {
       let products = this.roughData();
       let array = [];
-      let rol = [];
       let color = JSON.parse(window.atob(this.shopifyData.color));
       color.map((cColor, index) => {
         let obj = {
           id: index + 1,
-          value: cColor.label,
-          text: cColor.label,
+          value: cColor,
+          text: cColor,
         };
         array.push(obj);
-        rol.push(cColor.rules);
       });
-      return [array, rol];
+      return array;
     },
 
     /* End Fill color dropdown from products data */
@@ -1233,7 +1301,6 @@ export default {
         };
         array.push(obj);
       });
-
       return array;
     },
     /* End Fill size dropdown from products data */
@@ -1242,18 +1309,16 @@ export default {
     getMaterialDropDownList: function () {
       let products = this.roughData();
       let array = [];
-      let rol = [];
       let material = JSON.parse(window.atob(this.shopifyData.material));
       material.map((cMaterial, index) => {
         let obj = {
           id: index + 1,
-          value: cMaterial.label,
-          text: cMaterial.label,
+          value: cMaterial,
+          text: cMaterial,
         };
         array.push(obj);
-        rol.push(cMaterial.rules);
       });
-      return [array, rol];
+      return array;
     },
     /* End Fill material dropdown from products data */
 
@@ -1265,6 +1330,19 @@ export default {
 
       // this.filterByCategory = [];
       // this.clearAllOption();
+      this.page_index = 0;
+    },
+
+    /* set selected category checkbox value */
+    onCheck(event) {
+      if (this.selected.includes(event.target.value)) {
+        this.selected = this.selected.filter(function (geeks) {
+          return geeks != event.target.value;
+        });
+      } else {
+        this.selected.push(event.target.value);
+      }
+      this.fetchProdustQuery();
       this.page_index = 0;
     },
 
@@ -1298,27 +1376,6 @@ export default {
       });
     },
 
-    categoryRulesApplied(currentCollection, product) {
-      var Categoriesrules = JSON.parse(
-        JSON.stringify(this.getCategoryDropDownList())
-      )[1];
-
-      // check rules is empty
-      if (Categoriesrules.length === 0) {
-        return false;
-      }
-
-      Categoriesrules.map((colection, i) => {
-        if (currentCollection === colection.title) {
-          console.log(i, Categoriesrules);
-        } else {
-          return false;
-        }
-      });
-
-      return false;
-    },
-
     async fetchProdustQuery() {
       /// fetch shopify graphQl queries
 
@@ -1332,32 +1389,33 @@ export default {
       // start filter (initailize value)
       /*********************************************************/
 
-      var Categories,
-        Color,
-        Size,
-        Material,
-        ColorRules,
-        SizeRules,
-        MaterialRules,
-        Categoriesrules;
+      var Categories, Color, Size, Material;
+      Categories = "";
+      Color = "";
+      Size = "";
+      Material = "";
+      let getSavedFilter = localStorage.getItem("fillters");
 
-      Categories = JSON.parse(JSON.stringify(this.selected));
-      Color = JSON.parse(JSON.stringify(this.selectedColor));
-      Size = JSON.parse(JSON.stringify(this.selectedSize));
-      Material = JSON.parse(JSON.stringify(this.selectedMaterial));
-
-      // filter roles
-      ColorRules = JSON.parse(JSON.stringify(this.getColorDropDownList()))[1];
-      SizeRules = "";
-      MaterialRules = JSON.parse(
-        JSON.stringify(this.getMaterialDropDownList())
-      )[1];
-      Categoriesrules = JSON.parse(
-        JSON.stringify(this.getCategoryDropDownList())
-      )[1];
-
-      // console.log(Categories, Color, Size, Material)
-      let getSavedFilter = "";
+      if (getSavedFilter != "") {
+        let savefiltr = JSON.parse(getSavedFilter);
+        savefiltr.map((filter_elem, filter_index) => {
+          if (Object.prototype.hasOwnProperty.call(filter_elem, "Category")) {
+            Categories = Object.values(filter_elem)[0];
+          } else if (
+            Object.prototype.hasOwnProperty.call(filter_elem, "Color")
+          ) {
+            Color = Object.values(filter_elem)[0];
+          } else if (
+            Object.prototype.hasOwnProperty.call(filter_elem, "Size")
+          ) {
+            Size = Object.values(filter_elem)[0];
+          } else if (
+            Object.prototype.hasOwnProperty.call(filter_elem, "Material")
+          ) {
+            Material = Object.values(filter_elem)[0];
+          }
+        });
+      }
 
       /*********************************************************/
       // end filter
@@ -1371,166 +1429,35 @@ export default {
         var p = Products[product][0]; /// product object
         var v = Products[product][1]; /// variant object
         var stock = Products[product][2]; /// variant object
-        var collection = Products[product][3]; /// variant object
 
         var handle = p.handle;
 
         /*********************************************************/
         /// category filter applied here (start)
         /*********************************************************/
-
-        // console.log(this.getColorRules)
-        // console.log(this.getMaterialRules)
-
-        if (Categories.length !== 0 ) {
-
-          // ********************************************************************** //
-          //                                                                        //
-          // ********************************************************************** //
-
+        if (JSON.parse(JSON.stringify(this.selected)).length !== 0) {
+          // first check if value set
           var catFlag = false;
-          var catFlagRules = false;
 
-          Categories.map((selectedCats) => {
-            if (collection.includes(selectedCats)) {
+          JSON.parse(JSON.stringify(this.selected)).map((selectedTags) => {
+            console.log(selectedTags);
+            if (p.tags.includes(selectedTags)) {
               catFlag = true;
             }
-
-            /// rule applied here
-
-            Categoriesrules.map((catRules) => {
-              if (selectedCats === catRules.title) {
-                  if(Object.prototype.hasOwnProperty.call(catRules,"rules")){
-                        console.log(catRules.rules)
-                        catRules.rules.map((rule) => {
-                           if(rule.column == "title" && rule.relation == "contains"){
-                                  if (p.title.indexOf(rule.condition) > -1) {
-                                    catFlagRules = true
-                                  }
-                           }
-
-                           if(rule.column == "title" && rule.relation == "equals"){
-                                  if (p.title === rule.condition) {
-                                    colorFlagRules = true
-                                  }
-                           }
-
-
-                        })
-                  }
-              }
-            });
           });
 
+          if (catFlag == false) continue;
+        }
 
-          if (catFlag == false && catFlagRules == false ) {
-            // 
+        /*********************************************************/
+        /// category filter applied here (end)
+        /*********************************************************/
+        if (getSavedFilter != "") {
+          // check handle is already used then return
+          if (duplicateRecord.includes(handle)) {
             continue;
           }
         }
-
-
-        if(Color.length !== 0){
-          
-          // ********************************************************************** //
-          //                                                                        //
-          // ********************************************************************** //
-          var colorFlag = false;
-          var colorFlagRules = false;
-
-          Color.map((selectedColor) => {
-            if (collection.includes(selectedColor)) {
-              colorFlag = true;
-            }
-            /// rule applied here
-
-            ColorRules.map((colRules) => {
-              if (selectedColor === colRules.title) {
-                  if(Object.prototype.hasOwnProperty.call(colRules,"rules")){
-                       
-                       console.log(colRules.rules)
-
-                        colRules.rules.map((c_rule) => {
-                           
-                           if(c_rule.column == "title" && c_rule.relation == "contains"){
-                                  if (p.title.indexOf(c_rule.condition) > -1) {
-                                    colorFlagRules = true
-                                  }
-                           }
-
-                           if(c_rule.column == "title" && c_rule.relation == "equals"){
-                                  if (p.title === c_rule.condition) {
-                                    colorFlagRules = true
-                                  }
-                           }
-
-                        })
-                  }
-              }
-            });
-          });
-
-            // ********************************************************************** //
-            //                                                                        //
-            // ********************************************************************** //
-
-          if (colorFlagRules == false && colorFlag == false) {
-            // 
-            continue;
-          }
-        }
-      
-  
-      if(Material.length !== 0){
-          // ********************************************************************** //
-          //                                                                        //
-          // ********************************************************************** //
-
-          var materialFlag = false;
-          var materialFlagRules = false;
-
-          Material.map((selectedMaterial) => {
-            if (collection.includes(selectedMaterial)) {
-              materialFlag = true;
-            }
-            /// rule applied here
-
-            MaterialRules.map((matRules) => {
-              if (selectedMaterial === matRules.title) {
-                  if(Object.prototype.hasOwnProperty.call(matRules,"rules")){
-                       
-                       console.log(matRules.rules)
-
-                        matRules.rules.map((m_rule) => {
-                           
-                           if(m_rule.column == "title" && m_rule.relation == "contains"){
-                                  if (p.title.indexOf(m_rule.condition) > -1) {
-                                    materialFlagRules = true
-                                  }
-                           }
-
-                           if(m_rule.column == "title" && m_rule.relation == "equals"){
-                                  if (p.title === m_rule.condition) {
-                                    materialFlagRules = true
-                                  }
-                           }
-
-                        })
-                  }
-              }
-            });
-          });
-
-            // ********************************************************************** //
-            //                                                                        //
-            // ********************************************************************** //
-
-          if (materialFlag == false && materialFlagRules == false) {
-            // 
-            continue;
-          }
-        }
-
 
         /// filter variants check links exist
         var links = ""; /// product pair links
@@ -1571,42 +1498,112 @@ export default {
           var swatch = await this.getSwatch(v);
           var collectPairProducts = [];
 
-          /*********************************************/
-          // default load code for variable products
-          /*********************************************/
+          if (Size || Material || Color) {
+            // set filter priority
 
-          var variableActiveIndex = 0;
-          for (let swatchPl in swatch) {
-            var Phandle2 = swatch[swatchPl].link;
+            var priority = [];
 
-            for (let childPair in Products) {
-              //  // console.log(products[childPair].node.handle,'===', Phandle)
-              if (
-                Products[childPair][0].handle ==
-                Phandle2.replace("/products/", "")
-              ) {
-                if (handle == Products[childPair][0].handle) {
-                  variableActiveIndex = swatchPl;
+            if (Size != "") priority.push(Size);
+            if (Material != "") priority.push(Material);
+            if (Color != "") priority.push(Color);
+
+            var activeIndex = 0;
+            var flagForPair = false;
+            var filterpair = [];
+            for (let swatchPl in swatch) {
+              var Phandle = swatch[swatchPl].link;
+
+              for (let childPair in Products) {
+                //  // console.log(products[childPair].node.handle,'===', Phandle)
+                if (
+                  Products[childPair][0].handle ==
+                  Phandle.replace("/products/", "")
+                ) {
+                  // console.log(Products[childPair][0]);
+
+                  var sP1_variant = Products[childPair][0].variants;
+
+                  var counterMatch = 0;
+
+                  sP1_variant.map((sP) => {
+                    // sP means single product
+                    counterMatch = 0;
+                    sP.options.map((options) => {
+                      // sP means single product
+
+                      if (options == Size) counterMatch++;
+                      else if (options == Material) counterMatch++;
+                      else if (options == Color) counterMatch++;
+                    });
+                  });
+
+                  if (counterMatch == priority.length) {
+                    flagForPair = true;
+                    activeIndex = swatchPl;
+                  }
+
+                  Products[childPair][0].variants = this.appendStock(
+                    Products[childPair][0].variants,
+                    Products[childPair][2]
+                  );
+
+                  filterpair.push(Products[childPair][0]);
+                  collectPairProducts.push(Products[childPair][0]);
+
+                  // if(flagForPair){
+                  //   collectPairProducts.push(Products[childPair][0]);
+                  // }
                 }
-                // console.log(Products[childPair][0]);
-                // append stock qty
-                Products[childPair][0].variants = this.appendStock(
-                  Products[childPair][0].variants,
-                  Products[childPair][2]
-                );
-                collectPairProducts.push(Products[childPair][0]);
               }
             }
+
+            if (flagForPair == false) {
+              filterpair = [];
+              continue;
+            }
+
+            productType["active"] = activeIndex;
+            productType["variable"] = filterpair;
+            productType["swatches"] = swatch;
+            filterListing.push(productType);
+          } else {
+            /*********************************************/
+            // default load code for variable products
+            /*********************************************/
+
+            var variableActiveIndex = 0;
+            for (let swatchPl in swatch) {
+              var Phandle2 = swatch[swatchPl].link;
+
+              for (let childPair in Products) {
+                //  // console.log(products[childPair].node.handle,'===', Phandle)
+                if (
+                  Products[childPair][0].handle ==
+                  Phandle2.replace("/products/", "")
+                ) {
+                  if (handle == Products[childPair][0].handle) {
+                    variableActiveIndex = swatchPl;
+                  }
+                  // console.log(Products[childPair][0]);
+                  // append stock qty
+                  Products[childPair][0].variants = this.appendStock(
+                    Products[childPair][0].variants,
+                    Products[childPair][2]
+                  );
+                  collectPairProducts.push(Products[childPair][0]);
+                }
+              }
+            }
+
+            // console.log(variableActiveIndex)
+
+            productType["variable"] = collectPairProducts;
+            productType["swatches"] = swatch;
+
+            productType["active"] = variableActiveIndex;
+
+            filterListing.push(productType);
           }
-
-          // console.log(variableActiveIndex)
-
-          productType["variable"] = collectPairProducts;
-          productType["swatches"] = swatch;
-
-          productType["active"] = variableActiveIndex;
-
-          filterListing.push(productType);
 
           /*********************************************************/
           /// filter variable product (END)
@@ -1616,11 +1613,43 @@ export default {
           /// filter apply at single products
           /*********************************************************/
 
-          /// first time browser load
-          /// append stock qty
-          p.variants = this.appendStock(p.variants, stock);
-          productType["single"] = p;
-          filterListing.push(productType);
+          if (Size || Material || Color) {
+            // set filter priority
+
+            var priorityS = []; // priorityS for single
+
+            if (Size != "") priorityS.push(Size);
+            if (Material != "") priorityS.push(Material);
+            if (Color != "") priorityS.push(Color);
+
+            var VaraintFlag = false;
+            var sP_variant = p.variants;
+            var counterMatch1 = 0;
+
+            sP_variant.map((sP) => {
+              // sP means single product
+              counterMatch1 = 0;
+              sP.options.map((options) => {
+                // sP means single product
+                if (options == Size) counterMatch++;
+                else if (options == Material) counterMatch++;
+                else if (options == Color) counterMatch++;
+              });
+            });
+
+            if (counterMatch1 == priorityS.length) {
+              /// append stock qty
+              p.variants = this.appendStock(p.variants, stock);
+              productType["single"] = p;
+              filterListing.push(productType);
+            }
+          } else {
+            /// first time browser load
+            /// append stock qty
+            p.variants = this.appendStock(p.variants, stock);
+            productType["single"] = p;
+            filterListing.push(productType);
+          }
 
           /*********************************************************/
           /// filter variable product (END)

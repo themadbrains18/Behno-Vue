@@ -3,7 +3,7 @@
     "main": {
       "type": "main-product",
       "settings": {
-        "RightGridImage": "shopify:\/\/shop_images\/product-grid1.jpg",
+        "RightGridImage": "shopify://shop_images/product-grid1.jpg",
         "RightGridHeading": "AN HONEST ACCESSORY.",
         "RightGridpara": "Your bag is handcrafted in Nashik, Maharashtra, in a facility that incrementally implements The behno Standard, a set of six guiding principles."
       }

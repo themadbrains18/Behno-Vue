@@ -30,13 +30,13 @@
         "68dd6623-7f7f-4151-b282-75c92acbd2cd": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/constructing-ethos1.jpg"
+            "image": "shopify://shop_images/constructing-ethos1.jpg"
           }
         },
         "6ccf4fa8-bb22-487a-b50b-ac0157bdcb23": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/constructing-ethos-hero.jpg"
+            "image": "shopify://shop_images/constructing-ethos-hero.jpg"
           }
         }
       },
@@ -63,7 +63,7 @@
           "settings": {
             "crdHeading": "HEALTH",
             "cardInfo": "-Provision of exemplary healthcare services including coverage and access to health clinics.\n-Access to fresh sanitized water and additional nutritional ammunition for those in need.",
-            "crdImage": "shopify:\/\/shop_images\/standard-card.jpg"
+            "crdImage": "shopify://shop_images/standard-card.jpg"
           }
         },
         "d9d28001-f60b-4118-9f55-acef379cee0f": {
@@ -71,7 +71,7 @@
           "settings": {
             "crdHeading": "GARMENT WORKER SOCIAL MOBILITY",
             "cardInfo": "-Active acknowledgement of garment workers through fair and transparent agreements.\n-Elimination of child labor.\n-Equipping garment workers with specific high-end technical and creative craft trainings to further their skillset.\n-Fair wages.",
-            "crdImage": "shopify:\/\/shop_images\/standard-card1.jpg"
+            "crdImage": "shopify://shop_images/standard-card1.jpg"
           }
         },
         "b7fda0f4-ecfd-413c-ad7e-f9fa6a952739": {
@@ -79,7 +79,7 @@
           "settings": {
             "crdHeading": "FAMILY PLANNING",
             "cardInfo": "-Elimination of child labor.\nEquipping garment workers with specific high-end technical and creative craft trainings to further their skillset.\nFair wages.",
-            "crdImage": "shopify:\/\/shop_images\/standard-card3.jpg"
+            "crdImage": "shopify://shop_images/standard-card3.jpg"
           }
         },
         "5aea64af-af35-4846-9ff5-34fd44ca47fc": {
@@ -87,7 +87,7 @@
           "settings": {
             "crdHeading": "WOMEN’S RIGHTS",
             "cardInfo": "-Prioritization of women’s legal and physical social mobility by providing leadership opportunities to female workers.\n-Ensuring equal remuneration for women as their male counterparts in similar positions or roles.",
-            "crdImage": "shopify:\/\/shop_images\/standard-card4.jpg"
+            "crdImage": "shopify://shop_images/standard-card4.jpg"
           }
         },
         "21b4acaf-9c4f-41cb-b4c8-d9f6b74e4b4b": {
@@ -95,7 +95,7 @@
           "settings": {
             "crdHeading": "WORKER SATISFACTION & BENEFITS",
             "cardInfo": "-Development of clean recreational spaces within the factory setting where garment workers feel safe and welcome to relax, socialize, and find spiritual and educational resources.\n-Access to schools and educational and recreational resources for garment workers’ children.\n-Subsidies and reimbursements for transportation to and from home when appropriate.",
-            "crdImage": "shopify:\/\/shop_images\/standard-card5.jpg"
+            "crdImage": "shopify://shop_images/standard-card5.jpg"
           }
         },
         "9238db2a-8edf-4e7d-9f12-df0ea6a19d5a": {
@@ -103,7 +103,7 @@
           "settings": {
             "crdHeading": "ECO-CONSCIOUSNESS",
             "cardInfo": "-Utilization of state of the art machinery geared towards safety and controlled carbon footprint and environmental waste.\n-Installment of safe foundation infrastructure abiding to international regulations on safety standards and worker rights.\n-Sourcing of leather from compliant tanneries and factories using leather resulting from the existing food supply chain.\n-No fur or exotic skins.\n-Limiting fabric wastage.\n-No sourcing from ancient and endangered forests and a preference for innovative alternatives in partnership with Canopy.",
-            "crdImage": "shopify:\/\/shop_images\/standard-card6.jpg"
+            "crdImage": "shopify://shop_images/standard-card6.jpg"
           }
         }
       },
@@ -126,7 +126,7 @@
         "95457ae0-6325-415a-8528-22d76510f35f": {
           "type": "secGrid",
           "settings": {
-            "gridImg": "shopify:\/\/shop_images\/ethos-right.jpg",
+            "gridImg": "shopify://shop_images/ethos-right.jpg",
             "gridHeading": "Brainchild of a brilliant brain.",
             "gridSubHeading": "Muni Seva Ashram is spearheaded by Dr. Vikram Patel, a visionary of our times.",
             "gridInfo": "Dr. Patel built the nonprofit to function like a self-sustaining village. Dr. Patel flourishes in intellectually yet realistically implementing concepts and systems that may, at first, seem far-fetched for a nonprofit village nestled in a rural landscape."
@@ -135,7 +135,7 @@
         "e92d23d6-35b4-4960-865b-06bfd161cdd6": {
           "type": "secGrid",
           "settings": {
-            "gridImg": "shopify:\/\/shop_images\/ethos-left.jpg",
+            "gridImg": "shopify://shop_images/ethos-left.jpg",
             "gridHeading": "MSA respectfully brings modernity to a rural space through progressive and cutting-edge practices, all considering local nuances.",
             "gridSubHeading": "",
             "gridInfo": "MSA is a nonprofit that's self sustaining, educative, caring, and mostly, a space for marginalized communities."
@@ -144,63 +144,63 @@
         "3c23d8cd-cb17-48d8-a218-51ca9bbb38c2": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1-MSAETHOS.jpg",
+            "image": "shopify://shop_images/1-MSAETHOS.jpg",
             "imageInfo": "Utilizing state of the art solar discs, MSA generates it own electricity through solar power."
           }
         },
         "0ced010a-6c66-4d86-b5e3-48f5cc87c1ff": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2-MSAETHOS.jpg",
+            "image": "shopify://shop_images/2-MSAETHOS.jpg",
             "imageInfo": "MSA addresses the needs of vulnerable populations through its onsite orphanage, center for mentally disabled woman, and senior citizen home."
           }
         },
         "bf56104b-890d-45b7-b358-5ff1801b0eba": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3-MSAETHOS.jpg",
+            "image": "shopify://shop_images/3-MSAETHOS.jpg",
             "imageInfo": "Here we see the distribution of milk from MSA's own dairy farm to local community members."
           }
         },
         "d389242d-eb50-47f8-9d22-d9b4b742f636": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4-MSAETHOS.jpg",
+            "image": "shopify://shop_images/4-MSAETHOS.jpg",
             "imageInfo": "MSA harvests hundreds of acres of organic produce and its agricultural practices include implementing top-notch irrigation technologies to conserve water."
           }
         },
         "98cada46-4e02-49b2-8a8e-f62ec4f6263d": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/5-MSAETHOS.jpg",
+            "image": "shopify://shop_images/5-MSAETHOS.jpg",
             "imageInfo": "The facade of a world-class hospital that has a cyclotron radiation machine for its cancer patients where the cost of all medical treatment is on a sliding scale."
           }
         },
         "2770a318-f3e1-49ba-9215-762264d69be6": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/6-MSAETHOS.jpg",
+            "image": "shopify://shop_images/6-MSAETHOS.jpg",
             "imageInfo": "Within all its activities , MSA employs local community members to run its vast operations."
           }
         },
         "3a4a1c0b-605a-4293-857f-0ab132030095": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/7-MSAETHOS.jpg",
+            "image": "shopify://shop_images/7-MSAETHOS.jpg",
             "imageInfo": "Sharing oranges from the farm at MSA as an afternoon snack at the factory."
           }
         },
         "309f4730-e7d7-42d8-bd06-b9341400a9a2": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/8-MSAETHOS.jpg",
+            "image": "shopify://shop_images/8-MSAETHOS.jpg",
             "imageInfo": "Making a thousand rotis at the community kitchen for students of MSA's resident primary, secondary and vocational training schools, for visitors and for residents of MSA."
           }
         },
         "5c1ddeab-bd0e-4692-b8eb-e60a48d694cc": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/9-MSAETHOS.jpg",
+            "image": "shopify://shop_images/9-MSAETHOS.jpg",
             "imageInfo": "The MSA Ethos and behno team at MSA."
           }
         }
@@ -228,16 +228,16 @@
         "secHeading": "Portraitures of a powerhouse.",
         "subHeading": "The Garment Worker Project.",
         "secinfo": "Our founder initiated the Garment Worker Project, which explores the less visible side of fashion. We invited fashion photographer Dan Smith and documentary filmmaker Kent Mathews to MSA Ethos.",
-        "ctaLink": "shopify:\/\/pages\/behno-garment-worker",
+        "ctaLink": "shopify://pages/behno-garment-worker",
         "ctatext": "discover the project",
         "checkbox": true,
-        "videoLink": "https:\/\/i.shgcdn.com\/dfe5ddee-faae-4df5-86a6-44c58a4de1c9\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/"
+        "videoLink": "https://i.shgcdn.com/dfe5ddee-faae-4df5-86a6-44c58a4de1c9/gif2video/-/format/mp4/-/quality/lighter/"
       }
     },
     "back-sense-behno": {
       "type": "back-sense-behno",
       "settings": {
-        "link": "shopify:\/\/pages\/sense-of-behno",
+        "link": "shopify://pages/sense-of-behno",
         "ctaText": "Back to The Sense of behno"
       }
     }

@@ -4,8 +4,8 @@
       "type": "nanamota-hero",
       "settings": {
         "checkSection": false,
-        "bannerimg": "shopify:\/\/shop_images\/nanamota-banner.gif",
-        "bannerMobileImg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/63af3ea31ec041b6bb3c692785bba200.mp4"
+        "bannerimg": "shopify://shop_images/nanamota-banner.gif",
+        "bannerMobileImg": "https://cdn.shopify.com/videos/c/o/v/63af3ea31ec041b6bb3c692785bba200.mp4"
       }
     },
     "shop-tabs-sec": {
@@ -61,7 +61,7 @@
       ],
       "settings": {
         "checkSection": false,
-        "NanaMotaHeaderLogo": "shopify:\/\/shop_images\/nanamota-logo.png",
+        "NanaMotaHeaderLogo": "shopify://shop_images/nanamota-logo.png",
         "NanaMotaHeaderBackTo": "BACK TO BEHNO",
         "NanaMotaHeaderBackToLink": "#",
         "secCtaText": "SHOP ALL WOMENS >",
@@ -94,7 +94,7 @@
         "secheading": "Feel it.",
         "secBtn": "SHOP ALL WOMENS >",
         "secBtnUrl": "#",
-        "secImage": "shopify:\/\/shop_images\/shop-women.png"
+        "secImage": "shopify://shop_images/shop-women.png"
       }
     },
     "nanamota-shop-grid-second": {
@@ -116,7 +116,7 @@
         "secheading": "Layer it.",
         "secBtn": "SHOP ALL MENS >",
         "secBtnUrl": "#",
-        "secImage": "shopify:\/\/shop_images\/grid-section-img2.png"
+        "secImage": "shopify://shop_images/grid-section-img2.png"
       }
     },
     "nanamota-shop-grid-third": {
@@ -138,7 +138,7 @@
         "secheading": "Making the biggest impact in (and through) your skin-to-skin wardrobe.",
         "secBtn": "SHOP ALL TEES >",
         "secBtnUrl": "#",
-        "secImage": "shopify:\/\/shop_images\/grid-section-img3.png"
+        "secImage": "shopify://shop_images/grid-section-img3.png"
       }
     },
     "nanamota-commitment": {
@@ -175,7 +175,7 @@
         "checkSection": false,
         "secheading": "A new commitment to the Boys & Girls Clubs of America.",
         "secinfo": "10% of all sales from nanamota will be donated to the Boys and Girls\nClub of America as they become critical stakeholders of the future of\nour youth. Today especially, students of the Boys and Girls Clubs across\nthe country rely on their clubs to be safe havens as they attend virtual\nclassrooms while their caretakers often work from home or go in.",
-        "secimg": "shopify:\/\/shop_images\/download.jpg"
+        "secimg": "shopify://shop_images/download.jpg"
       }
     },
     "nanamota-small-thing": {

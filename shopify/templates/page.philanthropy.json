@@ -16,7 +16,7 @@
       "settings": {
         "preHeading": "FRONT-END PHILANTHROPHY",
         "secHeading": "The National Down Syndrome Society x behno.",
-        "image": "shopify:\/\/shop_images\/philanthropy-hero.jpg",
+        "image": "shopify://shop_images/philanthropy-hero.jpg",
         "afterImageText": "WITHIN THE CAPSULE COLLECTION ARE OUR SIGNATURE BAGS, ALL IN RED TO HONOR NDSS’ OFFICIAL COLOR. 20% OF ALL SALES ARE DONATED TO NDSS."
       }
     },
@@ -26,7 +26,7 @@
         "redText": "“WE LAUNCHED A VERY SPECIAL PARTNERSHIP WITH NDSS TO SUPPORT AND AMPLIFY THE TREMENDOUS WORK THEY DO FOR THE COMMUNITY.”",
         "secInfo": "This partnership is very personal to us. The Nini Bag, the jewel of this capsule collection, pays homage to behno’s founder’s darling sister, Nirali, nicknamed “Nini,” who has Down Syndrome.",
         "checkImage": true,
-        "videolink": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/992233017dfa4e55bfb4fe6b618fe6f7.mp4"
+        "videolink": "https://cdn.shopify.com/videos/c/o/v/992233017dfa4e55bfb4fe6b618fe6f7.mp4"
       }
     },
     "bit-about-ndss": {
@@ -35,61 +35,61 @@
         "e7538a83-3f0a-4653-8064-014285468c97": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img.jpg"
+            "image": "shopify://shop_images/ndss-img.jpg"
           }
         },
         "2c68e72b-3311-4d86-9bd5-de0a69c45f06": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img1.jpg"
+            "image": "shopify://shop_images/ndss-img1.jpg"
           }
         },
         "897da7b8-c864-4e75-8eec-ea6c2134e034": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img2.jpg"
+            "image": "shopify://shop_images/ndss-img2.jpg"
           }
         },
         "faec36d2-2ded-4f9a-98e9-f882863e4548": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img3.jpg"
+            "image": "shopify://shop_images/ndss-img3.jpg"
           }
         },
         "2418c11f-24cf-4ab2-a2f9-20131973c293": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img4.jpg"
+            "image": "shopify://shop_images/ndss-img4.jpg"
           }
         },
         "2742680e-593d-4db4-a5bf-eba1665236c1": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img5.jpg"
+            "image": "shopify://shop_images/ndss-img5.jpg"
           }
         },
         "25455c48-41e0-44e9-bcd4-10317f45ad43": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img6.jpg"
+            "image": "shopify://shop_images/ndss-img6.jpg"
           }
         },
         "2861a3f9-5b8c-489b-a6c6-808ae4abf17e": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img7.jpg"
+            "image": "shopify://shop_images/ndss-img7.jpg"
           }
         },
         "69718aca-9202-490e-b45c-fc5926b6b8da": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img9.jpg"
+            "image": "shopify://shop_images/ndss-img9.jpg"
           }
         },
         "8d26e252-7c46-4fda-978a-c6dcd9d145d1": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ndss-img8.jpg"
+            "image": "shopify://shop_images/ndss-img8.jpg"
           }
         }
       },
@@ -116,8 +116,8 @@
       "type": "sister-brothers",
       "settings": {
         "heading": "A SISTER AND HER BROTHERS",
-        "image": "shopify:\/\/shop_images\/sister-brother-left-img.jpg",
-        "rimage": "shopify:\/\/shop_images\/sister-brother-right-img.jpg"
+        "image": "shopify://shop_images/sister-brother-left-img.jpg",
+        "rimage": "shopify://shop_images/sister-brother-right-img.jpg"
       }
     },
     "walk-to-remember": {
@@ -138,79 +138,79 @@
         "209e58fc-d404-41bf-9ea1-c945174768a6": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1-NDSS.jpg"
+            "image": "shopify://shop_images/1-NDSS.jpg"
           }
         },
         "404e8b7f-f7b2-49ec-ac08-772740d3b0ad": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2-NDSS.jpg"
+            "image": "shopify://shop_images/2-NDSS.jpg"
           }
         },
         "929eb9a6-a199-411a-833b-5dffb6c8617a": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3-NDSS.jpg"
+            "image": "shopify://shop_images/3-NDSS.jpg"
           }
         },
         "46081392-fa75-415e-8744-1fcf61d19a30": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4-NDSS.jpg"
+            "image": "shopify://shop_images/4-NDSS.jpg"
           }
         },
         "b0eec19b-6fad-4386-a310-0234eb2df89b": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/5-NDSS.jpg"
+            "image": "shopify://shop_images/5-NDSS.jpg"
           }
         },
         "1ba6e927-c790-4432-a35b-42ac3347a555": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/6-NDSS.jpg"
+            "image": "shopify://shop_images/6-NDSS.jpg"
           }
         },
         "5e62c816-d549-40d8-8dfa-b5b4c4bc506e": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/7-NDSS.jpg"
+            "image": "shopify://shop_images/7-NDSS.jpg"
           }
         },
         "cd65a7f7-2904-460a-8616-c1e949119ada": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/8-NDSS.jpg"
+            "image": "shopify://shop_images/8-NDSS.jpg"
           }
         },
         "ec918460-d348-4993-b2ad-df340d17d7cf": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/9-NDSS.jpg"
+            "image": "shopify://shop_images/9-NDSS.jpg"
           }
         },
         "abb77e1e-1e4b-4776-a807-7eb7fc2d35ab": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1-NDSS.jpg"
+            "image": "shopify://shop_images/1-NDSS.jpg"
           }
         },
         "9f0189f9-d329-4207-af9b-996c35b43881": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/11-NDSS.jpg"
+            "image": "shopify://shop_images/11-NDSS.jpg"
           }
         },
         "23d98789-2cd7-4e03-bfb4-99827cd6f6e7": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/12-NDSS.jpg"
+            "image": "shopify://shop_images/12-NDSS.jpg"
           }
         },
         "7cdd2d0c-3ac7-462f-87c9-5fc7e8fa5cd7": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/13-NDSS.jpg"
+            "image": "shopify://shop_images/13-NDSS.jpg"
           }
         }
       },
@@ -241,7 +241,7 @@
       "settings": {
         "secSubHeading": "SHOP NDSS X BEHNO",
         "secCtaText": "SHOP THE NDSS X BEHNO CAPSULE",
-        "secCtaLink": "\/",
+        "secCtaLink": "/",
         "showProduct": true,
         "product_list": [
           "alex-shoulder-bag-glossy-croc-balsamic",
@@ -254,7 +254,7 @@
     "back-sense-behno": {
       "type": "back-sense-behno",
       "settings": {
-        "link": "shopify:\/\/pages\/sense-of-behno",
+        "link": "shopify://pages/sense-of-behno",
         "ctaText": "Back to The Sense of behno"
       }
     }
