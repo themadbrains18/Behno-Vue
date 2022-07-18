@@ -83,13 +83,14 @@
               </button>
             </div>
           </div>
-          <div class="filters_inner">
+          <div class="filters_inner" >
             <!-- Categories filter -->
             <div
               class="filter"
               @mouseenter="isMobile == true ? null : (show = true)"
               @mouseleave="isMobile == true ? null : (show = false)"
               @click="isMobile == false ? null : closeDropDown(show, 'show')"
+              v-if="(hideCategorydropdown === 1)"
             >
               <!-- v-on:mouseover="show = !show" -->
               <div
@@ -118,13 +119,13 @@
                 </div>
                 <button class="c-form-input">Categories</button>
               </div>
-              <div class="multiselect" :class="{ active: show }">
+              <div class="multiselect" :class="{ active: show }" >
                 <div class="tmb_header_dopdown">
                   <ul>
                     <li
                       v-for="option in ddTestCategory[0]"
                       :key="'Categories_' + option.id"
-                    >
+                   >
                       <input
                         :id="'Categories_' + option.id"
                         class="multiselectOption"
@@ -787,6 +788,7 @@ export default {
       ErrorCase: false,
       shopifyPagination: false,
       themeAssets: [],
+      hideCategorydropdown : 1,
       loadInit: false,
     };
   },
@@ -804,13 +806,32 @@ export default {
       this.isMobile = true;
     }
 
+
+    this.hideCategoryDropdown()
     this.filterStorage();
     this.fetchProdustQuery();
     this.setScreenRangeGrid();
     this.roughData();
     this.loadInit = true;
   },
+
+
+
+
   methods: {
+
+    hideCategoryDropdown(){
+       
+         var blackListPage = JSON.parse(window.atob(this.shopifyData.hidecollection))
+         console.log(window.location.pathname)
+         var url = window.location.pathname;
+         var parts = url.split("/");
+         var last_part = parts[parts.length - 1];
+         if(blackListPage.includes(last_part)){
+           this.hideCategorydropdown = 0
+         }
+        
+    },
     /* load product on scroll */
     loadMore() {
       window.scrollTo({
@@ -2071,7 +2092,6 @@ export default {
      */
 
     getThemeAssets(image,object) {
-
       object = JSON.parse(JSON.stringify(object));
       console.log(object)
       var src = "";

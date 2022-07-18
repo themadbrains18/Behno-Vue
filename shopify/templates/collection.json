@@ -59,7 +59,8 @@
         "category": "BUCKET BAGS:bucket-bags\nCROSSBODY BAGS:crossbody-bags\nMINI BAGS:mini-bags\nSHOULDER BAGS:shoulder-bags\nTOP HANDLES:top-handles\nTOTE BAGS:totes",
         "color": "BLACK:black\nBONE:bone\nBROWN:brown\nGRAY:gray\nGREEN:greeen\nNAVY \/ BLUE:navy\nPINK:pink\nPURPLE:purple\nRED:red\nWHITE:white\nWINE:wine\nYELLOW:yellow",
         "size": "L:l\nLARGE:large\nM:m\nMEDIUM:medium\nS:s\nSMALL:small\nXL:xl\nXS:xs\nXXL:xxl\nXXS:xxs\nXXXL:xxxl",
-        "material": "PEBBLE:pebble\nNAPPA:nappa\nMETALLICS:metallics"
+        "material": "PEBBLE:pebble\nNAPPA:nappa\nMETALLICS:metallics",
+        "hidecollection": "bucket-bags\ncrossbody-bags\nmini-bags\nshoulder-bags\ntop-handles\ntotes"
       }
     }
   },

@@ -7,6 +7,9 @@
 {% assign category = section.settings.category |  newline_to_br | strip_newlines | split: '<br />'  %}
 {% assign size = section.settings.size |  newline_to_br | strip_newlines | split: '<br />'  %}
 {% assign color = section.settings.color |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign hidecollection = section.settings.hidecollection |  newline_to_br | strip_newlines | split: '<br />'  %}
+
+
 
 {% capture materials %}
     [{% for mts in material %}{% assign mtsList = mts | split: ':' %}{"label":"{{ mtsList[0] }}","rules": {{ collections[mtsList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
@@ -120,7 +123,8 @@
     category : '{{ categories | strip_newlines  | base64_encode }}',
     color : '{{ colors | strip_newlines  | base64_encode }}',
     size : '{{ sizes | strip_newlines  | base64_encode }}',
-    material : '{{ materials | strip_newlines  | base64_encode }}'
+    material : '{{ materials | strip_newlines  | base64_encode }}',
+    hidecollection : '{{ hidecollection | json | base64_encode }}'
 
 }">
 </render-collection-all-page>
@@ -244,9 +248,17 @@
         "label":"Material Fillter",
         "type":"textarea",
         "default":"xyz"
+    },
+    {
+        "type": "header",
+        "content": "Category Dropdown Hide Specific Collection Page"
+    },
+    {
+        "id":"hidecollection",
+        "label":"Hide Collection Dropdown",
+        "type":"textarea",
+        "default":"xyz"
     }
-
-
 
 ],
 "blocks":[
