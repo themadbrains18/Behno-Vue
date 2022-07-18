@@ -41,7 +41,10 @@
 
 {% paginate collection.products by 800 %}
 {% capture products %}  
+
         [{% for product in collection.products %}
+
+
                 {% capture variantsList %} 
                  {
                         {% for variant in product.variants %}
@@ -55,26 +58,44 @@
                    {% endfor %}]  
                 {% endcapture %}
 
-                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}},{{ collection }}]{% if forloop.last %}
-                {% else %},{% endif %}
-        {% endfor %}]    
+                {% capture assets %} 
+                    {%- if product.metafields.my_fields.variants_swtach -%}
+                        {% assign imagesAssets = product.metafields.my_fields.variants_swtach | split:" " %}
+                        {%- for images in imagesAssets -%}
+                            { "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}
+                        {% endfor %}
+                        {% endif %}
+                {% endcapture %}
+
+               
+                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}},{{ collection }},[{{assets}}]]
+               
+                {% if forloop.last %}
+               
+                {% else %},{% endif %}  
+        {% endfor %}]
+
+
     {% endcapture %}
 {% endpaginate %}
 
-
 <!-- get swatches (images) list  -->
+{%comment%}
 {% paginate collection.products by 800 %}
-        [{% for assetss in collection.products %}
-        {{ assetss | json }}
-        {%- if assetss.metafields.my_fields.variants_swtach -%}
-             {% assign imagesAssets = assetss.metafields.my_fields.variants_swtach | split:" " %}
+
+        [{% for product in collection.products %}
+       
+        {{ product | json }}
+
+        {%- if product.metafields.my_fields.variants_swtach -%}
+             {% assign imagesAssets = product.metafields.my_fields.variants_swtach | split:" " %}
              {%- for images in imagesAssets -%}
                  { "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}
              {% endfor %},{% endif %}{% endfor %}] 
     {% capture assets %}   
-                 []
    {% endcapture %} 
 {% endpaginate %}
+{%endcomment%}
 
 
 <render-collection-all-page :shopify-data="{
@@ -103,9 +124,8 @@
 
 }">
 </render-collection-all-page>
-{%comment%}
 
-{%endcomment%}
+
 
 
 

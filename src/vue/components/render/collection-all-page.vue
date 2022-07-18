@@ -204,9 +204,11 @@
                         :value="option.value"
                         @change="onCheckColor($event)"
                       />
-                      <label class="optionLabel" :for="'Color_' + option.id">{{
-                        option.text.toLowerCase()
-                      }}</label>
+                      <label class="optionLabel" :for="'Color_' + option.id"
+                        >{{ option.text.toLowerCase() }} ({{
+                          option.count
+                        }})</label
+                      >
                     </li>
                   </ul>
                   <div class="btn_wrapper">
@@ -265,9 +267,11 @@
                         :value="option.value"
                         @change="onCheckSize($event)"
                       />
-                      <label class="optionLabel" :for="'Size_' + option.id">{{
-                        option.text.toLowerCase()
-                      }}</label>
+                      <label class="optionLabel" :for="'Size_' + option.id"
+                        >{{ option.text.toLowerCase() }} ({{
+                          option.count
+                        }})</label
+                      >
                     </li>
                   </ul>
                   <div class="btn_wrapper">
@@ -331,10 +335,10 @@
                         :value="option.value"
                         @change="onCheckMaterial($event)"
                       />
-                      <label
-                        class="optionLabel"
-                        :for="'Material_' + option.id"
-                        >{{ option.text.toLowerCase() }}</label
+                      <label class="optionLabel" :for="'Material_' + option.id"
+                        >{{ option.text.toLowerCase() }} ({{
+                          option.count
+                        }})</label
                       >
                     </li>
                   </ul>
@@ -638,7 +642,7 @@
                 >
                   <span>
                     <img
-                      :src="getThemeAssets(sValue.img)"
+                      :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)"
                       :class="sValue.img"
                     />
                   </span>
@@ -1130,12 +1134,12 @@ export default {
 
     /* set selected size checkbox value */
     onCheckSize: function (event) {
-      if (this.selectedSize.includes(event.target.value)) {
+      if (this.selectedSize.includes(event.target.value.toLowerCase())) {
         this.selectedSize = this.selectedSize.filter(function (geeks) {
-          return geeks != event.target.value;
+          return geeks != event.target.value.toLowerCase();
         });
       } else {
-        this.selectedSize.push(event.target.value);
+        this.selectedSize.push(event.target.value.toLowerCase());
       }
       this.fetchProdustQuery();
       // console.log(this.selectedSize);
@@ -1179,10 +1183,6 @@ export default {
     getCategoryDropDownList: function (fillter = []) {
       let products = this.roughData();
 
-      if (fillter.length !== 0) {
-        products = fillter;
-      }
-
       let data = window.atob(this.shopifyData.category);
       let cat = JSON.parse(data);
       let array = [];
@@ -1190,34 +1190,14 @@ export default {
 
       var $pCpunt = 0;
       cat.map((cList, index) => {
-        if (fillter.length !== 0) {
-          $pCpunt = 0;
-          for (let plist of products) {
-            if (Object.prototype.hasOwnProperty.call(plist, "single")) {
-              //
-            } else if (
-              Object.prototype.hasOwnProperty.call(plist, "variable")
-            ) {
-              plist.variable.map((variablePlist) => {
-                if (variablePlist.collection.length !== 0) {
-                  if (variablePlist.collection.includes(cList.rules.title)) {
-                    $pCpunt++;
-                  }
-                }
-              });
+        $pCpunt = 0;
+        products.map((plist) => {
+          if (plist.length === 4) {
+            if (plist[3].includes(cList.rules.title)) {
+              $pCpunt++;
             }
           }
-        } else {
-          $pCpunt = 0;
-          products.map((plist) => {
-            if (plist.length === 4) {
-              if (plist[3].includes(cList.rules.title)) {
-                $pCpunt++;
-              }
-            }
-          });
-        }
-
+        });
 
         let obj = {
           id: index + 1,
@@ -1243,10 +1223,20 @@ export default {
       let rol = [];
       let color = JSON.parse(window.atob(this.shopifyData.color));
       color.map((cColor, index) => {
+        var $pCpunt = 0;
+        products.map((plist) => {
+          if (plist.length === 4) {
+            if (plist[3].includes(cColor.rules.title)) {
+              $pCpunt++;
+            }
+          }
+        });
+
         let obj = {
           id: index + 1,
           value: cColor.label,
           text: cColor.label,
+          count: $pCpunt,
         };
         array.push(obj);
         rol.push(cColor.rules);
@@ -1258,15 +1248,33 @@ export default {
 
     /* Fill size dropdown from products data */
     getSizeDropDownList: function () {
-      let products = this.roughData();
+      let Products = this.roughData();
       let array = [];
       let size = JSON.parse(window.atob(this.shopifyData.size));
 
       size.map((cSize, index) => {
+        var $pCpunt = 0;
+
+        for (let product in Products) {
+          if (Products[product][0]["options"].indexOf("Size") !== -1) {
+            var indexOF = Products[product][0]["options"].indexOf("Size");
+            Products[product][0].variants.map((m_varint) => {
+              
+              if (
+                m_varint[`option${parseInt(indexOF) + 1}`].toLowerCase() ===
+                cSize.label.toLowerCase()
+              ) {
+                $pCpunt++;
+              }
+            });
+          }
+        }
+
         let obj = {
           id: index + 1,
           value: cSize.label,
           text: cSize.label,
+          count: $pCpunt,
         };
         array.push(obj);
       });
@@ -1282,10 +1290,20 @@ export default {
       let rol = [];
       let material = JSON.parse(window.atob(this.shopifyData.material));
       material.map((cMaterial, index) => {
+        var $pCpunt = 0;
+        products.map((plist) => {
+          if (plist.length === 4) {
+            if (plist[3].includes(cMaterial.rules.title)) {
+              $pCpunt++;
+            }
+          }
+        });
+
         let obj = {
           id: index + 1,
           value: cMaterial.label,
           text: cMaterial.label,
+          count: $pCpunt,
         };
         array.push(obj);
         rol.push(cMaterial.rules);
@@ -1362,6 +1380,7 @@ export default {
       var productData = window.atob(this.shopifyData.collectionListing);
       var Products = JSON.parse(productData);
 
+
       var filterListing = [];
       var duplicateRecord = [];
 
@@ -1399,7 +1418,7 @@ export default {
       /*********************************************************/
       // end filter
       /*********************************************************/
-      
+
       for (let product in Products) {
         // Products.map(async (e, i) => {
         // product type
@@ -1562,21 +1581,28 @@ export default {
           }
         }
 
+          // ********************************************************************** //
+          //                                                                        //
+          // ********************************************************************** //
         if (Size.length !== 0) {
+          
           var sizeFlag = false;
-
-          console.log(Products[product][0]["options"]);
-          if (Products[product][0]["options"].indexOf("Size") !== -1) {
-            console.log(Products[product][0].variants);
-            Products[product][0].variants.map((m_varint) => {
-              if (Size.includes(m_varint.title)) {
-                sizeFlag = true;
-              }
-            });
-          }
-
-          if (sizeFlag == false) continue;
+            if (Products[product][0]["options"].indexOf("Size") !== -1) {
+              var indexOF = Products[product][0]["options"].indexOf("Size");
+              Products[product][0].variants.map((m_varint) => {
+                  if (Size.includes(m_varint[`option${parseInt(indexOF) + 1}`].toLowerCase())) {
+                    sizeFlag = true;
+                  }
+              });
+            }
+            if (sizeFlag === false) continue;
         }
+
+
+          // ********************************************************************** //
+          //                                                                        //
+          // ********************************************************************** //
+
 
         /// filter variants check links exist
         var links = ""; /// product pair links
@@ -1641,10 +1667,9 @@ export default {
                   Products[childPair][2]
                 );
 
-                Products[childPair][0]["collection"] =
-                  Products[childPair][3].length === 0
-                    ? []
-                    : Products[childPair][3];
+                Products[childPair][0]["collection"] = Products[childPair][3].length === 0 ? [] : Products[childPair][3];
+                Products[childPair][0]["swatchesImage"] = Products[childPair][4].length === 0 ? [] : Products[childPair][4];
+
                 collectPairProducts.push(Products[childPair][0]);
               }
             }
@@ -1669,7 +1694,7 @@ export default {
           /// first time browser load
           /// append stock qty
           p.variants = this.appendStock(p.variants, stock);
-          p['collection'] = Products[product][3]
+          p["collection"] = Products[product][3];
           productType["single"] = p;
           filterListing.push(productType);
 
@@ -1682,12 +1707,11 @@ export default {
         }
       }
 
-      filterListing = this.shuffle(filterListing);
+      // filterListing = this.shuffle(filterListing);
 
-      
+      console.log(...filterListing);
 
       this.filterDropdow([...filterListing]);
-
 
       this.Products = [...filterListing].slice(0, this.page_size);
       this.AllProducts = [...filterListing].slice(0, 100);
@@ -1704,75 +1728,91 @@ export default {
       }
     },
 
-    // fillter dropdownlist 
+    // fillter dropdownlist
 
     intersect(a, b) {
       return a.filter(Set.prototype.has, new Set(b));
     },
 
-    filterDropdow($productList){
+    filterDropdow($productList) {
+      // global variables
+      var ddTestCategory = JSON.parse(JSON.stringify(this.ddTestCategory));
+      var ddTestColor = JSON.parse(JSON.stringify(this.ddTestColor));
+      var ddTestSize = JSON.parse(JSON.stringify(this.ddTestSize));
+      var ddTestMaterial = JSON.parse(JSON.stringify(this.ddTestMaterial));
 
-        // global variables 
-        var ddTestCategory = JSON.parse(JSON.stringify(this.ddTestCategory));
-        var ddTestColor    = JSON.parse(JSON.stringify(this.ddTestColor)); 
-        var ddTestSize    = JSON.parse(JSON.stringify(this.ddTestSize));
-        var ddTestMaterial = JSON.parse(JSON.stringify(this.ddTestMaterial));
-       
-        var Categories = JSON.parse(JSON.stringify(this.selected));
-        var Color = JSON.parse(JSON.stringify(this.selectedColor));
-        var Size = JSON.parse(JSON.stringify(this.selectedSize));
-        var Material = JSON.parse(JSON.stringify(this.selectedMaterial));
+      var Categories = JSON.parse(JSON.stringify(this.selected));
+      var Color = JSON.parse(JSON.stringify(this.selectedColor));
+      var Size = JSON.parse(JSON.stringify(this.selectedSize));
+      var Material = JSON.parse(JSON.stringify(this.selectedMaterial));
 
-         var AllFillters = []
-         
-         if(Categories.length !== 0)
-             Categories.map((c) => AllFillters.push(c))
-          if(Color.length !== 0)
-            Color.map((cl) => AllFillters.push(cl))
-          if(Size.length !== 0)
-            Size.map((s) => AllFillters.push(s))
-          if(Material.length !== 0)
-            Material.map((m) => AllFillters.push(m))
+      var AllFillters = [];
 
+      if (Categories.length !== 0) Categories.map((c) => AllFillters.push(c));
+      if (Color.length !== 0) Color.map((cl) => AllFillters.push(cl));
+      if (Size.length !== 0) Size.map((s) => AllFillters.push(s));
+      if (Material.length !== 0) Material.map((m) => AllFillters.push(m));
 
-        
-        if(Categories.length !==0 || Color.length !==0 || Size.length !==0 || Material.length !==0 ){
+      if (
+        Categories.length !== 0 ||
+        Color.length !== 0 ||
+        Size.length !== 0 ||
+        Material.length !== 0
+      ) {
+        // category filter
 
-
-          // category filter
-        
-          ddTestCategory[0].map((catList,index) => {
-               var cat_count = 0;
-               for(let plist of $productList){
-
-                if(Object.prototype.hasOwnProperty.call(plist,"variable")){
-                  
-                  plist.variable.map((c_list) =>{
-                      if(c_list.collection.includes(catList.value) && this.intersect(AllFillters,c_list.collection).length > 0 ){
-                         console.log(cat_count,'=============',catList.text,'=============',AllFillters)
-                          cat_count++;
-                          
-                      }
-                  })
-                }else if(Object.prototype.hasOwnProperty.call(plist,"single")){
-                      if(plist.single.collection.includes(catList.value) && this.intersect(AllFillters,plist.single.collection).length > 0){
-                           console.log(cat_count,'=============',catList.text,'=============',AllFillters)
-                         cat_count++;
-                      }
+        ddTestCategory[0].map((catList, index) => {
+          var cat_count = 0;
+          for (let plist of $productList) {
+            if (Object.prototype.hasOwnProperty.call(plist, "variable")) {
+              var checkOnce = false;
+              plist.variable.map((c_list) => {
+                if (
+                  c_list.collection.includes(catList.value) &&
+                  this.intersect(AllFillters, c_list.collection).length > 0 &&
+                  checkOnce === false
+                ) {
+                  cat_count++;
+                  checkOnce = true;
+                  console.log(
+                    "===============",
+                    cat_count,
+                    "=============",
+                    catList.text,
+                    "=============",
+                    AllFillters
+                  );
                 }
+              });
+            } else if (Object.prototype.hasOwnProperty.call(plist, "single")) {
+              if (
+                plist.single.collection.includes(catList.value) &&
+                this.intersect(AllFillters, plist.single.collection).length > 0
+              ) {
+                cat_count++;
+                console.log(
+                  "==============",
+                  cat_count,
+                  "=============",
+                  catList.text,
+                  "=============",
+                  AllFillters
+                );
+              }
             }
+          }
 
+          ddTestCategory[0][index].count = cat_count;
+        });
 
-          })
+        this.ddTestCategory = ddTestCategory;
 
-          // console.log(ddTestCategory)
-          // console.log(ddTestColor)
-          // console.log(ddTestSize)
-          // console.log(ddTestMaterial)
-          // console.log($productList)
-
-        }
-
+        // console.log(ddTestCategory)
+        // console.log(ddTestColor)
+        // console.log(ddTestSize)
+        // console.log(ddTestMaterial)
+        // console.log($productList)
+      }
     },
 
     shuffle(array) {
@@ -2030,16 +2070,16 @@ export default {
      * get theme upload assets list
      */
 
-    getThemeAssets(image) {
-      var assets = window.atob(this.shopifyData.swatchesImages);
-      assets = JSON.parse(assets);
+    getThemeAssets(image,object) {
 
+      object = JSON.parse(JSON.stringify(object));
+      console.log(object)
       var src = "";
-      for (let images in assets) {
-        if (Object.keys(assets[images])[0] == image) {
-          src = Object.values(assets[images])[0];
-        }
-      }
+      object.map((img, index) => {
+          if(Object.prototype.hasOwnProperty.call(img,image)){
+            src = img[image];
+          }
+      })
       return src;
     },
   },
