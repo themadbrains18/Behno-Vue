@@ -136,7 +136,9 @@
                       <label
                         class="optionLabel"
                         :for="'Categories_' + option.id"
-                        >{{ option.text.toLowerCase() }}</label
+                        >{{ option.text.toLowerCase() }} ({{
+                          option.count
+                        }})</label
                       >
                     </li>
                   </ul>
@@ -729,7 +731,7 @@ export default {
       selectedSize: [],
       selectedMaterial: [],
 
-      ddTestCategory: this.getCategoryDropDownList(),
+      ddTestCategory: this.getCategoryDropDownList([]),
       ddTestColor: this.getColorDropDownList(),
       ddTestSize: this.getSizeDropDownList(),
       ddTestMaterial: this.getMaterialDropDownList(),
@@ -1135,7 +1137,7 @@ export default {
       } else {
         this.selectedSize.push(event.target.value);
       }
-      // this.fetchProdustQuery();
+      this.fetchProdustQuery();
       // console.log(this.selectedSize);
     },
 
@@ -1174,22 +1176,56 @@ export default {
 
     /* Fill category dropdown from products data */
 
-    getCategoryDropDownList: function () {
-      let objects = this.categoryRules;
+    getCategoryDropDownList: function (fillter = []) {
       let products = this.roughData();
+
+      if (fillter.length !== 0) {
+        products = fillter;
+      }
+
       let data = window.atob(this.shopifyData.category);
       let cat = JSON.parse(data);
       let array = [];
       let rol = [];
+
+      var $pCpunt = 0;
       cat.map((cList, index) => {
-        // console.log(cList.rules)
+        if (fillter.length !== 0) {
+          $pCpunt = 0;
+          for (let plist of products) {
+            if (Object.prototype.hasOwnProperty.call(plist, "single")) {
+              //
+            } else if (
+              Object.prototype.hasOwnProperty.call(plist, "variable")
+            ) {
+              plist.variable.map((variablePlist) => {
+                if (variablePlist.collection.length !== 0) {
+                  if (variablePlist.collection.includes(cList.rules.title)) {
+                    $pCpunt++;
+                  }
+                }
+              });
+            }
+          }
+        } else {
+          $pCpunt = 0;
+          products.map((plist) => {
+            if (plist.length === 4) {
+              if (plist[3].includes(cList.rules.title)) {
+                $pCpunt++;
+              }
+            }
+          });
+        }
+
+
         let obj = {
           id: index + 1,
           value: cList.label,
           text: cList.label,
+          count: $pCpunt,
         };
         array.push(obj);
-
         rol.push(cList.rules);
       });
 
@@ -1225,11 +1261,12 @@ export default {
       let products = this.roughData();
       let array = [];
       let size = JSON.parse(window.atob(this.shopifyData.size));
+
       size.map((cSize, index) => {
         let obj = {
           id: index + 1,
-          value: cSize,
-          text: cSize,
+          value: cSize.label,
+          text: cSize.label,
         };
         array.push(obj);
       });
@@ -1362,7 +1399,7 @@ export default {
       /*********************************************************/
       // end filter
       /*********************************************************/
-
+      
       for (let product in Products) {
         // Products.map(async (e, i) => {
         // product type
@@ -1382,8 +1419,7 @@ export default {
         // console.log(this.getColorRules)
         // console.log(this.getMaterialRules)
 
-        if (Categories.length !== 0 ) {
-
+        if (Categories.length !== 0) {
           // ********************************************************************** //
           //                                                                        //
           // ********************************************************************** //
@@ -1400,38 +1436,32 @@ export default {
 
             Categoriesrules.map((catRules) => {
               if (selectedCats === catRules.title) {
-                  if(Object.prototype.hasOwnProperty.call(catRules,"rules")){
-                        console.log(catRules.rules)
-                        catRules.rules.map((rule) => {
-                           if(rule.column == "title" && rule.relation == "contains"){
-                                  if (p.title.indexOf(rule.condition) > -1) {
-                                    catFlagRules = true
-                                  }
-                           }
+                if (Object.prototype.hasOwnProperty.call(catRules, "rules")) {
+                  catRules.rules.map((rule) => {
+                    if (rule.column == "title" && rule.relation == "contains") {
+                      if (p.title.indexOf(rule.condition) > -1) {
+                        catFlagRules = true;
+                      }
+                    }
 
-                           if(rule.column == "title" && rule.relation == "equals"){
-                                  if (p.title === rule.condition) {
-                                    colorFlagRules = true
-                                  }
-                           }
-
-
-                        })
-                  }
+                    if (rule.column == "title" && rule.relation == "equals") {
+                      if (p.title === rule.condition) {
+                        colorFlagRules = true;
+                      }
+                    }
+                  });
+                }
               }
             });
           });
 
-
-          if (catFlag == false && catFlagRules == false ) {
-            // 
+          if (catFlag == false && catFlagRules == false) {
+            //
             continue;
           }
         }
 
-
-        if(Color.length !== 0){
-          
+        if (Color.length !== 0) {
           // ********************************************************************** //
           //                                                                        //
           // ********************************************************************** //
@@ -1446,42 +1476,42 @@ export default {
 
             ColorRules.map((colRules) => {
               if (selectedColor === colRules.title) {
-                  if(Object.prototype.hasOwnProperty.call(colRules,"rules")){
-                       
-                       console.log(colRules.rules)
+                if (Object.prototype.hasOwnProperty.call(colRules, "rules")) {
+                  colRules.rules.map((c_rule) => {
+                    if (
+                      c_rule.column == "title" &&
+                      c_rule.relation == "contains"
+                    ) {
+                      if (p.title.indexOf(c_rule.condition) > -1) {
+                        colorFlagRules = true;
+                      }
+                    }
 
-                        colRules.rules.map((c_rule) => {
-                           
-                           if(c_rule.column == "title" && c_rule.relation == "contains"){
-                                  if (p.title.indexOf(c_rule.condition) > -1) {
-                                    colorFlagRules = true
-                                  }
-                           }
-
-                           if(c_rule.column == "title" && c_rule.relation == "equals"){
-                                  if (p.title === c_rule.condition) {
-                                    colorFlagRules = true
-                                  }
-                           }
-
-                        })
-                  }
+                    if (
+                      c_rule.column == "title" &&
+                      c_rule.relation == "equals"
+                    ) {
+                      if (p.title === c_rule.condition) {
+                        colorFlagRules = true;
+                      }
+                    }
+                  });
+                }
               }
             });
           });
 
-            // ********************************************************************** //
-            //                                                                        //
-            // ********************************************************************** //
+          // ********************************************************************** //
+          //                                                                        //
+          // ********************************************************************** //
 
           if (colorFlagRules == false && colorFlag == false) {
-            // 
+            //
             continue;
           }
         }
-      
-  
-      if(Material.length !== 0){
+
+        if (Material.length !== 0) {
           // ********************************************************************** //
           //                                                                        //
           // ********************************************************************** //
@@ -1497,40 +1527,56 @@ export default {
 
             MaterialRules.map((matRules) => {
               if (selectedMaterial === matRules.title) {
-                  if(Object.prototype.hasOwnProperty.call(matRules,"rules")){
-                       
-                       console.log(matRules.rules)
+                if (Object.prototype.hasOwnProperty.call(matRules, "rules")) {
+                  matRules.rules.map((m_rule) => {
+                    if (
+                      m_rule.column == "title" &&
+                      m_rule.relation == "contains"
+                    ) {
+                      if (p.title.indexOf(m_rule.condition) > -1) {
+                        materialFlagRules = true;
+                      }
+                    }
 
-                        matRules.rules.map((m_rule) => {
-                           
-                           if(m_rule.column == "title" && m_rule.relation == "contains"){
-                                  if (p.title.indexOf(m_rule.condition) > -1) {
-                                    materialFlagRules = true
-                                  }
-                           }
-
-                           if(m_rule.column == "title" && m_rule.relation == "equals"){
-                                  if (p.title === m_rule.condition) {
-                                    materialFlagRules = true
-                                  }
-                           }
-
-                        })
-                  }
+                    if (
+                      m_rule.column == "title" &&
+                      m_rule.relation == "equals"
+                    ) {
+                      if (p.title === m_rule.condition) {
+                        materialFlagRules = true;
+                      }
+                    }
+                  });
+                }
               }
             });
           });
 
-            // ********************************************************************** //
-            //                                                                        //
-            // ********************************************************************** //
+          // ********************************************************************** //
+          //                                                                        //
+          // ********************************************************************** //
 
           if (materialFlag == false && materialFlagRules == false) {
-            // 
+            //
             continue;
           }
         }
 
+        if (Size.length !== 0) {
+          var sizeFlag = false;
+
+          console.log(Products[product][0]["options"]);
+          if (Products[product][0]["options"].indexOf("Size") !== -1) {
+            console.log(Products[product][0].variants);
+            Products[product][0].variants.map((m_varint) => {
+              if (Size.includes(m_varint.title)) {
+                sizeFlag = true;
+              }
+            });
+          }
+
+          if (sizeFlag == false) continue;
+        }
 
         /// filter variants check links exist
         var links = ""; /// product pair links
@@ -1594,6 +1640,11 @@ export default {
                   Products[childPair][0].variants,
                   Products[childPair][2]
                 );
+
+                Products[childPair][0]["collection"] =
+                  Products[childPair][3].length === 0
+                    ? []
+                    : Products[childPair][3];
                 collectPairProducts.push(Products[childPair][0]);
               }
             }
@@ -1603,7 +1654,6 @@ export default {
 
           productType["variable"] = collectPairProducts;
           productType["swatches"] = swatch;
-
           productType["active"] = variableActiveIndex;
 
           filterListing.push(productType);
@@ -1619,6 +1669,7 @@ export default {
           /// first time browser load
           /// append stock qty
           p.variants = this.appendStock(p.variants, stock);
+          p['collection'] = Products[product][3]
           productType["single"] = p;
           filterListing.push(productType);
 
@@ -1632,6 +1683,11 @@ export default {
       }
 
       filterListing = this.shuffle(filterListing);
+
+      
+
+      this.filterDropdow([...filterListing]);
+
 
       this.Products = [...filterListing].slice(0, this.page_size);
       this.AllProducts = [...filterListing].slice(0, 100);
@@ -1647,6 +1703,78 @@ export default {
         }
       }
     },
+
+    // fillter dropdownlist 
+
+    intersect(a, b) {
+      return a.filter(Set.prototype.has, new Set(b));
+    },
+
+    filterDropdow($productList){
+
+        // global variables 
+        var ddTestCategory = JSON.parse(JSON.stringify(this.ddTestCategory));
+        var ddTestColor    = JSON.parse(JSON.stringify(this.ddTestColor)); 
+        var ddTestSize    = JSON.parse(JSON.stringify(this.ddTestSize));
+        var ddTestMaterial = JSON.parse(JSON.stringify(this.ddTestMaterial));
+       
+        var Categories = JSON.parse(JSON.stringify(this.selected));
+        var Color = JSON.parse(JSON.stringify(this.selectedColor));
+        var Size = JSON.parse(JSON.stringify(this.selectedSize));
+        var Material = JSON.parse(JSON.stringify(this.selectedMaterial));
+
+         var AllFillters = []
+         
+         if(Categories.length !== 0)
+             Categories.map((c) => AllFillters.push(c))
+          if(Color.length !== 0)
+            Color.map((cl) => AllFillters.push(cl))
+          if(Size.length !== 0)
+            Size.map((s) => AllFillters.push(s))
+          if(Material.length !== 0)
+            Material.map((m) => AllFillters.push(m))
+
+
+        
+        if(Categories.length !==0 || Color.length !==0 || Size.length !==0 || Material.length !==0 ){
+
+
+          // category filter
+        
+          ddTestCategory[0].map((catList,index) => {
+               var cat_count = 0;
+               for(let plist of $productList){
+
+                if(Object.prototype.hasOwnProperty.call(plist,"variable")){
+                  
+                  plist.variable.map((c_list) =>{
+                      if(c_list.collection.includes(catList.value) && this.intersect(AllFillters,c_list.collection).length > 0 ){
+                         console.log(cat_count,'=============',catList.text,'=============',AllFillters)
+                          cat_count++;
+                          
+                      }
+                  })
+                }else if(Object.prototype.hasOwnProperty.call(plist,"single")){
+                      if(plist.single.collection.includes(catList.value) && this.intersect(AllFillters,plist.single.collection).length > 0){
+                           console.log(cat_count,'=============',catList.text,'=============',AllFillters)
+                         cat_count++;
+                      }
+                }
+            }
+
+
+          })
+
+          // console.log(ddTestCategory)
+          // console.log(ddTestColor)
+          // console.log(ddTestSize)
+          // console.log(ddTestMaterial)
+          // console.log($productList)
+
+        }
+
+    },
+
     shuffle(array) {
       let currentIndex = array.length,
         randomIndex;

@@ -20,6 +20,9 @@
     [{% for clrs in color %}{% assign clrsList = clrs | split: ':' %}{"label":"{{ clrsList[0] }}","rules": {{ collections[clrsList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
 {% endcapture %}
 
+{% capture sizes %}
+    [{% for szes in size %}{% assign szesList = szes | split: ':' %}{"label":"{{ szesList[0] }}","rules": "{{ szesList[1] }}"}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
 
 
 
@@ -61,15 +64,18 @@
 
 <!-- get swatches (images) list  -->
 {% paginate collection.products by 800 %}
-{% capture assets %}   
         [{% for assetss in collection.products %}
+        {{ assetss | json }}
         {%- if assetss.metafields.my_fields.variants_swtach -%}
              {% assign imagesAssets = assetss.metafields.my_fields.variants_swtach | split:" " %}
              {%- for images in imagesAssets -%}
                  { "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}
-             {% endfor %},{% endif %}{% endfor %}]    
+             {% endfor %},{% endif %}{% endfor %}] 
+    {% capture assets %}   
+                 []
    {% endcapture %} 
 {% endpaginate %}
+
 
 <render-collection-all-page :shopify-data="{
     filterDropdownTextResponsive: '{{ section.settings.filterDropdownTextResponsive }}',
@@ -92,7 +98,7 @@
     collectionImage : `{{ section.settings.collectionImage }}`,
     category : '{{ categories | strip_newlines  | base64_encode }}',
     color : '{{ colors | strip_newlines  | base64_encode }}',
-    size : '{{ size | strip_newlines  | base64_encode }}',
+    size : '{{ sizes | strip_newlines  | base64_encode }}',
     material : '{{ materials | strip_newlines  | base64_encode }}'
 
 }">
