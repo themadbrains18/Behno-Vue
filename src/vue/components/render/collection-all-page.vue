@@ -137,9 +137,7 @@
                       <label
                         class="optionLabel"
                         :for="'Categories_' + option.id"
-                        >{{ option.text.toLowerCase() }} ({{
-                          option.count
-                        }})</label
+                        >{{ option.text.toLowerCase() }} </label
                       >
                     </li>
                   </ul>
@@ -206,9 +204,7 @@
                         @change="onCheckColor($event)"
                       />
                       <label class="optionLabel" :for="'Color_' + option.id"
-                        >{{ option.text.toLowerCase() }} ({{
-                          option.count
-                        }})</label
+                        >{{ option.text.toLowerCase() }}</label
                       >
                     </li>
                   </ul>
@@ -269,9 +265,7 @@
                         @change="onCheckSize($event)"
                       />
                       <label class="optionLabel" :for="'Size_' + option.id"
-                        >{{ option.text.toLowerCase() }} ({{
-                          option.count
-                        }})</label
+                        >{{ option.text.toLowerCase() }} </label
                       >
                     </li>
                   </ul>
@@ -337,9 +331,7 @@
                         @change="onCheckMaterial($event)"
                       />
                       <label class="optionLabel" :for="'Material_' + option.id"
-                        >{{ option.text.toLowerCase() }} ({{
-                          option.count
-                        }})</label
+                        >{{ option.text.toLowerCase() }} </label
                       >
                     </li>
                   </ul>
@@ -736,7 +728,7 @@ export default {
       selectedSize: [],
       selectedMaterial: [],
 
-      ddTestCategory: this.getCategoryDropDownList([]),
+      ddTestCategory: this.getCategoryDropDownList(),
       ddTestColor: this.getColorDropDownList(),
       ddTestSize: this.getSizeDropDownList(),
       ddTestMaterial: this.getMaterialDropDownList(),
@@ -823,7 +815,6 @@ export default {
     hideCategoryDropdown(){
        
          var blackListPage = JSON.parse(window.atob(this.shopifyData.hidecollection))
-         console.log(window.location.pathname)
          var url = window.location.pathname;
          var parts = url.split("/");
          var last_part = parts[parts.length - 1];
@@ -1201,24 +1192,53 @@ export default {
 
     /* Fill category dropdown from products data */
 
-    getCategoryDropDownList: function (fillter = []) {
+    getCategoryDropDownList: function () {
       let products = this.roughData();
 
       let data = window.atob(this.shopifyData.category);
-      let cat = JSON.parse(data);
+      let data2 = window.atob(this.shopifyData.category2);
+
+
+
+      let url = window.location.pathname.split('/');
+      var lastSegment = url.pop() || url.pop();
+
+      let category1 = JSON.parse(data2);
+      let category2 = JSON.parse(data);
+      let flag = false;
+      console.log(lastSegment)
+
+      category1.map((mapUrl) => {
+          if(mapUrl.rules.handle == lastSegment){
+              flag = true
+          }
+      })
+      var cat;
+      if(flag == false){
+         cat = category2
+      }else{
+         cat = category1
+      }
+      // cat = category2
+
+
+
       let array = [];
       let rol = [];
+
 
       var $pCpunt = 0;
       cat.map((cList, index) => {
         $pCpunt = 0;
         products.map((plist) => {
-          if (plist.length === 4) {
+          if (plist.length === 5) {
             if (plist[3].includes(cList.rules.title)) {
               $pCpunt++;
             }
           }
         });
+
+        // console.log($pCpunt);
 
         let obj = {
           id: index + 1,
@@ -1246,7 +1266,7 @@ export default {
       color.map((cColor, index) => {
         var $pCpunt = 0;
         products.map((plist) => {
-          if (plist.length === 4) {
+          if (plist.length === 5) {
             if (plist[3].includes(cColor.rules.title)) {
               $pCpunt++;
             }
@@ -1313,7 +1333,7 @@ export default {
       material.map((cMaterial, index) => {
         var $pCpunt = 0;
         products.map((plist) => {
-          if (plist.length === 4) {
+          if (plist.length === 5) {
             if (plist[3].includes(cMaterial.rules.title)) {
               $pCpunt++;
             }
@@ -1458,6 +1478,7 @@ export default {
 
         // console.log(this.getColorRules)
         // console.log(this.getMaterialRules)
+
 
         if (Categories.length !== 0) {
           // ********************************************************************** //
@@ -1730,9 +1751,12 @@ export default {
 
       // filterListing = this.shuffle(filterListing);
 
-      console.log(...filterListing);
 
-      this.filterDropdow([...filterListing]);
+
+      if(Categories.length !== 0 || Color.length !== 0 || Size.length !==0 || Material.length !== 0){
+         console.log('i am here! 111111111111111111');
+          this.filterDropdow([...filterListing]);
+      }
 
       this.Products = [...filterListing].slice(0, this.page_size);
       this.AllProducts = [...filterListing].slice(0, 100);
@@ -1774,13 +1798,12 @@ export default {
       if (Size.length !== 0) Size.map((s) => AllFillters.push(s));
       if (Material.length !== 0) Material.map((m) => AllFillters.push(m));
 
-      if (
-        Categories.length !== 0 ||
-        Color.length !== 0 ||
-        Size.length !== 0 ||
-        Material.length !== 0
-      ) {
+      if (Categories.length !== 0 || Color.length !== 0 || Size.length !== 0 || Material.length !== 0) {
         // category filter
+
+        /******************************************************************************/
+        ///////////////  category filter
+        /******************************************************************************/
 
         ddTestCategory[0].map((catList, index) => {
           var cat_count = 0;
@@ -1788,37 +1811,14 @@ export default {
             if (Object.prototype.hasOwnProperty.call(plist, "variable")) {
               var checkOnce = false;
               plist.variable.map((c_list) => {
-                if (
-                  c_list.collection.includes(catList.value) &&
-                  this.intersect(AllFillters, c_list.collection).length > 0 &&
-                  checkOnce === false
-                ) {
+                if (c_list.collection.includes(catList.value) && this.intersect(AllFillters, c_list.collection).length > 0 && checkOnce === false) {
                   cat_count++;
                   checkOnce = true;
-                  console.log(
-                    "===============",
-                    cat_count,
-                    "=============",
-                    catList.text,
-                    "=============",
-                    AllFillters
-                  );
                 }
               });
             } else if (Object.prototype.hasOwnProperty.call(plist, "single")) {
-              if (
-                plist.single.collection.includes(catList.value) &&
-                this.intersect(AllFillters, plist.single.collection).length > 0
-              ) {
+              if (plist.single.collection.includes(catList.value) && this.intersect(AllFillters, plist.single.collection).length > 0) {
                 cat_count++;
-                console.log(
-                  "==============",
-                  cat_count,
-                  "=============",
-                  catList.text,
-                  "=============",
-                  AllFillters
-                );
               }
             }
           }
@@ -1827,6 +1827,37 @@ export default {
         });
 
         this.ddTestCategory = ddTestCategory;
+
+        /******************************************************************************/
+        ///////////////  Color Filter
+        /******************************************************************************/
+
+        ddTestColor[0].map((colList, index) => {
+          var color_count = 0;
+          for (let p_color_list of $productList) {
+            if (Object.prototype.hasOwnProperty.call(p_color_list, "variable")) {
+              var colorCheckOnce = false;
+              p_color_list.variable.map((c_color_list) => {
+                if (c_color_list.collection.includes(colList.value) && this.intersect(AllFillters, colList.collection).length > 0 && colorCheckOnce === false) {
+                  color_count++;
+                  colorCheckOnce = true;
+                }
+              });
+            } else if (Object.prototype.hasOwnProperty.call(p_color_list, "single")) {
+              if (p_color_list.single.collection.includes(colList.value) && this.intersect(AllFillters, p_color_list.single.collection).length > 0) {
+                color_count++;
+              }
+            }
+          }
+
+         
+
+          ddTestColor[0][index].count = color_count;
+
+        });
+
+        this.ddTestColor = ddTestColor
+
 
         // console.log(ddTestCategory)
         // console.log(ddTestColor)
@@ -2093,7 +2124,6 @@ export default {
 
     getThemeAssets(image,object) {
       object = JSON.parse(JSON.stringify(object));
-      console.log(object)
       var src = "";
       object.map((img, index) => {
           if(Object.prototype.hasOwnProperty.call(img,image)){

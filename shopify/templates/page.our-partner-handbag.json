@@ -5,7 +5,7 @@
       "settings": {
         "secSubHeading": "OUR PARTNER HANDBAG FACTORY",
         "checkImage": true,
-        "videolink": "https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
       }
     },
     "ascension-seeker": {
@@ -26,19 +26,19 @@
         "1b898318-6b89-4ae9-8138-451885b2bdb5": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ascension-seeker-slide3.jpg"
+            "image": "shopify:\/\/shop_images\/ascension-seeker-slide3.jpg"
           }
         },
         "e20eed5c-2356-4c8c-bf5f-27e1b843ccc4": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ascension-seeker-slide2.jpg"
+            "image": "shopify:\/\/shop_images\/ascension-seeker-slide2.jpg"
           }
         },
         "de8929ec-dfc4-4ad5-8855-24bc4aa4c294": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ascension-seeker-slide1.jpg"
+            "image": "shopify:\/\/shop_images\/ascension-seeker-slide1.jpg"
           }
         }
       },
@@ -52,7 +52,7 @@
       "settings": {
         "secHeading": "Ascension Seeker.",
         "subHeading": "Our partner factory ensures it minimizes its environmental impact by sustainably sourcing its materials and subsequently recycling any waste, and, of coursee, works with and treats its people with utmost respect and financial security.",
-        "secImg": "shopify://shop_images/ascension-seeker.jpg"
+        "secImg": "shopify:\/\/shop_images\/ascension-seeker.jpg"
       }
     },
     "old-world-craftsmanship": {
@@ -73,55 +73,55 @@
         "3a1ef8c8-f591-4341-83bc-7bb4050362ab": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item1.png"
+            "image": "shopify:\/\/shop_images\/grid-item1.png"
           }
         },
         "047b2977-32c9-4c12-8b30-183fba0400d3": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item2.png"
+            "image": "shopify:\/\/shop_images\/grid-item2.png"
           }
         },
         "3c63e580-840e-4356-b697-5b0f762ee83e": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item3.png"
+            "image": "shopify:\/\/shop_images\/grid-item3.png"
           }
         },
         "f202392c-a037-4acd-ab5d-74c96f4f6181": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item4.png"
+            "image": "shopify:\/\/shop_images\/grid-item4.png"
           }
         },
         "a319c184-ea3a-4fc7-bf66-5abf36e5fcad": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item5.png"
+            "image": "shopify:\/\/shop_images\/grid-item5.png"
           }
         },
         "895d49db-1fdd-4579-9e4a-8391358ab3bf": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item6.png"
+            "image": "shopify:\/\/shop_images\/grid-item6.png"
           }
         },
         "f18ef185-d110-4109-ab32-34f7a29b625e": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item7.png"
+            "image": "shopify:\/\/shop_images\/grid-item7.png"
           }
         },
         "d4c7dc28-2398-4070-9d74-64664ecb1ec4": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item8.png"
+            "image": "shopify:\/\/shop_images\/grid-item8.png"
           }
         },
         "b121cacd-63cb-4508-9ee6-e49c4d9d6018": {
           "type": "gridImages",
           "settings": {
-            "image": "shopify://shop_images/grid-item9.png"
+            "image": "shopify:\/\/shop_images\/grid-item9.png"
           }
         }
       },
@@ -142,7 +142,7 @@
         "secHeading": "Old-world craftsmanship, new world needs.",
         "secSubHeading": "The hands and tools.",
         "redText": "“NASHIK HAS BECOME HOME FOR US.”",
-        "secImg": "shopify://shop_images/flower-hand.png"
+        "secImg": "shopify:\/\/shop_images\/flower-hand.png"
       }
     },
     "Urbanism-and-development": {
@@ -168,7 +168,7 @@
       "settings": {
         "secHeading": "Urbanism and development among heritage and history.",
         "subHeading": "Nashik, an unspoken gem of a city.",
-        "secImg": "shopify://shop_images/Urbanism_and_development_sec.png"
+        "secImg": "shopify:\/\/shop_images\/Urbanism_and_development_sec.png"
       }
     },
     "sublime-saturdays": {
@@ -189,70 +189,70 @@
         "20a2b89e-eb47-4af8-899b-5ea11e142ec2": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/3-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/3-NASHIK.jpg",
             "imageInfo": "Finding inspiration in small, unexpected corners while exploring Nashik."
           }
         },
         "151f8d88-4ee2-4172-a8fd-e986a379a2d1": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/4-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/4-NASHIK.jpg",
             "imageInfo": "A woman holding her rain poncho in the city center."
           }
         },
         "5ad2c63a-0c91-4f89-81cd-66d287e64d20": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/2-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/2-NASHIK.jpg",
             "imageInfo": "Sunrise form the Pandaoleni Caves."
           }
         },
         "8835e3b7-d17b-484e-8a3e-b4c2726de2ba": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/5-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/5-NASHIK.jpg",
             "imageInfo": "The terrain on the outskirts of Nashik."
           }
         },
         "607755fe-9c88-406f-8096-02e9b50abe6e": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/6-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/6-NASHIK.jpg",
             "imageInfo": "Views of rock cut caves on an early morning hike."
           }
         },
         "97ce2230-b891-4f4c-a1b1-e3548a0d3b1d": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/7-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/7-NASHIK.jpg",
             "imageInfo": "Sunset from our factory."
           }
         },
         "8b8e5234-116a-4d25-af23-841639f06a4f": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/8-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/8-NASHIK.jpg",
             "imageInfo": "Sunrise form the Pandaoleni Caves, Nashik."
           }
         },
         "f24ca4f9-c3f9-4df1-9354-f929296887e1": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/9-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/9-NASHIK.jpg",
             "imageInfo": "A snapshot of our morning drive From Mumbai to Nashik."
           }
         },
         "d97bf486-2bd4-4fdc-bd34-105786c0c5b4": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/10-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/10-NASHIK.jpg",
             "imageInfo": "An evening at Sula Vineyards, Where the behno team relaxed with coworkers From this factory."
           }
         },
         "8a72670d-53f7-4b2a-bdcc-b53f5760fd64": {
           "type": "collage",
           "settings": {
-            "image": "shopify://shop_images/11-NASHIK.jpg",
+            "image": "shopify:\/\/shop_images\/11-NASHIK.jpg",
             "imageInfo": "A flower vendor outside the Trimbakeshwar temple."
           }
         }
@@ -279,7 +279,7 @@
     "back-sense-behno": {
       "type": "back-sense-behno",
       "settings": {
-        "link": "shopify://pages/sense-of-behno",
+        "link": "shopify:\/\/pages\/sense-of-behno",
         "ctaText": "Back to The Sense of behno"
       }
     }

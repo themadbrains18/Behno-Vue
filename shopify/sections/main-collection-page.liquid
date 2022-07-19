@@ -5,10 +5,10 @@
 
 {% assign material = section.settings.material |  newline_to_br | strip_newlines | split: '<br />'  %}
 {% assign category = section.settings.category |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign category2 = section.settings.category2 |  newline_to_br | strip_newlines | split: '<br />'  %}
 {% assign size = section.settings.size |  newline_to_br | strip_newlines | split: '<br />'  %}
 {% assign color = section.settings.color |  newline_to_br | strip_newlines | split: '<br />'  %}
 {% assign hidecollection = section.settings.hidecollection |  newline_to_br | strip_newlines | split: '<br />'  %}
-
 
 
 {% capture materials %}
@@ -17,6 +17,10 @@
 
 {% capture categories %}
     [{% for cates in category %}{% assign catList = cates | split: ':' %}{"label":"{{ catList[0] }}","rules": {{ collections[catList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+{% capture categories2 %}
+    [{% for cates in category2 %}{% assign cat2List = cates | split: ':' %}{"label":"{{ cat2List[0] }}","rules": {{ collections[cat2List[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
 {% endcapture %}
 
 {% capture colors %}
@@ -121,6 +125,7 @@
     collectionText:`{{ section.settings.collectionText }}`,
     collectionImage : `{{ section.settings.collectionImage }}`,
     category : '{{ categories | strip_newlines  | base64_encode }}',
+    category2 : '{{ categories2 | strip_newlines  | base64_encode }}',
     color : '{{ colors | strip_newlines  | base64_encode }}',
     size : '{{ sizes | strip_newlines  | base64_encode }}',
     material : '{{ materials | strip_newlines  | base64_encode }}',
@@ -227,7 +232,13 @@
     },
     {
         "id":"category",
-        "label":"Category Fillter",
+        "label":"Category Fillter 1",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"category2",
+        "label":"Category Fillter 2",
         "type":"textarea",
         "default":"xyz"
     },

@@ -5,7 +5,7 @@
       "settings": {
         "secHeading": "OUR HOME BASE",
         "checkbox": true,
-        "videoLink": "https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+        "videoLink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
       }
     },
     "new-york-state": {
@@ -20,37 +20,37 @@
         "10305aad-09f8-4ef3-87c9-44d28de5c920": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-state-img6.jpg"
+            "image": "shopify:\/\/shop_images\/new-york-state-img6.jpg"
           }
         },
         "f7ec7a8f-34b0-4c84-9037-4b8a3b8008a1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-state-img1.jpg"
+            "image": "shopify:\/\/shop_images\/new-york-state-img1.jpg"
           }
         },
         "41f61534-ae01-4c7f-ba11-c82fda10ec9e": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-state-img3.jpg"
+            "image": "shopify:\/\/shop_images\/new-york-state-img3.jpg"
           }
         },
         "d35239f1-3b0e-4d65-80fe-908f6064112e": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-state-img2.jpg"
+            "image": "shopify:\/\/shop_images\/new-york-state-img2.jpg"
           }
         },
         "a63be0d8-02a5-46d5-931f-8cea7e7a237d": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-state-img4.jpg"
+            "image": "shopify:\/\/shop_images\/new-york-state-img4.jpg"
           }
         },
         "92c5c585-72f9-4832-9d19-2040bc55f447": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/new-york-state-img5.jpg"
+            "image": "shopify:\/\/shop_images\/new-york-state-img5.jpg"
           }
         }
       },
@@ -67,18 +67,21 @@
         "secHeading": "A New York state of mind.",
         "subHeading": "New York City is our home.",
         "redText": "“WE ARE DESIGNED IN NEW YORK WHILE IMPACTING THE WORLD.”",
-        "gridImage": "shopify://shop_images/new-york-inner-img.png"
+        "gridImage": "shopify:\/\/shop_images\/new-york-inner-img.png"
       }
     },
     "meet-our-team": {
       "type": "meet-our-team",
       "settings": {
+        "videoUrl": "https:\/\/i.shgcdn.com\/138d308f-8307-4ea7-867b-b4a638e1224a\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/",
+        "link": "",
+        "ctaText": "MEET OUR TEAM"
       }
     },
     "back-sense-behno": {
       "type": "back-sense-behno",
       "settings": {
-        "link": "shopify://pages/sense-of-behno",
+        "link": "shopify:\/\/pages\/sense-of-behno",
         "ctaText": "Back to The Sense of behno"
       }
     }
