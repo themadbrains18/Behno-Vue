@@ -5,11 +5,7 @@
       <nav class="navbar navbar-desktop">
         <!-- Toggle Button -->
         <div class="header_toggle_wrap">
-          <button
-            type="button"
-            class="header_toggle"
-            @click="togleHeader"
-          >
+          <button type="button" class="header_toggle" @click="togleHeader">
             <span class="toggle_bar toggle_bar-top" />
             <span class="toggle_bar toggle_bar-center" />
             <span class="toggle_bar toggle_bar-bottom" />
@@ -18,74 +14,289 @@
         <!-- left Navlist -->
         <ul class="navlist navlist-left">
           <li class="navitem first-navitem">
-            <a
-              :href="HeaderNavData[0].url"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[0].title"
-            />
-            <!--  HANDBAGS & WALLETS Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <li
-                  v-for="subLink in HeaderNavData[0].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
+            <template v-if="HeaderNavData[0]">
+              <a
+                :href="HeaderNavData[0].url"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[0].title"
+              />
+              <template v-if="HeaderNavData[0].links.length > 0">
+                <!--  HANDBAGS & WALLETS Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
                 >
-                  <ul class="subnavlink__list hover-img">
-                    <template
-                      v-for="(
-                        nestedSubLink, nestedSubLinkIndex
-                      ) in subLink.links"
-                      :key="nestedSubLink.title"
+                  <ul class="navink__hover_list">
+                    <li
+                      v-for="subLink in HeaderNavData[0].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
                     >
-                      <template
-                        v-if="
-                          nestedSubLink.url.includes('.png') ||
-                            nestedSubLink.url.includes('.jpg') ||
-                            nestedSubLink.url.includes('.svg')
-                        "
-                      >
-                        <!-- continue Content -->
-                      </template>
-                      <template v-else>
-                        <li class="subnavlink__item">
+                      <ul class="subnavlink__list hover-img">
+                        <template
+                          v-for="(
+                            nestedSubLink, nestedSubLinkIndex
+                          ) in subLink.links"
+                          :key="nestedSubLink.title"
+                        >
                           <template
                             v-if="
-                              typeof subLink.links[nestedSubLinkIndex + 1] !=
-                                'undefined' &&
-                                (subLink.links[
-                                  nestedSubLinkIndex + 1
-                                ].url.includes('.png') ||
-                                  subLink.links[
-                                    nestedSubLinkIndex + 1
-                                  ].url.includes('.jpg') ||
-                                  subLink.links[
-                                    nestedSubLinkIndex + 1
-                                  ].url.includes('.svg'))
+                              nestedSubLink.url.includes('.png') ||
+                              nestedSubLink.url.includes('.jpg') ||
+                              nestedSubLink.url.includes('.svg')
                             "
                           >
-                            <a
-                              :href="nestedSubLink.url"
-                              class="subnavlink"
-                              @mouseover="subnavlinkHover"
-                              v-html="nestedSubLink.title"
-                            />
-                            <a
-                              :href="nestedSubLink.url"
-                              class="subnavlink subnavlink-img"
-                            >
-                              <img
-                                :src="subLink.links[nestedSubLinkIndex + 1].url"
-                              >
-                            </a>
+                            <!-- continue Content -->
                           </template>
-                          <template v-else-if="nestedSubLink.url == '#'">
+                          <template v-else>
+                            <li class="subnavlink__item">
+                              <template
+                                v-if="
+                                  typeof subLink.links[
+                                    nestedSubLinkIndex + 1
+                                  ] != 'undefined' &&
+                                  (subLink.links[
+                                    nestedSubLinkIndex + 1
+                                  ].url.includes('.png') ||
+                                    subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ].url.includes('.jpg') ||
+                                    subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ].url.includes('.svg'))
+                                "
+                              >
+                                <a
+                                  :href="nestedSubLink.url"
+                                  class="subnavlink"
+                                  @mouseover="subnavlinkHover"
+                                  v-html="nestedSubLink.title"
+                                />
+                                <a
+                                  :href="nestedSubLink.url"
+                                  class="subnavlink subnavlink-img"
+                                >
+                                  <img
+                                    :src="
+                                      subLink.links[nestedSubLinkIndex + 1].url
+                                    "
+                                  />
+                                </a>
+                              </template>
+                              <template v-else-if="nestedSubLink.url == '#'">
+                                <span
+                                  class="subnavlink subnavlink-heading"
+                                  v-html="nestedSubLink.title"
+                                />
+                              </template>
+                              <template v-else>
+                                <a
+                                  :href="nestedSubLink.url"
+                                  class="subnavlink"
+                                  v-html="nestedSubLink.title"
+                                />
+                              </template>
+                            </li>
+                          </template>
+                        </template>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <!--  HANDBAGS & WALLETS End -->
+              </template>
+            </template>
+          </li>
+          <li class="navitem">
+            <template v-if="HeaderNavData[1]">
+              <a
+                :href="HeaderNavData[1].url"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[1].title"
+              />
+
+              <template v-if="HeaderNavData[1].links.length > 0">
+                <!--NANAMOTA  Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
+                >
+                  <ul class="navink__hover_list">
+                    <li
+                      v-for="(subLink, subLinkIndex) in HeaderNavData[1].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
+                    >
+                      <ul class="subnavlink__list hover-img">
+                        <template
+                          v-if="
+                            HeaderNavData[1].links.length - 1 == subLinkIndex
+                          "
+                        >
+                          <li class="navlink__hover_item">
+                            <ul class="subnavlink__list hover-img">
+                              <li class="subnavlink__item">
+                                <div class="nanamoto-basics-crd">
+                                  <a
+                                    :href="subLink.links[0].url"
+                                    class="d-block"
+                                  >
+                                    <img
+                                      src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="nanamoto-basics-crd-txt">
+                                    <template
+                                      v-for="nestedSubLink in subLink.links"
+                                      :key="nestedSubLink.title"
+                                    >
+                                      <a
+                                        :href="nestedSubLink.url"
+                                        v-html="nestedSubLink.title"
+                                      />
+                                    </template>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                        </template>
+                        <template v-else>
+                          <template
+                            v-for="(
+                              nestedSubLink, nestedSubLinkIndex
+                            ) in subLink.links"
+                            :key="nestedSubLink.title"
+                          >
+                            <template
+                              v-if="
+                                nestedSubLink.url.includes('.png') ||
+                                nestedSubLink.url.includes('.jpg') ||
+                                nestedSubLink.url.includes('.svg')
+                              "
+                            >
+                              <!-- continue Content -->
+                            </template>
+                            <template v-else>
+                              <li class="subnavlink__item">
+                                <template
+                                  v-if="
+                                    typeof subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ] != 'undefined' &&
+                                    (subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ].url.includes('.png') ||
+                                      subLink.links[
+                                        nestedSubLinkIndex + 1
+                                      ].url.includes('.jpg') ||
+                                      subLink.links[
+                                        nestedSubLinkIndex + 1
+                                      ].url.includes('.svg'))
+                                  "
+                                >
+                                  <a
+                                    :href="nestedSubLink.url"
+                                    class="subnavlink"
+                                    @mouseover="subnavlinkHover"
+                                    v-html="nestedSubLink.title"
+                                  />
+                                  <a
+                                    :href="nestedSubLink.url"
+                                    class="subnavlink subnavlink-img"
+                                    ><img
+                                      :src="
+                                        subLink.links[nestedSubLinkIndex + 1]
+                                          .url
+                                      "
+                                  /></a>
+                                </template>
+                                <template v-else-if="nestedSubLink.url == '#'">
+                                  <span
+                                    class="subnavlink subnavlink-heading"
+                                    v-html="nestedSubLink.title"
+                                  />
+                                </template>
+                                <template v-else>
+                                  <a
+                                    :href="nestedSubLink.url"
+                                    class="subnavlink"
+                                    v-html="nestedSubLink.title"
+                                  />
+                                </template>
+                              </li>
+                            </template>
+                          </template>
+                        </template>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <!--NANAMOTA End  -->
+              </template>
+            </template>
+          </li>
+
+          <template v-if="this.logoImageIndex == 3">
+            <li v-if="HeaderNavData[2]" class="navitem">
+              <a
+                :href="HeaderNavData[2].title"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[2].title"
+              />
+            </li>
+          </template>
+        </ul>
+
+        <!-- Header logo -->
+        <div class="logo_wrap line-h-0">
+          <template v-if="HeaderNavData[logoImageIndex]">
+            <a
+              class="logo d-inline-block"
+              :href="HeaderNavData[logoImageIndex].url"
+              v-html="HeaderNavData[logoImageIndex].title"
+            >
+            </a>
+          </template>
+        </div>
+
+        <!-- Rigth Navlist -->
+        <ul class="navlist navlist-right">
+          <li class="navitem">
+            <template v-if="HeaderNavData[logoImageIndex + 1]">
+              <a
+                :href="HeaderNavData[logoImageIndex + 1].url"
+                class="navlink navlink_drpdown"
+              >
+                {{ HeaderNavData[logoImageIndex + 1].title }}
+              </a>
+              <template
+                v-if="HeaderNavData[logoImageIndex + 1].links.length > 0"
+              >
+                <!-- CLIENT SERVICES Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
+                >
+                  <ul class="navink__hover_list">
+                    <li
+                      v-for="subLink in HeaderNavData[logoImageIndex + 1].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
+                    >
+                      <ul class="subnavlink__list">
+                        <li
+                          v-for="nestedSubLink in subLink.links"
+                          :key="nestedSubLink.title"
+                          class="subnavlink__item"
+                        >
+                          <template v-if="nestedSubLink.url == '#'">
                             <span
-                              class="subnavlink subnavlink-heading"
+                              class="subnavlink"
                               v-html="nestedSubLink.title"
                             />
                           </template>
@@ -97,292 +308,87 @@
                             />
                           </template>
                         </li>
-                      </template>
-                    </template>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <!--  HANDBAGS & WALLETS End -->
-          </li>
-          <li class="navitem">
-            <a
-              :href="HeaderNavData[1].title"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[1].title"
-            />
-            <!--NANAMOTA  Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <li
-                  v-for="(subLink, subLinkIndex) in HeaderNavData[1].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
-                >
-                  <ul class="subnavlink__list hover-img">
-                    <template
-                      v-if="HeaderNavData[1].links.length - 1 == subLinkIndex"
-                    >
-                      <li class="navlink__hover_item">
-                        <ul class="subnavlink__list hover-img">
-                          <li class="subnavlink__item">
-                            <div class="nanamoto-basics-crd">
-                              <a
-                                :href="subLink.links[0].url"
-                                class="d-block"
-                              >
-                                <img
-                                  src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505"
-                                  alt=""
-                                >
-                              </a>
-                              <div class="nanamoto-basics-crd-txt">
-                                <template
-                                  v-for="nestedSubLink in subLink.links"
-                                  :key="nestedSubLink.title"
-                                >
-                                  <a
-                                    :href="nestedSubLink.url"
-                                    v-html="nestedSubLink.title"
-                                  />
-                                </template>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-                    </template>
-                    <template v-else>
-                      <template
-                        v-for="(
-                          nestedSubLink, nestedSubLinkIndex
-                        ) in subLink.links"
-                        :key="nestedSubLink.title"
-                      >
-                        <template
-                          v-if="
-                            nestedSubLink.url.includes('.png') ||
-                              nestedSubLink.url.includes('.jpg') ||
-                              nestedSubLink.url.includes('.svg')
-                          "
-                        >
-                          <!-- continue Content -->
-                        </template>
-                        <template v-else>
-                          <li class="subnavlink__item">
-                            <template
-                              v-if="
-                                typeof subLink.links[nestedSubLinkIndex + 1] !=
-                                  'undefined' &&
-                                  (subLink.links[
-                                    nestedSubLinkIndex + 1
-                                  ].url.includes('.png') ||
-                                    subLink.links[
-                                      nestedSubLinkIndex + 1
-                                    ].url.includes('.jpg') ||
-                                    subLink.links[
-                                      nestedSubLinkIndex + 1
-                                    ].url.includes('.svg'))
-                              "
-                            >
-                              <a
-                                :href="nestedSubLink.url"
-                                class="subnavlink"
-                                @mouseover="subnavlinkHover"
-                                v-html="nestedSubLink.title"
-                              />
-                              <a
-                                :href="nestedSubLink.url"
-                                class="subnavlink subnavlink-img"
-                              ><img
-                                :src="
-                                  subLink.links[nestedSubLinkIndex + 1].url
-                                "
-                              ></a>
-                            </template>
-                            <template v-else-if="nestedSubLink.url == '#'">
-                              <span
-                                class="subnavlink subnavlink-heading"
-                                v-html="nestedSubLink.title"
-                              />
-                            </template>
-                            <template v-else>
-                              <a
-                                :href="nestedSubLink.url"
-                                class="subnavlink"
-                                v-html="nestedSubLink.title"
-                              />
-                            </template>
-                          </li>
-                        </template>
-                      </template>
-                    </template>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <!--NANAMOTA End  -->
-          </li>
-
-          <li
-            v-if="HeaderNavData[2]"
-            class="navitem"
-          >
-            <a
-              :href="HeaderNavData[2].title"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[2].title"
-            />
-          </li>
-        </ul>
-
-        <!-- Header logo -->
-        <div class="logo_wrap line-h-0">
-          <a
-            class="logo d-inline-block"
-            :href="HeaderNavData[logoImageIndex].url"
-          >
-            <img
-              :src="HeaderNavData[logoImageIndex].title"
-              alt=""
-            >
-          </a>
-        </div>
-
-        <!-- Rigth Navlist -->
-        <ul class="navlist navlist-right">
-          <li class="navitem">
-            <a
-              :href="HeaderNavData[logoImageIndex + 1].url"
-              class="navlink navlink_drpdown"
-            >
-              {{ HeaderNavData[logoImageIndex + 1].title }}
-            </a>
-            <!-- CLIENT SERVICES Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <li
-                  v-for="subLink in HeaderNavData[logoImageIndex + 1].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
-                >
-                  <ul class="subnavlink__list">
-                    <li
-                      v-for="nestedSubLink in subLink.links"
-                      :key="nestedSubLink.title"
-                      class="subnavlink__item"
-                    >
-                      <template v-if="nestedSubLink.url == '#'">
-                        <span
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
-                      <template v-else>
-                        <a
-                          :href="nestedSubLink.url"
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
+                      </ul>
                     </li>
                   </ul>
-                </li>
-              </ul>
-            </div>
-            <!-- CLIENT SERVICES End -->
+                </div>
+                <!-- CLIENT SERVICES End -->
+              </template>
+            </template>
           </li>
           <li class="navitem">
-            <a
-              :href="HeaderNavData[logoImageIndex + 2].url"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[logoImageIndex + 2].title"
-            />
-            <!-- THE SENSE OF BEHNO Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <!-- ===   ON hover Class Show First row ===  -->
-                <li
-                  v-for="subLink in HeaderNavData[logoImageIndex + 2].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
+            <template v-if="HeaderNavData[logoImageIndex + 2]">
+              <a
+                :href="HeaderNavData[logoImageIndex + 2].url"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[logoImageIndex + 2].title"
+              />
+              <template
+                v-if="HeaderNavData[logoImageIndex + 2].links.length > 0"
+              >
+                <!-- THE SENSE OF BEHNO Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
                 >
-                  <ul class="subnavlink__list">
+                  <ul class="navink__hover_list">
+                    <!-- ===   ON hover Class Show First row ===  -->
                     <li
-                      v-for="nestedSubLink in subLink.links"
-                      :key="nestedSubLink.title"
-                      class="subnavlink__item"
+                      v-for="subLink in HeaderNavData[logoImageIndex + 2].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
                     >
-                      <template v-if="nestedSubLink.url == '#'">
-                        <span
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
-                      <template
-                        v-if="
-                          nestedSubLink.title.includes('.png') ||
-                            nestedSubLink.title.includes('.jpg') ||
-                            nestedSubLink.title.includes('.svg')
-                        "
-                      >
-                        <a
-                          :href="nestedSubLink.url"
-                          class="nav_sensebehno__img subnavlink"
+                      <ul class="subnavlink__list">
+                        <li
+                          v-for="nestedSubLink in subLink.links"
+                          :key="nestedSubLink.title"
+                          class="subnavlink__item"
                         >
-                          <img
-                            :src="nestedSubLink.title"
-                            alt=""
+                          <template v-if="nestedSubLink.url == '#'">
+                            <span
+                              class="subnavlink"
+                              v-html="nestedSubLink.title"
+                            />
+                          </template>
+                          <template
+                            v-if="
+                              nestedSubLink.title.includes('.png') ||
+                              nestedSubLink.title.includes('.jpg') ||
+                              nestedSubLink.title.includes('.svg')
+                            "
                           >
-                        </a>
-                      </template>
-                      <template v-else>
-                        <a
-                          :href="nestedSubLink.url"
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
+                            <a
+                              :href="nestedSubLink.url"
+                              class="nav_sensebehno__img subnavlink"
+                            >
+                              <img :src="nestedSubLink.title" alt="" />
+                            </a>
+                          </template>
+                          <template v-else>
+                            <a
+                              :href="nestedSubLink.url"
+                              class="subnavlink"
+                              v-html="nestedSubLink.title"
+                            />
+                          </template>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
-                </li>
-              </ul>
-            </div>
-            <!-- THE SENSE OF BEHNO End -->
+                </div>
+                <!-- THE SENSE OF BEHNO End -->
+              </template>
+            </template>
           </li>
           <!-- Header Button Group -->
           <li class="desktop_btn_grp">
             <div class="nav_btns">
-              <button
-                id="searcBtn"
-                class="search_btn"
-                @click="toggleSearchBar"
-              >
-                <v-lazy-image
-                  :src="shopifyData.search"
-                  alt="Search Icon"
-                />
+              <button id="searcBtn" class="search_btn" @click="toggleSearchBar">
+                <v-lazy-image :src="shopifyData.search" alt="Search Icon" />
               </button>
-              <a
-                class="shopping_btn"
-                @click="show = !show"
-              >
-                <v-lazy-image
-                  :src="shopifyData.bag"
-                  alt="Shopping Icon"
-                />
+              <a class="shopping_btn" @click="show = !show">
+                <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
                 <span class="shopping_btn_count">0</span>
               </a>
             </div>
@@ -392,19 +398,10 @@
         <div class="mobile_btn_grp">
           <div class="nav_btns">
             <button class="search_btn">
-              <v-lazy-image
-                :src="shopifyData.search"
-                alt="Search Icon"
-              />
+              <v-lazy-image :src="shopifyData.search" alt="Search Icon" />
             </button>
-            <button
-              class="shopping_btn"
-              @click="show = !show"
-            >
-              <v-lazy-image
-                :src="shopifyData.bag"
-                alt="Shopping Icon"
-              />
+            <button class="shopping_btn" @click="show = !show">
+              <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
               <span class="shopping_btn_count">0</span>
             </button>
           </div>
@@ -416,11 +413,7 @@
     <!-- ======= Mobile Navigation Start ======= -->
     <nav class="m_navbar_list navbar-Mobile">
       <ul class="m_navlist d-block w-100">
-        <li
-          v-for="link in MobileNavData"
-          :key="link.title"
-          class="m_navitem"
-        >
+        <li v-for="link in MobileNavData" :key="link.title" class="m_navitem">
           <template v-if="link.url == '#'">
             <sapn class="navlink w-100 t-left" />
           </template>
@@ -451,10 +444,7 @@
                           :key="nestedSubLink.title"
                           class="m_subnavlink_item"
                         >
-                          <a
-                            :href="nestedSubLink.url"
-                            class="navlink"
-                          >{{
+                          <a :href="nestedSubLink.url" class="navlink">{{
                             nestedSubLink.title
                           }}</a>
                         </li>
@@ -484,40 +474,19 @@
     </nav>
     <!-- ======= Mobile Navigation End ======= -->
     <!-- ======= Search Bar Start ======= -->
-    <div
-      id="mainSearchBar"
-      class="main_search_bar"
-    >
-      <form
-        id="searchBar"
-        action="/search"
-        class="search_bar_items"
-      >
-        <button
-          type="submit"
-          class="search_icon"
-        >
-          <img
-            :src="shopifyData.search"
-            alt="Search Icon"
-          >
+    <div id="mainSearchBar" class="main_search_bar">
+      <form id="searchBar" action="/search" class="search_bar_items">
+        <button type="submit" class="search_icon">
+          <img :src="shopifyData.search" alt="Search Icon" />
         </button>
-        <input
-          type="text"
-          name="type"
-          hidden
-          value="product"
-        >
+        <input type="text" name="type" hidden value="product" />
         <input
           type="text"
           name="q"
           class="search_item"
           placeholder="Search..."
-        >
-        <button
-          type="button"
-          @click="toggleSearchBar()"
-        >
+        />
+        <button type="button" @click="toggleSearchBar()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -530,18 +499,8 @@
             stroke-linejoin="round"
             class="feather feather-x"
           >
-            <line
-              x1="18"
-              y1="6"
-              x2="6"
-              y2="18"
-            />
-            <line
-              x1="6"
-              y1="6"
-              x2="18"
-              y2="18"
-            />
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
       </form>
@@ -556,10 +515,7 @@
     <div :class="[{ active: !show }, 'mini_cart_container']">
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
-        <button
-          id="remove-btn"
-          @click="show = !show"
-        >
+        <button id="remove-btn" @click="show = !show">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="33"
@@ -596,15 +552,9 @@
         <span class="brk_line" />
         <div class="sec_right">
           <div class="sec_right_inner">
-            <h4 class="subtotal_heading">
-              SUBTOTAL
-            </h4>
-            <p class="subtotal_price body_text">
-              $1,080
-            </p>
-            <p class="body_text">
-              Excluding tax & shipping
-            </p>
+            <h4 class="subtotal_heading">SUBTOTAL</h4>
+            <p class="subtotal_price body_text">$1,080</p>
+            <p class="body_text">Excluding tax & shipping</p>
             <p class="body_text text-mdifier">
               or 4 interest payments of $270 with
             </p>
@@ -612,31 +562,20 @@
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076"
                 alt="error"
-              >
-              <p class="body_text">
-                ⓘ
-              </p>
+              />
+              <p class="body_text">ⓘ</p>
             </div>
           </div>
         </div>
         <div class="mini_shopping_cart">
-          <a
-            href="/cart"
-            class="shp_cart"
-          >View shopping cart</a>
+          <a href="/cart" class="shp_cart">View shopping cart</a>
         </div>
       </div>
     </div>
     <!-- <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show" > -->
     <span class="bg_layer_removecart" />
-    <div
-      class="mini-add-card"
-      :class="{ active: !show }"
-    >
-      <a
-        href="/checkout"
-        class="add-card-chk"
-      >CHECKOUT</a>
+    <div class="mini-add-card" :class="{ active: !show }">
+      <a href="/checkout" class="add-card-chk">CHECKOUT</a>
     </div>
   </section>
 </template>
@@ -659,6 +598,8 @@ export default {
   },
   data() {
     window.addEventListener("scroll", this.scollHeader);
+    console.log(this.shopifyData.HeaderNavData);
+    console.log(this.shopifyData.MobileNavData);
     return {
       logoImageIndex: 0,
       lastScrollY: 100,
@@ -1450,4 +1391,3 @@ button.behno_increment_dec:after {
   }
 }
 </style>
-
