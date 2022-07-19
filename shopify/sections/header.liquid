@@ -1,6 +1,6 @@
 {% capture HeaderNavData %}
 [
-    {% for link in linklists.main-menu.links %}
+    {% for link in linklists[section.settings.desktopMenu].links %}
     {
           url : `{{ link.url  | escape }}`,
           title  : `{{ link.title | escape  }}`,
@@ -27,7 +27,7 @@
 
 {% capture MobileNavData %}
 [
-    {% for link in linklists.mobile-main-menu.links %}
+    {% for link in linklists[section.settings.mobileMenu].links %}
     {
           url : `{{ link.url  | escape }}`,
           title  : `{{ link.title | escape  }}`,
@@ -60,3 +60,26 @@
   MobileNavData: {{ MobileNavData }}
 }">
 </render-my-header>
+
+
+{% schema %}
+
+{
+  "name": "Header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "desktopMenu",
+      "label": "Desktop menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "mobileMenu",
+      "label": "Mobile menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %} 
