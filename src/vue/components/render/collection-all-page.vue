@@ -773,6 +773,7 @@ export default {
         },
       ],
       sortObject: {},
+      selectedSortPercent : [],
 
       /** latest code **/
       Products: [],
@@ -1187,6 +1188,11 @@ export default {
     /* set selected sort checkbox value */
     onCheckSort: function (event) {
       this.sortProduct(event.target.value);
+      if('Discount' == event.target.value){
+        this.selectedSortPercent = []
+        this.selectedSortPercent = [event.target.value]
+        this.fetchProdustQuery()
+      }
     },
 
     /* Fill category dropdown from products data */
@@ -1443,6 +1449,10 @@ export default {
       Size = JSON.parse(JSON.stringify(this.selectedSize));
       Material = JSON.parse(JSON.stringify(this.selectedMaterial));
 
+      var selectedSortPercent = JSON.parse(JSON.stringify(this.selectedSortPercent));
+
+
+
       // filter roles
       ColorRules = JSON.parse(JSON.stringify(this.getColorDropDownList()))[1];
       SizeRules = "";
@@ -1472,10 +1482,9 @@ export default {
 
         var handle = p.handle;
 
-        if(p.compare_at_price > p.price){
-          percentCount++;
-        }
+
         
+
 
         /*********************************************************/
         /// category filter applied here (start)
@@ -1645,6 +1654,20 @@ export default {
             if (sizeFlag === false) continue;
         }
 
+
+
+        if(p.compare_at_price > p.price){
+          percentCount++;
+        }
+
+        
+
+        if(selectedSortPercent.length > 0 && p.compare_at_price === null ){
+            continue;
+        }else if(p.compare_at_price === 0){
+            continue;
+        }
+        
 
           // ********************************************************************** //
           //                                                                        //
