@@ -444,7 +444,7 @@
                   <li v-for="option in ddTestSort" :key="option.id">
                     <input
                       :id="option.id"
-                      class="multiselectOption"
+                      class="multiselectOption" :class="{ isPercentShow: option.value == 'Discount' && isPercentDiscount == false }"
                       type="radio"
                       name="sort"
                       :checked="option.id == 'sort1' ? true : false"
@@ -452,7 +452,7 @@
                       @change="onCheckSort($event)"
                     />
                     <label
-                      class="optionLabel"
+                      class="optionLabel" :class="{ isPercentShow: option.value == 'Discount' && isPercentDiscount == false }"
                       :for="option.id"
                       @click="
                         (event) => {
@@ -711,7 +711,7 @@ export default {
       colorRules: [],
       cizeRules: [],
       materialRules: [],
-
+      isPercentDiscount:true,
       isActive: false,
       isMobile: false,
       gridMax: false,
@@ -1186,8 +1186,7 @@ export default {
 
     /* set selected sort checkbox value */
     onCheckSort: function (event) {
-      this.saveFilter("sort", event.target.value);
-      this.page_index = 0;
+      this.sortProduct(event.target.value);
     },
 
     /* Fill category dropdown from products data */
@@ -1424,7 +1423,8 @@ export default {
 
       var filterListing = [];
       var duplicateRecord = [];
-
+      var percentCount = 0;
+      var notpercentCount = 0;
       /*********************************************************/
       // start filter (initailize value)
       /*********************************************************/
@@ -1471,6 +1471,11 @@ export default {
         var collection = Products[product][3]; /// variant object
 
         var handle = p.handle;
+
+        if(p.compare_at_price > p.price){
+          percentCount++;
+        }
+        
 
         /*********************************************************/
         /// category filter applied here (start)
@@ -1750,7 +1755,13 @@ export default {
       }
 
       // filterListing = this.shuffle(filterListing);
+      // console.log('percent Count','======',percentCount);
 
+      if(percentCount == 0){
+        this.isPercentDiscount=false;
+      }
+
+      // console.log('not percent Count','=====',notpercentCount);
 
 
       if(Categories.length !== 0 || Color.length !== 0 || Size.length !==0 || Material.length !== 0){
@@ -1761,16 +1772,16 @@ export default {
       this.Products = [...filterListing].slice(0, this.page_size);
       this.AllProducts = [...filterListing].slice(0, 100);
 
-      if (getSavedFilter != "") {
-        let savefiltr = JSON.parse(getSavedFilter);
+      // if (getSavedFilter != "") {
+      //   let savefiltr = JSON.parse(getSavedFilter);
 
-        if (
-          savefiltr.length > 0 &&
-          Object.prototype.hasOwnProperty.call(savefiltr[0], "sort")
-        ) {
-          this.sortProduct(savefiltr[0].sort);
-        }
-      }
+      //   if (
+      //     savefiltr.length > 0 &&
+      //     Object.prototype.hasOwnProperty.call(savefiltr[0], "sort")
+      //   ) {
+      //     this.sortProduct(savefiltr[0].sort);
+      //   }
+      // }
     },
 
     // fillter dropdownlist
@@ -1902,62 +1913,79 @@ export default {
       return newVariants;
     },
 
+    // getSalesProduct:function(){
+    //   this.AllProducts.map(()=>{
+
+    //   })
+    // },
+
     /* sort product based on price low to high and vice-verse */
     sortProduct: function (obj) {
-      this.Products.sort(function (a, b) {
-        if (obj == "LowToHigh") {
-          if (Object.prototype.hasOwnProperty.call(a, "variable")) {
-            return (
-              a.variable[a.active].price -
-              (b.variable != undefined
-                ? b.variable[b.active].price
-                : b.single.price)
-            );
+      var newArrivalCount = 0;
+      var product=[];
+      if (obj == "Latest"){
+        this.AllProducts.map((p)=>{
+          var countOnce=false;
+          if (Object.prototype.hasOwnProperty.call(p, "variable")){
+            p.variable.map((n)=>{
+              if(n.collection.includes('NEW ARRIVALS') && countOnce == false){
+                newArrivalCount++;
+                countOnce=true;
+                product.push(p);
+              }
+            })
+          }else{
+            if(p.single.collection.includes('NEW ARRIVALS')){
+              newArrivalCount++;
+              product.push(p);
+            }
           }
-          if (Object.prototype.hasOwnProperty.call(a, "single")) {
-            return (
-              a.single.price -
-              (b.single != undefined
-                ? b.single.price
-                : b.variable[b.active].price)
-            );
-          }
-        } else if (obj == "HighToLow") {
-          if (Object.prototype.hasOwnProperty.call(b, "variable")) {
-            return (
-              b.variable[b.active].price -
-              (a.variable != undefined
-                ? a.variable[a.active].price
-                : a.single.price)
-            );
-          }
-          if (Object.prototype.hasOwnProperty.call(b, "single")) {
-            return (
-              b.single.price -
-              (a.single != undefined
-                ? a.single.price
-                : a.variable[a.active].price)
-            );
-          }
-        } else if (obj == "Latest") {
-          if (Object.prototype.hasOwnProperty.call(b, "variable")) {
-            return (
-              new Date(b.variable[b.active].created_at) -
-              (a.variable != undefined
-                ? new Date(a.variable[a.active].created_at)
-                : new Date(a.single.created_at))
-            );
-          }
-          if (Object.prototype.hasOwnProperty.call(b, "single")) {
-            return (
-              new Date(b.single.created_at) -
-              (a.single != undefined
-                ? new Date(a.single.created_at)
-                : new Date(a.variable[a.active].created_at))
-            );
-          }
-        }
-      });
+        })
+        let filter =JSON.parse(JSON.stringify(product))
+        this.Products = [...filter].slice(0, this.page_size);
+        this.AllProducts = [...filter].slice(0, 100);
+        console.log(newArrivalCount);
+      }
+      else{
+          this.AllProducts.sort(function (a, b) {
+            if (obj == "LowToHigh") {
+              if (Object.prototype.hasOwnProperty.call(a, "variable")) {
+                return (
+                  a.variable[0].price -
+                  (b.variable != undefined
+                    ? b.variable[0].price
+                    : b.single.price)
+                );
+              }
+              if (Object.prototype.hasOwnProperty.call(a, "single")) {
+                return (
+                  a.single.price -
+                  (b.single != undefined
+                    ? b.single.price
+                    : b.variable[0].price)
+                );
+              }
+            } else if (obj == "HighToLow") {
+              if (Object.prototype.hasOwnProperty.call(b, "variable")) {
+                return (
+                  b.variable[0].price -
+                  (a.variable != undefined
+                    ? a.variable[0].price
+                    : a.single.price)
+                );
+              }
+              if (Object.prototype.hasOwnProperty.call(b, "single")) {
+                return (
+                  b.single.price -
+                  (a.single != undefined
+                    ? a.single.price
+                    : a.variable[0].price)
+                );
+              }
+            }
+          });
+      }
+      
     },
 
     randomIntFromInterval(min, max) {
@@ -2144,6 +2172,10 @@ export default {
 
 .collaction_banner img {
   width: 100%;
+}
+
+.isPercentShow{
+  display: none;
 }
 
 .collaction_banner .banner_heading {
