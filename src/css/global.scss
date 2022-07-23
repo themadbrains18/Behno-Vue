@@ -12,7 +12,12 @@ body::-webkit-scrollbar {
     width: 5px;
 }
 
-
+span.ezsd-dots-wrapper {
+    display: none !important;
+}
+del {
+    color: #b4b4b4;
+}
 /* Track */
 
 body::-webkit-scrollbar-track {

@@ -44,6 +44,7 @@
       ],
       "settings": {
         "collectionText": "All Collactions",
+        "collectionImage": "shopify:\/\/shop_images\/download.jpg",
         "filterDropdownTextResponsive": "FILTER",
         "secBottomheading": "We are working to redefine sustainability and ethics in fashion.",
         "secBottomBrief": "Each behno piece is handcrafted in facilities incrementally implementing The behno Standard, a set of six guiding principles:",
@@ -56,11 +57,11 @@
         "sortByDropdownTextResponsive": "SORT",
         "filterinnerResponsive": "FILTER",
         "sortinnerResponsive": "SORT",
-        "category": "BUCKET BAGS:bucket-bags\nCROSSBODY BAGS:crossbody-bags\nMINI BAGS:mini-bags\nSHOULDER BAGS:shoulder-bags\nTOP HANDLES:top-handles\nTOTE BAGS:totes",
+        "category": "CROSSBODY BAGS:crossbody-bags\nSHOULDER BAGS:shoulder-bags\nMINI BAGS:mini-bags\nTOP HANDLES:top-handles\nTOTE BAGS:totes\nCLUTCHES & WALLETS:clutches-and-wallets",
         "category2": "SIMONE SERIES:simone-series\nLEX ACCORDION:lex-accordion \nTILDA SADDLE BAG SERIES:tilda-saddle-bag-series\nINA & TINA BUCKET BAG SERIES:ina-bag-series\nANA RUCHED SERIES:ana-ruched-series\nELIZABETH BAGUETTE SERIES:elizabeth-baguette-series\nMARY BAG SERIES:mary-bag-series\nFRIDA FLAT TOTE:frida-flat-tote",
-        "color": "BLACK:black\nBONE:bone\nBROWN:brown\nGRAY:gray\nGREEN:greeen\nNAVY \/ BLUE:navy\nPINK:pink\nPURPLE:purple\nRED:red\nWHITE:white\nWINE:wine\nYELLOW:yellow",
+        "color": "BLACK:black\nGRAY:gray\nWHITE:white\nBONE:bone\nBROWN:brown\nGREEN:greeen\nNAVY \/ BLUE:navy\nPINK:pink\nPURPLE:purple\nRED:red\nWINE:wine\nYELLOW:yellow",
         "size": "L:l\nLARGE:large\nM:m\nMEDIUM:medium\nS:s\nSMALL:small\nXL:xl\nXS:xs\nXXL:xxl\nXXS:xxs\nXXXL:xxxl",
-        "material": "PEBBLE:pebble\nNAPPA:nappa\nMETALLICS:metallics",
+        "material": "PEBBLE:pebble\nNAPPA:nappa\nMETALLICS:metallics\nEmbellished:embellished\nSuede:suede",
         "hidecollection": "crossbody-bags\nshoulder-bags\nmini-bags\ntop-handles\ntotes\nclutches-and-wallets"
       }
     }

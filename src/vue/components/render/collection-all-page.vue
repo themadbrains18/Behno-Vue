@@ -12,12 +12,12 @@
   <!-- Collacction Banner Code -->
 
   <div class="collaction_banner">
-    <h2 class="cross_heading">
+    <!-- <h2 class="cross_heading">
       {{ shopifyData.bannerImage }}
-    </h2>
+    </h2> -->
     <div>
-      <img :src="shopifyData.collectionImage" />
-      <h2 class="banner_heading">THE ELIZABETH BAGUETTE SERIESnpm</h2>
+      <img :src="shopifyData.bannerImage" />
+      <h2 class="banner_heading">{{ shopifyData.bannerHeading }}</h2>
     </div>
   </div>
 
@@ -521,7 +521,12 @@
               {{ value.single.title }}
             </h5>
             <h5 class="card-title bold product_price">
-              $ {{ (value.single.price / 100).toFixed(2) }}
+              <span v-if="(value.single.price && value.single.compare_at_price)">
+                  ${{ (value.single.price / 100) }} <del> ${{ (value.single.compare_at_price / 100) }} </del>
+              </span>
+              <span v-else>
+                  $ {{ (value.single.price / 100) }}
+              </span>
             </h5>
           </a>
 
@@ -617,7 +622,14 @@
               {{ value.variable[value.active].title }}
             </h5>
             <h5 class="card-title bold product_price">
-              $ {{ (value.variable[value.active].price / 100).toFixed(2) }}
+              <span v-if="(value.variable[value.active].price && value.variable[value.active].compare_at_price)">
+                  ${{ (value.variable[value.active].price / 100) }} <del> ${{ (value.variable[value.active].compare_at_price / 100) }} </del>
+              </span>
+              <span v-else>
+                  $ {{ (value.variable[value.active].price / 100) }}
+              </span>
+
+              <!-- $ {{ (value.variable[value.active].price / 100) }} -->
             </h5>
           </a>
 
@@ -1946,8 +1958,11 @@ export default {
     sortProduct: function (obj) {
       var newArrivalCount = 0;
       var product=[];
+
+       var AllProducts = JSON.parse(JSON.stringify(this.AllProducts));
+
       if (obj == "Latest"){
-        this.AllProducts.map((p)=>{
+        AllProducts.map((p)=>{
           var countOnce=false;
           if (Object.prototype.hasOwnProperty.call(p, "variable")){
             p.variable.map((n)=>{
@@ -1970,32 +1985,20 @@ export default {
         console.log(newArrivalCount);
       }
       else{
-          this.AllProducts.sort(function (a, b) {
+       
+      const aa =     AllProducts.sort(function (a, b) {
             if (obj == "LowToHigh") {
+              
+
               if (Object.prototype.hasOwnProperty.call(a, "variable")) {
-                return (
-                  a.variable[0].price -
-                  (b.variable != undefined
-                    ? b.variable[0].price
-                    : b.single.price)
-                );
+                return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
               }
               if (Object.prototype.hasOwnProperty.call(a, "single")) {
-                return (
-                  a.single.price -
-                  (b.single != undefined
-                    ? b.single.price
-                    : b.variable[0].price)
-                );
+                return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
               }
             } else if (obj == "HighToLow") {
               if (Object.prototype.hasOwnProperty.call(b, "variable")) {
-                return (
-                  b.variable[0].price -
-                  (a.variable != undefined
-                    ? a.variable[0].price
-                    : a.single.price)
-                );
+                return ( b.variable[0].price - (a.variable != undefined ? a.variable[0].price : a.single.price) );
               }
               if (Object.prototype.hasOwnProperty.call(b, "single")) {
                 return (
@@ -2007,7 +2010,12 @@ export default {
               }
             }
           });
+            this.Products = [...aa].slice(0, this.page_size);
+            this.AllProducts = [...aa].slice(0, 100);
       }
+
+      
+  
       
     },
 
@@ -2116,8 +2124,15 @@ export default {
       // change title
 
       grid.querySelector(".product_title").innerHTML = activeProduct.title;
-      grid.querySelector(".product_price").innerHTML =
-        "$ " + (activeProduct.price / 100).toFixed(2);
+
+      let  priceHtml = "$ " + (activeProduct.price / 100);
+          
+      if(activeProduct.price && activeProduct.compare_at_price){
+          priceHtml = `$${(activeProduct.price / 100)}&nbsp;<del>$${(activeProduct.compare_at_price / 100)}</del>`;
+      }
+      
+      grid.querySelector(".product_price").innerHTML = priceHtml
+        
 
       /// update link of the grid
       grid
@@ -2346,7 +2361,9 @@ ul {
   color: #000000;
   margin-top: 6px;
 }
-
+del {
+    color: #b4b4b4;
+}
 .card-title.bold {
   font-weight: 700;
 }
@@ -2879,13 +2896,14 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 
   color: #878787;
   visibility: hidden;
+  transition: all 200ms ease-in-out;
 }
 
 .out_of_stock img {
   opacity: 0.2;
 }
 
-.item_left_active {
+.product_item:hover .item_left_active {
   visibility: visible !important;
 }
 
@@ -3376,6 +3394,12 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     margin: 5px 0 12px;
   }
 }
+
+
+span.ezsd-dots-wrapper {
+    display: none !important;
+}
+
 </style>
 
 <!-- loader -->
