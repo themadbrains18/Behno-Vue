@@ -38,13 +38,8 @@
 
 
 {% if collection.handle == 'all' %}
-<<<<<<< HEAD
-    {% assign bannerheading = section.settings.collectionText  %}
-    {% assign bannerImg  = section.settings.collectionImage | img_url : "" %}
-=======
     {% assign bannerheading  = section.settings.collectionText  %}
     {% assign  bannerImg = section.settings.collectionImage | img_url : "" %}
->>>>>>> b4bd63f370e322900e3ba05bce5d46c68bece5cd
 {% else %}
     {% assign bannerImg = collection.metafields.custom.hero_image | img_url : "" %}
     {% assign bannerheading = collection.metafields.custom.hero_banner_heading %}

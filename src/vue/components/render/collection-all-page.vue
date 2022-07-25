@@ -12,9 +12,9 @@
   <!-- Collacction Banner Code -->
 
   <div class="collaction_banner">
-    <h2 class="cross_heading">
+    <!-- <h2 class="cross_heading">
        {{ shopifyData.bannerHeading }}
-    </h2>
+    </h2> -->
     <div>
       <img :src="shopifyData.bannerImage" />
       <h2 class="banner_heading">{{ shopifyData.bannerHeading }}</h2>
@@ -632,7 +632,7 @@
 
           <div class="quickButton quickActive">
             <div class="color_swatches">
-              <swiper class="swatches_inner mySwiper" :slidesPerView="'auto'" :spaceBetween="7" :navigation="true" :modules="modules" :productData="value.swatches" :mainKey="JSON.stringify(value)">
+              <swiper class="swatches_inner mySwiper" @slideChange="qwe" :slidesPerView="'auto'" :spaceBetween="7" :navigation="true" :modules="modules" :mainKey="JSON.stringify(value)">
                 <swiper-slide
                   v-for="(sValue, sKey) in value.swatches"
                   :key="sKey"
@@ -643,7 +643,7 @@
                   @click="selectVariation"
                 >
                   <span>
-                    <img :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)" :class="sValue.img" />
+                    <img :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)" :index="sKey" :class="sValue.img" />
                   </span>
                 </swiper-slide>
               </swiper>
@@ -712,6 +712,8 @@ import { Navigation } from "swiper";
 // import assets from "../../../assets/graphql/assets.json";
 
 import { ShopifyAPI } from "../../Shopify/Shopify";
+
+let currentActiveIndex="0";
 
 export default {
    components: {
@@ -803,6 +805,7 @@ export default {
       themeAssets: [],
       hideCategorydropdown : 1,
       loadInit: false,
+      activeSwatchIndex:"0"
     };
   },
   mounted() {
@@ -832,6 +835,15 @@ export default {
 
 
   methods: {
+
+    qwe(){
+      console.log('here swiper ');
+      
+      // this.activeSwatchIndex = currentActiveIndex.toString();
+      // console.log("currentActiveIndex",'=======',currentActiveIndex);
+      
+    },
+
 
     hideCategoryDropdown(){
        
@@ -2109,24 +2121,28 @@ export default {
        */
       var target = event.target;
 
-      var grid = target.parentNode.parentNode.parentNode.parentNode;
+      var grid = target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 
-      var children = target.parentNode.children;
+      var children = target.parentNode.parentNode.parentNode.children;
       for (var i = 0; i < children.length; i++) {
         children[i].classList.remove("active");
       }
 
       // add active call to current active element
-      target.classList.add("active");
+      // target.classList.add("active");
+      target.parentNode.parentNode.classList.add("active");
 
       // get active index
 
-      var index = target.getAttribute("index");
+      var index = target.parentNode.parentNode.getAttribute("index");
 
-      var productsData = JSON.parse(target.parentNode.getAttribute("mainkey"));
+      // currentActiveIndex = index;
+
+      var productsData = JSON.parse(target.parentNode.parentNode.parentNode.parentNode.getAttribute("mainkey"));
 
       // active product
       var activeProduct = productsData.variable[index];
+
       // update product data
 
       // change title
@@ -2317,7 +2333,8 @@ li.nav-dots:after {
   left: -2px;
 }
 
-li.nav-dots.active:after {
+li.nav-dots.active:after,
+.nav-dots.active img {
   border: 2px solid rgba(0, 0, 0, 0.6);
 }
 
