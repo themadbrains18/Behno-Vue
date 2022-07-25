@@ -21,8 +21,6 @@
     </div>
   </div>
 
-
-
   <div class="filter_row">
     <div class="row_inner">
       <div class="apply_filter_cta_wrapper">
