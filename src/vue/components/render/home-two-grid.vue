@@ -131,7 +131,7 @@ export default {
   data: function () {
     window.addEventListener("scroll",()=>{
       let heroSec = document.querySelector(".hero_sec");
-      let storyCta = document.querySelector(".mobile_stories img");
+      let storyCta = document.querySelector(".mobile_stories");
       let heroHeight = heroSec.getBoundingClientRect().height;
       if(window.scrollY > heroHeight){
         storyCta.setAttribute("style","opacity:1;visibility:visible;");
@@ -181,16 +181,13 @@ export default {
   
 }
 @media only screen and (max-width: 575px) {
-   .mobile_stories{
+  .mobile_stories{
     display: block;
-    padding-left: 22px;
-  }
-  .mobile_stories img {
     margin-bottom: -30px;
     position: fixed;
     z-index: 9;
-    background: #fff;
     top: 80px;
+    left: 22px;
     border-radius: 50%;
     opacity: 0;
     visibility: hidden;
