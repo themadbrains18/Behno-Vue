@@ -532,17 +532,12 @@
 
           <div class="quickButton quickActive">
             <div class="color_swatches" />
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div class="product_cta_wrapper qwert">
               <!-- if quantity is 0 then hide -->
 
               <span v-if="value.single.variants[0].inStock != 0">
-                <button
-                  :id="'quickAdd' + value.single.id"
-                  class="quickAdd"
-                  :variantid="value.single.variants[0].id"
-                  @click="addToCard"
-                >
-                  <span>Quick Add</span>
+                <button :id="'quickAdd' + value.single.id" class="quickAdd" :variantid="value.single.variants[0].id" @click="addToCard">
+                  <span>Add</span>
                   <div class="loder_tmb">
                     <span /><span /> <span /><span />
                     <span />
@@ -635,8 +630,8 @@
 
           <div class="quickButton quickActive">
             <div class="color_swatches">
-              <ul :mainKey="JSON.stringify(value)">
-                <li
+              <swiper class="swatches_inner mySwiper" :slidesPerView="'auto'" :spaceBetween="7" :navigation="true" :modules="modules" :productData="value.swatches" :mainKey="JSON.stringify(value)">
+                <swiper-slide
                   v-for="(sValue, sKey) in value.swatches"
                   :key="sKey"
                   :index="sKey"
@@ -646,13 +641,10 @@
                   @click="selectVariation"
                 >
                   <span>
-                    <img
-                      :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)"
-                      :class="sValue.img"
-                    />
+                    <img :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)" :class="sValue.img" />
                   </span>
-                </li>
-              </ul>
+                </swiper-slide>
+              </swiper>
             </div>
             <div class="product_cta_wrapper" data-v-32bfb114="">
               <button
@@ -666,7 +658,7 @@
                 class="quickAdd"
                 @click="addToCard"
               >
-                <span>Quick Add</span>
+                <span>Add</span>
                 <div class="loder_tmb">
                   <span /><span /> <span /><span />
                   <span />
@@ -701,6 +693,15 @@
 </template>
 
 <script>
+
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+// Import Swiper styles
+import "swiper/css";
+// import required modules
+import { Navigation } from "swiper";
+
+
 // import axios from "axios";
 // import {
 //     graphQl
@@ -711,6 +712,10 @@
 import { ShopifyAPI } from "../../Shopify/Shopify";
 
 export default {
+   components: {
+    Swiper,
+    SwiperSlide,
+  },
   props: {
     shopifyData: {
       type: Object,
@@ -719,6 +724,7 @@ export default {
   },
   data() {
     return {
+      modules: [Navigation],
       categoryRules: [],
       colorRules: [],
       cizeRules: [],
@@ -2202,6 +2208,58 @@ export default {
 };
 </script>
 
+<style>
+
+.color_swatches .swiper-wrapper .swiper-slide {
+    width: 20px !important;
+    /* max-width:20px !important ; */
+    height: 20px;
+    display: block;
+}
+.color_swatches .swiper-button-next {
+    right: 0;
+}
+.color_swatches .swiper-button-prev{
+  left: 0;
+}
+.color_swatches .swiper-button-prev:after,
+.color_swatches .swiper-button-next:after
+{
+  content: url(https://cdn.shopify.com/s/files/1/0577/1178/8125/files/arrow.svg?v=1653913857);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  line-height: 0;
+}
+.color_swatches .swiper-button-prev:after{
+  transform: translate(0%,-50%) rotate(90deg);
+  left: 0;
+}
+.color_swatches .swiper-button-next:after{
+  transform: translate(0%,-50%) rotate(-90deg);
+  right: 0;
+  left: auto;
+}
+.color_swatches .swiper-button-disabled {
+    transition: 0.3s;
+    visibility: hidden;
+}
+.color_swatches .swiper-button-lock{
+  display: block;  
+}
+.color_swatches .swiper,
+.color_swatches .swiper-wrapper{
+  position: static;
+}
+/* .grid_inner.product-containers > div{
+  padding-left: 6px;
+}
+.grid_inner.product-containers > div:first-child{
+  padding-left: 0px;
+} */
+</style>
+
 <style scoped>
 /* Collaction Banner Css Code */
 .collaction_banner {
@@ -2210,6 +2268,9 @@ export default {
 
 .collaction_banner img {
   width: 100%;
+  height: 330px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .isPercentShow{
@@ -2234,12 +2295,12 @@ export default {
   display: none;
 }
 
-.color_swatches ul {
+.color_swatches .swatches_inner {
   display: flex;
   gap: 7px;
 }
 
-.color_swatches ul li {
+.color_swatches .swatches_inner .nav-dots {
   position: relative;
 }
 
@@ -2258,13 +2319,13 @@ li.nav-dots.active:after {
   border: 2px solid rgba(0, 0, 0, 0.6);
 }
 
-.color_swatches ul li img {
+.color_swatches .nav-dots img {
   height: 20px;
   width: 20px;
   border-radius: 50%;
 }
 
-.color_swatches ul li:hover {
+.color_swatches .swatches_inner .nav-dots:hover {
   cursor: pointer;
 }
 
@@ -2656,6 +2717,19 @@ select {
   row-gap: 28px;
 }
 
+/* .grid_inner[data-v-251cec58] {
+  display: flex;
+    column-gap: 0;
+    row-gap: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+} */
+/* .grid_inner.product-containers > div {
+    width: 25%;
+} */
+
+
 .grid_inner_max {
   grid-template-columns: repeat(6, 1fr) !important;
   transition: 0.3s;
@@ -2778,9 +2852,9 @@ select {
   color: #fff;
 }
 
-.quickAdd_deactive {
+/* .quickAdd_deactive {
   visibility: hidden;
-}
+} */
 
 .quickAdd_active {
   visibility: visible;
@@ -2819,7 +2893,7 @@ select {
   visibility: visible;
 }
 
-.quickButton ul {
+.quickButton .swatches_inner {
   text-align: left;
   /* width: 50%; */
 }
@@ -2931,6 +3005,10 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 
 .color_swatches {
   position: relative;
+  max-width: 132px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 15px;
 }
 
 .arrow_icon {
@@ -3042,6 +3120,10 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     height: auto;
     max-width: 100%;
     width: 100%;
+  }
+  .quickButton{
+    opacity: 1;
+    visibility: visible;
   }
 
   .filter_row {
@@ -3291,7 +3373,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     border-bottom: 1px solid #000;
   }
 
-  .nav-dots {
+  .color_swatches {
     margin-top: 9px;
   }
 
@@ -3394,7 +3476,11 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     margin: 5px 0 12px;
   }
 }
-
+@media (max-width: 480px) {
+  .collaction_banner img{
+    height: 190px;
+  }
+}
 
 span.ezsd-dots-wrapper {
     display: none !important;
