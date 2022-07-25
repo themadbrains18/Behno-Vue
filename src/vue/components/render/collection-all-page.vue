@@ -12,15 +12,9 @@
   <!-- Collacction Banner Code -->
 
   <div class="collaction_banner">
-<<<<<<< HEAD
     <h2 class="cross_heading">
        {{ shopifyData.bannerHeading }}
     </h2>
-=======
-    <!-- <h2 class="cross_heading">
-      {{ shopifyData.bannerImage }}
-    </h2> -->
->>>>>>> b4bd63f370e322900e3ba05bce5d46c68bece5cd
     <div>
       <img :src="shopifyData.bannerImage" />
       <h2 class="banner_heading">{{ shopifyData.bannerHeading }}</h2>
