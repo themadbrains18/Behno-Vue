@@ -102,9 +102,10 @@ p{
     text-align: left;
     /* line-height: 44px; */
 }
-#shopify-section-template--14523471396961__nanamota-shop-grid-third .sec_text{
+[id$="shop-grid-third"] .sec_text{
   max-width: 650px;
 }
+
 .sec_text p{
     font-size: 24px;
     font-weight: normal;
