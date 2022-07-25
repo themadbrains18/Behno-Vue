@@ -12,14 +12,16 @@
   <!-- Collacction Banner Code -->
 
   <div class="collaction_banner">
-    <!-- <h2 class="cross_heading">
-      {{ shopifyData.bannerImage }}
-    </h2> -->
+    <h2 class="cross_heading">
+       {{ shopifyData.bannerHeading }}
+    </h2>
     <div>
       <img :src="shopifyData.bannerImage" />
       <h2 class="banner_heading">{{ shopifyData.bannerHeading }}</h2>
     </div>
   </div>
+
+
 
   <div class="filter_row">
     <div class="row_inner">
@@ -1985,7 +1987,7 @@ export default {
             }
           }
         })
-        let filter =JSON.parse(JSON.stringify(product))
+        let filter = JSON.parse(JSON.stringify(product))
         this.Products = [...filter].slice(0, this.page_size);
         this.AllProducts = [...filter].slice(0, 100);
         console.log(newArrivalCount);
