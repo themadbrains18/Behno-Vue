@@ -13,13 +13,15 @@
 
   <div class="collaction_banner">
     <h2 class="cross_heading">
-      {{ shopifyData.bannerImage }}
+       {{ shopifyData.bannerHeading }}
     </h2>
     <div>
-      <img :src="shopifyData.collectionImage" />
-      <h2 class="banner_heading">THE ELIZABETH BAGUETTE SERIESnpm</h2>
+      <img :src="shopifyData.bannerImage" />
+      <h2 class="banner_heading">{{ shopifyData.bannerHeading }}</h2>
     </div>
   </div>
+
+
 
   <div class="filter_row">
     <div class="row_inner">
@@ -1946,6 +1948,8 @@ export default {
     sortProduct: function (obj) {
       var newArrivalCount = 0;
       var product=[];
+      console.log(obj);
+
       if (obj == "Latest"){
         this.AllProducts.map((p)=>{
           var countOnce=false;
@@ -1964,14 +1968,17 @@ export default {
             }
           }
         })
-        let filter =JSON.parse(JSON.stringify(product))
+        let filter = JSON.parse(JSON.stringify(product))
         this.Products = [...filter].slice(0, this.page_size);
         this.AllProducts = [...filter].slice(0, 100);
         console.log(newArrivalCount);
       }
       else{
+          console.log('i am here!');
+
           this.AllProducts.sort(function (a, b) {
             if (obj == "LowToHigh") {
+
               if (Object.prototype.hasOwnProperty.call(a, "variable")) {
                 return (
                   a.variable[0].price -
@@ -2007,6 +2014,9 @@ export default {
               }
             }
           });
+
+
+          
       }
       
     },

@@ -12,7 +12,7 @@
       >
       <!-- video show at 991 -->
       <video
-        preload="none"
+        autoplay
         class="shogun-image "
       >
         <source :src="(shopifyData.bannerMobileImg)">
@@ -48,7 +48,10 @@ export default ({
  }
  .hero_sec_imgContainer video{
     display:block;
- }  
+ } 
+ .shogun-image{
+  max-width: 100%;
+ } 
 }
 </style>
 

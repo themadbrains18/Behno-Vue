@@ -92,20 +92,24 @@ p{
     
 }
 
-
 .sec_text-heading{
     padding-bottom: 30px;
     font-size: 52px;
+    line-height: 54px;
     color: #fff;
     font-family: 'Work Sans',sans-serif;
+    font-weight: 500;
     text-align: left;
     /* line-height: 44px; */
+}
+#shopify-section-template--14523471396961__nanamota-shop-grid-third .sec_text{
+  max-width: 650px;
 }
 .sec_text p{
     font-size: 24px;
     font-weight: normal;
     letter-spacing:  -0.08px;
-    line-height: 24px;
+    line-height: 28px;
     color: #fff;
 }
 
@@ -160,6 +164,7 @@ p{
 }
 .nanamota_shop_grid.bg-white .sec_text{
     justify-self: end;
+    max-width: 390px;
 }
 
 /*======= Responsive Start =======*/
@@ -179,11 +184,12 @@ p{
     .sec_text-heading{
         padding-bottom: 20px;
         font-size: 40px;
-        font-weight: normal;
+        line-height: 40px;
     }
 
     .sec_text p{
         font-size: 18px;
+        line-height: 20px;
     }
 
     .sec_image img{

@@ -38,12 +38,13 @@
 
 
 {% if collection.handle == 'all' %}
-    {% assign bannerImg = section.settings.collectionText  %}
-    {% assign bannerheading = section.settings.collectionImage | img_url : "" %}
+    {% assign bannerheading = section.settings.collectionText  %}
+    {% assign bannerImg  = section.settings.collectionImage | img_url : "" %}
 {% else %}
     {% assign bannerImg = collection.metafields.custom.hero_image | img_url : "" %}
     {% assign bannerheading = collection.metafields.custom.hero_banner_heading %}
 {% endif %}
+
 
 
 {% paginate collection.products by 800 %}
@@ -133,9 +134,6 @@
 
 }">
 </render-collection-all-page>
-
-
-
 
 
 

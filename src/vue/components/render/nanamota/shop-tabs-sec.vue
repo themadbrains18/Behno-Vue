@@ -182,7 +182,7 @@ p {
 /*------- Tabs Header on Scroll -------*/
 .nanamota_tabs_header {
   display: grid;
-  grid-template-columns: 200px 600px 155px;
+  grid-template-columns: 220px 600px 220px;
   justify-content: space-between;
   align-items: center;
   max-width: 1420px;
@@ -212,10 +212,15 @@ p {
     transform: translateX(0px);
   }
 }
-
+.nanamota_logo{
+  margin-left: 20px;
+}
 .tab_btn {
   cursor: pointer;
   padding: 10px 15px;
+  max-width:202px;
+  width:100%;
+  text-align:center;
 }
 
 .tab_title {
@@ -272,6 +277,7 @@ p {
 .content_name {
   font-weight: 700;
   font-size: 13px;
+  text-transform: lowercase;
 }
 
 .content_type,
@@ -337,13 +343,14 @@ p {
   }
 }
 
-
 /*=== Breakpoint At 991px ===*/
 
 @media only screen and (max-width: 991px) {
   .tabs_contents_grid {
     grid-template-columns: 1fr;
     justify-content: center;
+    max-width: 600px;
+    margin:0 auto;
   }
   .shop_btn a {
     font-size: 13px;
@@ -369,6 +376,7 @@ p {
   .tab_btn {
     text-align: center;
   }
+  
 }
 /*=== Breakpoint At 767px ===*/
 @media only screen and (max-width: 767px) {

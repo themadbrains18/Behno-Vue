@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
 .sec_text {
-  padding: 45px 24px 60px;
+  padding: 45px 24px 60px;  
 }
 .sec_heading,
 .sec_info {
@@ -149,11 +149,12 @@ export default {
     line-height: 18px;
   }
   .sec_text {
-    padding: 45px 24px;
+    padding: 45px 20px;
   }
   .sec_heading {
     font-size: 44px;
-    line-height: 32px;
+    line-height: 42px;
+    letter-spacing: -3px;
   }
 
   .sec_img img {
