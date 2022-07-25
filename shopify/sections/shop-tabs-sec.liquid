@@ -1,0 +1,118 @@
+{% capture tabs %}
+[
+  {% for block in section.blocks %}
+    {% capture productList %}
+        {% for product in collections[block.settings.selected_collection].products %}
+            {{ product | json }} {% unless forloop.last %},{% endunless %} 
+        {% endfor %}
+    {% endcapture %}
+    
+        {
+          "product" : [{{ productList }}],
+          "label"   : "{{ block.settings.collection_label }}"
+        }{% unless forloop.last %},{% endunless %} 
+{% endfor %}]
+{% endcapture %}
+
+{% capture tabsItemsNannamota %}
+[
+  {% for itemblock in section.blocks %}
+    {
+      tabsItems:`{{ itemblock.settings.tabitem }}` 
+    }
+      {% unless forloop.last %},{% endunless %} 
+  {% endfor %}
+
+]
+{% endcapture %}
+
+
+<render-nanamota-shop-tabs-sec :shopify-data="{
+    checkSection:`{{ section.settings.checkSection }}`,
+    products :  `{{ tabs | base64_encode }}`,
+    headerlogo:{
+      src:`{{ section.settings.NanaMotaHeaderLogo | img_url : "" }}`,
+      placeholder:`{{ section.settings.NanaMotaHeaderLogo | img_url : "50*50" }}`,
+      alt:`{{ section.settings.NanaMotaHeaderLogo.alt }}`
+    },
+    NanaMotaHeaderBackTo:`{{ section.settings.NanaMotaHeaderBackTo }}`,
+    NanaMotaHeaderBackToLink:`{{ section.settings.NanaMotaHeaderBackToLink }}`,
+    tabsItemsNannamota:{{ tabsItemsNannamota }},
+    secCtaText:`{{ section.settings.secCtaText }}`,
+    secCtaLink:`{{ section.settings.secCtaLink }}`
+}">
+</render-nanamota-shop-tabs-sec>
+
+{%  schema %}
+{
+    "name": "Nanamota Tabs",
+    "settings": [
+      {
+        "id": "checkSection", 
+        "type": "checkbox",
+        "label": "Hide Section",
+        "default": false
+      },
+      {
+        "id": "NanaMotaHeaderLogo",
+        "type": "image_picker",
+        "label": "Add NanaMota Header Logo Image"
+      },
+     {
+       "id": "NanaMotaHeaderBackTo",
+       "type": "text",
+       "label": "Add NanaMota Header Back Cta Text",
+       "default": "BACK TO BEHNO"
+     },
+     {
+       "id": "NanaMotaHeaderBackToLink",
+       "type": "url",
+       "label": "Add NanaMota Header Back Cta Link Text"
+     },
+     {
+       "id": "secCtaText",
+       "type": "text",
+       "label": "Section Cta Text",
+       "default": "SHOP ALL WOMENS >"
+     },
+     {
+       "id": "secCtaLink",
+       "type": "url",
+       "label": "Section Cta Link"
+     }
+     
+   ],
+    "name":"nanamotatabs",
+    "blocks": [
+        {
+            "name": "NAnamota Tabs Item",
+            "type": "items",
+            "settings": [
+              {
+               "type" : "text",
+               "id"   : "tabitem",
+               "label": "Add Tabs Items"
+              }
+            ]
+        },
+       {
+         "name": "Slide",
+         "type": "slide",
+         "settings": [
+           {
+             "type": "collection",
+             "id": "selected_collection",
+             "label": "Choose Collection"
+           },
+           {
+            "type" : "text",
+            "id"   : "collection_label",
+            "label": "Collection Label"
+           }
+         ]
+       }
+  
+     ]
+}
+
+{% endschema %}

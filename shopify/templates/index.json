@@ -5,8 +5,8 @@
       "settings": {
         "heroHeading": "The World’s Finest,",
         "herosubHeading": "Consciously Made Handbags.",
-        "heroImage": "shopify:\/\/shop_images\/hero-img.jpg",
-        "imagelink": "shopify:\/\/pages\/ethical-philosophy"
+        "heroImage": "shopify://shop_images/hero-img.jpg",
+        "imagelink": "shopify://pages/ethical-philosophy"
       }
     },
     "two-grid": {
@@ -15,25 +15,24 @@
         "3a830e12-b092-4329-a9e4-dbc899bdb68a": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/grid-two.jpg",
+            "image": "shopify://shop_images/grid-two.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "223545bc-72f6-4216-9449-bd8b2f93d29c": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/grid-two1.jpg",
+            "image": "shopify://shop_images/grid-two1.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "e7e964b6-735c-494b-ba26-12f5fc8d6ddb": {
           "type": "storyBox",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/text-landscape-img2.jpg",
             "storyBtn": "Shop now",
             "storyBtnLink": "#",
             "storyHeading": "LATEST CAMPAIGN.",
@@ -45,7 +44,6 @@
         "79c3118d-46d3-416f-a68d-337eda0a84a6": {
           "type": "storyBox",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/spotted-stories.png",
             "storyBtn": "Shop now",
             "storyBtnLink": "#",
             "storyHeading": "SPOTTED.",
@@ -57,7 +55,6 @@
         "8d991237-0f5a-48c8-a847-1f1a8826fd26": {
           "type": "storyBox",
           "settings": {
-            "previewImage": "shopify:\/\/shop_images\/partner-handbag-story.png",
             "storyBtn": "Shop now",
             "storyBtnLink": "#",
             "storyHeading": "GET BEHIND THE SCENES.",
@@ -83,28 +80,28 @@
         "3905778f-0852-4482-8b4b-756436a08678": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/grid-three.jpg",
+            "image": "shopify://shop_images/grid-three.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "6e5143f4-b9c0-4fb0-9bba-5446bf01735b": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/grid-three1.jpg",
+            "image": "shopify://shop_images/grid-three1.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "b5c511cc-bd8e-4a6a-bcab-2ad9623757eb": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/grid-three2.jpg",
+            "image": "shopify://shop_images/grid-three2.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         }
       },
@@ -122,36 +119,31 @@
         "0b06f130-294d-4409-ac49-a23a921f91da": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/feature-img.jpg",
-            "link": "shopify:\/\/pages\/term-and-conditions"
+            "link": "shopify://pages/term-and-conditions"
           }
         },
         "1536ee64-2d2d-4542-9de4-6f9486d65376": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/feature-img1.jpg",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "cd3257b1-892b-4b05-b7bd-6d21464b8505": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/feature-img.jpg",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "a749e867-5dff-4398-9611-9483f709974d": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/feature-img1.jpg",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "e96f5655-04a1-499d-8af5-07a6ff7d16b8": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/feature-img.jpg",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         }
       },
@@ -178,13 +170,13 @@
     "grid-single": {
       "type": "home-grid-single",
       "settings": {
-        "image": "shopify:\/\/shop_images\/grid-single.jpg",
-        "respnsiveimage": "shopify:\/\/shop_images\/mobile-single-grid.jpg",
+        "image": "shopify://shop_images/grid-single.jpg",
+        "respnsiveimage": "shopify://shop_images/mobile-single-grid.jpg",
         "imageHeight": "",
         "MobileimageHeight": "",
         "title": "TITLE OF THE EDIT",
         "linkText": "Clickable link",
-        "link": "shopify:\/\/pages\/ethical-philosophy"
+        "link": "shopify://pages/ethical-philosophy"
       }
     },
     "grid-text-single": {
@@ -192,10 +184,9 @@
       "settings": {
         "secHeading": "An honest accessory.",
         "btnText": "THE SENSE OF BEHNO",
-        "link": "shopify:\/\/pages\/ethical-philosophy",
+        "link": "shopify://pages/ethical-philosophy",
         "checkImage": true,
-        "image": "shopify:\/\/shop_images\/sense-behno.jpg",
-        "videolink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+        "videolink": "https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
       }
     },
     "gradient-carousel": {
@@ -204,46 +195,46 @@
         "4780890f-f9fa-43cd-970d-2ce9805bd299": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/g-slider1.jpg",
+            "image": "shopify://shop_images/g-slider1.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "0036d78c-c2ab-48ec-8cc5-bd1deeae49c1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/g-slider.jpg",
+            "image": "shopify://shop_images/g-slider.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "4b9f34fb-5387-48b9-8ee9-3bf0e89943ad": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/g-slider1.jpg",
+            "image": "shopify://shop_images/g-slider1_1.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "7a19b958-dbf4-4cec-bcc5-a2f2a452266d": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/g-slider.jpg",
+            "image": "shopify://shop_images/g-slider_1.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         },
         "ba8cd5cd-afe8-4582-8c15-4849fd9a88da": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/g-slider1.jpg",
+            "image": "shopify://shop_images/g-slider1_2.jpg",
             "title": "TITLE OF THE EDIT.",
             "linkText": "Clickable link.",
-            "link": "shopify:\/\/pages\/ethical-philosophy"
+            "link": "shopify://pages/ethical-philosophy"
           }
         }
       },
@@ -260,10 +251,10 @@
     "grid-single-text": {
       "type": "home-grid-single-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/grid-single-text.jpg",
+        "image": "shopify://shop_images/grid-single-text.jpg",
         "title": "TITLE OF THE EDIT.",
         "linkText": "Clickable link.",
-        "link": "shopify:\/\/pages\/ethical-philosophy",
+        "link": "shopify://pages/ethical-philosophy",
         "toptext": "BAG",
         "middletop": "OF",
         "middlebottom": "THE",

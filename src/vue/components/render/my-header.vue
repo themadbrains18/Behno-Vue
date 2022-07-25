@@ -5,11 +5,7 @@
       <nav class="navbar navbar-desktop">
         <!-- Toggle Button -->
         <div class="header_toggle_wrap">
-          <button
-            type="button"
-            class="header_toggle"
-            @click="togleHeader"
-          >
+          <button type="button" class="header_toggle" @click="togleHeader">
             <span class="toggle_bar toggle_bar-top" />
             <span class="toggle_bar toggle_bar-center" />
             <span class="toggle_bar toggle_bar-bottom" />
@@ -18,50 +14,289 @@
         <!-- left Navlist -->
         <ul class="navlist navlist-left">
           <li class="navitem first-navitem">
-            <a
-              :href="HeaderNavData[0].url"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[0].title"
-            />
-            <!--  HANDBAGS & WALLETS Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <li
-                  v-for="subLink in HeaderNavData[0].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
+            <template v-if="HeaderNavData[0]">
+              <a
+                :href="HeaderNavData[0].url"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[0].title"
+              />
+              <template v-if="HeaderNavData[0].links.length > 0">
+                <!--  HANDBAGS & WALLETS Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
                 >
-                  <ul class="subnavlink__list hover-img">
-                    <template
-                      v-for="(nestedSubLink,nestedSubLinkIndex) in subLink.links"
-                      :key="nestedSubLink.title"
+                  <ul class="navink__hover_list">
+                    <li
+                      v-for="subLink in HeaderNavData[0].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
                     >
-                      <template v-if="nestedSubLink.url.includes('.png') || nestedSubLink.url.includes('.jpg') || nestedSubLink.url.includes('.svg')">
-                        <!-- continue Content -->
-                      </template>    
-                      <template v-else>  
-                        <li class="subnavlink__item">
-                          <template v-if="(typeof(subLink.links[nestedSubLinkIndex + 1]) != 'undefined') && (subLink.links[nestedSubLinkIndex + 1].url.includes('.png') || subLink.links[nestedSubLinkIndex + 1].url.includes('.jpg') || subLink.links[nestedSubLinkIndex + 1].url.includes('.svg'))">
-                            <a
-                              :href="nestedSubLink.url"
-                              class="subnavlink"
-                              @mouseover="subnavlinkHover"
-                              v-html="nestedSubLink.title"
-                            />
-                            <a
-                              :href="nestedSubLink.url"
-                              class="subnavlink subnavlink-img"
+                      <ul class="subnavlink__list hover-img">
+                        <template
+                          v-for="(
+                            nestedSubLink, nestedSubLinkIndex
+                          ) in subLink.links"
+                          :key="nestedSubLink.title"
+                        >
+                          <template
+                            v-if="
+                              nestedSubLink.url.includes('.png') ||
+                              nestedSubLink.url.includes('.jpg') ||
+                              nestedSubLink.url.includes('.svg')
+                            "
+                          >
+                            <!-- continue Content -->
+                          </template>
+                          <template v-else>
+                            <li class="subnavlink__item">
+                              <template
+                                v-if="
+                                  typeof subLink.links[
+                                    nestedSubLinkIndex + 1
+                                  ] != 'undefined' &&
+                                  (subLink.links[
+                                    nestedSubLinkIndex + 1
+                                  ].url.includes('.png') ||
+                                    subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ].url.includes('.jpg') ||
+                                    subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ].url.includes('.svg'))
+                                "
+                              >
+                                <a
+                                  :href="nestedSubLink.url"
+                                  class="subnavlink"
+                                  @mouseover="subnavlinkHover"
+                                  v-html="nestedSubLink.title"
+                                />
+                                <a
+                                  :href="nestedSubLink.url"
+                                  class="subnavlink subnavlink-img"
+                                >
+                                  <img
+                                    :src="
+                                      subLink.links[nestedSubLinkIndex + 1].url
+                                    "
+                                  />
+                                </a>
+                              </template>
+                              <template v-else-if="nestedSubLink.url == '#'">
+                                <span
+                                  class="subnavlink subnavlink-heading"
+                                  v-html="nestedSubLink.title"
+                                />
+                              </template>
+                              <template v-else>
+                                <a
+                                  :href="nestedSubLink.url"
+                                  class="subnavlink"
+                                  v-html="nestedSubLink.title"
+                                />
+                              </template>
+                            </li>
+                          </template>
+                        </template>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <!--  HANDBAGS & WALLETS End -->
+              </template>
+            </template>
+          </li>
+          <li class="navitem">
+            <template v-if="HeaderNavData[1]">
+              <a
+                :href="HeaderNavData[1].url"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[1].title"
+              />
+
+              <template v-if="HeaderNavData[1].links.length > 0">
+                <!--NANAMOTA  Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
+                >
+                  <ul class="navink__hover_list">
+                    <li
+                      v-for="(subLink, subLinkIndex) in HeaderNavData[1].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
+                    >
+                      <ul class="subnavlink__list hover-img">
+                        <template
+                          v-if="
+                            HeaderNavData[1].links.length - 1 == subLinkIndex
+                          "
+                        >
+                          <li class="navlink__hover_item">
+                            <ul class="subnavlink__list hover-img">
+                              <li class="subnavlink__item">
+                                <div class="nanamoto-basics-crd">
+                                  <a
+                                    :href="subLink.links[0].url"
+                                    class="d-block"
+                                  >
+                                    <img
+                                      src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505"
+                                      alt=""
+                                    />
+                                  </a>
+                                  <div class="nanamoto-basics-crd-txt">
+                                    <template
+                                      v-for="nestedSubLink in subLink.links"
+                                      :key="nestedSubLink.title"
+                                    >
+                                      <a
+                                        :href="nestedSubLink.url"
+                                        v-html="nestedSubLink.title"
+                                      />
+                                    </template>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                        </template>
+                        <template v-else>
+                          <template
+                            v-for="(
+                              nestedSubLink, nestedSubLinkIndex
+                            ) in subLink.links"
+                            :key="nestedSubLink.title"
+                          >
+                            <template
+                              v-if="
+                                nestedSubLink.url.includes('.png') ||
+                                nestedSubLink.url.includes('.jpg') ||
+                                nestedSubLink.url.includes('.svg')
+                              "
                             >
-                              <img :src="subLink.links[nestedSubLinkIndex + 1].url">
-                            </a>
-                          </template>    
-                          <template v-else-if="nestedSubLink.url == '#'">
+                              <!-- continue Content -->
+                            </template>
+                            <template v-else>
+                              <li class="subnavlink__item">
+                                <template
+                                  v-if="
+                                    typeof subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ] != 'undefined' &&
+                                    (subLink.links[
+                                      nestedSubLinkIndex + 1
+                                    ].url.includes('.png') ||
+                                      subLink.links[
+                                        nestedSubLinkIndex + 1
+                                      ].url.includes('.jpg') ||
+                                      subLink.links[
+                                        nestedSubLinkIndex + 1
+                                      ].url.includes('.svg'))
+                                  "
+                                >
+                                  <a
+                                    :href="nestedSubLink.url"
+                                    class="subnavlink"
+                                    @mouseover="subnavlinkHover"
+                                    v-html="nestedSubLink.title"
+                                  />
+                                  <a
+                                    :href="nestedSubLink.url"
+                                    class="subnavlink subnavlink-img"
+                                    ><img
+                                      :src="
+                                        subLink.links[nestedSubLinkIndex + 1]
+                                          .url
+                                      "
+                                  /></a>
+                                </template>
+                                <template v-else-if="nestedSubLink.url == '#'">
+                                  <span
+                                    class="subnavlink subnavlink-heading"
+                                    v-html="nestedSubLink.title"
+                                  />
+                                </template>
+                                <template v-else>
+                                  <a
+                                    :href="nestedSubLink.url"
+                                    class="subnavlink"
+                                    v-html="nestedSubLink.title"
+                                  />
+                                </template>
+                              </li>
+                            </template>
+                          </template>
+                        </template>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <!--NANAMOTA End  -->
+              </template>
+            </template>
+          </li>
+
+          <template v-if="this.logoImageIndex == 3">
+            <li v-if="HeaderNavData[2]" class="navitem">
+              <a
+                :href="HeaderNavData[2].title"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[2].title"
+              />
+            </li>
+          </template>
+        </ul>
+
+        <!-- Header logo -->
+        <div class="logo_wrap line-h-0">
+          <template v-if="HeaderNavData[logoImageIndex]">
+            <a
+              class="logo d-inline-block"
+              :href="HeaderNavData[logoImageIndex].url"
+              v-html="HeaderNavData[logoImageIndex].title"
+            >
+            </a>
+          </template>
+        </div>
+
+        <!-- Rigth Navlist -->
+        <ul class="navlist navlist-right">
+          <li class="navitem">
+            <template v-if="HeaderNavData[logoImageIndex + 1]">
+              <a
+                :href="HeaderNavData[logoImageIndex + 1].url"
+                class="navlink navlink_drpdown"
+              >
+                {{ HeaderNavData[logoImageIndex + 1].title }}
+              </a>
+              <template
+                v-if="HeaderNavData[logoImageIndex + 1].links.length > 0"
+              >
+                <!-- CLIENT SERVICES Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
+                >
+                  <ul class="navink__hover_list">
+                    <li
+                      v-for="subLink in HeaderNavData[logoImageIndex + 1].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
+                    >
+                      <ul class="subnavlink__list">
+                        <li
+                          v-for="nestedSubLink in subLink.links"
+                          :key="nestedSubLink.title"
+                          class="subnavlink__item"
+                        >
+                          <template v-if="nestedSubLink.url == '#'">
                             <span
-                              class="subnavlink subnavlink-heading"
+                              class="subnavlink"
                               v-html="nestedSubLink.title"
                             />
                           </template>
@@ -71,258 +306,89 @@
                               class="subnavlink"
                               v-html="nestedSubLink.title"
                             />
-                          </template>    
+                          </template>
                         </li>
-                      </template>
-                    </template>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <!--  HANDBAGS & WALLETS End -->
-          </li>
-          <li class="navitem">
-            <a
-              :href="HeaderNavData[1].title"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[1].title"
-            />
-            <!--NANAMOTA  Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <li
-                  v-for="(subLink,subLinkIndex) in HeaderNavData[1].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
-                >
-                  <ul class="subnavlink__list hover-img">
-                    <template v-if="HeaderNavData[1].links.length - 1 == subLinkIndex">
-                      <li class="navlink__hover_item">
-                        <ul class="subnavlink__list hover-img">
-                          <li class="subnavlink__item">
-                            <div class="nanamoto-basics-crd">
-                              <a
-                                :href="subLink.links[0].url"
-                                class="d-block"
-                              >
-                                <img
-                                  src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505"
-                                  alt=""
-                                >
-                              </a>
-                              <div class="nanamoto-basics-crd-txt">
-                                <template
-                                  v-for="(nestedSubLink) in subLink.links"
-                                  :key="nestedSubLink.title"
-                                >
-                                  <a
-                                    :href="nestedSubLink.url"
-                                    v-html="nestedSubLink.title"
-                                  />
-                                </template>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-                    </template>
-                    <template v-else>
-                      <template
-                        v-for="(nestedSubLink,nestedSubLinkIndex) in subLink.links"
-                        :key="nestedSubLink.title"
-                      >
-                        <template v-if="nestedSubLink.url.includes('.png') || nestedSubLink.url.includes('.jpg') || nestedSubLink.url.includes('.svg')">
-                          <!-- continue Content -->
-                        </template>    
-                        <template v-else>  
-                          <li class="subnavlink__item">
-                            <template v-if="(typeof(subLink.links[nestedSubLinkIndex + 1]) != 'undefined') && (subLink.links[nestedSubLinkIndex + 1].url.includes('.png') || subLink.links[nestedSubLinkIndex + 1].url.includes('.jpg') || subLink.links[nestedSubLinkIndex + 1].url.includes('.svg'))">
-                              <a
-                                :href="nestedSubLink.url"
-                                class="subnavlink"
-                                @mouseover="subnavlinkHover"
-                                v-html="nestedSubLink.title"
-                              />
-                              <a
-                                :href="nestedSubLink.url"
-                                class="subnavlink subnavlink-img"
-                              ><img :src="subLink.links[nestedSubLinkIndex + 1].url"></a>
-                            </template>    
-                            <template v-else-if="nestedSubLink.url == '#'">
-                              <span
-                                class="subnavlink subnavlink-heading"
-                                v-html="nestedSubLink.title"
-                              />
-                            </template>
-                            <template v-else>
-                              <a
-                                :href="nestedSubLink.url"
-                                class="subnavlink"
-                                v-html="nestedSubLink.title"
-                              />
-                            </template>    
-                          </li>
-                        </template>
-                      </template>
-                    </template>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <!--NANAMOTA End  -->
-          </li>
-
-          <li
-            v-if="HeaderNavData[2]"
-            class="navitem"
-          >
-            <a
-              :href="HeaderNavData[2].title"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[2].title"
-            />
-          </li>
-        </ul>
-
-        <!-- Header logo -->
-        <div class="logo_wrap line-h-0">
-          <a
-            class="logo d-inline-block"
-            :href="HeaderNavData[logoImageIndex].url"
-          >
-            <img
-              :src="HeaderNavData[logoImageIndex].title"
-              alt=""
-            >
-          </a>
-        </div>
-
-        <!-- Rigth Navlist -->
-        <ul class="navlist navlist-right">
-          <li class="navitem">
-            <a
-              :href="HeaderNavData[logoImageIndex + 1].url"
-              class="navlink navlink_drpdown"
-            > {{ HeaderNavData[logoImageIndex + 1].title }} </a>
-            <!-- CLIENT SERVICES Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <li
-                  v-for="subLink in HeaderNavData[logoImageIndex + 1].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
-                >
-                  <ul class="subnavlink__list">
-                    <li
-                      v-for="(nestedSubLink) in subLink.links"
-                      :key="nestedSubLink.title"
-                      class="subnavlink__item"
-                    >
-                      <template v-if="nestedSubLink.url == '#'">
-                        <span
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
-                      <template v-else>
-                        <a
-                          :href="nestedSubLink.url"
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
+                      </ul>
                     </li>
                   </ul>
-                </li>
-              </ul>
-            </div>
-            <!-- CLIENT SERVICES End -->
+                </div>
+                <!-- CLIENT SERVICES End -->
+              </template>
+            </template>
           </li>
           <li class="navitem">
-            <a
-              :href="HeaderNavData[logoImageIndex + 2].url"
-              class="navlink navlink_drpdown"
-              v-html="HeaderNavData[logoImageIndex + 2].title"
-            />
-            <!-- THE SENSE OF BEHNO Start -->
-            <div
-              class="navlink__hover"
-              @mouseenter="stopScroll"
-              @mouseleave="workScroll"
-            >
-              <ul class="navink__hover_list">
-                <!-- ===   ON hover Class Show First row ===  -->
-                <li
-                  v-for="subLink in HeaderNavData[logoImageIndex + 2].links"
-                  :key="subLink.title"
-                  class="navlink__hover_item"
+            <template v-if="HeaderNavData[logoImageIndex + 2]">
+              <a
+                :href="HeaderNavData[logoImageIndex + 2].url"
+                class="navlink navlink_drpdown"
+                v-html="HeaderNavData[logoImageIndex + 2].title"
+              />
+              <template
+                v-if="HeaderNavData[logoImageIndex + 2].links.length > 0"
+              >
+                <!-- THE SENSE OF BEHNO Start -->
+                <div
+                  class="navlink__hover"
+                  @mouseenter="stopScroll"
+                  @mouseleave="workScroll"
                 >
-                  <ul class="subnavlink__list">
+                  <ul class="navink__hover_list">
+                    <!-- ===   ON hover Class Show First row ===  -->
                     <li
-                      v-for="(nestedSubLink) in subLink.links"
-                      :key="nestedSubLink.title"
-                      class="subnavlink__item"
+                      v-for="subLink in HeaderNavData[logoImageIndex + 2].links"
+                      :key="subLink.title"
+                      class="navlink__hover_item"
                     >
-                      <template v-if="nestedSubLink.url == '#'">
-                        <span
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
-                      <template v-if="nestedSubLink.title.includes('.png') || nestedSubLink.title.includes('.jpg') || nestedSubLink.title.includes('.svg')">
-                        <a
-                          :href="nestedSubLink.url"
-                          class="nav_sensebehno__img subnavlink"
+                      <ul class="subnavlink__list">
+                        <li
+                          v-for="nestedSubLink in subLink.links"
+                          :key="nestedSubLink.title"
+                          class="subnavlink__item"
                         >
-                          <img
-                            :src="nestedSubLink.title"
-                            alt=""
+                          <template v-if="nestedSubLink.url == '#'">
+                            <span
+                              class="subnavlink"
+                              v-html="nestedSubLink.title"
+                            />
+                          </template>
+                          <template
+                            v-if="
+                              nestedSubLink.title.includes('.png') ||
+                              nestedSubLink.title.includes('.jpg') ||
+                              nestedSubLink.title.includes('.svg')
+                            "
                           >
-                        </a>
-                      </template>
-                      <template v-else>
-                        <a
-                          :href="nestedSubLink.url"
-                          class="subnavlink"
-                          v-html="nestedSubLink.title"
-                        />
-                      </template>
+                            <a
+                              :href="nestedSubLink.url"
+                              class="nav_sensebehno__img subnavlink"
+                            >
+                              <img :src="nestedSubLink.title" alt="" />
+                            </a>
+                          </template>
+                          <template v-else>
+                            <a
+                              :href="nestedSubLink.url"
+                              class="subnavlink"
+                              v-html="nestedSubLink.title"
+                            />
+                          </template>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
-                </li>
-              </ul>
-            </div>
-            <!-- THE SENSE OF BEHNO End -->
+                </div>
+                <!-- THE SENSE OF BEHNO End -->
+              </template>
+            </template>
           </li>
           <!-- Header Button Group -->
           <li class="desktop_btn_grp">
             <div class="nav_btns">
-              <button
-                id="searcBtn"
-                class="search_btn"
-                @click="toggleSearchBar"
-              >
-                <v-lazy-image
-                  :src="(shopifyData.search)"
-                  alt="Search Icon"
-                />
+              <button id="searcBtn" class="search_btn" @click="toggleSearchBar">
+                <v-lazy-image :src="shopifyData.search" alt="Search Icon" />
               </button>
-              <a
-                class="shopping_btn"
-                @click="show = !show"
-              >
-                <v-lazy-image
-                  :src="(shopifyData.bag)"
-                  alt="Shopping Icon"
-                />
+              <a class="shopping_btn" @click="show = !show">
+                <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
                 <span class="shopping_btn_count">0</span>
               </a>
             </div>
@@ -332,19 +398,10 @@
         <div class="mobile_btn_grp">
           <div class="nav_btns">
             <button class="search_btn">
-              <v-lazy-image
-                :src="(shopifyData.search)"
-                alt="Search Icon"
-              />
+              <v-lazy-image :src="shopifyData.search" alt="Search Icon" />
             </button>
-            <button
-              class="shopping_btn"
-              @click="show = !show"
-            >
-              <v-lazy-image
-                :src="(shopifyData.bag)"
-                alt="Shopping Icon"
-              />
+            <button class="shopping_btn" @click="show = !show">
+              <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
               <span class="shopping_btn_count">0</span>
             </button>
           </div>
@@ -356,11 +413,7 @@
     <!-- ======= Mobile Navigation Start ======= -->
     <nav class="m_navbar_list navbar-Mobile">
       <ul class="m_navlist d-block w-100">
-        <li
-          v-for="(link) in MobileNavData"
-          :key="link.title"
-          class="m_navitem"
-        >
+        <li v-for="link in MobileNavData" :key="link.title" class="m_navitem">
           <template v-if="link.url == '#'">
             <sapn class="navlink w-100 t-left" />
           </template>
@@ -387,14 +440,13 @@
                     <div class="nav_drpbtn_content">
                       <ul class="m_subnavlink_list">
                         <li
-                          v-for="(nestedSubLink) in subLink.links"
+                          v-for="nestedSubLink in subLink.links"
                           :key="nestedSubLink.title"
                           class="m_subnavlink_item"
                         >
-                          <a
-                            :href="nestedSubLink.url"
-                            class="navlink"
-                          >{{ nestedSubLink.title }}</a>
+                          <a :href="nestedSubLink.url" class="navlink">{{
+                            nestedSubLink.title
+                          }}</a>
                         </li>
                       </ul>
                     </div>
@@ -422,40 +474,19 @@
     </nav>
     <!-- ======= Mobile Navigation End ======= -->
     <!-- ======= Search Bar Start ======= -->
-    <div
-      id="mainSearchBar"
-      class="main_search_bar"
-    >
-      <form
-        id="searchBar"
-        action="/search"
-        class="search_bar_items"
-      >
-        <button
-          type="submit"
-          class="search_icon"
-        >
-          <img
-            :src="shopifyData.search"
-            alt="Search Icon"
-          >
+    <div id="mainSearchBar" class="main_search_bar">
+      <form id="searchBar" action="/search" class="search_bar_items">
+        <button type="submit" class="search_icon">
+          <img :src="shopifyData.search" alt="Search Icon" />
         </button>
-        <input
-          type="text"
-          name="type"
-          hidden
-          value="product"
-        >
+        <input type="text" name="type" hidden value="product" />
         <input
           type="text"
           name="q"
           class="search_item"
           placeholder="Search..."
-        >
-        <button
-          type="button"
-          @click="toggleSearchBar()"
-        >
+        />
+        <button type="button" @click="toggleSearchBar()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -468,18 +499,8 @@
             stroke-linejoin="round"
             class="feather feather-x"
           >
-            <line
-              x1="18"
-              y1="6"
-              x2="6"
-              y2="18"
-            />
-            <line
-              x1="6"
-              y1="6"
-              x2="18"
-              y2="18"
-            />
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
       </form>
@@ -494,10 +515,7 @@
     <div :class="[{ active: !show }, 'mini_cart_container']">
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
-        <button
-          id="remove-btn"
-          @click="show = !show"
-        >
+        <button id="remove-btn" @click="show = !show">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="33"
@@ -520,29 +538,23 @@
       </div>
       <div>
         <span class="brk_line" />
-         
+
         <!-- if card is not empty  -->
         <div id="mini_cart_content" />
-         
+
         <!-- if cart is empty  -->
         <div class="if_cart_is_empty">
           <p>Your bag is empty.</p>
         </div>
       </div>
-          
+
       <div class="mini_cart-payment">
         <span class="brk_line" />
         <div class="sec_right">
           <div class="sec_right_inner">
-            <h4 class="subtotal_heading">
-              SUBTOTAL
-            </h4>
-            <p class="subtotal_price body_text">
-              $1,080
-            </p>      
-            <p class="body_text">
-              Excluding tax & shipping
-            </p>
+            <h4 class="subtotal_heading">SUBTOTAL</h4>
+            <p class="subtotal_price body_text">$1,080</p>
+            <p class="body_text">Excluding tax & shipping</p>
             <p class="body_text text-mdifier">
               or 4 interest payments of $270 with
             </p>
@@ -550,38 +562,27 @@
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076"
                 alt="error"
-              >
-              <p class="body_text">
-                ⓘ
-              </p>
-            </div>      
+              />
+              <p class="body_text">ⓘ</p>
+            </div>
           </div>
         </div>
         <div class="mini_shopping_cart">
-          <a
-            href="/cart"
-            class="shp_cart"
-          >View shopping cart</a>
-        </div> 
+          <a href="/cart" class="shp_cart">View shopping cart</a>
+        </div>
       </div>
     </div>
     <!-- <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show" > -->
     <span class="bg_layer_removecart" />
-    <div
-      class="mini-add-card"
-      :class="{ active: !show }"
-    >
-      <a
-        href="/checkout"
-        class="add-card-chk"
-      >CHECKOUT</a>
+    <div class="mini-add-card" :class="{ active: !show }">
+      <a href="/checkout" class="add-card-chk">CHECKOUT</a>
     </div>
   </section>
 </template>
 
 
 <script>
-import { ShopifyAPI } from "../../Shopify/Shopify"
+import { ShopifyAPI } from "../../Shopify/Shopify";
 
 import VLazyImage from "v-lazy-image";
 
@@ -597,52 +598,61 @@ export default {
   },
   data() {
     window.addEventListener("scroll", this.scollHeader);
+    console.log(this.shopifyData.HeaderNavData);
+    console.log(this.shopifyData.MobileNavData);
     return {
-      logoImageIndex :0,
+      logoImageIndex: 0,
       lastScrollY: 100,
       show: true,
       HeaderNavData: this.shopifyData.HeaderNavData,
-      MobileNavData: this.shopifyData.MobileNavData
+      MobileNavData: this.shopifyData.MobileNavData,
     };
   },
   created: function () {
-    this.header = document.getElementsByClassName("tmbHeader");   
+    this.header = document.getElementsByClassName("tmbHeader");
   },
-  mounted (){
-    window.addEventListener("click",()=>{
-      let miniCartRemoveActive= document.querySelectorAll(".mini_cart_container");
-      let miniCartCheckoutRemoveActive= document.querySelector(".mini-add-card");
-      document.querySelector(".bg_layer_removecart").addEventListener("click",()=>{
-        miniCartCheckoutRemoveActive.classList.remove("active");
-        for(let i of miniCartRemoveActive){
-          i.classList.remove("active");
-        }
-      });
-      
-    })
-      this.refreshMiniCart(),
-      this.shopifyData.HeaderNavData.forEach((element,index) => {
-        if(element.title.includes('.png') || element.title.includes('.jpg') || element.title.includes('.svg')){
+  mounted() {
+    window.addEventListener("click", () => {
+      let miniCartRemoveActive = document.querySelectorAll(
+        ".mini_cart_container"
+      );
+      let miniCartCheckoutRemoveActive =
+        document.querySelector(".mini-add-card");
+      document
+        .querySelector(".bg_layer_removecart")
+        .addEventListener("click", () => {
+          miniCartCheckoutRemoveActive.classList.remove("active");
+          for (let i of miniCartRemoveActive) {
+            i.classList.remove("active");
+          }
+        });
+    });
+    this.refreshMiniCart(),
+      this.shopifyData.HeaderNavData.forEach((element, index) => {
+        if (
+          element.title.includes(".png") ||
+          element.title.includes(".jpg") ||
+          element.title.includes(".svg")
+        ) {
           this.logoImageIndex = index;
         }
       });
   },
- 
+
   methods: {
-    
-    toggleSearchBar(){
+    toggleSearchBar() {
       document.querySelector("#mainSearchBar").classList.toggle("show");
       document.querySelector("#mainSearchBar .search_item").focus();
     },
-    refreshMiniCart(){
-        var refreshCart = new ShopifyAPI()
-        refreshCart.refreshMiniCart();
+    refreshMiniCart() {
+      var refreshCart = new ShopifyAPI();
+      refreshCart.refreshMiniCart();
     },
     togleHeader() {
-      if(document.body.getAttribute("style")){
+      if (document.body.getAttribute("style")) {
         document.body.removeAttribute("style");
-      }else{
-        document.body.setAttribute("style","overflow:hidden;")
+      } else {
+        document.body.setAttribute("style", "overflow:hidden;");
       }
       this.header[0].classList.toggle("active");
     },
@@ -677,7 +687,7 @@ export default {
       }
       e.currentTarget.classList.toggle("active");
     },
-    
+
     scollHeader(e) {
       if (window.scrollY >= this.lastScrollY) {
         this.header[0].classList.add("stickyup");
@@ -685,7 +695,7 @@ export default {
         this.header[0].classList.remove("stickyup");
       }
 
-      if(window.scrollY >= 100){
+      if (window.scrollY >= 100) {
         this.lastScrollY = window.scrollY;
       }
     },
@@ -700,18 +710,28 @@ export default {
       e.currentTarget.classList.add("hover_active");
     },
 
-    stopScroll(e){
-        const bodyWidth = document.body.offsetWidth;  
-        document.body.setAttribute("style", `overflow:hidden;`);
-        if(e.currentTarget.closest(".navlist-right")){
-          e.currentTarget.setAttribute("style", `max-width: ${e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth}px;`);  
-        }
-        this.header[0].setAttribute("style", `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`);
-        document.body.style.paddingRight = `${document.body.offsetWidth - bodyWidth}px`;
+    stopScroll(e) {
+      const bodyWidth = document.body.offsetWidth;
+      document.body.setAttribute("style", `overflow:hidden;`);
+      if (e.currentTarget.closest(".navlist-right")) {
+        e.currentTarget.setAttribute(
+          "style",
+          `max-width: ${
+            e.currentTarget.offsetWidth + document.body.offsetWidth - bodyWidth
+          }px;`
+        );
+      }
+      this.header[0].setAttribute(
+        "style",
+        `width:calc(100% - ${document.body.offsetWidth - bodyWidth}px);`
+      );
+      document.body.style.paddingRight = `${
+        document.body.offsetWidth - bodyWidth
+      }px`;
     },
-    workScroll(e){
-       if(e.currentTarget.closest(".navlist-right")){
-        e.currentTarget.removeAttribute("style");  
+    workScroll(e) {
+      if (e.currentTarget.closest(".navlist-right")) {
+        e.currentTarget.removeAttribute("style");
       }
       this.header[0].removeAttribute("style");
       document.body.removeAttribute("style");
@@ -721,251 +741,253 @@ export default {
     // addActiveBody:function(e){
     //     console.log("qwer");
     // }
-  } 
+  },
 };
 </script>
 
 <style >
 button.behno_increment_dec {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 }
 button.behno_increment_dec:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.tmbMain{
+.tmbMain {
   margin-top: 80px;
 }
-@media only screen and (max-width:991px){
-  .tmbMain{
+@media only screen and (max-width: 991px) {
+  .tmbMain {
     margin-top: 63px;
-  }   
+  }
 }
 
 .mini_cart_container .card {
-    padding-bottom: 30px;
-    position: relative;
+  padding-bottom: 30px;
+  position: relative;
 }
-.mini_cart_container .card .subtitle_b{
+.mini_cart_container .card .subtitle_b {
   margin-top: 5px;
 }
 .mini_cart_container .card:not(:last-child):after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: calc( 100% + 36px);
-    background: #000;
-    height: 1px;
-    margin-left: -18px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% + 36px);
+  background: #000;
+  height: 1px;
+  margin-left: -18px;
 }
-.mini_cart_container .card:not(:first-child){
+.mini_cart_container .card:not(:first-child) {
   margin-top: 23px;
 }
 
-
 /*------- Mini Cart Css -------*/
 
-
-
-
 .product_img_wrapper {
-    position: relative;
-    margin-bottom: 11px;
-    line-height: 1;
+  position: relative;
+  margin-bottom: 11px;
+  line-height: 1;
 }
 
-.mini_cart{
+.mini_cart {
   position: relative;
   overflow: hidden;
 }
-.mini_cart_container
-{
-    max-width:377px;
-    background-color:white;
-    width:100%;
-    min-height:100vh;
-    height:100%;
-    overflow-y:scroll;
-    position:fixed;
-    top:0;
-    right:0;
-    z-index:6;
-    border:1px solid black;
-    transition: 0.3s;
-    transform: translateX(110%);
-    padding:30px 42px 0;
-    overscroll-behavior: none;
-}
-.mini-add-card{
-  max-width:377px;
+.mini_cart_container {
+  max-width: 377px;
+  background-color: white;
   width: 100%;
-  position:fixed;
-  right: 0;  
-  top: auto;
-  bottom: 0;
-  z-index:6;
+  min-height: 100vh;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 6;
+  border: 1px solid black;
   transition: 0.3s;
   transform: translateX(110%);
-  text-align:center;
+  padding: 30px 42px 0;
+  overscroll-behavior: none;
+}
+.mini-add-card {
+  max-width: 377px;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  z-index: 6;
+  transition: 0.3s;
+  transform: translateX(110%);
+  text-align: center;
   font-weight: 700;
   font-size: 14px;
-  line-height: 17px; 
+  line-height: 17px;
 }
 
 .mini_cart_container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-.mini_cart .remove{
-    position: absolute;
-    text-decoration: underline;
-    top: 13px;
-    right: 11px;
-    z-index: 1;
+.mini_cart .remove {
+  position: absolute;
+  text-decoration: underline;
+  top: 13px;
+  right: 11px;
+  z-index: 1;
 }
 
-.mini_cart .body_text{
-    font-family:inherit;
+.mini_cart .body_text {
+  font-family: inherit;
 }
 
-.mini_cart-header{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    margin-bottom:26px;
+.mini_cart-header {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 26px;
 }
 
-.mini_cart-header #remove-btn svg{
-    display:block;
+.mini_cart-header #remove-btn svg {
+  display: block;
 }
 
-.mini_cart-header h3{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: 0.02em;
+.mini_cart-header h3 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
 }
 
-.mini_cart-products{
-    display: flex;
-    align-items: center;
-    margin: 26px 0 0;
+.mini_cart-products {
+  display: flex;
+  align-items: center;
+  margin: 26px 0 0;
 }
 
-.mini_cart-products span{
-    margin:0 36px;
+.mini_cart-products span {
+  margin: 0 36px;
 }
 
-.mini_cart-products span input{
+.mini_cart-products span input {
   border: none;
   width: 25px;
   text-align: center;
 }
-.mini_cart-products span input:focus{
+.mini_cart-products span input:focus {
   outline: none;
 }
 
 .mini_cart .subtotal_price.body_text {
-    font-weight:700;
-    font-size:15px;
-    line-height:18.31px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18.31px;
 }
-.mini_cart-payment{
-    display:flex;
-    gap:50px;
-    flex-direction:column;
-    justify-content: space-between;
-    
+.mini_cart-payment {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.add-card-chk{
-    color:white;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    padding: 21px;
-    background: #000;
-    width: 100%;
-    display: block;
-    transition: 0.3s;
-    border: 1px solid transparent;
+.add-card-chk {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 21px;
+  background: #000;
+  width: 100%;
+  display: block;
+  transition: 0.3s;
+  border: 1px solid transparent;
 }
-@media(min-width:991px) {
-    .add-card-chk:hover{
-     border: 1px solid #000;
-     color:#000;
-     background: #fff;
+@media (min-width: 991px) {
+  .add-card-chk:hover {
+    border: 1px solid #000;
+    color: #000;
+    background: #fff;
   }
 }
 
 .mini_shopping_cart {
-    margin:50px 0 80px;
+  margin: 50px 0 80px;
 }
 
-.shp_cart{
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.02em;
-    text-decoration-line: underline;
+.shp_cart {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-decoration-line: underline;
 }
 
-.brk_line{
-    min-width:328px;
-    height:1px;
-    background-color:black;
-    display:block;
-    margin:0 -22px 40px;
+.brk_line {
+  min-width: 328px;
+  height: 1px;
+  background-color: black;
+  display: block;
+  margin: 0 -22px 89px;
 }
 
-.mini_cart_container.active ,
-.mini-add-card.active
-{
-    transform: translateX(0);
+.if_cart_is_empty {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.mini_cart_container.active,
+.mini-add-card.active {
+  transform: translateX(0);
 }
 .logo_wrapper {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .logo_wrapper > img {
-    width: 80px;
+  width: 80px;
 }
 .subtotal_heading {
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: 0.02em;
-    color: #000000;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: #000000;
 }
 .mini_cart-payment .body_text.text-mdifier {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .subtotal_price + .body_text {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 .body_text.remove {
-    font-size: 12px;
-    line-height: 14px;
+  font-size: 12px;
+  line-height: 14px;
 }
-.active.mini_cart_container+ .bg_layer_removecart{
+.active.mini_cart_container + .bg_layer_removecart {
   visibility: visible;
   transition: 0.3s;
 }
 
-.bg_layer_removecart{
+.bg_layer_removecart {
   position: fixed;
   top: 0;
   left: 0;
@@ -976,49 +998,47 @@ button.behno_increment_dec:after {
   z-index: 5;
   visibility: hidden;
 }
-
-
 </style>
 
 
 <style scoped>
-.tmbHeader .main_search_bar.show{
+.tmbHeader .main_search_bar.show {
   transform: translateY(55px);
 }
-.tmbHeader .main_search_bar{
-    position: absolute;
-    /* border-bottom: solid 1px #eee; */
-    box-shadow: 0 0 20px #eee;
-    transform: translateY(-100%);
-    transition: transform .3s linear;
-    max-width: 480px;
-    width: 100%;
-    background: #fff;
-    right: 0;
-    top: 0;
+.tmbHeader .main_search_bar {
+  position: absolute;
+  /* border-bottom: solid 1px #eee; */
+  box-shadow: 0 0 20px #eee;
+  transform: translateY(-100%);
+  transition: transform 0.3s linear;
+  max-width: 480px;
+  width: 100%;
+  background: #fff;
+  right: 0;
+  top: 0;
 }
 .search_bar_items {
   display: flex;
   align-items: center;
   padding: 10px;
 }
-.search_item{
+.search_item {
   border: none;
   margin: 0 10px;
   width: 100%;
   outline: none;
 }
 
-.search_icon img{
+.search_icon img {
   width: 20px;
 }
 
-.search_item + button svg{
+.search_item + button svg {
   width: 20px;
   height: 20px;
 }
-@media only screen and (max-width: 575px){
-  .tmbHeader .main_search_bar{
+@media only screen and (max-width: 575px) {
+  .tmbHeader .main_search_bar {
     max-width: 320px;
   }
 }
@@ -1030,14 +1050,14 @@ button.behno_increment_dec:after {
   display: none;
 }
 .tmbHeader {
-  padding: 14px 50px  10px;
+  padding: 14px 50px 10px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: #fff;
   z-index: 5;
-  transition: transform 0.5s ;
+  transition: transform 0.5s;
 }
 
 .tmbHeader.stickyup {
@@ -1056,7 +1076,6 @@ button.behno_increment_dec:after {
   align-items: center;
   justify-content: flex-start;
 }
-
 
 .navlist-right {
   justify-content: flex-end;
@@ -1084,12 +1103,11 @@ button.behno_increment_dec:after {
   width: fit-content;
 }
 
-.logo{
+.logo {
   line-height: 0;
 }
-.nav_btns > a ,
-.nav_btns > button 
-{
+.nav_btns > a,
+.nav_btns > button {
   display: grid;
   place-items: center;
 }
@@ -1120,7 +1138,7 @@ button.behno_increment_dec:after {
   width: 100%;
   background: #000000;
   display: block;
-  
+
   position: absolute;
   left: 0;
   transform-origin: center;
@@ -1133,28 +1151,26 @@ button.behno_increment_dec:after {
 
 .toggle_bar-top {
   top: 0;
-  transition: transform 0.3s ,top 0.3s 0.3s;
+  transition: transform 0.3s, top 0.3s 0.3s;
 }
 .toggle_bar-bottom {
   bottom: 0;
-  transition: transform 0.3s ,bottom 0.3s 0.3s;
+  transition: transform 0.3s, bottom 0.3s 0.3s;
 }
-.active .toggle_bar-top{
+.active .toggle_bar-top {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
-  transition: top 0.3s,transform 0.3s 0.3s;
+  transition: top 0.3s, transform 0.3s 0.3s;
 }
 .active .toggle_bar-bottom {
   bottom: 50%;
-  transition: bottom 0.3s,transform 0.3s 0.3s;
+  transition: bottom 0.3s, transform 0.3s 0.3s;
   transform: translateY(50%) rotate(-45deg);
 }
 
 .active .toggle_bar-center {
   opacity: 0;
 }
-
-
 
 .subnavlink__item {
   margin-bottom: 10px;
@@ -1178,7 +1194,7 @@ button.behno_increment_dec:after {
 .nanamoto-basics-crd-txt a:first-child {
   margin-bottom: 15px;
 }
-.nanamoto-basics-crd-txt a{
+.nanamoto-basics-crd-txt a {
   font-size: 13px;
   color: #fff;
   font-weight: 400;
@@ -1198,7 +1214,7 @@ button.behno_increment_dec:after {
   overflow-y: scroll;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s linear,max-width 0s;
+  transition: all 0.3s linear, max-width 0s;
 }
 
 .navlink__hover::-webkit-scrollbar {
@@ -1250,11 +1266,11 @@ button.behno_increment_dec:after {
     padding-bottom: 50px;
     margin-bottom: -50px;
   }
-  
+
   .subnavlink:hover {
     color: #767676;
   }
-  .subnavlink-heading:hover{
+  .subnavlink-heading:hover {
     color: #000;
     cursor: default;
   }
@@ -1269,8 +1285,6 @@ button.behno_increment_dec:after {
   }
 }
 
-
-
 @media only screen and (max-width: 1440px) {
   .tmbHeader {
     padding: 10px 20px;
@@ -1281,8 +1295,8 @@ button.behno_increment_dec:after {
 }
 
 @media only screen and (max-width: 1024px) {
-  .logo img{
-      max-width: 70px;
+  .logo img {
+    max-width: 70px;
   }
 }
 
@@ -1308,7 +1322,7 @@ button.behno_increment_dec:after {
     height: 100%;
     min-height: 100vh;
     width: min(100%, 300px);
-    background: #E9E7E3;
+    background: #e9e7e3;
     padding: 25px 20px 70px;
     z-index: 5;
     display: flex;
@@ -1372,15 +1386,8 @@ button.behno_increment_dec:after {
   }
 }
 @media only screen and (max-width: 767px) {
-
   .subtitle_b {
     margin-bottom: 0 !important;
   }
 }
-
-
-  
-
-
 </style>
-

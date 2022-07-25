@@ -1,12 +1,544 @@
 <template>
+  <div class="filter_responsive">
+    <div class="filter_cta_wrapper">
+      <button
+        id="filterCta"
+        class="filter_cta"
+        @click="myFilter"
+      >
+        {{ shopifyData.filterDropdownTextResponsive }}
+      </button>
+      <button
+        id="sortCta"
+        class="filter_cta"
+        @click="sortBy"
+      >
+        {{ shopifyData.sortByDropdownTextResponsive }}
+      </button>
+    </div>
+  </div>
   <!-- Collacction Banner Code -->
-  <h2
-    class="t-center"
-    style="padding: 50px 0;"
-  >
-    Search
-  </h2>
 
+  <div class="collaction_banner">
+    <h2 class="cross_heading">
+      {{ shopifyData.bannerImage }}
+    </h2>
+    <div>
+      <img :src="shopifyData.collectionImage">
+      <h2 class="banner_heading">
+        THE ELIZABETH BAGUETTE SERIESnpm
+      </h2>
+    </div>
+  </div>
+
+  <div class="filter_row">
+    <div class="row_inner">
+      <div class="apply_filter_cta_wrapper">
+        <button
+          class="apply_filter_cta"
+          disabled
+          @click="applyfilter"
+        >
+          {{ shopifyData.applyFilterCta }}
+        </button>
+      </div>
+      <div class="filters">
+        <div class="filters_inner_row">
+          <div class="filters_responsive">
+            <div
+              class="close-btn"
+              @click="closeMenu"
+            >
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.8861 11.8864L35.6587 35.6589"
+                  stroke="#656565"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M11.8861 35.6586L35.6587 11.886"
+                  stroke="#656565"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <div class="filter_cta_wrapper">
+              <button class="filter_cta filter-modifier">
+                {{ shopifyData.filterinnerResponsive }}
+              </button>
+              <button
+                class="filter_cta clear-modifier"
+                :class="{ activeClear: showClearAll }"
+                @click="clearAllFilter()"
+              >
+                CLEAR FILTERS
+                <svg
+                  width="6"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-v-bb57343a=""
+                >
+                  <path
+                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
+                    stroke="white"
+                    data-v-bb57343a=""
+                  />
+                  <path
+                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
+                    stroke="white"
+                    data-v-bb57343a=""
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="filters_inner">
+            <!-- Categories filter -->
+            <div
+              class="filter"
+              @mouseenter="isMobile == true ? null : (show = true)"
+              @mouseleave="isMobile == true ? null : (show = false)"
+              @click="isMobile == false ? null : closeDropDown(show, 'show')"
+            >
+              <!-- v-on:mouseover="show = !show" -->
+              <div
+                class="dropdown"
+                @click="
+                  (event) => {
+                    addActive(event);
+                  }
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <button class="c-form-input">
+                  Categories
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: show }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestCategory"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="checkbox"
+                        name="category"
+                        :value="option.value"
+                        @change="onCheck($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
+                        option.text.toLowerCase()
+                      }}</label>
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProduct">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('category')"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- color filter -->
+            <div
+              class="filter color-filter"
+              @mouseenter="isMobile == true ? null : (showColor = true)"
+              @mouseleave="isMobile == true ? null : (showColor = false)"
+              @click="
+                isMobile == false ? null : closeDropDown(showColor, 'showColor')
+              "
+            >
+              <div
+                class="dropdown"
+                @click="
+                  (event) => {
+                    addActive(event);
+                  }
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <button class="c-form-input">
+                  Color
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: showColor }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestColor"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="checkbox"
+                        name="color"
+                        :value="option.value"
+                        @change="onCheckColor($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
+                        option.text.toLowerCase()
+                      }}</label>
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('color')"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- size filter -->
+            <div
+              class="filter size-filter"
+              @mouseenter="isMobile == true ? null : (showSize = true)"
+              @mouseleave="isMobile == true ? null : (showSize = false)"
+              @click="
+                isMobile == false ? null : closeDropDown(showSize, 'showSize')
+              "
+            >
+              <div
+                class="dropdown"
+                @click="
+                  (event) => {
+                    addActive(event);
+                  }
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <button class="c-form-input">
+                  Size
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: showSize }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestSize"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="checkbox"
+                        name="size"
+                        :value="option.value"
+                        @change="onCheckSize($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
+                        option.text.toLowerCase()
+                      }}</label>
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('size')"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- material filter -->
+            <div
+              class="filter filter-modifier"
+              @mouseenter="isMobile == true ? null : (showMaterial = true)"
+              @mouseleave="isMobile == true ? null : (showMaterial = false)"
+              @click="
+                isMobile == false
+                  ? null
+                  : closeDropDown(showMaterial, 'showMaterial')
+              "
+            >
+              <div
+                class="dropdown"
+                @click="
+                  (event) => {
+                    addActive(event);
+                  }
+                "
+              >
+                <div class="overselect">
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="black"
+                      stroke-width="0.75"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <button class="c-form-input">
+                  Material
+                </button>
+              </div>
+              <div
+                class="multiselect"
+                :class="{ active: showMaterial }"
+              >
+                <div class="tmb_header_dopdown">
+                  <ul>
+                    <li
+                      v-for="option in ddTestMaterial"
+                      :key="option.id"
+                    >
+                      <input
+                        :id="option.id"
+                        class="multiselectOption"
+                        type="checkbox"
+                        name="material"
+                        :value="option.value"
+                        @change="onCheckMaterial($event)"
+                      >
+                      <label
+                        class="optionLabel"
+                        :for="option.id"
+                      >{{
+                        option.text.toLowerCase()
+                      }}</label>
+                    </li>
+                  </ul>
+                  <div class="btn_wrapper">
+                    <!-- <button class="filterBtn modifier" @click="filterProductByMaterial">Apply</button> -->
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('material')"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Clear Filter -->
+            <div class="filter">
+              <button
+                class="clearFilter"
+                :class="{ activeClear: showClearAll }"
+                @click="clearAllFilter()"
+              >
+                Clear filters
+                <svg
+                  width="6"
+                  height="6"
+                  viewBox="0 0 6 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
+                    stroke="white"
+                  />
+                  <path
+                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
+                    stroke="white"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sort_by">
+        <div class="filters_responsive">
+          <div
+            class="close-btn"
+            @click="closeMenu"
+          >
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.8861 11.8864L35.6587 35.6589"
+                stroke="#656565"
+                stroke-width="1.5"
+              />
+              <path
+                d="M11.8861 35.6586L35.6587 11.886"
+                stroke="#656565"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+          <div class="filter_cta_wrapper">
+            <button class="filter_cta filter-modifier">
+              {{ shopifyData.sortinnerResponsive }}
+            </button>
+          </div>
+        </div>
+        <div class="sort_by_inner">
+          <div class="range">
+            <div class="add_remove">
+              <button>-</button>
+              <button>+</button>
+            </div>
+            <input
+              id="ageInputId"
+              type="range"
+              value="{{gridColumn}}"
+              min="2"
+              max="6"
+              step="2"
+              class="progress"
+              @input="sliderChange($event)"
+            >
+          </div>
+          <div
+            class="sortFilter"
+            @mouseenter="showSort = true"
+            @mouseleave="showSort = false"
+          >
+            <button class="sortBtn">
+              Sort By
+              <svg
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  data-v-35171425=""
+                  d="M1 1L5 5L9 1"
+                  stroke="black"
+                  stroke-width="0.75"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              class="multiselect"
+              :class="{ active: showSort }"
+            >
+              <div class="tmb_header_dopdown">
+                <ul>
+                  <li
+                    v-for="option in ddTestSort"
+                    :key="option.id"
+                  >
+                    <input
+                      :id="option.id"
+                      class="multiselectOption"
+                      type="radio"
+                      name="sort"
+                      :checked="option.id == 'sort1' ? true : false"
+                      :value="option.value"
+                      @change="onCheckSort($event)"
+                    >
+                    <label
+                      class="optionLabel"
+                      :for="option.id"
+                      @click="
+                        (event) => {
+                          closeSortMenu(event);
+                        }
+                      "
+                    >{{ option.text }}</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="product_grid">
     <div
       class="grid_inner product-containers"
@@ -85,7 +617,7 @@
           </a>
 
           <div class="quickButton quickActive">
-            <div class="color_swatches " />
+            <div class="color_swatches" />
             <div
               class="product_cta_wrapper"
               data-v-32bfb114=""
@@ -187,7 +719,7 @@
           </a>
 
           <div class="quickButton quickActive">
-            <div class="color_swatches ">
+            <div class="color_swatches">
               <ul :mainKey="JSON.stringify(value)">
                 <li
                   v-for="(sValue, sKey) in value.swatches"
@@ -259,6 +791,13 @@
 </template>
 
 <script>
+// import axios from "axios";
+// import {
+//     graphQl
+// } from "../../../assets/graphql/collection-query";
+
+// import assets from "../../../assets/graphql/assets.json";
+
 import { ShopifyAPI } from "../../../Shopify/Shopify";
 
 export default {
@@ -279,12 +818,12 @@ export default {
       showColor: false,
       showSize: false,
       showMaterial: false,
-      selected: "",
+      selected: [],
       selectedFilter: [],
       selectedSort: ["Recommended"],
-      selectedColor: "",
-      selectedSize: "",
-      selectedMaterial: "",
+      selectedColor: [],
+      selectedSize: [],
+      selectedMaterial: [],
 
       ddTestCategory: this.getCategoryDropDownList(),
       ddTestColor: this.getColorDropDownList(),
@@ -672,74 +1211,57 @@ export default {
 
     /* set selected color checkbox value */
     onCheckColor: function (event) {
-      this.selectedColor = event.target.value;
-      this.filterProductByColor();
+      if (this.selectedColor.includes(event.target.value)) {
+        this.selectedColor = this.selectedColor.filter(function (geeks) {
+          return geeks != event.target.value;
+        });
+      } else {
+        this.selectedColor.push(event.target.value);
+      }
+      console.log(this.selectedColor);
     },
 
     /* set selected size checkbox value */
     onCheckSize: function (event) {
-      this.selectedSize = event.target.value;
-      this.filterProductBySize();
+      if (this.selectedSize.includes(event.target.value)) {
+        this.selectedSize = this.selectedSize.filter(function (geeks) {
+          return geeks != event.target.value;
+        });
+      } else {
+        this.selectedSize.push(event.target.value);
+      }
+      console.log(this.selectedSize);
     },
 
     /* set selected material checkbox value */
     onCheckMaterial: function (event) {
-      this.selectedMaterial = event.target.value;
-      this.filterProductByMaterial();
+      if (this.selectedMaterial.includes(event.target.value)) {
+        this.selectedMaterial = this.selectedMaterial.filter(function (geeks) {
+          return geeks != event.target.value;
+        });
+      } else {
+        this.selectedMaterial.push(event.target.value);
+      }
+      console.log(this.selectedMaterial);
     },
 
     /* set selected sort checkbox value */
     onCheckSort: function (event) {
       this.saveFilter("sort", event.target.value);
       this.page_index = 0;
-      // var markedCheckbox = document.getElementsByName("sort");
-      // for (var checkbox of markedCheckbox) {
-      //     this.selectedSort = [];
-      //     if (checkbox.id == event.target.id) {
-      //         if (
-      //             this.sortObject.id != undefined &&
-      //             this.sortObject.id == event.target.id
-      //         ) {
-      //             checkbox.checked = false;
-      //             this.sortProduct();
-      //             this.sortObject = {};
-      //         } else {
-      //             markedCheckbox = document.getElementById(event.target.id);
-      //             markedCheckbox.checked = true;
-      //             this.sortObject = markedCheckbox;
-      //             this.selectedSort.push(event.target.value);
-
-      //             this.saveFilter("sort", event.target.value)
-      //             this.page_index = 0;
-
-      //         }
-      //     } else {
-      //         checkbox.checked = false;
-      //     }
-      // }
-
-      // to close responsive menu in mobile
     },
 
     /* Fill category dropdown from products data */
 
     getCategoryDropDownList: function () {
       let products = this.roughData();
-
+      let cat = JSON.parse(window.atob(this.shopifyData.category));
       let array = [];
-      products.map((item) => {
-        item[0].tags.map((ca) => {
-          array.push(ca);
-        });
-      });
-
-      let data = [...new Set(array)];
-      array = [];
-      data.map((item, index) => {
+      cat.map((cList, index) => {
         let obj = {
-          id: item + index,
-          value: item,
-          text: item,
+          id: index + 1,
+          value: cList,
+          text: cList,
         };
         array.push(obj);
       });
@@ -752,31 +1274,14 @@ export default {
     getColorDropDownList: function () {
       let products = this.roughData();
       let array = [];
-      products.map((item) => {
-        if (Object.values(item[0].options).includes("Color") == false) return;
-        var Data = item[0].options;
-
-        var index = Data.map(function (e) {
-          return e;
-        }).indexOf("Color");
-
-        item[0].variants.map((col) => {
-          array.push(col["option" + (index + 1)].toUpperCase());
-        });
-      });
-
-      let data = [...new Set(array)];
-
-      array = [];
-      data.map((item, index) => {
+      let color = JSON.parse(window.atob(this.shopifyData.color));
+      color.map((cColor, index) => {
         let obj = {
-          id: item + index,
-          value: item,
-          text: item,
+          id: index + 1,
+          value: cColor,
+          text: cColor,
         };
-        if (item != null) {
-          array.push(obj);
-        }
+        array.push(obj);
       });
       return array;
     },
@@ -786,51 +1291,15 @@ export default {
     /* Fill size dropdown from products data */
     getSizeDropDownList: function () {
       let products = this.roughData();
-
       let array = [];
-      products.map((item) => {
-        if (Object.values(item[0].options).includes("Size") == false) return;
-        var Data = item[0].options;
-
-        var index = Data.map(function (e) {
-          return e;
-        }).indexOf("Size");
-
-        item[0].variants.map((col) => {
-          var size = [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "Xl",
-            "Xxl",
-            "Xxxl",
-            "Xxs",
-            "Xl",
-            "XXL",
-            "XXXL",
-            "XXS",
-            "XL",
-          ];
-          if (size.includes(col["option" + (index + 1)])) {
-            return;
-          } else {
-            array.push(col["option" + (index + 1)]);
-          }
-        });
-      });
-
-      let data = [...new Set(array)];
-      array = [];
-      data.map((item, index) => {
+      let size = JSON.parse(window.atob(this.shopifyData.size));
+      size.map((cSize, index) => {
         let obj = {
-          id: item + index,
-          value: item,
-          text: item,
+          id: index + 1,
+          value: cSize,
+          text: cSize,
         };
-        if (item != null) {
-          array.push(obj);
-        }
+        array.push(obj);
       });
       return array;
     },
@@ -839,33 +1308,15 @@ export default {
     /* Fill material dropdown from products data */
     getMaterialDropDownList: function () {
       let products = this.roughData();
-
       let array = [];
-      products.map((item) => {
-        if (Object.values(item[0].options).includes("Material") == false)
-          return;
-        var Data = item[0].options;
-
-        var index = Data.map(function (e) {
-          return e;
-        }).indexOf("Material");
-
-        item[0].variants.map((col) => {
-          array.push(col["option" + (index + 1)]);
-        });
-      });
-
-      let data = [...new Set(array)];
-      array = [];
-      data.map((item, index) => {
+      let material = JSON.parse(window.atob(this.shopifyData.material));
+      material.map((cMaterial, index) => {
         let obj = {
-          id: item + index,
-          value: item,
-          text: item,
+          id: index + 1,
+          value: cMaterial,
+          text: cMaterial,
         };
-        if (item != null) {
-          array.push(obj);
-        }
+        array.push(obj);
       });
       return array;
     },
@@ -882,71 +1333,16 @@ export default {
       this.page_index = 0;
     },
 
-    /**
-     * save filter in localstorage when user choose filter option
-     */
-    saveFilter(name, value) {
-      var saveVal = [];
-
-      // var filter = localStorage.setItem('fillters',[])
-      var filter = localStorage.getItem("fillters");
-      var dd = {};
-
-      /* when selectedFilter is empty */
-      if (filter == "") {
-        dd[name] = value;
-        saveVal.push(dd);
-        localStorage.setItem("fillters", JSON.stringify(saveVal));
-        this.showClearAll = true;
-        this.fetchProdustQuery();
-        return;
-      }
-
-      var prev = JSON.parse(filter);
-
-      var values = prev.map(function (o) {
-        return o[name];
-      });
-
-      var flag = false;
-      var index = prev.map(function (e, i) {
-        if (Object.prototype.hasOwnProperty.call(e, name)) {
-          flag = true;
-        }
-      });
-
-      var ColVal = value;
-
-      /* in property has already filled */
-      if (flag) {
-        var newArray = [];
-        prev.map(function (o) {
-          // return o.Category;
-          if (Object.prototype.hasOwnProperty.call(o, name)) {
-            var updateval = {
-              [name]: ColVal,
-            };
-            newArray.push(updateval);
-          } else {
-            newArray.push(o);
-          }
-        });
-        localStorage.setItem("fillters", JSON.stringify(newArray));
-      } else {
-        dd[name] = ColVal;
-        prev.push(dd);
-        localStorage.setItem("fillters", JSON.stringify(prev));
-      }
-
-      this.showClearAll = true;
-      this.fetchProdustQuery();
-
-      // console.log(localStorage.getItem('fillters'))
-    },
-
     /* set selected category checkbox value */
     onCheck(event) {
-      this.saveFilter("Category", event.target.value);
+      if (this.selected.includes(event.target.value)) {
+        this.selected = this.selected.filter(function (geeks) {
+          return geeks != event.target.value;
+        });
+      } else {
+        this.selected.push(event.target.value);
+      }
+      this.fetchProdustQuery();
       this.page_index = 0;
     },
 
@@ -992,6 +1388,7 @@ export default {
       /*********************************************************/
       // start filter (initailize value)
       /*********************************************************/
+
       var Categories, Color, Size, Material;
       Categories = "";
       Color = "";
@@ -1038,12 +1435,18 @@ export default {
         /*********************************************************/
         /// category filter applied here (start)
         /*********************************************************/
-
-        if (Categories != "") {
+        if (JSON.parse(JSON.stringify(this.selected)).length !== 0) {
           // first check if value set
-          if (p.tags.includes(Categories) == false) {
-            continue;
-          }
+          var catFlag = false;
+
+          JSON.parse(JSON.stringify(this.selected)).map((selectedTags) => {
+            console.log(selectedTags);
+            if (p.tags.includes(selectedTags)) {
+              catFlag = true;
+            }
+          });
+
+          if (catFlag == false) continue;
         }
 
         /*********************************************************/
@@ -1372,6 +1775,8 @@ export default {
     },
 
     async addToCard(event) {
+      // document.querySelector('.bg_layer_removecart').classList.add('active');
+
       event.target.closest(".card").classList.add("active");
       var product = event.target.parentNode;
       var variant = product.getAttribute("variantid");
@@ -1528,13 +1933,13 @@ export default {
 
     getThemeAssets(image) {
       var assets = window.atob(this.shopifyData.swatchesImages);
-      assets = JSON.parse(assets)
+      assets = JSON.parse(assets);
 
       var src = "";
       for (let images in assets) {
-           if (Object.keys(assets[images])[0] ==  image) {
-              src = Object.values(assets[images])[0];
-           }
+        if (Object.keys(assets[images])[0] == image) {
+          src = Object.values(assets[images])[0];
+        }
       }
       return src;
     },
@@ -1718,6 +2123,20 @@ ul {
 
 label {
   margin: 0;
+}
+
+.cross_heading {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  padding-top: 59px;
+  text-align: center;
+}
+
+.cross_heading_res {
+  display: none;
 }
 
 /***** MultiSelect *****/
@@ -1928,7 +2347,7 @@ select {
 
 .filter_row {
   padding: 0 15px;
-  margin: 21px 0 12px;
+  margin: 18px 0 12px;
   position: sticky;
   top: 0;
   z-index: 4;
@@ -2462,6 +2881,11 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   .filter_responsive {
     display: inline-block;
     margin-top: 11px;
+  }
+
+  .cross_heading {
+    padding: 41px 0 37px;
+    margin-bottom: -18px;
   }
 
   .row_inner {

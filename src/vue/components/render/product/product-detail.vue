@@ -539,8 +539,8 @@ export default {
         }
     },
     mounted() {
-        this.getProductReview();
         
+        this.getProductReview();
         window.addEventListener('resize', () => {
 
             if (window.innerWidth <= 991) {
@@ -556,6 +556,8 @@ export default {
             document.querySelector(".footer_content").style.paddingBottom = `${document.querySelector(".add_cart_btn_wrap").offsetHeight}px`;
             document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
         }
+        let getemptyData=document.querySelector(".product_page_grid_wrap");
+        getemptyData.setAttribute('id', ` ${getemptyData.innerText ? "" : "TmbemptyGrid"}`);
     },
     methods: {
         async  getProductReview(){

@@ -5,7 +5,7 @@
       "settings": {
         "secHeading": "EXQUISITE HANDWORK",
         "checkbox": true,
-        "videoLink": "https:\/\/cdn.shopify.com\/s\/files\/1\/1000\/3130\/files\/Full-Length-behno-on-the-Road.mp4?v=1651818176"
+        "videoLink": "https://cdn.shopify.com/s/files/1/1000/3130/files/Full-Length-behno-on-the-Road.mp4?v=1651818176"
       }
     },
     "inheritance-worth": {
@@ -31,8 +31,8 @@
       "settings": {
         "secHeading": "An inheritance worth thousands of years.",
         "subHeading": "Gulfam has been an embroidery artist his entire life, where learning the craft was almost hereditary.",
-        "image": "shopify:\/\/shop_images\/exquisite-handwork.jpg",
-        "rimage": "shopify:\/\/shop_images\/exquisite-handwork1.png"
+        "image": "shopify://shop_images/exquisite-handwork.jpg",
+        "rimage": "shopify://shop_images/exquisite-handwork1.png"
       }
     },
     "working-with-artisan": {
@@ -41,13 +41,13 @@
         "8e205c9f-8e13-491d-a34e-802088fb6796": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/inheritance2.jpg"
+            "image": "shopify://shop_images/inheritance2.jpg"
           }
         },
         "aa8e3867-807d-4980-bf1b-4305cd144aa8": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/inheritance1.jpg"
+            "image": "shopify://shop_images/inheritance1.jpg"
           }
         },
         "0ec7557d-756d-4642-b086-7249a739dcdb": {
@@ -73,8 +73,8 @@
         "redText": "“WORKING WITH ARTISAN COMMUNITIES PRESERVES INDIGENOUS CRAFT WHILE ALSO HAVING A DIRECT POSITIVE IMPACT ON LOCAL COMMUNITIES AND POVERTY REDUCTION.”",
         "secHeading": "Critical collaboration: an exchange of ideas.",
         "subHeading": "Working hands on with artisans allows us to open the door for real, hands-on collaboration.",
-        "image": "shopify:\/\/shop_images\/working-artisan-left.jpg",
-        "rimage": "shopify:\/\/shop_images\/working-artisan-right.jpg"
+        "image": "shopify://shop_images/working-artisan-left.jpg",
+        "rimage": "shopify://shop_images/working-artisan-right.jpg"
       }
     },
     "glocalizing-our-practices": {
@@ -95,35 +95,35 @@
         "22c16375-f28c-44de-ad43-2768a9595715": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1-EXQUISITEHANDWORK.jpg",
+            "image": "shopify://shop_images/1-EXQUISITEHANDWORK.jpg",
             "imageInfo": "Some of the many zardozi colors available for us to choose from."
           }
         },
         "83a2f426-5642-4ec2-a84e-86ee16687a1d": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2-EXQUISITEHANDWORK.jpg",
+            "image": "shopify://shop_images/2-EXQUISITEHANDWORK.jpg",
             "imageInfo": "Our go-to zardozi supplier at the Malad Market."
           }
         },
         "7290d5cb-4866-4962-8063-e2a6fd73c86c": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3-EXQUISITEHANDWORK.jpg",
+            "image": "shopify://shop_images/3-EXQUISITEHANDWORK.jpg",
             "imageInfo": ""
           }
         },
         "62cca1bc-a5fd-4056-93c6-8ec78ab08258": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4-EXQUISITEHANDWORK.jpg",
+            "image": "shopify://shop_images/4-EXQUISITEHANDWORK.jpg",
             "imageInfo": "Studio floor, embroidery threads."
           }
         },
         "2aa5a5d9-4a6d-4768-9f79-ca5b4bff64be": {
           "type": "collage",
           "settings": {
-            "image": "shopify:\/\/shop_images\/5-EXQUISITEHANDWORK.jpg",
+            "image": "shopify://shop_images/5-EXQUISITEHANDWORK.jpg",
             "imageInfo": "Our go-to glass bead supplier at the Malad Market."
           }
         }
@@ -140,13 +140,13 @@
       "settings": {
         "secHeading": "Glocalizing our practices.",
         "subHeading": "Sourcing local matters. A lot.",
-        "image": "shopify:\/\/shop_images\/collage.png"
+        "image": "shopify://shop_images/collage.png"
       }
     },
     "back-sense-behno": {
       "type": "back-sense-behno",
       "settings": {
-        "link": "shopify:\/\/pages\/sense-of-behno",
+        "link": "shopify://pages/sense-of-behno",
         "ctaText": "Back to The Sense of behno"
       }
     }

@@ -1,6 +1,57 @@
+
+
+
+
+
+{% assign material = section.settings.material |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign category = section.settings.category |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign category2 = section.settings.category2 |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign size = section.settings.size |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign color = section.settings.color |  newline_to_br | strip_newlines | split: '<br />'  %}
+{% assign hidecollection = section.settings.hidecollection |  newline_to_br | strip_newlines | split: '<br />'  %}
+
+
+{% capture materials %}
+    [{% for mts in material %}{% assign mtsList = mts | split: ':' %}{"label":"{{ mtsList[0] }}","rules": {{ collections[mtsList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+{% capture categories %}
+    [{% for cates in category %}{% assign catList = cates | split: ':' %}{"label":"{{ catList[0] }}","rules": {{ collections[catList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+{% capture categories2 %}
+    [{% for cates in category2 %}{% assign cat2List = cates | split: ':' %}{"label":"{{ cat2List[0] }}","rules": {{ collections[cat2List[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+{% capture colors %}
+    [{% for clrs in color %}{% assign clrsList = clrs | split: ':' %}{"label":"{{ clrsList[0] }}","rules": {{ collections[clrsList[1]] | json}}}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+{% capture sizes %}
+    [{% for szes in size %}{% assign szesList = szes | split: ':' %}{"label":"{{ szesList[0] }}","rules": "{{ szesList[1] }}"}{% if forloop.last %}{% else %},{% endif %}{% endfor %}]
+{% endcapture %}
+
+
+
+{% assign bannerImg = '' %}
+{% assign bannerheading = '' %}
+
+
+{% if collection.handle == 'all' %}
+    {% assign bannerheading  = section.settings.collectionText  %}
+    {% assign  bannerImg = section.settings.collectionImage | img_url : "" %}
+{% else %}
+    {% assign bannerImg = collection.metafields.custom.hero_image | img_url : "" %}
+    {% assign bannerheading = collection.metafields.custom.hero_banner_heading %}
+{% endif %}
+
+
 {% paginate collection.products by 800 %}
 {% capture products %}  
+
         [{% for product in collection.products %}
+
+
                 {% capture variantsList %} 
                  {
                         {% for variant in product.variants %}
@@ -8,23 +59,50 @@
                         {% endfor %}
                  }
                 {% endcapture %}
-                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}}]{% if forloop.last %}
-                {% else %},{% endif %}
-        {% endfor %}]    
+                {% capture collection %}
+                   [{% for c in product.collections %}
+                     "{{ c.title }}"{% if forloop.last %}{% else %},{% endif %}
+                   {% endfor %}]  
+                {% endcapture %}
+
+                {% capture assets %} 
+                    {%- if product.metafields.my_fields.variants_swtach -%}
+                        {% assign imagesAssets = product.metafields.my_fields.variants_swtach | split:" " %}
+                        {%- for images in imagesAssets -%}
+                            { "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}
+                        {% endfor %}
+                        {% endif %}
+                {% endcapture %}
+
+               
+                [{{ product | json }},{{ product.metafields.my_fields | json }},{{variantsList}},{{ collection }},[{{assets}}]]
+               
+                {% if forloop.last %}
+               
+                {% else %},{% endif %}  
+        {% endfor %}]
+
+
     {% endcapture %}
 {% endpaginate %}
 
 <!-- get swatches (images) list  -->
+{%comment%}
 {% paginate collection.products by 800 %}
-{% capture assets %}   
-        [{% for assetss in collection.products %}
-        {%- if assetss.metafields.my_fields.variants_swtach -%}
-             {% assign imagesAssets = assetss.metafields.my_fields.variants_swtach | split:" " %}
+
+        [{% for product in collection.products %}
+       
+        {{ product | json }}
+
+        {%- if product.metafields.my_fields.variants_swtach -%}
+             {% assign imagesAssets = product.metafields.my_fields.variants_swtach | split:" " %}
              {%- for images in imagesAssets -%}
                  { "{{ images }}": "{{ images | asset_img_url : "" }}"}{% if forloop.last %}{% else %},{% endif %}
-             {% endfor %},{% endif %}{% endfor %}]    
+             {% endfor %},{% endif %}{% endfor %}] 
+    {% capture assets %}   
    {% endcapture %} 
 {% endpaginate %}
+{%endcomment%}
 
 
 <render-collection-all-page :shopify-data="{
@@ -41,10 +119,23 @@
     filterinnerResponsive: '{{ section.settings.filterinnerResponsive }}',
     sortinnerResponsive: '{{ section.settings.sortinnerResponsive }}',
     collectionListing : '{{ products | base64_encode }}',
-    swatchesImages : '{{ assets | replace: ',]',']' | base64_encode }}'
-}">
+    swatchesImages : '{{ assets | replace: ',]',']' | base64_encode }}',
+    bannerImage:`{{ bannerImg }}`,
+    bannerHeading : `{{ bannerheading }}`,
+    collectionText:`{{ section.settings.collectionText }}`,
+    collectionImage : `{{ section.settings.collectionImage }}`,
+    category : '{{ categories | strip_newlines  | base64_encode }}',
+    category2 : '{{ categories2 | strip_newlines  | base64_encode }}',
+    color : '{{ colors | strip_newlines  | base64_encode }}',
+    size : '{{ sizes | strip_newlines  | base64_encode }}',
+    material : '{{ materials | strip_newlines  | base64_encode }}',
+    hidecollection : '{{ hidecollection | json | base64_encode }}'
 
+}">
 </render-collection-all-page>
+
+
+
 
 
 
@@ -52,6 +143,16 @@
 {
 "name":"Main Collection",
 "settings":[
+    {
+        "id":"collectionText",
+        "label":"Add Collaction Banner Text",
+        "type":"text"
+    },
+    {
+        "id":"collectionImage",
+        "label":"Add Collaction Banner Image",
+        "type":"image_picker"
+    },
     {
         "id":"filterDropdownTextResponsive",
         "label":"Filter Button Dropdown Text For Mobile",
@@ -124,7 +225,52 @@
         "label":"Sort By Button in Sort Menu",
         "type":"text",
         "default":"SORT"
+    },
+    {
+        "type": "header",
+        "content": "Collection Fillters"
+    },
+    {
+        "id":"category",
+        "label":"Category Fillter 1",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"category2",
+        "label":"Category Fillter 2",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"color",
+        "label":"Color Fillter",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"size",
+        "label":"Size Fillter",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "id":"material",
+        "label":"Material Fillter",
+        "type":"textarea",
+        "default":"xyz"
+    },
+    {
+        "type": "header",
+        "content": "Category Dropdown Hide Specific Collection Page"
+    },
+    {
+        "id":"hidecollection",
+        "label":"Hide Collection Dropdown",
+        "type":"textarea",
+        "default":"xyz"
     }
+
 ],
 "blocks":[
     {

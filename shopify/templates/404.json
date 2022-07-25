@@ -7,28 +7,28 @@
           "type": "grid",
           "settings": {
             "secCta": "ALL HANDBAGS & WALLETS",
-            "secCtaLink": "\/collections\/all"
+            "secCtaLink": "/collections/all"
           }
         },
         "87785179-089f-41bc-a431-6f3e6a534945": {
           "type": "grid",
           "settings": {
             "secCta": "CROSSBODY BAGS",
-            "secCtaLink": "\/collections\/all"
+            "secCtaLink": "/collections/all"
           }
         },
         "ec3478c9-7ea4-4f2a-b70f-23ddc1092951": {
           "type": "grid",
           "settings": {
             "secCta": "SHOULDER BAGS",
-            "secCtaLink": "shopify:\/\/collections\/shoulder-bags"
+            "secCtaLink": "shopify://collections/shoulder-bags"
           }
         },
         "b406a8c8-f883-4d51-9aa3-a59c37267522": {
           "type": "grid",
           "settings": {
             "secCta": "MINI BAGS",
-            "secCtaLink": "\/collections\/all"
+            "secCtaLink": "/collections/all"
           }
         }
       },
@@ -42,7 +42,7 @@
         "secHeading": "THIS PAGE DOES NOT EXIST.",
         "secBrief": "But, continue your journey below:",
         "indexCta": "Back to homepage.",
-        "indexCtaLink": "\/"
+        "indexCtaLink": "/"
       }
     }
   },

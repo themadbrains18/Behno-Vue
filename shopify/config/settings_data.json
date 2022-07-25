@@ -1,4 +1,23 @@
 {
   "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "desktopMenu": "tmb-header-menu",
+          "mobileMenu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "stayTouch": "Enjoy 10% off your first order when you subscribe to the behno newsletter.",
+          "afterpay": "Finance your favorite bag with only 25% up front."
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   }
 }

@@ -1,0 +1,79 @@
+
+{% comment %} Card Loop {% endcomment %}
+ {% capture collageData %}
+ [
+    {% for block in section.blocks %}
+         {% if block.type == 'collage' %}
+         {
+            cardHeading: `{{ block.settings.cardHeading }}`,
+            cardinfo: `{{ block.settings.cardinfo }}`
+         }{% unless forloop.last %},{% endunless %}
+         {% endif %}
+    {% endfor %}
+ ]
+ {% endcapture %}
+
+
+<render-nanamota-nanamota-commitment :shopify-data="{
+    checkSection:`{{ section.settings.checkSection }}`,
+    secheading:`{{ section.settings.secheading }}`,
+    secinfo:`{{ section.settings.secinfo }}`,
+    secimg:{
+        src : `{{ section.settings.secimg | img_url : "" }}`,
+        placeholder: `{{ block.settings.secimg | img_url : "50x50" }}`,
+        alt: `{{ block.settings.secimg.alt }}`
+    },
+    collageData  : {{ collageData }}
+    
+}">
+</render-nanamota-nanamota-commitment>
+
+{% schema %}
+    {
+        "name":"commitmentSection",
+        "settings":[
+            {
+                "id": "checkSection",
+                "type": "checkbox",
+                "label": "Hide Section",
+                "default": false
+                
+            },
+            {
+                "id":"secheading",
+                "type":"text",
+                "label":"Add Section heading"
+            },
+            {
+                "id":"secinfo",
+                "type":"textarea",
+                "label":"Add Section Info"
+            } 
+            ,
+            {
+                "id":"secimg",
+                "type":"image_picker",
+                "label":"Add Section Image"
+            } 
+        ],
+        "blocks" : [
+            {
+                "name": "Collage Image",
+                "type" : "collage",
+                
+                "settings" : [
+                    {
+                        "id":"cardHeading",
+                        "type":"text",
+                        "label":"Add Section Card Heading"
+                    },
+                    {
+                        "id":"cardinfo",
+                        "type":"textarea",
+                        "label":"Add Section Card Info"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

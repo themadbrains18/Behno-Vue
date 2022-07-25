@@ -31,7 +31,7 @@
         "preHeading": "HANDWOVEN SILKS",
         "secHeading": "A homeworker economy hard at work.",
         "subHeading": "In 2019, our founder, Shivam Punjya, visited Loom to Luxury in Varanasi, India for the first time.",
-        "image": "shopify:\/\/shop_images\/handwoven-silks-hero.jpg",
+        "image": "shopify://shop_images/handwoven-silks-hero.jpg",
         "afterImageText": "LOOM TO LUXURY. VARANASI, INDIA."
       }
     },
@@ -41,43 +41,43 @@
         "72230e37-5404-46af-81b2-8c91737a6417": {
           "type": "gridbox",
           "settings": {
-            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid.jpg"
+            "gridImage": "shopify://shop_images/handwoven-silks-grid.jpg"
           }
         },
         "095bb10f-db65-41c9-af89-e357268d0f2c": {
           "type": "gridbox",
           "settings": {
-            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid1.jpg"
+            "gridImage": "shopify://shop_images/handwoven-silks-grid1.jpg"
           }
         },
         "af607bef-647d-43c3-b3e3-22d70dad2bc2": {
           "type": "gridbox",
           "settings": {
-            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid2.jpg"
+            "gridImage": "shopify://shop_images/handwoven-silks-grid2.jpg"
           }
         },
         "0ca990ed-0365-42ca-bad7-30fb984f3abf": {
           "type": "gridbox",
           "settings": {
-            "gridImage": "shopify:\/\/shop_images\/handwoven-silks-grid3.jpg"
+            "gridImage": "shopify://shop_images/handwoven-silks-grid3.jpg"
           }
         },
         "6e6df58d-cce8-4607-a4bd-dfafa474c891": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/handwoven-silks-slide.jpg"
+            "image": "shopify://shop_images/handwoven-silks-slide.jpg"
           }
         },
         "b3661030-3b5f-4c97-8ebd-6e3c36b1c5f4": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/handwoven-silks-slide1.jpg"
+            "image": "shopify://shop_images/handwoven-silks-slide1.jpg"
           }
         },
         "2cd1988f-a5bd-4ca7-a588-121da409c432": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/handwoven-silks-slide2.jpg"
+            "image": "shopify://shop_images/handwoven-silks-slide2.jpg"
           }
         }
       },
@@ -112,13 +112,13 @@
         "718c0d46-e8c7-44ad-b0b3-ce36ab4219d9": {
           "type": "video",
           "settings": {
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7a6520654eec40d482d0ac085abd4e35.mp4"
+            "video": "https://cdn.shopify.com/videos/c/o/v/7a6520654eec40d482d0ac085abd4e35.mp4"
           }
         },
         "3de622e5-0709-4095-a3ca-614f4ff43094": {
           "type": "video",
           "settings": {
-            "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/bd3956f7934b4bbca4476772edbfff22.mp4"
+            "video": "https://cdn.shopify.com/videos/c/o/v/bd3956f7934b4bbca4476772edbfff22.mp4"
           }
         }
       },
@@ -151,37 +151,37 @@
         "d6fd691e-f04f-45c6-8ee2-cfae75006d66": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/ghat-know2.jpg"
+            "sliderImg": "shopify://shop_images/ghat-know2.jpg"
           }
         },
         "74399097-6f62-4823-b84d-6c8a560f7538": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/ghat-know1.jpg"
+            "sliderImg": "shopify://shop_images/ghat-know1.jpg"
           }
         },
         "c557c954-4754-4494-8885-d219ca43f8c2": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/ghat-know4.jpg"
+            "sliderImg": "shopify://shop_images/ghat-know4.jpg"
           }
         },
         "35677a9e-d7fb-484e-b3a4-c8cef09f936c": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/ghat-know5.jpg"
+            "sliderImg": "shopify://shop_images/ghat-know5.jpg"
           }
         },
         "e62d9e16-c326-430b-bd1c-cce0f3e66715": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/ghat-know6.jpg"
+            "sliderImg": "shopify://shop_images/ghat-know6.jpg"
           }
         },
         "95be1039-17a7-40d4-b436-6893dd5ace31": {
           "type": "slide",
           "settings": {
-            "sliderImg": "shopify:\/\/shop_images\/ghat-know3.jpg"
+            "sliderImg": "shopify://shop_images/ghat-know3.jpg"
           }
         }
       },
@@ -203,7 +203,7 @@
     "back-sense-behno": {
       "type": "back-sense-behno",
       "settings": {
-        "link": "shopify:\/\/pages\/sense-of-behno",
+        "link": "shopify://pages/sense-of-behno",
         "ctaText": "Back to The Sense of behno"
       }
     }

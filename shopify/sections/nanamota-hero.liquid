@@ -1,0 +1,36 @@
+<render-nanamota-nanamota-hero :shopify-data="{
+    checkSection:`{{ section.settings.checkSection }}`,
+    bannerimg:{
+        src : `{{ section.settings.bannerimg | img_url : "" }}`,
+        placeholder: `{{ block.settings.bannerimg | img_url : "50x50" }}`,
+        alt: `{{ block.settings.bannerimg.alt }}`
+    },
+    bannerMobileImg:`{{ section.settings.bannerMobileImg }}`
+    
+}">
+
+</render-nanamota-nanamota-hero>
+
+{% schema %}
+    {
+        "name":"addBannerimage",
+        "settings":[
+            {
+                "id": "checkSection",
+                "type": "checkbox",
+                "label": "Hide Section",
+                "default": false
+            },
+            {
+                "id":"bannerimg",
+                "type":"image_picker",
+                "label":"Add Hero Image"
+            },
+            {
+                "id":"bannerMobileImg",
+                "type":"url",
+                "label":"Add Hero Image"
+            }
+        ]
+    }
+{% endschema %}

@@ -122,9 +122,12 @@
               </p>
             </div>
             <div class="cta_wrapper">
-              <button class="cta_btn">
+              <a
+                class="cta_btn"
+                href="/checkout"
+              >
                 {{ shopifyData.checkoutCtaText }}
-              </button>
+              </a>
               <a
                 :href="shopifyData.continuCtaLink"
                 class="cta_btn cta-modifier"
@@ -265,10 +268,10 @@ export default {
   gap: 170px;
 }
 .cart_with_products .sec_left {
-  width: 55%;
+  width: 62%;
 }
 .cart_with_products .sec_right {
-  width: 45%;
+  width: 38%;
   height: 100vh;
   position: sticky;
   top: 100px;

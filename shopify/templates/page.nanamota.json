@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "nanamota-hero": {
+      "type": "nanamota-hero",
+      "settings": {
+        "checkSection": false,
+        "bannerimg": "shopify:\/\/shop_images\/nanamota-banner.gif",
+        "bannerMobileImg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/63af3ea31ec041b6bb3c692785bba200.mp4"
+      }
+    },
+    "shop-tabs-sec": {
+      "type": "shop-tabs-sec",
+      "blocks": {
+        "a98bfff7-7692-44c3-9f96-c8ecb5fe1587": {
+          "type": "slide",
+          "settings": {
+            "selected_collection": "nanamota-womens-tee",
+            "collection_label": "Nanamota-Womens"
+          }
+        },
+        "005a4bda-5077-4869-b9b6-30bcfa316f40": {
+          "type": "slide",
+          "settings": {
+            "selected_collection": "nanamota-mens-tee",
+            "collection_label": "Nanamota-Mens"
+          }
+        },
+        "e3d37c3e-dc38-4821-b916-19a2b13809b3": {
+          "type": "slide",
+          "settings": {
+            "selected_collection": "nanamota-face-masks",
+            "collection_label": "sdfsdf"
+          }
+        },
+        "605ec58f-8914-4ca6-aa8d-794bd25bdbbf": {
+          "type": "items",
+          "settings": {
+            "tabitem": "WOMENS"
+          }
+        },
+        "a953c365-1210-47b3-868b-af0c98d530de": {
+          "type": "items",
+          "settings": {
+            "tabitem": "MENS"
+          }
+        },
+        "71c001b3-6fb9-4a86-b24e-b625e256d3e2": {
+          "type": "items",
+          "settings": {
+            "tabitem": "FACEMASKS"
+          }
+        }
+      },
+      "block_order": [
+        "a98bfff7-7692-44c3-9f96-c8ecb5fe1587",
+        "005a4bda-5077-4869-b9b6-30bcfa316f40",
+        "e3d37c3e-dc38-4821-b916-19a2b13809b3",
+        "605ec58f-8914-4ca6-aa8d-794bd25bdbbf",
+        "a953c365-1210-47b3-868b-af0c98d530de",
+        "71c001b3-6fb9-4a86-b24e-b625e256d3e2"
+      ],
+      "settings": {
+        "checkSection": false,
+        "NanaMotaHeaderLogo": "shopify:\/\/shop_images\/nanamota-logo.png",
+        "NanaMotaHeaderBackTo": "BACK TO BEHNO",
+        "NanaMotaHeaderBackToLink": "#",
+        "secCtaText": "SHOP ALL WOMENS >",
+        "secCtaLink": ""
+      }
+    },
+    "nanamota-shop-grid": {
+      "type": "nanamota-shop-grid",
+      "blocks": {
+        "b154e657-5393-46e2-ba05-3261b6f87dfc": {
+          "type": "paragraph",
+          "settings": {
+            "secinfo": "Our Softest Tees are made with the highest quality ultra soft micromodal."
+          }
+        },
+        "81195133-de45-4d89-a4b4-5c6df501e4a0": {
+          "type": "paragraph",
+          "settings": {
+            "secinfo": "Tees so soft they are meant to be lived in and lived with."
+          }
+        }
+      },
+      "block_order": [
+        "b154e657-5393-46e2-ba05-3261b6f87dfc",
+        "81195133-de45-4d89-a4b4-5c6df501e4a0"
+      ],
+      "settings": {
+        "checkSection": false,
+        "SecModifier": false,
+        "secheading": "Feel it.",
+        "secBtn": "SHOP ALL WOMENS >",
+        "secBtnUrl": "#",
+        "secImage": "shopify:\/\/shop_images\/shop-women.png"
+      }
+    },
+    "nanamota-shop-grid-second": {
+      "type": "nanamota-shop-grid",
+      "blocks": {
+        "b154e657-5393-46e2-ba05-3261b6f87dfc": {
+          "type": "paragraph",
+          "settings": {
+            "secinfo": "What touches your skin should\nonly be the best. We get that.\nAnd we’ve got you."
+          }
+        }
+      },
+      "block_order": [
+        "b154e657-5393-46e2-ba05-3261b6f87dfc"
+      ],
+      "settings": {
+        "checkSection": false,
+        "SecModifier": true,
+        "secheading": "Layer it.",
+        "secBtn": "SHOP ALL MENS >",
+        "secBtnUrl": "#",
+        "secImage": "shopify:\/\/shop_images\/grid-section-img2.png"
+      }
+    },
+    "nanamota-shop-grid-third": {
+      "type": "nanamota-shop-grid",
+      "blocks": {
+        "b154e657-5393-46e2-ba05-3261b6f87dfc": {
+          "type": "paragraph",
+          "settings": {
+            "secinfo": "Invest in yourself by acquiring the best basics while having the smallest negative impact on our people, planet and energy."
+          }
+        }
+      },
+      "block_order": [
+        "b154e657-5393-46e2-ba05-3261b6f87dfc"
+      ],
+      "settings": {
+        "checkSection": false,
+        "SecModifier": false,
+        "secheading": "Making the biggest impact in (and through) your skin-to-skin wardrobe.",
+        "secBtn": "SHOP ALL TEES >",
+        "secBtnUrl": "#",
+        "secImage": "shopify:\/\/shop_images\/grid-section-img3.png"
+      }
+    },
+    "nanamota-commitment": {
+      "type": "nanamota-commitment",
+      "blocks": {
+        "17d0a4a6-443a-48d2-80f7-1a38917ad576": {
+          "type": "collage",
+          "settings": {
+            "cardHeading": "Sourced Sustainably.",
+            "cardinfo": "We have partnered with Canopy, a leading environmental nonprofit, to add to The behno Standard.There will be no sourcing from ancient and endangered forests and a preference for innovative alternatives."
+          }
+        },
+        "fb37ea3e-0ff9-413f-9e45-00ca7ee95b56": {
+          "type": "collage",
+          "settings": {
+            "cardHeading": "Constructed Ethically.",
+            "cardinfo": "All our tees are made at MSA Ethos, the factory we built with an industry veteran and a nonprofit partner where we have radically redefined how manufacturing should be approached."
+          }
+        },
+        "85a820bc-666a-4106-98aa-209f07f72238": {
+          "type": "collage",
+          "settings": {
+            "cardHeading": "Worn Responsibly.",
+            "cardinfo": "Our pieces are to be treated with care; to be washed, dried, and worn responsibly to prolong its life. It is to be worn everyday as a permanent and active member of its wearers' wardrobe."
+          }
+        }
+      },
+      "block_order": [
+        "17d0a4a6-443a-48d2-80f7-1a38917ad576",
+        "fb37ea3e-0ff9-413f-9e45-00ca7ee95b56",
+        "85a820bc-666a-4106-98aa-209f07f72238"
+      ],
+      "settings": {
+        "checkSection": false,
+        "secheading": "A new commitment to the Boys & Girls Clubs of America.",
+        "secinfo": "10% of all sales from nanamota will be donated to the Boys and Girls\nClub of America as they become critical stakeholders of the future of\nour youth. Today especially, students of the Boys and Girls Clubs across\nthe country rely on their clubs to be safe havens as they attend virtual\nclassrooms while their caretakers often work from home or go in.",
+        "secimg": "shopify:\/\/shop_images\/download.jpg"
+      }
+    },
+    "nanamota-small-thing": {
+      "type": "nanamota-small-thing",
+      "blocks": {
+        "49156576-4175-409b-a15b-9827b9dc1ef4": {
+          "type": "paragraph",
+          "settings": {
+            "secinfo": "nana = small"
+          }
+        },
+        "2302d901-ad53-4eeb-b0d7-587c0d1d61c4": {
+          "type": "paragraph",
+          "settings": {
+            "secinfo": "mota = big"
+          }
+        }
+      },
+      "block_order": [
+        "49156576-4175-409b-a15b-9827b9dc1ef4",
+        "2302d901-ad53-4eeb-b0d7-587c0d1d61c4"
+      ],
+      "settings": {
+        "checkSection": false,
+        "secHeading": "The small things we do have a big impact."
+      }
+    }
+  },
+  "order": [
+    "nanamota-hero",
+    "shop-tabs-sec",
+    "nanamota-shop-grid",
+    "nanamota-shop-grid-second",
+    "nanamota-shop-grid-third",
+    "nanamota-commitment",
+    "nanamota-small-thing"
+  ]
+}

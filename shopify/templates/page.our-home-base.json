@@ -73,6 +73,9 @@
     "meet-our-team": {
       "type": "meet-our-team",
       "settings": {
+        "videoUrl": "https:\/\/i.shgcdn.com\/138d308f-8307-4ea7-867b-b4a638e1224a\/gif2video\/-\/format\/mp4\/-\/quality\/lighter\/",
+        "link": "",
+        "ctaText": "MEET OUR TEAM"
       }
     },
     "back-sense-behno": {
