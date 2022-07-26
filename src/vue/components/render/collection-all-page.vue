@@ -636,7 +636,7 @@
                 <swiper-slide
                   v-for="(sValue, sKey) in value.swatches"
                   :key="sKey"
-                  :index="sKey"
+                  :index="sKey" 
                   :link="sValue.link"
                   class="nav-dots"
                   :class="sKey == value.active ? 'active' : ''"
@@ -2876,8 +2876,8 @@ select {
 .quickButton {
   justify-content: space-between;
   display: flex;
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   align-items: center;
   transition: 0.3s;
 }
