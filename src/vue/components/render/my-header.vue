@@ -387,10 +387,10 @@
               <button id="searcBtn" class="search_btn" @click="toggleSearchBar">
                 <v-lazy-image :src="shopifyData.search" alt="Search Icon" />
               </button>
-              <a class="shopping_btn" @click="show = !show">
-                <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
-                <span class="shopping_btn_count">0</span>
-              </a>
+                <a class="shopping_btn" @click="show = !show">
+                  <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
+                  <span class="shopping_btn_count">0</span>
+                </a>
             </div>
           </li>
         </ul>
@@ -746,6 +746,16 @@ export default {
 </script>
 
 <style >
+.tmbHeader .navlist a,
+.tmbHeader button
+{
+  transition: 0.2s;
+}
+.tmbHeader .navlist a:hover,
+.tmbHeader button:hover
+{
+    opacity: .5;
+}
 button.behno_increment_dec {
   position: relative;
   display: flex;
@@ -1115,6 +1125,9 @@ button.behno_increment_dec:after {
 .shopping_btn {
   position: relative;
   cursor: pointer;
+}
+.desktop_btn_grp .shopping_btn {
+  margin-top: -10px;
 }
 .shopping_btn_count {
   position: absolute;
