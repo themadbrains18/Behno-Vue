@@ -557,7 +557,7 @@ export default {
             document.querySelector(".footer_wave").style.backgroundColor = document.querySelector(".tmbMain").style.backgroundColor = "#f1f1f1";
         }
         let getemptyData=document.querySelector(".product_page_grid_wrap");
-        getemptyData.setAttribute('id', ` ${getemptyData.innerText ? "" : "TmbemptyGrid"}`);
+        getemptyData.setAttribute('id', `${getemptyData.innerText ? "" : "TmbemptyGrid"}`);
     },
     methods: {
         async  getProductReview(){
@@ -1383,6 +1383,8 @@ span.jdgm-star{
   display: block;
   clear: both;
 }
-
+  #TmbemptyGrid{
+    display: none ;
+  }
 
 </style>

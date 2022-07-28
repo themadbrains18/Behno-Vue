@@ -737,7 +737,7 @@
                 <swiper-slide
                   v-for="(sValue, sKey) in value.swatches"
                   :key="sKey"
-                  :index="sKey"
+                  :index="sKey" 
                   :link="sValue.link"
                    class="nav-dots"
                   :activeIndex="sKey == value.active ? 'true' : 'false'" 
@@ -2091,7 +2091,9 @@ export default {
       var product=[];
       var percentCount = 0;
 
-       var AllProducts = JSON.parse(JSON.stringify(this.AllProducts));
+      var AllProducts = JSON.parse(JSON.stringify(this.AllProducts));
+
+
 
       if (obj == "Latest"){
         AllProducts.map((p)=>{
@@ -2120,7 +2122,7 @@ export default {
         })
         let filter = JSON.parse(JSON.stringify(product))
         this.Products = [...filter].slice(0, this.page_size);
-        this.AllProducts = [...filter].slice(0, 100);
+        // this.AllProducts = [...filter].slice(0, 100);
         console.log(newArrivalCount);
       }
       else{
@@ -2128,30 +2130,56 @@ export default {
 
       const aa =     AllProducts.sort(function (a, b) {
             if (obj == "LowToHigh") {
-              
 
               if (Object.prototype.hasOwnProperty.call(a, "variable")) {
-                if(a.variable[0].compare_at_price > a.variable[0].price){
-                  percentCount++;
+
+                if(b.variable != undefined){
+                  if(b.variable.length === 0){
+                    return;
+                  }
+                  if(a.variable.length > 0){
+                      if(a.variable[0].compare_at_price > a.variable[0].price){
+                        percentCount++;
+                      }
+                      return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
+                  }
                 }
 
-                return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
               }
               if (Object.prototype.hasOwnProperty.call(a, "single")) {
-                if(a.single.compare_at_price > a.single.price){
-                  percentCount++;
-                }
-                return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
+                if(b.single != undefined){
+                  if(a.single.price === undefined){
+                    return
+                  }
+                  if(a.single.compare_at_price > a.single.price){
+                    percentCount++;
+                  }
+                  return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
+                 }
               }
             } else if (obj == "HighToLow") {
               
               if (Object.prototype.hasOwnProperty.call(b, "variable")) {
-                if(b.variable[0].compare_at_price > b.variable[0].price){
-                    percentCount++;
-                }
-                return ( b.variable[0].price - (a.variable != undefined ? a.variable[0].price : a.single.price) );
+                console.log(b.variable,'---------',a.variable)
+
+                 if(a.variable != undefined){
+
+                    if(b.variable.length === 0 || a.variable.length === 0){
+                      return;
+                    }
+
+                    if(b.variable[0].compare_at_price > b.variable[0].price){
+                        percentCount++;
+                    }
+                    return ( b.variable[0].price - (a.variable != undefined ? a.variable[0].price : a.single.price) );
+                 }
               }
               if (Object.prototype.hasOwnProperty.call(b, "single")) {
+                 if(a.single != undefined){
+                  if(b.single.price === undefined){
+                    return
+                  }
+
                 if(b.single.compare_at_price > b.single.price){
                   percentCount++;
                 }
@@ -2161,6 +2189,7 @@ export default {
                     ? a.single.price
                     : a.variable[0].price)
                 );
+                 }
               }
             } else if (obj == "Discount") {
 
@@ -2188,7 +2217,7 @@ export default {
 
           });
             this.Products = [...aa].slice(0, this.page_size);
-            this.AllProducts = [...aa].slice(0, 100);
+            // this.AllProducts = [...aa].slice(0, 100);
       }
 
       if(percentCount == 0){
@@ -2264,7 +2293,7 @@ export default {
       }
 
       // activeHandle
-
+        
       if (swatchLIST.length !== 0) {
         return swatchLIST;
       }
@@ -2977,13 +3006,17 @@ select {
   line-height: 0;
 }
 
-.nav-dots span {
+/* .nav-dots span {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   overflow-x: scroll;
   box-shadow: 0 0 1px 0 #000;
   border-radius: 50%;
+} */
+
+.nav-dots img {
+    border: 1px solid #ccc;
 }
 
 .nav-dots span::-webkit-scrollbar {
@@ -3260,19 +3293,30 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 
 /* RESPONSIVE BREAKPOINTS START */
 @media (max-width: 1440px) {
-  .product_img_wrapper img {
+  /* .product_img_wrapper img {
     height: 348px;
     max-width: 348px;
+  } */
+  .grid_inner_max .product_img_wrapper img {
+    height:auto;
   }
 }
-
-@media (max-width: 1200px) {
-  .product_img_wrapper img {
-    height: auto;
-    max-width: 348px;
+@media (max-width: 1410px) {
+  .grid_inner_max{
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .grid_inner {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .quickAdd[data-v-bb57343a] {
+}
+@media (max-width: 1200px) {
+  /* .product_img_wrapper img {
+    height: auto;
+    max-width: 348px;
+  } */
+
+  .quickAdd{
     padding: 8px 20px;
   }
 }
@@ -3294,6 +3338,15 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 
   .collaction_banner .banner_heading {
     font-size: 40px;
+  }
+  .grid_inner_max{
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .grid_inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid_inner_min{
+    grid-template-columns: repeat(1, 1fr) !important;
   }
 }
 
@@ -3318,7 +3371,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
   }
 
   .grid_inner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     column-gap: 2px;
     row-gap: 11px;
   }
