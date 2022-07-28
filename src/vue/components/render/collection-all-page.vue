@@ -2891,8 +2891,8 @@ select {
 .quickButton {
   justify-content: space-between;
   display: flex;
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   align-items: center;
   transition: 0.3s;
 }
