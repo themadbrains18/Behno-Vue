@@ -126,7 +126,7 @@ p{
     text-align: center;
     width: fit-content;
     font-weight: 300;
-    font-family: 'Work Sans';
+    font-family: 'Work Sans',sans-serif;
     color: #000;
 }
 .shop_btn:hover{
