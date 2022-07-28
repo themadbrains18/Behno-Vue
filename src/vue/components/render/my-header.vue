@@ -598,8 +598,6 @@ export default {
   },
   data() {
     window.addEventListener("scroll", this.scollHeader);
-    console.log(this.shopifyData.HeaderNavData);
-    console.log(this.shopifyData.MobileNavData);
     return {
       logoImageIndex: 0,
       lastScrollY: 100,

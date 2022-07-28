@@ -125,6 +125,9 @@ p{
     border-radius: 30px;
     text-align: center;
     width: fit-content;
+    font-weight: 300;
+    font-family: 'Work Sans';
+    color: #000;
 }
 .shop_btn:hover{
     background-color: #efd4bf !important;
