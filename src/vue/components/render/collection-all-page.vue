@@ -1979,6 +1979,8 @@ export default {
 
        var AllProducts = JSON.parse(JSON.stringify(this.AllProducts));
 
+       console.log(AllProducts)
+
       if (obj == "Latest"){
         AllProducts.map((p)=>{
           var countOnce=false;
@@ -2009,10 +2011,19 @@ export default {
               
 
               if (Object.prototype.hasOwnProperty.call(a, "variable")) {
-                return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
+                console.log(b.variable.length)
+                 if(b.variable.length > 0){
+
+                    if(b.variable[0] != undefined){
+                       return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
+                    }
+                 }
               }
               if (Object.prototype.hasOwnProperty.call(a, "single")) {
-                return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
+                  
+                  if(b.single != undefined){
+                      return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
+                  }
               }
             } else if (obj == "HighToLow") {
               if (Object.prototype.hasOwnProperty.call(b, "variable")) {
