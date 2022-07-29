@@ -5,7 +5,11 @@
       <nav class="navbar navbar-desktop">
         <!-- Toggle Button -->
         <div class="header_toggle_wrap">
-          <button type="button" class="header_toggle" @click="togleHeader">
+          <button
+            type="button"
+            class="header_toggle"
+            @click="togleHeader"
+          >
             <span class="toggle_bar toggle_bar-top" />
             <span class="toggle_bar toggle_bar-center" />
             <span class="toggle_bar toggle_bar-bottom" />
@@ -43,8 +47,8 @@
                           <template
                             v-if="
                               nestedSubLink.url.includes('.png') ||
-                              nestedSubLink.url.includes('.jpg') ||
-                              nestedSubLink.url.includes('.svg')
+                                nestedSubLink.url.includes('.jpg') ||
+                                nestedSubLink.url.includes('.svg')
                             "
                           >
                             <!-- continue Content -->
@@ -56,15 +60,15 @@
                                   typeof subLink.links[
                                     nestedSubLinkIndex + 1
                                   ] != 'undefined' &&
-                                  (subLink.links[
-                                    nestedSubLinkIndex + 1
-                                  ].url.includes('.png') ||
-                                    subLink.links[
+                                    (subLink.links[
                                       nestedSubLinkIndex + 1
-                                    ].url.includes('.jpg') ||
-                                    subLink.links[
-                                      nestedSubLinkIndex + 1
-                                    ].url.includes('.svg'))
+                                    ].url.includes('.png') ||
+                                      subLink.links[
+                                        nestedSubLinkIndex + 1
+                                      ].url.includes('.jpg') ||
+                                      subLink.links[
+                                        nestedSubLinkIndex + 1
+                                      ].url.includes('.svg'))
                                 "
                               >
                                 <a
@@ -81,7 +85,7 @@
                                     :src="
                                       subLink.links[nestedSubLinkIndex + 1].url
                                     "
-                                  />
+                                  >
                                 </a>
                               </template>
                               <template v-else-if="nestedSubLink.url == '#'">
@@ -146,7 +150,7 @@
                                     <img
                                       src="https://cdn.shopify.com/s/files/1/1000/3130/files/nanamoto-logo.svg?v=1621615505"
                                       alt=""
-                                    />
+                                    >
                                   </a>
                                   <div class="nanamoto-basics-crd-txt">
                                     <template
@@ -174,8 +178,8 @@
                             <template
                               v-if="
                                 nestedSubLink.url.includes('.png') ||
-                                nestedSubLink.url.includes('.jpg') ||
-                                nestedSubLink.url.includes('.svg')
+                                  nestedSubLink.url.includes('.jpg') ||
+                                  nestedSubLink.url.includes('.svg')
                               "
                             >
                               <!-- continue Content -->
@@ -187,15 +191,15 @@
                                     typeof subLink.links[
                                       nestedSubLinkIndex + 1
                                     ] != 'undefined' &&
-                                    (subLink.links[
-                                      nestedSubLinkIndex + 1
-                                    ].url.includes('.png') ||
-                                      subLink.links[
+                                      (subLink.links[
                                         nestedSubLinkIndex + 1
-                                      ].url.includes('.jpg') ||
-                                      subLink.links[
-                                        nestedSubLinkIndex + 1
-                                      ].url.includes('.svg'))
+                                      ].url.includes('.png') ||
+                                        subLink.links[
+                                          nestedSubLinkIndex + 1
+                                        ].url.includes('.jpg') ||
+                                        subLink.links[
+                                          nestedSubLinkIndex + 1
+                                        ].url.includes('.svg'))
                                   "
                                 >
                                   <a
@@ -207,12 +211,12 @@
                                   <a
                                     :href="nestedSubLink.url"
                                     class="subnavlink subnavlink-img"
-                                    ><img
-                                      :src="
-                                        subLink.links[nestedSubLinkIndex + 1]
-                                          .url
-                                      "
-                                  /></a>
+                                  ><img
+                                    :src="
+                                      subLink.links[nestedSubLinkIndex + 1]
+                                        .url
+                                    "
+                                  ></a>
                                 </template>
                                 <template v-else-if="nestedSubLink.url == '#'">
                                   <span
@@ -240,8 +244,11 @@
             </template>
           </li>
 
-          <template v-if="this.logoImageIndex == 3">
-            <li v-if="HeaderNavData[2]" class="navitem">
+          <template v-if="logoImageIndex == 3">
+            <li
+              v-if="HeaderNavData[2]"
+              class="navitem"
+            >
               <a
                 :href="HeaderNavData[2].title"
                 class="navlink navlink_drpdown"
@@ -258,8 +265,7 @@
               class="logo d-inline-block"
               :href="HeaderNavData[logoImageIndex].url"
               v-html="HeaderNavData[logoImageIndex].title"
-            >
-            </a>
+            />
           </template>
         </div>
 
@@ -354,15 +360,18 @@
                           <template
                             v-if="
                               nestedSubLink.title.includes('.png') ||
-                              nestedSubLink.title.includes('.jpg') ||
-                              nestedSubLink.title.includes('.svg')
+                                nestedSubLink.title.includes('.jpg') ||
+                                nestedSubLink.title.includes('.svg')
                             "
                           >
                             <a
                               :href="nestedSubLink.url"
                               class="nav_sensebehno__img subnavlink"
                             >
-                              <img :src="nestedSubLink.title" alt="" />
+                              <img
+                                :src="nestedSubLink.title"
+                                alt=""
+                              >
                             </a>
                           </template>
                           <template v-else>
@@ -384,8 +393,15 @@
           <!-- Header Button Group -->
           <li class="desktop_btn_grp">
             <div class="nav_btns">
-              <button id="searcBtn" class="search_btn" @click="toggleSearchBar">
-                <v-lazy-image :src="shopifyData.search" alt="Search Icon" />
+              <button
+                id="searcBtn"
+                class="search_btn"
+                @click="toggleSearchBar"
+              >
+                <v-lazy-image
+                  :src="shopifyData.search"
+                  alt="Search Icon"
+                />
               </button>
                 <a class="shopping_btn" @click="show = !show">
                   <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
@@ -398,10 +414,19 @@
         <div class="mobile_btn_grp">
           <div class="nav_btns">
             <button class="search_btn">
-              <v-lazy-image :src="shopifyData.search" alt="Search Icon" />
+              <v-lazy-image
+                :src="shopifyData.search"
+                alt="Search Icon"
+              />
             </button>
-            <button class="shopping_btn" @click="show = !show">
-              <v-lazy-image :src="shopifyData.bag" alt="Shopping Icon" />
+            <button
+              class="shopping_btn"
+              @click="show = !show"
+            >
+              <v-lazy-image
+                :src="shopifyData.bag"
+                alt="Shopping Icon"
+              />
               <span class="shopping_btn_count">0</span>
             </button>
           </div>
@@ -413,9 +438,13 @@
     <!-- ======= Mobile Navigation Start ======= -->
     <nav class="m_navbar_list navbar-Mobile">
       <ul class="m_navlist d-block w-100">
-        <li v-for="link in MobileNavData" :key="link.title" class="m_navitem">
+        <li
+          v-for="link in MobileNavData"
+          :key="link.title"
+          class="m_navitem"
+        >
           <template v-if="link.url == '#'">
-            <sapn class="navlink w-100 t-left" />
+            <span class="navlink w-100 t-left" ></span>
           </template>
           <template v-else-if="link.links.length > 0">
             <button
@@ -444,7 +473,10 @@
                           :key="nestedSubLink.title"
                           class="m_subnavlink_item"
                         >
-                          <a :href="nestedSubLink.url" class="navlink">{{
+                          <a
+                            :href="nestedSubLink.url"
+                            class="navlink"
+                          >{{
                             nestedSubLink.title
                           }}</a>
                         </li>
@@ -474,19 +506,40 @@
     </nav>
     <!-- ======= Mobile Navigation End ======= -->
     <!-- ======= Search Bar Start ======= -->
-    <div id="mainSearchBar" class="main_search_bar">
-      <form id="searchBar" action="/search" class="search_bar_items">
-        <button type="submit" class="search_icon">
-          <img :src="shopifyData.search" alt="Search Icon" />
+    <div
+      id="mainSearchBar"
+      class="main_search_bar"
+    >
+      <form
+        id="searchBar"
+        action="/search"
+        class="search_bar_items"
+      >
+        <button
+          type="submit"
+          class="search_icon"
+        >
+          <img
+            :src="shopifyData.search"
+            alt="Search Icon"
+          >
         </button>
-        <input type="text" name="type" hidden value="product" />
+        <input
+          type="text"
+          name="type"
+          hidden
+          value="product"
+        >
         <input
           type="text"
           name="q"
           class="search_item"
           placeholder="Search..."
-        />
-        <button type="button" @click="toggleSearchBar()">
+        >
+        <button
+          type="button"
+          @click="toggleSearchBar()"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -499,8 +552,18 @@
             stroke-linejoin="round"
             class="feather feather-x"
           >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
+            <line
+              x1="18"
+              y1="6"
+              x2="6"
+              y2="18"
+            />
+            <line
+              x1="6"
+              y1="6"
+              x2="18"
+              y2="18"
+            />
           </svg>
         </button>
       </form>
@@ -515,7 +578,10 @@
     <div :class="[{ active: !show }, 'mini_cart_container']">
       <div class="mini_cart-header">
         <h3>YOUR BAG</h3>
-        <button id="remove-btn" @click="show = !show">
+        <button
+          id="remove-btn"
+          @click="show = !show"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="33"
@@ -552,9 +618,15 @@
         <span class="brk_line" />
         <div class="sec_right">
           <div class="sec_right_inner">
-            <h4 class="subtotal_heading">SUBTOTAL</h4>
-            <p class="subtotal_price body_text">$1,080</p>
-            <p class="body_text">Excluding tax & shipping</p>
+            <h4 class="subtotal_heading">
+              SUBTOTAL
+            </h4>
+            <p class="subtotal_price body_text">
+              $1,080
+            </p>
+            <p class="body_text">
+              Excluding tax & shipping
+            </p>
             <p class="body_text text-mdifier">
               or 4 interest payments of $270 with
             </p>
@@ -562,20 +634,31 @@
               <img
                 src="https://cdn.shopify.com/s/files/1/0577/1178/8125/files/after-pay-logo.png?v=1654761076"
                 alt="error"
-              />
-              <p class="body_text">ⓘ</p>
+              >
+              <p class="body_text">
+                ⓘ
+              </p>
             </div>
           </div>
         </div>
         <div class="mini_shopping_cart">
-          <a href="/cart" class="shp_cart">View shopping cart</a>
+          <a
+            href="/cart"
+            class="shp_cart"
+          >View shopping cart</a>
         </div>
       </div>
     </div>
     <!-- <span :class="[{ active: !show }, 'bg_layer_removecart']" @click="show = !show" > -->
     <span class="bg_layer_removecart" />
-    <div class="mini-add-card" :class="{ active: !show }">
-      <a href="/checkout" class="add-card-chk">CHECKOUT</a>
+    <div
+      class="mini-add-card"
+      :class="{ active: !show }"
+    >
+      <a
+        href="/checkout"
+        class="add-card-chk"
+      >CHECKOUT</a>
     </div>
   </section>
 </template>

@@ -1,10 +1,19 @@
 <template>
+
   <div class="filter_responsive">
     <div class="filter_cta_wrapper">
-      <button id="filterCta" class="filter_cta" @click="myFilter">
+      <button
+        id="filterCta"
+        class="filter_cta"
+        @click="myFilter"
+      >
         {{ shopifyData.filterDropdownTextResponsive }}
       </button>
-      <button id="sortCta" class="filter_cta" @click="sortBy">
+      <button
+        id="sortCta"
+        class="filter_cta"
+        @click="sortBy"
+      >
         {{ shopifyData.sortByDropdownTextResponsive }}
       </button>
     </div>
@@ -16,22 +25,31 @@
        {{ shopifyData.bannerHeading }}
     </h2> -->
     <div>
-      <img :src="shopifyData.bannerImage" />
-      <h2 class="banner_heading">{{ shopifyData.bannerHeading }}</h2>
+      <img :src="shopifyData.bannerImage">
+      <h2 class="banner_heading">
+        {{ shopifyData.bannerHeading }}
+      </h2>
     </div>
   </div>
 
   <div class="filter_row">
     <div class="row_inner">
       <div class="apply_filter_cta_wrapper">
-        <button class="apply_filter_cta" disabled @click="applyfilter">
+        <button
+          class="apply_filter_cta"
+          disabled
+          @click="applyfilter"
+        >
           {{ shopifyData.applyFilterCta }}
         </button>
       </div>
       <div class="filters">
         <div class="filters_inner_row">
           <div class="filters_responsive">
-            <div class="close-btn" @click="closeMenu">
+            <div
+              class="close-btn"
+              @click="closeMenu"
+            >
               <svg
                 width="48"
                 height="48"
@@ -83,14 +101,14 @@
               </button>
             </div>
           </div>
-          <div class="filters_inner" >
+          <div class="filters_inner">
             <!-- Categories filter -->
             <div
+              v-if="(hideCategorydropdown === 1)"
               class="filter"
               @mouseenter="isMobile == true ? null : (show = true)"
               @mouseleave="isMobile == true ? null : (show = false)"
               @click="isMobile == false ? null : closeDropDown(show, 'show')"
-              v-if="(hideCategorydropdown === 1)"
             >
               <!-- v-on:mouseover="show = !show" -->
               <div
@@ -117,15 +135,20 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Categories</button>
+                <button class="c-form-input">
+                  Categories
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: show }" >
+              <div
+                class="multiselect"
+                :class="{ active: show }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
                     <li
                       v-for="option in ddTestCategory[0]"
                       :key="'Categories_' + option.id"
-                   >
+                    >
                       <input
                         :id="'Categories_' + option.id"
                         class="multiselectOption"
@@ -133,12 +156,11 @@
                         name="category"
                         :value="option.value"
                         @change="onCheck($event)"
-                      />
+                      >
                       <label
                         class="optionLabel"
                         :for="'Categories_' + option.id"
-                        >{{ option.text.toLowerCase() }} </label
-                      >
+                      >{{ option.text.toLowerCase() }} </label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
@@ -186,9 +208,14 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Color</button>
+                <button class="c-form-input">
+                  Color
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showColor }">
+              <div
+                class="multiselect"
+                :class="{ active: showColor }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
                     <li
@@ -202,15 +229,19 @@
                         name="color"
                         :value="option.value"
                         @change="onCheckColor($event)"
-                      />
-                      <label class="optionLabel" :for="'Color_' + option.id"
-                        >{{ option.text.toLowerCase() }}</label
                       >
+                      <label
+                        class="optionLabel"
+                        :for="'Color_' + option.id"
+                      >{{ option.text.toLowerCase() }}</label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
                     <!-- <button class="filterBtn modifier" @click="filterProductByColor">Apply</button> -->
-                    <button class="filterBtn" @click="clearCheckBoxs('color')">
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('color')"
+                    >
                       Clear
                     </button>
                   </div>
@@ -250,12 +281,20 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Size</button>
+                <button class="c-form-input">
+                  Size
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showSize }">
+              <div
+                class="multiselect"
+                :class="{ active: showSize }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
-                    <li v-for="option in ddTestSize" :key="'Size_' + option.id">
+                    <li
+                      v-for="option in ddTestSize"
+                      :key="'Size_' + option.id"
+                    >
                       <input
                         :id="'Size_' + option.id"
                         class="multiselectOption"
@@ -263,15 +302,19 @@
                         name="size"
                         :value="option.value"
                         @change="onCheckSize($event)"
-                      />
-                      <label class="optionLabel" :for="'Size_' + option.id"
-                        >{{ option.text.toLowerCase() }} </label
                       >
+                      <label
+                        class="optionLabel"
+                        :for="'Size_' + option.id"
+                      >{{ option.text.toLowerCase() }} </label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
                     <!-- <button class="filterBtn modifier" @click="filterProductBySize">Apply</button> -->
-                    <button class="filterBtn" @click="clearCheckBoxs('size')">
+                    <button
+                      class="filterBtn"
+                      @click="clearCheckBoxs('size')"
+                    >
                       Clear
                     </button>
                   </div>
@@ -313,9 +356,14 @@
                     />
                   </svg>
                 </div>
-                <button class="c-form-input">Material</button>
+                <button class="c-form-input">
+                  Material
+                </button>
               </div>
-              <div class="multiselect" :class="{ active: showMaterial }">
+              <div
+                class="multiselect"
+                :class="{ active: showMaterial }"
+              >
                 <div class="tmb_header_dopdown">
                   <ul>
                     <li
@@ -329,10 +377,11 @@
                         name="material"
                         :value="option.value"
                         @change="onCheckMaterial($event)"
-                      />
-                      <label class="optionLabel" :for="'Material_' + option.id"
-                        >{{ option.text.toLowerCase() }} </label
                       >
+                      <label
+                        class="optionLabel"
+                        :for="'Material_' + option.id"
+                      >{{ option.text.toLowerCase() }} </label>
                     </li>
                   </ul>
                   <div class="btn_wrapper">
@@ -362,8 +411,14 @@
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z" stroke="white" />
-                  <path d="M5 1L0.5 5.5L2.75 3.25L5 1Z" stroke="white" />
+                  <path
+                    d="M0.5 1L5 5.5L2.75 3.25L0.5 1Z"
+                    stroke="white"
+                  />
+                  <path
+                    d="M5 1L0.5 5.5L2.75 3.25L5 1Z"
+                    stroke="white"
+                  />
                 </svg>
               </button>
             </div>
@@ -372,7 +427,10 @@
       </div>
       <div class="sort_by">
         <div class="filters_responsive">
-          <div class="close-btn" @click="closeMenu">
+          <div
+            class="close-btn"
+            @click="closeMenu"
+          >
             <svg
               width="48"
               height="48"
@@ -413,7 +471,7 @@
               step="2"
               class="progress"
               @input="sliderChange($event)"
-            />
+            >
           </div>
           <div
             class="sortFilter"
@@ -438,29 +496,36 @@
                 />
               </svg>
             </button>
-            <div class="multiselect" :class="{ active: showSort }">
+            <div
+              class="multiselect"
+              :class="{ active: showSort }"
+            >
               <div class="tmb_header_dopdown">
                 <ul>
-                  <li v-for="option in ddTestSort" :key="option.id">
+                  <li
+                    v-for="option in ddTestSort"
+                    :key="option.id"
+                  >
                     <input
                       :id="option.id"
-                      class="multiselectOption" :class="{ isPercentShow: option.value == 'Discount' && isPercentDiscount == false }"
+                      class="multiselectOption"
+                      :class="{ isPercentShow: option.value == 'Discount' && isPercentDiscount == false }"
                       type="radio"
                       name="sort"
                       :checked="option.id == 'sort1' ? true : false"
                       :value="option.value"
                       @change="onCheckSort($event)"
-                    />
+                    >
                     <label
-                      class="optionLabel" :class="{ isPercentShow: option.value == 'Discount' && isPercentDiscount == false }"
+                      class="optionLabel"
+                      :class="{ isPercentShow: option.value == 'Discount' && isPercentDiscount == false }"
                       :for="option.id"
                       @click="
                         (event) => {
                           closeSortMenu(event);
                         }
                       "
-                      >{{ option.text }}</label
-                    >
+                    >{{ option.text }}</label>
                   </li>
                 </ul>
               </div>
@@ -475,9 +540,16 @@
       class="grid_inner product-containers"
       :class="{ grid_inner_max: gridMax, grid_inner_min: gridMin }"
     >
-      <div v-for="(value, key) in Products" :key="key" class="product_item">
+      <div
+        v-for="(value, key) in Products"
+        :key="key"
+        class="product_item"
+      >
         <!-- this block work for single product products -->
-        <div v-if="value.hasOwnProperty('single')" class="card">
+        <div
+          v-if="value.hasOwnProperty('single')"
+          class="card"
+        >
           <a :href="`/products/` + value.single.handle">
             <div
               :id="`item_left_` + value.single.handle"
@@ -488,11 +560,11 @@
             >
               {{
                 value.single.variants[0].inStock <= 5 &&
-                value.single.variants[0].inStock >= 1
+                  value.single.variants[0].inStock >= 1
                   ? "ONLY " + value.single.variants[0].inStock + " LEFT"
                   : value.single.variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -500,21 +572,36 @@
               v-if="value.single.images.length > 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
-              <img :src="value.single.images[1]" alt="" class="hoverImg" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
+              <img
+                :src="value.single.images[1]"
+                alt=""
+                class="hoverImg"
+              >
             </div>
             <div
               v-else-if="value.single.images.length == 1"
               class="product_img_wrapper"
             >
-              <img :src="value.single.featured_image" alt="" class="normal" />
+              <img
+                :src="value.single.featured_image"
+                alt=""
+                class="normal"
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -522,10 +609,10 @@
             </h5>
             <h5 class="card-title bold product_price">
               <span v-if="(value.single.price && value.single.compare_at_price)">
-                  ${{ (value.single.price / 100) }} <del> ${{ (value.single.compare_at_price / 100) }} </del>
+                ${{ (value.single.price / 100) }} <del> ${{ (value.single.compare_at_price / 100) }} </del>
               </span>
               <span v-else>
-                  $ {{ (value.single.price / 100) }}
+                $ {{ (value.single.price / 100) }}
               </span>
             </h5>
           </a>
@@ -536,7 +623,12 @@
               <!-- if quantity is 0 then hide -->
 
               <span v-if="value.single.variants[0].inStock != 0">
-                <button :id="'quickAdd' + value.single.id" class="quickAdd" :variantid="value.single.variants[0].id" @click="addToCard">
+                <button
+                  :id="'quickAdd' + value.single.id"
+                  class="quickAdd"
+                  :variantid="value.single.variants[0].id"
+                  @click="addToCard"
+                >
                   <span>Add</span>
                   <div class="loder_tmb">
                     <span /><span /> <span /><span />
@@ -553,7 +645,7 @@
         <div
           v-if="
             value.hasOwnProperty('variable') &&
-            value.variable.length - 1 >= value.active
+              value.variable.length - 1 >= value.active
           "
           class="card"
         >
@@ -568,13 +660,13 @@
             >
               {{
                 value.variable[value.active].variants[0].inStock <= 5 &&
-                value.variable[value.active].variants[0].inStock >= 1
+                  value.variable[value.active].variants[0].inStock >= 1
                   ? "ONLY " +
                     value.variable[value.active].variants[0].inStock +
                     " LEFT"
                   : value.variable[value.active].variants[0].inStock == 0
-                  ? "Out Of Stock"
-                  : ""
+                    ? "Out Of Stock"
+                    : ""
               }}
             </div>
 
@@ -587,12 +679,12 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
               <img
                 :src="value.variable[value.active].images[1]"
                 alt=""
                 class="hoverImg"
-              />
+              >
             </div>
             <div
               v-else-if="value.variable[value.active].images.length == 1"
@@ -603,14 +695,17 @@
                 :src="value.variable[value.active].featured_image"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
-            <div v-else class="product_img_wrapper">
+            <div
+              v-else
+              class="product_img_wrapper"
+            >
               <img
                 src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
                 alt=""
                 class="normal"
-              />
+              >
             </div>
 
             <h5 class="card-title product_title">
@@ -618,10 +713,10 @@
             </h5>
             <h5 class="card-title bold product_price">
               <span v-if="(value.variable[value.active].price && value.variable[value.active].compare_at_price)">
-                  ${{ (value.variable[value.active].price / 100) }} <del> ${{ (value.variable[value.active].compare_at_price / 100) }} </del>
+                ${{ (value.variable[value.active].price / 100) }} <del> ${{ (value.variable[value.active].compare_at_price / 100) }} </del>
               </span>
               <span v-else>
-                  $ {{ (value.variable[value.active].price / 100) }}
+                $ {{ (value.variable[value.active].price / 100) }}
               </span>
 
               <!-- $ {{ (value.variable[value.active].price / 100) }} -->
@@ -629,24 +724,43 @@
           </a>
 
           <div class="quickButton quickActive">
-            <div class="color_swatches">
-              <swiper class="swatches_inner mySwiper" @slideChange="qwe" :slidesPerView="'auto'" :spaceBetween="7" :navigation="true" :modules="modules" :mainKey="JSON.stringify(value)">
+            <div class="color_swatches" :class="[value.swatches.length <= 4 && 'not-slider']">
+              <!-- {{ value.swatches.length }} -->
+              <swiper
+                class="swatches_inner mySwiper"
+                :slides-per-view="'auto'"
+                :space-between="7"
+                :navigation="true"
+                :modules="modules"
+                :main-key="JSON.stringify(value)"
+                @slideChange="qwe"
+                
+              >
                 <swiper-slide
                   v-for="(sValue, sKey) in value.swatches"
                   :key="sKey"
                   :index="sKey" 
                   :link="sValue.link"
-                  class="nav-dots"
+                   class="nav-dots"
+                  :activeIndex="sKey == value.active ? 'true' : 'false'" 
                   :class="sKey == value.active ? 'active' : ''"
+                  
                   @click="selectVariation"
                 >
                   <span>
-                    <img :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)" :index="sKey" :class="sValue.img" />
+                    <img
+                      :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)"
+                      :index="sKey"
+                      :class="sValue.img"
+                    >
                   </span>
                 </swiper-slide>
               </swiper>
             </div>
-            <div class="product_cta_wrapper" data-v-32bfb114="">
+            <div
+              class="product_cta_wrapper"
+              data-v-32bfb114=""
+            >
               <button
                 :id="'quickAdd' + value.variable[value.active].id"
                 :class="{
@@ -683,7 +797,9 @@
         productfound: Products.length > 0,
       }"
     >
-      <h2 class="sec_heading">We're sorry, no matches were found.</h2>
+      <h2 class="sec_heading">
+        We're sorry, no matches were found.
+      </h2>
       <h4 class="body_text">
         We couldn't find any results for your selected filters. Clear your
         filters, or contact our team and we'll be happy to help.
@@ -794,6 +910,9 @@ export default {
       ],
       sortObject: {},
       selectedSortPercent : [],
+
+
+      setDefaultProduct : [],
 
       /** latest code **/
       Products: [],
@@ -1063,6 +1182,37 @@ export default {
         this.gridMax = false;
       }
     },
+
+        // ==== for testing ====== //
+        // gridChangeMinus(event){
+        //   console.log(event);
+        //   console.log(event.target.parentElement.nextSibling.value);
+        //   if (event.target.parentElement.nextSibling.value == 2) {
+        //     this.gridMin = false;
+        //     this.gridMax = true;
+        //   } else if (event.target.parentElement.nextSibling.value == 6) {
+        //     this.gridMin = true;
+        //     this.gridMax = false;
+        //   } else {
+        //     this.gridMin = false;
+        //     this.gridMax = false;
+        //   }
+        // },
+        // gridChangePlus(event){
+        // console.log(event);
+          
+        //   if (event.target.parentElement.nextSibling.value == 2) {
+        //     this.gridMin = false;
+        //     this.gridMax = true;
+        //   } else if (event.target.parentElement.nextSibling.value == 6) {
+        //     this.gridMin = true;
+        //     this.gridMax = false;
+        //   } else {
+        //     this.gridMin = false;
+        //     this.gridMax = false;
+        //   }
+        // },
+        // ==== for testing ====== //
     /* end change grid column */
     /* Clear all filter */
     clearAllFilter: function () {
@@ -1818,7 +1968,6 @@ export default {
 
 
       if(Categories.length !== 0 || Color.length !== 0 || Size.length !==0 || Material.length !== 0){
-         console.log('i am here! 111111111111111111');
           this.filterDropdow([...filterListing]);
       }
 
@@ -1976,74 +2125,155 @@ export default {
     sortProduct: function (obj) {
       var newArrivalCount = 0;
       var product=[];
+      var percentCount = 0;
 
-       var AllProducts = JSON.parse(JSON.stringify(this.AllProducts));
+      var AllProducts = JSON.parse(JSON.stringify(this.AllProducts));
+
+      if(JSON.parse(JSON.stringify(this.setDefaultProduct)).length === 0){
+          this.setDefaultProduct = AllProducts;
+      }else{
+
+        AllProducts = JSON.parse(JSON.stringify(this.setDefaultProduct))
+      }
+
+
+      
+
+
+
 
        console.log(AllProducts)
 
       if (obj == "Latest"){
         AllProducts.map((p)=>{
+
           var countOnce=false;
           if (Object.prototype.hasOwnProperty.call(p, "variable")){
             p.variable.map((n)=>{
               if(n.collection.includes('NEW ARRIVALS') && countOnce == false){
-                newArrivalCount++;
+                if(n.compare_at_price > n.price){
+                  percentCount++;
+                }
                 countOnce=true;
                 product.push(p);
               }
             })
           }else{
             if(p.single.collection.includes('NEW ARRIVALS')){
-              newArrivalCount++;
+              
+              if(p.single.compare_at_price > p.single.price){
+                percentCount++;
+              }
+
               product.push(p);
             }
           }
         })
         let filter = JSON.parse(JSON.stringify(product))
         this.Products = [...filter].slice(0, this.page_size);
-        this.AllProducts = [...filter].slice(0, 100);
+        // this.AllProducts = [...filter].slice(0, 100);
         console.log(newArrivalCount);
       }
       else{
-       
+       var counter= 0;
+
       const aa =     AllProducts.sort(function (a, b) {
             if (obj == "LowToHigh") {
-              
 
               if (Object.prototype.hasOwnProperty.call(a, "variable")) {
-                console.log(b.variable.length)
-                 if(b.variable.length > 0){
 
-                    if(b.variable[0] != undefined){
-                       return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
-                    }
-                 }
+                if(b.variable != undefined){
+                  if(b.variable.length === 0){
+                    return;
+                  }
+                  if(a.variable.length > 0){
+                      if(a.variable[0].compare_at_price > a.variable[0].price){
+                        percentCount++;
+                      }
+                      return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
+                  }
+                }
+
               }
               if (Object.prototype.hasOwnProperty.call(a, "single")) {
-                  
-                  if(b.single != undefined){
-                      return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
+                if(b.single != undefined){
+                  if(a.single.price === undefined){
+                    return
                   }
+                  if(a.single.compare_at_price > a.single.price){
+                    percentCount++;
+                  }
+                  return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
+                 }
               }
             } else if (obj == "HighToLow") {
+              
               if (Object.prototype.hasOwnProperty.call(b, "variable")) {
-                return ( b.variable[0].price - (a.variable != undefined ? a.variable[0].price : a.single.price) );
+                console.log(b.variable,'---------',a.variable)
+
+                 if(a.variable != undefined){
+
+                    if(b.variable.length === 0 || a.variable.length === 0){
+                      return;
+                    }
+
+                    if(b.variable[0].compare_at_price > b.variable[0].price){
+                        percentCount++;
+                    }
+                    return ( b.variable[0].price - (a.variable != undefined ? a.variable[0].price : a.single.price) );
+                 }
               }
               if (Object.prototype.hasOwnProperty.call(b, "single")) {
+                 if(a.single != undefined){
+                  if(b.single.price === undefined){
+                    return
+                  }
+
+                if(b.single.compare_at_price > b.single.price){
+                  percentCount++;
+                }
                 return (
                   b.single.price -
                   (a.single != undefined
                     ? a.single.price
                     : a.variable[0].price)
                 );
+                 }
+              }
+            } else if (obj == "Discount") {
+
+              if (Object.prototype.hasOwnProperty.call(a, "variable")) {
+                if(a.variable.length !== 0){
+                  if(a.variable[0].compare_at_price > a.variable[0].price){
+                      percentCount++;
+                  }
+                  if(a.variable[0].compare_at_price > a.variable[0].price){
+                    return
+                  }
+                }
+                
+              }
+              if (Object.prototype.hasOwnProperty.call(a, "single")) {
+
+                if(a.single.compare_at_price > a.single.price){
+                  percentCount++;
+                }
+                if(a.single.compare_at_price > a.single.price){
+                  return
+                }
               }
             }
+
           });
             this.Products = [...aa].slice(0, this.page_size);
-            this.AllProducts = [...aa].slice(0, 100);
+            // this.AllProducts = [...aa].slice(0, 100);
       }
 
-      
+      if(percentCount == 0){
+          this.isPercentDiscount=false;
+      }else{
+          this.isPercentDiscount=true;
+      }
   
       
     },
@@ -2112,7 +2342,7 @@ export default {
       }
 
       // activeHandle
-
+        
       if (swatchLIST.length !== 0) {
         return swatchLIST;
       }
@@ -2133,13 +2363,15 @@ export default {
       var grid = target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 
       var children = target.parentNode.parentNode.parentNode.children;
+
       for (var i = 0; i < children.length; i++) {
-        children[i].classList.remove("active");
+        children[i].setAttribute("activeindex","false");
       }
+
 
       // add active call to current active element
       // target.classList.add("active");
-      target.parentNode.parentNode.classList.add("active");
+      target.parentNode.parentNode.setAttribute("activeindex","true");
 
       // get active index
 
@@ -2147,7 +2379,7 @@ export default {
 
       // currentActiveIndex = index;
 
-      var productsData = JSON.parse(target.parentNode.parentNode.parentNode.parentNode.getAttribute("mainkey"));
+      var productsData = JSON.parse(target.parentNode.parentNode.parentNode.parentNode.getAttribute("main-key"));
 
       // active product
       var activeProduct = productsData.variable[index];
@@ -2224,19 +2456,30 @@ export default {
     getThemeAssets(image,object) {
       object = JSON.parse(JSON.stringify(object));
       var src = "";
+
+
       object.map((img, index) => {
           if(Object.prototype.hasOwnProperty.call(img,image)){
-            src = img[image];
+            var setOnce = false;
+
+            if(img[image].split('=')[1].length > 15 && setOnce == false)
+              src = img[image];
+              setOnce = true;
           }
       })
-      return src;
+      return src
+
     },
   },
 };
 </script>
 
 <style>
-
+.add_remove button{
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+}
 .color_swatches .swiper-wrapper .swiper-slide {
     width: 20px !important;
     /* max-width:20px !important ; */
@@ -2343,8 +2586,8 @@ li.nav-dots:after {
 }
 
 li.nav-dots.active:after,
-.nav-dots.active img {
-  border: 2px solid rgba(0, 0, 0, 0.6);
+[activeindex="true"] img {
+  border: 2px solid rgba(0, 0, 0, 0.6) !important;
 }
 
 .color_swatches .nav-dots img {
@@ -2819,9 +3062,9 @@ select {
   justify-content: space-between;
 }
 
-.add_remove button {
+/* .add_remove button {
   line-height: 0;
-}
+} */
 
 /* .nav-dots span {
   display: flex;
@@ -3538,6 +3781,9 @@ span.ezsd-dots-wrapper {
     display: none !important;
 }
 
+.color_swatches.not-slider {
+    padding: 0;
+}
 </style>
 
 <!-- loader -->
