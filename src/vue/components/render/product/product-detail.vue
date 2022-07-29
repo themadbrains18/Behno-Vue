@@ -33,29 +33,8 @@
           class="product-media-slider "
           @swiper="setThumbsSwiper"
         >
-          <swiper-slide
-            v-for="(value, key) in selectedProduct.media"
-            :key="key"
-            class="product_slide"
-          >
-            <div
-              v-if="value.media_type == 'image'"
-              class="product_media"
-              @click="productZoomInOut"
-            >
-              <img :src="value.src">
-            </div>
-            <div
-              v-if="value.media_type == 'video'"
-              class="product_media"
-              @click="productZoomInOut"
-            >
-              <video
-                autoplay
-                loop="true"
-                width="450"
-                :src="value.sources[0].url"
-              />
+          <swiper-slide v-for="(value, key) in selectedProduct.media" :key="key" class="product_slide" >
+            <div  class="product_media" @click="productZoomInOut"  v-html="value">
             </div>
           </swiper-slide>
         </swiper>
@@ -383,29 +362,8 @@
             delay: 1000000,
           }"
         >
-          <swiper-slide
-            v-for="(value, key) in selectedProduct.media"
-            :key="key"
-            class="t-center"
-          >
-            <div
-              v-if="value.media_type == 'image'"
-              class="product_media"
-              @click="productZoomInOut"
-            >
-              <img :src="value.src">
-            </div>
-            <div
-              v-if="value.media_type == 'video'"
-              class="product_media"
-              @click="productZoomInOut"
-            >
-              <video
-                autoplay
-                loop="true"
-                width="720"
-                :src="value.sources[1].url"
-              />
+          <swiper-slide v-for="(value, key) in selectedProduct.media" :key="key" class="t-center" >
+            <div class="product_media" @click="productZoomInOut" v-html="value">
             </div>
           </swiper-slide>
         </swiper>
@@ -504,10 +462,18 @@ export default {
 
         let productObj = atob(this.shopifyData.productData.product);
         productObj = JSON.parse(productObj);
-        
-        let product = productObj.map((item)=>{
-          return item.product;
-        });
+        let product=[];
+          productObj.map((item)=>{
+            if(!item.product.error){
+              product.push(item.product)
+            }
+          });
+          variant = variant.filter((item)=>{
+            return item.qty!=''
+          });
+
+
+
 
         var currentUrl = window.location.pathname;
         let path = currentUrl.split('/products/')[1];
