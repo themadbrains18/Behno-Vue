@@ -21,11 +21,10 @@
   <!-- Collacction Banner Code -->
 
   <div class="collaction_banner">
-    <!-- <h2 class="cross_heading">
-       {{ shopifyData.bannerHeading }}
-    </h2> -->
+    
     <div>
-      <img :src="shopifyData.bannerImage">
+      <!-- <img :src="shopifyData.bannerImage"> -->
+      <img src="//cdn.shopify.com/s/files/1/1000/3130/files/download.jpg?v=1658476038" alt="error">
       <h2 class="banner_heading">
         {{ shopifyData.bannerHeading }}
       </h2>
