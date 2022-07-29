@@ -879,6 +879,7 @@ export default {
       showClearAll: false,
       gridColumn: 4,
       productId: 0,
+      priceSort : '',
       ddTestSort: [
         {
           id: "sort1",
@@ -1331,12 +1332,22 @@ export default {
 
     /* set selected sort checkbox value */
     onCheckSort: function (event) {
+     
       this.sortProduct(event.target.value);
       if('Discount' == event.target.value){
         this.selectedSortPercent = []
         this.selectedSortPercent = [event.target.value]
         this.fetchProdustQuery()
       }
+
+      if(event.target.value === 'LowToHigh' || event.target.value === 'HighToLow'){
+        this.priceSort = event.target.value
+        this.fetchProdustQuery()
+      }
+
+      
+
+
     },
 
     /* Fill category dropdown from products data */
@@ -1565,10 +1576,14 @@ export default {
     },
 
     async fetchProdustQuery() {
+      
       /// fetch shopify graphQl queries
 
       var productData = window.atob(this.shopifyData.collectionListing);
       var Products = JSON.parse(productData);
+
+      
+
 
 
       var filterListing = [];
@@ -1613,6 +1628,21 @@ export default {
       /*********************************************************/
       // end filter
       /*********************************************************/
+
+      /**
+       * price filter
+       */
+        if(this.priceSort === 'HighToLow'){
+            Products.sort((a,b) => {
+                return b[0].price -  a[0].price;
+            })
+        }
+        if(this.priceSort === 'LowToHigh'){
+            Products.sort((a,b) => {
+                return a[0].price -  b[0].price;
+            })
+        }
+
 
       for (let product in Products) {
         // Products.map(async (e, i) => {
@@ -1800,6 +1830,10 @@ export default {
 
 
 
+        
+
+
+
         if(p.compare_at_price > p.price){
           percentCount++;
         }
@@ -1926,6 +1960,8 @@ export default {
 
       if(percentCount == 0){
         this.isPercentDiscount=false;
+      }else{
+        this.isPercentDiscount=true;
       }
 
       // console.log('not percent Count','=====',notpercentCount);
@@ -2085,6 +2121,15 @@ export default {
     //   })
     // },
 
+    checkStatus : function (prodcut){
+        if (Object.prototype.hasOwnProperty.call(prodcut, "variable")) {
+            return prodcut.variable[0] === undefined ? false : true;
+        }
+        if (Object.prototype.hasOwnProperty.call(prodcut, "single")) {
+           return prodcut.single === undefined ? false : true;
+        }
+    },
+
     /* sort product based on price low to high and vice-verse */
     sortProduct: function (obj) {
       var newArrivalCount = 0;
@@ -2125,73 +2170,16 @@ export default {
         // this.AllProducts = [...filter].slice(0, 100);
         console.log(newArrivalCount);
       }
-      else{
+      
        var counter= 0;
 
-      const aa =     AllProducts.sort(function (a, b) {
-            if (obj == "LowToHigh") {
 
-              if (Object.prototype.hasOwnProperty.call(a, "variable")) {
+             if (obj == "Discount") {
 
-                if(b.variable != undefined){
-                  if(b.variable.length === 0){
-                    return;
-                  }
-                  if(a.variable.length > 0){
-                      if(a.variable[0].compare_at_price > a.variable[0].price){
-                        percentCount++;
-                      }
-                      return (a.variable[0].price - (b.variable != undefined ? b.variable[0].price : b.single.price));
-                  }
-                }
 
-              }
-              if (Object.prototype.hasOwnProperty.call(a, "single")) {
-                if(b.single != undefined){
-                  if(a.single.price === undefined){
-                    return
-                  }
-                  if(a.single.compare_at_price > a.single.price){
-                    percentCount++;
-                  }
-                  return (a.single.price - (b.single != undefined ? b.single.price : b.variable[0].price));
-                 }
-              }
-            } else if (obj == "HighToLow") {
-              
-              if (Object.prototype.hasOwnProperty.call(b, "variable")) {
-                console.log(b.variable,'---------',a.variable)
+      const sortfilter =     AllProducts.sort(function (a, b) {
 
-                 if(a.variable != undefined){
 
-                    if(b.variable.length === 0 || a.variable.length === 0){
-                      return;
-                    }
-
-                    if(b.variable[0].compare_at_price > b.variable[0].price){
-                        percentCount++;
-                    }
-                    return ( b.variable[0].price - (a.variable != undefined ? a.variable[0].price : a.single.price) );
-                 }
-              }
-              if (Object.prototype.hasOwnProperty.call(b, "single")) {
-                 if(a.single != undefined){
-                  if(b.single.price === undefined){
-                    return
-                  }
-
-                if(b.single.compare_at_price > b.single.price){
-                  percentCount++;
-                }
-                return (
-                  b.single.price -
-                  (a.single != undefined
-                    ? a.single.price
-                    : a.variable[0].price)
-                );
-                 }
-              }
-            } else if (obj == "Discount") {
 
               if (Object.prototype.hasOwnProperty.call(a, "variable")) {
                 if(a.variable.length !== 0){
@@ -2213,12 +2201,15 @@ export default {
                   return
                 }
               }
-            }
+           
 
           });
-            this.Products = [...aa].slice(0, this.page_size);
-            // this.AllProducts = [...aa].slice(0, 100);
-      }
+
+             this.Products = [...sortfilter].slice(0, this.page_size);
+              this.AllProducts = [...sortfilter].slice(0, 100);
+          }
+           
+      
 
       if(percentCount == 0){
           this.isPercentDiscount=false;
