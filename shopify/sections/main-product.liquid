@@ -17,15 +17,15 @@
                       {% for media in productData.media %}
                         {% case media.media_type %}
                             {% when 'image' %}
-                              {{ media | json }}
+                            "{{ media | img_url: '' | img_tag | replace : '"', "'"}}"
                             {% when 'external_video' %}
-                              {{ media  | json }}
+                            "{{ media | external_video_tag | replace : '"', "'"}}"
                             {% when 'video' %}
-                              {{ media  | json }}
+                            "{{ media | video_tag: autoplay: true, loop: true, mute: true | replace : '"', "'" }}"
                             {% when 'model' %}
-                              {{ media  | json }}
+                            "{{ media | model_viewer_tag | replace : '"', "'" }}"
                             {% else %}
-                                {{ media  | json }}
+                            "{{ media | media_tag | replace : '"', "'" }}"
                             {% endcase %}
                     {% unless forloop.last  %},{% endunless %}
                       {% endfor %}
@@ -217,15 +217,15 @@
         {% for media in product.media %}
           {% case media.media_type %}
             {% when 'image' %}
-              {{ media | json }}
+            "{{ media | img_url: '' | img_tag | replace : '"', "'"}}"
             {% when 'external_video' %}
-              {{  media | json  }}
+            "{{ media | external_video_tag | replace : '"', "'"}}"
             {% when 'video' %}
-              {{  media | json  }}
+            "{{ media | video_tag: autoplay: true, loop: true, mute: true | replace : '"', "'" }}"
             {% when 'model' %}
-              {{  media | json  }}
+            "{{ media | model_viewer_tag | replace : '"', "'" }}"
             {% else %}
-             {{  media | json  }}
+            "{{ media | media_tag | replace : '"', "'" }}"
             {% endcase %}
               {% unless forloop.last  %},{% endunless %}
             {% endfor %}
