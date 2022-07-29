@@ -725,6 +725,7 @@
 
           <div class="quickButton quickActive">
             <div class="color_swatches" :class="[value.swatches.length <= 4 && 'not-slider']">
+            
               <!-- {{ value.swatches.length }} -->
               <swiper
                 class="swatches_inner mySwiper"
@@ -748,8 +749,12 @@
                   @click="selectVariation"
                 >
                   <span>
+                   
+                      <!-- :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)" -->
+
+
                     <img
-                      :src="getThemeAssets(sValue.img, value.variable[value.active].swatchesImage)"
+                      :src="sValue.url[0][sValue.img]"
                       :index="sKey"
                       :class="sValue.img"
                     >
@@ -1376,6 +1381,11 @@ export default {
         this.fetchProdustQuery()
       }
 
+      if('Recommended' === event.target.value){
+        this.priceSort = ''
+        this.fetchProdustQuery()
+      }
+
       if(event.target.value === 'LowToHigh' || event.target.value === 'HighToLow'){
         this.priceSort = event.target.value
         this.fetchProdustQuery()
@@ -1679,6 +1689,9 @@ export default {
             })
         }
 
+    
+
+        
 
       for (let product in Products) {
         // Products.map(async (e, i) => {
@@ -1881,6 +1894,7 @@ export default {
         }else if(p.compare_at_price === 0){
             continue;
         }
+
         
 
           // ********************************************************************** //
@@ -1924,7 +1938,7 @@ export default {
           /*********************************************************/
           /// filter variable product
           /*********************************************************/
-          var swatch = await this.getSwatch(v);
+          var swatch = await this.getSwatch(v,Products[product][4]);
           var collectPairProducts = [];
 
           /*********************************************/
@@ -2006,6 +2020,9 @@ export default {
       if(Categories.length !== 0 || Color.length !== 0 || Size.length !==0 || Material.length !== 0){
           this.filterDropdow([...filterListing]);
       }
+
+     
+       console.log(filterListing)
 
       this.Products = [...filterListing].slice(0, this.page_size);
       this.AllProducts = [...filterListing].slice(0, 100);
@@ -2182,13 +2199,6 @@ export default {
       }
 
 
-      
-
-
-
-
-       console.log(AllProducts)
-
       if (obj == "Latest"){
         AllProducts.map((p)=>{
 
@@ -2294,6 +2304,7 @@ export default {
      *  getSwatch filter the json for each product also verify product has variation
      */
     async getSwatch(metaFields, products, activeHandle) {
+      // console.log(products)
       // get pair links
       let links = "";
       let swatchs = "";
@@ -2310,6 +2321,7 @@ export default {
         }
       }
 
+
       // console.log(assets.assets)
 
       // collection variation if exist
@@ -2321,8 +2333,9 @@ export default {
           for (let link in links) {
             if (link == imgLoop) {
               let repeatEl = {};
-              repeatEl.img = swatchs[imgLoop];
 
+              repeatEl.img = swatchs[imgLoop];
+              repeatEl.url = products.filter((em) => (Object.keys(em)[0] === swatchs[imgLoop]) ? Object.values(em)[0] : ''  )
               repeatEl.link = links[link];
               swatchLIST.push(repeatEl);
             } else {
@@ -2452,8 +2465,8 @@ export default {
       object.map((img, index) => {
           if(Object.prototype.hasOwnProperty.call(img,image)){
             var setOnce = false;
-
-            if(img[image].split('=')[1].length > 15 && setOnce == false)
+            console.log(image, '=========' , img[image])
+            // if(img[image].split('=')[1].length > 15 && setOnce == false)
               src = img[image];
               setOnce = true;
           }
