@@ -724,7 +724,8 @@
           </a>
 
           <div class="quickButton quickActive">
-            <div class="color_swatches">
+            <div class="color_swatches" :class="[value.swatches.length <= 4 && 'not-slider']">
+              <!-- {{ value.swatches.length }} -->
               <swiper
                 class="swatches_inner mySwiper"
                 :slides-per-view="'auto'"
@@ -733,6 +734,7 @@
                 :modules="modules"
                 :main-key="JSON.stringify(value)"
                 @slideChange="qwe"
+                
               >
                 <swiper-slide
                   v-for="(sValue, sKey) in value.swatches"
@@ -909,6 +911,9 @@ export default {
       ],
       sortObject: {},
       selectedSortPercent : [],
+
+
+      setDefaultProduct : [],
 
       /** latest code **/
       Products: [],
@@ -1178,6 +1183,37 @@ export default {
         this.gridMax = false;
       }
     },
+
+        // ==== for testing ====== //
+        // gridChangeMinus(event){
+        //   console.log(event);
+        //   console.log(event.target.parentElement.nextSibling.value);
+        //   if (event.target.parentElement.nextSibling.value == 2) {
+        //     this.gridMin = false;
+        //     this.gridMax = true;
+        //   } else if (event.target.parentElement.nextSibling.value == 6) {
+        //     this.gridMin = true;
+        //     this.gridMax = false;
+        //   } else {
+        //     this.gridMin = false;
+        //     this.gridMax = false;
+        //   }
+        // },
+        // gridChangePlus(event){
+        // console.log(event);
+          
+        //   if (event.target.parentElement.nextSibling.value == 2) {
+        //     this.gridMin = false;
+        //     this.gridMax = true;
+        //   } else if (event.target.parentElement.nextSibling.value == 6) {
+        //     this.gridMin = true;
+        //     this.gridMax = false;
+        //   } else {
+        //     this.gridMin = false;
+        //     this.gridMax = false;
+        //   }
+        // },
+        // ==== for testing ====== //
     /* end change grid column */
     /* Clear all filter */
     clearAllFilter: function () {
@@ -2138,7 +2174,20 @@ export default {
 
       var AllProducts = JSON.parse(JSON.stringify(this.AllProducts));
 
+      if(JSON.parse(JSON.stringify(this.setDefaultProduct)).length === 0){
+          this.setDefaultProduct = AllProducts;
+      }else{
 
+        AllProducts = JSON.parse(JSON.stringify(this.setDefaultProduct))
+      }
+
+
+      
+
+
+
+
+       console.log(AllProducts)
 
       if (obj == "Latest"){
         AllProducts.map((p)=>{
@@ -2398,19 +2447,30 @@ export default {
     getThemeAssets(image,object) {
       object = JSON.parse(JSON.stringify(object));
       var src = "";
+
+
       object.map((img, index) => {
           if(Object.prototype.hasOwnProperty.call(img,image)){
-            src = img[image];
+            var setOnce = false;
+
+            if(img[image].split('=')[1].length > 15 && setOnce == false)
+              src = img[image];
+              setOnce = true;
           }
       })
-      return src;
+      return src
+
     },
   },
 };
 </script>
 
 <style>
-
+.add_remove button{
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+}
 .color_swatches .swiper-wrapper .swiper-slide {
     width: 20px !important;
     /* max-width:20px !important ; */
@@ -2518,7 +2578,7 @@ li.nav-dots:after {
 
 li.nav-dots.active:after,
 [activeindex="true"] img {
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.6) !important;
 }
 
 .color_swatches .nav-dots img {
@@ -2993,9 +3053,9 @@ select {
   justify-content: space-between;
 }
 
-.add_remove button {
+/* .add_remove button {
   line-height: 0;
-}
+} */
 
 /* .nav-dots span {
   display: flex;
@@ -3712,6 +3772,9 @@ span.ezsd-dots-wrapper {
     display: none !important;
 }
 
+.color_swatches.not-slider {
+    padding: 0;
+}
 </style>
 
 <!-- loader -->

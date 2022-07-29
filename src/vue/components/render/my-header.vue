@@ -444,7 +444,7 @@
           class="m_navitem"
         >
           <template v-if="link.url == '#'">
-            <sapn class="navlink w-100 t-left" />
+            <span class="navlink w-100 t-left" ></span>
           </template>
           <template v-else-if="link.links.length > 0">
             <button
